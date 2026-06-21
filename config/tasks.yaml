@@ -1,0 +1,86 @@
+# Task suite configuration
+task_families:
+  - name: "copying"
+    description: "Copying / induction — repeated pattern completion"
+    priority: 1
+    examples_per_family: 10
+    metrics: ["target_logprob", "exact_match", "target_vs_wrong_diff"]
+
+  - name: "delimiter_tracking"
+    description: "Bracket and delimiter tracking — syntax stack / closure"
+    priority: 2
+    examples_per_family: 10
+    metrics: ["target_logprob", "exact_match", "format_violation_count"]
+
+  - name: "json_schema"
+    description: "JSON/schema following — constrained format"
+    priority: 3
+    examples_per_family: 10
+    metrics: ["valid_json", "required_keys", "exact_match"]
+
+  - name: "factual_recall"
+    description: "Factual recall — stable tiny facts (control task)"
+    priority: 4
+    examples_per_family: 8
+    metrics: ["target_logprob", "exact_match"]
+
+  - name: "arithmetic"
+    description: "Arithmetic micro-reasoning"
+    priority: 5
+    examples_per_family: 8
+    metrics: ["target_logprob", "exact_match"]
+
+  - name: "code_syntax"
+    description: "Code syntax recognition"
+    priority: 6
+    examples_per_family: 8
+    metrics: ["target_logprob", "exact_match", "ast_parse_success"]
+
+  - name: "code_semantics"
+    description: "Code semantic preservation"
+    priority: 7
+    examples_per_family: 8
+    metrics: ["exact_match", "sandboxed_output_match"]
+
+  - name: "variable_renaming"
+    description: "Variable renaming / alias tracking"
+    priority: 8
+    examples_per_family: 6
+    metrics: ["ast_parse_success", "output_match", "consistent_mapping"]
+
+  - name: "dead_code"
+    description: "Dead-code detection"
+    priority: 9
+    examples_per_family: 6
+    metrics: ["target_logprob", "exact_match"]
+
+  - name: "refusal_compliance"
+    description: "Refusal/compliance style (benign prompts only)"
+    priority: 10
+    examples_per_family: 6
+    metrics: ["compliance_classifier", "format_violation_count"]
+
+  - name: "verbosity_control"
+    description: "Verbosity/style control"
+    priority: 11
+    examples_per_family: 6
+    metrics: ["generation_length", "exact_match", "format_violation_count"]
+
+  - name: "uncertainty_signalling"
+    description: "Uncertainty/error signalling"
+    priority: 12
+    examples_per_family: 6
+    metrics: ["hallucination_flag", "exact_match"]
+
+generation:
+  num_examples_total: 88
+  min_examples_per_family: 6
+  heldout_ratio: 0.2
+  seed: 42
+
+splitting:
+  train_ratio: 0.6
+  val_ratio: 0.2
+  test_ratio: 0.1
+  heldout_ratio: 0.1
+  stratify_by_family: true

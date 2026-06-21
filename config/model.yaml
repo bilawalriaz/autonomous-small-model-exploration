@@ -1,0 +1,38 @@
+# Model configuration
+model:
+  primary: "Qwen/Qwen3-0.5B"
+  fallbacks:
+    - "Qwen/Qwen2.5-0.5B"
+    - "Qwen/Qwen2.5-0.5B-Instruct"
+    - "gpt2"
+    - "EleutherAI/pythia-14m"
+  dtype: "float32"
+  device: "auto"
+  trust_remote_code: true
+
+# Backend priority: try in order
+backend:
+  priority:
+    - "transformerlens"
+    - "nnsight"
+    - "hf_native"
+  transformerlens:
+    fold_ln: true
+    center_writing_weights: true
+    center_unembed: true
+  nnsight:
+    scan: false
+  hf_native:
+    output_hidden_states: true
+    output_attentions: true
+
+# Model architecture metadata (filled after first load)
+architecture:
+  n_layers: null
+  n_heads: null
+  d_model: null
+  d_head: null
+  d_mlp: null
+  vocab_size: null
+  context_length: null
+  activation_function: null

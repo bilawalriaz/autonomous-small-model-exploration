@@ -1,0 +1,162 @@
+[
+  {
+    "id": "copying_0000",
+    "family": "copying",
+    "clean": "X I H X I ",
+    "corrupt": "X I J X I ",
+    "target": "X",
+    "wrong_target": "E"
+  },
+  {
+    "id": "copying_0001",
+    "family": "copying",
+    "clean": "X R C X R C X R C X R ",
+    "corrupt": "X R U X R U X R U X R ",
+    "target": "X",
+    "wrong_target": "N"
+  },
+  {
+    "id": "copying_0002",
+    "family": "copying",
+    "clean": "C G H C G ",
+    "corrupt": "C G T C G ",
+    "target": "C",
+    "wrong_target": "U"
+  },
+  {
+    "id": "copying_0003",
+    "family": "copying",
+    "clean": "G W U G W U G W U G W ",
+    "corrupt": "G W Z G W Z G W Z G W ",
+    "target": "G",
+    "wrong_target": "S"
+  },
+  {
+    "id": "copying_0004",
+    "family": "copying",
+    "clean": "O S I A F N O S I A F ",
+    "corrupt": "O S I A F P O S I A F ",
+    "target": "O",
+    "wrong_target": "I"
+  },
+  {
+    "id": "copying_0005",
+    "family": "copying",
+    "clean": "Y K D C Y K D ",
+    "corrupt": "Y K D P Y K D ",
+    "target": "Y",
+    "wrong_target": "D"
+  },
+  {
+    "id": "copying_0006",
+    "family": "copying",
+    "clean": "T I Z B X T I Z B X T I Z B ",
+    "corrupt": "T I Z B Q T I Z B Q T I Z B ",
+    "target": "T",
+    "wrong_target": "R"
+  },
+  {
+    "id": "copying_0007",
+    "family": "copying",
+    "clean": "C R J C R J C R ",
+    "corrupt": "C R X C R X C R ",
+    "target": "C",
+    "wrong_target": "U"
+  },
+  {
+    "id": "copying_0008",
+    "family": "copying",
+    "clean": "G W C B V G W C B V G W C B V G W C B ",
+    "corrupt": "G W C B K G W C B K G W C B K G W C B ",
+    "target": "G",
+    "wrong_target": "Z"
+  },
+  {
+    "id": "copying_0009",
+    "family": "copying",
+    "clean": "H D M I O H D M I ",
+    "corrupt": "H D M I Z H D M I ",
+    "target": "H",
+    "wrong_target": "M"
+  },
+  {
+    "id": "delimiter_0000",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, (",
+    "corrupt": "Complete the closing delimiters: function(x, (",
+    "target": ")",
+    "wrong_target": ")"
+  },
+  {
+    "id": "delimiter_0001",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, (((",
+    "corrupt": "Complete the closing delimiters: function(x, (((",
+    "target": ")))",
+    "wrong_target": ")))"
+  },
+  {
+    "id": "delimiter_0002",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, ((([",
+    "corrupt": "Complete the closing delimiters: function(x, ((([",
+    "target": "])))",
+    "wrong_target": "])))"
+  },
+  {
+    "id": "delimiter_0003",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, [(",
+    "corrupt": "Complete the closing delimiters: function(x, [(",
+    "target": ")]",
+    "wrong_target": "])"
+  },
+  {
+    "id": "delimiter_0004",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, {[",
+    "corrupt": "Complete the closing delimiters: function(x, {[",
+    "target": "]}",
+    "wrong_target": "}]"
+  },
+  {
+    "id": "delimiter_0005",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, {[",
+    "corrupt": "Complete the closing delimiters: function(x, {[",
+    "target": "]}",
+    "wrong_target": "}]"
+  },
+  {
+    "id": "delimiter_0006",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, ({[{",
+    "corrupt": "Complete the closing delimiters: function(x, ({[{",
+    "target": "}]})",
+    "wrong_target": "]}})"
+  },
+  {
+    "id": "delimiter_0007",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, (([{",
+    "corrupt": "Complete the closing delimiters: function(x, (([{",
+    "target": "}]))",
+    "wrong_target": "]}))"
+  },
+  {
+    "id": "delimiter_0008",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, (",
+    "corrupt": "Complete the closing delimiters: function(x, (",
+    "target": ")",
+    "wrong_target": ")"
+  },
+  {
+    "id": "delimiter_0009",
+    "family": "delimiter_tracking",
+    "clean": "Complete the closing delimiters: function(x, {{",
+    "corrupt": "Complete the closing delimiters: function(x, {{",
+    "target": "}}",
+    "wrong_target": "}}"
+  }
+]

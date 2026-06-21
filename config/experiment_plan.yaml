@@ -1,0 +1,130 @@
+# Experiment plan — ordered by priority
+# Each phase must complete before the next begins
+
+phases:
+  - id: "phase_1_baselines"
+    name: "Baselines"
+    description: "Task suite, model loading, baseline evals"
+    experiments:
+      - "repo_scaffold"
+      - "model_load"
+      - "tokenizer_sanity"
+      - "deterministic_generation"
+      - "task_suite_v0"
+      - "metrics_validation"
+      - "baseline_eval"
+    outputs:
+      - "experiments/results/baseline_*.json"
+      - "experiments/plots/baseline_task_scores.png"
+      - "experiments/plots/baseline_failure_modes.png"
+    status: "in_progress"
+
+  - id: "phase_2_layer_localisation"
+    name: "Layer-level localisation"
+    description: "Residual/layer ablations to find important layers"
+    experiments:
+      - "layer_ablation_mean"
+      - "layer_ablation_zero"
+      - "layer_ablation_resample"
+      - "layer_ablation_by_position"
+    outputs:
+      - "experiments/plots/layer_ablation_heatmap.png"
+      - "experiments/plots/layer_ablation_by_position.png"
+    status: "pending"
+
+  - id: "phase_3_head_mlp_localisation"
+    name: "Head and MLP localisation"
+    description: "Attention head and MLP output ablations"
+    experiments:
+      - "head_ablation"
+      - "mlp_ablation"
+      - "attention_vs_mlp_comparison"
+    outputs:
+      - "experiments/plots/head_ablation_heatmap.png"
+      - "experiments/plots/mlp_ablation_heatmap.png"
+    status: "pending"
+
+  - id: "phase_4_activation_patching"
+    name: "Activation patching"
+    description: "Clean/corrupt pair patching for causal evidence"
+    experiments:
+      - "build_clean_corrupt_pairs"
+      - "residual_patching"
+      - "head_patching"
+      - "mlp_patching"
+    outputs:
+      - "experiments/plots/activation_patching_heatmap.png"
+    status: "pending"
+
+  - id: "phase_5_path_patching"
+    name: "Path patching"
+    description: "Source-destination path analysis"
+    experiments:
+      - "path_patching_top_components"
+      - "candidate_circuit_graphs"
+    outputs:
+      - "experiments/plots/path_patching_*.png"
+    status: "pending"
+
+  - id: "phase_6_steering"
+    name: "Steering vectors"
+    description: "Activation-difference steering sweeps"
+    experiments:
+      - "compute_steering_vectors"
+      - "steering_strength_sweep"
+      - "collateral_damage_measurement"
+    outputs:
+      - "experiments/plots/steering_strength_curve.png"
+    status: "pending"
+
+  - id: "phase_7_probes"
+    name: "Probes"
+    description: "Simple probes after causal work has begun"
+    experiments:
+      - "train_delimiter_probe"
+      - "train_variable_binding_probe"
+      - "train_task_family_probe"
+    outputs:
+      - "experiments/results/probe_*.json"
+    status: "pending"
+
+  - id: "phase_8_sae"
+    name: "SAE analysis"
+    description: "Sparse autoencoder training and feature analysis"
+    experiments:
+      - "train_sae_residual"
+      - "train_sae_mlp"
+      - "feature_analysis"
+    outputs:
+      - "experiments/results/sae_*.json"
+    status: "pending"
+
+  - id: "phase_9_training_perturbation"
+    name: "Training perturbation programme"
+    description: "CPT, SFT, LoRA, adapters, curriculum experiments"
+    experiments:
+      - "train_cpt"
+      - "train_sft"
+      - "train_cpt_then_sft"
+      - "lora_rank_sweep"
+      - "lora_target_module_sweep"
+      - "dataset_shard_ablation"
+      - "checkpoint_timeline"
+    outputs:
+      - "experiments/adapters/"
+      - "experiments/checkpoints/"
+      - "experiments/plots/training_*.png"
+    status: "pending"
+
+  - id: "phase_10_atlas"
+    name: "Component atlas and report"
+    description: "Final atlas, report, blog material"
+    experiments:
+      - "build_component_atlas"
+      - "write_final_report"
+      - "write_blog_outline"
+    outputs:
+      - "reports/component_atlas.jsonl"
+      - "reports/component_atlas.md"
+      - "reports/final_report.md"
+    status: "pending"

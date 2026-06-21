@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "mi-atlas"
+version = "0.1.0"
+description = "Autonomous Mechanistic Interpretability + Training Perturbation Research"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "transformerlens>=1.0",
+    "nnsight>=0.3",
+    "peft>=0.10",
+    "trl>=0.8",
+    "saelens>=0.3",
+    "pandas>=2.0",
+    "polars>=0.20",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "pytest>=7.0",
+    "pyyaml>=6.0",
+    "numpy>=1.24",
+    "tqdm>=4.65",
+    "einops>=0.6",
+    "datasets>=2.14",
+    "accelerate>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

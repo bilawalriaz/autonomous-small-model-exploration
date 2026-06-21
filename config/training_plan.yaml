@@ -1,0 +1,61 @@
+# Training configuration
+
+cpt:
+  learning_rate: 1.0e-4
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  max_steps: 1000
+  warmup_steps: 50
+  weight_decay: 0.01
+  max_seq_length: 512
+  save_steps: 250
+  eval_steps: 100
+  logging_steps: 10
+  fp16: false
+  bf16: true
+  seed: 42
+
+sft:
+  learning_rate: 2.0e-5
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  max_steps: 500
+  warmup_steps: 25
+  weight_decay: 0.01
+  max_seq_length: 512
+  save_steps: 100
+  eval_steps: 50
+  logging_steps: 10
+  fp16: false
+  bf16: true
+  seed: 42
+  response_template: "### Answer:\n"
+
+lora:
+  ranks: [1, 2, 4, 8, 16, 32]
+  default_rank: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "up_proj"
+    - "gate_proj"
+    - "down_proj"
+  learning_rate: 2.0e-4
+  batch_size: 4
+  max_steps: 500
+  warmup_steps: 25
+  seed: 42
+
+checkpoints:
+  save_at_steps: [0, 50, 100, 250, 500]
+  max_checkpoints: 10
+  compression: true
+
+compute:
+  max_memory_gb: 8
+  offload_to_cpu: false
+  gradient_checkpointing: true

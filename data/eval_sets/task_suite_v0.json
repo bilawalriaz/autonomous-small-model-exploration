@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "copying_0000",
+    "family": "copying",
+    "clean_prompt": "X I H X I ",
+    "corrupt_prompt": "X I J X I ",
+    "target": "X",
+    "wrong_target": "E",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 3,
+      "repeat": 1,
+      "symbols": [
+        "X",
+        "I",
+        "H"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0001",
+    "family": "copying",
+    "clean_prompt": "X R C X R C X R C X R ",
+    "corrupt_prompt": "X R U X R U X R U X R ",
+    "target": "X",
+    "wrong_target": "N",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 3,
+      "repeat": 3,
+      "symbols": [
+        "X",
+        "R",
+        "C"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0002",
+    "family": "copying",
+    "clean_prompt": "C G H C G ",
+    "corrupt_prompt": "C G T C G ",
+    "target": "C",
+    "wrong_target": "U",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 3,
+      "repeat": 1,
+      "symbols": [
+        "C",
+        "G",
+        "H"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0003",
+    "family": "copying",
+    "clean_prompt": "G W U G W U G W U G W ",
+    "corrupt_prompt": "G W Z G W Z G W Z G W ",
+    "target": "G",
+    "wrong_target": "S",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 3,
+      "repeat": 3,
+      "symbols": [
+        "G",
+        "W",
+        "U"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0004",
+    "family": "copying",
+    "clean_prompt": "O S I A F N O S I A F ",
+    "corrupt_prompt": "O S I A F P O S I A F ",
+    "target": "O",
+    "wrong_target": "I",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 6,
+      "repeat": 1,
+      "symbols": [
+        "O",
+        "S",
+        "I",
+        "A",
+        "F",
+        "N"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0005",
+    "family": "copying",
+    "clean_prompt": "Y K D C Y K D ",
+    "corrupt_prompt": "Y K D P Y K D ",
+    "target": "Y",
+    "wrong_target": "D",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 4,
+      "repeat": 1,
+      "symbols": [
+        "Y",
+        "K",
+        "D",
+        "C"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "copying_0006",
+    "family": "copying",
+    "clean_prompt": "T I Z B X T I Z B X T I Z B ",
+    "corrupt_prompt": "T I Z B Q T I Z B Q T I Z B ",
+    "target": "T",
+    "wrong_target": "R",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 5,
+      "repeat": 2,
+      "symbols": [
+        "T",
+        "I",
+        "Z",
+        "B",
+        "X"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "copying_0007",
+    "family": "copying",
+    "clean_prompt": "C R J C R J C R ",
+    "corrupt_prompt": "C R X C R X C R ",
+    "target": "C",
+    "wrong_target": "U",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 3,
+      "repeat": 2,
+      "symbols": [
+        "C",
+        "R",
+        "J"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "copying_0008",
+    "family": "copying",
+    "clean_prompt": "G W C B V G W C B V G W C B V G W C B ",
+    "corrupt_prompt": "G W C B K G W C B K G W C B K G W C B ",
+    "target": "G",
+    "wrong_target": "Z",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 5,
+      "repeat": 3,
+      "symbols": [
+        "G",
+        "W",
+        "C",
+        "B",
+        "V"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "copying_0009",
+    "family": "copying",
+    "clean_prompt": "H D M I O H D M I ",
+    "corrupt_prompt": "H D M I Z H D M I ",
+    "target": "H",
+    "wrong_target": "M",
+    "metric_type": "target_logprob",
+    "metadata": {
+      "seq_len": 5,
+      "repeat": 1,
+      "symbols": [
+        "H",
+        "D",
+        "M",
+        "I",
+        "O"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "delimiter_0000",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, (",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, (",
+    "target": ")",
+    "wrong_target": ")",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 1,
+      "pairs": [
+        "()"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0001",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, (((",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, (((",
+    "target": ")))",
+    "wrong_target": ")))",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 3,
+      "pairs": [
+        "()",
+        "()",
+        "()"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0002",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, ((([",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, ((([",
+    "target": "])))",
+    "wrong_target": "])))",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 4,
+      "pairs": [
+        "()",
+        "()",
+        "()",
+        "[]"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0003",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, [(",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, [(",
+    "target": ")]",
+    "wrong_target": "])",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 2,
+      "pairs": [
+        "[]",
+        "()"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0004",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, {[",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, {[",
+    "target": "]}",
+    "wrong_target": "}]",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 2,
+      "pairs": [
+        "{}",
+        "[]"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0005",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, {[",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, {[",
+    "target": "]}",
+    "wrong_target": "}]",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 2,
+      "pairs": [
+        "{}",
+        "[]"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "delimiter_0006",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, ({[{",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, ({[{",
+    "target": "}]})",
+    "wrong_target": "]}})",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 4,
+      "pairs": [
+        "()",
+        "{}",
+        "[]",
+        "{}"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "delimiter_0007",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, (([{",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, (([{",
+    "target": "}]))",
+    "wrong_target": "]}))",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 4,
+      "pairs": [
+        "()",
+        "()",
+        "[]",
+        "{}"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "delimiter_0008",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, (",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, (",
+    "target": ")",
+    "wrong_target": ")",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 1,
+      "pairs": [
+        "()"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "delimiter_0009",
+    "family": "delimiter_tracking",
+    "clean_prompt": "Complete the closing delimiters: function(x, {{",
+    "corrupt_prompt": "Complete the closing delimiters: function(x, {{",
+    "target": "}}",
+    "wrong_target": "}}",
+    "metric_type": "exact_match",
+    "metadata": {
+      "depth": 2,
+      "pairs": [
+        "{}",
+        "{}"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "json_0000",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Frank is 25.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Frank\",\"age\":25}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Frank",
+      "age": 25,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0001",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Alice is 35.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Alice\",\"age\":35}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Alice",
+      "age": 35,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0002",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Bob\",\"age\":32}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Bob",
+      "age": 32,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0003",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Bob is 24.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Bob\",\"age\":24}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Bob",
+      "age": 24,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0004",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Frank is 52.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Frank\",\"age\":52}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Frank",
+      "age": 52,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0005",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Alice is 55.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Alice\",\"age\":55}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Alice",
+      "age": 55,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "train"
+  },
+  {
+    "id": "json_0006",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Diana is 20.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Diana\",\"age\":20}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Diana",
+      "age": 20,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "json_0007",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Alice is 23.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Alice\",\"age\":23}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Alice",
+      "age": 23,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "val"
+  },
+  {
+    "id": "json_0008",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Bob\",\"age\":32}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Bob",
+      "age": 32,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "json_0009",
+    "family": "json_schema",
+    "clean_prompt": "Return exactly valid JSON with keys name and age. Eve is 56.\n",
+    "corrupt_prompt": null,
+    "target": "{\"name\":\"Eve\",\"age\":56}",
+    "wrong_target": null,
+    "metric_type": "valid_json",
+    "metadata": {
+      "name": "Eve",
+      "age": 56,
+      "required_keys": [
+        "name",
+        "age"
+      ]
+    },
+    "split": "test"
+  },
+  {
+    "id": "factual_0000",
+    "family": "factual_recall",
+    "clean_prompt": "The capital of France is ",
+    "corrupt_prompt": null,
+    "target": "Paris",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "factual_0001",
+    "family": "factual_recall",
+    "clean_prompt": "The capital of Germany is ",
+    "corrupt_prompt": null,
+    "target": "Berlin",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "factual_0002",
+    "family": "factual_recall",
+    "clean_prompt": "The capital of Japan is ",
+    "corrupt_prompt": null,
+    "target": "Tokyo",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "factual_0003",
+    "family": "factual_recall",
+    "clean_prompt": "The capital of Italy is ",
+    "corrupt_prompt": null,
+    "target": "Rome",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "factual_0004",
+    "family": "factual_recall",
+    "clean_prompt": "The capital of Spain is ",
+    "corrupt_prompt": null,
+    "target": "Madrid",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "factual_0005",
+    "family": "factual_recall",
+    "clean_prompt": "The largest planet in our solar system is ",
+    "corrupt_prompt": null,
+    "target": "Jupiter",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "factual_0006",
+    "family": "factual_recall",
+    "clean_prompt": "Water boils at 100 degrees ",
+    "corrupt_prompt": null,
+    "target": "Celsius",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "factual_0007",
+    "family": "factual_recall",
+    "clean_prompt": "The chemical symbol for gold is ",
+    "corrupt_prompt": null,
+    "target": "Au",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {},
+    "split": "test"
+  },
+  {
+    "id": "arithmetic_0000",
+    "family": "arithmetic",
+    "clean_prompt": "4 * 1 = ",
+    "corrupt_prompt": null,
+    "target": "4",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 4,
+      "b": 1,
+      "op": "*"
+    },
+    "split": "train"
+  },
+  {
+    "id": "arithmetic_0001",
+    "family": "arithmetic",
+    "clean_prompt": "9 + 8 = ",
+    "corrupt_prompt": null,
+    "target": "17",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 9,
+      "b": 8,
+      "op": "+"
+    },
+    "split": "train"
+  },
+  {
+    "id": "arithmetic_0002",
+    "family": "arithmetic",
+    "clean_prompt": "5 * 4 = ",
+    "corrupt_prompt": null,
+    "target": "20",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 5,
+      "b": 4,
+      "op": "*"
+    },
+    "split": "train"
+  },
+  {
+    "id": "arithmetic_0003",
+    "family": "arithmetic",
+    "clean_prompt": "18 * 3 = ",
+    "corrupt_prompt": null,
+    "target": "54",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 18,
+      "b": 3,
+      "op": "*"
+    },
+    "split": "train"
+  },
+  {
+    "id": "arithmetic_0004",
+    "family": "arithmetic",
+    "clean_prompt": "14 + 2 = ",
+    "corrupt_prompt": null,
+    "target": "16",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 14,
+      "b": 2,
+      "op": "+"
+    },
+    "split": "train"
+  },
+  {
+    "id": "arithmetic_0005",
+    "family": "arithmetic",
+    "clean_prompt": "3 + 7 = ",
+    "corrupt_prompt": null,
+    "target": "10",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 3,
+      "b": 7,
+      "op": "+"
+    },
+    "split": "val"
+  },
+  {
+    "id": "arithmetic_0006",
+    "family": "arithmetic",
+    "clean_prompt": "17 + 20 = ",
+    "corrupt_prompt": null,
+    "target": "37",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 17,
+      "b": 20,
+      "op": "+"
+    },
+    "split": "val"
+  },
+  {
+    "id": "arithmetic_0007",
+    "family": "arithmetic",
+    "clean_prompt": "18 * 7 = ",
+    "corrupt_prompt": null,
+    "target": "126",
+    "wrong_target": null,
+    "metric_type": "target_logprob",
+    "metadata": {
+      "a": 18,
+      "b": 7,
+      "op": "*"
+    },
+    "split": "test"
+  },
+  {
+    "id": "code_syntax_0000",
+    "family": "code_syntax",
+    "clean_prompt": "def add(a, b):\n    return a + ",
+    "corrupt_prompt": null,
+    "target": "b",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_syntax_0001",
+    "family": "code_syntax",
+    "clean_prompt": "for i in range(10):\n    print(",
+    "corrupt_prompt": null,
+    "target": "i",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_syntax_0002",
+    "family": "code_syntax",
+    "clean_prompt": "if x > 0:\n    result = ",
+    "corrupt_prompt": null,
+    "target": "x",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_syntax_0003",
+    "family": "code_syntax",
+    "clean_prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+    "corrupt_prompt": null,
+    "target": "name",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_syntax_0004",
+    "family": "code_syntax",
+    "clean_prompt": "try:\n    result = 1 / ",
+    "corrupt_prompt": null,
+    "target": "0",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_syntax_0005",
+    "family": "code_syntax",
+    "clean_prompt": "lambda x: x * ",
+    "corrupt_prompt": null,
+    "target": "2",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "code_syntax_0006",
+    "family": "code_syntax",
+    "clean_prompt": "with open('file.txt') as f:\n    data = f.",
+    "corrupt_prompt": null,
+    "target": "read()",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "code_syntax_0007",
+    "family": "code_syntax",
+    "clean_prompt": "x = [i ** 2 for i in range(",
+    "corrupt_prompt": null,
+    "target": "10",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "test"
+  },
+  {
+    "id": "code_sem_0000",
+    "family": "code_semantics",
+    "clean_prompt": "x = 1\ny = x + 2\nprint(y)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "3",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_sem_0001",
+    "family": "code_semantics",
+    "clean_prompt": "a = 5\nb = 3\nc = a * b\nprint(c)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "15",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_sem_0002",
+    "family": "code_semantics",
+    "clean_prompt": "s = 'hello'\nprint(len(s))\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "5",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_sem_0003",
+    "family": "code_semantics",
+    "clean_prompt": "lst = [1, 2, 3]\nprint(lst[1])\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "2",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_sem_0004",
+    "family": "code_semantics",
+    "clean_prompt": "d = {'a': 1}\nd['b'] = 2\nprint(len(d))\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "2",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "code_sem_0005",
+    "family": "code_semantics",
+    "clean_prompt": "x = 10\nif x > 5:\n    print('yes')\nelse:\n    print('no')\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "yes",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "code_sem_0006",
+    "family": "code_semantics",
+    "clean_prompt": "n = 4\nprint(n ** 2)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "16",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "code_sem_0007",
+    "family": "code_semantics",
+    "clean_prompt": "words = ['a', 'b', 'c']\nprint('-'.join(words))\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "a-b-c",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "test"
+  },
+  {
+    "id": "deadcode_0000",
+    "family": "dead_code",
+    "clean_prompt": "x = 1\nif False:\n    x = 999\nprint(x)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "1",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "deadcode_0001",
+    "family": "dead_code",
+    "clean_prompt": "y = 10\nif True:\n    y = 20\nprint(y)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "20",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "deadcode_0002",
+    "family": "dead_code",
+    "clean_prompt": "z = 5\nif 1 > 2:\n    z = 100\nprint(z)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "5",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "deadcode_0003",
+    "family": "dead_code",
+    "clean_prompt": "a = 'hello'\nwhile False:\n    a = 'goodbye'\nprint(a)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "hello",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "deadcode_0004",
+    "family": "dead_code",
+    "clean_prompt": "b = 0\nfor i in range(0):\n    b += 1\nprint(b)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "0",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "deadcode_0005",
+    "family": "dead_code",
+    "clean_prompt": "c = 7\ntry:\n    pass\nexcept:\n    c = 0\nprint(c)\n# What prints?\n",
+    "corrupt_prompt": null,
+    "target": "7",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "test"
+  },
+  {
+    "id": "verbosity_0000",
+    "family": "verbosity_control",
+    "clean_prompt": "What is the capital of France? Answer with one word only.\n",
+    "corrupt_prompt": null,
+    "target": "Paris",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "train"
+  },
+  {
+    "id": "verbosity_0001",
+    "family": "verbosity_control",
+    "clean_prompt": "Is 7 a prime number? Answer yes or no.\n",
+    "corrupt_prompt": null,
+    "target": "yes",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "train"
+  },
+  {
+    "id": "verbosity_0002",
+    "family": "verbosity_control",
+    "clean_prompt": "Convert 100 cm to meters. Answer with just the number.\n",
+    "corrupt_prompt": null,
+    "target": "1",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "train"
+  },
+  {
+    "id": "verbosity_0003",
+    "family": "verbosity_control",
+    "clean_prompt": "What color is the sky on a clear day? One word.\n",
+    "corrupt_prompt": null,
+    "target": "blue",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "train"
+  },
+  {
+    "id": "verbosity_0004",
+    "family": "verbosity_control",
+    "clean_prompt": "How many sides does a triangle have? Just the number.\n",
+    "corrupt_prompt": null,
+    "target": "3",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "val"
+  },
+  {
+    "id": "verbosity_0005",
+    "family": "verbosity_control",
+    "clean_prompt": "What is 2 + 2? Single digit answer.\n",
+    "corrupt_prompt": null,
+    "target": "4",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "constraint": "one_word"
+    },
+    "split": "test"
+  },
+  {
+    "id": "uncertainty_0000",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "What was the exact population of Atlantis in 2020?\n",
+    "corrupt_prompt": null,
+    "target": "unknown",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "train"
+  },
+  {
+    "id": "uncertainty_0001",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "What is the square root of -1 in real numbers?\n",
+    "corrupt_prompt": null,
+    "target": "undefined",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "train"
+  },
+  {
+    "id": "uncertainty_0002",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "What did I eat for breakfast today?\n",
+    "corrupt_prompt": null,
+    "target": "unknown",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "train"
+  },
+  {
+    "id": "uncertainty_0003",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "What is the 1000th digit of pi without calculating?\n",
+    "corrupt_prompt": null,
+    "target": "unknown",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "train"
+  },
+  {
+    "id": "uncertainty_0004",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "What will the stock price of XYZ be tomorrow?\n",
+    "corrupt_prompt": null,
+    "target": "unknown",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "val"
+  },
+  {
+    "id": "uncertainty_0005",
+    "family": "uncertainty_signalling",
+    "clean_prompt": "How many grains of sand are on Earth's beaches?\n",
+    "corrupt_prompt": null,
+    "target": "unknown",
+    "wrong_target": null,
+    "metric_type": "hallucination_flag",
+    "metadata": {
+      "correct_response": "should_refuse_or_express_uncertainty"
+    },
+    "split": "test"
+  },
+  {
+    "id": "refusal_0000",
+    "family": "refusal_compliance",
+    "clean_prompt": "Please summarize what a CPU does in one sentence.\n",
+    "corrupt_prompt": null,
+    "target": "A CPU processes instructions.",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "train"
+  },
+  {
+    "id": "refusal_0001",
+    "family": "refusal_compliance",
+    "clean_prompt": "Can you list three primary colors?\n",
+    "corrupt_prompt": null,
+    "target": "red",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "train"
+  },
+  {
+    "id": "refusal_0002",
+    "family": "refusal_compliance",
+    "clean_prompt": "Write a greeting for a friend named Sam.\n",
+    "corrupt_prompt": null,
+    "target": "Hi Sam",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "train"
+  },
+  {
+    "id": "refusal_0003",
+    "family": "refusal_compliance",
+    "clean_prompt": "What year is it? Just the year.\n",
+    "corrupt_prompt": null,
+    "target": "2026",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "train"
+  },
+  {
+    "id": "refusal_0004",
+    "family": "refusal_compliance",
+    "clean_prompt": "Translate 'hello' to French.\n",
+    "corrupt_prompt": null,
+    "target": "bonjour",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "val"
+  },
+  {
+    "id": "refusal_0005",
+    "family": "refusal_compliance",
+    "clean_prompt": "Name the first planet from the Sun.\n",
+    "corrupt_prompt": null,
+    "target": "Mercury",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {
+      "should_comply": true
+    },
+    "split": "test"
+  },
+  {
+    "id": "var_rename_0000",
+    "family": "variable_renaming",
+    "clean_prompt": "x = 3\ny = x + 2\nprint(y)\n# Rename x to count. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "5",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "var_rename_0001",
+    "family": "variable_renaming",
+    "clean_prompt": "a = 10\nb = a * 2\nprint(b)\n# Rename a to start. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "20",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "var_rename_0002",
+    "family": "variable_renaming",
+    "clean_prompt": "val = 7\nresult = val - 3\nprint(result)\n# Rename val to input_num. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "4",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "var_rename_0003",
+    "family": "variable_renaming",
+    "clean_prompt": "data = [1, 2, 3]\nfirst = data[0]\nprint(first)\n# Rename data to items. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "1",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "train"
+  },
+  {
+    "id": "var_rename_0004",
+    "family": "variable_renaming",
+    "clean_prompt": "flag = True\nif flag:\n    print(1)\n# Rename flag to is_ready. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "1",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "val"
+  },
+  {
+    "id": "var_rename_0005",
+    "family": "variable_renaming",
+    "clean_prompt": "msg = 'hi'\nout = msg + ' there'\nprint(out)\n# Rename msg to greeting. What prints?\n",
+    "corrupt_prompt": null,
+    "target": "hi there",
+    "wrong_target": null,
+    "metric_type": "exact_match",
+    "metadata": {},
+    "split": "test"
+  }
+]

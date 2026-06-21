@@ -1,0 +1,30 @@
+# Compute configuration
+
+device: "auto"
+dtype: "float32"
+
+# Memory limits
+max_gpu_memory_fraction: 0.9
+max_cpu_memory_gb: 16
+
+# Batch sizing
+max_batch_size_inference: 16
+max_batch_size_training: 4
+max_batch_size_ablation: 8
+
+# Parallelism
+num_workers_dataloader: 2
+pin_memory: true
+
+# Checkpointing
+gradient_checkpointing: true
+activation_checkpointing: false
+
+# Logging
+log_level: "INFO"
+log_file: "experiments/logs/compute.log"
+
+# Hardware hints
+# micro: CPU-only, i5-7500T, 16GB RAM
+# aero: RTX 2070 Super 8GB, Ubuntu 24.04
+# Target GPU for training: aero

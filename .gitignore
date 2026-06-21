@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Model weights (large files)
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+!experiments/adapters/**/adapter_config.json
+
+# Cached data
+data/cached_activations/*.pt
+data/cached_logits/*.pt
+
+# Logs
+experiments/logs/*.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temporary
+/tmp/
+*.tmp

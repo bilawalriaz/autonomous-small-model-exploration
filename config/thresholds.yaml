@@ -1,0 +1,35 @@
+# Statistical thresholds for significance
+
+ablation:
+  min_effect_nats: 0.5
+  min_effect_relative: 0.05
+  significance_p_value: 0.05
+  min_replications: 3
+
+patching:
+  min_normalized_recovery: 0.1
+  min_absolute_recovery: 0.05
+  noise_ceiling: 0.95
+
+steering:
+  min_effect: 0.05
+  max_collateral_damage: 0.1
+  min_selectivity_ratio: 2.0
+
+probes:
+  min_accuracy_above_chance: 0.1
+  chance_level:
+    binary: 0.5
+    multiclass: null  # computed per-task
+
+training:
+  min_skill_delta: 0.05
+  overfit_threshold: 0.15
+  min_generalization_gap: 0.0
+
+atlas:
+  confidence_levels:
+    low: "single ablation effect, no patching, no controls"
+    medium: "consistent ablation + some patching + at least one control"
+    high: "strong patching + held-out replication + steering + controls"
+    very_high: "all above + replicated across seeds + selective knockout + circuit evidence"

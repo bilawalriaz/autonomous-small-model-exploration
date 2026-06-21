@@ -1,0 +1,31 @@
+# Plotting configuration
+
+style:
+  figure_dpi: 150
+  figsize_default: [10, 6]
+  colormap: "RdYlBu_r"
+  font_size: 11
+  save_format: "png"
+  tight_layout: true
+  seaborn_style: "whitegrid"
+
+heatmaps:
+  figsize: [12, 8]
+  annot: true
+  fmt: ".2f"
+  linewidths: 0.5
+  cbar_kws:
+    shrink: 0.8
+
+line_plots:
+  linewidth: 2
+  marker_size: 6
+  grid: true
+
+bar_plots:
+  edge_color: "black"
+  alpha: 0.8
+
+output_dir: "experiments/plots"
+save_data_tables: true
+data_table_dir: "experiments/tables"
