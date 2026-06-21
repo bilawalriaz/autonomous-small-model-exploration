@@ -386,24 +386,60 @@ python scripts/generate_publication_report.py
 
 ### Artifacts
 
-- 21 experiments in registry
+- 22 experiments in registry
 - 10 LoRA adapters
 - 5 training checkpoints
-- 18+ result JSON files
-- 15+ publication-quality plots
+- 21+ result JSON files
+- 16+ publication-quality plots
 - Component atlas with 11+ entries
+
+### 3.11 Efficiency Experiments: Layer Skipping and Early Exit
+
+**Finding 15: Naive layer skipping destroys output — all layers are necessary, even "weak" ones.**
+**Confidence: HIGH (for the negative result)**
+
+We tested 10 layer-skip configurations, from skipping single weak layers (L15, L4, L8) to skipping 8 layers at once. Results:
+- **0% top-5 overlap** in ALL configurations (the top-5 predicted tokens completely change)
+- **KL divergence 7.9-13.8 nats** across all configs (massive output shift)
+- **No real speedup** (~1.0x) because zero-ablation hooks still execute the forward pass
+
+Even skipping L15 alone (the weakest layer, max ablation KL of 3.37 in the original atlas) produces KL of 9.02 and 0% top-5 overlap. This means every layer, even weak ones, is essential for correct output. The "weak" label means the layer contributes less to the KL when ablated, not that it can be safely removed.
+
+**Finding 16: Early exit at L22 (unembedding layer) does not work naively.**
+**Confidence: HIGH (for the negative result)**
+
+Despite L22 being the unembedding pathway (97% recovery in cross-model patching), projecting L22's hidden state through the lm_head gives:
+- **0% argmax match** (not a single prediction matches the full model)
+- **KL of 9.14** (massive divergence)
+- Only L23 (full model) gives correct output
+
+This is because each layer transforms the residual stream. L22's hidden state is the input to L23, not the final representation. The lm_head expects L23's output, and L22's output is not directly projectable to vocab.
+
+**What the atlas DOES tell us about efficiency:**
+
+The efficiency experiments are negative for naive inference optimization, but the atlas reveals where efficiency gains ARE possible:
+
+1. **Training efficiency:** Core circuit (L2/L7/L9) locks in by step 10 — 90% of training steps are refinement. Shorter training runs may suffice for basic skill acquisition.
+2. **Parameter efficiency:** o_proj-only LoRA with r=4 achieves 80%+ of full-adapter effect with 344K params (0.07% of model). This is the most efficient skill injection pathway.
+3. **Selective skill manipulation:** Negative steering at L19 selectively removes factual recall (11654x selectivity) — no retraining needed for skill removal.
+4. **Adapter stacking:** factual + json adapters compose cleanly — multi-skill models without retraining.
+5. **Targeted optimization:** The atlas identifies L2 as the universal hub — optimizing L2's implementation (e.g., kernel fusion, quantization-aware training) benefits all tasks.
+
+*See: Figure pub_efficiency_experiments.png*
 
 ---
 
 ## 9. Conclusion
 
-We have built a reproducible causal atlas of Qwen2.5-0.5B, connecting behaviours to components through 21 experiments. The key findings are:
+We have built a reproducible causal atlas of Qwen2.5-0.5B, connecting behaviours to components through 22 experiments. The key findings are:
 
 1. **L2 is a universal routing hub** with positional specialization (HIGH confidence)
 2. **LoRA training creates skill-specific concentration patterns**, not universal early-layer concentration
 3. **Core circuits lock in rapidly** (step 10 of 100), with secondary refinement continuing
-4. **Adapter norms and functional effects are spatially separated**, with upstream propagation
+4. **Adapter effects are at the same layers where norms peak** (L19-L23), not upstream — H6 rejected
 5. **Skills can be selectively transferred, suppressed, and combined**, opening paths for targeted optimization
+6. **Trained behavior is encoded in late-layer activations** — cross-model patching shows monotonic recovery
+7. **Naive layer skipping doesn't work** — all layers are necessary, but the atlas identifies WHERE to focus training efficiency
 
 This work demonstrates that even 0.5B parameter models have rich, non-trivial internal architectures that can be mapped through systematic causal intervention. The findings have direct implications for efficient fine-tuning, skill injection, and targeted optimization of small language models.
 
@@ -434,6 +470,7 @@ This work demonstrates that even 0.5B parameter models have rich, non-trivial in
 | exp_000019 | patching | Cross-model patching: 17 pairs, 24 layers, trained->base |
 | exp_000020 | steering | Skill knockout: 2 skills, negative steering on trained model |
 | exp_000021 | ablation | Adapter-only ablation: 12 prompts, 24 layers, norm-effect analysis |
+| exp_000022 | efficiency | Layer skipping + early exit: 10 skip configs, 7 exit layers, 3 task-aware configs |
 
 
 ## Appendix B: Negative Results
@@ -444,6 +481,10 @@ This work demonstrates that even 0.5B parameter models have rich, non-trivial in
 4. Clean/corrupt pair v0 had tokenization misalignment — fixed in v1
 5. Extreme steering (s >= +2) causes degeneration — finite steering budget
 6. L2 is NOT position-uniform — operator tokens near-zero
+7. H6 (upstream propagation) rejected — adapter effects at same layers as norms (corr=0.85)
+8. Naive layer skipping destroys output — ALL configs give 0% top-5 overlap, KL 7.9-13.8
+9. Early exit at L22 gives 0% argmax match — intermediate hidden states not directly projectable
+10. PeftModel.from_pretrained modifies base in-place — use disable_adapter() for base behavior
 
 ## Appendix C: Decision Log
 

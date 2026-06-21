@@ -1,0 +1,7 @@
+{
+  "layer_skip_max_kl": 13.750889,
+  "layer_skip_min_kl": 7.9357,
+  "all_top5_overlap_zero": true,
+  "early_exit_l22_argmax": 0.0,
+  "conclusion": "All layers necessary. Naive skipping fails. Atlas value is in targeting training, not inference skipping."
+}

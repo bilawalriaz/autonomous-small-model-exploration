@@ -1,0 +1,2713 @@
+{
+  "experiment": "layer_skipping_and_early_exit",
+  "n_layers": 24,
+  "base_inference_time_ms": 28.71,
+  "part1_layer_skipping": [
+    {
+      "config": "skip_L15",
+      "skip_layers": [
+        15
+      ],
+      "n_skipped": 1,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 7.083631,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00104,
+          "target_prob_ratio": 89.5035,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 6.37316,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.000717,
+          "target_prob_ratio": 1.9018,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 12.202745,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.84625,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.3619,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 6.303718,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000246,
+          "target_prob_ratio": 0.0009,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 9.17523,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 114.8711,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 14.230725,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.6189,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 13.32409,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.000291,
+          "target_prob_ratio": 0.097,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 9.286722,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 7.470249,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 5.4e-05,
+          "target_prob_ratio": 76.8519,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.892478,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.000213,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 9.709658,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.000947,
+          "target_prob_ratio": 79.7328,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 6.855303,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000224,
+          "target_prob_ratio": 188.9132,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.320601,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 10.276202,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 7.6e-05,
+          "target_prob_ratio": 3.3559,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 9.023384,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 37.0806,
+      "inference_time_ms": 28.64,
+      "inference_std_ms": 0.09,
+      "speedup": 1.0024,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L4",
+      "skip_layers": [
+        4
+      ],
+      "n_skipped": 1,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 4.677835,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.5053,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 10.756492,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 2e-06,
+          "target_prob_ratio": 0.0049,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 12.244144,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.46292,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0111,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 6.283134,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000134,
+          "target_prob_ratio": 0.0005,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 8.181356,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 1.4242,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 9.831223,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.005607,
+          "target_prob_ratio": 9.4445,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 10.248668,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.001202,
+          "target_prob_ratio": 0.4007,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 11.109959,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 9.536566,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0007,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 9.860517,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 1e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 13.334005,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 6.4e-05,
+          "target_prob_ratio": 5.3574,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 5.851567,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000187,
+          "target_prob_ratio": 157.9128,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 5.00563,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.005607,
+          "target_prob_ratio": 0.0065,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.633358,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0023,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 8.734492,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 11.6714,
+      "inference_time_ms": 30.29,
+      "inference_std_ms": 1.35,
+      "speedup": 0.9478,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L8",
+      "skip_layers": [
+        8
+      ],
+      "n_skipped": 1,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 11.697639,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 1.1e-05,
+          "target_prob_ratio": 0.9316,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 12.725823,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 2e-06,
+          "target_prob_ratio": 0.0041,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 16.873886,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 9.973171,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0011,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 13.339468,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 13.164322,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 2.548,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 13.309949,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.0104,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 13.18082,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 16.65024,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 16.481701,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 18.372145,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 14.099975,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0173,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 12.30339,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0187,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 11.795518,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 12.29529,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0008,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 13.750889,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 0.2355,
+      "inference_time_ms": 28.94,
+      "inference_std_ms": 0.33,
+      "speedup": 0.992,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L4_L8",
+      "skip_layers": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "n_skipped": 5,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 11.697639,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 1.1e-05,
+          "target_prob_ratio": 0.9316,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 12.725823,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 2e-06,
+          "target_prob_ratio": 0.0041,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 16.873886,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 9.973171,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0011,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 13.339468,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 13.164322,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 2.548,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 13.309949,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.0104,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 13.18082,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 16.65024,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 16.481701,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 18.372145,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 14.099975,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0173,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 12.30339,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0187,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 11.795518,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 12.29529,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0008,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 13.750889,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 0.2355,
+      "inference_time_ms": 33.34,
+      "inference_std_ms": 5.78,
+      "speedup": 0.861,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L15_L4_L8",
+      "skip_layers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        15
+      ],
+      "n_skipped": 6,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 7.083631,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00104,
+          "target_prob_ratio": 89.5035,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 6.37316,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.000717,
+          "target_prob_ratio": 1.9018,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 12.202745,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.84625,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.3619,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 6.303718,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000246,
+          "target_prob_ratio": 0.0009,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 9.17523,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 114.8711,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 14.230725,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.6189,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 13.32409,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.000291,
+          "target_prob_ratio": 0.097,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 9.286722,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 7.470249,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 5.4e-05,
+          "target_prob_ratio": 76.8519,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.892478,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.000213,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 9.709658,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.000947,
+          "target_prob_ratio": 79.7328,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 6.855303,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000224,
+          "target_prob_ratio": 188.9132,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.320601,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 10.276202,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 7.6e-05,
+          "target_prob_ratio": 3.3559,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 9.023384,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 37.0806,
+      "inference_time_ms": 29.05,
+      "inference_std_ms": 0.47,
+      "speedup": 0.988,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L3_L4_L5",
+      "skip_layers": [
+        3,
+        4,
+        5
+      ],
+      "n_skipped": 3,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 5.895541,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 2e-06,
+          "target_prob_ratio": 0.152,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 7.844805,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.002699,
+          "target_prob_ratio": 7.1615,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 13.480191,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.913217,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0063,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 6.793017,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000178,
+          "target_prob_ratio": 0.0007,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.921777,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 5.5e-05,
+          "target_prob_ratio": 4607.0288,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 15.017694,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000563,
+          "target_prob_ratio": 0.9477,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 14.75165,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 4.3e-05,
+          "target_prob_ratio": 0.0142,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 11.471351,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 12.131701,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0642,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 10.594807,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 8e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 12.579056,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.000137,
+          "target_prob_ratio": 11.496,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 6.514299,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000616,
+          "target_prob_ratio": 519.7403,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 6.998184,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000563,
+          "target_prob_ratio": 0.0007,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 9.065757,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.0256,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 9.86487,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 343.1092,
+      "inference_time_ms": 28.86,
+      "inference_std_ms": 0.13,
+      "speedup": 0.9945,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L10_L11_L12",
+      "skip_layers": [
+        10,
+        11,
+        12
+      ],
+      "n_skipped": 3,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 7.948627,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.1251,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 9.663597,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.001209,
+          "target_prob_ratio": 3.2089,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 11.070513,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.08993,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0024,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 9.633253,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 6e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 8.971248,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 31.0695,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 8.454784,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 9e-06,
+          "target_prob_ratio": 0.0155,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 9.285364,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 3.4e-05,
+          "target_prob_ratio": 0.0114,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 13.33194,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 12.397741,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0713,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 12.671163,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 2e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 11.472062,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.092,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 8.275609,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 1.3e-05,
+          "target_prob_ratio": 10.7556,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 10.927588,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 9e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 9.515777,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 10.04728,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 3.0235,
+      "inference_time_ms": 28.84,
+      "inference_std_ms": 0.37,
+      "speedup": 0.9952,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_L14_L15_L16",
+      "skip_layers": [
+        14,
+        15,
+        16
+      ],
+      "n_skipped": 3,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 5.66893,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 3e-05,
+          "target_prob_ratio": 2.6146,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 5.875516,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.002916,
+          "target_prob_ratio": 7.7377,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 13.236622,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.323016,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0017,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 5.805256,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000115,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.77564,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 6.4e-05,
+          "target_prob_ratio": 5321.7353,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 6.467273,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.4965,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 7.337251,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.00131,
+          "target_prob_ratio": 0.4364,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 12.000536,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 10.55665,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.964836,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.00059,
+          "target_prob_ratio": 0.0008,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 8.491012,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00013,
+          "target_prob_ratio": 10.9484,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 5.966774,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000119,
+          "target_prob_ratio": 100.4683,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.409163,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 8.157024,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 7.9357,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 362.9631,
+      "inference_time_ms": 28.81,
+      "inference_std_ms": 0.1,
+      "speedup": 0.9963,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_6_layers",
+      "skip_layers": [
+        4,
+        5,
+        8,
+        11,
+        15,
+        16
+      ],
+      "n_skipped": 6,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 5.66893,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 3e-05,
+          "target_prob_ratio": 2.6146,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 5.875516,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.002916,
+          "target_prob_ratio": 7.7377,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 13.236622,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.323016,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0017,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 5.805256,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000115,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.77564,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 6.4e-05,
+          "target_prob_ratio": 5321.7353,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 6.467273,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.4965,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 7.337251,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.00131,
+          "target_prob_ratio": 0.4364,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 12.000536,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 10.55665,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.964836,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.00059,
+          "target_prob_ratio": 0.0008,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 8.491012,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00013,
+          "target_prob_ratio": 10.9484,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 5.966774,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000119,
+          "target_prob_ratio": 100.4683,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.409163,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 8.157024,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 7.9357,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 362.9631,
+      "inference_time_ms": 28.88,
+      "inference_std_ms": 0.09,
+      "speedup": 0.9941,
+      "base_time_ms": 28.71
+    },
+    {
+      "config": "skip_8_layers",
+      "skip_layers": [
+        4,
+        5,
+        8,
+        10,
+        11,
+        14,
+        15,
+        16
+      ],
+      "n_skipped": 8,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 5.66893,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 3e-05,
+          "target_prob_ratio": 2.6146,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 5.875516,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.002916,
+          "target_prob_ratio": 7.7377,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 13.236622,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.323016,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0017,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 5.805256,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000115,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.77564,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 6.4e-05,
+          "target_prob_ratio": 5321.7353,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 6.467273,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.4965,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "dead_code",
+          "kl": 7.337251,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.00131,
+          "target_prob_ratio": 0.4364,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 12.000536,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 10.55665,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.964836,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.00059,
+          "target_prob_ratio": 0.0008,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 8.491012,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00013,
+          "target_prob_ratio": 10.9484,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 5.966774,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000119,
+          "target_prob_ratio": 100.4683,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 7.409163,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 8.157024,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 7.9357,
+      "mean_top5_overlap": 0.0,
+      "mean_prob_ratio": 362.9631,
+      "inference_time_ms": 28.99,
+      "inference_std_ms": 0.19,
+      "speedup": 0.9903,
+      "base_time_ms": 28.71
+    }
+  ],
+  "part2_early_exit": [
+    {
+      "exit_layer": 23,
+      "layers_skipped": 0,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 0.0,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 1.2e-05,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 0.0,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 0.000377,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "json_schema",
+          "kl": 0.0,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 0.142043,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "factual_recall",
+          "kl": 0.0,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "arithmetic",
+          "kl": 0.0,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 0.268022,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "code_syntax",
+          "kl": 0.0,
+          "target_prob_full": 0.0,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "code_semantics",
+          "kl": 0.0,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.000594,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "dead_code",
+          "kl": 0.0,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.003,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 0.0,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 0.275918,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 0.0,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 0.0,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 0.748269,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 0.0,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 1.2e-05,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "copying",
+          "kl": 0.0,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "copying",
+          "kl": 0.0,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 0.857626,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        },
+        {
+          "family": "copying",
+          "kl": 0.0,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 2.3e-05,
+          "target_prob_ratio": 1.0,
+          "top5_overlap": 1.0,
+          "argmax_match": 1
+        }
+      ],
+      "mean_kl": 0.0,
+      "mean_top5_overlap": 1.0,
+      "mean_argmax_match": 1.0,
+      "mean_prob_ratio": 1.0,
+      "theoretical_speedup": 1.0
+    },
+    {
+      "exit_layer": 22,
+      "layers_skipped": 1,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 12.156124,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0044,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 8.891694,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 5.947393,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 0.001291,
+          "target_prob_ratio": 0.0091,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 8.90595,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 2.8e-05,
+          "target_prob_ratio": 18.7868,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 11.450707,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 5e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 12.007957,
+          "target_prob_full": 0.0,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 60.7792,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 7.943398,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0005,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 8.017613,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 5.234167,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 0.002124,
+          "target_prob_ratio": 0.0077,
+          "top5_overlap": 0.4,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 9.090734,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 6.2844,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 9.519986,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 1.9e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 7.603497,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0134,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 11.336215,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.7137,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.433911,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 2.1e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.61471,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 0.147,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.143604,
+      "mean_top5_overlap": 0.0267,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 5.7832,
+      "theoretical_speedup": 1.0435
+    },
+    {
+      "exit_layer": 21,
+      "layers_skipped": 2,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 13.664746,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0017,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 9.98046,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 6.998935,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 0.000572,
+          "target_prob_ratio": 0.004,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 9.650356,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 2.5e-05,
+          "target_prob_ratio": 16.4786,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 13.494033,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 12.913781,
+          "target_prob_full": 0.0,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 50.5582,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 10.104626,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 9.965306,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 6.77696,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 0.001811,
+          "target_prob_ratio": 0.0066,
+          "top5_overlap": 0.4,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 9.895288,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 5.3107,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 11.924172,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 9.779355,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0025,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 12.548569,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.4132,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 13.028584,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 9.608768,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 0.0659,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 10.688929,
+      "mean_top5_overlap": 0.0267,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 4.8561,
+      "theoretical_speedup": 1.0909
+    },
+    {
+      "exit_layer": 20,
+      "layers_skipped": 3,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 11.163617,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0237,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 9.248206,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0006,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 7.143332,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 0.000227,
+          "target_prob_ratio": 0.0016,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.627438,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 1.1e-05,
+          "target_prob_ratio": 7.1014,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 11.091138,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 11.529766,
+          "target_prob_full": 0.0,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 159.2674,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 9.654165,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0002,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 9.470629,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 7.982922,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 5.5e-05,
+          "target_prob_ratio": 0.0002,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 8.600876,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 7e-06,
+          "target_prob_ratio": 10.1028,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 11.206435,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 10.003184,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0065,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.95695,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 1.7188,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 11.181835,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 9e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.799291,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.1704,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.710652,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 11.8929,
+      "theoretical_speedup": 1.1429
+    },
+    {
+      "exit_layer": 19,
+      "layers_skipped": 4,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 10.369135,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0484,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 8.875301,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0013,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 7.669333,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 8e-05,
+          "target_prob_ratio": 0.0006,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.355344,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 1e-05,
+          "target_prob_ratio": 6.3043,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 11.009183,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 11.64834,
+          "target_prob_full": 0.0,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 128.0215,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 10.652787,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0005,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 10.306761,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 8.685497,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 8e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 8.800282,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1e-05,
+          "target_prob_ratio": 14.7837,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 11.116647,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 10.564433,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0159,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.698682,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 1.4062,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.574715,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 1.6e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.786174,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.1631,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.807508,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 10.0497,
+      "theoretical_speedup": 1.2
+    },
+    {
+      "exit_layer": 18,
+      "layers_skipped": 5,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 9.65295,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0807,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 8.378673,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0024,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 8.137203,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 3.2e-05,
+          "target_prob_ratio": 0.0002,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.700749,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 9e-06,
+          "target_prob_ratio": 5.8056,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 11.48895,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 2e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 11.665063,
+          "target_prob_full": 0.0,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 269.4137,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 10.786415,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0007,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 10.599397,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 8.850248,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 5e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 8.872578,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1.1e-05,
+          "target_prob_ratio": 16.2132,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 11.148492,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 10.42371,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0277,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.360119,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 2.1249,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.450864,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 1.8e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.512545,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 5e-06,
+          "target_prob_ratio": 0.2004,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.801864,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 19.5913,
+      "theoretical_speedup": 1.2632
+    },
+    {
+      "exit_layer": 17,
+      "layers_skipped": 6,
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 9.303804,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0975,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 8.229092,
+          "target_prob_full": 0.000377,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.0031,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 8.243154,
+          "target_prob_full": 0.142043,
+          "target_prob_early": 2.3e-05,
+          "target_prob_ratio": 0.0002,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.340963,
+          "target_prob_full": 2e-06,
+          "target_prob_early": 1e-05,
+          "target_prob_ratio": 6.5013,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 10.88665,
+          "target_prob_full": 0.268022,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 11.362245,
+          "target_prob_full": 0.0,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 229.7084,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 10.663241,
+          "target_prob_full": 0.000594,
+          "target_prob_early": 1e-06,
+          "target_prob_ratio": 0.001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 10.502539,
+          "target_prob_full": 0.003,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0001,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 8.582901,
+          "target_prob_full": 0.275918,
+          "target_prob_early": 6e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 8.677279,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 1e-05,
+          "target_prob_ratio": 14.6125,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 11.076338,
+          "target_prob_full": 0.748269,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 10.370217,
+          "target_prob_full": 1.2e-05,
+          "target_prob_early": 0.0,
+          "target_prob_ratio": 0.0354,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.036957,
+          "target_prob_full": 1e-06,
+          "target_prob_early": 3e-06,
+          "target_prob_ratio": 2.3838,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.462081,
+          "target_prob_full": 0.857626,
+          "target_prob_early": 1.7e-05,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.341085,
+          "target_prob_full": 2.3e-05,
+          "target_prob_early": 4e-06,
+          "target_prob_ratio": 0.1836,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.605236,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0,
+      "mean_prob_ratio": 16.9018,
+      "theoretical_speedup": 1.3333
+    }
+  ],
+  "part3_selective_computation": [
+    {
+      "config": "simple_skip_mid",
+      "skip_layers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        14,
+        15,
+        16
+      ],
+      "n_skipped": 10,
+      "families": [
+        "copying",
+        "delimiter_tracking",
+        "arithmetic"
+      ],
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 5.66893,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 3e-05,
+          "target_prob_ratio": 2.6146,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 5.875516,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.002916,
+          "target_prob_ratio": 7.7377,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 5.805256,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000115,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 5.966774,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000119,
+          "target_prob_ratio": 100.4683,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 7.409163,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000295,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 8.157024,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0032,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 6.480444,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0
+    },
+    {
+      "config": "complex_skip_mid",
+      "skip_layers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        14,
+        15,
+        16
+      ],
+      "n_skipped": 10,
+      "families": [
+        "factual_recall",
+        "json_schema",
+        "code_syntax"
+      ],
+      "prompts": [
+        {
+          "family": "json_schema",
+          "kl": 13.236622,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 6.323016,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0017,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.77564,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 6.4e-05,
+          "target_prob_ratio": 5321.7353,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.111759,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0
+    },
+    {
+      "config": "all_skip_4_layers",
+      "skip_layers": [
+        4,
+        5,
+        8,
+        15
+      ],
+      "n_skipped": 4,
+      "families": "all",
+      "prompts": [
+        {
+          "family": "copying",
+          "kl": 7.083631,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.00104,
+          "target_prob_ratio": 89.5035,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "delimiter_tracking",
+          "kl": 6.37316,
+          "target_prob_full": 0.000377,
+          "target_prob_skip": 0.000717,
+          "target_prob_ratio": 1.9018,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "json_schema",
+          "kl": 12.202745,
+          "target_prob_full": 0.142043,
+          "target_prob_skip": 0.0,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "factual_recall",
+          "kl": 7.84625,
+          "target_prob_full": 2e-06,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.3619,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "arithmetic",
+          "kl": 6.303718,
+          "target_prob_full": 0.268022,
+          "target_prob_skip": 0.000246,
+          "target_prob_ratio": 0.0009,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 9.17523,
+          "target_prob_full": 0.0,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 114.8711,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "code_semantics",
+          "kl": 14.230725,
+          "target_prob_full": 0.000594,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.6189,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "dead_code",
+          "kl": 13.32409,
+          "target_prob_full": 0.003,
+          "target_prob_skip": 0.000291,
+          "target_prob_ratio": 0.097,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "verbosity_control",
+          "kl": 9.286722,
+          "target_prob_full": 0.275918,
+          "target_prob_skip": 1e-06,
+          "target_prob_ratio": 0.0,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "uncertainty_signalling",
+          "kl": 7.470249,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 5.4e-05,
+          "target_prob_ratio": 76.8519,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "refusal_compliance",
+          "kl": 7.892478,
+          "target_prob_full": 0.748269,
+          "target_prob_skip": 0.000213,
+          "target_prob_ratio": 0.0003,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "variable_renaming",
+          "kl": 9.709658,
+          "target_prob_full": 1.2e-05,
+          "target_prob_skip": 0.000947,
+          "target_prob_ratio": 79.7328,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 6.855303,
+          "target_prob_full": 1e-06,
+          "target_prob_skip": 0.000224,
+          "target_prob_ratio": 188.9132,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 7.320601,
+          "target_prob_full": 0.857626,
+          "target_prob_skip": 0.000367,
+          "target_prob_ratio": 0.0004,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        },
+        {
+          "family": "copying",
+          "kl": 10.276202,
+          "target_prob_full": 2.3e-05,
+          "target_prob_skip": 7.6e-05,
+          "target_prob_ratio": 3.3559,
+          "top5_overlap": 0.0,
+          "argmax_match": 0
+        }
+      ],
+      "mean_kl": 9.023384,
+      "mean_top5_overlap": 0.0,
+      "mean_argmax_match": 0.0
+    }
+  ],
+  "summary": {
+    "best_skip_config": "skip_8_layers",
+    "best_skip_kl": 7.9357,
+    "best_skip_speedup": 0.9903,
+    "best_skip_layers": 8,
+    "best_exit_layer": 23,
+    "best_exit_argmax": 1.0,
+    "best_exit_theoretical_speedup": 1.0
+  }
+}

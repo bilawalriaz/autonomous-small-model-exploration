@@ -42,8 +42,10 @@
 - [x] Cross-model activation patching (trained→base, 17 pairs, 24 layers)
 - [x] Skill knockout (negative steering, 2 skills, 7+ layers)
 - [x] Adapter-only ablation (12 prompts, 24 layers, norm-effect analysis)
+- [x] Layer skipping + early exit efficiency experiments (10 skip configs, 7 exit layers, 3 task-aware)
 - [x] Blog material (publication report generated)
-- [x] Paper/report material (publication report with 15 plots)
+- [x] Paper/report material (publication report with 16 plots)
+- [x] MI-Atlas skill (codified experimentation workflow for reuse with new models)
 
 ## Key findings so far
 1. L2 is a universal importance hub (ablation KL 0.5-11.5 across all families). HIGH confidence.
