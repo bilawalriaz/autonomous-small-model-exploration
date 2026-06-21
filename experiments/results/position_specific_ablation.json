@@ -1,0 +1,5128 @@
+{
+  "experiment": "exp_000018",
+  "timestamp": "2026-06-21T20:49:59.426151+00:00",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "target_layers": [
+    0,
+    1,
+    2,
+    7,
+    9,
+    15,
+    22
+  ],
+  "n_tasks": 11,
+  "results": [
+    {
+      "family": "copying",
+      "prompt": "Repeat: A B C A B\nA B",
+      "target": " C",
+      "n_tokens": 10,
+      "tokens": [
+        "Repeat",
+        ":",
+        " A",
+        " B",
+        " C",
+        " A",
+        " B",
+        "\n",
+        "A",
+        " B"
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -0.2676,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": 0.9434
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.2871
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.1914
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.207
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 1.5293
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.1758
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.0303
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.1855
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.9512
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 3.7637
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": 0.0449
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.1504
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.2754
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.1152
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 0.3613
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.0176
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.1816
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.1738
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.6543
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 3.8887
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": 2.2012
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.1289
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.0801
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.1504
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 0.627
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.002
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.1865
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.1909
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 4.9199
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": 0.0879
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0596
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0186
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.3301
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 0.623
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0039
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.1787
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.1782
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.2832
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 7.8574
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": 3.7637
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.1016
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.0859
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.2246
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 0.7715
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": 0.127
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0859
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.2676
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 9.9199
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": -0.1597
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0156
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0244
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": 0.0039
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": 0.4277
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.0215
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0527
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": 0.0508
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 4.0137
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "Repeat",
+            "position_type": "first",
+            "effect": -0.0039
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0186
+          },
+          "pos_2": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0039
+          },
+          "pos_3": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.0039
+          },
+          "pos_4": {
+            "token": " C",
+            "position_type": "content",
+            "effect": -0.0283
+          },
+          "pos_5": {
+            "token": " A",
+            "position_type": "content",
+            "effect": -0.0283
+          },
+          "pos_6": {
+            "token": " B",
+            "position_type": "content",
+            "effect": -0.0273
+          },
+          "pos_7": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.002
+          },
+          "pos_8": {
+            "token": "A",
+            "position_type": "content",
+            "effect": -0.002
+          },
+          "pos_9": {
+            "token": " B",
+            "position_type": "last",
+            "effect": 18.9824
+          }
+        }
+      }
+    },
+    {
+      "family": "copying",
+      "prompt": "Pattern: 1 2 3 1 2 3\n1 2",
+      "target": " 3",
+      "n_tokens": 18,
+      "tokens": [
+        "Pattern",
+        ":",
+        " ",
+        "1",
+        " ",
+        "2",
+        " ",
+        "3",
+        " ",
+        "1",
+        " ",
+        "2",
+        " ",
+        "3",
+        "\n",
+        "1",
+        " ",
+        "2"
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -0.0664,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.061
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0112
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0605
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0571
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.207
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.1553
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.4277
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0098
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0522
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0513
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.1055
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0176
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0068
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.5508
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 1.1914
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 1.0977
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": 0.0195
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0129
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0173
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0947
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0396
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0283
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.1064
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0571
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0151
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0508
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0137
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0059
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0713
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0186
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0198
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.4492
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.6133
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 1.4492
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.0537
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0205
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0034
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0137
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.042
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0249
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0889
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0532
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0181
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0229
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0015
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0176
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0474
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0317
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.001
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.4004
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.6289
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 2.2773
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.0656
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0188
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0061
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0093
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0161
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0132
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0791
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0029
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.022
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0115
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.022
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0684
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0266
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0977
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.4492
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 1.7852
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.0632
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0339
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0039
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0073
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0161
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0366
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0195
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.043
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0034
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0215
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0039
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0034
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0117
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0376
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.0127
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0239
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.2148
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 0.4727
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.0518
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.002
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0024
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.0015
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0068
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0015
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0063
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0049
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.009
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": -0.002
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0049
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0054
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0085
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0215
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.1494
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 1.2227
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "Pattern",
+            "position_type": "first",
+            "effect": -0.002
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0049
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.001
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0054
+          },
+          "pos_4": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_5": {
+            "token": "2",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_6": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.001
+          },
+          "pos_7": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.001
+          },
+          "pos_9": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0005
+          },
+          "pos_10": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_11": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_12": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0049
+          },
+          "pos_13": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.0005
+          },
+          "pos_14": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0034
+          },
+          "pos_15": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.0024
+          },
+          "pos_16": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_17": {
+            "token": "2",
+            "position_type": "last",
+            "effect": 19.9336
+          }
+        }
+      }
+    },
+    {
+      "family": "delimiter_tracking",
+      "prompt": "Close: ( [ {",
+      "target": "}",
+      "n_tokens": 5,
+      "tokens": [
+        "Close",
+        ":",
+        " (",
+        " [",
+        " {"
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "delimiter",
+        "delimiter",
+        "last"
+      ],
+      "baseline_lp": -9.875,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 0.75
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -1.0625
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": -2.0
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -2.8438
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": -1.9375
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": -0.875
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": -0.5
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -2.5625
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": -1.3125
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 2.0
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.875
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": -0.6875
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -1.5
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": 1.375
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 4.9375
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -1.125
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": -0.1875
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -1.9062
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": -3.0312
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 2.0
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.75
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": -0.0625
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.9375
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": -0.3125
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 1.5
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0625
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": 0.0625
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.125
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": -1.4375
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "Close",
+            "position_type": "first",
+            "effect": 0.0625
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0625
+          },
+          "pos_2": {
+            "token": " (",
+            "position_type": "delimiter",
+            "effect": 0.0625
+          },
+          "pos_3": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.0
+          },
+          "pos_4": {
+            "token": " {",
+            "position_type": "last",
+            "effect": 9.125
+          }
+        }
+      }
+    },
+    {
+      "family": "delimiter_tracking",
+      "prompt": "Complete: def foo(x, [y,",
+      "target": " z",
+      "n_tokens": 9,
+      "tokens": [
+        "Complete",
+        ":",
+        " def",
+        " foo",
+        "(x",
+        ",",
+        " [",
+        "y",
+        ","
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "content",
+        "content",
+        "delimiter",
+        "operator",
+        "delimiter",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -0.2246,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": 3.6816
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.084
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": 0.1289
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 1.0723
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.3105
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 1.1738
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 4.1191
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 6.4316
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": -0.0156
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0723
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": 0.0352
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": 0.0566
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 1.3301
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0488
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.2871
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 6.8066
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 9.9629
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": 3.8379
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0176
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": 0.0586
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": -0.0215
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 0.6738
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0781
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.1641
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 7.3066
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 8.1504
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": 6.1816
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0098
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": 0.0449
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": 0.0352
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 0.3184
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0645
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.0479
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 3.9629
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 4.3691
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": 10.2129
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0352
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": -0.002
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 0.1387
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0166
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.1221
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 3.1973
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 10.4004
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": 0.7324
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0391
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": -0.0273
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": -0.0156
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": 0.123
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.0166
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.1313
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 3.4785
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 9.8379
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "Complete",
+            "position_type": "first",
+            "effect": -0.0049
+          },
+          "pos_1": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0039
+          },
+          "pos_2": {
+            "token": " def",
+            "position_type": "content",
+            "effect": -0.0029
+          },
+          "pos_3": {
+            "token": " foo",
+            "position_type": "content",
+            "effect": -0.0049
+          },
+          "pos_4": {
+            "token": "(x",
+            "position_type": "delimiter",
+            "effect": -0.0059
+          },
+          "pos_5": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.0146
+          },
+          "pos_6": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.0234
+          },
+          "pos_7": {
+            "token": "y",
+            "position_type": "content",
+            "effect": -0.0107
+          },
+          "pos_8": {
+            "token": ",",
+            "position_type": "last",
+            "effect": 17.6504
+          }
+        }
+      }
+    },
+    {
+      "family": "factual_recall",
+      "prompt": "The capital of France is",
+      "target": " Paris",
+      "n_tokens": 5,
+      "tokens": [
+        "The",
+        " capital",
+        " of",
+        " France",
+        " is"
+      ],
+      "position_types": [
+        "first",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -1.1562,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 4.5625
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 5.0625
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 5.5938
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 6.5938
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 5.875
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.2305
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 5.875
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 6.2188
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 2.4844
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 8.1562
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 4.3438
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 2.1094
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 4.625
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 4.6875
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 5.5
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 6.9688
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": -0.1562
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 4.7188
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 11.9688
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 4.4688
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.3594
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.2578
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 3.3125
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 21.4688
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.2344
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.1406
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": 3.2812
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 3.3438
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.0547
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.0391
+          },
+          "pos_3": {
+            "token": " France",
+            "position_type": "content",
+            "effect": -0.0234
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 20.9688
+          }
+        }
+      }
+    },
+    {
+      "family": "factual_recall",
+      "prompt": "The capital of Germany is",
+      "target": " Berlin",
+      "n_tokens": 5,
+      "tokens": [
+        "The",
+        " capital",
+        " of",
+        " Germany",
+        " is"
+      ],
+      "position_types": [
+        "first",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -1.8828,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 6.8672
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 6.1172
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 6.7422
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 5.8984
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 1.4453
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.5156
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 7.1797
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 6.0234
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 3.6172
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 11.2422
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 4.4922
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 2.5234
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 7.1172
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 4.9922
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 6.9922
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 9.6797
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": -0.8359
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.3516
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 4.5859
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 14.4922
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 11.0547
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.6016
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.3984
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 4.2734
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 18.8672
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 0.7734
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.1641
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": 3.6172
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 0.9453
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.0078
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": -0.0078
+          },
+          "pos_3": {
+            "token": " Germany",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 18.3672
+          }
+        }
+      }
+    },
+    {
+      "family": "factual_recall",
+      "prompt": "The capital of Italy is",
+      "target": " Rome",
+      "n_tokens": 5,
+      "tokens": [
+        "The",
+        " capital",
+        " of",
+        " Italy",
+        " is"
+      ],
+      "position_types": [
+        "first",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -2.2188,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 5.5625
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 5.5625
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 4.9062
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 4.5
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 0.2344
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": -0.0781
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 5.0312
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 5.5625
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 4.1875
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 13.4062
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 6.1562
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 1.5
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 5.375
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 4.75
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 10.8438
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 7.4688
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": -0.9609
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": -0.0781
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 4.5
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 14.4062
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 8.5938
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.5469
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.5469
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 3.0
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 20.7812
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 1.4844
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": 0.1406
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 2.5938
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 4.9062
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "The",
+            "position_type": "first",
+            "effect": 0.0
+          },
+          "pos_1": {
+            "token": " capital",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_2": {
+            "token": " of",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_3": {
+            "token": " Italy",
+            "position_type": "content",
+            "effect": 0.0469
+          },
+          "pos_4": {
+            "token": " is",
+            "position_type": "last",
+            "effect": 19.2812
+          }
+        }
+      }
+    },
+    {
+      "family": "code_semantics",
+      "prompt": "x = 5\ny = x + 3\nprint(y)\n# output:",
+      "target": "8",
+      "n_tokens": 18,
+      "tokens": [
+        "x",
+        " =",
+        " ",
+        "5",
+        "\n",
+        "y",
+        " =",
+        " x",
+        " +",
+        " ",
+        "3",
+        "\n",
+        "print",
+        "(y",
+        ")\n",
+        "#",
+        " output",
+        ":"
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "content",
+        "content",
+        "content",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "content",
+        "content",
+        "content",
+        "delimiter",
+        "delimiter_close",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -5.4062,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 5.0312
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.75
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.5312
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 1.9375
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.8125
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 0.25
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.4375
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.9062
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 2.0938
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.5938
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 1.9062
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.9062
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 1.5625
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 1.7812
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": 1.6562
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 2.5938
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 2.4375
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 0.5625
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.1562
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.625
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 1.4062
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.6562
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 0.5938
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.75
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.8438
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 2.0938
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -1.8594
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 1.5625
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.9375
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 3.2812
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 1.375
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": 1.2188
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 1.8438
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.8125
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": -0.0625
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 4.3438
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 1.4062
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 1.8438
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -1.4531
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -2.625
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -2.2656
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 0.5625
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.3438
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 2.25
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 1.0
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 1.8438
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 1.5
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": -0.1562
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.75
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 3.4062
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 8.8438
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.5625
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 1.875
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.5
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 0.25
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.0625
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.7812
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 1.9062
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 1.9375
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.625
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.875
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 2.8438
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": 1.0938
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.9688
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 2.25
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 2.25
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 5.9688
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.3125
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 2.0938
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.4375
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.4375
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -1.0312
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 1.4375
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 2.1875
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.9375
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.8125
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 2.4688
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": -0.0938
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.5312
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 4.0312
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 1.8125
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.0625
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 2.2188
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.2188
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 0.0312
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 1.3125
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": -0.1875
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": -0.125
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": -0.1875
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": -0.1875
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 0.6562
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "x",
+            "position_type": "first",
+            "effect": 0.0938
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_2": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_3": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_4": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_5": {
+            "token": "y",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_6": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_8": {
+            "token": " +",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_9": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_10": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_11": {
+            "token": "\n",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_12": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_13": {
+            "token": "(y",
+            "position_type": "delimiter",
+            "effect": 0.0625
+          },
+          "pos_14": {
+            "token": ")\n",
+            "position_type": "delimiter_close",
+            "effect": 0.0625
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 6.7188
+          }
+        }
+      }
+    },
+    {
+      "family": "code_semantics",
+      "prompt": "a = [1, 2, 3]\nprint(len(a))\n# output:",
+      "target": "3",
+      "n_tokens": 18,
+      "tokens": [
+        "a",
+        " =",
+        " [",
+        "1",
+        ",",
+        " ",
+        "2",
+        ",",
+        " ",
+        "3",
+        "]\n",
+        "print",
+        "(len",
+        "(a",
+        "))\n",
+        "#",
+        " output",
+        ":"
+      ],
+      "position_types": [
+        "first",
+        "operator",
+        "delimiter",
+        "content",
+        "operator",
+        "content",
+        "content",
+        "operator",
+        "content",
+        "content",
+        "delimiter_close",
+        "content",
+        "delimiter",
+        "delimiter",
+        "delimiter_close",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -3.9688,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 1.5
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.8281
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.2812
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.2188
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.1094
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.2031
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": -0.5312
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.4375
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": 3.9375
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": -0.1719
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": 0.6875
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": -0.4062
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.9062
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 2.1562
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": -0.3438
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.0625
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.375
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.2188
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.5938
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.0938
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.4219
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.2031
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": -0.0938
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": 5.2812
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": 0.3125
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": -0.0781
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.2812
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 2.25
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 1.8438
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.4531
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.4844
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.1406
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.2344
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": -0.2344
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.125
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": -0.2188
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": -0.4531
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": 3.4688
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": -0.4531
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": 0.0312
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": -0.625
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 1.4375
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 4.4062
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 8.7812
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.5
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.375
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.25
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.625
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.25
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.2188
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.375
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": 0.25
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": -0.25
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": 3.875
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": 0.0938
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": 0.2812
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": -0.9219
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 3.4688
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 1.0938
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": 0.25
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.125
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.3594
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.125
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.1094
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": 0.0156
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": -0.2344
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": 2.375
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": -0.1719
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": 0.0625
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 0.375
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 2.3438
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 0.0
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": 0.0
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.2344
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.2344
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0156
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.2344
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.25
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": -0.125
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": -0.1094
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": -0.1406
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": -0.125
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": -0.1094
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": -0.2344
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 0.0938
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "a",
+            "position_type": "first",
+            "effect": 0.0
+          },
+          "pos_1": {
+            "token": " =",
+            "position_type": "operator",
+            "effect": -0.1094
+          },
+          "pos_2": {
+            "token": " [",
+            "position_type": "delimiter",
+            "effect": -0.1094
+          },
+          "pos_3": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_5": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_6": {
+            "token": "2",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_7": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_8": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_9": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_10": {
+            "token": "]\n",
+            "position_type": "delimiter_close",
+            "effect": -0.125
+          },
+          "pos_11": {
+            "token": "print",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_12": {
+            "token": "(len",
+            "position_type": "delimiter",
+            "effect": -0.1094
+          },
+          "pos_13": {
+            "token": "(a",
+            "position_type": "delimiter",
+            "effect": -0.125
+          },
+          "pos_14": {
+            "token": "))\n",
+            "position_type": "delimiter_close",
+            "effect": 0.0
+          },
+          "pos_15": {
+            "token": "#",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_16": {
+            "token": " output",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_17": {
+            "token": ":",
+            "position_type": "last",
+            "effect": 10.1562
+          }
+        }
+      }
+    },
+    {
+      "family": "json_schema",
+      "prompt": "Extract as JSON with keys name, age: Alice is 31.\n",
+      "target": "{\"",
+      "n_tokens": 15,
+      "tokens": [
+        "Extract",
+        " as",
+        " JSON",
+        " with",
+        " keys",
+        " name",
+        ",",
+        " age",
+        ":",
+        " Alice",
+        " is",
+        " ",
+        "3",
+        "1",
+        ".\n"
+      ],
+      "position_types": [
+        "first",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "content",
+        "content",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -5.7188,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 5.2812
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": 1.2188
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 2.25
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.2812
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.1875
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.3438
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": -0.625
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.375
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -1.0938
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": -0.625
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.4375
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.2812
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.2812
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 6.2188
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 0.0312
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": -0.9062
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 2.5312
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.25
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.25
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.4375
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.1875
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": 1.8125
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.125
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -0.7188
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": -0.2188
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.3438
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.8438
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 4.0938
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 2.7812
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": -0.3438
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 2.3438
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.1875
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.3438
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.6875
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.4062
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": 0.3438
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.5625
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -0.3438
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.7812
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.6562
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.5312
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 5.0312
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 1.2812
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": -0.7812
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 0.5625
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": -0.2188
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": -0.625
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.25
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": -0.375
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.2188
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -1.1875
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": -0.75
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.5625
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": -0.375
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 4.4062
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 6.9688
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": 0.4062
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 1.75
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": -0.5625
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.6562
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": -0.6562
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.25
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -1.125
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": -0.875
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": -0.4688
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.2812
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 6.5312
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 0.5938
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 1.0312
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.2812
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.1562
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": 0.25
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": 0.1875
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.2188
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 7.5938
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "Extract",
+            "position_type": "first",
+            "effect": 0.0312
+          },
+          "pos_1": {
+            "token": " as",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_2": {
+            "token": " JSON",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_3": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_4": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": -0.125
+          },
+          "pos_5": {
+            "token": " name",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_6": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0312
+          },
+          "pos_7": {
+            "token": " age",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_8": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.0312
+          },
+          "pos_9": {
+            "token": " Alice",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_10": {
+            "token": " is",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_11": {
+            "token": " ",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_12": {
+            "token": "3",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_14": {
+            "token": ".\n",
+            "position_type": "last",
+            "effect": 9.5312
+          }
+        }
+      }
+    },
+    {
+      "family": "json_schema",
+      "prompt": "JSON with keys x, y: x=5, y=10\n",
+      "target": "{\"",
+      "n_tokens": 16,
+      "tokens": [
+        "JSON",
+        " with",
+        " keys",
+        " x",
+        ",",
+        " y",
+        ":",
+        " x",
+        "=",
+        "5",
+        ",",
+        " y",
+        "=",
+        "1",
+        "0",
+        "\n"
+      ],
+      "position_types": [
+        "first",
+        "content",
+        "content",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "operator",
+        "content",
+        "content",
+        "last"
+      ],
+      "baseline_lp": -5.9375,
+      "layer_results": {
+        "L0": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 9.25
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.9375
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.1875
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.9375
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -1.0938
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.4062
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -1.0
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.2188
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.9688
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.4375
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.3125
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": 0.5
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 8.5625
+          }
+        },
+        "L1": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 2.5
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.75
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 1.75
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.2188
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.2812
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.5625
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.6562
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.625
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.4375
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": -0.0312
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": 1.25
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 6.5
+          }
+        },
+        "L2": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 4.75
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.0312
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 1.2188
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.1875
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.4062
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.5938
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.1562
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.125
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": -0.1562
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.1875
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.2812
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": -0.5625
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.7188
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": -0.3438
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 2.4375
+          }
+        },
+        "L7": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 1.1875
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.5625
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.5938
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.5312
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.3125
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.1875
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.125
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.5
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": -0.0625
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.3438
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.25
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.25
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.1562
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 3.25
+          }
+        },
+        "L9": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 8.25
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 1.4375
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": -0.25
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.3125
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.25
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.0312
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.125
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.125
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.25
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 6.75
+          }
+        },
+        "L15": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": 1.7188
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.3438
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": 0.1562
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": -0.1875
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.0312
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0625
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": 0.0625
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.0938
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": 0.0938
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 5.875
+          }
+        },
+        "L22": {
+          "pos_0": {
+            "token": "JSON",
+            "position_type": "first",
+            "effect": -0.0938
+          },
+          "pos_1": {
+            "token": " with",
+            "position_type": "content",
+            "effect": 0.0312
+          },
+          "pos_2": {
+            "token": " keys",
+            "position_type": "content",
+            "effect": -0.1562
+          },
+          "pos_3": {
+            "token": " x",
+            "position_type": "content",
+            "effect": -0.0938
+          },
+          "pos_4": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_5": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.0625
+          },
+          "pos_6": {
+            "token": ":",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_7": {
+            "token": " x",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_8": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_9": {
+            "token": "5",
+            "position_type": "content",
+            "effect": 0.0
+          },
+          "pos_10": {
+            "token": ",",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_11": {
+            "token": " y",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_12": {
+            "token": "=",
+            "position_type": "operator",
+            "effect": 0.0
+          },
+          "pos_13": {
+            "token": "1",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_14": {
+            "token": "0",
+            "position_type": "content",
+            "effect": -0.0312
+          },
+          "pos_15": {
+            "token": "\n",
+            "position_type": "last",
+            "effect": 9.375
+          }
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "L0": {
+      "first": {
+        "mean": 3.9426,
+        "max": 9.25,
+        "n": 11
+      },
+      "operator": {
+        "mean": 0.1227,
+        "max": 2.0938,
+        "n": 18
+      },
+      "content": {
+        "mean": 0.9581,
+        "max": 6.7422,
+        "n": 73
+      },
+      "last": {
+        "mean": 3.2987,
+        "max": 8.5625,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": 0.2651,
+        "max": 3.9375,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": 0.6042,
+        "max": 1.6562,
+        "n": 3
+      }
+    },
+    "L1": {
+      "first": {
+        "mean": 0.1,
+        "max": 2.5,
+        "n": 11
+      },
+      "operator": {
+        "mean": 0.056,
+        "max": 2.0938,
+        "n": 18
+      },
+      "content": {
+        "mean": 1.0084,
+        "max": 7.1797,
+        "n": 73
+      },
+      "last": {
+        "mean": 5.4158,
+        "max": 13.4062,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": 0.7373,
+        "max": 5.2812,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": 0.349,
+        "max": 1.2188,
+        "n": 3
+      }
+    },
+    "L2": {
+      "first": {
+        "mean": 3.336,
+        "max": 6.1562,
+        "n": 11
+      },
+      "operator": {
+        "mean": -0.09,
+        "max": 1.4062,
+        "n": 18
+      },
+      "content": {
+        "mean": 0.7869,
+        "max": 7.3066,
+        "n": 73
+      },
+      "last": {
+        "mean": 5.0309,
+        "max": 10.8438,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": 0.3352,
+        "max": 3.4688,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": -0.1146,
+        "max": 0.0312,
+        "n": 3
+      }
+    },
+    "L7": {
+      "first": {
+        "mean": 5.032,
+        "max": 9.6797,
+        "n": 11
+      },
+      "operator": {
+        "mean": 0.1404,
+        "max": 1.9062,
+        "n": 18
+      },
+      "content": {
+        "mean": 0.3647,
+        "max": 4.7188,
+        "n": 73
+      },
+      "last": {
+        "mean": 5.9293,
+        "max": 14.4922,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": 0.5768,
+        "max": 3.875,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": 0.5417,
+        "max": 1.0938,
+        "n": 3
+      }
+    },
+    "L9": {
+      "first": {
+        "mean": 5.6647,
+        "max": 11.0547,
+        "n": 11
+      },
+      "operator": {
+        "mean": -0.0385,
+        "max": 1.4375,
+        "n": 18
+      },
+      "content": {
+        "mean": 0.3368,
+        "max": 4.2734,
+        "n": 73
+      },
+      "last": {
+        "mean": 9.2049,
+        "max": 21.4688,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": 0.4767,
+        "max": 2.4688,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": -0.0052,
+        "max": 0.0625,
+        "n": 3
+      }
+    },
+    "L15": {
+      "first": {
+        "mean": 0.7427,
+        "max": 1.8125,
+        "n": 11
+      },
+      "operator": {
+        "mean": -0.0171,
+        "max": 0.1562,
+        "n": 18
+      },
+      "content": {
+        "mean": 0.2578,
+        "max": 3.6172,
+        "n": 73
+      },
+      "last": {
+        "mean": 3.3683,
+        "max": 9.8379,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": -0.0264,
+        "max": 0.125,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": -0.1406,
+        "max": -0.1094,
+        "n": 3
+      }
+    },
+    "L22": {
+      "first": {
+        "mean": 0.0019,
+        "max": 0.0938,
+        "n": 11
+      },
+      "operator": {
+        "mean": -0.0074,
+        "max": 0.0938,
+        "n": 18
+      },
+      "content": {
+        "mean": -0.001,
+        "max": 0.1562,
+        "n": 73
+      },
+      "last": {
+        "mean": 14.5536,
+        "max": 20.9688,
+        "n": 11
+      },
+      "delimiter": {
+        "mean": -0.031,
+        "max": 0.0625,
+        "n": 8
+      },
+      "delimiter_close": {
+        "mean": -0.0208,
+        "max": 0.0625,
+        "n": 3
+      }
+    }
+  }
+}
