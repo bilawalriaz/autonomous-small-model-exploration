@@ -1,0 +1,2198 @@
+{
+  "residual": [
+    {
+      "clean_target_logprob": -11.363219261169434,
+      "corrupt_target_logprob": -12.003458976745605,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.022916793823242,
+          "raw_recovery": -0.01945781707763672,
+          "normalized_recovery": -0.030391455894181785
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.047757148742676,
+          "raw_recovery": -0.04429817199707031,
+          "normalized_recovery": -0.06918997825245032
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.045053482055664,
+          "raw_recovery": -0.041594505310058594,
+          "normalized_recovery": -0.06496708076384544
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.035994529724121,
+          "raw_recovery": -0.032535552978515625,
+          "normalized_recovery": -0.05081776745017428
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.229048728942871,
+          "raw_recovery": -0.22558975219726562,
+          "normalized_recovery": -0.3523520123931242
+        },
+        "layer_05": {
+          "patched_target_logprob": -11.945902824401855,
+          "raw_recovery": 0.05755615234375,
+          "normalized_recovery": 0.08989781630768313
+        },
+        "layer_06": {
+          "patched_target_logprob": -11.87653923034668,
+          "raw_recovery": 0.12691974639892578,
+          "normalized_recovery": 0.19823785265290314
+        },
+        "layer_07": {
+          "patched_target_logprob": -11.837950706481934,
+          "raw_recovery": 0.16550827026367188,
+          "normalized_recovery": 0.2585098459796824
+        },
+        "layer_08": {
+          "patched_target_logprob": -11.86277961730957,
+          "raw_recovery": 0.14067935943603516,
+          "normalized_recovery": 0.21972919831977836
+        },
+        "layer_13": {
+          "patched_target_logprob": -11.7988862991333,
+          "raw_recovery": 0.2045726776123047,
+          "normalized_recovery": 0.319525128846784
+        },
+        "layer_21": {
+          "patched_target_logprob": -11.379942893981934,
+          "raw_recovery": 0.6235160827636719,
+          "normalized_recovery": 0.9738791074567283
+        },
+        "layer_22": {
+          "patched_target_logprob": -11.324583053588867,
+          "raw_recovery": 0.6788759231567383,
+          "normalized_recovery": 1.0603464712366313
+        },
+        "layer_23": {
+          "patched_target_logprob": -11.363219261169434,
+          "raw_recovery": 0.6402397155761719,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0000",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -11.745881080627441,
+      "corrupt_target_logprob": -12.259598731994629,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.261041641235352,
+          "raw_recovery": -0.0014429092407226562,
+          "normalized_recovery": -0.0028087593192146613
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.213032722473145,
+          "raw_recovery": 0.046566009521484375,
+          "normalized_recovery": 0.09064514212730566
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.253593444824219,
+          "raw_recovery": 0.006005287170410156,
+          "normalized_recovery": 0.011689859506341521
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.377060890197754,
+          "raw_recovery": -0.117462158203125,
+          "normalized_recovery": -0.22865120147325274
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.068512916564941,
+          "raw_recovery": 0.1910858154296875,
+          "normalized_recovery": 0.3719666141919387
+        },
+        "layer_05": {
+          "patched_target_logprob": -12.246131896972656,
+          "raw_recovery": 0.013466835021972656,
+          "normalized_recovery": 0.02621446817358244
+        },
+        "layer_06": {
+          "patched_target_logprob": -12.268390655517578,
+          "raw_recovery": -0.008791923522949219,
+          "normalized_recovery": -0.01711431074939852
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.31291389465332,
+          "raw_recovery": -0.053315162658691406,
+          "normalized_recovery": -0.10378300709893962
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.249199867248535,
+          "raw_recovery": 0.01039886474609375,
+          "normalized_recovery": 0.020242373837882792
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.267692565917969,
+          "raw_recovery": -0.008093833923339844,
+          "normalized_recovery": -0.01575541331273948
+        },
+        "layer_21": {
+          "patched_target_logprob": -11.936384201049805,
+          "raw_recovery": 0.3232145309448242,
+          "normalized_recovery": 0.6291676567558737
+        },
+        "layer_22": {
+          "patched_target_logprob": -11.756954193115234,
+          "raw_recovery": 0.5026445388793945,
+          "normalized_recovery": 0.978445139157038
+        },
+        "layer_23": {
+          "patched_target_logprob": -11.745881080627441,
+          "raw_recovery": 0.5137176513671875,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0001",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.010123252868652,
+      "corrupt_target_logprob": -12.721210479736328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.728596687316895,
+          "raw_recovery": -0.007386207580566406,
+          "normalized_recovery": -738620.7580566406
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.761382102966309,
+          "raw_recovery": -0.04017162322998047,
+          "normalized_recovery": -4017162.322998047
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.943479537963867,
+          "raw_recovery": -0.22226905822753906,
+          "normalized_recovery": -22226905.822753906
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.831233978271484,
+          "raw_recovery": -0.11002349853515625,
+          "normalized_recovery": -11002349.853515625
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.973725318908691,
+          "raw_recovery": -0.2525148391723633,
+          "normalized_recovery": -25251483.917236328
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.309171676635742,
+          "raw_recovery": -0.5879611968994141,
+          "normalized_recovery": -58796119.689941406
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.31630802154541,
+          "raw_recovery": -0.595097541809082,
+          "normalized_recovery": -59509754.1809082
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.30668830871582,
+          "raw_recovery": -0.5854778289794922,
+          "normalized_recovery": -58547782.89794922
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.328863143920898,
+          "raw_recovery": -0.6076526641845703,
+          "normalized_recovery": -60765266.41845703
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.518451690673828,
+          "raw_recovery": -0.7972412109375,
+          "normalized_recovery": -79724121.09375
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.069403648376465,
+          "raw_recovery": -1.3481931686401367,
+          "normalized_recovery": -134819316.86401367
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.017877578735352,
+          "raw_recovery": -1.2966670989990234,
+          "normalized_recovery": -129666709.89990234
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.010123252868652,
+          "raw_recovery": -1.2889127731323242,
+          "normalized_recovery": -128891277.31323242
+        }
+      },
+      "pair_id": "copying_0002",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.584110260009766,
+      "corrupt_target_logprob": -14.750263214111328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.757851600646973,
+          "raw_recovery": -0.007588386535644531,
+          "normalized_recovery": -0.04567109009091744
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.606585502624512,
+          "raw_recovery": 0.1436777114868164,
+          "normalized_recovery": 0.8647316098815319
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.579867362976074,
+          "raw_recovery": 0.1703958511352539,
+          "normalized_recovery": 1.0255360914684544
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.459098815917969,
+          "raw_recovery": 0.2911643981933594,
+          "normalized_recovery": 1.7523877307374414
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.564988136291504,
+          "raw_recovery": 0.18527507781982422,
+          "normalized_recovery": 1.1150874735972083
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.342777252197266,
+          "raw_recovery": 0.4074859619140625,
+          "normalized_recovery": 2.4524749747451557
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.342703819274902,
+          "raw_recovery": 0.4075593948364258,
+          "normalized_recovery": 2.452916934521076
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.303378105163574,
+          "raw_recovery": 0.4468851089477539,
+          "normalized_recovery": 2.6896007438699607
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.348593711853027,
+          "raw_recovery": 0.4016695022583008,
+          "normalized_recovery": 2.4174683166498303
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.432279586791992,
+          "raw_recovery": 0.31798362731933594,
+          "normalized_recovery": 1.9138006244834236
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.36221694946289,
+          "raw_recovery": 0.3880462646484375,
+          "normalized_recovery": 2.3354761686105245
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.667434692382812,
+          "raw_recovery": 0.08282852172851562,
+          "normalized_recovery": 0.4985076682890991
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.584110260009766,
+          "raw_recovery": 0.1661529541015625,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0003",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.011961936950684,
+      "corrupt_target_logprob": -14.178711891174316,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.171076774597168,
+          "raw_recovery": 0.0076351165771484375,
+          "normalized_recovery": 0.04578781812982557
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.124295234680176,
+          "raw_recovery": 0.054416656494140625,
+          "normalized_recovery": 0.32633686016585645
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.203309059143066,
+          "raw_recovery": -0.02459716796875,
+          "normalized_recovery": -0.1475092936802974
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.139522552490234,
+          "raw_recovery": 0.03918933868408203,
+          "normalized_recovery": 0.2350185873605948
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.079080581665039,
+          "raw_recovery": 0.09963130950927734,
+          "normalized_recovery": 0.5974892765227338
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.084424018859863,
+          "raw_recovery": 0.09428787231445312,
+          "normalized_recovery": 0.5654446668573062
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.093449592590332,
+          "raw_recovery": 0.08526229858398438,
+          "normalized_recovery": 0.5113182728052617
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.117905616760254,
+          "raw_recovery": 0.0608062744140625,
+          "normalized_recovery": 0.36465541893051184
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.077847480773926,
+          "raw_recovery": 0.10086441040039062,
+          "normalized_recovery": 0.6048841864455248
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.913247108459473,
+          "raw_recovery": 0.26546478271484375,
+          "normalized_recovery": 1.5919931369745497
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.896635055541992,
+          "raw_recovery": 0.2820768356323242,
+          "normalized_recovery": 1.6916156705747785
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.928804397583008,
+          "raw_recovery": 0.2499074935913086,
+          "normalized_recovery": 1.4986960251644266
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.011961936950684,
+          "raw_recovery": 0.1667499542236328,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0004",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.746927261352539,
+      "corrupt_target_logprob": -13.692516326904297,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.683430671691895,
+          "raw_recovery": 0.009085655212402344,
+          "normalized_recovery": 908565.5212402344
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.704736709594727,
+          "raw_recovery": -0.012220382690429688,
+          "normalized_recovery": -1222038.2690429688
+        },
+        "layer_02": {
+          "patched_target_logprob": -13.677301406860352,
+          "raw_recovery": 0.015214920043945312,
+          "normalized_recovery": 1521492.0043945312
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.766162872314453,
+          "raw_recovery": -0.07364654541015625,
+          "normalized_recovery": -7364654.541015625
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.76544189453125,
+          "raw_recovery": -0.07292556762695312,
+          "normalized_recovery": -7292556.7626953125
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.814996719360352,
+          "raw_recovery": -0.12248039245605469,
+          "normalized_recovery": -12248039.245605469
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.831880569458008,
+          "raw_recovery": -0.13936424255371094,
+          "normalized_recovery": -13936424.255371094
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.801848411560059,
+          "raw_recovery": -0.10933208465576172,
+          "normalized_recovery": -10933208.465576172
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.791359901428223,
+          "raw_recovery": -0.09884357452392578,
+          "normalized_recovery": -9884357.452392578
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.747413635253906,
+          "raw_recovery": -0.054897308349609375,
+          "normalized_recovery": -5489730.8349609375
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.800829887390137,
+          "raw_recovery": -0.10831356048583984,
+          "normalized_recovery": -10831356.048583984
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.725265502929688,
+          "raw_recovery": -0.032749176025390625,
+          "normalized_recovery": -3274917.6025390625
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.746927261352539,
+          "raw_recovery": -0.05441093444824219,
+          "normalized_recovery": -5441093.444824219
+        }
+      },
+      "pair_id": "copying_0005",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.46484661102295,
+      "corrupt_target_logprob": -14.75650691986084,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.748279571533203,
+          "raw_recovery": 0.008227348327636719,
+          "normalized_recovery": 0.006369591347928683
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.789203643798828,
+          "raw_recovery": -0.03269672393798828,
+          "normalized_recovery": -0.025313717325111267
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.758293151855469,
+          "raw_recovery": -0.0017862319946289062,
+          "normalized_recovery": -0.0013828960930416627
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.847742080688477,
+          "raw_recovery": -0.09123516082763672,
+          "normalized_recovery": -0.07063402057288667
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.828688621520996,
+          "raw_recovery": -0.07218170166015625,
+          "normalized_recovery": -0.055882882803063194
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.689769744873047,
+          "raw_recovery": 0.06673717498779297,
+          "normalized_recovery": 0.05166774463158703
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.700579643249512,
+          "raw_recovery": 0.055927276611328125,
+          "normalized_recovery": 0.043298749856025234
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.715047836303711,
+          "raw_recovery": 0.041459083557128906,
+          "normalized_recovery": 0.032097513002028934
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.704887390136719,
+          "raw_recovery": 0.051619529724121094,
+          "normalized_recovery": 0.03996370359213351
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.680456161499023,
+          "raw_recovery": 0.0760507583618164,
+          "normalized_recovery": 0.05887829628382669
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.288066864013672,
+          "raw_recovery": 1.468440055847168,
+          "normalized_recovery": 1.1368624132828904
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.355716705322266,
+          "raw_recovery": 1.4007902145385742,
+          "normalized_recovery": 1.0844880847959693
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.46484661102295,
+          "raw_recovery": 1.2916603088378906,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0006",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -15.32851791381836,
+      "corrupt_target_logprob": -13.691661834716797,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.729105949401855,
+          "raw_recovery": -0.037444114685058594,
+          "normalized_recovery": -3744411.4685058594
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.660948753356934,
+          "raw_recovery": 0.03071308135986328,
+          "normalized_recovery": 3071308.135986328
+        },
+        "layer_02": {
+          "patched_target_logprob": -13.913259506225586,
+          "raw_recovery": -0.22159767150878906,
+          "normalized_recovery": -22159767.150878906
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.985235214233398,
+          "raw_recovery": -0.29357337951660156,
+          "normalized_recovery": -29357337.951660156
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.983899116516113,
+          "raw_recovery": -0.2922372817993164,
+          "normalized_recovery": -29223728.17993164
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.246265411376953,
+          "raw_recovery": -0.5546035766601562,
+          "normalized_recovery": -55460357.666015625
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.288352012634277,
+          "raw_recovery": -0.5966901779174805,
+          "normalized_recovery": -59669017.79174805
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.2457857131958,
+          "raw_recovery": -0.5541238784790039,
+          "normalized_recovery": -55412387.84790039
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.238582611083984,
+          "raw_recovery": -0.5469207763671875,
+          "normalized_recovery": -54692077.63671875
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.389594078063965,
+          "raw_recovery": -0.697932243347168,
+          "normalized_recovery": -69793224.3347168
+        },
+        "layer_21": {
+          "patched_target_logprob": -15.463271141052246,
+          "raw_recovery": -1.7716093063354492,
+          "normalized_recovery": -177160930.63354492
+        },
+        "layer_22": {
+          "patched_target_logprob": -15.365509033203125,
+          "raw_recovery": -1.6738471984863281,
+          "normalized_recovery": -167384719.8486328
+        },
+        "layer_23": {
+          "patched_target_logprob": -15.32851791381836,
+          "raw_recovery": -1.6368560791015625,
+          "normalized_recovery": -163685607.91015625
+        }
+      },
+      "pair_id": "copying_0007",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -16.341754913330078,
+      "corrupt_target_logprob": -15.538471221923828,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -15.519975662231445,
+          "raw_recovery": 0.018495559692382812,
+          "normalized_recovery": 1849555.9692382812
+        },
+        "layer_01": {
+          "patched_target_logprob": -15.4375,
+          "raw_recovery": 0.10097122192382812,
+          "normalized_recovery": 10097122.192382812
+        },
+        "layer_02": {
+          "patched_target_logprob": -15.486056327819824,
+          "raw_recovery": 0.052414894104003906,
+          "normalized_recovery": 5241489.410400391
+        },
+        "layer_03": {
+          "patched_target_logprob": -15.513882637023926,
+          "raw_recovery": 0.024588584899902344,
+          "normalized_recovery": 2458858.4899902344
+        },
+        "layer_04": {
+          "patched_target_logprob": -15.606058120727539,
+          "raw_recovery": -0.06758689880371094,
+          "normalized_recovery": -6758689.880371094
+        },
+        "layer_05": {
+          "patched_target_logprob": -15.840180397033691,
+          "raw_recovery": -0.3017091751098633,
+          "normalized_recovery": -30170917.510986328
+        },
+        "layer_06": {
+          "patched_target_logprob": -15.872367858886719,
+          "raw_recovery": -0.3338966369628906,
+          "normalized_recovery": -33389663.696289062
+        },
+        "layer_07": {
+          "patched_target_logprob": -15.895554542541504,
+          "raw_recovery": -0.3570833206176758,
+          "normalized_recovery": -35708332.06176758
+        },
+        "layer_08": {
+          "patched_target_logprob": -15.921961784362793,
+          "raw_recovery": -0.38349056243896484,
+          "normalized_recovery": -38349056.243896484
+        },
+        "layer_13": {
+          "patched_target_logprob": -15.782228469848633,
+          "raw_recovery": -0.2437572479248047,
+          "normalized_recovery": -24375724.79248047
+        },
+        "layer_21": {
+          "patched_target_logprob": -16.095943450927734,
+          "raw_recovery": -0.5574722290039062,
+          "normalized_recovery": -55747222.900390625
+        },
+        "layer_22": {
+          "patched_target_logprob": -16.38707733154297,
+          "raw_recovery": -0.8486061096191406,
+          "normalized_recovery": -84860610.96191406
+        },
+        "layer_23": {
+          "patched_target_logprob": -16.341754913330078,
+          "raw_recovery": -0.80328369140625,
+          "normalized_recovery": -80328369.140625
+        }
+      },
+      "pair_id": "copying_0008",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.508218765258789,
+      "corrupt_target_logprob": -14.731719017028809,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.754166603088379,
+          "raw_recovery": -0.022447586059570312,
+          "normalized_recovery": -0.10043651352423866
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.541683197021484,
+          "raw_recovery": 0.19003582000732422,
+          "normalized_recovery": 0.8502711674923301
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.525400161743164,
+          "raw_recovery": 0.20631885528564453,
+          "normalized_recovery": 0.923125829397031
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.463384628295898,
+          "raw_recovery": 0.26833438873291016,
+          "normalized_recovery": 1.20059993940868
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.545563697814941,
+          "raw_recovery": 0.1861553192138672,
+          "normalized_recovery": 0.8329087673933359
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.462553977966309,
+          "raw_recovery": 0.2691650390625,
+          "normalized_recovery": 1.2043164915065476
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.434051513671875,
+          "raw_recovery": 0.2976675033569336,
+          "normalized_recovery": 1.331844152297563
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.429361343383789,
+          "raw_recovery": 0.30235767364501953,
+          "normalized_recovery": 1.3528292306182448
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.516327857971191,
+          "raw_recovery": 0.2153911590576172,
+          "normalized_recovery": 0.9637177468562919
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.493836402893066,
+          "raw_recovery": 0.2378826141357422,
+          "normalized_recovery": 1.064350542121635
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.38674545288086,
+          "raw_recovery": 0.3449735641479492,
+          "normalized_recovery": 1.543504141118038
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.593037605285645,
+          "raw_recovery": 0.13868141174316406,
+          "normalized_recovery": 0.6204977875634182
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.508218765258789,
+          "raw_recovery": 0.22350025177001953,
+          "normalized_recovery": 1.0
+        }
+      },
+      "pair_id": "copying_0009",
+      "family": "copying"
+    }
+  ],
+  "mlp": [
+    {
+      "clean_target_logprob": -11.363219261169434,
+      "corrupt_target_logprob": -12.003458976745605,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.023335456848145,
+          "raw_recovery": -0.019876480102539062,
+          "normalized_recovery": -0.0310453719426818
+        },
+        "layer_01": {
+          "patched_target_logprob": -11.972084045410156,
+          "raw_recovery": 0.03137493133544922,
+          "normalized_recovery": 0.04900497512437811
+        },
+        "layer_02": {
+          "patched_target_logprob": -11.976655006408691,
+          "raw_recovery": 0.026803970336914062,
+          "normalized_recovery": 0.04186552268597134
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.021102905273438,
+          "raw_recovery": -0.01764392852783203,
+          "normalized_recovery": -0.027558316203414066
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.218088150024414,
+          "raw_recovery": -0.2146291732788086,
+          "normalized_recovery": -0.3352325200345577
+        },
+        "layer_05": {
+          "patched_target_logprob": -11.976119995117188,
+          "raw_recovery": 0.02733898162841797,
+          "normalized_recovery": 0.042701164834510086
+        },
+        "layer_06": {
+          "patched_target_logprob": -11.880946159362793,
+          "raw_recovery": 0.1225128173828125,
+          "normalized_recovery": 0.19135460422438705
+        },
+        "layer_07": {
+          "patched_target_logprob": -11.895386695861816,
+          "raw_recovery": 0.10807228088378906,
+          "normalized_recovery": 0.16879971400482616
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.056902885437012,
+          "raw_recovery": -0.05344390869140625,
+          "normalized_recovery": -0.08347484136205202
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.066965103149414,
+          "raw_recovery": -0.0635061264038086,
+          "normalized_recovery": -0.09919116989900796
+        },
+        "layer_21": {
+          "patched_target_logprob": -11.536699295043945,
+          "raw_recovery": 0.46675968170166016,
+          "normalized_recovery": 0.7290389370512705
+        },
+        "layer_22": {
+          "patched_target_logprob": -12.001659393310547,
+          "raw_recovery": 0.0017995834350585938,
+          "normalized_recovery": 0.002810796317812137
+        },
+        "layer_23": {
+          "patched_target_logprob": -12.279862403869629,
+          "raw_recovery": -0.27640342712402344,
+          "normalized_recovery": -0.4317186522477433
+        }
+      },
+      "pair_id": "copying_0000",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -11.745881080627441,
+      "corrupt_target_logprob": -12.259598731994629,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.26820182800293,
+          "raw_recovery": -0.008603096008300781,
+          "normalized_recovery": -0.01674674013128583
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.213546752929688,
+          "raw_recovery": 0.046051979064941406,
+          "normalized_recovery": 0.08964453322244334
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.276861190795898,
+          "raw_recovery": -0.01726245880126953,
+          "normalized_recovery": -0.03360300888110019
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.283016204833984,
+          "raw_recovery": -0.02341747283935547,
+          "normalized_recovery": -0.045584325897763386
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.323884010314941,
+          "raw_recovery": -0.0642852783203125,
+          "normalized_recovery": -0.12513737487747645
+        },
+        "layer_05": {
+          "patched_target_logprob": -11.941213607788086,
+          "raw_recovery": 0.31838512420654297,
+          "normalized_recovery": 0.6197667597350521
+        },
+        "layer_06": {
+          "patched_target_logprob": -12.36453914642334,
+          "raw_recovery": -0.10494041442871094,
+          "normalized_recovery": -0.20427644280749696
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.490754127502441,
+          "raw_recovery": -0.2311553955078125,
+          "normalized_recovery": -0.4499658419223572
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.324748039245605,
+          "raw_recovery": -0.06514930725097656,
+          "normalized_recovery": -0.1268192889179315
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.435497283935547,
+          "raw_recovery": -0.17589855194091797,
+          "normalized_recovery": -0.3424031692755517
+        },
+        "layer_21": {
+          "patched_target_logprob": -12.091529846191406,
+          "raw_recovery": 0.16806888580322266,
+          "normalized_recovery": 0.32716198354471737
+        },
+        "layer_22": {
+          "patched_target_logprob": -12.189088821411133,
+          "raw_recovery": 0.0705099105834961,
+          "normalized_recovery": 0.13725421035435292
+        },
+        "layer_23": {
+          "patched_target_logprob": -11.886645317077637,
+          "raw_recovery": 0.3729534149169922,
+          "normalized_recovery": 0.7259890991178305
+        }
+      },
+      "pair_id": "copying_0001",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.010123252868652,
+      "corrupt_target_logprob": -12.721210479736328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.729573249816895,
+          "raw_recovery": -0.008362770080566406,
+          "normalized_recovery": -836277.0080566406
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.656688690185547,
+          "raw_recovery": 0.06452178955078125,
+          "normalized_recovery": 6452178.955078125
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.850970268249512,
+          "raw_recovery": -0.1297597885131836,
+          "normalized_recovery": -12975978.85131836
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.752386093139648,
+          "raw_recovery": -0.031175613403320312,
+          "normalized_recovery": -3117561.3403320312
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.789044380187988,
+          "raw_recovery": -0.06783390045166016,
+          "normalized_recovery": -6783390.045166016
+        },
+        "layer_05": {
+          "patched_target_logprob": -12.943649291992188,
+          "raw_recovery": -0.22243881225585938,
+          "normalized_recovery": -22243881.225585938
+        },
+        "layer_06": {
+          "patched_target_logprob": -12.84516716003418,
+          "raw_recovery": -0.12395668029785156,
+          "normalized_recovery": -12395668.029785156
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.707662582397461,
+          "raw_recovery": 0.013547897338867188,
+          "normalized_recovery": 1354789.7338867188
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.758055686950684,
+          "raw_recovery": -0.03684520721435547,
+          "normalized_recovery": -3684520.721435547
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.670746803283691,
+          "raw_recovery": 0.05046367645263672,
+          "normalized_recovery": 5046367.645263672
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.46776294708252,
+          "raw_recovery": -0.7465524673461914,
+          "normalized_recovery": -74655246.73461914
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.281285285949707,
+          "raw_recovery": -0.5600748062133789,
+          "normalized_recovery": -56007480.62133789
+        },
+        "layer_23": {
+          "patched_target_logprob": -12.647216796875,
+          "raw_recovery": 0.07399368286132812,
+          "normalized_recovery": 7399368.2861328125
+        }
+      },
+      "pair_id": "copying_0002",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.584110260009766,
+      "corrupt_target_logprob": -14.750263214111328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.760645866394043,
+          "raw_recovery": -0.010382652282714844,
+          "normalized_recovery": -0.06248852052530076
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.641692161560059,
+          "raw_recovery": 0.10857105255126953,
+          "normalized_recovery": 0.6534403985673616
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.8097505569458,
+          "raw_recovery": -0.059487342834472656,
+          "normalized_recovery": -0.358027596657177
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.683479309082031,
+          "raw_recovery": 0.06678390502929688,
+          "normalized_recovery": 0.40194232711911104
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.5607271194458,
+          "raw_recovery": 0.18953609466552734,
+          "normalized_recovery": 1.1407326200753054
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.648940086364746,
+          "raw_recovery": 1.101323127746582,
+          "normalized_recovery": 6.628369225824226
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.72413444519043,
+          "raw_recovery": 0.026128768920898438,
+          "normalized_recovery": 0.1572573239048581
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.81406021118164,
+          "raw_recovery": -0.0637969970703125,
+          "normalized_recovery": -0.3839654697401047
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.812192916870117,
+          "raw_recovery": -0.06192970275878906,
+          "normalized_recovery": -0.3727270640095509
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.93284797668457,
+          "raw_recovery": -0.1825847625732422,
+          "normalized_recovery": -1.0988956745339333
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.622040748596191,
+          "raw_recovery": 0.12822246551513672,
+          "normalized_recovery": 0.7717134263936082
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.724346160888672,
+          "raw_recovery": 0.02591705322265625,
+          "normalized_recovery": 0.1559831022132427
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.3299560546875,
+          "raw_recovery": 0.4203071594238281,
+          "normalized_recovery": 2.529640003673432
+        }
+      },
+      "pair_id": "copying_0003",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.011961936950684,
+      "corrupt_target_logprob": -14.178711891174316,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.172724723815918,
+          "raw_recovery": 0.0059871673583984375,
+          "normalized_recovery": 0.03590506148126966
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.12049674987793,
+          "raw_recovery": 0.05821514129638672,
+          "normalized_recovery": 0.3491163854732628
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.248429298400879,
+          "raw_recovery": -0.0697174072265625,
+          "normalized_recovery": -0.41809551043751786
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.113308906555176,
+          "raw_recovery": 0.06540298461914062,
+          "normalized_recovery": 0.39222190448956246
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.993973731994629,
+          "raw_recovery": 0.1847381591796875,
+          "normalized_recovery": 1.107875321704318
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.039854049682617,
+          "raw_recovery": 0.13885784149169922,
+          "normalized_recovery": 0.8327309122104661
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.150110244750977,
+          "raw_recovery": 0.028601646423339844,
+          "normalized_recovery": 0.17152416356877323
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.180662155151367,
+          "raw_recovery": -0.0019502639770507812,
+          "normalized_recovery": -0.011695739205032885
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.066726684570312,
+          "raw_recovery": 0.1119852066040039,
+          "normalized_recovery": 0.6715756362596511
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.21198844909668,
+          "raw_recovery": -0.03327655792236328,
+          "normalized_recovery": -0.19955962253360024
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.908210754394531,
+          "raw_recovery": 0.27050113677978516,
+          "normalized_recovery": 1.6221961681441235
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.313789367675781,
+          "raw_recovery": -0.13507747650146484,
+          "normalized_recovery": -0.8100600514726909
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.269681930541992,
+          "raw_recovery": -0.09097003936767578,
+          "normalized_recovery": -0.545547612239062
+        }
+      },
+      "pair_id": "copying_0004",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.746927261352539,
+      "corrupt_target_logprob": -13.692516326904297,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.68637466430664,
+          "raw_recovery": 0.00614166259765625,
+          "normalized_recovery": 614166.259765625
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.668296813964844,
+          "raw_recovery": 0.024219512939453125,
+          "normalized_recovery": 2421951.2939453125
+        },
+        "layer_02": {
+          "patched_target_logprob": -13.677298545837402,
+          "raw_recovery": 0.015217781066894531,
+          "normalized_recovery": 1521778.1066894531
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.710122108459473,
+          "raw_recovery": -0.01760578155517578,
+          "normalized_recovery": -1760578.1555175781
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.697505950927734,
+          "raw_recovery": -0.0049896240234375,
+          "normalized_recovery": -498962.40234375
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.691275596618652,
+          "raw_recovery": 0.0012407302856445312,
+          "normalized_recovery": 124073.02856445312
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.656901359558105,
+          "raw_recovery": 0.035614967346191406,
+          "normalized_recovery": 3561496.7346191406
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.70816421508789,
+          "raw_recovery": -0.01564788818359375,
+          "normalized_recovery": -1564788.818359375
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.719522476196289,
+          "raw_recovery": -0.027006149291992188,
+          "normalized_recovery": -2700614.9291992188
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.585105895996094,
+          "raw_recovery": 0.10741043090820312,
+          "normalized_recovery": 10741043.090820312
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.496885299682617,
+          "raw_recovery": 0.1956310272216797,
+          "normalized_recovery": 19563102.72216797
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.82787036895752,
+          "raw_recovery": -0.13535404205322266,
+          "normalized_recovery": -13535404.205322266
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.66586685180664,
+          "raw_recovery": 0.02664947509765625,
+          "normalized_recovery": 2664947.509765625
+        }
+      },
+      "pair_id": "copying_0005",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.46484661102295,
+      "corrupt_target_logprob": -14.75650691986084,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.749946594238281,
+          "raw_recovery": 0.006560325622558594,
+          "normalized_recovery": 0.00507898677204143
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.824984550476074,
+          "raw_recovery": -0.06847763061523438,
+          "normalized_recovery": -0.0530152007820414
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.754352569580078,
+          "raw_recovery": 0.0021543502807617188,
+          "normalized_recovery": 0.0016678922980144773
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.79059886932373,
+          "raw_recovery": -0.034091949462890625,
+          "normalized_recovery": -0.02639389724188647
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.749723434448242,
+          "raw_recovery": 0.006783485412597656,
+          "normalized_recovery": 0.005251756492154483
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.698023796081543,
+          "raw_recovery": 0.058483123779296875,
+          "normalized_recovery": 0.04527747998381576
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.71312141418457,
+          "raw_recovery": 0.04338550567626953,
+          "normalized_recovery": 0.033588943919244184
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.856008529663086,
+          "raw_recovery": -0.0995016098022461,
+          "normalized_recovery": -0.077033883538442
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.884923934936523,
+          "raw_recovery": -0.1284170150756836,
+          "normalized_recovery": -0.09942011393941542
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.794110298156738,
+          "raw_recovery": -0.03760337829589844,
+          "normalized_recovery": -0.029112436171186737
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.780739784240723,
+          "raw_recovery": -0.024232864379882812,
+          "normalized_recovery": -0.018761019607148235
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.415009498596191,
+          "raw_recovery": 0.34149742126464844,
+          "normalized_recovery": 0.26438640169402927
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.232455253601074,
+          "raw_recovery": 0.5240516662597656,
+          "normalized_recovery": 0.4057194160678793
+        }
+      },
+      "pair_id": "copying_0006",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -15.32851791381836,
+      "corrupt_target_logprob": -13.691661834716797,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.728239059448242,
+          "raw_recovery": -0.03657722473144531,
+          "normalized_recovery": -3657722.4731445312
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.414621353149414,
+          "raw_recovery": 0.2770404815673828,
+          "normalized_recovery": 27704048.15673828
+        },
+        "layer_02": {
+          "patched_target_logprob": -13.938345909118652,
+          "raw_recovery": -0.24668407440185547,
+          "normalized_recovery": -24668407.440185547
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.965829849243164,
+          "raw_recovery": -0.2741680145263672,
+          "normalized_recovery": -27416801.45263672
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.507622718811035,
+          "raw_recovery": 0.18403911590576172,
+          "normalized_recovery": 18403911.590576172
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.008790016174316,
+          "raw_recovery": -0.31712818145751953,
+          "normalized_recovery": -31712818.145751953
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.461711883544922,
+          "raw_recovery": 0.229949951171875,
+          "normalized_recovery": 22994995.1171875
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.440255165100098,
+          "raw_recovery": 0.2514066696166992,
+          "normalized_recovery": 25140666.961669922
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.668522834777832,
+          "raw_recovery": 0.023138999938964844,
+          "normalized_recovery": 2313899.9938964844
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.825119972229004,
+          "raw_recovery": -0.13345813751220703,
+          "normalized_recovery": -13345813.751220703
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.509378433227539,
+          "raw_recovery": -0.8177165985107422,
+          "normalized_recovery": -81771659.85107422
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.523655891418457,
+          "raw_recovery": 0.16800594329833984,
+          "normalized_recovery": 16800594.329833984
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.366080284118652,
+          "raw_recovery": 0.32558155059814453,
+          "normalized_recovery": 32558155.059814453
+        }
+      },
+      "pair_id": "copying_0007",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -16.341754913330078,
+      "corrupt_target_logprob": -15.538471221923828,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -15.52234935760498,
+          "raw_recovery": 0.016121864318847656,
+          "normalized_recovery": 1612186.4318847656
+        },
+        "layer_01": {
+          "patched_target_logprob": -15.517400741577148,
+          "raw_recovery": 0.021070480346679688,
+          "normalized_recovery": 2107048.0346679688
+        },
+        "layer_02": {
+          "patched_target_logprob": -15.520608901977539,
+          "raw_recovery": 0.017862319946289062,
+          "normalized_recovery": 1786231.9946289062
+        },
+        "layer_03": {
+          "patched_target_logprob": -15.478981018066406,
+          "raw_recovery": 0.059490203857421875,
+          "normalized_recovery": 5949020.3857421875
+        },
+        "layer_04": {
+          "patched_target_logprob": -15.590104103088379,
+          "raw_recovery": -0.05163288116455078,
+          "normalized_recovery": -5163288.116455078
+        },
+        "layer_05": {
+          "patched_target_logprob": -15.611250877380371,
+          "raw_recovery": -0.07277965545654297,
+          "normalized_recovery": -7277965.545654297
+        },
+        "layer_06": {
+          "patched_target_logprob": -15.605314254760742,
+          "raw_recovery": -0.06684303283691406,
+          "normalized_recovery": -6684303.283691406
+        },
+        "layer_07": {
+          "patched_target_logprob": -15.720967292785645,
+          "raw_recovery": -0.1824960708618164,
+          "normalized_recovery": -18249607.08618164
+        },
+        "layer_08": {
+          "patched_target_logprob": -15.507671356201172,
+          "raw_recovery": 0.03079986572265625,
+          "normalized_recovery": 3079986.572265625
+        },
+        "layer_13": {
+          "patched_target_logprob": -15.640745162963867,
+          "raw_recovery": -0.10227394104003906,
+          "normalized_recovery": -10227394.104003906
+        },
+        "layer_21": {
+          "patched_target_logprob": -15.604631423950195,
+          "raw_recovery": -0.06616020202636719,
+          "normalized_recovery": -6616020.202636719
+        },
+        "layer_22": {
+          "patched_target_logprob": -15.733742713928223,
+          "raw_recovery": -0.19527149200439453,
+          "normalized_recovery": -19527149.200439453
+        },
+        "layer_23": {
+          "patched_target_logprob": -16.015727996826172,
+          "raw_recovery": -0.47725677490234375,
+          "normalized_recovery": -47725677.490234375
+        }
+      },
+      "pair_id": "copying_0008",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.508218765258789,
+      "corrupt_target_logprob": -14.731719017028809,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.758381843566895,
+          "raw_recovery": -0.026662826538085938,
+          "normalized_recovery": -0.11929662864774682
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.49842357635498,
+          "raw_recovery": 0.23329544067382812,
+          "normalized_recovery": 1.0438262991931113
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.667929649353027,
+          "raw_recovery": 0.06378936767578125,
+          "normalized_recovery": 0.2854107195432609
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.743473052978516,
+          "raw_recovery": -0.011754035949707031,
+          "normalized_recovery": -0.05259070563285927
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.657763481140137,
+          "raw_recovery": 0.07395553588867188,
+          "normalized_recovery": 0.33089687954701585
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.61173152923584,
+          "raw_recovery": 0.11998748779296875,
+          "normalized_recovery": 0.5368561638867199
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.640999794006348,
+          "raw_recovery": 0.09071922302246094,
+          "normalized_recovery": 0.4059021066151214
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.563230514526367,
+          "raw_recovery": 0.1684885025024414,
+          "normalized_recovery": 0.7538626966551031
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.741997718811035,
+          "raw_recovery": -0.010278701782226562,
+          "normalized_recovery": -0.04598966533963142
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.80086898803711,
+          "raw_recovery": -0.06914997100830078,
+          "normalized_recovery": -0.3093954949073422
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.747068405151367,
+          "raw_recovery": 0.9846506118774414,
+          "normalized_recovery": 4.405590616025978
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.873340606689453,
+          "raw_recovery": -0.14162158966064453,
+          "normalized_recovery": -0.6336529312117837
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.939043045043945,
+          "raw_recovery": -0.20732402801513672,
+          "normalized_recovery": -0.9276232414649445
+        }
+      },
+      "pair_id": "copying_0009",
+      "family": "copying"
+    }
+  ],
+  "attn": [
+    {
+      "clean_target_logprob": -11.363219261169434,
+      "corrupt_target_logprob": -12.003458976745605,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.022916793823242,
+          "raw_recovery": -0.01945781707763672,
+          "normalized_recovery": -0.030391455894181785
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.023639678955078,
+          "raw_recovery": -0.020180702209472656,
+          "normalized_recovery": -0.031520541007537164
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.026433944702148,
+          "raw_recovery": -0.02297496795654297,
+          "normalized_recovery": -0.035884946524860725
+        },
+        "layer_03": {
+          "patched_target_logprob": -11.99262809753418,
+          "raw_recovery": 0.010830879211425781,
+          "normalized_recovery": 0.016916912443769177
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.215696334838867,
+          "raw_recovery": -0.21223735809326172,
+          "normalized_recovery": -0.33149670807638454
+        },
+        "layer_05": {
+          "patched_target_logprob": -11.73928451538086,
+          "raw_recovery": 0.2641744613647461,
+          "normalized_recovery": 0.41261804748711534
+        },
+        "layer_06": {
+          "patched_target_logprob": -11.935796737670898,
+          "raw_recovery": 0.06766223907470703,
+          "normalized_recovery": 0.10568266452170286
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.01550006866455,
+          "raw_recovery": -0.012041091918945312,
+          "normalized_recovery": -0.018807161795811364
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.05015754699707,
+          "raw_recovery": -0.046698570251464844,
+          "normalized_recovery": -0.07293919623439687
+        },
+        "layer_13": {
+          "patched_target_logprob": -11.898406028747559,
+          "raw_recovery": 0.10505294799804688,
+          "normalized_recovery": 0.16408377275300146
+        },
+        "layer_21": {
+          "patched_target_logprob": -12.071784973144531,
+          "raw_recovery": -0.06832599639892578,
+          "normalized_recovery": -0.10671939702684184
+        },
+        "layer_22": {
+          "patched_target_logprob": -11.894025802612305,
+          "raw_recovery": 0.10943317413330078,
+          "normalized_recovery": 0.17092531355200047
+        },
+        "layer_23": {
+          "patched_target_logprob": -12.28306770324707,
+          "raw_recovery": -0.27960872650146484,
+          "normalized_recovery": -0.4367250573479906
+        }
+      },
+      "pair_id": "copying_0000",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -11.745881080627441,
+      "corrupt_target_logprob": -12.259598731994629,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.261041641235352,
+          "raw_recovery": -0.0014429092407226562,
+          "normalized_recovery": -0.0028087593192146613
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.220941543579102,
+          "raw_recovery": 0.038657188415527344,
+          "normalized_recovery": 0.0752498737636261
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.36029052734375,
+          "raw_recovery": -0.1006917953491211,
+          "normalized_recovery": -0.1960061038999614
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.425000190734863,
+          "raw_recovery": -0.16540145874023438,
+          "normalized_recovery": -0.3219695844595598
+        },
+        "layer_04": {
+          "patched_target_logprob": -11.968585014343262,
+          "raw_recovery": 0.2910137176513672,
+          "normalized_recovery": 0.5664857278640806
+        },
+        "layer_05": {
+          "patched_target_logprob": -12.317865371704102,
+          "raw_recovery": -0.058266639709472656,
+          "normalized_recovery": -0.1134215255294502
+        },
+        "layer_06": {
+          "patched_target_logprob": -12.174053192138672,
+          "raw_recovery": 0.08554553985595703,
+          "normalized_recovery": 0.16652248492589183
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.317559242248535,
+          "raw_recovery": -0.05796051025390625,
+          "normalized_recovery": -0.11282561558796447
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.280343055725098,
+          "raw_recovery": -0.02074432373046875,
+          "normalized_recovery": -0.040380788309026645
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.412332534790039,
+          "raw_recovery": -0.15273380279541016,
+          "normalized_recovery": -0.2973107939525351
+        },
+        "layer_21": {
+          "patched_target_logprob": -12.257858276367188,
+          "raw_recovery": 0.0017404556274414062,
+          "normalized_recovery": 0.0033879615053316304
+        },
+        "layer_22": {
+          "patched_target_logprob": -12.296222686767578,
+          "raw_recovery": -0.03662395477294922,
+          "normalized_recovery": -0.07129199215849348
+        },
+        "layer_23": {
+          "patched_target_logprob": -12.10995864868164,
+          "raw_recovery": 0.14964008331298828,
+          "normalized_recovery": 0.2912885763507292
+        }
+      },
+      "pair_id": "copying_0001",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.010123252868652,
+      "corrupt_target_logprob": -12.721210479736328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -12.728596687316895,
+          "raw_recovery": -0.007386207580566406,
+          "normalized_recovery": -738620.7580566406
+        },
+        "layer_01": {
+          "patched_target_logprob": -12.752832412719727,
+          "raw_recovery": -0.03162193298339844,
+          "normalized_recovery": -3162193.2983398438
+        },
+        "layer_02": {
+          "patched_target_logprob": -12.884596824645996,
+          "raw_recovery": -0.16338634490966797,
+          "normalized_recovery": -16338634.490966797
+        },
+        "layer_03": {
+          "patched_target_logprob": -12.607074737548828,
+          "raw_recovery": 0.1141357421875,
+          "normalized_recovery": 11413574.21875
+        },
+        "layer_04": {
+          "patched_target_logprob": -12.849260330200195,
+          "raw_recovery": -0.1280498504638672,
+          "normalized_recovery": -12804985.046386719
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.042366027832031,
+          "raw_recovery": -0.3211555480957031,
+          "normalized_recovery": -32115554.809570312
+        },
+        "layer_06": {
+          "patched_target_logprob": -12.753833770751953,
+          "raw_recovery": -0.032623291015625,
+          "normalized_recovery": -3262329.1015625
+        },
+        "layer_07": {
+          "patched_target_logprob": -12.741670608520508,
+          "raw_recovery": -0.020460128784179688,
+          "normalized_recovery": -2046012.8784179688
+        },
+        "layer_08": {
+          "patched_target_logprob": -12.678736686706543,
+          "raw_recovery": 0.042473793029785156,
+          "normalized_recovery": 4247379.302978516
+        },
+        "layer_13": {
+          "patched_target_logprob": -12.690862655639648,
+          "raw_recovery": 0.030347824096679688,
+          "normalized_recovery": 3034782.4096679688
+        },
+        "layer_21": {
+          "patched_target_logprob": -12.846385955810547,
+          "raw_recovery": -0.12517547607421875,
+          "normalized_recovery": -12517547.607421875
+        },
+        "layer_22": {
+          "patched_target_logprob": -12.570298194885254,
+          "raw_recovery": 0.15091228485107422,
+          "normalized_recovery": 15091228.485107422
+        },
+        "layer_23": {
+          "patched_target_logprob": -12.731045722961426,
+          "raw_recovery": -0.009835243225097656,
+          "normalized_recovery": -983524.3225097656
+        }
+      },
+      "pair_id": "copying_0002",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.584110260009766,
+      "corrupt_target_logprob": -14.750263214111328,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.757851600646973,
+          "raw_recovery": -0.007588386535644531,
+          "normalized_recovery": -0.04567109009091744
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.594428062438965,
+          "raw_recovery": 0.15583515167236328,
+          "normalized_recovery": 0.9379017816144734
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.65342903137207,
+          "raw_recovery": 0.09683418273925781,
+          "normalized_recovery": 0.582801451005602
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.55844497680664,
+          "raw_recovery": 0.1918182373046875,
+          "normalized_recovery": 1.1544678115529434
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.430342674255371,
+          "raw_recovery": 0.31992053985595703,
+          "normalized_recovery": 1.9254580310404996
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.495522499084473,
+          "raw_recovery": 0.25474071502685547,
+          "normalized_recovery": 1.5331699421434475
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.714194297790527,
+          "raw_recovery": 0.03606891632080078,
+          "normalized_recovery": 0.21708260629993573
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.821133613586426,
+          "raw_recovery": -0.07087039947509766,
+          "normalized_recovery": -0.4265371016622279
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.8925142288208,
+          "raw_recovery": -0.14225101470947266,
+          "normalized_recovery": -0.856144962806502
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.687826156616211,
+          "raw_recovery": 0.06243705749511719,
+          "normalized_recovery": 0.3757806042795482
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.842466354370117,
+          "raw_recovery": -0.09220314025878906,
+          "normalized_recovery": -0.5549292864358527
+        },
+        "layer_22": {
+          "patched_target_logprob": -15.041458129882812,
+          "raw_recovery": -0.2911949157714844,
+          "normalized_recovery": -1.7525714023326293
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.750426292419434,
+          "raw_recovery": -0.00016307830810546875,
+          "normalized_recovery": -0.0009814950867848287
+        }
+      },
+      "pair_id": "copying_0003",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.011961936950684,
+      "corrupt_target_logprob": -14.178711891174316,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.171076774597168,
+          "raw_recovery": 0.0076351165771484375,
+          "normalized_recovery": 0.04578781812982557
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.127954483032227,
+          "raw_recovery": 0.050757408142089844,
+          "normalized_recovery": 0.3043923362882471
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.24065113067627,
+          "raw_recovery": -0.061939239501953125,
+          "normalized_recovery": -0.37144981412639405
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.09632396697998,
+          "raw_recovery": 0.08238792419433594,
+          "normalized_recovery": 0.49408064054904205
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.076417922973633,
+          "raw_recovery": 0.1022939682006836,
+          "normalized_recovery": 0.6134572490706319
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.20553207397461,
+          "raw_recovery": -0.02682018280029297,
+          "normalized_recovery": -0.1608407206176723
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.205273628234863,
+          "raw_recovery": -0.026561737060546875,
+          "normalized_recovery": -0.1592908207034601
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.273713111877441,
+          "raw_recovery": -0.095001220703125,
+          "normalized_recovery": -0.5697226193880469
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.169662475585938,
+          "raw_recovery": 0.009049415588378906,
+          "normalized_recovery": 0.05426937374892765
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.278447151184082,
+          "raw_recovery": -0.09973526000976562,
+          "normalized_recovery": -0.5981126680011438
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.101417541503906,
+          "raw_recovery": 0.07729434967041016,
+          "normalized_recovery": 0.4635344581069488
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.122725486755371,
+          "raw_recovery": 0.05598640441894531,
+          "normalized_recovery": 0.335750643408636
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.295757293701172,
+          "raw_recovery": -0.11704540252685547,
+          "normalized_recovery": -0.701921647126108
+        }
+      },
+      "pair_id": "copying_0004",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.746927261352539,
+      "corrupt_target_logprob": -13.692516326904297,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.683430671691895,
+          "raw_recovery": 0.009085655212402344,
+          "normalized_recovery": 908565.5212402344
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.71143627166748,
+          "raw_recovery": -0.018919944763183594,
+          "normalized_recovery": -1891994.4763183594
+        },
+        "layer_02": {
+          "patched_target_logprob": -13.663644790649414,
+          "raw_recovery": 0.028871536254882812,
+          "normalized_recovery": 2887153.6254882812
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.760936737060547,
+          "raw_recovery": -0.06842041015625,
+          "normalized_recovery": -6842041.015625
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.714180946350098,
+          "raw_recovery": -0.02166461944580078,
+          "normalized_recovery": -2166461.944580078
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.708247184753418,
+          "raw_recovery": -0.015730857849121094,
+          "normalized_recovery": -1573085.7849121094
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.67786979675293,
+          "raw_recovery": 0.014646530151367188,
+          "normalized_recovery": 1464653.0151367188
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.687603950500488,
+          "raw_recovery": 0.004912376403808594,
+          "normalized_recovery": 491237.6403808594
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.71058177947998,
+          "raw_recovery": -0.018065452575683594,
+          "normalized_recovery": -1806545.2575683594
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.62031364440918,
+          "raw_recovery": 0.07220268249511719,
+          "normalized_recovery": 7220268.249511719
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.66052532196045,
+          "raw_recovery": 0.031991004943847656,
+          "normalized_recovery": 3199100.4943847656
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.558571815490723,
+          "raw_recovery": 0.13394451141357422,
+          "normalized_recovery": 13394451.141357422
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.808987617492676,
+          "raw_recovery": -0.1164712905883789,
+          "normalized_recovery": -11647129.05883789
+        }
+      },
+      "pair_id": "copying_0005",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -13.46484661102295,
+      "corrupt_target_logprob": -14.75650691986084,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.748279571533203,
+          "raw_recovery": 0.008227348327636719,
+          "normalized_recovery": 0.006369591347928683
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.797860145568848,
+          "raw_recovery": -0.04135322570800781,
+          "normalized_recovery": -0.03201555813479582
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.71240520477295,
+          "raw_recovery": 0.044101715087890625,
+          "normalized_recovery": 0.03414343135430787
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.835532188415527,
+          "raw_recovery": -0.0790252685546875,
+          "normalized_recovery": -0.0611811542198635
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.766215324401855,
+          "raw_recovery": -0.009708404541015625,
+          "normalized_recovery": -0.007516221157055059
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.594807624816895,
+          "raw_recovery": 0.1616992950439453,
+          "normalized_recovery": 0.12518716719678913
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.73535442352295,
+          "raw_recovery": 0.021152496337890625,
+          "normalized_recovery": 0.016376206803878312
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.789705276489258,
+          "raw_recovery": -0.03319835662841797,
+          "normalized_recovery": -0.02570208002929702
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.764665603637695,
+          "raw_recovery": -0.008158683776855469,
+          "normalized_recovery": -0.006316431434047744
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.76987075805664,
+          "raw_recovery": -0.013363838195800781,
+          "normalized_recovery": -0.010346248239077852
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.676756858825684,
+          "raw_recovery": 0.07975006103515625,
+          "normalized_recovery": 0.0617422866441623
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.759856224060059,
+          "raw_recovery": -0.00334930419921875,
+          "normalized_recovery": -0.002593022465970272
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.84766960144043,
+          "raw_recovery": -0.09116268157958984,
+          "normalized_recovery": -0.0705779073304568
+        }
+      },
+      "pair_id": "copying_0006",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -15.32851791381836,
+      "corrupt_target_logprob": -13.691661834716797,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -13.729105949401855,
+          "raw_recovery": -0.037444114685058594,
+          "normalized_recovery": -3744411.4685058594
+        },
+        "layer_01": {
+          "patched_target_logprob": -13.667303085327148,
+          "raw_recovery": 0.024358749389648438,
+          "normalized_recovery": 2435874.9389648438
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.041728973388672,
+          "raw_recovery": -0.350067138671875,
+          "normalized_recovery": -35006713.8671875
+        },
+        "layer_03": {
+          "patched_target_logprob": -13.853483200073242,
+          "raw_recovery": -0.1618213653564453,
+          "normalized_recovery": -16182136.535644531
+        },
+        "layer_04": {
+          "patched_target_logprob": -13.61498737335205,
+          "raw_recovery": 0.0766744613647461,
+          "normalized_recovery": 7667446.136474609
+        },
+        "layer_05": {
+          "patched_target_logprob": -13.732152938842773,
+          "raw_recovery": -0.04049110412597656,
+          "normalized_recovery": -4049110.4125976562
+        },
+        "layer_06": {
+          "patched_target_logprob": -13.724590301513672,
+          "raw_recovery": -0.032928466796875,
+          "normalized_recovery": -3292846.6796875
+        },
+        "layer_07": {
+          "patched_target_logprob": -13.67674446105957,
+          "raw_recovery": 0.014917373657226562,
+          "normalized_recovery": 1491737.3657226562
+        },
+        "layer_08": {
+          "patched_target_logprob": -13.612249374389648,
+          "raw_recovery": 0.07941246032714844,
+          "normalized_recovery": 7941246.032714844
+        },
+        "layer_13": {
+          "patched_target_logprob": -13.462553977966309,
+          "raw_recovery": 0.22910785675048828,
+          "normalized_recovery": 22910785.675048828
+        },
+        "layer_21": {
+          "patched_target_logprob": -13.688051223754883,
+          "raw_recovery": 0.0036106109619140625,
+          "normalized_recovery": 361061.09619140625
+        },
+        "layer_22": {
+          "patched_target_logprob": -13.36248779296875,
+          "raw_recovery": 0.3291740417480469,
+          "normalized_recovery": 32917404.174804688
+        },
+        "layer_23": {
+          "patched_target_logprob": -13.476667404174805,
+          "raw_recovery": 0.2149944305419922,
+          "normalized_recovery": 21499443.05419922
+        }
+      },
+      "pair_id": "copying_0007",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -16.341754913330078,
+      "corrupt_target_logprob": -15.538471221923828,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -15.519975662231445,
+          "raw_recovery": 0.018495559692382812,
+          "normalized_recovery": 1849555.9692382812
+        },
+        "layer_01": {
+          "patched_target_logprob": -15.440605163574219,
+          "raw_recovery": 0.09786605834960938,
+          "normalized_recovery": 9786605.834960938
+        },
+        "layer_02": {
+          "patched_target_logprob": -15.567316055297852,
+          "raw_recovery": -0.028844833374023438,
+          "normalized_recovery": -2884483.3374023438
+        },
+        "layer_03": {
+          "patched_target_logprob": -15.55953311920166,
+          "raw_recovery": -0.02106189727783203,
+          "normalized_recovery": -2106189.727783203
+        },
+        "layer_04": {
+          "patched_target_logprob": -15.786008834838867,
+          "raw_recovery": -0.24753761291503906,
+          "normalized_recovery": -24753761.291503906
+        },
+        "layer_05": {
+          "patched_target_logprob": -15.744893074035645,
+          "raw_recovery": -0.2064218521118164,
+          "normalized_recovery": -20642185.21118164
+        },
+        "layer_06": {
+          "patched_target_logprob": -15.669218063354492,
+          "raw_recovery": -0.13074684143066406,
+          "normalized_recovery": -13074684.143066406
+        },
+        "layer_07": {
+          "patched_target_logprob": -15.49593448638916,
+          "raw_recovery": 0.04253673553466797,
+          "normalized_recovery": 4253673.553466797
+        },
+        "layer_08": {
+          "patched_target_logprob": -15.545974731445312,
+          "raw_recovery": -0.007503509521484375,
+          "normalized_recovery": -750350.9521484375
+        },
+        "layer_13": {
+          "patched_target_logprob": -15.59164810180664,
+          "raw_recovery": -0.0531768798828125,
+          "normalized_recovery": -5317687.98828125
+        },
+        "layer_21": {
+          "patched_target_logprob": -15.689910888671875,
+          "raw_recovery": -0.15143966674804688,
+          "normalized_recovery": -15143966.674804688
+        },
+        "layer_22": {
+          "patched_target_logprob": -15.768420219421387,
+          "raw_recovery": -0.2299489974975586,
+          "normalized_recovery": -22994899.74975586
+        },
+        "layer_23": {
+          "patched_target_logprob": -15.392049789428711,
+          "raw_recovery": 0.1464214324951172,
+          "normalized_recovery": 14642143.249511719
+        }
+      },
+      "pair_id": "copying_0008",
+      "family": "copying"
+    },
+    {
+      "clean_target_logprob": -14.508218765258789,
+      "corrupt_target_logprob": -14.731719017028809,
+      "patching_results": {
+        "layer_00": {
+          "patched_target_logprob": -14.754166603088379,
+          "raw_recovery": -0.022447586059570312,
+          "normalized_recovery": -0.10043651352423866
+        },
+        "layer_01": {
+          "patched_target_logprob": -14.521788597106934,
+          "raw_recovery": 0.209930419921875,
+          "normalized_recovery": 0.939284937083168
+        },
+        "layer_02": {
+          "patched_target_logprob": -14.726863861083984,
+          "raw_recovery": 0.004855155944824219,
+          "normalized_recovery": 0.02172326834700905
+        },
+        "layer_03": {
+          "patched_target_logprob": -14.6856689453125,
+          "raw_recovery": 0.046050071716308594,
+          "normalized_recovery": 0.2060403572327688
+        },
+        "layer_04": {
+          "patched_target_logprob": -14.748710632324219,
+          "raw_recovery": -0.016991615295410156,
+          "normalized_recovery": -0.07602503872297392
+        },
+        "layer_05": {
+          "patched_target_logprob": -14.616037368774414,
+          "raw_recovery": 0.11568164825439453,
+          "normalized_recovery": 0.5175906842978875
+        },
+        "layer_06": {
+          "patched_target_logprob": -14.698945999145508,
+          "raw_recovery": 0.03277301788330078,
+          "normalized_recovery": 0.14663526158808995
+        },
+        "layer_07": {
+          "patched_target_logprob": -14.785823822021484,
+          "raw_recovery": -0.05410480499267578,
+          "normalized_recovery": -0.24207939169728235
+        },
+        "layer_08": {
+          "patched_target_logprob": -14.793286323547363,
+          "raw_recovery": -0.06156730651855469,
+          "normalized_recovery": -0.2754686226568867
+        },
+        "layer_13": {
+          "patched_target_logprob": -14.782332420349121,
+          "raw_recovery": -0.0506134033203125,
+          "normalized_recovery": -0.22645792530199652
+        },
+        "layer_21": {
+          "patched_target_logprob": -14.856314659118652,
+          "raw_recovery": -0.12459564208984375,
+          "normalized_recovery": -0.5574742806914238
+        },
+        "layer_22": {
+          "patched_target_logprob": -14.905908584594727,
+          "raw_recovery": -0.17418956756591797,
+          "normalized_recovery": -0.7793707890099293
+        },
+        "layer_23": {
+          "patched_target_logprob": -14.632559776306152,
+          "raw_recovery": 0.09915924072265625,
+          "normalized_recovery": 0.443665006805856
+        }
+      },
+      "pair_id": "copying_0009",
+      "family": "copying"
+    }
+  ]
+}

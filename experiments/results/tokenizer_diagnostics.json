@@ -1,0 +1,557 @@
+{
+  "basic_info": {
+    "vocab_size": 151643,
+    "model_max_length": 131072,
+    "pad_token": "<|endoftext|>",
+    "eos_token": "<|endoftext|>",
+    "bos_token": null,
+    "unk_token": null,
+    "pad_token_id": 151643,
+    "eos_token_id": 151643
+  },
+  "bracket_tokenization": {
+    "(": {
+      "token_ids": [
+        7
+      ],
+      "decoded": [
+        "("
+      ],
+      "single_token": true
+    },
+    ")": {
+      "token_ids": [
+        8
+      ],
+      "decoded": [
+        ")"
+      ],
+      "single_token": true
+    },
+    "[": {
+      "token_ids": [
+        58
+      ],
+      "decoded": [
+        "["
+      ],
+      "single_token": true
+    },
+    "]": {
+      "token_ids": [
+        60
+      ],
+      "decoded": [
+        "]"
+      ],
+      "single_token": true
+    },
+    "{": {
+      "token_ids": [
+        90
+      ],
+      "decoded": [
+        "{"
+      ],
+      "single_token": true
+    },
+    "}": {
+      "token_ids": [
+        92
+      ],
+      "decoded": [
+        "}"
+      ],
+      "single_token": true
+    },
+    ":": {
+      "token_ids": [
+        25
+      ],
+      "decoded": [
+        ":"
+      ],
+      "single_token": true
+    },
+    ",": {
+      "token_ids": [
+        11
+      ],
+      "decoded": [
+        ","
+      ],
+      "single_token": true
+    },
+    ".": {
+      "token_ids": [
+        13
+      ],
+      "decoded": [
+        "."
+      ],
+      "single_token": true
+    },
+    ";": {
+      "token_ids": [
+        26
+      ],
+      "decoded": [
+        ";"
+      ],
+      "single_token": true
+    },
+    "\"": {
+      "token_ids": [
+        1
+      ],
+      "decoded": [
+        "\""
+      ],
+      "single_token": true
+    },
+    "'": {
+      "token_ids": [
+        6
+      ],
+      "decoded": [
+        "'"
+      ],
+      "single_token": true
+    },
+    "```": {
+      "token_ids": [
+        73594
+      ],
+      "decoded": [
+        "```"
+      ],
+      "single_token": true
+    },
+    "->": {
+      "token_ids": [
+        405
+      ],
+      "decoded": [
+        "->"
+      ],
+      "single_token": true
+    },
+    "=>": {
+      "token_ids": [
+        2179
+      ],
+      "decoded": [
+        "=>"
+      ],
+      "single_token": true
+    }
+  },
+  "digit_tokenization": {
+    "0": {
+      "token_ids": [
+        15
+      ],
+      "decoded": [
+        "0"
+      ],
+      "single_token": true
+    },
+    "1": {
+      "token_ids": [
+        16
+      ],
+      "decoded": [
+        "1"
+      ],
+      "single_token": true
+    },
+    "2": {
+      "token_ids": [
+        17
+      ],
+      "decoded": [
+        "2"
+      ],
+      "single_token": true
+    },
+    "3": {
+      "token_ids": [
+        18
+      ],
+      "decoded": [
+        "3"
+      ],
+      "single_token": true
+    },
+    "4": {
+      "token_ids": [
+        19
+      ],
+      "decoded": [
+        "4"
+      ],
+      "single_token": true
+    },
+    "5": {
+      "token_ids": [
+        20
+      ],
+      "decoded": [
+        "5"
+      ],
+      "single_token": true
+    },
+    "6": {
+      "token_ids": [
+        21
+      ],
+      "decoded": [
+        "6"
+      ],
+      "single_token": true
+    },
+    "7": {
+      "token_ids": [
+        22
+      ],
+      "decoded": [
+        "7"
+      ],
+      "single_token": true
+    },
+    "8": {
+      "token_ids": [
+        23
+      ],
+      "decoded": [
+        "8"
+      ],
+      "single_token": true
+    },
+    "9": {
+      "token_ids": [
+        24
+      ],
+      "decoded": [
+        "9"
+      ],
+      "single_token": true
+    }
+  },
+  "alignment_checks": [
+    {
+      "prompt": "The capital of France is ",
+      "target": "Paris",
+      "prompt_ids": [
+        785,
+        6722,
+        315,
+        9625,
+        374,
+        220
+      ],
+      "target_ids": [
+        59604
+      ],
+      "full_ids": [
+        785,
+        6722,
+        315,
+        9625,
+        374,
+        12095
+      ],
+      "aligned": false,
+      "prompt_n_tokens": 6,
+      "target_n_tokens": 1
+    },
+    {
+      "prompt": "7 + 5 = ",
+      "target": "12",
+      "prompt_ids": [
+        22,
+        488,
+        220,
+        20,
+        284,
+        220
+      ],
+      "target_ids": [
+        16,
+        17
+      ],
+      "full_ids": [
+        22,
+        488,
+        220,
+        20,
+        284,
+        220,
+        16,
+        17
+      ],
+      "aligned": true,
+      "prompt_n_tokens": 6,
+      "target_n_tokens": 2
+    },
+    {
+      "prompt": "A B C A B ",
+      "target": "C",
+      "prompt_ids": [
+        32,
+        425,
+        356,
+        362,
+        425,
+        220
+      ],
+      "target_ids": [
+        34
+      ],
+      "full_ids": [
+        32,
+        425,
+        356,
+        362,
+        425,
+        356
+      ],
+      "aligned": false,
+      "prompt_n_tokens": 6,
+      "target_n_tokens": 1
+    },
+    {
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "prompt_ids": [
+        750,
+        912,
+        2877,
+        11,
+        293,
+        982,
+        262,
+        470,
+        264,
+        488,
+        220
+      ],
+      "target_ids": [
+        65
+      ],
+      "full_ids": [
+        750,
+        912,
+        2877,
+        11,
+        293,
+        982,
+        262,
+        470,
+        264,
+        488,
+        293
+      ],
+      "aligned": false,
+      "prompt_n_tokens": 11,
+      "target_n_tokens": 1
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\": ",
+      "target": "31",
+      "prompt_ids": [
+        4913,
+        606,
+        788,
+        330,
+        61686,
+        497,
+        330,
+        424,
+        788,
+        220
+      ],
+      "target_ids": [
+        18,
+        16
+      ],
+      "full_ids": [
+        4913,
+        606,
+        788,
+        330,
+        61686,
+        497,
+        330,
+        424,
+        788,
+        220,
+        18,
+        16
+      ],
+      "aligned": true,
+      "prompt_n_tokens": 10,
+      "target_n_tokens": 2
+    }
+  ],
+  "multi_token_targets": [
+    {
+      "target": "Paris",
+      "n_tokens": 1,
+      "token_ids": [
+        59604
+      ],
+      "decoded_parts": [
+        "Paris"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "12",
+      "n_tokens": 2,
+      "token_ids": [
+        16,
+        17
+      ],
+      "decoded_parts": [
+        "1",
+        "2"
+      ],
+      "is_single_token": false
+    },
+    {
+      "target": "C",
+      "n_tokens": 1,
+      "token_ids": [
+        34
+      ],
+      "decoded_parts": [
+        "C"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "b",
+      "n_tokens": 1,
+      "token_ids": [
+        65
+      ],
+      "decoded_parts": [
+        "b"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "31",
+      "n_tokens": 2,
+      "token_ids": [
+        18,
+        16
+      ],
+      "decoded_parts": [
+        "3",
+        "1"
+      ],
+      "is_single_token": false
+    },
+    {
+      "target": "true",
+      "n_tokens": 1,
+      "token_ids": [
+        1866
+      ],
+      "decoded_parts": [
+        "true"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "false",
+      "n_tokens": 1,
+      "token_ids": [
+        3849
+      ],
+      "decoded_parts": [
+        "false"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "null",
+      "n_tokens": 1,
+      "token_ids": [
+        2921
+      ],
+      "decoded_parts": [
+        "null"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "print",
+      "n_tokens": 1,
+      "token_ids": [
+        1350
+      ],
+      "decoded_parts": [
+        "print"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "return",
+      "n_tokens": 1,
+      "token_ids": [
+        689
+      ],
+      "decoded_parts": [
+        "return"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "function",
+      "n_tokens": 1,
+      "token_ids": [
+        1688
+      ],
+      "decoded_parts": [
+        "function"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "```",
+      "n_tokens": 1,
+      "token_ids": [
+        73594
+      ],
+      "decoded_parts": [
+        "```"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "[]",
+      "n_tokens": 1,
+      "token_ids": [
+        1294
+      ],
+      "decoded_parts": [
+        "[]"
+      ],
+      "is_single_token": true
+    },
+    {
+      "target": "{}",
+      "n_tokens": 1,
+      "token_ids": [
+        6257
+      ],
+      "decoded_parts": [
+        "{}"
+      ],
+      "is_single_token": true
+    }
+  ]
+}

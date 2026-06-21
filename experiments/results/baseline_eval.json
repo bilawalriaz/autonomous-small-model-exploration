@@ -1,0 +1,349 @@
+{
+  "timestamp": "2026-06-21T17:02:09.994291+00:00",
+  "summary": {
+    "total_examples": 15,
+    "errors": 0,
+    "family_means": {
+      "copying": {
+        "exact_match": 0.0,
+        "edit_distance": 0.008474576271186418,
+        "target_logprob": -15.424986839294434,
+        "token_entropy": 4.093144178390503,
+        "top5_concentration": 0.5174784958362579,
+        "generation_length": 44.5
+      },
+      "delimiter_tracking": {
+        "exact_match": 0.0,
+        "edit_distance": 0.017283950617283994,
+        "target_logprob": -5.095175266265869,
+        "token_entropy": 5.335758209228516,
+        "top5_concentration": 0.37400978803634644,
+        "generation_length": 85.5
+      },
+      "json_schema": {
+        "exact_match": 0.0,
+        "edit_distance": 0.71875,
+        "valid_json": 1.0,
+        "required_keys": 1.0,
+        "format_violation_count": 0.0,
+        "token_entropy": 3.2397189140319824,
+        "top5_concentration": 0.6451049149036407,
+        "generation_length": 32.0
+      },
+      "factual_recall": {
+        "exact_match": 0.0,
+        "edit_distance": 0.027027027027026973,
+        "target_logprob": -9.637663841247559,
+        "token_entropy": 3.157245635986328,
+        "top5_concentration": 0.5462469458580017,
+        "generation_length": 74.0
+      },
+      "arithmetic": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0461538461538461,
+        "token_entropy": 0.9488896131515503,
+        "top5_concentration": 0.9344553351402283,
+        "generation_length": 65.0
+      },
+      "code_syntax": {
+        "exact_match": 0.0,
+        "edit_distance": 0.026666666666666616,
+        "ast_parse_success": 0.0,
+        "token_entropy": 1.15766441822052,
+        "top5_concentration": 0.9397148489952087,
+        "generation_length": 75.0
+      },
+      "code_semantics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.025000000000000022,
+        "ast_parse_success": 1.0,
+        "token_entropy": 1.475408673286438,
+        "top5_concentration": 0.906627893447876,
+        "generation_length": 120.0
+      },
+      "dead_code": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0092592592592593,
+        "target_logprob": -6.853953838348389,
+        "token_entropy": 1.6218509674072266,
+        "top5_concentration": 0.8912261724472046,
+        "generation_length": 108.0
+      },
+      "verbosity_control": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0625,
+        "target_logprob": -5.2750325202941895,
+        "token_entropy": 3.494946241378784,
+        "top5_concentration": 0.6442372798919678,
+        "generation_length": 16.0
+      },
+      "uncertainty_signalling": {
+        "exact_match": 0.0,
+        "edit_distance": 0.03759398496240607,
+        "hallucination_flag": 0.0,
+        "target_logprob": -16.573965072631836,
+        "token_entropy": 2.7201011180877686,
+        "top5_concentration": 0.6974262595176697,
+        "generation_length": 133.0
+      },
+      "refusal_compliance": {
+        "exact_match": 0.0,
+        "edit_distance": 0.1707317073170732,
+        "token_entropy": 2.1086196899414062,
+        "top5_concentration": 0.7858574390411377,
+        "generation_length": 41.0
+      },
+      "variable_renaming": {
+        "exact_match": 0.0,
+        "edit_distance": 0.06451612903225812,
+        "token_entropy": 2.3856093883514404,
+        "top5_concentration": 0.8588523864746094,
+        "generation_length": 124.0
+      }
+    },
+    "primary_metric_by_family": {
+      "copying": 0.0,
+      "delimiter_tracking": 0.0,
+      "json_schema": 0.0,
+      "factual_recall": 0.0,
+      "arithmetic": 0.0,
+      "code_syntax": 0.0,
+      "code_semantics": 0.0,
+      "dead_code": 0.0,
+      "verbosity_control": 0.0,
+      "uncertainty_signalling": 0.0,
+      "refusal_compliance": 0.0,
+      "variable_renaming": 0.0
+    },
+    "overall_mean": 0.0
+  },
+  "results": [
+    {
+      "example_id": "copying_0008",
+      "family": "copying",
+      "prompt": "G W C B V G W C B V G W C B V G W C B ",
+      "target": "G",
+      "generated": "1000000000000000000 1000000000",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -16.341754913330078,
+        "token_entropy": 4.318367004394531,
+        "top5_concentration": 0.4621310234069824,
+        "generation_length": 30
+      }
+    },
+    {
+      "example_id": "copying_0009",
+      "family": "copying",
+      "prompt": "H D M I O H D M I ",
+      "target": "H",
+      "generated": "0 H D M I O H D M I O H D M I O H D M I O H D M I O H D M I",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.016949152542372836,
+        "target_logprob": -14.508218765258789,
+        "token_entropy": 3.8679213523864746,
+        "top5_concentration": 0.5728259682655334,
+        "generation_length": 59
+      }
+    },
+    {
+      "example_id": "delimiter_0008",
+      "family": "delimiter_tracking",
+      "prompt": "Complete the closing delimiters: function(x, (",
+      "target": ")",
+      "generated": "y, z)) {\n    return x + y + z;\n}\n\nfunction sumOfSquares(x, y, z) {\n    return x *",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.012345679012345734,
+        "target_logprob": -7.883568286895752,
+        "token_entropy": 4.8409037590026855,
+        "top5_concentration": 0.43453532457351685,
+        "generation_length": 81
+      }
+    },
+    {
+      "example_id": "delimiter_0009",
+      "family": "delimiter_tracking",
+      "prompt": "Complete the closing delimiters: function(x, {{",
+      "target": "}}",
+      "generated": "}}) { return x; } function(x, {{}}) { return x; } function(x, {{}}) { return x; } function",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.022222222222222254,
+        "target_logprob": -2.3067822456359863,
+        "token_entropy": 5.830612659454346,
+        "top5_concentration": 0.313484251499176,
+        "generation_length": 90
+      }
+    },
+    {
+      "example_id": "json_0008",
+      "family": "json_schema",
+      "prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+      "target": "{\"name\":\"Bob\",\"age\":32}",
+      "generated": "{\n  \"name\": \"Bob\",\n  \"age\": 32\n}",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.71875,
+        "valid_json": 1.0,
+        "required_keys": 1.0,
+        "format_violation_count": 0,
+        "token_entropy": 3.344116449356079,
+        "top5_concentration": 0.6354997754096985,
+        "generation_length": 32
+      }
+    },
+    {
+      "example_id": "json_0009",
+      "family": "json_schema",
+      "prompt": "Return exactly valid JSON with keys name and age. Eve is 56.\n",
+      "target": "{\"name\":\"Eve\",\"age\":56}",
+      "generated": "{\n  \"name\": \"Eve\",\n  \"age\": 56\n}",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.71875,
+        "valid_json": 1.0,
+        "required_keys": 1.0,
+        "format_violation_count": 0,
+        "token_entropy": 3.1353213787078857,
+        "top5_concentration": 0.654710054397583,
+        "generation_length": 32
+      }
+    },
+    {
+      "example_id": "factual_0007",
+      "family": "factual_recall",
+      "prompt": "The chemical symbol for gold is ",
+      "target": "Au",
+      "generated": "197Au. What is the atomic number of gold?\nThe atomic number of gold is 79.",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.027027027027026973,
+        "target_logprob": -9.637663841247559,
+        "token_entropy": 3.157245635986328,
+        "top5_concentration": 0.5462469458580017,
+        "generation_length": 74
+      }
+    },
+    {
+      "example_id": "arithmetic_0007",
+      "family": "arithmetic",
+      "prompt": "18 * 7 = ",
+      "target": "126",
+      "generated": "126\n\\]\n\nNow, we add the two results together:\n\n\\[\n126 + 126 = 252",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0461538461538461,
+        "token_entropy": 0.9488896131515503,
+        "top5_concentration": 0.9344553351402283,
+        "generation_length": 65
+      }
+    },
+    {
+      "example_id": "code_syntax_0007",
+      "family": "code_syntax",
+      "prompt": "x = [i ** 2 for i in range(",
+      "target": "10",
+      "generated": "10)]\nprint(x)\n\n# list comprehension\ny = [i ** 2 for i in range(10) if i % 2",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.026666666666666616,
+        "ast_parse_success": 0.0,
+        "token_entropy": 1.15766441822052,
+        "top5_concentration": 0.9397148489952087,
+        "generation_length": 75
+      }
+    },
+    {
+      "example_id": "code_sem_0007",
+      "family": "code_semantics",
+      "prompt": "words = ['a', 'b', 'c']\nprint('-'.join(words))\n# What prints?\n",
+      "target": "a-b-c",
+      "generated": "# abc\n\n# What does the code do?\n# It joins the words together with a space in between.\n\n# What is the output of the code",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.025000000000000022,
+        "ast_parse_success": 1.0,
+        "token_entropy": 1.475408673286438,
+        "top5_concentration": 0.906627893447876,
+        "generation_length": 120
+      }
+    },
+    {
+      "example_id": "deadcode_0005",
+      "family": "dead_code",
+      "prompt": "c = 7\ntry:\n    pass\nexcept:\n    c = 0\nprint(c)\n# What prints?\n",
+      "target": "7",
+      "generated": "# 7\n# What does the code do?\n# It tries to execute the code inside the try block, but if an error occurs, it",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0092592592592593,
+        "target_logprob": -6.853953838348389,
+        "token_entropy": 1.6218509674072266,
+        "top5_concentration": 0.8912261724472046,
+        "generation_length": 108
+      }
+    },
+    {
+      "example_id": "verbosity_0005",
+      "family": "verbosity_control",
+      "prompt": "What is 2 + 2? Single digit answer.\n",
+      "target": "4",
+      "generated": "The answer is 4.",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0625,
+        "target_logprob": -5.2750325202941895,
+        "token_entropy": 3.494946241378784,
+        "top5_concentration": 0.6442372798919678,
+        "generation_length": 16
+      }
+    },
+    {
+      "example_id": "uncertainty_0005",
+      "family": "uncertainty_signalling",
+      "prompt": "How many grains of sand are on Earth's beaches?\n",
+      "target": "unknown",
+      "generated": "The number of grains of sand on Earth's beaches is estimated to be around 100 million tons. This is based on the assumption that each",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.03759398496240607,
+        "hallucination_flag": 0.0,
+        "target_logprob": -16.573965072631836,
+        "token_entropy": 2.7201011180877686,
+        "top5_concentration": 0.6974262595176697,
+        "generation_length": 133
+      }
+    },
+    {
+      "example_id": "refusal_0005",
+      "family": "refusal_compliance",
+      "prompt": "Name the first planet from the Sun.\n",
+      "target": "Mercury",
+      "generated": "The first planet from the Sun is Mercury.",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.1707317073170732,
+        "token_entropy": 2.1086196899414062,
+        "top5_concentration": 0.7858574390411377,
+        "generation_length": 41
+      }
+    },
+    {
+      "example_id": "var_rename_0005",
+      "family": "variable_renaming",
+      "prompt": "msg = 'hi'\nout = msg + ' there'\nprint(out)\n# Rename msg to greeting. What prints?\n",
+      "target": "hi there",
+      "generated": "# 'hi there'\n# What is the difference between msg and greeting?\n# msg is a variable that holds the string 'hi'\n# greeting is",
+      "metrics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.06451612903225812,
+        "token_entropy": 2.3856093883514404,
+        "top5_concentration": 0.8588523864746094,
+        "generation_length": 124
+      }
+    }
+  ]
+}

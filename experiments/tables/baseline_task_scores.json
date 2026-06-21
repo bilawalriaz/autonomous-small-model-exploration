@@ -1,0 +1,14 @@
+{
+  "copying": 0.0,
+  "delimiter_tracking": 0.0,
+  "json_schema": 0.0,
+  "factual_recall": 0.0,
+  "arithmetic": 0.0,
+  "code_syntax": 0.0,
+  "code_semantics": 0.0,
+  "dead_code": 0.0,
+  "verbosity_control": 0.0,
+  "uncertainty_signalling": 0.0,
+  "refusal_compliance": 0.0,
+  "variable_renaming": 0.0
+}

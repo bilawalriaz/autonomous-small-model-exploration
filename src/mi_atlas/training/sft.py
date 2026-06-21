@@ -57,8 +57,7 @@ def train_sft(
         model=model,
         args=training_args,
         train_dataset=dataset,
-        tokenizer=tokenizer,
-        max_seq_length=sft_config.get("max_seq_length", 512),
+        processing_class=tokenizer,
     )
 
     result = trainer.train()

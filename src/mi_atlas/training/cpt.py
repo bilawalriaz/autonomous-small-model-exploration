@@ -66,7 +66,7 @@ def train_cpt(
         model=model,
         args=training_args,
         train_dataset=tokenized,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     result = trainer.train()

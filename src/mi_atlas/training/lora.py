@@ -98,7 +98,7 @@ def train_lora(
         model=peft_model,
         args=training_args,
         train_dataset=tokenized,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
     )
 
     result = trainer.train()

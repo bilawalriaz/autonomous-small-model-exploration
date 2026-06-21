@@ -1,0 +1,172 @@
+[
+  {
+    "id": "copying_0000",
+    "family": "copying",
+    "clean": "Complete the pattern: A B C A B C",
+    "corrupt": "Complete the pattern: A B C A B X",
+    "target": "C",
+    "prefix": "Complete the pattern: A B C A B ",
+    "prefix_len": 10,
+    "total_len": 10
+  },
+  {
+    "id": "copying_0001",
+    "family": "copying",
+    "clean": "Complete the pattern: 1 2 3 1 2 3",
+    "corrupt": "Complete the pattern: 1 2 3 1 2 9",
+    "target": "3",
+    "prefix": "Complete the pattern: 1 2 3 1 2 ",
+    "prefix_len": 15,
+    "total_len": 16
+  },
+  {
+    "id": "copying_0002",
+    "family": "copying",
+    "clean": "Complete the pattern: cat dog cat dog cat",
+    "corrupt": "Complete the pattern: cat dog cat dog fish",
+    "target": "cat",
+    "prefix": "Complete the pattern: cat dog cat dog ",
+    "prefix_len": 9,
+    "total_len": 9
+  },
+  {
+    "id": "copying_0003",
+    "family": "copying",
+    "clean": "Complete the sequence: red blue green red blue green",
+    "corrupt": "Complete the sequence: red blue green red blue yellow",
+    "target": "green",
+    "prefix": "Complete the sequence: red blue green red blue ",
+    "prefix_len": 10,
+    "total_len": 10
+  },
+  {
+    "id": "delimiter_tracking_0000",
+    "family": "delimiter_tracking",
+    "clean": "Close the brackets: ( [ { } ] )",
+    "corrupt": "Close the brackets: ( [ { ) } ]",
+    "target": "}",
+    "prefix": "Close the brackets: ( [ { ",
+    "prefix_len": 8,
+    "total_len": 10
+  },
+  {
+    "id": "delimiter_tracking_0001",
+    "family": "delimiter_tracking",
+    "clean": "Close all brackets: { a: [1, (2) ] }",
+    "corrupt": "Close all brackets: { a: [1, (2} ] )",
+    "target": ")",
+    "prefix": "Close all brackets: { a: [1, (2",
+    "prefix_len": 12,
+    "total_len": 15
+  },
+  {
+    "id": "arithmetic_0000",
+    "family": "arithmetic",
+    "clean": "Calculate: 7 + 5 = 12",
+    "corrupt": "Calculate: 7 + 5 = 13",
+    "target": "12",
+    "prefix": "Calculate: 7 + 5 = ",
+    "prefix_len": 9,
+    "total_len": 11
+  },
+  {
+    "id": "arithmetic_0001",
+    "family": "arithmetic",
+    "clean": "Calculate: 3 * 4 = 12",
+    "corrupt": "Calculate: 3 * 4 = 13",
+    "target": "12",
+    "prefix": "Calculate: 3 * 4 = ",
+    "prefix_len": 9,
+    "total_len": 11
+  },
+  {
+    "id": "arithmetic_0002",
+    "family": "arithmetic",
+    "clean": "Calculate: 20 - 8 = 12",
+    "corrupt": "Calculate: 20 - 8 = 13",
+    "target": "12",
+    "prefix": "Calculate: 20 - 8 = ",
+    "prefix_len": 10,
+    "total_len": 12
+  },
+  {
+    "id": "json_schema_0000",
+    "family": "json_schema",
+    "clean": "Return JSON: {\"name\": \"Alice\", \"age\": 31}",
+    "corrupt": "Return JSON: {\"name\": \"Alice\", \"age\": 31,",
+    "target": "31",
+    "prefix": "Return JSON: {\"name\": \"Alice\", \"age\": ",
+    "prefix_len": 13,
+    "total_len": 16
+  },
+  {
+    "id": "json_schema_0001",
+    "family": "json_schema",
+    "clean": "Return JSON: {\"x\": 1, \"y\": 2}",
+    "corrupt": "Return JSON: {\"x\": 1, \"y\": 2,",
+    "target": "2",
+    "prefix": "Return JSON: {\"x\": 1, \"y\": ",
+    "prefix_len": 13,
+    "total_len": 15
+  },
+  {
+    "id": "factual_recall_0000",
+    "family": "factual_recall",
+    "clean": "The capital of France is Paris",
+    "corrupt": "The capital of France is London",
+    "target": "Paris",
+    "prefix": "The capital of France is ",
+    "prefix_len": 6,
+    "total_len": 6
+  },
+  {
+    "id": "factual_recall_0001",
+    "family": "factual_recall",
+    "clean": "The capital of Germany is Berlin",
+    "corrupt": "The capital of Germany is Munich",
+    "target": "Berlin",
+    "prefix": "The capital of Germany is ",
+    "prefix_len": 6,
+    "total_len": 6
+  },
+  {
+    "id": "factual_recall_0002",
+    "family": "factual_recall",
+    "clean": "The chemical symbol for gold is Au",
+    "corrupt": "The chemical symbol for gold is Ag",
+    "target": "Au",
+    "prefix": "The chemical symbol for gold is ",
+    "prefix_len": 7,
+    "total_len": 7
+  },
+  {
+    "id": "code_syntax_0000",
+    "family": "code_syntax",
+    "clean": "def add(a, b):\n    return a + b",
+    "corrupt": "def add(a, b):\n    return a + a",
+    "target": "b",
+    "prefix": "def add(a, b):\n    return a + ",
+    "prefix_len": 11,
+    "total_len": 11
+  },
+  {
+    "id": "verbosity_control_0000",
+    "family": "verbosity_control",
+    "clean": "Is 7 prime? Answer one word: Yes",
+    "corrupt": "Is 7 prime? Answer one word: No",
+    "target": "Yes",
+    "prefix": "Is 7 prime? Answer one word: ",
+    "prefix_len": 10,
+    "total_len": 10
+  },
+  {
+    "id": "verbosity_control_0001",
+    "family": "verbosity_control",
+    "clean": "How many sides does a triangle have? Just the number: 3",
+    "corrupt": "How many sides does a triangle have? Just the number: 4",
+    "target": "3",
+    "prefix": "How many sides does a triangle have? Just the number: ",
+    "prefix_len": 13,
+    "total_len": 14
+  }
+]

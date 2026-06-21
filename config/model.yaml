@@ -1,6 +1,6 @@
 # Model configuration
 model:
-  primary: "Qwen/Qwen3-0.5B"
+  primary: "Qwen/Qwen2.5-0.5B"
   fallbacks:
     - "Qwen/Qwen2.5-0.5B"
     - "Qwen/Qwen2.5-0.5B-Instruct"
