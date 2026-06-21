@@ -1,7 +1,7 @@
 # Current Findings
 
 ## Executive summary
-Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal processing hub. Position-specific ablation reveals L2 routes first+last tokens while L22 is exclusively a last-token layer and L9 is the instruction-sensitive layer. LoRA training rewires where skills live — each skill concentrates in DIFFERENT layers, rejecting the universal L0-L2 hypothesis. The core circuit (L2/L7/L9) locks in by step 10 of training. Adapters can be stacked: factual+json combines cleanly, but the delimiter adapter is destructive when merged.
+Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal processing hub. Position-specific ablation reveals L2 routes first+last tokens while L22 is exclusively a last-token layer and L9 is the instruction-sensitive layer. LoRA training rewires where skills live — each skill concentrates in DIFFERENT layers, rejecting the universal L0-L2 hypothesis. The core circuit (L2/L7/L9) locks in by step 10 of training. Adapters can be stacked: factual+json combines cleanly, but the delimiter adapter is destructive when merged. Cross-model patching shows trained behavior is encoded in late-layer activations (monotonic recovery L23=100% → L0≈0%). Skill knockout at L19 selectively suppresses factual recall (11654x selectivity) while preserving other skills. Adapter-only ablation shows norm-effect correlation of 0.85, updating H6: adapter effects are at the same layers where norms peak, not upstream.
 
 ## Strongest causal claims
 
@@ -11,13 +11,17 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 
 3. **L2 causal role for factual recall confirmed by steering.** Steering L2 with factual direction boosts "rome" from 0.064 to 0.213 (3.3x) for "capital of Italy". Negative steering suppresses it. Oversteering at s>=+2 causes degeneration (Chinese characters). *Confidence: MEDIUM.* Evidence: steering sweep.
 
-4. **L22 is the unembedding/final-prediction pathway.** Position-specific ablation shows L22 almost exclusively affects last-position tokens (mean 14.55 nats, all other positions ~0). This is where final vocabulary projection information flows. *Confidence: MEDIUM.* Evidence: position-specific ablation.
+4. **L22 is the unembedding/final-prediction pathway.** Position-specific ablation shows L22 almost exclusively affects last-position tokens (mean 14.55 nats, all other positions ~0). Cross-model patching confirms L22 carries 97% of trained behavior. *Confidence: MEDIUM.* Evidence: position-specific ablation, cross-model patching.
 
 5. **Core circuit locks in by step 10 of training.** L2/L7/L9 for JSON schema stabilize at step 10 (first 10% of training) and drift <1% through step 100. Secondary layers (L15, L6) continue shifting. *Confidence: MEDIUM.* Evidence: checkpoint timeline.
 
-6. **Adapter weight norms and functional effects are spatially separated.** LoRA adapter norms peak at L20-L23 (late layers) while ablation effects peak at L0-L2 (early layers). *Confidence: MEDIUM.* Evidence: adapter archaeology.
+6. **Trained behavior is encoded in late-layer activation patterns.** Cross-model patching shows monotonic recovery increase from early to late layers: L23=100%, L22=97%, L21=95%, L20=87%, L19=80%. Patching trained activations at L23 into the base model gives 100% recovery. *Confidence: MEDIUM.* Evidence: cross-model patching (17 pairs, 24 layers).
 
-7. **Adapters can be combined with varying interference.** factual_recall + json_schema stacks cleanly (+2.35 synergy on factual, +1.17 on json). delimiter_tracking adapter is destructive when stacked (-7 to -16 nats). *Confidence: MEDIUM.* Evidence: adapter stacking.
+7. **Skills can be selectively suppressed via negative steering at skill-specific layers.** L19 selectively knocks out factual recall (selectivity ratio 11654x at s=-2.0) while preserving JSON and copying skills. L2 is non-selective (universal hub — knockout affects everything). L21 also shows good selectivity (53x). *Confidence: MEDIUM.* Evidence: skill knockout experiment (2 skills, 7+ layers).
+
+8. **Adapter norm and ablation effect are correlated (r=0.85), both peaking at late layers.** Adapter-only ablation shows that removing the adapter's contribution at L19-L23 has the largest effect, matching the norm distribution. This updates H6: the adapter's effect IS at the same layers where it writes, not upstream. The earlier finding conflated general layer importance (L0-L2) with adapter-specific importance (L19-L23). *Confidence: MEDIUM.* Evidence: adapter-only ablation (12 prompts, 24 layers).
+
+9. **Adapters can be combined with varying interference.** factual_recall + json_schema stacks cleanly (+2.35 synergy on factual, +1.17 on json). delimiter_tracking adapter is destructive when stacked (-7 to -16 nats). *Confidence: MEDIUM.* Evidence: adapter stacking.
 
 ## Training perturbation findings
 
@@ -27,6 +31,7 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 - **LoRA module sweep:** o_proj alone achieves +3.64 L0 effect with 344K params. MLP-only weakest (3.3M params, +1.92).
 - **Cross-task effects after JSON LoRA:** L4 appeared for factual_recall (+1.42). L2 increased for delimiter (+1.19), factual (+1.27). L2 decreased for copying (-0.75).
 - **Adapter stacking:** factual+json synergistic. code+json compatible. delimiter destructive.
+- **Adapter-only ablation:** Norm-effect correlation 0.85. JSON adapter effect concentrated at L19-L23 (L23=100%, L22=92%, L21=81%). Only L12 shows norm-effect mismatch.
 
 ## Position-specific findings
 
@@ -37,11 +42,28 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 - **L15:** Weak overall (max 3.37 on last). Processing layer.
 - **Operators/delimiters:** Near-zero effect across all layers.
 
+## Cross-model patching findings
+
+- Recovery increases monotonically from early to late layers
+- L23=100%, L22=97%, L21=95%, L20=87%, L19=80%, L18=73%
+- Mid-layers (L13-L17) show 50-80% recovery
+- Early layers (L0-L12) give minimal recovery (<50%)
+- The adapter's learned behavior is encoded in the activation patterns of late layers
+
+## Skill knockout findings
+
+- **Factual recall:** L19 most selective (11654x at s=-2.0), L21 good (53x), L16 moderate (0.42x)
+- **Factual recall:** L2 and L3 non-selective (universal hub effect)
+- **JSON:** Base probability of targets already near-zero, limited knockout room
+- **JSON:** L6, L7, L9, L12, L13, L21 all cause moderate KL changes at s=-1.0
+- Negative steering at s=-4.0 causes broad degradation across all skills
+
 ## Weak/tentative signals
 - L1 appears as universal skill injection point (positive delta across 3+ adapters)
 - L21/L23 may be formatting/output specialists
 - Code semantics resistant to layer ablation (KL=0.52 at L2)
 - delimiter adapter's extreme stacking behavior may indicate format-specific overfitting
+- L12 norm-effect mismatch may indicate a processing bottleneck
 
 ## Negative results
 1. Full SFT OOMs on 8GB VRAM. LoRA required.
@@ -50,20 +72,23 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 4. Clean/corrupt pair v0 had tokenization misalignment. Fixed in v1.
 5. Extreme steering (s>=+2) causes degeneration (Chinese characters, repetition).
 6. L2 is NOT position-uniform (operator tokens near-zero).
+7. JSON skill knockout had limited effect due to near-zero base target probability.
+8. H6 (upstream propagation) rejected by adapter-only ablation (corr=0.85, effects at same layers as norms).
+9. PeftModel.from_pretrained modifies base model in-place — must use disable_adapter() for base behavior.
 
 ## Current atlas status
 | Confidence | Count |
 |------------|-------|
 | Low        | 2     |
-| Medium     | 12    |
+| Medium     | 17    |
 | High       | 1     |
 | Very High  | 0     |
-| Negative   | 6     |
+| Negative   | 9     |
 
 ## Best next experiments
-1. Cross-model activation patching (trained-to-base)
-2. Negative steering / skill knockout
-3. Adapter-only ablation (ablate adapter at L20-L23 to test norm/effect hypothesis)
-4. CPT training
-5. Blog post outline
-6. Paper outline
+1. Multi-seed replication of top 5 findings
+2. Mean/resample ablation (stronger causal claims)
+3. CPT training
+4. SAE training on key layers (L0, L1, L2, L7, L9, L19, L22)
+5. Skill injection at L19 for factual recall
+6. Extend to natural language prompts

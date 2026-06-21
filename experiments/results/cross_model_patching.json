@@ -1,0 +1,3649 @@
+{
+  "experiment": "cross_model_patching_trained_to_base",
+  "n_pairs": 17,
+  "n_layers": 24,
+  "adapter": "lora_json_r8",
+  "results": [
+    {
+      "pair_id": "copying_0000",
+      "family": "copying",
+      "target": "C",
+      "base_kl_to_trained": 0.102957,
+      "base_target_logprob": -13.645832,
+      "trained_target_logprob": -13.334646,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.104125,
+          "kl_recovery": -0.011343,
+          "patched_target_logprob": -13.638943,
+          "lp_delta": 0.006889,
+          "lp_recovery": 0.022139
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.094916,
+          "kl_recovery": 0.078104,
+          "patched_target_logprob": -13.618095,
+          "lp_delta": 0.027737,
+          "lp_recovery": 0.089132
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.093335,
+          "kl_recovery": 0.093452,
+          "patched_target_logprob": -13.592012,
+          "lp_delta": 0.05382,
+          "lp_recovery": 0.17295
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.104981,
+          "kl_recovery": -0.019657,
+          "patched_target_logprob": -13.673206,
+          "lp_delta": -0.027374,
+          "lp_recovery": -0.087968
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.097829,
+          "kl_recovery": 0.049801,
+          "patched_target_logprob": -13.722746,
+          "lp_delta": -0.076914,
+          "lp_recovery": -0.247164
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.08896,
+          "kl_recovery": 0.135945,
+          "patched_target_logprob": -13.792442,
+          "lp_delta": -0.14661,
+          "lp_recovery": -0.471134
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.086873,
+          "kl_recovery": 0.156219,
+          "patched_target_logprob": -13.813025,
+          "lp_delta": -0.167192,
+          "lp_recovery": -0.537275
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.09178,
+          "kl_recovery": 0.108557,
+          "patched_target_logprob": -13.797668,
+          "lp_delta": -0.151835,
+          "lp_recovery": -0.487925
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.092513,
+          "kl_recovery": 0.101436,
+          "patched_target_logprob": -13.751152,
+          "lp_delta": -0.10532,
+          "lp_recovery": -0.338447
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.086195,
+          "kl_recovery": 0.162803,
+          "patched_target_logprob": -13.690005,
+          "lp_delta": -0.044173,
+          "lp_recovery": -0.141951
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.076792,
+          "kl_recovery": 0.254137,
+          "patched_target_logprob": -13.62945,
+          "lp_delta": 0.016382,
+          "lp_recovery": 0.052644
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.069854,
+          "kl_recovery": 0.321517,
+          "patched_target_logprob": -13.623668,
+          "lp_delta": 0.022164,
+          "lp_recovery": 0.071225
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.059539,
+          "kl_recovery": 0.421711,
+          "patched_target_logprob": -13.536303,
+          "lp_delta": 0.109529,
+          "lp_recovery": 0.351975
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.047528,
+          "kl_recovery": 0.53837,
+          "patched_target_logprob": -13.535928,
+          "lp_delta": 0.109904,
+          "lp_recovery": 0.353179
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.049594,
+          "kl_recovery": 0.518298,
+          "patched_target_logprob": -13.520242,
+          "lp_delta": 0.12559,
+          "lp_recovery": 0.403586
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.044745,
+          "kl_recovery": 0.565399,
+          "patched_target_logprob": -13.421732,
+          "lp_delta": 0.2241,
+          "lp_recovery": 0.720149
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.038358,
+          "kl_recovery": 0.627439,
+          "patched_target_logprob": -13.444849,
+          "lp_delta": 0.200983,
+          "lp_recovery": 0.645862
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.019572,
+          "kl_recovery": 0.809902,
+          "patched_target_logprob": -13.297641,
+          "lp_delta": 0.348191,
+          "lp_recovery": 1.118917
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.017901,
+          "kl_recovery": 0.826131,
+          "patched_target_logprob": -13.22864,
+          "lp_delta": 0.417192,
+          "lp_recovery": 1.340654
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.014724,
+          "kl_recovery": 0.856985,
+          "patched_target_logprob": -13.232324,
+          "lp_delta": 0.413508,
+          "lp_recovery": 1.328815
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.012085,
+          "kl_recovery": 0.882623,
+          "patched_target_logprob": -13.260073,
+          "lp_delta": 0.385759,
+          "lp_recovery": 1.239643
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.009573,
+          "kl_recovery": 0.90702,
+          "patched_target_logprob": -13.159761,
+          "lp_delta": 0.486071,
+          "lp_recovery": 1.561995
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.006055,
+          "kl_recovery": 0.941192,
+          "patched_target_logprob": -13.194427,
+          "lp_delta": 0.451405,
+          "lp_recovery": 1.450595
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -13.334646,
+          "lp_delta": 0.311186,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "copying_0001",
+      "family": "copying",
+      "target": "3",
+      "base_kl_to_trained": 0.039884,
+      "base_target_logprob": -0.153588,
+      "trained_target_logprob": -0.063179,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.042899,
+          "kl_recovery": -0.07558,
+          "patched_target_logprob": -0.159645,
+          "lp_delta": -0.006057,
+          "lp_recovery": -0.067001
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.041305,
+          "kl_recovery": -0.03562,
+          "patched_target_logprob": -0.157448,
+          "lp_delta": -0.00386,
+          "lp_recovery": -0.042697
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.043032,
+          "kl_recovery": -0.078931,
+          "patched_target_logprob": -0.160321,
+          "lp_delta": -0.006733,
+          "lp_recovery": -0.074472
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.044938,
+          "kl_recovery": -0.126698,
+          "patched_target_logprob": -0.164238,
+          "lp_delta": -0.01065,
+          "lp_recovery": -0.117801
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.044401,
+          "kl_recovery": -0.113243,
+          "patched_target_logprob": -0.163131,
+          "lp_delta": -0.009543,
+          "lp_recovery": -0.105555
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.048174,
+          "kl_recovery": -0.20785,
+          "patched_target_logprob": -0.169251,
+          "lp_delta": -0.015664,
+          "lp_recovery": -0.173255
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.044908,
+          "kl_recovery": -0.125961,
+          "patched_target_logprob": -0.163773,
+          "lp_delta": -0.010185,
+          "lp_recovery": -0.112658
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.039664,
+          "kl_recovery": 0.00553,
+          "patched_target_logprob": -0.155482,
+          "lp_delta": -0.001894,
+          "lp_recovery": -0.020954
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.038725,
+          "kl_recovery": 0.02906,
+          "patched_target_logprob": -0.153512,
+          "lp_delta": 7.5e-05,
+          "lp_recovery": 0.000832
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.038526,
+          "kl_recovery": 0.03406,
+          "patched_target_logprob": -0.153119,
+          "lp_delta": 0.000468,
+          "lp_recovery": 0.005179
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.026938,
+          "kl_recovery": 0.324588,
+          "patched_target_logprob": -0.13191,
+          "lp_delta": 0.021678,
+          "lp_recovery": 0.239779
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.028783,
+          "kl_recovery": 0.278345,
+          "patched_target_logprob": -0.136627,
+          "lp_delta": 0.01696,
+          "lp_recovery": 0.187598
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.029266,
+          "kl_recovery": 0.266238,
+          "patched_target_logprob": -0.136916,
+          "lp_delta": 0.016672,
+          "lp_recovery": 0.184409
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.022782,
+          "kl_recovery": 0.428792,
+          "patched_target_logprob": -0.124507,
+          "lp_delta": 0.02908,
+          "lp_recovery": 0.321655
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.020884,
+          "kl_recovery": 0.476397,
+          "patched_target_logprob": -0.121549,
+          "lp_delta": 0.032039,
+          "lp_recovery": 0.354376
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.012156,
+          "kl_recovery": 0.695206,
+          "patched_target_logprob": -0.104877,
+          "lp_delta": 0.048711,
+          "lp_recovery": 0.538789
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.011547,
+          "kl_recovery": 0.710489,
+          "patched_target_logprob": -0.103762,
+          "lp_delta": 0.049825,
+          "lp_recovery": 0.551115
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.009137,
+          "kl_recovery": 0.770915,
+          "patched_target_logprob": -0.099595,
+          "lp_delta": 0.053992,
+          "lp_recovery": 0.597204
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.001807,
+          "kl_recovery": 0.954695,
+          "patched_target_logprob": -0.072365,
+          "lp_delta": 0.081223,
+          "lp_recovery": 0.898399
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.0011,
+          "kl_recovery": 0.97241,
+          "patched_target_logprob": -0.066754,
+          "lp_delta": 0.086833,
+          "lp_recovery": 0.960455
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.000588,
+          "kl_recovery": 0.98526,
+          "patched_target_logprob": -0.063499,
+          "lp_delta": 0.090089,
+          "lp_recovery": 0.996467
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.000262,
+          "kl_recovery": 0.993429,
+          "patched_target_logprob": -0.064212,
+          "lp_delta": 0.089376,
+          "lp_recovery": 0.988576
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.000129,
+          "kl_recovery": 0.996758,
+          "patched_target_logprob": -0.062559,
+          "lp_delta": 0.091028,
+          "lp_recovery": 1.006855
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.063179,
+          "lp_delta": 0.090409,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "copying_0002",
+      "family": "copying",
+      "target": "cat",
+      "base_kl_to_trained": 0.066396,
+      "base_target_logprob": -10.689137,
+      "trained_target_logprob": -11.269446,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.068932,
+          "kl_recovery": -0.038197,
+          "patched_target_logprob": -10.702206,
+          "lp_delta": -0.013069,
+          "lp_recovery": 0.022521
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.073927,
+          "kl_recovery": -0.113427,
+          "patched_target_logprob": -10.795238,
+          "lp_delta": -0.106102,
+          "lp_recovery": 0.182837
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.07606,
+          "kl_recovery": -0.145544,
+          "patched_target_logprob": -10.80526,
+          "lp_delta": -0.116123,
+          "lp_recovery": 0.200106
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.086709,
+          "kl_recovery": -0.305933,
+          "patched_target_logprob": -10.92643,
+          "lp_delta": -0.237293,
+          "lp_recovery": 0.408908
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.076737,
+          "kl_recovery": -0.155741,
+          "patched_target_logprob": -10.813801,
+          "lp_delta": -0.124664,
+          "lp_recovery": 0.214824
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.073119,
+          "kl_recovery": -0.101249,
+          "patched_target_logprob": -10.845291,
+          "lp_delta": -0.156155,
+          "lp_recovery": 0.269088
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.072131,
+          "kl_recovery": -0.086368,
+          "patched_target_logprob": -10.832838,
+          "lp_delta": -0.143702,
+          "lp_recovery": 0.247629
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.069925,
+          "kl_recovery": -0.053141,
+          "patched_target_logprob": -10.848392,
+          "lp_delta": -0.159255,
+          "lp_recovery": 0.274431
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.068199,
+          "kl_recovery": -0.027147,
+          "patched_target_logprob": -10.830845,
+          "lp_delta": -0.141708,
+          "lp_recovery": 0.244194
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.063791,
+          "kl_recovery": 0.039242,
+          "patched_target_logprob": -10.790684,
+          "lp_delta": -0.101547,
+          "lp_recovery": 0.174988
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.055612,
+          "kl_recovery": 0.162421,
+          "patched_target_logprob": -10.75807,
+          "lp_delta": -0.068933,
+          "lp_recovery": 0.118787
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.051811,
+          "kl_recovery": 0.219677,
+          "patched_target_logprob": -10.902565,
+          "lp_delta": -0.213428,
+          "lp_recovery": 0.367784
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.045038,
+          "kl_recovery": 0.321673,
+          "patched_target_logprob": -10.966226,
+          "lp_delta": -0.277089,
+          "lp_recovery": 0.477485
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.042943,
+          "kl_recovery": 0.35323,
+          "patched_target_logprob": -10.999619,
+          "lp_delta": -0.310482,
+          "lp_recovery": 0.535028
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.040817,
+          "kl_recovery": 0.385246,
+          "patched_target_logprob": -11.116972,
+          "lp_delta": -0.427835,
+          "lp_recovery": 0.737253
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.039992,
+          "kl_recovery": 0.397684,
+          "patched_target_logprob": -11.209151,
+          "lp_delta": -0.520015,
+          "lp_recovery": 0.896098
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.03382,
+          "kl_recovery": 0.490638,
+          "patched_target_logprob": -11.197284,
+          "lp_delta": -0.508147,
+          "lp_recovery": 0.875648
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.039059,
+          "kl_recovery": 0.411729,
+          "patched_target_logprob": -10.928649,
+          "lp_delta": -0.239512,
+          "lp_recovery": 0.412732
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.05225,
+          "kl_recovery": 0.213059,
+          "patched_target_logprob": -10.955516,
+          "lp_delta": -0.266379,
+          "lp_recovery": 0.45903
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.042167,
+          "kl_recovery": 0.36492,
+          "patched_target_logprob": -10.957384,
+          "lp_delta": -0.268248,
+          "lp_recovery": 0.462249
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.021648,
+          "kl_recovery": 0.673964,
+          "patched_target_logprob": -10.7652,
+          "lp_delta": -0.076063,
+          "lp_recovery": 0.131073
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.015113,
+          "kl_recovery": 0.772387,
+          "patched_target_logprob": -11.073481,
+          "lp_delta": -0.384344,
+          "lp_recovery": 0.662308
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.009768,
+          "kl_recovery": 0.852882,
+          "patched_target_logprob": -11.103558,
+          "lp_delta": -0.414421,
+          "lp_recovery": 0.714138
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -11.269446,
+          "lp_delta": -0.58031,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "copying_0003",
+      "family": "copying",
+      "target": "green",
+      "base_kl_to_trained": 0.242228,
+      "base_target_logprob": -11.436618,
+      "trained_target_logprob": -11.831231,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.248501,
+          "kl_recovery": -0.025897,
+          "patched_target_logprob": -11.454107,
+          "lp_delta": -0.017489,
+          "lp_recovery": 0.04432
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.236077,
+          "kl_recovery": 0.025394,
+          "patched_target_logprob": -11.406916,
+          "lp_delta": 0.029702,
+          "lp_recovery": -0.075269
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.233269,
+          "kl_recovery": 0.036988,
+          "patched_target_logprob": -11.394452,
+          "lp_delta": 0.042166,
+          "lp_recovery": -0.106853
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.244408,
+          "kl_recovery": -0.009,
+          "patched_target_logprob": -11.371408,
+          "lp_delta": 0.065209,
+          "lp_recovery": -0.165249
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.229658,
+          "kl_recovery": 0.051893,
+          "patched_target_logprob": -11.279232,
+          "lp_delta": 0.157386,
+          "lp_recovery": -0.398836
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.233546,
+          "kl_recovery": 0.035842,
+          "patched_target_logprob": -11.26559,
+          "lp_delta": 0.171028,
+          "lp_recovery": -0.433407
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.217726,
+          "kl_recovery": 0.101154,
+          "patched_target_logprob": -11.246835,
+          "lp_delta": 0.189783,
+          "lp_recovery": -0.480934
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.224437,
+          "kl_recovery": 0.07345,
+          "patched_target_logprob": -11.184689,
+          "lp_delta": 0.251929,
+          "lp_recovery": -0.638421
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.209588,
+          "kl_recovery": 0.134751,
+          "patched_target_logprob": -11.192882,
+          "lp_delta": 0.243736,
+          "lp_recovery": -0.617659
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.178168,
+          "kl_recovery": 0.264461,
+          "patched_target_logprob": -11.066516,
+          "lp_delta": 0.370102,
+          "lp_recovery": -0.937885
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.145136,
+          "kl_recovery": 0.400829,
+          "patched_target_logprob": -11.043221,
+          "lp_delta": 0.393397,
+          "lp_recovery": -0.996919
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.102514,
+          "kl_recovery": 0.576786,
+          "patched_target_logprob": -11.083633,
+          "lp_delta": 0.352984,
+          "lp_recovery": -0.894507
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.075639,
+          "kl_recovery": 0.687738,
+          "patched_target_logprob": -11.056504,
+          "lp_delta": 0.380114,
+          "lp_recovery": -0.963256
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.064269,
+          "kl_recovery": 0.734678,
+          "patched_target_logprob": -11.068593,
+          "lp_delta": 0.368025,
+          "lp_recovery": -0.932622
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.063693,
+          "kl_recovery": 0.737053,
+          "patched_target_logprob": -11.217826,
+          "lp_delta": 0.218792,
+          "lp_recovery": -0.554447
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.058349,
+          "kl_recovery": 0.759114,
+          "patched_target_logprob": -11.33851,
+          "lp_delta": 0.098108,
+          "lp_recovery": -0.248619
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.054449,
+          "kl_recovery": 0.775215,
+          "patched_target_logprob": -11.246871,
+          "lp_delta": 0.189747,
+          "lp_recovery": -0.480843
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.05126,
+          "kl_recovery": 0.788381,
+          "patched_target_logprob": -11.223438,
+          "lp_delta": 0.21318,
+          "lp_recovery": -0.540224
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.047365,
+          "kl_recovery": 0.80446,
+          "patched_target_logprob": -11.225107,
+          "lp_delta": 0.211511,
+          "lp_recovery": -0.535995
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.045474,
+          "kl_recovery": 0.812266,
+          "patched_target_logprob": -11.359175,
+          "lp_delta": 0.077443,
+          "lp_recovery": -0.196251
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.044813,
+          "kl_recovery": 0.814998,
+          "patched_target_logprob": -11.396222,
+          "lp_delta": 0.040396,
+          "lp_recovery": -0.102368
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.014544,
+          "kl_recovery": 0.939958,
+          "patched_target_logprob": -11.577415,
+          "lp_delta": -0.140798,
+          "lp_recovery": 0.356799
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.009324,
+          "kl_recovery": 0.961509,
+          "patched_target_logprob": -11.629543,
+          "lp_delta": -0.192925,
+          "lp_recovery": 0.488898
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -11.831231,
+          "lp_delta": -0.394613,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "delimiter_tracking_0000",
+      "family": "delimiter_tracking",
+      "target": "}",
+      "base_kl_to_trained": 0.024674,
+      "base_target_logprob": -12.155288,
+      "trained_target_logprob": -11.622419,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.028279,
+          "kl_recovery": -0.146109,
+          "patched_target_logprob": -12.232553,
+          "lp_delta": -0.077266,
+          "lp_recovery": -0.145
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.035271,
+          "kl_recovery": -0.429491,
+          "patched_target_logprob": -12.276625,
+          "lp_delta": -0.121337,
+          "lp_recovery": -0.227705
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.031256,
+          "kl_recovery": -0.266782,
+          "patched_target_logprob": -12.23929,
+          "lp_delta": -0.084002,
+          "lp_recovery": -0.157642
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.021309,
+          "kl_recovery": 0.136351,
+          "patched_target_logprob": -12.172165,
+          "lp_delta": -0.016877,
+          "lp_recovery": -0.031672
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.018966,
+          "kl_recovery": 0.231324,
+          "patched_target_logprob": -12.055055,
+          "lp_delta": 0.100233,
+          "lp_recovery": 0.188101
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.021667,
+          "kl_recovery": 0.121857,
+          "patched_target_logprob": -11.881105,
+          "lp_delta": 0.274182,
+          "lp_recovery": 0.51454
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.021636,
+          "kl_recovery": 0.123126,
+          "patched_target_logprob": -11.81999,
+          "lp_delta": 0.335298,
+          "lp_recovery": 0.629232
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.023701,
+          "kl_recovery": 0.039421,
+          "patched_target_logprob": -11.805649,
+          "lp_delta": 0.349639,
+          "lp_recovery": 0.656145
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.022733,
+          "kl_recovery": 0.078639,
+          "patched_target_logprob": -11.812575,
+          "lp_delta": 0.342712,
+          "lp_recovery": 0.643146
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.022875,
+          "kl_recovery": 0.072881,
+          "patched_target_logprob": -11.783912,
+          "lp_delta": 0.371376,
+          "lp_recovery": 0.696938
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.020794,
+          "kl_recovery": 0.157219,
+          "patched_target_logprob": -11.761913,
+          "lp_delta": 0.393374,
+          "lp_recovery": 0.738221
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.019381,
+          "kl_recovery": 0.214502,
+          "patched_target_logprob": -11.741107,
+          "lp_delta": 0.414181,
+          "lp_recovery": 0.777267
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.019809,
+          "kl_recovery": 0.197157,
+          "patched_target_logprob": -11.864412,
+          "lp_delta": 0.290875,
+          "lp_recovery": 0.545867
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.016169,
+          "kl_recovery": 0.344698,
+          "patched_target_logprob": -11.716844,
+          "lp_delta": 0.438444,
+          "lp_recovery": 0.8228
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.012897,
+          "kl_recovery": 0.477301,
+          "patched_target_logprob": -11.444339,
+          "lp_delta": 0.710949,
+          "lp_recovery": 1.334192
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.009698,
+          "kl_recovery": 0.60694,
+          "patched_target_logprob": -11.397846,
+          "lp_delta": 0.757442,
+          "lp_recovery": 1.421442
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.013419,
+          "kl_recovery": 0.456149,
+          "patched_target_logprob": -11.471083,
+          "lp_delta": 0.684205,
+          "lp_recovery": 1.284004
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.011461,
+          "kl_recovery": 0.53548,
+          "patched_target_logprob": -11.497675,
+          "lp_delta": 0.657613,
+          "lp_recovery": 1.2341
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.009063,
+          "kl_recovery": 0.632666,
+          "patched_target_logprob": -11.485841,
+          "lp_delta": 0.669447,
+          "lp_recovery": 1.256308
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.007357,
+          "kl_recovery": 0.701846,
+          "patched_target_logprob": -11.444582,
+          "lp_delta": 0.710706,
+          "lp_recovery": 1.333736
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.007873,
+          "kl_recovery": 0.68091,
+          "patched_target_logprob": -11.668496,
+          "lp_delta": 0.486792,
+          "lp_recovery": 0.913531
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.003545,
+          "kl_recovery": 0.856328,
+          "patched_target_logprob": -11.421172,
+          "lp_delta": 0.734116,
+          "lp_recovery": 1.377668
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.001975,
+          "kl_recovery": 0.919946,
+          "patched_target_logprob": -11.319846,
+          "lp_delta": 0.835442,
+          "lp_recovery": 1.56782
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -11.622419,
+          "lp_delta": 0.532868,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "delimiter_tracking_0001",
+      "family": "delimiter_tracking",
+      "target": ")",
+      "base_kl_to_trained": 0.086517,
+      "base_target_logprob": -4.878834,
+      "trained_target_logprob": -5.011006,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.06951,
+          "kl_recovery": 0.196576,
+          "patched_target_logprob": -5.123884,
+          "lp_delta": -0.24505,
+          "lp_recovery": 1.854015
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.062726,
+          "kl_recovery": 0.274992,
+          "patched_target_logprob": -5.270858,
+          "lp_delta": -0.392025,
+          "lp_recovery": 2.966005
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.063168,
+          "kl_recovery": 0.269879,
+          "patched_target_logprob": -5.221124,
+          "lp_delta": -0.34229,
+          "lp_recovery": 2.58972
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.062737,
+          "kl_recovery": 0.274865,
+          "patched_target_logprob": -5.190026,
+          "lp_delta": -0.311193,
+          "lp_recovery": 2.354441
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.061052,
+          "kl_recovery": 0.294336,
+          "patched_target_logprob": -5.178269,
+          "lp_delta": -0.299435,
+          "lp_recovery": 2.265486
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.058777,
+          "kl_recovery": 0.32064,
+          "patched_target_logprob": -5.224813,
+          "lp_delta": -0.345979,
+          "lp_recovery": 2.617629
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.058067,
+          "kl_recovery": 0.328836,
+          "patched_target_logprob": -5.157407,
+          "lp_delta": -0.278573,
+          "lp_recovery": 2.107646
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.056371,
+          "kl_recovery": 0.348445,
+          "patched_target_logprob": -5.137671,
+          "lp_delta": -0.258838,
+          "lp_recovery": 1.958331
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.053006,
+          "kl_recovery": 0.387338,
+          "patched_target_logprob": -5.179161,
+          "lp_delta": -0.300327,
+          "lp_recovery": 2.272236
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.045489,
+          "kl_recovery": 0.474228,
+          "patched_target_logprob": -5.193157,
+          "lp_delta": -0.314323,
+          "lp_recovery": 2.378129
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.035487,
+          "kl_recovery": 0.589831,
+          "patched_target_logprob": -5.147809,
+          "lp_delta": -0.268975,
+          "lp_recovery": 2.035027
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.024706,
+          "kl_recovery": 0.71444,
+          "patched_target_logprob": -5.030627,
+          "lp_delta": -0.151793,
+          "lp_recovery": 1.148445
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.015323,
+          "kl_recovery": 0.822888,
+          "patched_target_logprob": -5.049898,
+          "lp_delta": -0.171064,
+          "lp_recovery": 1.294246
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.015311,
+          "kl_recovery": 0.823028,
+          "patched_target_logprob": -4.996464,
+          "lp_delta": -0.11763,
+          "lp_recovery": 0.889976
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.011609,
+          "kl_recovery": 0.865824,
+          "patched_target_logprob": -5.004372,
+          "lp_delta": -0.125538,
+          "lp_recovery": 0.949806
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.007258,
+          "kl_recovery": 0.916106,
+          "patched_target_logprob": -5.020414,
+          "lp_delta": -0.141581,
+          "lp_recovery": 1.07118
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.005735,
+          "kl_recovery": 0.933711,
+          "patched_target_logprob": -4.932828,
+          "lp_delta": -0.053995,
+          "lp_recovery": 0.408516
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.006564,
+          "kl_recovery": 0.924132,
+          "patched_target_logprob": -5.038769,
+          "lp_delta": -0.159935,
+          "lp_recovery": 1.21005
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.004015,
+          "kl_recovery": 0.953597,
+          "patched_target_logprob": -5.130559,
+          "lp_delta": -0.251726,
+          "lp_recovery": 1.904523
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.002741,
+          "kl_recovery": 0.968322,
+          "patched_target_logprob": -5.107558,
+          "lp_delta": -0.228724,
+          "lp_recovery": 1.730495
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.001302,
+          "kl_recovery": 0.984953,
+          "patched_target_logprob": -5.003759,
+          "lp_delta": -0.124925,
+          "lp_recovery": 0.945167
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.000714,
+          "kl_recovery": 0.991751,
+          "patched_target_logprob": -4.96914,
+          "lp_delta": -0.090306,
+          "lp_recovery": 0.683242
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.000219,
+          "kl_recovery": 0.997473,
+          "patched_target_logprob": -4.978399,
+          "lp_delta": -0.099566,
+          "lp_recovery": 0.753299
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -5.011006,
+          "lp_delta": -0.132173,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "arithmetic_0000",
+      "family": "arithmetic",
+      "target": "12",
+      "base_kl_to_trained": 0.137821,
+      "base_target_logprob": -1.377253,
+      "trained_target_logprob": -0.862364,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.141782,
+          "kl_recovery": -0.028741,
+          "patched_target_logprob": -1.349426,
+          "lp_delta": 0.027827,
+          "lp_recovery": 0.054044
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.143483,
+          "kl_recovery": -0.041083,
+          "patched_target_logprob": -1.213463,
+          "lp_delta": 0.16379,
+          "lp_recovery": 0.318108
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.142735,
+          "kl_recovery": -0.035654,
+          "patched_target_logprob": -1.132713,
+          "lp_delta": 0.24454,
+          "lp_recovery": 0.474937
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.149243,
+          "kl_recovery": -0.082876,
+          "patched_target_logprob": -1.1761,
+          "lp_delta": 0.201153,
+          "lp_recovery": 0.390673
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.132632,
+          "kl_recovery": 0.037651,
+          "patched_target_logprob": -1.090672,
+          "lp_delta": 0.286581,
+          "lp_recovery": 0.556588
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.151801,
+          "kl_recovery": -0.101437,
+          "patched_target_logprob": -1.201895,
+          "lp_delta": 0.175357,
+          "lp_recovery": 0.340573
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.152775,
+          "kl_recovery": -0.108505,
+          "patched_target_logprob": -1.220056,
+          "lp_delta": 0.157197,
+          "lp_recovery": 0.305303
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.135512,
+          "kl_recovery": 0.016754,
+          "patched_target_logprob": -1.119477,
+          "lp_delta": 0.257776,
+          "lp_recovery": 0.500644
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.1429,
+          "kl_recovery": -0.036852,
+          "patched_target_logprob": -1.159772,
+          "lp_delta": 0.217481,
+          "lp_recovery": 0.422385
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.137315,
+          "kl_recovery": 0.00367,
+          "patched_target_logprob": -1.111032,
+          "lp_delta": 0.266221,
+          "lp_recovery": 0.517046
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.109286,
+          "kl_recovery": 0.207041,
+          "patched_target_logprob": -1.085008,
+          "lp_delta": 0.292245,
+          "lp_recovery": 0.567588
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.104136,
+          "kl_recovery": 0.244408,
+          "patched_target_logprob": -1.018134,
+          "lp_delta": 0.359119,
+          "lp_recovery": 0.697469
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.102845,
+          "kl_recovery": 0.253775,
+          "patched_target_logprob": -1.13533,
+          "lp_delta": 0.241922,
+          "lp_recovery": 0.469854
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.093471,
+          "kl_recovery": 0.321796,
+          "patched_target_logprob": -0.797059,
+          "lp_delta": 0.580193,
+          "lp_recovery": 1.126833
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.078044,
+          "kl_recovery": 0.433729,
+          "patched_target_logprob": -0.83181,
+          "lp_delta": 0.545442,
+          "lp_recovery": 1.059341
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.074082,
+          "kl_recovery": 0.462479,
+          "patched_target_logprob": -0.909185,
+          "lp_delta": 0.468067,
+          "lp_recovery": 0.909065
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.064262,
+          "kl_recovery": 0.533727,
+          "patched_target_logprob": -0.802119,
+          "lp_delta": 0.575134,
+          "lp_recovery": 1.117006
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.023805,
+          "kl_recovery": 0.827278,
+          "patched_target_logprob": -0.830745,
+          "lp_delta": 0.546507,
+          "lp_recovery": 1.061409
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.015657,
+          "kl_recovery": 0.886397,
+          "patched_target_logprob": -0.81853,
+          "lp_delta": 0.558722,
+          "lp_recovery": 1.085133
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.010603,
+          "kl_recovery": 0.923066,
+          "patched_target_logprob": -0.841874,
+          "lp_delta": 0.535379,
+          "lp_recovery": 1.039795
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.003825,
+          "kl_recovery": 0.972247,
+          "patched_target_logprob": -0.848511,
+          "lp_delta": 0.528742,
+          "lp_recovery": 1.026906
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.002554,
+          "kl_recovery": 0.981468,
+          "patched_target_logprob": -0.888559,
+          "lp_delta": 0.488694,
+          "lp_recovery": 0.949125
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.001541,
+          "kl_recovery": 0.988819,
+          "patched_target_logprob": -0.878193,
+          "lp_delta": 0.49906,
+          "lp_recovery": 0.969258
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.862364,
+          "lp_delta": 0.514889,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "arithmetic_0001",
+      "family": "arithmetic",
+      "target": "12",
+      "base_kl_to_trained": 0.103726,
+      "base_target_logprob": -0.494791,
+      "trained_target_logprob": -0.580435,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.10202,
+          "kl_recovery": 0.016445,
+          "patched_target_logprob": -0.541061,
+          "lp_delta": -0.04627,
+          "lp_recovery": 0.540257
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.114846,
+          "kl_recovery": -0.107205,
+          "patched_target_logprob": -0.559799,
+          "lp_delta": -0.065008,
+          "lp_recovery": 0.759047
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.119801,
+          "kl_recovery": -0.154979,
+          "patched_target_logprob": -0.541916,
+          "lp_delta": -0.047125,
+          "lp_recovery": 0.55024
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.12003,
+          "kl_recovery": -0.157183,
+          "patched_target_logprob": -0.538958,
+          "lp_delta": -0.044167,
+          "lp_recovery": 0.515708
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.114464,
+          "kl_recovery": -0.103527,
+          "patched_target_logprob": -0.512958,
+          "lp_delta": -0.018167,
+          "lp_recovery": 0.212117
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.11552,
+          "kl_recovery": -0.113706,
+          "patched_target_logprob": -0.608447,
+          "lp_delta": -0.113656,
+          "lp_recovery": 1.327072
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.111894,
+          "kl_recovery": -0.078749,
+          "patched_target_logprob": -0.636334,
+          "lp_delta": -0.141543,
+          "lp_recovery": 1.652686
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.105904,
+          "kl_recovery": -0.020994,
+          "patched_target_logprob": -0.536656,
+          "lp_delta": -0.041865,
+          "lp_recovery": 0.488826
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.096993,
+          "kl_recovery": 0.064907,
+          "patched_target_logprob": -0.613824,
+          "lp_delta": -0.119033,
+          "lp_recovery": 1.389859
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.084959,
+          "kl_recovery": 0.180924,
+          "patched_target_logprob": -0.680992,
+          "lp_delta": -0.186201,
+          "lp_recovery": 2.174125
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.073218,
+          "kl_recovery": 0.294116,
+          "patched_target_logprob": -0.707157,
+          "lp_delta": -0.212366,
+          "lp_recovery": 2.479628
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.056784,
+          "kl_recovery": 0.45256,
+          "patched_target_logprob": -0.616948,
+          "lp_delta": -0.122157,
+          "lp_recovery": 1.42633
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.058157,
+          "kl_recovery": 0.439317,
+          "patched_target_logprob": -0.735899,
+          "lp_delta": -0.241108,
+          "lp_recovery": 2.815226
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.045793,
+          "kl_recovery": 0.558522,
+          "patched_target_logprob": -0.493991,
+          "lp_delta": 0.0008,
+          "lp_recovery": -0.009338
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.040265,
+          "kl_recovery": 0.611817,
+          "patched_target_logprob": -0.483922,
+          "lp_delta": 0.010869,
+          "lp_recovery": -0.126909
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.029028,
+          "kl_recovery": 0.720144,
+          "patched_target_logprob": -0.548062,
+          "lp_delta": -0.053271,
+          "lp_recovery": 0.622004
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.033341,
+          "kl_recovery": 0.678571,
+          "patched_target_logprob": -0.555566,
+          "lp_delta": -0.060775,
+          "lp_recovery": 0.709627
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.017773,
+          "kl_recovery": 0.828656,
+          "patched_target_logprob": -0.558626,
+          "lp_delta": -0.063835,
+          "lp_recovery": 0.745347
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.013533,
+          "kl_recovery": 0.869531,
+          "patched_target_logprob": -0.532714,
+          "lp_delta": -0.037923,
+          "lp_recovery": 0.442792
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.009736,
+          "kl_recovery": 0.906138,
+          "patched_target_logprob": -0.562999,
+          "lp_delta": -0.068208,
+          "lp_recovery": 0.796413
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.004892,
+          "kl_recovery": 0.95284,
+          "patched_target_logprob": -0.575999,
+          "lp_delta": -0.081208,
+          "lp_recovery": 0.948206
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.002057,
+          "kl_recovery": 0.980173,
+          "patched_target_logprob": -0.593675,
+          "lp_delta": -0.098885,
+          "lp_recovery": 1.154597
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.00147,
+          "kl_recovery": 0.985829,
+          "patched_target_logprob": -0.591531,
+          "lp_delta": -0.09674,
+          "lp_recovery": 1.129552
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.580435,
+          "lp_delta": -0.085644,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "arithmetic_0002",
+      "family": "arithmetic",
+      "target": "12",
+      "base_kl_to_trained": 0.105288,
+      "base_target_logprob": -0.783987,
+      "trained_target_logprob": -0.471909,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.103343,
+          "kl_recovery": 0.018471,
+          "patched_target_logprob": -0.770103,
+          "lp_delta": 0.013883,
+          "lp_recovery": 0.044487
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.085317,
+          "kl_recovery": 0.189676,
+          "patched_target_logprob": -0.680107,
+          "lp_delta": 0.103879,
+          "lp_recovery": 0.332863
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.077901,
+          "kl_recovery": 0.260111,
+          "patched_target_logprob": -0.642718,
+          "lp_delta": 0.141269,
+          "lp_recovery": 0.452671
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.082136,
+          "kl_recovery": 0.219895,
+          "patched_target_logprob": -0.656284,
+          "lp_delta": 0.127703,
+          "lp_recovery": 0.409201
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.079278,
+          "kl_recovery": 0.247036,
+          "patched_target_logprob": -0.650724,
+          "lp_delta": 0.133262,
+          "lp_recovery": 0.427016
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.09082,
+          "kl_recovery": 0.13741,
+          "patched_target_logprob": -0.69014,
+          "lp_delta": 0.093846,
+          "lp_recovery": 0.300715
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.092979,
+          "kl_recovery": 0.116905,
+          "patched_target_logprob": -0.703217,
+          "lp_delta": 0.08077,
+          "lp_recovery": 0.258814
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.088001,
+          "kl_recovery": 0.164185,
+          "patched_target_logprob": -0.691831,
+          "lp_delta": 0.092156,
+          "lp_recovery": 0.295298
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.087323,
+          "kl_recovery": 0.17063,
+          "patched_target_logprob": -0.687078,
+          "lp_delta": 0.096909,
+          "lp_recovery": 0.310527
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.081569,
+          "kl_recovery": 0.225276,
+          "patched_target_logprob": -0.648853,
+          "lp_delta": 0.135134,
+          "lp_recovery": 0.433014
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.072144,
+          "kl_recovery": 0.314792,
+          "patched_target_logprob": -0.638642,
+          "lp_delta": 0.145344,
+          "lp_recovery": 0.465731
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.06165,
+          "kl_recovery": 0.414462,
+          "patched_target_logprob": -0.627051,
+          "lp_delta": 0.156936,
+          "lp_recovery": 0.502874
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.067335,
+          "kl_recovery": 0.360473,
+          "patched_target_logprob": -0.702833,
+          "lp_delta": 0.081153,
+          "lp_recovery": 0.260042
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.051932,
+          "kl_recovery": 0.506762,
+          "patched_target_logprob": -0.601377,
+          "lp_delta": 0.18261,
+          "lp_recovery": 0.585142
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.047137,
+          "kl_recovery": 0.552301,
+          "patched_target_logprob": -0.593696,
+          "lp_delta": 0.190291,
+          "lp_recovery": 0.609754
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.042348,
+          "kl_recovery": 0.597787,
+          "patched_target_logprob": -0.577795,
+          "lp_delta": 0.206191,
+          "lp_recovery": 0.660705
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.037194,
+          "kl_recovery": 0.646737,
+          "patched_target_logprob": -0.546031,
+          "lp_delta": 0.237956,
+          "lp_recovery": 0.762488
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.021691,
+          "kl_recovery": 0.793988,
+          "patched_target_logprob": -0.542277,
+          "lp_delta": 0.241709,
+          "lp_recovery": 0.774516
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.020672,
+          "kl_recovery": 0.803662,
+          "patched_target_logprob": -0.540415,
+          "lp_delta": 0.243572,
+          "lp_recovery": 0.780484
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.018344,
+          "kl_recovery": 0.825772,
+          "patched_target_logprob": -0.540997,
+          "lp_delta": 0.242989,
+          "lp_recovery": 0.778619
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.005165,
+          "kl_recovery": 0.950948,
+          "patched_target_logprob": -0.483114,
+          "lp_delta": 0.300873,
+          "lp_recovery": 0.964096
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.002339,
+          "kl_recovery": 0.977788,
+          "patched_target_logprob": -0.491894,
+          "lp_delta": 0.292093,
+          "lp_recovery": 0.935962
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.001288,
+          "kl_recovery": 0.987771,
+          "patched_target_logprob": -0.480144,
+          "lp_delta": 0.303843,
+          "lp_recovery": 0.973612
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.471909,
+          "lp_delta": 0.312078,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "json_schema_0000",
+      "family": "json_schema",
+      "target": "31",
+      "base_kl_to_trained": 0.024691,
+      "base_target_logprob": -1.291061,
+      "trained_target_logprob": -1.036721,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.024093,
+          "kl_recovery": 0.024204,
+          "patched_target_logprob": -1.254195,
+          "lp_delta": 0.036866,
+          "lp_recovery": 0.144949
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.026987,
+          "kl_recovery": -0.092975,
+          "patched_target_logprob": -1.264872,
+          "lp_delta": 0.026189,
+          "lp_recovery": 0.102967
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.027512,
+          "kl_recovery": -0.114229,
+          "patched_target_logprob": -1.276461,
+          "lp_delta": 0.0146,
+          "lp_recovery": 0.057403
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.024636,
+          "kl_recovery": 0.002246,
+          "patched_target_logprob": -1.264974,
+          "lp_delta": 0.026087,
+          "lp_recovery": 0.102566
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.023801,
+          "kl_recovery": 0.036058,
+          "patched_target_logprob": -1.262381,
+          "lp_delta": 0.02868,
+          "lp_recovery": 0.112762
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.024044,
+          "kl_recovery": 0.026195,
+          "patched_target_logprob": -1.258019,
+          "lp_delta": 0.033041,
+          "lp_recovery": 0.129911
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.020644,
+          "kl_recovery": 0.163912,
+          "patched_target_logprob": -1.23874,
+          "lp_delta": 0.05232,
+          "lp_recovery": 0.205711
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.018679,
+          "kl_recovery": 0.243491,
+          "patched_target_logprob": -1.214444,
+          "lp_delta": 0.076617,
+          "lp_recovery": 0.30124
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.017852,
+          "kl_recovery": 0.276972,
+          "patched_target_logprob": -1.217067,
+          "lp_delta": 0.073993,
+          "lp_recovery": 0.290924
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.012254,
+          "kl_recovery": 0.503713,
+          "patched_target_logprob": -1.186892,
+          "lp_delta": 0.104169,
+          "lp_recovery": 0.409565
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.007173,
+          "kl_recovery": 0.709504,
+          "patched_target_logprob": -1.139986,
+          "lp_delta": 0.151075,
+          "lp_recovery": 0.593989
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.015531,
+          "kl_recovery": 0.371001,
+          "patched_target_logprob": -1.220079,
+          "lp_delta": 0.070982,
+          "lp_recovery": 0.279084
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.020128,
+          "kl_recovery": 0.184798,
+          "patched_target_logprob": -1.19829,
+          "lp_delta": 0.092771,
+          "lp_recovery": 0.364751
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.019945,
+          "kl_recovery": 0.19222,
+          "patched_target_logprob": -1.208601,
+          "lp_delta": 0.08246,
+          "lp_recovery": 0.32421
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.010936,
+          "kl_recovery": 0.557069,
+          "patched_target_logprob": -1.139233,
+          "lp_delta": 0.151828,
+          "lp_recovery": 0.596951
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.005373,
+          "kl_recovery": 0.782385,
+          "patched_target_logprob": -1.045827,
+          "lp_delta": 0.245234,
+          "lp_recovery": 0.964197
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.004255,
+          "kl_recovery": 0.827653,
+          "patched_target_logprob": -1.041433,
+          "lp_delta": 0.249628,
+          "lp_recovery": 0.981476
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.003477,
+          "kl_recovery": 0.859165,
+          "patched_target_logprob": -1.067991,
+          "lp_delta": 0.223069,
+          "lp_recovery": 0.877053
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.002646,
+          "kl_recovery": 0.892823,
+          "patched_target_logprob": -1.055407,
+          "lp_delta": 0.235654,
+          "lp_recovery": 0.926534
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.001629,
+          "kl_recovery": 0.934034,
+          "patched_target_logprob": -1.024125,
+          "lp_delta": 0.266936,
+          "lp_recovery": 1.049526
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.001959,
+          "kl_recovery": 0.92068,
+          "patched_target_logprob": -1.069819,
+          "lp_delta": 0.221242,
+          "lp_recovery": 0.869869
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.000821,
+          "kl_recovery": 0.966764,
+          "patched_target_logprob": -1.04237,
+          "lp_delta": 0.248691,
+          "lp_recovery": 0.97779
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.000393,
+          "kl_recovery": 0.984071,
+          "patched_target_logprob": -1.027173,
+          "lp_delta": 0.263888,
+          "lp_recovery": 1.037542
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -1.036721,
+          "lp_delta": 0.25434,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "json_schema_0001",
+      "family": "json_schema",
+      "target": "2",
+      "base_kl_to_trained": 0.180442,
+      "base_target_logprob": -0.301908,
+      "trained_target_logprob": -0.093751,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.182928,
+          "kl_recovery": -0.013778,
+          "patched_target_logprob": -0.304483,
+          "lp_delta": -0.002575,
+          "lp_recovery": -0.01237
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.146318,
+          "kl_recovery": 0.189114,
+          "patched_target_logprob": -0.260487,
+          "lp_delta": 0.041422,
+          "lp_recovery": 0.198991
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.13512,
+          "kl_recovery": 0.251169,
+          "patched_target_logprob": -0.24697,
+          "lp_delta": 0.054938,
+          "lp_recovery": 0.263924
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.148772,
+          "kl_recovery": 0.175511,
+          "patched_target_logprob": -0.265855,
+          "lp_delta": 0.036053,
+          "lp_recovery": 0.1732
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.136708,
+          "kl_recovery": 0.242368,
+          "patched_target_logprob": -0.251425,
+          "lp_delta": 0.050483,
+          "lp_recovery": 0.242525
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.123415,
+          "kl_recovery": 0.316038,
+          "patched_target_logprob": -0.232947,
+          "lp_delta": 0.068961,
+          "lp_recovery": 0.331293
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.118698,
+          "kl_recovery": 0.34218,
+          "patched_target_logprob": -0.230277,
+          "lp_delta": 0.071631,
+          "lp_recovery": 0.34412
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.109159,
+          "kl_recovery": 0.395044,
+          "patched_target_logprob": -0.219866,
+          "lp_delta": 0.082042,
+          "lp_recovery": 0.394133
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.104548,
+          "kl_recovery": 0.420601,
+          "patched_target_logprob": -0.215123,
+          "lp_delta": 0.086785,
+          "lp_recovery": 0.416922
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.105475,
+          "kl_recovery": 0.415462,
+          "patched_target_logprob": -0.219229,
+          "lp_delta": 0.082679,
+          "lp_recovery": 0.397193
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.096618,
+          "kl_recovery": 0.464546,
+          "patched_target_logprob": -0.213947,
+          "lp_delta": 0.087961,
+          "lp_recovery": 0.422571
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.078703,
+          "kl_recovery": 0.563829,
+          "patched_target_logprob": -0.203447,
+          "lp_delta": 0.098461,
+          "lp_recovery": 0.473012
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.037774,
+          "kl_recovery": 0.790655,
+          "patched_target_logprob": -0.148179,
+          "lp_delta": 0.153729,
+          "lp_recovery": 0.738525
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.026033,
+          "kl_recovery": 0.855725,
+          "patched_target_logprob": -0.132813,
+          "lp_delta": 0.169095,
+          "lp_recovery": 0.812342
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.013367,
+          "kl_recovery": 0.925919,
+          "patched_target_logprob": -0.110346,
+          "lp_delta": 0.191563,
+          "lp_recovery": 0.920278
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.003847,
+          "kl_recovery": 0.97868,
+          "patched_target_logprob": -0.108969,
+          "lp_delta": 0.192939,
+          "lp_recovery": 0.92689
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.004233,
+          "kl_recovery": 0.97654,
+          "patched_target_logprob": -0.11378,
+          "lp_delta": 0.188128,
+          "lp_recovery": 0.903779
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.00374,
+          "kl_recovery": 0.979272,
+          "patched_target_logprob": -0.118781,
+          "lp_delta": 0.183127,
+          "lp_recovery": 0.879752
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.001566,
+          "kl_recovery": 0.99132,
+          "patched_target_logprob": -0.104964,
+          "lp_delta": 0.196944,
+          "lp_recovery": 0.946131
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.00201,
+          "kl_recovery": 0.988861,
+          "patched_target_logprob": -0.108671,
+          "lp_delta": 0.193237,
+          "lp_recovery": 0.928322
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.001038,
+          "kl_recovery": 0.994245,
+          "patched_target_logprob": -0.105793,
+          "lp_delta": 0.196115,
+          "lp_recovery": 0.942146
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.000215,
+          "kl_recovery": 0.99881,
+          "patched_target_logprob": -0.097516,
+          "lp_delta": 0.204392,
+          "lp_recovery": 0.981913
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.000143,
+          "kl_recovery": 0.999209,
+          "patched_target_logprob": -0.097815,
+          "lp_delta": 0.204093,
+          "lp_recovery": 0.980473
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.093751,
+          "lp_delta": 0.208157,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "factual_recall_0000",
+      "family": "factual_recall",
+      "target": "Paris",
+      "base_kl_to_trained": 0.176004,
+      "base_target_logprob": -13.401911,
+      "trained_target_logprob": -13.342902,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.17575,
+          "kl_recovery": 0.001441,
+          "patched_target_logprob": -13.340006,
+          "lp_delta": 0.061905,
+          "lp_recovery": 1.049083
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.155748,
+          "kl_recovery": 0.115086,
+          "patched_target_logprob": -13.140007,
+          "lp_delta": 0.261904,
+          "lp_recovery": 4.4384
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.147926,
+          "kl_recovery": 0.159531,
+          "patched_target_logprob": -13.094624,
+          "lp_delta": 0.307287,
+          "lp_recovery": 5.207499
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.137048,
+          "kl_recovery": 0.221337,
+          "patched_target_logprob": -13.025513,
+          "lp_delta": 0.376398,
+          "lp_recovery": 6.378699
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.140723,
+          "kl_recovery": 0.200456,
+          "patched_target_logprob": -12.997727,
+          "lp_delta": 0.404183,
+          "lp_recovery": 6.849568
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.133902,
+          "kl_recovery": 0.239209,
+          "patched_target_logprob": -12.93316,
+          "lp_delta": 0.468751,
+          "lp_recovery": 7.943774
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.135098,
+          "kl_recovery": 0.232414,
+          "patched_target_logprob": -12.802904,
+          "lp_delta": 0.599007,
+          "lp_recovery": 10.151176
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.131899,
+          "kl_recovery": 0.25059,
+          "patched_target_logprob": -12.89535,
+          "lp_delta": 0.506561,
+          "lp_recovery": 8.584533
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.129404,
+          "kl_recovery": 0.264768,
+          "patched_target_logprob": -13.019216,
+          "lp_delta": 0.382695,
+          "lp_recovery": 6.485414
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.131886,
+          "kl_recovery": 0.250666,
+          "patched_target_logprob": -13.050396,
+          "lp_delta": 0.351515,
+          "lp_recovery": 5.95701
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.127937,
+          "kl_recovery": 0.2731,
+          "patched_target_logprob": -13.191168,
+          "lp_delta": 0.210743,
+          "lp_recovery": 3.571394
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.129239,
+          "kl_recovery": 0.265704,
+          "patched_target_logprob": -13.378727,
+          "lp_delta": 0.023184,
+          "lp_recovery": 0.392889
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.12929,
+          "kl_recovery": 0.265415,
+          "patched_target_logprob": -13.514606,
+          "lp_delta": -0.112696,
+          "lp_recovery": -1.909818
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.124545,
+          "kl_recovery": 0.292375,
+          "patched_target_logprob": -13.369625,
+          "lp_delta": 0.032286,
+          "lp_recovery": 0.547135
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.110012,
+          "kl_recovery": 0.374943,
+          "patched_target_logprob": -13.103724,
+          "lp_delta": 0.298187,
+          "lp_recovery": 5.053285
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.116271,
+          "kl_recovery": 0.339385,
+          "patched_target_logprob": -13.077983,
+          "lp_delta": 0.323928,
+          "lp_recovery": 5.489503
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.08713,
+          "kl_recovery": 0.504956,
+          "patched_target_logprob": -12.928368,
+          "lp_delta": 0.473543,
+          "lp_recovery": 8.024986
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.061039,
+          "kl_recovery": 0.653194,
+          "patched_target_logprob": -12.957404,
+          "lp_delta": 0.444507,
+          "lp_recovery": 7.532913
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.059097,
+          "kl_recovery": 0.664229,
+          "patched_target_logprob": -12.795755,
+          "lp_delta": 0.606155,
+          "lp_recovery": 10.272323
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.045969,
+          "kl_recovery": 0.738817,
+          "patched_target_logprob": -13.000567,
+          "lp_delta": 0.401343,
+          "lp_recovery": 6.801438
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.026932,
+          "kl_recovery": 0.84698,
+          "patched_target_logprob": -13.036312,
+          "lp_delta": 0.365599,
+          "lp_recovery": 6.195685
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.007573,
+          "kl_recovery": 0.956974,
+          "patched_target_logprob": -13.085463,
+          "lp_delta": 0.316448,
+          "lp_recovery": 5.362747
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.005562,
+          "kl_recovery": 0.968401,
+          "patched_target_logprob": -13.131588,
+          "lp_delta": 0.270323,
+          "lp_recovery": 4.581075
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -13.342902,
+          "lp_delta": 0.059009,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "factual_recall_0001",
+      "family": "factual_recall",
+      "target": "Berlin",
+      "base_kl_to_trained": 0.126726,
+      "base_target_logprob": -11.069265,
+      "trained_target_logprob": -10.296942,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.13146,
+          "kl_recovery": -0.037356,
+          "patched_target_logprob": -11.065992,
+          "lp_delta": 0.003273,
+          "lp_recovery": 0.004238
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.126961,
+          "kl_recovery": -0.001849,
+          "patched_target_logprob": -10.927799,
+          "lp_delta": 0.141466,
+          "lp_recovery": 0.18317
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.122186,
+          "kl_recovery": 0.035829,
+          "patched_target_logprob": -10.860677,
+          "lp_delta": 0.208589,
+          "lp_recovery": 0.270079
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.115825,
+          "kl_recovery": 0.086024,
+          "patched_target_logprob": -10.728362,
+          "lp_delta": 0.340903,
+          "lp_recovery": 0.4414
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.117572,
+          "kl_recovery": 0.072234,
+          "patched_target_logprob": -10.781574,
+          "lp_delta": 0.287691,
+          "lp_recovery": 0.372501
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.117041,
+          "kl_recovery": 0.076426,
+          "patched_target_logprob": -10.789371,
+          "lp_delta": 0.279894,
+          "lp_recovery": 0.362405
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.119316,
+          "kl_recovery": 0.058478,
+          "patched_target_logprob": -10.72334,
+          "lp_delta": 0.345925,
+          "lp_recovery": 0.447902
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.116006,
+          "kl_recovery": 0.084595,
+          "patched_target_logprob": -10.736677,
+          "lp_delta": 0.332588,
+          "lp_recovery": 0.430633
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.118879,
+          "kl_recovery": 0.061927,
+          "patched_target_logprob": -10.848194,
+          "lp_delta": 0.221071,
+          "lp_recovery": 0.286242
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.117821,
+          "kl_recovery": 0.070276,
+          "patched_target_logprob": -10.816153,
+          "lp_delta": 0.253113,
+          "lp_recovery": 0.327729
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.115676,
+          "kl_recovery": 0.087198,
+          "patched_target_logprob": -10.828314,
+          "lp_delta": 0.240952,
+          "lp_recovery": 0.311983
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.113755,
+          "kl_recovery": 0.102354,
+          "patched_target_logprob": -10.819617,
+          "lp_delta": 0.249648,
+          "lp_recovery": 0.323243
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.113084,
+          "kl_recovery": 0.107651,
+          "patched_target_logprob": -10.748422,
+          "lp_delta": 0.320844,
+          "lp_recovery": 0.415427
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.110406,
+          "kl_recovery": 0.128785,
+          "patched_target_logprob": -10.520278,
+          "lp_delta": 0.548987,
+          "lp_recovery": 0.710826
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.09914,
+          "kl_recovery": 0.217684,
+          "patched_target_logprob": -10.368658,
+          "lp_delta": 0.700607,
+          "lp_recovery": 0.907142
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.103642,
+          "kl_recovery": 0.182157,
+          "patched_target_logprob": -10.271082,
+          "lp_delta": 0.798183,
+          "lp_recovery": 1.033483
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.082535,
+          "kl_recovery": 0.348717,
+          "patched_target_logprob": -10.34946,
+          "lp_delta": 0.719806,
+          "lp_recovery": 0.932
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.056436,
+          "kl_recovery": 0.55466,
+          "patched_target_logprob": -10.227098,
+          "lp_delta": 0.842168,
+          "lp_recovery": 1.090434
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.055796,
+          "kl_recovery": 0.559712,
+          "patched_target_logprob": -10.122357,
+          "lp_delta": 0.946908,
+          "lp_recovery": 1.226051
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.040117,
+          "kl_recovery": 0.683433,
+          "patched_target_logprob": -10.249087,
+          "lp_delta": 0.820178,
+          "lp_recovery": 1.061962
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.021228,
+          "kl_recovery": 0.832488,
+          "patched_target_logprob": -10.08321,
+          "lp_delta": 0.986055,
+          "lp_recovery": 1.276739
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.008421,
+          "kl_recovery": 0.933548,
+          "patched_target_logprob": -10.079943,
+          "lp_delta": 0.989323,
+          "lp_recovery": 1.280969
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.005866,
+          "kl_recovery": 0.953714,
+          "patched_target_logprob": -10.092613,
+          "lp_delta": 0.976652,
+          "lp_recovery": 1.264563
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -10.296942,
+          "lp_delta": 0.772324,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "factual_recall_0002",
+      "family": "factual_recall",
+      "target": "Au",
+      "base_kl_to_trained": 0.160276,
+      "base_target_logprob": -9.637664,
+      "trained_target_logprob": -10.074017,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.162794,
+          "kl_recovery": -0.015712,
+          "patched_target_logprob": -9.619354,
+          "lp_delta": 0.01831,
+          "lp_recovery": -0.041961
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.15853,
+          "kl_recovery": 0.010896,
+          "patched_target_logprob": -9.561261,
+          "lp_delta": 0.076403,
+          "lp_recovery": -0.175094
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.171085,
+          "kl_recovery": -0.067437,
+          "patched_target_logprob": -9.562182,
+          "lp_delta": 0.075481,
+          "lp_recovery": -0.172983
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.169651,
+          "kl_recovery": -0.058493,
+          "patched_target_logprob": -9.464617,
+          "lp_delta": 0.173047,
+          "lp_recovery": -0.396576
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.169202,
+          "kl_recovery": -0.055692,
+          "patched_target_logprob": -9.512612,
+          "lp_delta": 0.125051,
+          "lp_recovery": -0.286584
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.241168,
+          "kl_recovery": -0.504705,
+          "patched_target_logprob": -9.423399,
+          "lp_delta": 0.214265,
+          "lp_recovery": -0.491036
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.223193,
+          "kl_recovery": -0.392553,
+          "patched_target_logprob": -9.357611,
+          "lp_delta": 0.280053,
+          "lp_recovery": -0.641804
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.211243,
+          "kl_recovery": -0.317993,
+          "patched_target_logprob": -9.34141,
+          "lp_delta": 0.296254,
+          "lp_recovery": -0.678933
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.191358,
+          "kl_recovery": -0.193928,
+          "patched_target_logprob": -9.346921,
+          "lp_delta": 0.290743,
+          "lp_recovery": -0.666302
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.208957,
+          "kl_recovery": -0.303733,
+          "patched_target_logprob": -9.230446,
+          "lp_delta": 0.407218,
+          "lp_recovery": -0.933231
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.174928,
+          "kl_recovery": -0.091415,
+          "patched_target_logprob": -9.251923,
+          "lp_delta": 0.385741,
+          "lp_recovery": -0.884012
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.106594,
+          "kl_recovery": 0.334938,
+          "patched_target_logprob": -9.282581,
+          "lp_delta": 0.355083,
+          "lp_recovery": -0.813751
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.082978,
+          "kl_recovery": 0.482283,
+          "patched_target_logprob": -9.271978,
+          "lp_delta": 0.365685,
+          "lp_recovery": -0.83805
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.122401,
+          "kl_recovery": 0.236311,
+          "patched_target_logprob": -8.938381,
+          "lp_delta": 0.699283,
+          "lp_recovery": -1.602563
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.109958,
+          "kl_recovery": 0.313949,
+          "patched_target_logprob": -8.91394,
+          "lp_delta": 0.723723,
+          "lp_recovery": -1.658574
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.09664,
+          "kl_recovery": 0.397039,
+          "patched_target_logprob": -8.874046,
+          "lp_delta": 0.763618,
+          "lp_recovery": -1.750001
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.091756,
+          "kl_recovery": 0.427511,
+          "patched_target_logprob": -8.880885,
+          "lp_delta": 0.756779,
+          "lp_recovery": -1.734328
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.060059,
+          "kl_recovery": 0.625276,
+          "patched_target_logprob": -8.998527,
+          "lp_delta": 0.639137,
+          "lp_recovery": -1.464726
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.048272,
+          "kl_recovery": 0.698821,
+          "patched_target_logprob": -9.057583,
+          "lp_delta": 0.580081,
+          "lp_recovery": -1.329385
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.041733,
+          "kl_recovery": 0.739619,
+          "patched_target_logprob": -9.226095,
+          "lp_delta": 0.411569,
+          "lp_recovery": -0.943202
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.026061,
+          "kl_recovery": 0.837401,
+          "patched_target_logprob": -9.380996,
+          "lp_delta": 0.256668,
+          "lp_recovery": -0.588212
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.004716,
+          "kl_recovery": 0.970577,
+          "patched_target_logprob": -9.876223,
+          "lp_delta": -0.238559,
+          "lp_recovery": 0.546711
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.002807,
+          "kl_recovery": 0.982486,
+          "patched_target_logprob": -9.849476,
+          "lp_delta": -0.211812,
+          "lp_recovery": 0.485415
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -10.074017,
+          "lp_delta": -0.436353,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "code_syntax_0000",
+      "family": "code_syntax",
+      "target": "b",
+      "base_kl_to_trained": 0.01969,
+      "base_target_logprob": -18.240635,
+      "trained_target_logprob": -17.934305,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.018514,
+          "kl_recovery": 0.059713,
+          "patched_target_logprob": -18.26737,
+          "lp_delta": -0.026735,
+          "lp_recovery": -0.087276
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.020546,
+          "kl_recovery": -0.043485,
+          "patched_target_logprob": -18.277893,
+          "lp_delta": -0.037258,
+          "lp_recovery": -0.121628
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.020354,
+          "kl_recovery": -0.033741,
+          "patched_target_logprob": -18.276615,
+          "lp_delta": -0.03598,
+          "lp_recovery": -0.117456
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.018762,
+          "kl_recovery": 0.047132,
+          "patched_target_logprob": -18.33057,
+          "lp_delta": -0.089935,
+          "lp_recovery": -0.29359
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.013306,
+          "kl_recovery": 0.324243,
+          "patched_target_logprob": -18.277952,
+          "lp_delta": -0.037317,
+          "lp_recovery": -0.121821
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.01324,
+          "kl_recovery": 0.327598,
+          "patched_target_logprob": -18.256369,
+          "lp_delta": -0.015734,
+          "lp_recovery": -0.051362
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.011876,
+          "kl_recovery": 0.39684,
+          "patched_target_logprob": -18.231424,
+          "lp_delta": 0.009211,
+          "lp_recovery": 0.030068
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.01371,
+          "kl_recovery": 0.303698,
+          "patched_target_logprob": -18.162752,
+          "lp_delta": 0.077883,
+          "lp_recovery": 0.254245
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.012674,
+          "kl_recovery": 0.356344,
+          "patched_target_logprob": -18.204374,
+          "lp_delta": 0.036261,
+          "lp_recovery": 0.118371
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.011538,
+          "kl_recovery": 0.414036,
+          "patched_target_logprob": -18.105074,
+          "lp_delta": 0.135561,
+          "lp_recovery": 0.442533
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.012228,
+          "kl_recovery": 0.378997,
+          "patched_target_logprob": -18.064627,
+          "lp_delta": 0.176008,
+          "lp_recovery": 0.574571
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.011428,
+          "kl_recovery": 0.419593,
+          "patched_target_logprob": -18.093702,
+          "lp_delta": 0.146933,
+          "lp_recovery": 0.479655
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.009914,
+          "kl_recovery": 0.496476,
+          "patched_target_logprob": -18.141998,
+          "lp_delta": 0.098637,
+          "lp_recovery": 0.321995
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.012452,
+          "kl_recovery": 0.367584,
+          "patched_target_logprob": -18.06929,
+          "lp_delta": 0.171345,
+          "lp_recovery": 0.559347
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.010376,
+          "kl_recovery": 0.473049,
+          "patched_target_logprob": -18.167797,
+          "lp_delta": 0.072838,
+          "lp_recovery": 0.237776
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.01294,
+          "kl_recovery": 0.342806,
+          "patched_target_logprob": -18.036819,
+          "lp_delta": 0.203815,
+          "lp_recovery": 0.665347
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.008126,
+          "kl_recovery": 0.587301,
+          "patched_target_logprob": -18.058971,
+          "lp_delta": 0.181664,
+          "lp_recovery": 0.593033
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.008137,
+          "kl_recovery": 0.586722,
+          "patched_target_logprob": -18.084494,
+          "lp_delta": 0.156141,
+          "lp_recovery": 0.509716
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.01302,
+          "kl_recovery": 0.338746,
+          "patched_target_logprob": -18.155964,
+          "lp_delta": 0.084671,
+          "lp_recovery": 0.276405
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.010989,
+          "kl_recovery": 0.441911,
+          "patched_target_logprob": -18.068457,
+          "lp_delta": 0.172178,
+          "lp_recovery": 0.562068
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.00812,
+          "kl_recovery": 0.587633,
+          "patched_target_logprob": -17.945812,
+          "lp_delta": 0.294823,
+          "lp_recovery": 0.962436
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.001563,
+          "kl_recovery": 0.920628,
+          "patched_target_logprob": -17.806091,
+          "lp_delta": 0.434544,
+          "lp_recovery": 1.418549
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.00132,
+          "kl_recovery": 0.932974,
+          "patched_target_logprob": -17.811136,
+          "lp_delta": 0.429499,
+          "lp_recovery": 1.40208
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -17.934305,
+          "lp_delta": 0.30633,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "verbosity_control_0000",
+      "family": "verbosity_control",
+      "target": "Yes",
+      "base_kl_to_trained": 0.540115,
+      "base_target_logprob": -12.235878,
+      "trained_target_logprob": -10.186602,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.537564,
+          "kl_recovery": 0.004722,
+          "patched_target_logprob": -12.306555,
+          "lp_delta": -0.070677,
+          "lp_recovery": -0.034489
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.496018,
+          "kl_recovery": 0.081644,
+          "patched_target_logprob": -12.060292,
+          "lp_delta": 0.175586,
+          "lp_recovery": 0.085682
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.472665,
+          "kl_recovery": 0.124881,
+          "patched_target_logprob": -11.962933,
+          "lp_delta": 0.272945,
+          "lp_recovery": 0.133191
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.46548,
+          "kl_recovery": 0.138184,
+          "patched_target_logprob": -11.799463,
+          "lp_delta": 0.436415,
+          "lp_recovery": 0.21296
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.470782,
+          "kl_recovery": 0.128368,
+          "patched_target_logprob": -11.963525,
+          "lp_delta": 0.272353,
+          "lp_recovery": 0.132902
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.418615,
+          "kl_recovery": 0.224953,
+          "patched_target_logprob": -11.786326,
+          "lp_delta": 0.449552,
+          "lp_recovery": 0.219371
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.40051,
+          "kl_recovery": 0.258473,
+          "patched_target_logprob": -11.624498,
+          "lp_delta": 0.61138,
+          "lp_recovery": 0.298339
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.394048,
+          "kl_recovery": 0.270437,
+          "patched_target_logprob": -11.591814,
+          "lp_delta": 0.644064,
+          "lp_recovery": 0.314288
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.356582,
+          "kl_recovery": 0.339804,
+          "patched_target_logprob": -11.42946,
+          "lp_delta": 0.806418,
+          "lp_recovery": 0.393514
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.313271,
+          "kl_recovery": 0.419991,
+          "patched_target_logprob": -11.235505,
+          "lp_delta": 1.000373,
+          "lp_recovery": 0.488159
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.265749,
+          "kl_recovery": 0.507977,
+          "patched_target_logprob": -11.076072,
+          "lp_delta": 1.159806,
+          "lp_recovery": 0.565959
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.24017,
+          "kl_recovery": 0.555336,
+          "patched_target_logprob": -11.04806,
+          "lp_delta": 1.187818,
+          "lp_recovery": 0.579628
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.181525,
+          "kl_recovery": 0.663914,
+          "patched_target_logprob": -10.74013,
+          "lp_delta": 1.495748,
+          "lp_recovery": 0.729891
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.184596,
+          "kl_recovery": 0.658228,
+          "patched_target_logprob": -10.711127,
+          "lp_delta": 1.524751,
+          "lp_recovery": 0.744043
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.118648,
+          "kl_recovery": 0.780328,
+          "patched_target_logprob": -10.397782,
+          "lp_delta": 1.838096,
+          "lp_recovery": 0.896949
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.084791,
+          "kl_recovery": 0.843013,
+          "patched_target_logprob": -10.278134,
+          "lp_delta": 1.957744,
+          "lp_recovery": 0.955334
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.079333,
+          "kl_recovery": 0.853119,
+          "patched_target_logprob": -10.106341,
+          "lp_delta": 2.129537,
+          "lp_recovery": 1.039165
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.063383,
+          "kl_recovery": 0.882648,
+          "patched_target_logprob": -10.094977,
+          "lp_delta": 2.140901,
+          "lp_recovery": 1.044711
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.071703,
+          "kl_recovery": 0.867244,
+          "patched_target_logprob": -9.957154,
+          "lp_delta": 2.278724,
+          "lp_recovery": 1.111965
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.06053,
+          "kl_recovery": 0.887932,
+          "patched_target_logprob": -9.990156,
+          "lp_delta": 2.245722,
+          "lp_recovery": 1.095861
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.036041,
+          "kl_recovery": 0.933272,
+          "patched_target_logprob": -9.766672,
+          "lp_delta": 2.469206,
+          "lp_recovery": 1.204916
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.008667,
+          "kl_recovery": 0.983953,
+          "patched_target_logprob": -9.875866,
+          "lp_delta": 2.360012,
+          "lp_recovery": 1.151632
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.005804,
+          "kl_recovery": 0.989253,
+          "patched_target_logprob": -9.922564,
+          "lp_delta": 2.313314,
+          "lp_recovery": 1.128845
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -10.186602,
+          "lp_delta": 2.049276,
+          "lp_recovery": 1.0
+        }
+      ]
+    },
+    {
+      "pair_id": "verbosity_control_0001",
+      "family": "verbosity_control",
+      "target": "3",
+      "base_kl_to_trained": 0.012504,
+      "base_target_logprob": -0.107678,
+      "trained_target_logprob": -0.113687,
+      "layer_results": [
+        {
+          "layer": 0,
+          "patched_kl_to_trained": 0.013995,
+          "kl_recovery": -0.11931,
+          "patched_target_logprob": -0.102038,
+          "lp_delta": 0.00564,
+          "lp_recovery": -0.938739
+        },
+        {
+          "layer": 1,
+          "patched_kl_to_trained": 0.015342,
+          "kl_recovery": -0.226995,
+          "patched_target_logprob": -0.103173,
+          "lp_delta": 0.004505,
+          "lp_recovery": -0.749837
+        },
+        {
+          "layer": 2,
+          "patched_kl_to_trained": 0.015465,
+          "kl_recovery": -0.236827,
+          "patched_target_logprob": -0.106011,
+          "lp_delta": 0.001667,
+          "lp_recovery": -0.277501
+        },
+        {
+          "layer": 3,
+          "patched_kl_to_trained": 0.017005,
+          "kl_recovery": -0.360001,
+          "patched_target_logprob": -0.113011,
+          "lp_delta": -0.005333,
+          "lp_recovery": 0.887622
+        },
+        {
+          "layer": 4,
+          "patched_kl_to_trained": 0.018178,
+          "kl_recovery": -0.453821,
+          "patched_target_logprob": -0.115122,
+          "lp_delta": -0.007444,
+          "lp_recovery": 1.238835
+        },
+        {
+          "layer": 5,
+          "patched_kl_to_trained": 0.021671,
+          "kl_recovery": -0.733188,
+          "patched_target_logprob": -0.11852,
+          "lp_delta": -0.010842,
+          "lp_recovery": 1.804426
+        },
+        {
+          "layer": 6,
+          "patched_kl_to_trained": 0.020496,
+          "kl_recovery": -0.639176,
+          "patched_target_logprob": -0.118899,
+          "lp_delta": -0.011221,
+          "lp_recovery": 1.867485
+        },
+        {
+          "layer": 7,
+          "patched_kl_to_trained": 0.021199,
+          "kl_recovery": -0.695411,
+          "patched_target_logprob": -0.125193,
+          "lp_delta": -0.017515,
+          "lp_recovery": 2.915084
+        },
+        {
+          "layer": 8,
+          "patched_kl_to_trained": 0.018953,
+          "kl_recovery": -0.515824,
+          "patched_target_logprob": -0.129979,
+          "lp_delta": -0.0223,
+          "lp_recovery": 3.711478
+        },
+        {
+          "layer": 9,
+          "patched_kl_to_trained": 0.019064,
+          "kl_recovery": -0.5247,
+          "patched_target_logprob": -0.134596,
+          "lp_delta": -0.026917,
+          "lp_recovery": 4.47989
+        },
+        {
+          "layer": 10,
+          "patched_kl_to_trained": 0.015583,
+          "kl_recovery": -0.246262,
+          "patched_target_logprob": -0.134956,
+          "lp_delta": -0.027277,
+          "lp_recovery": 4.539812
+        },
+        {
+          "layer": 11,
+          "patched_kl_to_trained": 0.012001,
+          "kl_recovery": 0.040229,
+          "patched_target_logprob": -0.139641,
+          "lp_delta": -0.031963,
+          "lp_recovery": 5.31969
+        },
+        {
+          "layer": 12,
+          "patched_kl_to_trained": 0.010717,
+          "kl_recovery": 0.142927,
+          "patched_target_logprob": -0.144461,
+          "lp_delta": -0.036783,
+          "lp_recovery": 6.121894
+        },
+        {
+          "layer": 13,
+          "patched_kl_to_trained": 0.006644,
+          "kl_recovery": 0.468668,
+          "patched_target_logprob": -0.111305,
+          "lp_delta": -0.003627,
+          "lp_recovery": 0.603611
+        },
+        {
+          "layer": 14,
+          "patched_kl_to_trained": 0.005513,
+          "kl_recovery": 0.55909,
+          "patched_target_logprob": -0.121802,
+          "lp_delta": -0.014124,
+          "lp_recovery": 2.350679
+        },
+        {
+          "layer": 15,
+          "patched_kl_to_trained": 0.007584,
+          "kl_recovery": 0.393441,
+          "patched_target_logprob": -0.150539,
+          "lp_delta": -0.042861,
+          "lp_recovery": 7.133388
+        },
+        {
+          "layer": 16,
+          "patched_kl_to_trained": 0.005189,
+          "kl_recovery": 0.584967,
+          "patched_target_logprob": -0.136254,
+          "lp_delta": -0.028576,
+          "lp_recovery": 4.755897
+        },
+        {
+          "layer": 17,
+          "patched_kl_to_trained": 0.003113,
+          "kl_recovery": 0.75102,
+          "patched_target_logprob": -0.12795,
+          "lp_delta": -0.020272,
+          "lp_recovery": 3.373918
+        },
+        {
+          "layer": 18,
+          "patched_kl_to_trained": 0.001794,
+          "kl_recovery": 0.856519,
+          "patched_target_logprob": -0.11838,
+          "lp_delta": -0.010702,
+          "lp_recovery": 1.781074
+        },
+        {
+          "layer": 19,
+          "patched_kl_to_trained": 0.001387,
+          "kl_recovery": 0.889063,
+          "patched_target_logprob": -0.113828,
+          "lp_delta": -0.00615,
+          "lp_recovery": 1.023568
+        },
+        {
+          "layer": 20,
+          "patched_kl_to_trained": 0.001453,
+          "kl_recovery": 0.88383,
+          "patched_target_logprob": -0.113577,
+          "lp_delta": -0.005899,
+          "lp_recovery": 0.981742
+        },
+        {
+          "layer": 21,
+          "patched_kl_to_trained": 0.00051,
+          "kl_recovery": 0.959183,
+          "patched_target_logprob": -0.121754,
+          "lp_delta": -0.014075,
+          "lp_recovery": 2.34258
+        },
+        {
+          "layer": 22,
+          "patched_kl_to_trained": 0.00022,
+          "kl_recovery": 0.982416,
+          "patched_target_logprob": -0.118763,
+          "lp_delta": -0.011084,
+          "lp_recovery": 1.844794
+        },
+        {
+          "layer": 23,
+          "patched_kl_to_trained": 0.0,
+          "kl_recovery": 1.0,
+          "patched_target_logprob": -0.113687,
+          "lp_delta": -0.006008,
+          "lp_recovery": 1.0
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "layer": 0,
+      "mean_kl_recovery": -0.011203,
+      "std_kl_recovery": 0.071746,
+      "mean_lp_recovery": 0.144307,
+      "n_pairs": 17
+    },
+    {
+      "layer": 1,
+      "mean_kl_recovery": -0.007484,
+      "std_kl_recovery": 0.16216,
+      "mean_lp_recovery": 0.486175,
+      "n_pairs": 17
+    },
+    {
+      "layer": 2,
+      "mean_kl_recovery": 0.005748,
+      "std_kl_recovery": 0.163445,
+      "mean_lp_recovery": 0.556813,
+      "n_pairs": 17
+    },
+    {
+      "layer": 3,
+      "mean_kl_recovery": 0.010688,
+      "std_kl_recovery": 0.17553,
+      "mean_lp_recovery": 0.657795,
+      "n_pairs": 17
+    },
+    {
+      "layer": 4,
+      "mean_kl_recovery": 0.060808,
+      "std_kl_recovery": 0.192325,
+      "mean_lp_recovery": 0.685486,
+      "n_pairs": 17
+    },
+    {
+      "layer": 5,
+      "mean_kl_recovery": 0.011763,
+      "std_kl_recovery": 0.281223,
+      "mean_lp_recovery": 0.85533,
+      "n_pairs": 17
+    },
+    {
+      "layer": 6,
+      "mean_kl_recovery": 0.049837,
+      "std_kl_recovery": 0.261106,
+      "mean_lp_recovery": 0.986673,
+      "n_pairs": 17
+    },
+    {
+      "layer": 7,
+      "mean_kl_recovery": 0.071568,
+      "std_kl_recovery": 0.25656,
+      "mean_lp_recovery": 0.914212,
+      "n_pairs": 17
+    },
+    {
+      "layer": 8,
+      "mean_kl_recovery": 0.112554,
+      "std_kl_recovery": 0.227422,
+      "mean_lp_recovery": 0.903743,
+      "n_pairs": 17
+    },
+    {
+      "layer": 9,
+      "mean_kl_recovery": 0.159015,
+      "std_kl_recovery": 0.26485,
+      "mean_lp_recovery": 0.992261,
+      "n_pairs": 17
+    },
+    {
+      "layer": 10,
+      "mean_kl_recovery": 0.281683,
+      "std_kl_recovery": 0.227682,
+      "mean_lp_recovery": 0.905691,
+      "n_pairs": 17
+    },
+    {
+      "layer": 11,
+      "mean_kl_recovery": 0.358217,
+      "std_kl_recovery": 0.172866,
+      "mean_lp_recovery": 0.665761,
+      "n_pairs": 17
+    },
+    {
+      "layer": 12,
+      "mean_kl_recovery": 0.406182,
+      "std_kl_recovery": 0.217666,
+      "mean_lp_recovery": 0.669439,
+      "n_pairs": 17
+    },
+    {
+      "layer": 13,
+      "mean_kl_recovery": 0.459398,
+      "std_kl_recovery": 0.207802,
+      "mean_lp_recovery": 0.375977,
+      "n_pairs": 17
+    },
+    {
+      "layer": 14,
+      "mean_kl_recovery": 0.544706,
+      "std_kl_recovery": 0.185927,
+      "mean_lp_recovery": 0.827732,
+      "n_pairs": 17
+    },
+    {
+      "layer": 15,
+      "mean_kl_recovery": 0.587045,
+      "std_kl_recovery": 0.221654,
+      "mean_lp_recovery": 1.294644,
+      "n_pairs": 17
+    },
+    {
+      "layer": 16,
+      "mean_kl_recovery": 0.644908,
+      "std_kl_recovery": 0.175924,
+      "mean_lp_recovery": 1.257025,
+      "n_pairs": 17
+    },
+    {
+      "layer": 17,
+      "mean_kl_recovery": 0.740142,
+      "std_kl_recovery": 0.149614,
+      "mean_lp_recovery": 1.203401,
+      "n_pairs": 17
+    },
+    {
+      "layer": 18,
+      "mean_kl_recovery": 0.753742,
+      "std_kl_recovery": 0.209869,
+      "mean_lp_recovery": 1.343672,
+      "n_pairs": 17
+    },
+    {
+      "layer": 19,
+      "mean_kl_recovery": 0.802082,
+      "std_kl_recovery": 0.172505,
+      "mean_lp_recovery": 1.165522,
+      "n_pairs": 17
+    },
+    {
+      "layer": 20,
+      "mean_kl_recovery": 0.866781,
+      "std_kl_recovery": 0.116945,
+      "mean_lp_recovery": 1.112238,
+      "n_pairs": 17
+    },
+    {
+      "layer": 21,
+      "mean_kl_recovery": 0.946514,
+      "std_kl_recovery": 0.056293,
+      "mean_lp_recovery": 1.337245,
+      "n_pairs": 17
+    },
+    {
+      "layer": 22,
+      "mean_kl_recovery": 0.966159,
+      "std_kl_recovery": 0.036489,
+      "mean_lp_recovery": 1.281107,
+      "n_pairs": 17
+    },
+    {
+      "layer": 23,
+      "mean_kl_recovery": 1.0,
+      "std_kl_recovery": 0.0,
+      "mean_lp_recovery": 1.0,
+      "n_pairs": 17
+    }
+  ],
+  "best_transfer_layers": [
+    {
+      "layer": 23,
+      "mean_kl_recovery": 1.0,
+      "std_kl_recovery": 0.0,
+      "mean_lp_recovery": 1.0,
+      "n_pairs": 17
+    },
+    {
+      "layer": 22,
+      "mean_kl_recovery": 0.966159,
+      "std_kl_recovery": 0.036489,
+      "mean_lp_recovery": 1.281107,
+      "n_pairs": 17
+    },
+    {
+      "layer": 21,
+      "mean_kl_recovery": 0.946514,
+      "std_kl_recovery": 0.056293,
+      "mean_lp_recovery": 1.337245,
+      "n_pairs": 17
+    },
+    {
+      "layer": 20,
+      "mean_kl_recovery": 0.866781,
+      "std_kl_recovery": 0.116945,
+      "mean_lp_recovery": 1.112238,
+      "n_pairs": 17
+    },
+    {
+      "layer": 19,
+      "mean_kl_recovery": 0.802082,
+      "std_kl_recovery": 0.172505,
+      "mean_lp_recovery": 1.165522,
+      "n_pairs": 17
+    }
+  ]
+}

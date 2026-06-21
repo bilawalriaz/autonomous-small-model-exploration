@@ -134,3 +134,69 @@ L2 as a simple residual magnitude carrier. It has positional specialization.
 
 Next:
 Test if L2's positional pattern changes after LoRA training. Test if L2 first-position effect is instruction-specific.
+
+---
+
+## NR007: JSON skill knockout had limited effect due to near-zero base probability
+
+Experiment:
+Skill knockout via negative steering on trained model for JSON skill.
+
+Expected:
+Negative steering would suppress JSON-specific token probabilities.
+
+Observed:
+Base probability of JSON target tokens (e.g., "42", closing quotes) was already near-zero (0.0000) in the trained model. Knockout had no room to suppress further. The steering still caused KL changes in the output distribution, but not on the specific target tokens.
+
+Interpretation:
+The LoRA JSON adapter didn't dramatically change the probability of specific JSON tokens for these test prompts. The adapter's effect may be more about distribution shape than specific token boosting.
+
+What this rules out:
+Using near-zero-probability targets for skill knockout measurement. Need prompts where the trained model actually produces the target.
+
+Next:
+Use prompts where the adapter demonstrably changes target probability. Focus on factual recall (where base probability is measurable) for knockout experiments.
+
+---
+
+## NR008: H6 (upstream propagation) rejected by adapter-only ablation
+
+Experiment:
+Adapter-only ablation — selectively remove adapter contribution at each layer, measure effect.
+
+Expected:
+If H6 is correct, adapter ablation at early layers (L0-L2, low norms) should have large effects (upstream propagation). Adapter ablation at late layers (L20-L23, high norms) should have effects matching norms.
+
+Observed:
+Norm-effect correlation = 0.85 (strong positive). Adapter ablation effect peaks at L19-L23, matching the norm distribution. L23=100%, L22=92%, L21=81% of total adapter effect. Only L12 shows a norm-effect mismatch.
+
+Interpretation:
+The adapter's functional effect IS at the same layers where it writes (late layers). The earlier finding that "general ablation effects peak at L0-L2" was about general layer importance, not adapter-specific importance. L0-L2 is universally important for ALL processing (base + adapter), while the adapter's SPECIFIC contribution is at L19-L23.
+
+What this rules out:
+The hypothesis that adapter effects propagate upstream from late to early layers. The adapter writes and acts at the same locations.
+
+Next:
+The separation between "general importance" (L0-L2) and "adapter-specific importance" (L19-L23) is itself an important finding. Investigate whether this pattern holds for other skills.
+
+---
+
+## NR009: PeftModel.from_pretrained modifies base model in-place
+
+Experiment:
+Attempted to load base model and trained model separately for cross-model patching.
+
+Expected:
+`base_model = load_model_hf(...)` and `trained_model = PeftModel.from_pretrained(base_model, ...)` would give two independent models.
+
+Observed:
+PeftModel.from_pretrained modifies the base model's linear layers in-place by injecting LoRA adapters. Calling `base_model(ids)` after wrapping gives the SAME result as `trained_model(ids)` — both have the adapter active.
+
+Interpretation:
+PeftModel does not create a copy of the base model. It wraps and modifies it. To get base model behavior, use `with trained_model.disable_adapter():` context manager.
+
+What this rules out:
+Loading base and trained models as separate objects without using disable_adapter() or loading the model twice.
+
+Next:
+All cross-model experiments use `disable_adapter()` context for base behavior. This saves VRAM (no duplicate model) and is the correct PEFT pattern.
