@@ -1,0 +1,185 @@
+{
+  "experiment": "exp_000016",
+  "timestamp": "2026-06-21T20:03:44.679043+00:00",
+  "base_scores": {
+    "copying": -13.0625,
+    "delimiter_tracking": -9.1125,
+    "factual_recall": -14.5,
+    "code_semantics": -8.2562,
+    "json_schema": -2.2969
+  },
+  "single_adapter_scores": {
+    "copying": {
+      "copying": -14.075,
+      "delimiter_tracking": -12.625,
+      "factual_recall": -12.5875,
+      "code_semantics": -6.9813,
+      "json_schema": -4.6906
+    },
+    "delimiter_tracking": {
+      "copying": -12.9625,
+      "delimiter_tracking": -28.05,
+      "factual_recall": -14.525,
+      "code_semantics": -11.0813,
+      "json_schema": -2.6281
+    },
+    "factual_recall": {
+      "copying": -12.6125,
+      "delimiter_tracking": -9.5125,
+      "factual_recall": -8.3938,
+      "code_semantics": -8.125,
+      "json_schema": -2.3406
+    },
+    "code_semantics": {
+      "copying": -13.825,
+      "delimiter_tracking": -10.675,
+      "factual_recall": -13.7875,
+      "code_semantics": -1.2175,
+      "json_schema": -0.7797
+    },
+    "json_schema": {
+      "copying": -14.4375,
+      "delimiter_tracking": -13.275,
+      "factual_recall": -12.125,
+      "code_semantics": -6.9875,
+      "json_schema": -0.0
+    }
+  },
+  "stack_results": {
+    "copying+json_schema": {
+      "copying": {
+        "score": -16.325,
+        "expected": -14.2562,
+        "interference": -2.0687
+      },
+      "delimiter_tracking": {
+        "score": -19.95,
+        "expected": -12.95,
+        "interference": -7.0
+      },
+      "factual_recall": {
+        "score": -9.6031,
+        "expected": -12.3562,
+        "interference": 2.7531
+      },
+      "code_semantics": {
+        "score": -5.7281,
+        "expected": -6.9844,
+        "interference": 1.2563
+      },
+      "json_schema": {
+        "score": -0.0001,
+        "expected": -2.3453,
+        "interference": 2.3452
+      }
+    },
+    "copying+delimiter_tracking": {
+      "copying": {
+        "score": -15.875,
+        "expected": -13.5188,
+        "interference": -2.3562
+      },
+      "delimiter_tracking": {
+        "score": -32.175,
+        "expected": -20.3375,
+        "interference": -11.8375
+      },
+      "factual_recall": {
+        "score": -12.6687,
+        "expected": -13.5563,
+        "interference": 0.8876
+      },
+      "code_semantics": {
+        "score": -11.4688,
+        "expected": -9.0313,
+        "interference": -2.4375
+      },
+      "json_schema": {
+        "score": -4.7531,
+        "expected": -3.6593,
+        "interference": -1.0938
+      }
+    },
+    "factual_recall+json_schema": {
+      "copying": {
+        "score": -13.8125,
+        "expected": -13.525,
+        "interference": -0.2875
+      },
+      "delimiter_tracking": {
+        "score": -14.3375,
+        "expected": -11.3938,
+        "interference": -2.9437
+      },
+      "factual_recall": {
+        "score": -7.9094,
+        "expected": -10.2594,
+        "interference": 2.35
+      },
+      "code_semantics": {
+        "score": -7.5625,
+        "expected": -7.5563,
+        "interference": -0.0062
+      },
+      "json_schema": {
+        "score": -0.0,
+        "expected": -1.1703,
+        "interference": 1.1703
+      }
+    },
+    "delimiter_tracking+code_semantics": {
+      "copying": {
+        "score": -14.65,
+        "expected": -13.3938,
+        "interference": -1.2562
+      },
+      "delimiter_tracking": {
+        "score": -34.875,
+        "expected": -19.3625,
+        "interference": -15.5125
+      },
+      "factual_recall": {
+        "score": -12.2,
+        "expected": -14.1562,
+        "interference": 1.9563
+      },
+      "code_semantics": {
+        "score": -1.4007,
+        "expected": -6.1494,
+        "interference": 4.7487
+      },
+      "json_schema": {
+        "score": -1.6445,
+        "expected": -1.7039,
+        "interference": 0.0594
+      }
+    },
+    "code_semantics+json_schema": {
+      "copying": {
+        "score": -15.15,
+        "expected": -14.1312,
+        "interference": -1.0188
+      },
+      "delimiter_tracking": {
+        "score": -19.4,
+        "expected": -11.975,
+        "interference": -7.425
+      },
+      "factual_recall": {
+        "score": -10.0906,
+        "expected": -12.9563,
+        "interference": 2.8657
+      },
+      "code_semantics": {
+        "score": -1.9494,
+        "expected": -4.1025,
+        "interference": 2.1531
+      },
+      "json_schema": {
+        "score": -0.0002,
+        "expected": -0.3898,
+        "interference": 0.3896
+      }
+    }
+  }
+}
