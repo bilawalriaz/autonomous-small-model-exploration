@@ -6,10 +6,10 @@
 - Model: Qwen/Qwen2.5-0.5B (24L, 14H GQA, d=896, ~0.49B params)
 - Backend: HF native with manual hooks
 - Hardware: aero (RTX 2070 Super 8GB, bf16)
-- Current goal: Dataset shard ablation + component atlas construction
+- Current goal: Component atlas construction, checkpoint timeline
 
 ## Current state summary
-13 experiments completed across 2 sessions. Strong causal atlas emerging. L2 identified as universal importance hub. LoRA training rewires component importance (L0 MLP absorbs JSON skill). Steering confirms L2 causal role for factual recall (3.3x boost). Patching method limited by full-residual replacement (KL=0 everywhere). Next: dataset shard ablation, checkpoint timeline, adapter archaeology.
+16 experiments completed across 3 sessions. Rich causal atlas with training perturbation data. L2 confirmed as universal hub. Dataset shard ablation reveals each skill concentrates in DIFFERENT layers (rejecting universal L0-L2 hypothesis). Adapter weights concentrate in late layers (L20-L23) but ablation effects hit early layers (L0-L2). Adapter stacking shows factual+json combine cleanly while delimiter adapter is destructive. 10 adapters trained and analyzed.
 
 ## Completed
 - [x] Repo scaffold
@@ -23,17 +23,17 @@
 - [x] Layer ablations (L2 dominates all families)
 - [x] Head ablations (14 heads across 5 families)
 - [x] MLP ablations (L2, L4, L6 dominate)
-- [ ] Residual patching (method limitation - KL=0 everywhere with full-residual)
+- [ ] Residual patching (method limitation - KL=0 everywhere)
 - [ ] Head/MLP patching
 - [x] Steering sweeps (L2 factual: 3.3x boost at s=+4.0)
 - [ ] CPT training
 - [ ] SFT training (OOM on 8GB, using LoRA instead)
 - [ ] CPT->SFT training
 - [x] LoRA sweeps (rank: r=1,2,4,8,16; module: q/v/o/mlp/attn/all)
-- [ ] Dataset ablation sweeps
+- [x] Dataset ablation sweeps (5 families: copying, delimiter, factual, code, json)
 - [ ] Hyperparameter sweeps
 - [x] Checkpoint comparison (LoRA before/after, ablation maps)
-- [ ] Adapter comparison (multiple skill adapters)
+- [x] Adapter comparison (archaeology, stacking/interference)
 - [ ] SAE training
 - [ ] SAE intervention tests
 - [ ] Component atlas
@@ -42,69 +42,66 @@
 
 ## Key findings so far
 1. L2 is a universal importance hub (ablation KL 0.5-11.5 across all families). HIGH confidence.
-2. L0 MLP is second-strongest across all families (KL 0.3-10.8). MEDIUM confidence.
-3. L2 and L0 dominate jointly. Top-2 layers explain >60% of ablation effect. MEDIUM confidence.
-4. 14 attention heads span 5 families. L12 H8 is strongest head. MEDIUM confidence.
-5. MLP contribution exceeds attention at L2, L4, L6. MEDIUM confidence.
-6. Factual recall most sensitive to layer ablation. Code semantics most resistant. MEDIUM confidence.
-7. Steering L2 with factual direction boosts "rome" 0.064->0.213 (3.3x) at s=+4.0. MEDIUM confidence.
-8. JSON steering at L21 shifts top token from "{" to "Name"/"She" (negative direction). MEDIUM confidence.
-9. LoRA training shifts JSON component importance: L0 MLP 10.85->13.84 (+2.99). MEDIUM confidence.
-10. L2 MLP reduced after JSON LoRA: 4.81->2.94 (-1.87). MEDIUM confidence.
-11. L5 MLP eliminated after JSON LoRA: 1.56->0.00 (-1.56). MEDIUM confidence.
-12. L4 appeared for factual_recall (+1.42) and refusal (+0.95) after LoRA. MEDIUM confidence.
-13. LoRA rank sweep: L0 MLP peaks at r=4 (15.77), declines at higher rank. MEDIUM confidence.
-14. L2 MLP drops monotonically with rank: 5.73->2.16 (r=1->16). MEDIUM confidence.
-15. o_proj alone most efficient for L0 concentration (+3.64 with 344K params). MEDIUM confidence.
+2. L0 MLP is second-strongest across all families. MEDIUM confidence.
+3. LoRA training rewires component importance: L0 MLP absorbs JSON (+2.99). MEDIUM confidence.
+4. Each skill concentrates in DIFFERENT layers after training (H002 rejected):
+   - factual_recall: L3, L16, L19
+   - code_semantics: L1, L10, L21
+   - json_schema: L6, L12, L13
+   - copying: dispersed
+   - delimiter: fully absorbed (0 ablation sensitivity)
+   MEDIUM confidence.
+5. Adapter weight norms peak at L20-L23 but ablation effects peak at L0-L2. MEDIUM confidence.
+6. Steering L2 with factual direction boosts "rome" 3.3x. MEDIUM confidence.
+7. o_proj most efficient for skill injection (+3.64 with 344K params). MEDIUM confidence.
+8. LoRA rank sweep: L0 MLP peaks at r=4, higher rank distributes. MEDIUM confidence.
+9. factual+json adapters stack cleanly (synergy +2.35 factual, +1.17 json). MEDIUM confidence.
+10. delimiter adapter is destructive when stacked (-7 to -16 nats). MEDIUM confidence.
+11. L1 appears as universal skill injection point (positive delta across 3+ adapters). MEDIUM confidence.
+12. Total adapter norm scales linearly with rank (6.14 to 22.92, r=1 to r=16). LOW confidence.
 
 ## Open hypotheses
 ### H1: L2 is a general-purpose routing hub
-- Evidence: L2 ablation causes largest KL across all 12 families
-- Next test: Position-specific patching at L2 to identify which tokens matter
-- Falsifier: If L2 effect is uniform across all positions, it's just a residual magnitude effect
+Status: supported (strong ablation + steering evidence)
 
-### H2: LoRA training concentrates skill into early layers (L0-L2)
-- Evidence: L0 MLP +2.99 for JSON after LoRA training
-- Next test: Train adapters on other skill families, check if same concentration occurs
-- Falsifier: If delimiter LoRA concentrates in L10-L15 instead of L0-L2
+### H2: LoRA training concentrates skill into early layers
+Status: REJECTED. Each skill concentrates in different layers. factual_recall in L3/16/19, code in L1/10/21, json in L6/12/13.
 
-### H3: Higher LoRA rank distributes skill across more components
-- Evidence: L0 MLP peaks at r=4 then declines; L2 drops monotonically
-- Next test: Check if r=1 adapter is more surgically precise than r=16
-- Falsifier: If r=16 has same selectivity as r=4 but stronger effect
+### H3: Higher LoRA rank distributes skill across components
+Status: supported. Norm data confirms: r=1 uniform, r=16 late-layer concentration.
 
-### H4: o_proj is the key module for injecting skills via residual stream
-- Evidence: o_proj alone achieves +3.64 L0 effect with only 344K params
-- Next test: Train o_proj-only adapters on multiple skill families
-- Falsifier: If MLP-only adapters work equally well on non-JSON tasks
+### H4: o_proj is the key skill injection pathway
+Status: supported for JSON. Needs replication on other families.
 
 ### H5: Factual recall and algorithmic tasks use different circuits
-- Evidence: Factual recall KL=11.54 at L2 vs code semantics KL=0.52
-- Next test: Head/MLP ablation maps separately for factual vs algorithmic
-- Falsifier: If both families depend on same heads/MLPs with similar sensitivity
+Status: weakened. Both depend on L2 heavily. But post-training concentration differs (factual->L3/16/19 vs code->L1/10/21).
+
+### H6: Adapter weights write to late layers but effects propagate upstream
+Status: new. Norm data (L20-L23 peaks) vs ablation data (L0-L2 peaks). Needs causal test.
 
 ## Failed experiments / dead ends
-1. Full SFT OOMs on 8GB even with bf16 + gradient checkpointing. LoRA required.
-2. Activation patching with full-residual replacement gives KL=0 everywhere. Position-specific patching needed.
+1. Full SFT OOMs on 8GB. LoRA required.
+2. Full-residual activation patching gives KL=0. Position-specific patching needed.
 3. Clean/corrupt pair v0 had tokenization misalignment. Fixed in v1.
 
 ## Artifact index summary
-- 5 LoRA adapters: r={1,2,4,8,16} at experiments/adapters/lora_json_r{N}/
-- 6 module sweep configs at experiments/results/lora_module_sweep.json
+- 10 LoRA adapters at experiments/adapters/
+- 5 family-specific adapters: copying, delimiter, factual, code, json_schema (all r=8)
+- 5 rank sweep adapters: r=1,2,4,8,16 for JSON
 - 9 plots at experiments/plots/
-- 7 result JSONs at experiments/results/
+- 8 result JSONs at experiments/results/
 - 9 table JSONs at experiments/tables/
-- 13 experiments in experiments/registry.jsonl
+- 16 experiments in experiments/registry.jsonl
 
 ## Next actions (ranked)
-1. Dataset shard ablation - train adapters on different skill families, compare component importance
-2. Position-specific activation patching at L0/L2
-3. Checkpoint timeline - save checkpoints during training, track when skills emerge
-4. Adapter archaeology - LoRA SVD, norm analysis
-5. Multiple skill adapters + interference matrix
+1. Component atlas construction (formalize all findings into atlas schema)
+2. Checkpoint timeline (save checkpoints at different training steps, track skill emergence)
+3. Position-specific activation patching at L0/L2/L1
+4. Cross-model activation patching (trained-to-base)
+5. Negative steering / skill knockout
 6. CPT training
-7. Component atlas construction
-8. Blog post outline
+7. Blog post outline
+8. Paper outline
 
 ## Repro commands
 ```bash
@@ -113,16 +110,7 @@ cd ~/work/autonomous-small-model-exploration
 source .venv/bin/activate
 python scripts/run_smoke_tests.py
 python scripts/run_layer_ablation.py
-python scripts/run_steering_sweep.py
-python scripts/train_lora_json.py
-python scripts/run_lora_rank_sweep.py
-python scripts/run_lora_module_sweep.py
-python scripts/compare_lora_ablation.py
+python scripts/run_dataset_shard_ablation.py
+python scripts/run_adapter_archaeology.py
+python scripts/run_adapter_stacking.py
 ```
-
-## Notes
-- Model: Qwen2.5-0.5B, 24 layers, 14 heads (GQA), d_model=896, d_head=64
-- 8GB VRAM budget: bf16 model ~1GB, batch processing with torch.cuda.empty_cache()
-- LoRA training: 100 steps, lr=2e-4, bs=2, r=8, alpha=16, all-linear targets
-- Ablation uses zero-ablation (zero out component output)
-- Steering uses activation addition at residual stream
