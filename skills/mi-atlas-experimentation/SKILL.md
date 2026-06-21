@@ -252,6 +252,11 @@ Every claim must include:
 8. **Head effects are small in small models:** In 0.5B models, individual head ablation gives ~200x smaller effects than layer ablation. Don't expect specialist heads like in larger models.
 9. **Early exit doesn't work naively:** Projecting intermediate hidden states through lm_head fails because each layer transforms the residual. L22's output is L23's input, not the final representation.
 10. **Adapter norm != functional effect location:** In the original ablation, general layer importance peaks at L0-L2. But adapter-SPECIFIC importance (measured by adapter-only ablation) peaks at L19-L23. Don't conflate these.
+11. **Model size changes everything:** The universal hub moves from L2 (0.5B) to L26 (1.5B). Head specialization increases 22x. Steering sensitivity drops 70x. Skill knockout selectivity drops from 11654x to 0.24x. MLPs become 3x less important. The atlas is NOT transferable across scales — each model needs its own.
+12. **1.5B training on 8GB:** Load in bf16 (~3GB), batch_size=1, gradient_accumulation_steps=2, gradient_checkpointing=True, max_length=256. The vocab projection (logits.float()) needs ~594MB — fp32 model will OOM.
+13. **Head ablation hook signature:** `register_forward_pre_hook` takes `(module, args)` not `(module, input, output)`. The hook returns a tuple of modified args.
+14. **Trainer needs labels:** HuggingFace Trainer requires `labels` in the dataset for causal LM. Add `tokenized["labels"] = tokenized["input_ids"].copy()` in the tokenize function.
+15. **Early exit gives inf KL on larger models:** Projecting intermediate hidden states through lm_head on 1.5B gives KL=inf for some layers (numerical overflow in bf16). Use torch.float32 for the projection step.
 
 ## Adapting to a New Model
 
@@ -321,9 +326,33 @@ These require additional GPU time or new data:
 4. **SAE training** — Train sparse autoencoders on key layers (L0, L1, L2, L7, L9, L19, L22). Find interpretable features.
 5. **Skill injection at L19** — Can we INJECT factual recall at L19 (the knockout layer) using positive steering?
 6. **Natural language prompts** — Extend from synthetic to natural language. Validate transfer.
-7. **Cross-model validation** — Run same workflow on Qwen2.5-1.5B or Qwen3.5-0.5B. Compare architecture.
+7. **Cross-model validation** — Run same workflow on Qwen2.5-1.5B or Qwen3.5-0.5B. Compare architecture. ✅ DONE (1.5B)
 8. **Adapter SVD/PCA** — Find the subspace each skill occupies in adapter weight space. Test orthogonality.
 9. **Checkpoint interpolation** — Blend step-10 and step-100 weights. Find optimal interpolation ratio.
 10. **Multi-skill steering** — Apply factual + JSON steering vectors simultaneously. Test composition.
 11. **Layer fusion** — Train a student model that merges adjacent layers. Distillation from 24L to 18L.
 12. **Mixture of Depths (MoD)** — Train the model to conditionally skip layers. Requires architecture modification.
+
+## Cross-Scale Comparison: 0.5B vs 1.5B
+
+Running the full atlas on Qwen2.5-1.5B revealed critical scaling insights:
+
+| Metric | 0.5B | 1.5B | Change |
+|--------|------|------|--------|
+| Architecture | 24L, 14H, d=896 | 28L, 12H, d=1536 | +4 layers, -2 heads, +71% width |
+| Universal hub | L2 (KL 19.11) | L26 (KL 13.70) | Hub moves from early to late |
+| MLP max effect | L0 (KL 8.12) | L0 (KL 2.58) | 3x weaker MLPs at scale |
+| Head max effect | 0.046 | 1.023 | 22x stronger head specialization |
+| Steering boost | 0.213 (3.3x) | 0.003 (~1x) | 70x harder to steer |
+| Skill knockout | L19, 11654x | L21, 0.24x | Selective suppression fails at scale |
+| Norm-effect corr | 0.85 | 0.54 | Weaker norm-effect relationship |
+| Cross-model best | L23 (100%) | L27 (99.9%) | Same pattern, shifted layers |
+| Layer skipping | 0% top-5 overlap | 0% top-5 overlap | All layers necessary in both |
+
+Key insight: **the atlas is NOT transferable across scales.** Each model size has a fundamentally different internal architecture. What works for 0.5B (L2 steering, L19 knockout, o_proj injection) does NOT work for 1.5B. New models need their own atlas.
+
+What IS consistent across scales:
+- L0 MLP is always the top MLP (early processing matters universally)
+- Cross-model patching always shows monotonic recovery (late layers encode trained behavior)
+- Layer skipping always fails (all layers necessary)
+- Core circuit locks in early in training (step 10 pattern)

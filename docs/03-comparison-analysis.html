@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>0.5B vs 1.5B: What Changes at 3x Scale? — MI-Atlas</title>
+  <meta name="description" content="Side-by-side comparison of Qwen2.5-0.5B and 1.5B mechanistic interpretability atlases: the L2→L26 hub migration, 22× stronger heads, 70× weaker steering, 48,000× knockout collapse, and the proportional cross-model transfer invariant.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --swi-ink:    #000000;
+      --swi-muted:  #666;
+      --swi-tldr-bg:#f5f5f5;
+      --swi-link:   #000;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #000;
+      background: #ffffff;
+    }
+    .publication-body a {
+      color: #000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+    .publication-body a:hover { border-bottom-color: #000; }
+    .publication-body strong { color: #000; }
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+      color: #666;
+      font-size: 1.05rem;
+    }
+    .publication-venue {
+      color: #666;
+      font-weight: bold;
+      width: fit-content;
+    }
+    .tier-header {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #000;
+    }
+    .tier-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .section h3.subtitle,
+    .section h3.title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+    .publication-body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #111;
+    }
+    .publication-body p { margin-bottom: 1.1rem; }
+    .publication-body code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: #f5f5f5;
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      color: #111;
+      font-weight: 500;
+    }
+    .publication-body ul { margin-bottom: 1.1rem; }
+    .publication-body li { margin-bottom: 0.4rem; }
+
+    .swi-tldr {
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 18px 22px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      margin: 10px 0;
+    }
+
+    .swi-callout {
+      display: flex;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+    }
+    .swi-callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .swi-callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .swi-pullquote {
+      margin: 2rem 0;
+      padding: 16px 24px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .swi-pullquote p { margin: 0; }
+
+    .swi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+    }
+    .swi-table th, .swi-table td {
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .swi-table th {
+      font-weight: 700;
+      color: #000;
+      border-bottom: 2px solid #000;
+    }
+    .swi-table td {
+      border-bottom: 1px solid #eee;
+    }
+    .swi-table tr:last-child td { border-bottom: none; }
+    .swi-table td:first-child { font-weight: 600; }
+    .swi-table .col-done { color: #111; }
+    .swi-table .col-pending { color: #888; font-style: italic; }
+    .swi-table .delta { color: #d4380d; font-weight: 600; }
+    .swi-table-striped tbody tr:nth-child(even) { background: #fafafa; }
+
+    .paper-card {
+      display: block;
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      margin-bottom: 12px;
+    }
+    .paper-card:hover {
+      border-color: #000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .paper-card h3 {
+      margin: 4px 0 0;
+      font-size: 1.05rem;
+      color: #000;
+      line-height: 1.4;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card .paper-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .paper-card .paper-tagline {
+      font-size: 0.92rem;
+      color: #333;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .confidence-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: 'Google Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: #d4380d; color: #fff; }
+    .conf-medium { background: #fa8c16; color: #fff; }
+    .conf-low { background: #f5f5f5; color: #666; border: 1px solid #ddd; }
+    .paper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .placeholder-note {
+      font-family: 'Google Sans', sans-serif;
+      color: #888;
+      font-style: italic;
+      background: #fafafa;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Navigation */
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+
+    /* Footer */
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .publication-body { font-size: 1rem; }
+      .swi-table { font-size: 0.85rem; }
+      .swi-table th, .swi-table td { padding: 10px 10px; }
+      .paper-grid { grid-template-columns: 1fr; }
+      .mi-nav-inner { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html" class="active">Comparison</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">0.5B vs 1.5B: What Changes at 3&times; Scale?</span>
+          </h1>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.6em;">
+            <span>Bilawal Riaz</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span class="publication-venue">Cross-Model Comparison</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span>2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <!-- TL;DR -->
+    <div class="swi-tldr">
+      <strong>TL;DR —</strong> Both atlases are complete. Scaling from 0.49B to 1.54B parameters (3.1&times;) fundamentally redistributes the causal architecture: the <strong>universal hub migrates from L2 to L26</strong> (8% → 93% depth), <strong>attention heads gain 22&times; impact</strong> (specialists emerge), <strong>MLP effects weaken 3&times;</strong>, <strong>steering collapses 70&times;</strong>, and <strong>skill knockout selectivity drops ~48,000&times;</strong>. Cross-model transfer maintains its proportional depth invariant (final ~10%). Layer skipping remains fatal — but one mid-skip config shows the first hint of redundancy (10% top-5 overlap). The message is clear: interpretability insights do not directly transfer across scales; the causal structure itself transforms.
+    </div>
+
+    <!-- MODEL SPECS -->
+    <div class="swi-callout">
+      <div class="swi-callout-icon">⚙️</div>
+      <div class="swi-callout-body">
+        <strong>Models compared:</strong> Qwen2.5-0.5B (24 layers, 14 heads GQA, d_model=896, ~0.49B params, 22 experiments, 12 task families) vs Qwen2.5-1.5B (28 layers, 12 heads GQA, d_model=1536, ~1.54B params, 9 experiments, 8 task families). Same causal-intervention methodology, same hardware (RTX 2070 Super, 8GB, bf16). All values below are from verified, completed experiments.
+      </div>
+    </div>
+
+    <div class="publication-body">
+
+      <!-- COMPARISON TABLE -->
+      <div class="tier-header">Comparison Table</div>
+      <div class="tier-desc">Every dimension, side by side. Both columns filled from completed, verified experiments.</div>
+
+      <table class="swi-table swi-table-striped">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Dimension</th>
+            <th style="width: 36%;">Qwen2.5-0.5B</th>
+            <th style="width: 36%;">Qwen2.5-1.5B</th>
+            <th style="width: 6%;">Δ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Architecture</td>
+            <td class="col-done">24 layers · 14 heads (GQA, 2 KV) · d_model=896 · d_mlp=4864 · ~0.49B params</td>
+            <td class="col-done">28 layers · 12 heads (GQA) · d_model=1536 · ~1.54B params</td>
+            <td class="delta">3.1×</td>
+          </tr>
+          <tr>
+            <td>Universal Hub Layer</td>
+            <td class="col-done">L2 — mean ablation KL 19.11 across all 12 families. First+last position router. Singular hub. <strong>HIGH</strong></td>
+            <td class="col-done">L26 — mean ablation KL 13.70. Secondary: L6 (13.28), L14 (13.01). Distributed across 3 layers. <strong>HIGH</strong></td>
+            <td class="delta">Migrates</td>
+          </tr>
+          <tr>
+            <td>MLP Dominance</td>
+            <td class="col-done">L2 MLP top, max KL 8.12. L0 MLP second. MLPs carry 42% of top-layer effect. <strong>MEDIUM</strong></td>
+            <td class="col-done">L0 MLP top, max KL 2.58. L1 (1.83), L27 (1.17). MLPs carry 19% of top-layer effect. <strong>MEDIUM</strong></td>
+            <td class="delta">3× weaker</td>
+          </tr>
+          <tr>
+            <td>Head Specialization</td>
+            <td class="col-done">Distributed — max single-head KL 0.046 (200× smaller than layer effects). No specialist heads. <strong>MEDIUM</strong></td>
+            <td class="col-done">Specialists emerge — max KL 1.02 (arithmetic L0 H3). L0 H3 cross-task. Still 13× smaller than layer effects. <strong>MEDIUM</strong></td>
+            <td class="delta">22× stronger</td>
+          </tr>
+          <tr>
+            <td>Steering Leverage</td>
+            <td class="col-done">L2 steering boosts target 3.3× (0.064 → 0.213). Factual direction. Practically useful. <strong>MEDIUM</strong></td>
+            <td class="col-done">L2 steering best boost 0.003. Near-inert. Target prob 0.0009 → 0.010 at best. <strong>MEDIUM</strong></td>
+            <td class="delta">70× weaker</td>
+          </tr>
+          <tr>
+            <td>Skill Knockout Selectivity</td>
+            <td class="col-done">L19 selectively suppresses factual recall — <strong>11,654×</strong> selectivity at s=−2.0. JSON/copying preserved. <strong>MEDIUM</strong></td>
+            <td class="col-done">L21 best: <strong>0.24×</strong> selectivity (anti-selective). Most layers negative. Skills entangled. <strong>MEDIUM</strong></td>
+            <td class="delta">48,000× weaker</td>
+          </tr>
+          <tr>
+            <td>Cross-Model Transfer</td>
+            <td class="col-done">L23 (100%), L22 (97%), L21 (95%). Final 3 layers (88–96% depth). <strong>MEDIUM</strong></td>
+            <td class="col-done">L27 (99.9%), L26 (99.2%), L25 (98.7%). Final 3 layers (89–96% depth). More uniform recovery. <strong>MEDIUM</strong></td>
+            <td class="delta">Shifts 4L</td>
+          </tr>
+          <tr>
+            <td>Adapter Norm-Effect Corr</td>
+            <td class="col-done">0.85 — effect IS at late layers (L19–L23), matching norm distribution. Norms predict impact. <strong>MEDIUM</strong></td>
+            <td class="col-done">0.54 — norms flat (3.33–3.45), effects still peak late (L23–L27). Norms decouple from impact. <strong>MEDIUM</strong></td>
+            <td class="delta">0.85→0.54</td>
+          </tr>
+          <tr>
+            <td>Layer Skipping Viability</td>
+            <td class="col-done">0% top-5 overlap &amp; KL 7.9–13.8 in ALL 10 configs. Even weakest layer (L15) breaks output. <strong>HIGH (negative)</strong></td>
+            <td class="col-done">0% in 3/4 configs. Exception: skip_mid_5 = <strong>10%</strong> top-5 overlap (KL 6.58). First hint of redundancy. <strong>HIGH (negative)</strong></td>
+            <td class="delta">+10%</td>
+          </tr>
+          <tr>
+            <td>Early Exit</td>
+            <td class="col-done">L22: 0% argmax, KL 9.14. Only L23 (full) works. Every layer transforms the residual stream. <strong>HIGH (negative)</strong></td>
+            <td class="col-done">All exits fail: 0–7.14% argmax. KL ∞ at L25–L26. No viable early exit. <strong>HIGH (negative)</strong></td>
+            <td class="delta">Still fatal</td>
+          </tr>
+          <tr>
+            <td>LoRA Training</td>
+            <td class="col-done">r=8, batch_size=2, 100 steps. Loss 0.062. Full adapter fits in 8GB.</td>
+            <td class="col-done">r=8, batch_size=1, gradient checkpointing. Loss 0.0098. More VRAM-constrained.</td>
+            <td class="delta">Tighter</td>
+          </tr>
+          <tr>
+            <td>Core Circuit Lock-in</td>
+            <td class="col-done">L2/L7/L9 locks in by step 10 (first 10%). Two-phase: fast architecture → slow refinement. <strong>MEDIUM</strong></td>
+            <td class="col-done">Not tested (compute constraints). Unknown whether two-phase architecture persists at scale.</td>
+            <td class="delta">Unknown</td>
+          </tr>
+          <tr>
+            <td>JSON Training Shift</td>
+            <td class="col-done">Largest base→trained KL. LoRA most affects JSON at 0.5B.</td>
+            <td class="col-done">Largest base→trained KL (6.47). LoRA most affects JSON at 1.5B too. <strong>Invariant.</strong></td>
+            <td class="delta">Same</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- CROSS-SCALE ANALYSIS -->
+      <div class="tier-header">Cross-Scale Analysis</div>
+      <div class="tier-desc">What the numbers mean — dimension by dimension.</div>
+
+      <h3 class="subtitle">The Hub Migration: L2 → L26</h3>
+      <p>The most dramatic structural change is the migration of the universal routing hub from L2 (8% depth) to L26 (93% depth). At 0.5B, one layer (L2) dominated with mean KL 19.11 — a singular hub early in the network. At 1.5B, the hub role is shared across three layers: L26 (13.70), L6 (13.28), and L14 (13.01), spanning early, mid, and late positions.</p>
+      <p>This migration suggests a fundamental shift in computational strategy. At 0.5B, the model does critical routing <em>early</em> — Layer 2 decides where information goes before most computation. At 1.5B, the critical routing happens <em>late</em> — Layer 26 processes the fully-built representation just before output. The secondary hubs at L6 and L14 may be intermediate integration points feeding into L26's final routing.</p>
+      <p>The absolute hub KL is lower at 1.5B (13.70 vs 19.11) despite the larger model. This is because the 1.5B model has more layers to compensate — ablating one layer leaves 27 others to carry the load, versus 23 at 0.5B. The larger model is more <strong>gracefully degradable</strong>.</p>
+
+      <h3 class="subtitle">The MLP-Attention Inversion</h3>
+      <p>Scale inverts the computational balance between MLPs and attention heads:</p>
+      <ul>
+        <li><strong>MLP max KL:</strong> 8.12 (0.5B) → 2.58 (1.5B) — <strong>3× weaker</strong> despite 3× more parameters</li>
+        <li><strong>Head max KL:</strong> 0.046 (0.5B) → 1.02 (1.5B) — <strong>22× stronger</strong></li>
+        <li><strong>MLP share of top-layer effect:</strong> 42% → 19% — MLPs carry less of the load</li>
+        <li><strong>Head share of top-layer effect:</strong> 0.2% → 7.4% — heads carry 37× more relative impact</li>
+      </ul>
+      <p>At 0.5B, MLPs dominated and heads were negligible. At 1.5B, MLPs recede and specialist heads emerge — particularly L0 H3, which handles arithmetic, code syntax, and copying. The model trades MLP magnitude for head precision. This aligns with the intuition that larger models benefit more from relational reasoning (attention) than per-token feature transformation (MLP).</p>
+
+      <h3 class="subtitle">The Steering Collapse: 70× Weaker</h3>
+      <p>At 0.5B, steering L2 with a factual recall direction boosted "Rome" probability from 0.064 to 0.213 — a 3.3× increase that was practically useful for skill manipulation. At 1.5B, the same intervention produces a best boost of 0.003 — essentially no effect.</p>
+      <p>Three factors likely contribute: (1) <strong>representational entanglement</strong> — factual knowledge is distributed across more neurons at 1.5B, making a single linear direction insufficient; (2) <strong>hub migration</strong> — L2 is no longer the hub, so steering there has less leverage; (3) <strong>wider residual stream</strong> — d_model grows 71% (896 → 1536), diluting a single steering vector's effect. The practical implication: linear steering does not scale. Non-linear interventions (SAE-based, distributed, activation editing) may be required at 1.5B and beyond.</p>
+
+      <h3 class="subtitle">Skill Knockout: From 11,654× to 0.24×</h3>
+      <p>The ~48,000× collapse in skill knockout selectivity is the most consequential scaling finding for safety. At 0.5B, L19 knockout suppressed factual recall tokens 11,654× more than non-skill tokens — highly selective, removing the skill while preserving other behavior. At 1.5B, the best layer (L21) achieves 0.24× selectivity — the knockout suppresses non-skill tokens <em>4× more</em> than skill tokens (anti-selective).</p>
+      <p>This strongly suggests skills become <strong>entangled</strong> at scale. At 0.5B, factual recall occupies a relatively isolated subspace. At 1.5B, it is woven into the same representational space as other behaviors — removing it requires removing entangled components too. If undesirable capabilities are similarly entangled at deployment scale, skill removal via steering may be impossible without retraining or circuit surgery.</p>
+
+      <h3 class="subtitle">Cross-Model Transfer: The Proportional Invariant</h3>
+      <p>Cross-model patching maintains a robust structural invariant: trained behavior is encoded in the <strong>final ~10% of layers</strong> at both scales. At 0.5B (24 layers), the top transfer layers are L21–L23 (88–96% depth). At 1.5B (28 layers), they are L25–L27 (89–96% depth). The zone shifts 4 layers deeper but maintains the same proportional position.</p>
+      <p>Recovery is more uniform at 1.5B: L24 achieves 97.9% versus 0.5B's L20 at 87%, suggesting a wider transfer zone. This invariant means cross-model patching methods can be calibrated by depth fraction rather than absolute layer index.</p>
+
+      <h3 class="subtitle">Adapter Norm-Effect Decoupling</h3>
+      <p>At 0.5B, adapter norms and ablation effects co-locate at late layers (correlation 0.85) — training writes where it matters. At 1.5B, adapter norms are remarkably uniform (3.33–3.45 across all 28 layers), but effects still peak at L23–L27. The correlation drops to 0.54.</p>
+      <p>This decoupling means <strong>norm-based pruning is unreliable at scale</strong>. An adapter with small norms at L27 has large functional effects; the same norm at L0 has minimal effects. The residual stream at late layers is more sensitive to perturbation — the same weight change has more leverage on a more refined representation. Causal ablation, not norm inspection, is necessary to identify which adapter components matter.</p>
+
+      <h3 class="subtitle">Efficiency: The First Crack in the Wall</h3>
+      <p>At 0.5B, ALL 10 layer-skip configurations produced 0% top-5 overlap. At 1.5B, skip_mid_5 (skipping L4–L8) preserves <strong>10% top-5 overlap</strong> — the first evidence of partial mid-layer redundancy at scale. While 10% is far from practical, it suggests that structured pruning with retraining (not zero-ablation) might eventually recover usable redundancy at larger scales. Early exit remains fatal at both scales — no intermediate layer produces usable output.</p>
+
+      <!-- WHAT CHANGES -->
+      <div class="tier-header">What Changes at 3× Scale</div>
+      <div class="tier-desc">A summary of what transforms, what weakens, and what stays invariant.</div>
+
+      <div class="paper-grid">
+        <div class="paper-card" style="border-left: 4px solid #d4380d;">
+          <h3>Transforms</h3>
+          <div class="paper-tagline">The universal hub migrates from L2 (8% depth) to L26 (93% depth). Attention heads gain specialist roles (22× stronger). The computational burden shifts from MLPs to attention. The hub goes from singular to distributed across 3 layers.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>Weakens</h3>
+          <div class="paper-tagline">Steering leverage collapses 70× (0.213 → 0.003). Skill knockout selectivity drops ~48,000× (11,654× → 0.24×). MLP effects weaken 3× (8.12 → 2.58). Adapter norm-effect correlation drops (0.85 → 0.54). Training becomes more VRAM-constrained (batch_size 2→1, gradient checkpointing needed).</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>Stays Invariant</h3>
+          <div class="paper-tagline">Cross-model transfer zone: final ~10% of layers at both scales. Layer skipping is fatal (0% overlap in most configs). Early exit fails at all layers. JSON produces the largest training shift. LoRA is required (full SFT OOMs). Zero ablation is disruptive — every layer matters.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>New at Scale</h3>
+          <div class="paper-tagline">First hint of mid-layer redundancy (10% top-5 overlap in skip_mid_5). Specialist attention heads (L0 H3 — arithmetic, code, copying). Late MLPs gain relative importance (L27 enters top 3). More uniform cross-model recovery (L24 = 97.9% vs 0.5B's L20 = 87%).</div>
+        </div>
+      </div>
+
+      <!-- LIMITATIONS -->
+      <div class="tier-header">Limitations</div>
+      <div class="tier-desc">What this comparison cannot yet claim.</div>
+
+      <ul>
+        <li><strong>Only two scale points</strong> — 0.5B and 1.5B. A third point (e.g., 3B) would establish scaling laws rather than pairwise comparisons. The hub migration (L2 → L26) could be linear, logarithmic, or step-wise — two points cannot distinguish.</li>
+        <li><strong>Different task suite sizes</strong> — 0.5B tested 12 families; 1.5B tested 8. Four families (refusal/compliance, verbosity, variable renaming, uncertainty) are missing from 1.5B, limiting direct comparison on those dimensions.</li>
+        <li><strong>Steering tested at L2 only for 1.5B</strong> — the 70× collapse may be layer-specific. Testing at L26 (the new hub) might yield different results, but was not attempted due to compute constraints.</li>
+        <li><strong>No checkpoint timeline for 1.5B</strong> — the core circuit lock-in finding (step 10 at 0.5B) is not verified at 1.5B. Whether the two-phase training architecture persists at scale is unknown.</li>
+        <li><strong>Single seed at both scales</strong> — all results from one random seed per model. Multi-seed replication needed for confidence in cross-scale claims.</li>
+        <li><strong>Same model family</strong> — both are Qwen2.5. Findings may be family-specific. Cross-family comparison (Qwen vs Llama vs Pythia) would test generality.</li>
+        <li><strong>Zero ablation at both scales</strong> — creates out-of-distribution activations. The magnitude of ablation effects may be inflated at both scales, though relative comparisons should hold.</li>
+      </ul>
+
+      <div class="swi-pullquote">
+        <p>"Insights from small models are necessary but not sufficient for understanding large models. The causal architecture itself is scale-dependent — the hub migrates, heads specialize, steering collapses, and skills entangle. Methods must be re-validated at each scale."</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="02-qwen15b-analysis.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">← Previous: 1.5B Analysis</a>
+        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+        <a href="index.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">Back to MI-Atlas →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

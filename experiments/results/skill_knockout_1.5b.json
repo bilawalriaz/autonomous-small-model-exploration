@@ -1,0 +1,612 @@
+[
+  {
+    "skill": "factual_recall",
+    "layer_data": [
+      {
+        "layer": 2,
+        "sv_norm": 8.875,
+        "selectivity": -24.5484,
+        "mean_skill_drop": -0.009512,
+        "mean_non_skill_drop": -0.000388,
+        "prompt_results": [
+          {
+            "prompt": "The capital of Italy is ",
+            "is_skill_target": true,
+            "base_prob": 0.00209,
+            "knockout_drop": -0.007859,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.00209
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.003448
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.005157
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.009949
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.003647
+              }
+            ]
+          },
+          {
+            "prompt": "The capital of Spain is ",
+            "is_skill_target": true,
+            "base_prob": 0.000431,
+            "knockout_drop": -0.011166,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000431
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.001106
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.003098
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.011597
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.002731
+              }
+            ]
+          },
+          {
+            "prompt": "Return valid JSON: {\"x\": ",
+            "is_skill_target": false,
+            "base_prob": 1.0,
+            "knockout_drop": 0.0,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 1.0
+              }
+            ]
+          },
+          {
+            "prompt": "Complete: 1 2 3 1 2 ",
+            "is_skill_target": false,
+            "base_prob": 0.000919,
+            "knockout_drop": -0.000775,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000919
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.001038
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.001175
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.001694
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.001091
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "layer": 3,
+        "sv_norm": 10.625,
+        "selectivity": -77.4141,
+        "mean_skill_drop": -0.009909,
+        "mean_non_skill_drop": -0.000128,
+        "prompt_results": [
+          {
+            "prompt": "The capital of Italy is ",
+            "is_skill_target": true,
+            "base_prob": 0.00209,
+            "knockout_drop": -0.006394,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.00209
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.003555
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.004974
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.008484
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.004791
+              }
+            ]
+          },
+          {
+            "prompt": "The capital of Spain is ",
+            "is_skill_target": true,
+            "base_prob": 0.000431,
+            "knockout_drop": -0.013424,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000431
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.00135
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.005066
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.013855
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.010315
+              }
+            ]
+          },
+          {
+            "prompt": "Return valid JSON: {\"x\": ",
+            "is_skill_target": false,
+            "base_prob": 1.0,
+            "knockout_drop": 0.0,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 1.0
+              }
+            ]
+          },
+          {
+            "prompt": "Complete: 1 2 3 1 2 ",
+            "is_skill_target": false,
+            "base_prob": 0.000919,
+            "knockout_drop": -0.000256,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000919
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.001038
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.001175
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.001175
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.001007
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "layer": 16,
+        "sv_norm": 26.125,
+        "selectivity": -9.3058,
+        "mean_skill_drop": -0.003271,
+        "mean_non_skill_drop": 0.000352,
+        "prompt_results": [
+          {
+            "prompt": "The capital of Italy is ",
+            "is_skill_target": true,
+            "base_prob": 0.00209,
+            "knockout_drop": -0.000412,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.00209
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.002716
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.003571
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.002502
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.000441
+              }
+            ]
+          },
+          {
+            "prompt": "The capital of Spain is ",
+            "is_skill_target": true,
+            "base_prob": 0.000431,
+            "knockout_drop": -0.00613,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000431
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.00087
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.003418
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.006561
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.0005
+              }
+            ]
+          },
+          {
+            "prompt": "Return valid JSON: {\"x\": ",
+            "is_skill_target": false,
+            "base_prob": 1.0,
+            "knockout_drop": 0.0,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.041992
+              }
+            ]
+          },
+          {
+            "prompt": "Complete: 1 2 3 1 2 ",
+            "is_skill_target": false,
+            "base_prob": 0.000919,
+            "knockout_drop": 0.000703,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000919
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.000717
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.0005
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.000216
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.001526
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "layer": 19,
+        "sv_norm": 36.5,
+        "selectivity": -1.6198,
+        "mean_skill_drop": -0.086142,
+        "mean_non_skill_drop": 0.05318,
+        "prompt_results": [
+          {
+            "prompt": "The capital of Italy is ",
+            "is_skill_target": true,
+            "base_prob": 0.00209,
+            "knockout_drop": -0.016465,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.00209
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.004028
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.004425
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.018555
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.001434
+              }
+            ]
+          },
+          {
+            "prompt": "The capital of Spain is ",
+            "is_skill_target": true,
+            "base_prob": 0.000431,
+            "knockout_drop": -0.155819,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000431
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.001411
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.007874
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.15625
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.004761
+              }
+            ]
+          },
+          {
+            "prompt": "Return valid JSON: {\"x\": ",
+            "is_skill_target": false,
+            "base_prob": 1.0,
+            "knockout_drop": 0.105469,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.894531
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.050049
+              }
+            ]
+          },
+          {
+            "prompt": "Complete: 1 2 3 1 2 ",
+            "is_skill_target": false,
+            "base_prob": 0.000919,
+            "knockout_drop": 0.000891,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000919
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.000435
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.000204
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 2.8e-05
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 3.8e-05
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "layer": 21,
+        "sv_norm": 49.5,
+        "selectivity": 0.2423,
+        "mean_skill_drop": 0.001056,
+        "mean_non_skill_drop": 0.004361,
+        "prompt_results": [
+          {
+            "prompt": "The capital of Italy is ",
+            "is_skill_target": true,
+            "base_prob": 0.00209,
+            "knockout_drop": 0.001758,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.00209
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.003555
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.002716
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.000332
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 6e-06
+              }
+            ]
+          },
+          {
+            "prompt": "The capital of Spain is ",
+            "is_skill_target": true,
+            "base_prob": 0.000431,
+            "knockout_drop": 0.000355,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000431
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.00058
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.00036
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 7.6e-05
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 3e-05
+              }
+            ]
+          },
+          {
+            "prompt": "Return valid JSON: {\"x\": ",
+            "is_skill_target": false,
+            "base_prob": 1.0,
+            "knockout_drop": 0.007812,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 1.0
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 0.992188
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 0.800781
+              }
+            ]
+          },
+          {
+            "prompt": "Complete: 1 2 3 1 2 ",
+            "is_skill_target": false,
+            "base_prob": 0.000919,
+            "knockout_drop": 0.00091,
+            "sweep": [
+              {
+                "strength": 0.0,
+                "target_prob": 0.000919
+              },
+              {
+                "strength": -0.5,
+                "target_prob": 0.000437
+              },
+              {
+                "strength": -1.0,
+                "target_prob": 0.000127
+              },
+              {
+                "strength": -2.0,
+                "target_prob": 9e-06
+              },
+              {
+                "strength": -4.0,
+                "target_prob": 2.7e-05
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

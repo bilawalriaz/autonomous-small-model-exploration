@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qwen2.5-0.5B: A Causal Atlas — MI-Atlas</title>
+  <meta name="description" content="A mechanistic interpretability atlas of Qwen2.5-0.5B. 22 experiments mapping the universal L2 hub, skill-specific LoRA concentration, core circuit lock-in, cross-model patching, and L19 skill knockout.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --swi-ink:    #000000;
+      --swi-muted:  #666;
+      --swi-tldr-bg:#f5f5f5;
+      --swi-link:   #000;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #000;
+      background: #ffffff;
+    }
+    .publication-body a {
+      color: #000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+    .publication-body a:hover { border-bottom-color: #000; }
+    .publication-body strong { color: #000; }
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+      color: #666;
+      font-size: 1.05rem;
+    }
+    .publication-venue {
+      color: #666;
+      font-weight: bold;
+      width: fit-content;
+    }
+    .tier-header {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #000;
+    }
+    .tier-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .section h3.subtitle,
+    .section h3.title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+    .publication-body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #111;
+    }
+    .publication-body p { margin-bottom: 1.1rem; }
+    .publication-body code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: #f5f5f5;
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      color: #111;
+      font-weight: 500;
+    }
+    .publication-body ul { margin-bottom: 1.1rem; }
+    .publication-body li { margin-bottom: 0.4rem; }
+
+    .swi-tldr {
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 18px 22px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      margin: 10px 0;
+    }
+
+    .swi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+    }
+    .swi-table th, .swi-table td {
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .swi-table th {
+      font-weight: 700;
+      color: #000;
+      border-bottom: 2px solid #000;
+    }
+    .swi-table td {
+      border-bottom: 1px solid #eee;
+    }
+    .swi-table tr:last-child td { border-bottom: none; }
+    .swi-table td:first-child { font-weight: 600; }
+    .swi-table-striped tbody tr:nth-child(even) { background: #fafafa; }
+
+    .swi-callout {
+      display: flex;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+    }
+    .swi-callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .swi-callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .swi-pullquote {
+      margin: 2rem 0;
+      padding: 16px 24px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .swi-pullquote p { margin: 0; }
+
+    .paper-card {
+      display: block;
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      margin-bottom: 12px;
+    }
+    .paper-card:hover {
+      border-color: #000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .paper-card h3 {
+      margin: 4px 0 0;
+      font-size: 1.05rem;
+      color: #000;
+      line-height: 1.4;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card .paper-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .paper-card .paper-tagline {
+      font-size: 0.92rem;
+      color: #333;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .confidence-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: 'Google Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: #d4380d; color: #fff; }
+    .conf-medium { background: #fa8c16; color: #fff; }
+    .conf-low { background: #f5f5f5; color: #666; border: 1px solid #ddd; }
+    .paper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .placeholder-note {
+      font-family: 'Google Sans', sans-serif;
+      color: #888;
+      font-style: italic;
+      background: #fafafa;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Navigation */
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+
+    /* Footer */
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .publication-body { font-size: 1rem; }
+      .paper-grid { grid-template-columns: 1fr; }
+      .mi-nav-inner { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html" class="active">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">Qwen2.5-0.5B: A Causal Atlas</span>
+          </h1>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.6em;">
+            <span>Bilawal Riaz</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span class="publication-venue">Mechanistic Interpretability Atlas</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span>2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <!-- TL;DR -->
+    <div class="swi-tldr">
+      <strong>TL;DR —</strong> 22 causal experiments on a 0.5B-parameter transformer reveal <strong>Layer 2 as a universal routing hub</strong> with positional specialization (HIGH confidence), <strong>skill-specific LoRA concentration</strong> (each skill lives in different layers, rejecting uniform concentration), a <strong>core circuit (L2/L7/L9) that locks in within the first 10% of training</strong>, <strong>monotonic cross-model recovery</strong> (L23 = 100%), a <strong>L19 skill knockout at 11,654&times; selectivity</strong>, and a hard negative result: <strong>naive layer skipping destroys output</strong> — every layer, even "weak" ones, is essential.
+    </div>
+
+    <!-- MODEL SPECS -->
+    <div class="swi-callout">
+      <div class="swi-callout-icon">⚙️</div>
+      <div class="swi-callout-body">
+        <strong>Model &amp; scope:</strong> Qwen2.5-0.5B · 24 transformer layers · 14 attention heads (GQA, 2 KV heads) · <code>d_model=896</code> · <code>d_head=64</code> · <code>d_mlp=4864</code> · vocab 151,936 · ~0.49B params · bf16 on RTX 2070 Super (8GB). 22 experiments · 12 task families · 92 examples · 17 clean/corrupt pairs · 10 LoRA adapters · 5 training checkpoints.
+      </div>
+    </div>
+
+    <div class="publication-body">
+
+      <!-- ABSTRACT -->
+      <div class="tier-header">Abstract</div>
+      <p>We present a mechanistic interpretability atlas of Qwen2.5-0.5B, a 0.5B-parameter transformer. Using causal interventions — layer ablation, activation patching, steering vectors, and LoRA training perturbation — we map how this small model processes information across 12 task families. We find that Layer 2 acts as a universal routing hub with positional specialization (HIGH confidence), that LoRA training rewires where skills live in a task-specific manner (rejecting uniform concentration), and that a core circuit (L2/L7/L9) locks in within the first 10% of training. We demonstrate cross-model activation transfer, selective skill knockout via negative steering, and a norm-effect separation in adapter weights. Across 22 experiments, we build a reproducible causal atlas connecting behaviours to components, with implications for small-model optimization and targeted skill injection.</p>
+      <div class="placeholder-note">[Full report content will be inserted here]</div>
+
+      <!-- KEY FINDINGS -->
+      <div class="tier-header">Key Findings</div>
+      <div class="tier-desc">The six headline results, each with its confidence level and evidence.</div>
+
+      <div class="paper-grid">
+        <div class="paper-card" style="border-left: 4px solid #d4380d;">
+          <h3>L2 is a universal importance hub<span class="confidence-tag conf-high">High</span></h3>
+          <div class="paper-meta">Layer-level ablation · all 12 task families</div>
+          <div class="paper-tagline">Zero-ablating Layer 2 causes the largest KL divergence across every family (0.5–11.5 nats). L2 routes first tokens (instruction, mean 3.34) and last tokens (prediction, mean 5.03); operator tokens have near-zero effect. Not a uniform layer — it has positional specialization.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>Skill-specific LoRA concentration<span class="confidence-tag conf-medium">Medium</span></h3>
+          <div class="paper-meta">LoRA training perturbation · 5 skill families</div>
+          <div class="paper-tagline">Each skill concentrates in <em>different</em> layers after training (rejecting H002): factual → L3/L16/L19, code semantics → L1/L10/L21, JSON → L6/L12/L13, delimiter → fully absorbed (0 sensitivity), copying → dispersed.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>Core circuit locks in by step 10<span class="confidence-tag conf-medium">Medium</span></h3>
+          <div class="paper-meta">Checkpoint timeline · 5 checkpoints</div>
+          <div class="paper-tagline">The core JSON circuit (L2/L7/L9) stabilizes within the first 10% of training (step 10 of 100). Secondary layers (L15, L6) keep shifting through step 100. ~90% of training is refinement, not architecture-building.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>Cross-model patching: monotonic recovery<span class="confidence-tag conf-medium">Medium</span></h3>
+          <div class="paper-meta">Trained→base activation transfer · 17 pairs</div>
+          <div class="paper-tagline">Recovery increases monotonically from early to late layers: L23 = 100%, L22 = 97%, L21 = 95%, L20 = 87%. Trained behavior is encoded in late-layer activation patterns, not solely in weight modifications.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>L19 skill knockout: 11,654&times; selectivity<span class="confidence-tag conf-medium">Medium</span></h3>
+          <div class="paper-meta">Negative steering · 2 skills · 7 layers</div>
+          <div class="paper-tagline">Negative steering at L19 selectively suppresses factual recall (selectivity ratio 11,654&times; at s = −2.0) while preserving JSON and copying. L2 is non-selective (universal hub). Learned skills can be removed without retraining.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #d4380d;">
+          <h3>Naive layer skipping fails<span class="confidence-tag conf-high">High (negative)</span></h3>
+          <div class="paper-meta">10 skip configs · 7 early-exit layers</div>
+          <div class="paper-tagline">0% top-5 overlap and KL 7.9–13.8 nats in <em>every</em> configuration — even skipping the weakest single layer (L15) breaks output. Early exit at L22 gives 0% argmax match. Every layer is essential; "weak" means less KL when ablated, not removable.</div>
+        </div>
+      </div>
+
+      <!-- ARCHITECTURE MAP -->
+      <div class="tier-header">Architecture Map</div>
+      <div class="tier-desc">Position-specialized layers and the roles each component plays.</div>
+
+      <h3 class="subtitle">Position-specialized architecture</h3>
+      <p>The model has clear positional specialization across layers. Different layers route different token positions through different pathways within the same layer stack:</p>
+      <ul>
+        <li><strong>L22</strong> — almost exclusively last-position (mean 14.55 nats, all others ~0); the unembedding pathway.</li>
+        <li><strong>L0 / L2</strong> — first + last position routers (instruction + prediction tokens).</li>
+        <li><strong>L9</strong> — strongest instruction-sensitive layer (first = 5.66, last = 9.20).</li>
+        <li><strong>L7</strong> — balanced first + last (5.03 / 5.93).</li>
+        <li><strong>Operators / delimiters</strong> — near-zero effect across all layers.</li>
+      </ul>
+
+      <h3 class="subtitle">Component atlas</h3>
+      <table class="swi-table swi-table-striped">
+        <thead>
+          <tr><th>Component</th><th>Role</th><th>Evidence</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>L2 (residual + MLP)</td><td>Universal routing hub · first+last position</td><td>Ablation KL 0.5–11.5 across all families</td></tr>
+          <tr><td>L0 MLP</td><td>Second-strongest across all families; absorbs JSON (+2.99) after LoRA</td><td>MLP ablation · trained-vs-base delta</td></tr>
+          <tr><td>L22</td><td>Unembedding pathway · last-token exclusive</td><td>Position ablation · cross-model 97% recovery</td></tr>
+          <tr><td>L9</td><td>Instruction-sensitive layer</td><td>Position ablation (first 5.66 / last 9.20)</td></tr>
+          <tr><td>L19</td><td>Skill-specific suppression point (factual)</td><td>Skill knockout 11,654&times; selectivity</td></tr>
+          <tr><td>Heads (14, GQA)</td><td>Distributed — max single-head KL 0.046 (200&times; smaller than layer effects)</td><td>Head ablation</td></tr>
+        </tbody>
+      </table>
+      <div class="placeholder-note">[Full report content will be inserted here]</div>
+
+      <!-- TRAINING DYNAMICS -->
+      <div class="tier-header">Training Dynamics</div>
+      <div class="tier-desc">How the atlas changes during LoRA training — a two-phase architecture.</div>
+
+      <p>Training follows a two-phase architecture: a <strong>fast architectural phase</strong> (steps 0–10) where the core circuit locks in, and a <strong>slow refinement phase</strong> (steps 10–100) where skill-specific components are tuned. This has a direct practical implication — early training steps are critical for establishing the processing architecture, while later steps fine-tune skill-specific components.</p>
+
+      <h3 class="subtitle">Checkpoint timeline (5 checkpoints)</h3>
+      <ul>
+        <li><strong>Step 10</strong> — core JSON circuit (L2/L7/L9) locks in (first 10% of training).</li>
+        <li><strong>Steps 25–100</strong> — secondary layers (L15, L6) continue shifting; skill-specific concentration develops.</li>
+        <li><strong>Adapter weight norms</strong> peak at L20–L23, but general ablation effects peak at L0–L2 (the norm-effect paradox).</li>
+        <li><strong>Adapter stacking</strong> — factual + JSON compose cleanly (synergy +2.35 factual, +1.17 JSON); the delimiter adapter is destructive when stacked (−7 to −16 nats).</li>
+      </ul>
+
+      <h3 class="subtitle">LoRA module &amp; rank sweeps</h3>
+      <ul>
+        <li><strong>o_proj</strong> is the most efficient skill-injection pathway: +3.64 L0 effect with only 344K params (0.07% of model).</li>
+        <li><strong>MLP-only</strong> is the worst efficiency: +1.92 with 3.3M params (10&times; more).</li>
+        <li><strong>Rank sweep</strong> — L0 MLP peaks at r=4; higher rank distributes skill across components (H003 supported).</li>
+        <li><strong>Total adapter norm</strong> scales linearly with rank (6.14 → 22.92, r=1 → r=16).</li>
+      </ul>
+      <div class="placeholder-note">[Full report content will be inserted here]</div>
+
+      <!-- EFFICIENCY INSIGHTS -->
+      <div class="tier-header">Efficiency Insights</div>
+      <div class="tier-desc">Negative for naive inference speedups — but the atlas shows where gains ARE possible.</div>
+
+      <div class="swi-callout">
+        <div class="swi-callout-icon">⛔</div>
+        <div class="swi-callout-body">
+          <strong>Two hard negative results.</strong> (1) Naive layer skipping: 0% top-5 overlap and KL 7.9–13.8 nats in all 10 configs — even skipping L15 (the weakest layer) breaks output. (2) Early exit at L22: 0% argmax match, KL 9.14 — each layer transforms the residual stream, so L22's hidden state is not directly projectable to vocab. Only L23 (the full model) gives correct output.
+        </div>
+      </div>
+
+      <h3 class="subtitle">Where efficiency gains ARE possible</h3>
+      <ul>
+        <li><strong>Training efficiency</strong> — core circuit locks in by step 10; 90% of steps are refinement. Shorter runs may suffice for basic skill acquisition.</li>
+        <li><strong>Parameter efficiency</strong> — o_proj-only LoRA at r=4 achieves 80%+ of full-adapter effect with 344K params (0.07% of model).</li>
+        <li><strong>Selective skill manipulation</strong> — negative steering at L19 removes factual recall (11,654&times; selectivity) with no retraining.</li>
+        <li><strong>Adapter stacking</strong> — factual + JSON adapters compose cleanly; multi-skill models without retraining.</li>
+        <li><strong>Targeted optimization</strong> — L2 is the universal hub; optimizing its implementation (kernel fusion, quantization-aware training) benefits all tasks.</li>
+      </ul>
+      <div class="placeholder-note">[Full report content will be inserted here]</div>
+
+      <!-- LIMITATIONS -->
+      <div class="tier-header">Limitations</div>
+      <div class="tier-desc">What this atlas cannot yet claim — stated plainly.</div>
+
+      <ul>
+        <li><strong>Single seed</strong> — all results from one random seed. Confidence capped at MEDIUM (except L2 at HIGH). Multi-seed replication needed for publication.</li>
+        <li><strong>Zero ablation</strong> — creates out-of-distribution activations. Mean/resample ablation would be more principled.</li>
+        <li><strong>Short synthetic prompts</strong> — 5–15 tokens. Results may not transfer to natural language or longer contexts.</li>
+        <li><strong>LoRA only</strong> — full SFT OOMs on 8GB. LoRA may produce different internal changes than full fine-tuning.</li>
+        <li><strong>Single model</strong> — results are specific to Qwen2.5-0.5B. Cross-model validation (the 1.5B study) is underway.</li>
+        <li><strong>Limited task suite</strong> — 12 families with short prompts. Broader evaluation needed for generalization claims.</li>
+      </ul>
+      <div class="placeholder-note">[Full report content will be inserted here]</div>
+
+      <!-- OPEN HYPOTHESES -->
+      <div class="tier-header">Open Hypotheses</div>
+      <table class="swi-table swi-table-striped">
+        <thead>
+          <tr><th>ID</th><th>Hypothesis</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>H001</td><td>L2 is a general-purpose routing hub</td><td>SUPPORTED (with positional nuance)</td></tr>
+          <tr><td>H002</td><td>LoRA concentrates skill into early layers</td><td>REJECTED (skill-specific)</td></tr>
+          <tr><td>H003</td><td>Higher rank distributes skill</td><td>SUPPORTED</td></tr>
+          <tr><td>H004</td><td>o_proj is the key skill injection pathway</td><td>SUPPORTED for JSON</td></tr>
+          <tr><td>H005</td><td>Factual and algorithmic tasks use different circuits</td><td>WEAKENED (both depend on L2)</td></tr>
+          <tr><td>H006</td><td>Adapter norms write late, effects propagate upstream</td><td>UPDATED → REJECTED (effect IS at late layers, corr 0.85)</td></tr>
+          <tr><td>H007</td><td>L22 is the unembedding pathway</td><td>SUPPORTED (last-position exclusive)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="swi-pullquote">
+        <p>"The efficiency experiments are negative for naive inference optimization — but the atlas reveals exactly where efficiency gains are possible: training, parameters, and selective skill manipulation."</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="index.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">← Back to MI-Atlas</a>
+        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+        <a href="02-qwen15b-analysis.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">Next: 1.5B Analysis →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

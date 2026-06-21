@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MI-Atlas — Mechanistic Interpretability of Small Language Models</title>
+  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 22 experiments mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --swi-ink: #000000;
+      --swi-muted: #666;
+      --swi-tldr-bg: #f5f5f5;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #000;
+      background: #ffffff;
+    }
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    .tier-header {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #000;
+    }
+    .tier-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .paper-card {
+      display: block;
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      margin-bottom: 12px;
+    }
+    .paper-card:hover {
+      border-color: #000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .paper-num {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #888;
+      font-weight: 600;
+    }
+    .paper-card h3 {
+      margin: 4px 0 0;
+      font-size: 1.05rem;
+      color: #000;
+      line-height: 1.4;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card .paper-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .paper-card .paper-tagline {
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .swi-callout {
+      display: flex;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+    }
+    .swi-callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .swi-callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .swi-pullquote {
+      margin: 2rem 0;
+      padding: 16px 24px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .paper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Navigation */
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+
+    /* Footer */
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .paper-grid { grid-template-columns: 1fr; }
+      .mi-nav-inner { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">MI-Atlas</span>
+          </h1>
+          <div class="is-size-5" style="color: #666; margin-top: 0.4em;">
+            Mechanistic Interpretability of Small Language Models
+          </div>
+          <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
+            22 experiments · Qwen2.5 · Causal interventions: ablation, patching, steering, LoRA perturbation
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">🧭</div>
+      <div class="swi-callout-body">
+        <strong>What this is:</strong> A reproducible causal atlas connecting model behaviours to internal components — which layers, heads, and MLPs do what, how LoRA training rewires them, and whether learned skills can be transferred or selectively knocked out. Every claim carries a metric, a counterfactual, a control, and a confidence level. No overclaiming, no ignoring null results.
+      </div>
+    </div>
+
+    <!-- ANALYSIS POSTS -->
+    <div class="tier-header">Analysis Posts</div>
+    <div class="tier-desc">Three studies: a complete atlas of the 0.5B model, a scaling study at 1.5B, and a head-to-head comparison.</div>
+
+    <div class="paper-grid">
+      <a class="paper-card" href="01-qwen05b-analysis.html">
+        <div class="paper-num">01</div>
+        <h3>Qwen2.5-0.5B: A Causal Atlas</h3>
+        <div class="paper-meta">22 experiments · 24 layers · 14 heads GQA · 0.49B params</div>
+        <div class="paper-tagline">The complete atlas. L2 universal hub (HIGH), skill-specific LoRA concentration, core circuit lock-in by step 10, cross-model patching monotonic recovery, L19 skill knockout at 11,654&times; selectivity, and why naive layer skipping fails.</div>
+      </a>
+      <a class="paper-card" href="02-qwen15b-analysis.html" style="border-left: 4px solid #fa8c16;">
+        <div class="paper-num" style="color: #fa8c16;">02 · IN PROGRESS</div>
+        <h3>Qwen2.5-1.5B: Scaling the Atlas</h3>
+        <div class="paper-meta">Experiments running · 28 layers · 1.5B params</div>
+        <div class="paper-tagline">Scaling the causal atlas 3&times;. Does the universal hub persist, shift, or fragment? Does head specialization emerge at scale? Live analysis as experiments complete.</div>
+      </a>
+      <a class="paper-card" href="03-comparison-analysis.html" style="border-left: 4px solid #d4380d;">
+        <div class="paper-num" style="color: #d4380d;">03 · PENDING</div>
+        <h3>0.5B vs 1.5B: What Changes at 3&times; Scale?</h3>
+        <div class="paper-meta">Cross-model comparison</div>
+        <div class="paper-tagline">Side-by-side: architecture, universal hub layer, MLP dominance, head specialization, LoRA concentration, circuit lock-in, knockout selectivity, and layer-skipping viability across a 3&times; parameter scale-up.</div>
+      </a>
+    </div>
+
+    <!-- METHOD -->
+    <div class="tier-header" style="margin-top: 3rem;">Method</div>
+    <div class="tier-desc">Causal interventions, not correlations. Every claim on the evidence ladder.</div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">🔬</div>
+      <div class="swi-callout-body">
+        <strong>Zero ablation</strong> removes a component's output and measures KL divergence in the next-token distribution. <strong>Activation patching</strong> swaps activations between clean and corrupt runs. <strong>Steering vectors</strong> inject mean(positive) − mean(negative) directions. <strong>LoRA training perturbation</strong> trains low-rank adapters on specific skills and compares component maps before/after. <strong>Cross-model patching</strong> transfers trained activations into the base model. <strong>Skill knockout</strong> applies negative steering to suppress learned skills.
+      </div>
+    </div>
+
+    <div class="swi-pullquote">
+      <p>"Every claim needs a metric, a counterfactual, a control, and a confidence level. If a conclusion sounds exciting, attack it harder before reporting it."</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
+      <p style="font-size: 0.9rem; color: #666; margin: 0;">
+        22 experiments · 12 task families · 10 LoRA adapters · 5 checkpoints · 24 publication-quality plots<br>
+        Fully reproducible: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">python scripts/run_*.py</code>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
