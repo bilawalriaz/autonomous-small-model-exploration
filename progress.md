@@ -1,39 +1,39 @@
 # Progress
 
 ## Current session
-- Date: 2026-06-21
-- Agent/session id: hyperbot-telegram
-- Model: qwen3.5-0.5b (target, pending download)
-- Backend: TBD (TransformerLens preferred, NNsight fallback, HF native last resort)
-- Hardware: micro (CPU-only) initially, aero (RTX 2070 Super 8GB) for training
-- Current goal: Complete minimum viable milestone
+- Date: 2026-06-22
+- Agent/session id: hyperbot-telegram-continuation
+- Model: Qwen/Qwen2.5-0.5B (24L, 14H GQA, d=896, ~0.49B params)
+- Backend: HF native with manual hooks
+- Hardware: aero (RTX 2070 Super 8GB, bf16)
+- Current goal: Dataset shard ablation + component atlas construction
 
 ## Current state summary
-Repo scaffold COMPLETE. 86 files committed. All smoke tests pass (7/7). All pytest tests pass (34/34). Task suite v0 generated: 92 examples across 12 families. Config files, report templates, experiment registry all working. Next: model loading and baseline evaluation.
+13 experiments completed across 2 sessions. Strong causal atlas emerging. L2 identified as universal importance hub. LoRA training rewires component importance (L0 MLP absorbs JSON skill). Steering confirms L2 causal role for factual recall (3.3x boost). Patching method limited by full-residual replacement (KL=0 everywhere). Next: dataset shard ablation, checkpoint timeline, adapter archaeology.
 
 ## Completed
 - [x] Repo scaffold
-- [ ] Model loads
-- [ ] Tokenizer verified
-- [ ] Deterministic generation
-- [x] Task suite v0
-- [ ] Metrics validated (unit tests pass, not validated against model yet)
-- [ ] Baseline evals
-- [ ] Activation caching
-- [ ] Layer ablations
-- [ ] Head ablations
-- [ ] MLP ablations
-- [ ] Residual patching
+- [x] Model loads (Qwen2.5-0.5B, CUDA bf16)
+- [x] Tokenizer verified (all brackets single-token)
+- [x] Deterministic generation (temp=0, do_sample=False)
+- [x] Task suite v0 (92 examples, 12 families)
+- [x] Metrics validated (34/34 pytest pass)
+- [x] Baseline evals (0% exact match, expected for base model)
+- [x] Activation caching (forward hooks on all layers)
+- [x] Layer ablations (L2 dominates all families)
+- [x] Head ablations (14 heads across 5 families)
+- [x] MLP ablations (L2, L4, L6 dominate)
+- [ ] Residual patching (method limitation - KL=0 everywhere with full-residual)
 - [ ] Head/MLP patching
-- [ ] Steering sweeps
+- [x] Steering sweeps (L2 factual: 3.3x boost at s=+4.0)
 - [ ] CPT training
-- [ ] SFT training
-- [ ] CPT→SFT training
-- [ ] LoRA sweeps
+- [ ] SFT training (OOM on 8GB, using LoRA instead)
+- [ ] CPT->SFT training
+- [x] LoRA sweeps (rank: r=1,2,4,8,16; module: q/v/o/mlp/attn/all)
 - [ ] Dataset ablation sweeps
 - [ ] Hyperparameter sweeps
-- [ ] Checkpoint comparison
-- [ ] Adapter comparison
+- [x] Checkpoint comparison (LoRA before/after, ablation maps)
+- [ ] Adapter comparison (multiple skill adapters)
 - [ ] SAE training
 - [ ] SAE intervention tests
 - [ ] Component atlas
@@ -41,39 +41,88 @@ Repo scaffold COMPLETE. 86 files committed. All smoke tests pass (7/7). All pyte
 - [ ] Paper/report material
 
 ## Key findings so far
-None yet. Scaffold only.
+1. L2 is a universal importance hub (ablation KL 0.5-11.5 across all families). HIGH confidence.
+2. L0 MLP is second-strongest across all families (KL 0.3-10.8). MEDIUM confidence.
+3. L2 and L0 dominate jointly. Top-2 layers explain >60% of ablation effect. MEDIUM confidence.
+4. 14 attention heads span 5 families. L12 H8 is strongest head. MEDIUM confidence.
+5. MLP contribution exceeds attention at L2, L4, L6. MEDIUM confidence.
+6. Factual recall most sensitive to layer ablation. Code semantics most resistant. MEDIUM confidence.
+7. Steering L2 with factual direction boosts "rome" 0.064->0.213 (3.3x) at s=+4.0. MEDIUM confidence.
+8. JSON steering at L21 shifts top token from "{" to "Name"/"She" (negative direction). MEDIUM confidence.
+9. LoRA training shifts JSON component importance: L0 MLP 10.85->13.84 (+2.99). MEDIUM confidence.
+10. L2 MLP reduced after JSON LoRA: 4.81->2.94 (-1.87). MEDIUM confidence.
+11. L5 MLP eliminated after JSON LoRA: 1.56->0.00 (-1.56). MEDIUM confidence.
+12. L4 appeared for factual_recall (+1.42) and refusal (+0.95) after LoRA. MEDIUM confidence.
+13. LoRA rank sweep: L0 MLP peaks at r=4 (15.77), declines at higher rank. MEDIUM confidence.
+14. L2 MLP drops monotonically with rank: 5.73->2.16 (r=1->16). MEDIUM confidence.
+15. o_proj alone most efficient for L0 concentration (+3.64 with 344K params). MEDIUM confidence.
 
 ## Open hypotheses
-None yet.
+### H1: L2 is a general-purpose routing hub
+- Evidence: L2 ablation causes largest KL across all 12 families
+- Next test: Position-specific patching at L2 to identify which tokens matter
+- Falsifier: If L2 effect is uniform across all positions, it's just a residual magnitude effect
+
+### H2: LoRA training concentrates skill into early layers (L0-L2)
+- Evidence: L0 MLP +2.99 for JSON after LoRA training
+- Next test: Train adapters on other skill families, check if same concentration occurs
+- Falsifier: If delimiter LoRA concentrates in L10-L15 instead of L0-L2
+
+### H3: Higher LoRA rank distributes skill across more components
+- Evidence: L0 MLP peaks at r=4 then declines; L2 drops monotonically
+- Next test: Check if r=1 adapter is more surgically precise than r=16
+- Falsifier: If r=16 has same selectivity as r=4 but stronger effect
+
+### H4: o_proj is the key module for injecting skills via residual stream
+- Evidence: o_proj alone achieves +3.64 L0 effect with only 344K params
+- Next test: Train o_proj-only adapters on multiple skill families
+- Falsifier: If MLP-only adapters work equally well on non-JSON tasks
+
+### H5: Factual recall and algorithmic tasks use different circuits
+- Evidence: Factual recall KL=11.54 at L2 vs code semantics KL=0.52
+- Next test: Head/MLP ablation maps separately for factual vs algorithmic
+- Falsifier: If both families depend on same heads/MLPs with similar sensitivity
 
 ## Failed experiments / dead ends
-- Initial token_entropy test used [1.0, 0.0, 0.0] logits which softmax to [0.576, 0.212, 0.212] — not one-hot. Fixed to use [100.0, 0.0, 0.0].
+1. Full SFT OOMs on 8GB even with bf16 + gradient checkpointing. LoRA required.
+2. Activation patching with full-residual replacement gives KL=0 everywhere. Position-specific patching needed.
+3. Clean/corrupt pair v0 had tokenization misalignment. Fixed in v1.
 
 ## Artifact index summary
-- `data/eval_sets/task_suite_v0.json` — 92 examples, 12 families
-- `data/clean_corrupt_pairs/pairs_v0.json` — 20 clean/corrupt pairs
-- `experiments/registry.jsonl` — empty (no experiments yet)
+- 5 LoRA adapters: r={1,2,4,8,16} at experiments/adapters/lora_json_r{N}/
+- 6 module sweep configs at experiments/results/lora_module_sweep.json
+- 9 plots at experiments/plots/
+- 7 result JSONs at experiments/results/
+- 9 table JSONs at experiments/tables/
+- 13 experiments in experiments/registry.jsonl
 
-## Next actions
-1. Install torch + transformers on target machine (micro or aero)
-2. Load qwen3.5-0.5b (or fallback) and verify model loads
-3. Run tokenizer diagnostics
-4. Run deterministic generation check
-5. Run baseline evaluation (scripts/run_baselines.py)
-6. Run layer ablation (scripts/run_layer_ablation.py)
-7. Save plots and update reports
-8. Commit results
+## Next actions (ranked)
+1. Dataset shard ablation - train adapters on different skill families, compare component importance
+2. Position-specific activation patching at L0/L2
+3. Checkpoint timeline - save checkpoints during training, track when skills emerge
+4. Adapter archaeology - LoRA SVD, norm analysis
+5. Multiple skill adapters + interference matrix
+6. CPT training
+7. Component atlas construction
+8. Blog post outline
 
 ## Repro commands
 ```bash
+ssh aero
 cd ~/work/autonomous-small-model-exploration
-.venv/bin/python scripts/run_smoke_tests.py
-.venv/bin/python -m pytest tests/ -v
-.venv/bin/python scripts/build_task_suite.py
+source .venv/bin/activate
+python scripts/run_smoke_tests.py
+python scripts/run_layer_ablation.py
+python scripts/run_steering_sweep.py
+python scripts/train_lora_json.py
+python scripts/run_lora_rank_sweep.py
+python scripts/run_lora_module_sweep.py
+python scripts/compare_lora_ablation.py
 ```
 
 ## Notes
-- All code runs on CPU. Heavy experiments (training, full ablation sweeps) should target aero.
-- TransformerLens backend preferred for ablation/patching (hook support). HF backend works for basic eval.
-- 12 task families: copying, delimiter_tracking, json_schema, factual_recall, arithmetic, code_syntax, code_semantics, dead_code, verbosity_control, uncertainty_signalling, refusal_compliance, variable_renaming.
-- Research prompt saved at docs/RESEARCH_PROMPT.md.
+- Model: Qwen2.5-0.5B, 24 layers, 14 heads (GQA), d_model=896, d_head=64
+- 8GB VRAM budget: bf16 model ~1GB, batch processing with torch.cuda.empty_cache()
+- LoRA training: 100 steps, lr=2e-4, bs=2, r=8, alpha=16, all-linear targets
+- Ablation uses zero-ablation (zero out component output)
+- Steering uses activation addition at residual stream
