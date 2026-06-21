@@ -9,7 +9,7 @@
 - Current goal: Component atlas construction, checkpoint timeline
 
 ## Current state summary
-16 experiments completed across 3 sessions. Rich causal atlas with training perturbation data. L2 confirmed as universal hub. Dataset shard ablation reveals each skill concentrates in DIFFERENT layers (rejecting universal L0-L2 hypothesis). Adapter weights concentrate in late layers (L20-L23) but ablation effects hit early layers (L0-L2). Adapter stacking shows factual+json combine cleanly while delimiter adapter is destructive. 10 adapters trained and analyzed.
+18 experiments completed across 3 sessions. Rich causal atlas with training perturbation data. L2 confirmed as universal hub. Dataset shard ablation reveals each skill concentrates in DIFFERENT layers (rejecting universal L0-L2 hypothesis). Adapter weights concentrate in late layers (L20-L23) but ablation effects hit early layers (L0-L2). Adapter stacking shows factual+json combine cleanly while delimiter adapter is destructive. 10 adapters trained and analyzed.
 
 ## Completed
 - [x] Repo scaffold
@@ -36,7 +36,7 @@
 - [x] Adapter comparison (archaeology, stacking/interference)
 - [ ] SAE training
 - [ ] SAE intervention tests
-- [ ] Component atlas
+- [x] Component atlas
 - [ ] Blog material
 - [ ] Paper/report material
 
