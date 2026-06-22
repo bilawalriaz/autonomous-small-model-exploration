@@ -1,0 +1,1427 @@
+{
+  "run_id": "P2_I02_qwen05b_steering_by_length_20260622_124037_seed1",
+  "registry_id": "P2-ROBUST-001",
+  "experiment": "steering_by_length",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "model_slug": "qwen05b",
+  "seed": 1,
+  "timestamp": "2026-06-22T12:40:47.230270+00:00",
+  "hub_layer": 2,
+  "sv_norm": 1.4288408756256104,
+  "results": {
+    "factual_recall_short": {
+      "family": "factual_recall",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "Capital of France? ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.319934
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.092246
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.017517
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.008957
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.019093
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.053206
+            }
+          ]
+        },
+        {
+          "prompt": "Capital of Japan? ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.324058
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.091867
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.013737
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.013756
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.050784
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.130827
+            }
+          ]
+        },
+        {
+          "prompt": "Capital of Germany? ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.430341
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.113535
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.01215
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.007217
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.018951
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.041862
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.358111,
+        "-2.0": 0.099216,
+        "-1.0": 0.014468,
+        "0.0": 0.0,
+        "1.0": 0.009977,
+        "2.0": 0.029609,
+        "4.0": 0.075298
+      },
+      "max_mean_kl": 0.358111
+    },
+    "factual_recall_medium": {
+      "family": "factual_recall",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "What is the capital of France? Please answer with just the city name.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.056263
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.0185
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.007276
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.018444
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.124414
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.392542
+            }
+          ]
+        },
+        {
+          "prompt": "What is the capital of Japan? Please answer with just the city name.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.087977
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.006836
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.003108
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.019933
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.167149
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.650541
+            }
+          ]
+        },
+        {
+          "prompt": "What is the capital of Germany? Please answer with just the city name.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.026057
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.031802
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.006993
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.023014
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.153338
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.459077
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.056766,
+        "-2.0": 0.019046,
+        "-1.0": 0.005792,
+        "0.0": 0.0,
+        "1.0": 0.020464,
+        "2.0": 0.1483,
+        "4.0": 0.50072
+      },
+      "max_mean_kl": 0.50072
+    },
+    "factual_recall_long": {
+      "family": "factual_recall",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "In the context of European geography and history, what is the capital city of th",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.028814
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.007417
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001588
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.003643
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.02034
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 2.351059
+            }
+          ]
+        },
+        {
+          "prompt": "In the context of East Asian geography, what is the capital city of Japan, the i",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.041538
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.010282
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001771
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.001341
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.005719
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.164198
+            }
+          ]
+        },
+        {
+          "prompt": "In the context of Central European geography and history, what is the capital ci",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.041248
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.008455
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001762
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.001789
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.00851
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.777681
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.0372,
+        "-2.0": 0.008718,
+        "-1.0": 0.001707,
+        "0.0": 0.0,
+        "1.0": 0.002258,
+        "2.0": 0.011523,
+        "4.0": 1.097646
+      },
+      "max_mean_kl": 1.097646
+    },
+    "json_schema_short": {
+      "family": "json_schema",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "{\"name\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.018445
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.006072
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001841
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.002467
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.009779
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.032571
+            }
+          ]
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.002965
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.000519
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000149
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.000121
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.000252
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.00167
+            }
+          ]
+        },
+        {
+          "prompt": "{\"city\": \"London\", \"pop\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.02699
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.005629
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001486
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.002065
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.01041
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.037209
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.016133,
+        "-2.0": 0.004073,
+        "-1.0": 0.001159,
+        "0.0": 0.0,
+        "1.0": 0.001551,
+        "2.0": 0.006814,
+        "4.0": 0.023817
+      },
+      "max_mean_kl": 0.023817
+    },
+    "json_schema_medium": {
+      "family": "json_schema",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "Return valid JSON with keys name and age. Alice is 30.\n{\"name\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.009851
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.009046
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.003407
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.003682
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.011292
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.036551
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON with keys city and population. London has 9 million.\n{\"city\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.004235
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.001031
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000356
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.00065
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.002413
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.005178
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON with keys x and y. x=1, y=2.\n{\"x\":",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.07337
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.05433
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.018643
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.026624
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.123704
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.540258
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.029152,
+        "-2.0": 0.021469,
+        "-1.0": 0.007469,
+        "0.0": 0.0,
+        "1.0": 0.010319,
+        "2.0": 0.045803,
+        "4.0": 0.193996
+      },
+      "max_mean_kl": 0.193996
+    },
+    "json_schema_long": {
+      "family": "json_schema",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "You are a JSON generator. Given the following information, produce a valid JSON ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.013461
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.013548
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.005371
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.005872
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.018866
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.04512
+            }
+          ]
+        },
+        {
+          "prompt": "You are a JSON generator. Given the following information, produce a valid JSON ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.008151
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.001725
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000646
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.000854
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.002754
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.006333
+            }
+          ]
+        },
+        {
+          "prompt": "You are a JSON generator. Given the following mathematical coordinates, produce ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.097287
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.073519
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.025368
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.03098
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.12025
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.348474
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.039633,
+        "-2.0": 0.029597,
+        "-1.0": 0.010462,
+        "0.0": 0.0,
+        "1.0": 0.012569,
+        "2.0": 0.04729,
+        "4.0": 0.133309
+      },
+      "max_mean_kl": 0.133309
+    },
+    "copying_short": {
+      "family": "copying",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "A B C A B ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.081477
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.016043
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.00482
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.005088
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.01841
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.066103
+            }
+          ]
+        },
+        {
+          "prompt": "1 2 3 1 2 ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.000745
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.00039
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000178
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.000701
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.003801
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.01182
+            }
+          ]
+        },
+        {
+          "prompt": "X Y X Y ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.018089
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.011055
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.003346
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.004657
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.017748
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.041039
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.033437,
+        "-2.0": 0.009163,
+        "-1.0": 0.002781,
+        "0.0": 0.0,
+        "1.0": 0.003482,
+        "2.0": 0.01332,
+        "4.0": 0.039654
+      },
+      "max_mean_kl": 0.039654
+    },
+    "copying_medium": {
+      "family": "copying",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "A B C D E A B C D ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.041401
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.019446
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.005448
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.007229
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.027076
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.056432
+            }
+          ]
+        },
+        {
+          "prompt": "1 2 3 4 5 6 1 2 3 4 5 ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.000584
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.000223
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 6.3e-05
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 6e-05
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.000652
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.012427
+            }
+          ]
+        },
+        {
+          "prompt": "red blue green yellow red blue green ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.088644
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.030883
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.007778
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.00811
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.029826
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.058177
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.043543,
+        "-2.0": 0.016851,
+        "-1.0": 0.00443,
+        "0.0": 0.0,
+        "1.0": 0.005133,
+        "2.0": 0.019185,
+        "4.0": 0.042345
+      },
+      "max_mean_kl": 0.043543
+    },
+    "copying_long": {
+      "family": "copying",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "alpha beta gamma delta epsilon zeta eta theta alpha beta gamma delta epsilon zet",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.044863
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.037424
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.012975
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.044345
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.28929
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.88432
+            }
+          ]
+        },
+        {
+          "prompt": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.022831
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.00184
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000145
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 4.9e-05
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.000439
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.057444
+            }
+          ]
+        },
+        {
+          "prompt": "one two three four five six seven eight nine ten eleven twelve thirteen fourteen",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.007391
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.002048
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000532
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.000509
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.002295
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.01298
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.025028,
+        "-2.0": 0.013771,
+        "-1.0": 0.004551,
+        "0.0": 0.0,
+        "1.0": 0.014968,
+        "2.0": 0.097341,
+        "4.0": 0.318248
+      },
+      "max_mean_kl": 0.318248
+    },
+    "code_syntax_short": {
+      "family": "code_syntax",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "def add(a, b):\n    return a + ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.092041
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.008902
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.002266
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.004246
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.010911
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.008288
+            }
+          ]
+        },
+        {
+          "prompt": "for i in range(10):\n    print(",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.024605
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.004971
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001112
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.001752
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.009158
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.034665
+            }
+          ]
+        },
+        {
+          "prompt": "if x > 0:\n    result = ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.010258
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.00788
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.001856
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.000702
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.002074
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.004544
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.042301,
+        "-2.0": 0.007251,
+        "-1.0": 0.001745,
+        "0.0": 0.0,
+        "1.0": 0.002233,
+        "2.0": 0.007381,
+        "4.0": 0.015832
+      },
+      "max_mean_kl": 0.042301
+    },
+    "code_syntax_medium": {
+      "family": "code_syntax",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "# Function to add two numbers\ndef add(a, b):\n    # Return the sum\n    return a +",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.109744
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.020401
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.004944
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.006886
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.016435
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.004561
+            }
+          ]
+        },
+        {
+          "prompt": "# Loop through numbers\nfor i in range(10):\n    # Print each number\n    print(",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.042127
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.008283
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.00169
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.001823
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.0094
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.035333
+            }
+          ]
+        },
+        {
+          "prompt": "# Check if positive\nif x > 0:\n    # Store positive result\n    result = ",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.001045
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.000185
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 6.7e-05
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 4.9e-05
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.000137
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.002412
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.050972,
+        "-2.0": 0.009623,
+        "-1.0": 0.002234,
+        "0.0": 0.0,
+        "1.0": 0.002919,
+        "2.0": 0.008657,
+        "4.0": 0.014102
+      },
+      "max_mean_kl": 0.050972
+    },
+    "code_syntax_long": {
+      "family": "code_syntax",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "# This is a utility module for mathematical operations\n# It provides basic arith",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.038616
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.003689
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.000598
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.001176
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.002782
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.009005
+            }
+          ]
+        },
+        {
+          "prompt": "# Data processing pipeline\n# This script processes a list of numbers\n\n# Define t",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.113181
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.019852
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.003688
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.002893
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.01208
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.057474
+            }
+          ]
+        },
+        {
+          "prompt": "# Conditional logic module\n# Determines if a value is positive\n\n# Read the input",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 0.000525
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 0.000119
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 3.8e-05
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.0
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 3.8e-05
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 0.000306
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 0.002365
+            }
+          ]
+        }
+      ],
+      "mean_kl_by_strength": {
+        "-4.0": 0.050774,
+        "-2.0": 0.007887,
+        "-1.0": 0.001441,
+        "0.0": 0.0,
+        "1.0": 0.001369,
+        "2.0": 0.005056,
+        "4.0": 0.022948
+      },
+      "max_mean_kl": 0.050774
+    }
+  },
+  "effectiveness_analysis": {
+    "factual_recall": {
+      "max_kl_by_length": {
+        "short": 0.358111,
+        "medium": 0.50072,
+        "long": 1.097646
+      },
+      "degrades_with_length": false
+    },
+    "json_schema": {
+      "max_kl_by_length": {
+        "short": 0.023817,
+        "medium": 0.193996,
+        "long": 0.133309
+      },
+      "degrades_with_length": false
+    },
+    "copying": {
+      "max_kl_by_length": {
+        "short": 0.039654,
+        "medium": 0.043543,
+        "long": 0.318248
+      },
+      "degrades_with_length": false
+    },
+    "code_syntax": {
+      "max_kl_by_length": {
+        "short": 0.042301,
+        "medium": 0.050972,
+        "long": 0.050774
+      },
+      "degrades_with_length": false
+    }
+  }
+}

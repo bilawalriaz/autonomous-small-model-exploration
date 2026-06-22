@@ -1,0 +1,338 @@
+{
+  "run_id": "P2_I03_qwen05b_lora_effect_by_length_20260622_124047_seed1",
+  "registry_id": "P2-ROBUST-001",
+  "experiment": "lora_effect_by_length",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "model_slug": "qwen05b",
+  "seed": 1,
+  "timestamp": "2026-06-22T12:40:52.764157+00:00",
+  "adapter_path": "/home/billz/work/autonomous-small-model-exploration/experiments/adapters/lora_json_r8/adapter",
+  "results": {
+    "factual_recall_short": {
+      "family": "factual_recall",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "Capital of France? ",
+          "adapter_kl": 0.047163,
+          "target_logprob_delta": -0.0
+        },
+        {
+          "prompt": "Capital of Japan? ",
+          "adapter_kl": 0.096431,
+          "target_logprob_delta": -0.0
+        },
+        {
+          "prompt": "Capital of Germany? ",
+          "adapter_kl": 0.056972,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.066855,
+      "mean_target_logprob_delta": 0.0
+    },
+    "factual_recall_medium": {
+      "family": "factual_recall",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "What is the capital of France? Please answer with just the city name.\n",
+          "adapter_kl": 1.354407,
+          "target_logprob_delta": -0.019019
+        },
+        {
+          "prompt": "What is the capital of Japan? Please answer with just the city name.\n",
+          "adapter_kl": 0.847787,
+          "target_logprob_delta": 0.138351
+        },
+        {
+          "prompt": "What is the capital of Germany? Please answer with just the city name.\n",
+          "adapter_kl": 1.094611,
+          "target_logprob_delta": 0.006088
+        }
+      ],
+      "mean_adapter_kl": 1.098935,
+      "mean_target_logprob_delta": 0.041807
+    },
+    "factual_recall_long": {
+      "family": "factual_recall",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "In the context of European geography and history, what is the capital city of th",
+          "adapter_kl": 0.578572,
+          "target_logprob_delta": -0.003629
+        },
+        {
+          "prompt": "In the context of East Asian geography, what is the capital city of Japan, the i",
+          "adapter_kl": 0.334224,
+          "target_logprob_delta": -0.000992
+        },
+        {
+          "prompt": "In the context of Central European geography and history, what is the capital ci",
+          "adapter_kl": 0.626582,
+          "target_logprob_delta": 0.000315
+        }
+      ],
+      "mean_adapter_kl": 0.513126,
+      "mean_target_logprob_delta": -0.001435
+    },
+    "json_schema_short": {
+      "family": "json_schema",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "{\"name\":",
+          "adapter_kl": 0.013582,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "adapter_kl": 0.022068,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "{\"city\": \"London\", \"pop\":",
+          "adapter_kl": 0.260976,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.098875,
+      "mean_target_logprob_delta": 0.0
+    },
+    "json_schema_medium": {
+      "family": "json_schema",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "Return valid JSON with keys name and age. Alice is 30.\n{\"name\":",
+          "adapter_kl": 0.068936,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "Return valid JSON with keys city and population. London has 9 million.\n{\"city\":",
+          "adapter_kl": 0.127159,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "Return valid JSON with keys x and y. x=1, y=2.\n{\"x\":",
+          "adapter_kl": 0.324701,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.173599,
+      "mean_target_logprob_delta": 0.0
+    },
+    "json_schema_long": {
+      "family": "json_schema",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "You are a JSON generator. Given the following information, produce a valid JSON ",
+          "adapter_kl": 0.069412,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "You are a JSON generator. Given the following information, produce a valid JSON ",
+          "adapter_kl": 1.132689,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "You are a JSON generator. Given the following mathematical coordinates, produce ",
+          "adapter_kl": 0.350709,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.517603,
+      "mean_target_logprob_delta": 0.0
+    },
+    "copying_short": {
+      "family": "copying",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "A B C A B ",
+          "adapter_kl": 0.081385,
+          "target_logprob_delta": -1e-06
+        },
+        {
+          "prompt": "1 2 3 1 2 ",
+          "adapter_kl": 0.043016,
+          "target_logprob_delta": 0.114889
+        },
+        {
+          "prompt": "X Y X Y ",
+          "adapter_kl": 0.068221,
+          "target_logprob_delta": -2e-06
+        }
+      ],
+      "mean_adapter_kl": 0.064207,
+      "mean_target_logprob_delta": 0.038295
+    },
+    "copying_medium": {
+      "family": "copying",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "A B C D E A B C D ",
+          "adapter_kl": 0.05995,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "1 2 3 4 5 6 1 2 3 4 5 ",
+          "adapter_kl": 0.008342,
+          "target_logprob_delta": 0.023883
+        },
+        {
+          "prompt": "red blue green yellow red blue green ",
+          "adapter_kl": 0.210885,
+          "target_logprob_delta": -2e-05
+        }
+      ],
+      "mean_adapter_kl": 0.093059,
+      "mean_target_logprob_delta": 0.007954
+    },
+    "copying_long": {
+      "family": "copying",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "alpha beta gamma delta epsilon zeta eta theta alpha beta gamma delta epsilon zet",
+          "adapter_kl": 0.117033,
+          "target_logprob_delta": -0.000379
+        },
+        {
+          "prompt": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ",
+          "adapter_kl": 0.00189,
+          "target_logprob_delta": 0.005106
+        },
+        {
+          "prompt": "one two three four five six seven eight nine ten eleven twelve thirteen fourteen",
+          "adapter_kl": 0.035019,
+          "target_logprob_delta": -0.0
+        }
+      ],
+      "mean_adapter_kl": 0.051314,
+      "mean_target_logprob_delta": 0.001576
+    },
+    "code_syntax_short": {
+      "family": "code_syntax",
+      "length": "short",
+      "prompts": [
+        {
+          "prompt": "def add(a, b):\n    return a + ",
+          "adapter_kl": 0.01969,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "for i in range(10):\n    print(",
+          "adapter_kl": 0.050379,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "if x > 0:\n    result = ",
+          "adapter_kl": 0.043704,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.037924,
+      "mean_target_logprob_delta": 0.0
+    },
+    "code_syntax_medium": {
+      "family": "code_syntax",
+      "length": "medium",
+      "prompts": [
+        {
+          "prompt": "# Function to add two numbers\ndef add(a, b):\n    # Return the sum\n    return a +",
+          "adapter_kl": 0.025337,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "# Loop through numbers\nfor i in range(10):\n    # Print each number\n    print(",
+          "adapter_kl": 0.059632,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "# Check if positive\nif x > 0:\n    # Store positive result\n    result = ",
+          "adapter_kl": 0.002743,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.029237,
+      "mean_target_logprob_delta": 0.0
+    },
+    "code_syntax_long": {
+      "family": "code_syntax",
+      "length": "long",
+      "prompts": [
+        {
+          "prompt": "# This is a utility module for mathematical operations\n# It provides basic arith",
+          "adapter_kl": 0.016403,
+          "target_logprob_delta": 0.0
+        },
+        {
+          "prompt": "# Data processing pipeline\n# This script processes a list of numbers\n\n# Define t",
+          "adapter_kl": 0.175527,
+          "target_logprob_delta": -0.0
+        },
+        {
+          "prompt": "# Conditional logic module\n# Determines if a value is positive\n\n# Read the input",
+          "adapter_kl": 0.002545,
+          "target_logprob_delta": 0.0
+        }
+      ],
+      "mean_adapter_kl": 0.064825,
+      "mean_target_logprob_delta": 0.0
+    }
+  },
+  "effect_analysis": {
+    "factual_recall": {
+      "adapter_kl_by_length": {
+        "short": 0.066855,
+        "medium": 1.098935,
+        "long": 0.513126
+      },
+      "target_delta_by_length": {
+        "short": 0.0,
+        "medium": 0.041807,
+        "long": -0.001435
+      }
+    },
+    "json_schema": {
+      "adapter_kl_by_length": {
+        "short": 0.098875,
+        "medium": 0.173599,
+        "long": 0.517603
+      },
+      "target_delta_by_length": {
+        "short": 0.0,
+        "medium": 0.0,
+        "long": 0.0
+      }
+    },
+    "copying": {
+      "adapter_kl_by_length": {
+        "short": 0.064207,
+        "medium": 0.093059,
+        "long": 0.051314
+      },
+      "target_delta_by_length": {
+        "short": 0.038295,
+        "medium": 0.007954,
+        "long": 0.001576
+      }
+    },
+    "code_syntax": {
+      "adapter_kl_by_length": {
+        "short": 0.037924,
+        "medium": 0.029237,
+        "long": 0.064825
+      },
+      "target_delta_by_length": {
+        "short": 0.0,
+        "medium": 0.0,
+        "long": 0.0
+      }
+    }
+  }
+}

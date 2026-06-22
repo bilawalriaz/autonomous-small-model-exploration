@@ -982,10 +982,16 @@ def main():
     parser = argparse.ArgumentParser(description="Phase 2 Block D: Third-scale atlas on Qwen2.5-3B")
     parser.add_argument("--force", action="store_true", help="Re-run completed experiments")
     parser.add_argument("--seed", type=int, default=None, help="Run only this seed (default: all 3)")
+    parser.add_argument("--model", type=str, default=None, help="Override model (default: Qwen/Qwen2.5-3B)")
     parser.add_argument("--experiment", type=str, default=None,
                         help="Run only this experiment (layer_ablation, head_ablation, mlp_ablation, "
                              "steering, lora, patching, skip, knockout)")
     args = parser.parse_args()
+
+    # Override MODEL_NAME if --model provided
+    global MODEL_NAME
+    if args.model:
+        MODEL_NAME = args.model
 
     seeds = [args.seed] if args.seed is not None else SEEDS
     force = args.force
