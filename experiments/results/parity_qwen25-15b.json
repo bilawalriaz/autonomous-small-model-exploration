@@ -1,0 +1,115 @@
+{
+  "experiment_id": "P2-PARITY-001",
+  "model": "Qwen/Qwen2.5-1.5B",
+  "n_layers": 28,
+  "seed": 1,
+  "git_commit": "02f87a8",
+  "timestamp": "2026-06-22T12:21:15.452624+00:00",
+  "tasks": {
+    "variable_renaming_short": {
+      "baseline": {
+        "mean_target_logprob": -14.673927116394044,
+        "exact_match_rate": 0.0,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": -3.875951576232911,
+        "1": -4.926688575744629,
+        "2": -3.542889976501465,
+        "3": -5.0954889297485355,
+        "4": -2.078434944152832
+      },
+      "best_early_layer": 4
+    },
+    "uncertainty_expression": {
+      "baseline": {
+        "mean_target_logprob": -11.956251907348634,
+        "exact_match_rate": 0.6,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": -0.7082763671875014,
+        "1": -1.4996383666992195,
+        "2": -0.7220895767211921,
+        "3": 0.2737487792968736,
+        "4": -0.13341598510742259
+      },
+      "best_early_layer": 3
+    },
+    "verbosity_control": {
+      "baseline": {
+        "mean_target_logprob": -12.725687599182129,
+        "exact_match_rate": 0.0,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": 1.2871316909790043,
+        "1": -0.43059749603271413,
+        "2": 2.1990993499755866,
+        "3": 2.7103677749633786,
+        "4": 4.053398323059083
+      },
+      "best_early_layer": 4
+    },
+    "instruction_following": {
+      "baseline": {
+        "mean_target_logprob": -8.83061580657959,
+        "exact_match_rate": 0.0,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": 1.579859733581543,
+        "1": 0.08849773406982386,
+        "2": 2.2035465240478516,
+        "3": 1.9347364425659173,
+        "4": 1.2109701156616204
+      },
+      "best_early_layer": 2
+    },
+    "json_schema_short": {
+      "baseline": {
+        "mean_target_logprob": -10.786723804473876,
+        "exact_match_rate": 0.4,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": -0.3418732643127438,
+        "1": 0.02926473617553782,
+        "2": 2.4255631446838386,
+        "3": -3.0114106178283686,
+        "4": -1.029512882232666
+      },
+      "best_early_layer": 2
+    },
+    "code_semantics_short": {
+      "baseline": {
+        "mean_target_logprob": -7.542709159851074,
+        "exact_match_rate": 0.0,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": 3.0990163803100588,
+        "1": 1.7920293807983407,
+        "2": 3.5258279800415044,
+        "3": 1.7232290267944341,
+        "4": 5.562158012390136
+      },
+      "best_early_layer": 4
+    },
+    "copying_short": {
+      "baseline": {
+        "mean_target_logprob": -5.139237403869629,
+        "exact_match_rate": 0.8,
+        "n": 5
+      },
+      "early_layer_ablation": {
+        "0": 7.443406105041504,
+        "1": 6.1697198867797844,
+        "2": 9.640236854553223,
+        "3": 9.98763828277588,
+        "4": 6.724223518371582
+      },
+      "best_early_layer": 3
+    }
+  }
+}
