@@ -263,7 +263,7 @@ bash scripts/convert_and_quantize.sh Qwen/Qwen2.5-1.5B 1.5b
 - Output quality: constraint adherence rate, repetition ratio, empty/garbage count
 - Qualitative comparison: does the prose degrade? Does reasoning break? Does code still work?
 
-**Default recommendation:** Based on initial testing, **Q8_0 (8-bit) is the recommended default quantization for all MI-Atlas experiments.** It provides near-fp16 quality with significant speed gains and file size reduction. Specify this in the skill when running future analyses. Q4_K_M can be used when VRAM is extremely constrained but expect quality degradation on reasoning and code tasks.
+**Default recommendation:** Based on testing, **4bit NF4 (bitsandbytes) is the recommended default quantization for qualitative analysis on 1.5B+ models.** It provides only 9% speed loss vs bf16 on 1.5B (vs 52% for 8bit!) with identical constraint adherence. The user's hypothesis that 8bit would be the sweet spot does NOT hold for bitsandbytes — 8bit has more dequantization overhead than 4bit NF4. Use 8bit only if you need the absolute highest precision for numerical tasks. Use Q4_K_M GGUF with llama.cpp for deployment scenarios.
 
 ## Session Protocol
 
@@ -329,7 +329,7 @@ Every claim must include:
 14. **Trainer needs labels:** HuggingFace Trainer requires `labels` in the dataset for causal LM. Add `tokenized["labels"] = tokenized["input_ids"].copy()` in the tokenize function.
 15. **Early exit gives inf KL on larger models:** Projecting intermediate hidden states through lm_head on 1.5B gives KL=inf for some layers (numerical overflow in bf16). Use torch.float32 for the projection step.
 16. **GGUF conversion needs sentencepiece:** The `convert_hf_to_gguf.py` script requires the `sentencepiece` package. Install it in the venv: `pip install sentencepiece`. The script also needs a local model directory path, not a HF model name — use `snapshot_download()` first.
-17. **Q8_0 is the recommended default quantization:** 8-bit GGUF provides near-fp16 quality with ~50% file size reduction and faster inference. Use Q8_0 for all future MI-Atlas qualitative analyses unless VRAM is extremely constrained (then Q4_K_M).
+17. **4bit NF4 is the sweet spot, not 8bit:** Testing showed 8bit is actually the SLOWEST quantization (bitsandbytes 8bit has more dequantization overhead than 4bit NF4). On 1.5B: bf16=18.8 tok/s, 8bit=9.0 tok/s (52% slower), 4bit=17.1 tok/s (only 9% slower). Use 4bit NF4 as default.
 18. **Prompt library is a git submodule:** The `prompts/` directory is a submodule from `bilawalriaz/mi-prompt-library`. Run `git submodule update --init` after cloning. Add new prompts to the prompt library repo directly.
 
 ## Adapting to a New Model
