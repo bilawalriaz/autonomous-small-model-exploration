@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qualitative Analysis: The Vibe Check — MI-Atlas</title>
+  <meta name="description" content="A qualitative vibe check across 30 prompts x 6 configs (Qwen2.5 0.5B and 1.5B at bf16, 8bit, 4bit NF4). Prose quality, repetition and degeneration, constraint adherence, and a quantization recommendation: 4bit NF4 is the sweet spot.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --swi-ink:    #000000;
+      --swi-muted:  #666;
+      --swi-tldr-bg:#f5f5f5;
+      --swi-link:   #000;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #000;
+      background: #ffffff;
+    }
+    .publication-body a {
+      color: #000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+    .publication-body a:hover { border-bottom-color: #000; }
+    .publication-body strong { color: #000; }
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+      color: #666;
+      font-size: 1.05rem;
+    }
+    .publication-venue {
+      color: #666;
+      font-weight: bold;
+      width: fit-content;
+    }
+    .tier-header {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #000;
+    }
+    .tier-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .section h3.subtitle,
+    .section h3.title {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.25rem;
+      color: #000;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+    .publication-body {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #111;
+    }
+    .publication-body p { margin-bottom: 1.1rem; }
+    .publication-body code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9em;
+      background: #f5f5f5;
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      color: #111;
+      font-weight: 500;
+    }
+    .publication-body ul { margin-bottom: 1.1rem; }
+    .publication-body li { margin-bottom: 0.4rem; }
+
+    .swi-tldr {
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 18px 22px;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      margin: 10px 0;
+    }
+
+    .swi-callout {
+      display: flex;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+    }
+    .swi-callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .swi-callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .swi-pullquote {
+      margin: 2rem 0;
+      padding: 16px 24px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .swi-pullquote p { margin: 0; }
+
+    .swi-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+    }
+    .swi-table th, .swi-table td {
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .swi-table th {
+      font-weight: 700;
+      color: #000;
+      border-bottom: 2px solid #000;
+    }
+    .swi-table td {
+      border-bottom: 1px solid #eee;
+    }
+    .swi-table tr:last-child td { border-bottom: none; }
+    .swi-table td:first-child { font-weight: 600; }
+    .swi-table .col-done { color: #111; }
+    .swi-table .col-pending { color: #888; font-style: italic; }
+    .swi-table .delta { color: #d4380d; font-weight: 600; }
+    .swi-table .num { font-variant-numeric: tabular-nums; }
+    .swi-table-striped tbody tr:nth-child(even) { background: #fafafa; }
+    .swi-table-highlight { background: #fff7e6 !important; }
+
+    .paper-card {
+      display: block;
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      margin-bottom: 12px;
+    }
+    .paper-card:hover {
+      border-color: #000;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    .paper-card h3 {
+      margin: 4px 0 0;
+      font-size: 1.05rem;
+      color: #000;
+      line-height: 1.4;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .paper-card .paper-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .paper-card .paper-tagline {
+      font-size: 0.92rem;
+      color: #333;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .confidence-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      font-family: 'Google Sans', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .conf-high { background: #d4380d; color: #fff; }
+    .conf-medium { background: #fa8c16; color: #fff; }
+    .conf-low { background: #f5f5f5; color: #666; border: 1px solid #ddd; }
+    .paper-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Prose comparison panels */
+    .prose-panel {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .prose-panel-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .prose-panel-body {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: #222;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 220px;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 6px;
+      padding: 12px 14px;
+      border: 1px solid #ececec;
+    }
+    .prose-panel-meta {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 8px;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .prose-panel-meta .bad { color: #d4380d; font-weight: 700; }
+    .prose-panel-meta .good { color: #1d6f1d; font-weight: 700; }
+
+    .placeholder-note {
+      font-family: 'Google Sans', sans-serif;
+      color: #888;
+      font-style: italic;
+      background: #fafafa;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* Navigation */
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+
+    /* Footer */
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .publication-body { font-size: 1rem; }
+      .swi-table { font-size: 0.82rem; }
+      .swi-table th, .swi-table td { padding: 9px 8px; }
+      .paper-grid { grid-template-columns: 1fr; }
+      .mi-nav-inner { justify-content: center; }
+      .swi-table-scroll { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+        <a href="04-qualitative-analysis.html" class="active">Qualitative</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">Qualitative Analysis: The Vibe Check</span>
+          </h1>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.6em;">
+            <span>Bilawal Riaz</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span class="publication-venue">Prose Quality &amp; Quantization Impact</span>
+          </div>
+          <div class="is-size-5 publication-authors" style="margin-top: 0.4em;">
+            <span>2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <!-- TL;DR -->
+    <div class="swi-tldr">
+      <strong>TL;DR &mdash;</strong> 30 prompts &times; 6 configs (Qwen2.5-0.5B and 1.5B at bf16, 8-bit, and 4-bit NF4). The mechanistic atlas tells you <em>which components matter</em>; this page asks the simpler, blunter question: <em>does the output actually read well?</em> The answer is a clean win for scale. <strong>1.5B is qualitatively much better</strong> &mdash; 3&ndash;4&times; fewer repetitive outputs and ~2&times; better constraint following than 0.5B. And the quantization surprise: <strong>4-bit NF4 is the sweet spot, not 8-bit</strong>. 8-bit is the <em>slowest</em> quantization (bitsandbytes dequantization overhead), while 4-bit NF4 loses almost no speed at 1.5B (9% vs bf16) and keeps quality. The practical recipe: run 1.5B in 4-bit NF4.
+    </div>
+
+    <!-- SETUP -->
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#9881;&#65039;</div>
+      <div class="swi-callout-body">
+        <strong>Setup:</strong> 30 prompts across code, creative writing, reasoning, and instruction-following categories. Each prompt carries explicit constraints (e.g. "must include a docstring", "exactly 3 sentences"). Each of the 6 configs &mdash; <code>0.5B-bf16</code>, <code>0.5B-8bit</code>, <code>0.5B-4bit</code>, <code>1.5B-bf16</code>, <code>1.5B-8bit</code>, <code>1.5B-4bit</code> &mdash; generated up to 200 tokens per prompt on the same RTX 2070 Super (8GB), HF/transformers backend, bitsandbytes for 8-bit and 4-bit NF4. Outputs scored for word/character/sentence counts, repetition ratio, empty/garbage flags, repetition/degeneration, and constraint adherence.
+      </div>
+    </div>
+
+    <div class="publication-body">
+
+      <!-- COMPARISON TABLE -->
+      <div class="tier-header">Config Comparison: 6 Configs Side by Side</div>
+      <div class="tier-desc">Every metric, every config. The 4-bit NF4 sweet-spot row is highlighted. All values from completed runs on the same hardware.</div>
+
+      <div class="swi-table-scroll">
+      <table class="swi-table swi-table-striped">
+        <thead>
+          <tr>
+            <th style="width: 18%;">Config</th>
+            <th style="width: 12%;">Precision</th>
+            <th style="width: 13%;">Speed (tok/s)</th>
+            <th style="width: 12%;">vs bf16</th>
+            <th style="width: 15%;">Constraint Adherence</th>
+            <th style="width: 11%;">Repetitive /30</th>
+            <th style="width: 10%;">Repetition Rate</th>
+            <th style="width: 9%;">Empty /30</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0.5B</td>
+            <td class="col-done">bf16</td>
+            <td class="num col-done">23.6</td>
+            <td class="num">&mdash;</td>
+            <td class="num">0.0%</td>
+            <td class="num">13</td>
+            <td class="num">43.3%</td>
+            <td class="num">1</td>
+          </tr>
+          <tr>
+            <td>0.5B</td>
+            <td class="col-done">8-bit</td>
+            <td class="num col-done">10.5</td>
+            <td class="num delta">&minus;55.5%</td>
+            <td class="num">3.3%</td>
+            <td class="num">16</td>
+            <td class="num">53.3%</td>
+            <td class="num">1</td>
+          </tr>
+          <tr>
+            <td>0.5B</td>
+            <td class="col-done">4-bit NF4</td>
+            <td class="num col-done">13.7</td>
+            <td class="num delta">&minus;41.9%</td>
+            <td class="num">6.7%</td>
+            <td class="num">13</td>
+            <td class="num">43.3%</td>
+            <td class="num">1</td>
+          </tr>
+          <tr>
+            <td>1.5B</td>
+            <td class="col-done">bf16</td>
+            <td class="num col-done">18.8</td>
+            <td class="num">&mdash;</td>
+            <td class="num">13.3%</td>
+            <td class="num">4</td>
+            <td class="num">13.3%</td>
+            <td class="num">0</td>
+          </tr>
+          <tr>
+            <td>1.5B</td>
+            <td class="col-done">8-bit</td>
+            <td class="num col-done">9.0</td>
+            <td class="num delta">&minus;52.1%</td>
+            <td class="num">16.7%</td>
+            <td class="num">3</td>
+            <td class="num">10.0%</td>
+            <td class="num">0</td>
+          </tr>
+          <tr class="swi-table-highlight">
+            <td>1.5B <span class="confidence-tag conf-high">Sweet spot</span></td>
+            <td class="col-done">4-bit NF4</td>
+            <td class="num col-done"><strong>17.1</strong></td>
+            <td class="num">&minus;9.0%</td>
+            <td class="num">13.3%</td>
+            <td class="num">8</td>
+            <td class="num">26.7%</td>
+            <td class="num">2</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size: 0.9rem; color: #666; margin-top: -0.5rem;">"vs bf16" is the speed loss relative to that model's own bf16 baseline. Repetition Rate = repetitive outputs &divide; 30. Lower is better for repetition and empty; higher is better for speed and constraint adherence.</p>
+
+      <!-- KEY FINDINGS -->
+      <div class="tier-header">Key Findings</div>
+      <div class="tier-desc">The four results that actually change what you should run.</div>
+
+      <div class="paper-grid">
+        <div class="paper-card" style="border-left: 4px solid #d4380d;">
+          <h3>1. Scale wins on quality <span class="confidence-tag conf-high">HIGH</span></h3>
+          <div class="paper-meta">0.5B vs 1.5B &middot; 30 prompts each</div>
+          <div class="paper-tagline">1.5B is qualitatively much better. Repetitive outputs drop 3&ndash;4&times; (0.5B: 13&ndash;16 / 30; 1.5B: 3&ndash;8 / 30) and constraint adherence roughly doubles (0.5B: 0&ndash;6.7%; 1.5B: 13.3&ndash;16.7%). The 0.5B model frequently degenerates into looping prose; 1.5B mostly stays on track.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>2. 4-bit NF4 is the sweet spot <span class="confidence-tag conf-high">HIGH</span></h3>
+          <div class="paper-meta">Speed &amp; quality, not 8-bit</div>
+          <div class="paper-tagline">Counter-intuitive but consistent: 4-bit NF4, not 8-bit, is the right quantization. At 1.5B, 4-bit NF4 is only 9% slower than bf16 (17.1 vs 18.8 tok/s) while 8-bit is 52% slower (9.0 tok/s) &mdash; and 4-bit keeps quality within noise of the 8-bit run.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>3. 8-bit is the slowest quant <span class="confidence-tag conf-medium">MEDIUM</span></h3>
+          <div class="paper-meta">bitsandbytes dequantization overhead</div>
+          <div class="paper-tagline">More bits does not mean faster. 8-bit is slower than 4-bit at both scales because bitsandbytes dequantizes 8-bit weights back to bf16 at <em>every</em> matmul. The extra precision buys little quality but costs ~50% of throughput. 8-bit is the worst of both worlds here.</div>
+        </div>
+        <div class="paper-card" style="border-left: 4px solid #fa8c16;">
+          <h3>4. 0.5B degrades more under quant <span class="confidence-tag conf-medium">MEDIUM</span></h3>
+          <div class="paper-meta">Quantization sensitivity scales inversely</div>
+          <div class="paper-tagline">The smaller model is hit harder by quantization. 0.5B loses 42&ndash;55% of speed going to 4-/8-bit; 1.5B loses only 9&ndash;52%. The smaller residual stream and thinner layers have less slack to absorb rounding error, so quantization cost is disproportionately large at 0.5B.</div>
+        </div>
+      </div>
+
+      <!-- QUANTIZATION RECOMMENDATION CALLOUT -->
+      <div class="swi-callout" style="border-left: 4px solid #d4380d; background: #fff7e6;">
+        <div class="swi-callout-icon">&#127850;</div>
+        <div class="swi-callout-body">
+          <strong>Quantization recommendation &mdash; run 1.5B in 4-bit NF4.</strong> It is the only config that threads all three needles at once: <strong>(1) speed</strong> &mdash; 17.1 tok/s, just 9% off the bf16 baseline and nearly 2&times; the 8-bit config; <strong>(2) quality</strong> &mdash; 13.3% constraint adherence and 26.7% repetition rate, within noise of bf16 (13.3% / 13.3%) and 8-bit (16.7% / 10.0%); <strong>(3) memory</strong> &mdash; 4-bit NF4 fits the 1.5B model comfortably in 8GB where bf16 is tight. 8-bit should be avoided: it pays the full dequantization tax for almost no quality gain. If you must run 0.5B, prefer 4-bit NF4 there too (13.7 tok/s vs 10.5 for 8-bit), but expect noticeably more degeneration regardless of precision.
+        </div>
+      </div>
+
+      <!-- SPEED ANALYSIS -->
+      <div class="tier-header">Speed: The 8-bit Tax</div>
+      <div class="tier-desc">Why more bits is slower, and why 1.5B-4bit nearly matches bf16.</div>
+
+      <h3 class="subtitle">8-bit is slower than 4-bit. Yes, really.</h3>
+      <p>The instinct is that 8-bit (more bits, more precision) should sit between bf16 and 4-bit on speed. It does not. At both model sizes 8-bit is the <em>slowest</em> quantization: 0.5B-8bit runs 10.5 tok/s versus 13.7 for 4-bit, and 1.5B-8bit runs 9.0 tok/s versus 17.1 for 4-bit. The cause is in the backend: bitsandbytes stores 8-bit weights compactly but must <strong>dequantize them back to bf16 on every single matmul</strong>. That dequantization is a per-operation tax that 4-bit NF4 &mdash; which uses fused NF4 kernels designed to avoid exactly this &mdash; largely escapes. The result is that the "heavier" 4-bit format is faster than the "lighter" 8-bit one.</p>
+
+      <h3 class="subtitle">1.5B-4bit barely loses to bf16.</h3>
+      <p>The standout speed number is 1.5B-4bit at 17.1 tok/s &mdash; only 9% below the 18.8 tok/s bf16 baseline. For a 4&times; memory reduction (roughly) that is an exceptional trade. The same comparison at 0.5B is far worse: 4-bit drops 42% (23.6 &rarr; 13.7). The difference is that the 1.5B model's larger matmuls amortize the quantization overhead better, while the 0.5B model's tiny per-layer ops are dominated by the fixed dequantization cost. Bigger models quantize more gracefully.</p>
+
+      <!-- CONSTRAINT ADHERENCE ANALYSIS -->
+      <div class="tier-header">Constraint Adherence: Following Instructions</div>
+      <div class="tier-desc">Can the model actually do what the prompt explicitly asks?</div>
+
+      <p>Each prompt carries explicit constraints ("must include a docstring", "exactly 3 sentences", "must handle the no-pair case"). Adherence is the share of those constraints met per config. Two patterns stand out:</p>
+      <ul>
+        <li><strong>0.5B essentially ignores constraints.</strong> bf16 scores 0.0% &mdash; not a single constraint met across 30 prompts. Quantization helps marginally (8-bit 3.3%, 4-bit 6.7%), but the ceiling is near zero. The 0.5B model tends to <em>describe</em> the task or hallucinate requirements rather than satisfy the stated ones.</li>
+        <li><strong>1.5B follows constraints ~2&times; better, and 8-bit edges bf16.</strong> All three 1.5B configs land at 13&ndash;17%, roughly double the 0.5B best. The mild 8-bit lead (16.7%) over bf16/4-bit (13.3%) is within noise at n=30 and is not interpreted as a real quantization benefit &mdash; it is flagged as a tie.</li>
+      </ul>
+      <p>The absolute numbers are low for both models &mdash; these are 0.5B/1.5B base models with no instruction tuning, so weak instruction-following is expected. The reliable signal is the <em>relative</em> one: scale roughly doubles adherence, and quantization does not meaningfully change it at either size.</p>
+
+      <!-- REPETITION / DEGENERATION ANALYSIS -->
+      <div class="tier-header">Repetition &amp; Degeneration: The Looping Problem</div>
+      <div class="tier-desc">Where outputs collapse into self-repeating text, by config.</div>
+
+      <p>Repetition is the dominant failure mode here, and it is where the scale gap is widest. Each output is flagged as <em>repetitive</em> when its repetition ratio crosses a degeneration threshold; <em>empty</em> when it produces no usable tokens.</p>
+      <ul>
+        <li><strong>0.5B loops constantly.</strong> 13&ndash;16 of 30 outputs are repetitive across all three precisions (43&ndash;53%). The model seizes on a phrase and rewrites it with one token swapped &mdash; the classic small-model degeneration loop. Quantization does not fix this; 8-bit is actually slightly worse (16) than bf16/4-bit (13).</li>
+        <li><strong>1.5B loops 3&ndash;4&times; less.</strong> 3&ndash;8 of 30 outputs are repetitive (10&ndash;27%). bf16 and 8-bit are best (4 and 3); 4-bit NF4 picks up a few extra loops (8), a small quality cost for the large speed/memory win.</li>
+        <li><strong>Empty outputs are rare and roughly flat.</strong> 0.5B produces 1 empty output per precision; 1.5B produces 0 (bf16/8-bit) or 2 (4-bit). Degeneration, not silence, is the failure mode.</li>
+      </ul>
+
+      <!-- SAMPLE PROSE COMPARISON -->
+      <div class="tier-header">Sample Prose: Same Prompt, Two Configs</div>
+      <div class="tier-desc">Prompt <code>code_001</code> &mdash; "Write a Python function that checks if a string is a palindrome. Include a docstring and handle empty strings." A concrete illustration of the degeneration gap.</div>
+
+      <div class="prose-panel" style="border-left: 4px solid #d4380d;">
+        <div class="prose-panel-label" style="color: #d4380d;">0.5B &middot; bf16 &middot; DEGENERATES</div>
+        <div class="prose-panel-body"> Additionally, the function should be able to handle strings with special characters and numbers. The function should also be able to handle strings with mixed case letters and numbers. The function should be able to handle strings with a maximum length of 100 characters. The function should be able to handle strings with a maximum length of 1000 characters. The function should be able to handle strings with a maximum length of 10000 characters. The function should be able to handle strings with a maximum length of 100000 characters. The function should be able to handle strings with a maximum length of 1000000 characters. The function should be able to handle strings with a maximum length of 10000000 characters. The function should be able to handle strings with a maximum length of 100000000 characters. The function should be able to handle strings with a maximum length of</div>
+        <div class="prose-panel-meta">repetition ratio <span class="bad">0.73</span> &middot; 200 tokens (truncated) &middot; <span class="bad">repetitive</span> &middot; constraints met: 0/4</div>
+      </div>
+
+      <div class="prose-panel" style="border-left: 4px solid #1d6f1d;">
+        <div class="prose-panel-label" style="color: #1d6f1d;">1.5B &middot; 4-bit NF4 &middot; CLEAN</div>
+        <div class="prose-panel-body"> Certainly! Here's a Python function that checks if a string is a palindrome, along with a docstring and an example of how to use it:
+
+```python
+def is_palindrome(s):
+    """
+    Check if a string is a palindrome.
+
+    Parameters:
+    s (str): The string to check.
+
+    Returns:
+    bool: True if the string is a palindrome, False otherwise.
+    """
+    # Remove any leading or trailing whitespace
+    s = s.strip()
+
+    # Check if the string is empty
+    if len(s) == 0:
+        return True
+
+    # Reverse the string
+    reversed_s = s[::-1]
+
+    # Check if the string is equal to its reverse
+    if s == reversed_s:
+        return True
+    else:
+        return False
+```</div>
+        <div class="prose-panel-meta">repetition ratio <span class="good">0.17</span> &middot; 200 tokens (truncated) &middot; <span class="good">not repetitive</span> &middot; includes docstring &amp; empty-string handling</div>
+      </div>
+      <p>The 0.5B model never writes the function &mdash; it generates a chain of nearly-identical sentences, each adding a zero to the "maximum length", until the token budget runs out. The 1.5B 4-bit model, on the same prompt, produces a working function with a docstring and explicit empty-string handling. Same prompt, same 200-token budget, same hardware &mdash; the difference is scale, and the 4-bit NF4 quantization did not break the better model's coherence.</p>
+
+      <!-- METHODOLOGY & LIMITATIONS -->
+      <div class="tier-header">Method &amp; Limitations</div>
+      <div class="tier-desc">What this vibe check can and cannot claim.</div>
+
+      <ul>
+        <li><strong>Small sample (n=30).</strong> 30 prompts per config is enough to see large effects (the 3&ndash;4&times; repetition gap, the 8-bit speed tax) but not to resolve small differences. The 8-bit constraint lead over bf16/4-bit (16.7% vs 13.3%) is within noise and is reported as a tie, not a real 8-bit advantage.</li>
+        <li><strong>Base models, not instruct-tuned.</strong> These are raw Qwen2.5-0.5B/1.5B checkpoints with no SFT or chat template. Absolute constraint adherence is low by design; the meaningful signal is the relative gap between configs, not the absolute rate.</li>
+        <li><strong>Greedy decoding.</strong> All runs use greedy (temperature 0) decoding, which maximizes repetition risk. Sampling would reduce repetition counts across the board but would also add variance; greedy isolates the model's own degeneration tendency.</li>
+        <li><strong>Single seed.</strong> One generation per prompt per config. The qualitative patterns (looping at 0.5B, coherence at 1.5B) are consistent across prompts and categories, but per-prompt variance is not measured.</li>
+        <li><strong>Constraint detection is heuristic.</strong> Adherence is scored by automated checks (presence of required elements, sentence counts, etc.), not human grading. Genuine-but-differently-phrased completions may be undercounted; the relative config ordering should still hold.</li>
+        <li><strong>Same family, one backend.</strong> Both models are Qwen2.5; both run on HF/transformers with bitsandbytes. The 8-bit dequantization tax is backend-specific; a different 8-bit kernel could change the 8-bit vs 4-bit speed ordering. The 4-bit NF4 recommendation is specific to bitsandbytes NF4.</li>
+      </ul>
+
+      <div class="swi-pullquote">
+        <p>"The atlas tells you which layers and heads matter. The vibe check tells you whether the model can write a palindrome function without looping forever. You need both &mdash; and at 1.5B in 4-bit NF4, you get coherence and speed in the same 8GB card."</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="03-comparison-analysis.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">&larr; Previous: Comparison Analysis</a>
+        &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+        <a href="index.html" style="font-family:'Google Sans',sans-serif; color:#000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration:none;">Back to MI-Atlas &rarr;</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

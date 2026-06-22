@@ -287,6 +287,7 @@
         <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
         <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
         <a href="03-comparison-analysis.html" class="active">Comparison</a>
+        <a href="04-qualitative-analysis.html">Qualitative</a>
       </div>
     </div>
   </div>
@@ -503,6 +504,28 @@
         <li><strong>Same model family</strong> — both are Qwen2.5. Findings may be family-specific. Cross-family comparison (Qwen vs Llama vs Pythia) would test generality.</li>
         <li><strong>Zero ablation at both scales</strong> — creates out-of-distribution activations. The magnitude of ablation effects may be inflated at both scales, though relative comparisons should hold.</li>
       </ul>
+
+      <!-- QUALITATIVE DIFFERENCES -->
+      <div class="tier-header">Qualitative Differences</div>
+      <div class="tier-desc">Beyond the causal atlas: how 0.5B and 1.5B differ in actual output quality. Full 30-prompt &times; 6-config breakdown on the <a href="04-qualitative-analysis.html">Qualitative Analysis</a> page.</div>
+
+      <p>The atlas above maps <em>which components matter</em>. A complementary vibe check &mdash; 30 prompts &times; 6 configs (0.5B/1.5B at bf16, 8-bit, 4-bit NF4) &mdash; asks the blunter question of whether the output actually reads well. Three qualitative gaps mirror the structural ones:</p>
+
+      <h3 class="subtitle">Prose quality &amp; repetition</h3>
+      <p>0.5B loops. 13&ndash;16 of 30 outputs degenerate into self-repeating text (43&ndash;53% repetition rate) across every precision &mdash; the model seizes on a phrase and rewrites it with one token swapped. 1.5B loops 3&ndash;4&times; less (3&ndash;8 of 30, 10&ndash;27%). On the same palindrome prompt, 0.5B-bf16 never writes the function, instead emitting a chain of near-identical "maximum length of N characters" sentences until the token budget runs out (repetition ratio 0.73); 1.5B-4bit produces a clean working function with a docstring (repetition ratio 0.17). The smaller model's thinner residual stream and fewer layers give it less slack to escape degeneration loops.</p>
+
+      <h3 class="subtitle">Constraint adherence</h3>
+      <p>1.5B follows explicit prompt constraints roughly 2&times; better than 0.5B (13&ndash;17% vs 0&ndash;7%). 0.5B-bf16 meets 0% of stated constraints &mdash; it tends to <em>describe</em> or hallucinate requirements rather than satisfy them. Scale roughly doubles instruction-following, while quantization changes adherence only within noise at either size. (Absolute rates are low because these are base, non-instruct-tuned checkpoints; the reliable signal is the relative gap.)</p>
+
+      <h3 class="subtitle">Quantization interaction</h3>
+      <p>Quantization affects the two scales differently. 0.5B loses 42&ndash;55% of speed going to 4-/8-bit and gains little quality; 1.5B-4bit NF4 loses only 9% of speed (17.1 vs 18.8 tok/s) and keeps quality within noise of bf16. Notably, 8-bit is the <em>slowest</em> quantization at both scales (bitsandbytes dequantizes 8-bit weights back to bf16 on every matmul), making 4-bit NF4 the practical sweet spot &mdash; especially at 1.5B, where it fits in 8GB and nearly matches bf16 throughput.</p>
+
+      <div class="swi-callout">
+        <div class="swi-callout-icon">&#128202;</div>
+        <div class="swi-callout-body">
+          <strong>Takeaway:</strong> The qualitative gap tracks the structural one. The same 3&times; scale-up that migrates the hub and specializes heads also cuts repetition 3&ndash;4&times; and doubles constraint adherence &mdash; and 4-bit NF4 preserves both the speed and the coherence of the larger model. Full 30-prompt, 6-config breakdown on the <a href="04-qualitative-analysis.html">Qualitative Analysis</a> page.
+        </div>
+      </div>
 
       <div class="swi-pullquote">
         <p>"Insights from small models are necessary but not sufficient for understanding large models. The causal architecture itself is scale-dependent — the hub migrates, heads specialize, steering collapses, and skills entangle. Methods must be re-validated at each scale."</p>

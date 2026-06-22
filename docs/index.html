@@ -181,6 +181,7 @@
         <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
         <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
         <a href="03-comparison-analysis.html">Comparison</a>
+        <a href="04-qualitative-analysis.html">Qualitative</a>
       </div>
     </div>
   </div>
@@ -219,7 +220,7 @@
 
     <!-- ANALYSIS POSTS -->
     <div class="tier-header">Analysis Posts</div>
-    <div class="tier-desc">Three studies: a complete atlas of the 0.5B model, a scaling study at 1.5B, and a head-to-head comparison.</div>
+    <div class="tier-desc">Four studies: a complete atlas of the 0.5B model, a scaling study at 1.5B, a head-to-head comparison, and a qualitative vibe check across 6 configs.</div>
 
     <div class="paper-grid">
       <a class="paper-card" href="01-qwen05b-analysis.html">
@@ -239,6 +240,12 @@
         <h3>0.5B vs 1.5B: What Changes at 3&times; Scale?</h3>
         <div class="paper-meta">Cross-model comparison</div>
         <div class="paper-tagline">Side-by-side: architecture, universal hub layer, MLP dominance, head specialization, LoRA concentration, circuit lock-in, knockout selectivity, and layer-skipping viability across a 3&times; parameter scale-up.</div>
+      </a>
+      <a class="paper-card" href="04-qualitative-analysis.html" style="border-left: 4px solid #fa8c16;">
+        <div class="paper-num" style="color: #fa8c16;">04 &middot; QUALITATIVE</div>
+        <h3>Qualitative Analysis: The Vibe Check</h3>
+        <div class="paper-meta">30 prompts &times; 6 configs &middot; Prose quality, creativity, and quantization impact</div>
+        <div class="paper-tagline">Does the output actually read well? 0.5B/1.5B at bf16, 8-bit, and 4-bit NF4 scored on speed, repetition &amp; degeneration, and constraint adherence. Finding: 1.5B is qualitatively much better (3&ndash;4&times; fewer loops, 2&times; better constraint following), and 4-bit NF4 is the sweet spot &mdash; 8-bit is the slowest quantization.</div>
       </a>
     </div>
 
