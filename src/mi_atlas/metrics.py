@@ -227,6 +227,23 @@ METRIC_FUNCTIONS = {
     "hallucination_flag": hallucination_flag,
 }
 
+def kl_divergence(base_logits: torch.Tensor, test_logits: torch.Tensor, dim: int = -1) -> float:
+    """Compute KL divergence between base and test logit distributions.
+    
+    Args:
+        base_logits: Reference distribution logits
+        test_logits: Test distribution logits
+        dim: Dimension to softmax over
+    
+    Returns:
+        Mean KL divergence (in nats)
+    """
+    base_probs = torch.softmax(base_logits.float(), dim=dim)
+    test_log_probs = torch.log_softmax(test_logits.float(), dim=dim)
+    base_log_probs = torch.log(base_probs + 1e-10)
+    kl = (base_probs * (base_log_probs - test_log_probs)).sum(dim=dim)
+    return kl.mean().item()
+
 
 def compute_metric(metric_type: str, **kwargs) -> float:
     """Compute a metric by name."""
