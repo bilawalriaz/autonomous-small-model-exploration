@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MI-Atlas — Mechanistic Interpretability of Small Language Models</title>
-  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 22 experiments mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation.">
+  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 35 experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -182,6 +182,7 @@
         <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
         <a href="03-comparison-analysis.html">Comparison</a>
         <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="05-phase2-repeatability.html">Phase 2</a>
       </div>
     </div>
   </div>
@@ -200,7 +201,7 @@
             Mechanistic Interpretability of Small Language Models
           </div>
           <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
-            22 experiments · Qwen2.5 · Causal interventions: ablation, patching, steering, LoRA perturbation
+            35 experiments &middot; Qwen2.5 &middot; 3 scales (0.5B, 1.5B, 3B) &middot; 2 architectures &middot; Causal interventions
           </div>
         </div>
       </div>
@@ -247,6 +248,12 @@
         <div class="paper-meta">30 prompts &times; 6 configs &middot; Prose quality, creativity, and quantization impact</div>
         <div class="paper-tagline">Does the output actually read well? 0.5B/1.5B at bf16, 8-bit, and 4-bit NF4 scored on speed, repetition &amp; degeneration, and constraint adherence. Finding: 1.5B is qualitatively much better (3&ndash;4&times; fewer loops, 2&times; better constraint following), and 4-bit NF4 is the sweet spot &mdash; 8-bit is the slowest quantization.</div>
       </a>
+      <a class="paper-card" href="05-phase2-repeatability.html" style="border-left: 4px solid #d4380d;">
+        <div class="paper-num" style="color: #d4380d;">05 &middot; PHASE 2</div>
+        <h3>Phase 2: Repeatable Small-Model Surgery</h3>
+        <div class="paper-meta">9 blocks &middot; 3 scales &middot; 2 architectures &middot; 35 experiments</div>
+        <div class="paper-tagline">Hub migration confirmed: L2 (8%) &rarr; L26 (93%) &rarr; L34 (94%). Steering did NOT collapse at 1.5B &mdash; it migrated and got 3&times; stronger. Cross-family hubs are architecture-specific. Each model needs its own atlas.</div>
+      </a>
     </div>
 
     <!-- METHOD -->
@@ -266,7 +273,7 @@
 
     <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
       <p style="font-size: 0.9rem; color: #666; margin: 0;">
-        22 experiments · 12 task families · 10 LoRA adapters · 5 checkpoints · 24 publication-quality plots<br>
+        35 experiments &middot; 16 task families &middot; 10 LoRA adapters &middot; 3 model scales &middot; 2 architectures<br>
         Fully reproducible: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">python scripts/run_*.py</code>
       </p>
     </div>
