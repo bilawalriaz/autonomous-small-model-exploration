@@ -1,0 +1,19 @@
+{
+  "registry_id": "P2-SCALE3-001",
+  "model": "Qwen/Qwen2.5-3B",
+  "n_layers": 36,
+  "n_heads": 16,
+  "d_model": 2048,
+  "seeds": [
+    1
+  ],
+  "quantization": "4bit_nf4",
+  "candidate_hub_layers": [
+    2,
+    18,
+    26,
+    34,
+    35
+  ],
+  "timestamp": "2026-06-22T12:46:27.004896+00:00"
+}
