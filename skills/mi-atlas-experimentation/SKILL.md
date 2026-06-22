@@ -1,7 +1,7 @@
 ---
 name: mi-atlas-experimentation
 description: Build a reproducible mechanistic interpretability atlas of any small LLM — component mapping, ablation, patching, steering, LoRA training perturbation, efficiency testing, and publication-ready reports.
-version: 1.0.0
+version: 2.0.0
 ---
 
 # MI-Atlas Experimentation Skill
@@ -323,7 +323,7 @@ Every claim must include:
 8. **Head effects are small in small models:** In 0.5B models, individual head ablation gives ~200x smaller effects than layer ablation. Don't expect specialist heads like in larger models.
 9. **Early exit doesn't work naively:** Projecting intermediate hidden states through lm_head fails because each layer transforms the residual. L22's output is L23's input, not the final representation.
 10. **Adapter norm != functional effect location:** In the original ablation, general layer importance peaks at L0-L2. But adapter-SPECIFIC importance (measured by adapter-only ablation) peaks at L19-L23. Don't conflate these.
-11. **Model size changes everything:** The universal hub moves from L2 (0.5B) to L26 (1.5B). Head specialization increases 22x. Steering sensitivity drops 70x. Skill knockout selectivity drops from 11654x to 0.24x. MLPs become 3x less important. The atlas is NOT transferable across scales — each model needs its own.
+11. **Model size changes everything:** The universal hub moves from L2 (0.5B) to L26 (1.5B) to L34 (3B). Head specialization increases 22x. Skill knockout selectivity drops from 11654x to 0.24x. MLPs become 3x less important. The atlas is NOT transferable across scales — each model needs its own. **UPDATE (Phase 2):** Steering did NOT collapse at 1.5B as originally believed — the Phase 1 conclusion was an artifact of only testing L2. Phase 2 steering migration showed L6 (+3.14), L21 (+4.64), L26 (-5.88), and multi-layer (-7.20) all produce strong steering effects at 1.5B. Steering leverage MIGRATED to different layers, not disappeared. Always test steering at ALL candidate hub layers, not just the 0.5B hub location.
 12. **1.5B training on 8GB:** Load in bf16 (~3GB), batch_size=1, gradient_accumulation_steps=2, gradient_checkpointing=True, max_length=256. The vocab projection (logits.float()) needs ~594MB — fp32 model will OOM.
 13. **Head ablation hook signature:** `register_forward_pre_hook` takes `(module, args)` not `(module, input, output)`. The hook returns a tuple of modified args.
 14. **Trainer needs labels:** HuggingFace Trainer requires `labels` in the dataset for causal LM. Add `tokenized["labels"] = tokenized["input_ids"].copy()` in the tokenize function.
@@ -331,20 +331,221 @@ Every claim must include:
 16. **GGUF conversion needs sentencepiece:** The `convert_hf_to_gguf.py` script requires the `sentencepiece` package. Install it in the venv: `pip install sentencepiece`. The script also needs a local model directory path, not a HF model name — use `snapshot_download()` first.
 17. **4bit NF4 is the sweet spot, not 8bit:** Testing showed 8bit is actually the SLOWEST quantization (bitsandbytes 8bit has more dequantization overhead than 4bit NF4). On 1.5B: bf16=18.8 tok/s, 8bit=9.0 tok/s (52% slower), 4bit=17.1 tok/s (only 9% slower). Use 4bit NF4 as default.
 18. **Prompt library is a git submodule:** The `prompts/` directory is a submodule from `bilawalriaz/mi-prompt-library`. Run `git submodule update --init` after cloning. Add new prompts to the prompt library repo directly.
+19. **BitsAndBytesConfig for 8bit:** Do NOT pass `bnb_4bit_quant_type` when using 8bit mode — it must be a string and will crash if set to None. Only pass it for 4bit mode (`bnb_4bit_quant_type="nf4"`). Use a kwargs dict and conditionally add the key.
+20. **llama.cpp binary paths:** The binaries are at `~/llama.cpp/build/bin/` (llama-cli, llama-quantize, etc.), NOT `~/llama-cpp-build/build/bin/`. The conversion script is at `~/llama.cpp/convert_hf_to_gguf.py`. After `git pull` + rebuild, set `export LD_LIBRARY_PATH=~/llama.cpp/build/bin:$LD_LIBRARY_PATH` or llama-cli will fail with symbol lookup errors.
+21. **GGUF conversion needs local model path:** `convert_hf_to_gguf.py` requires a local directory, not a HF model name. Use `snapshot_download("Qwen/Qwen2.5-0.5B")` first, then pass the returned path to the converter.
+22. **8bit is slower than 4bit (counterintuitive):** bitsandbytes 8bit uses row-wise quantization with online dequantization per matmul. 4bit NF4 uses block-wise quantization with pre-computed dequant tables. On 1.5B: bf16=18.8 tok/s, 8bit=9.0 tok/s (52% slower), 4bit=17.1 tok/s (only 9% slower). Don't assume higher precision = faster.
+23. **GQA head dimension vs head count in patching hooks:** When writing activation patching hooks for GQA models (Qwen2.5, Llama 3, etc.), do NOT confuse `n_heads` (query heads) with `d_head` (head dimension). In Qwen2.5-3B: n_heads=16, d_head=128. Patching code that reshapes using `n_heads` where it should use `d_head` will crash with `size mismatch: tensor a (16) must match tensor b (128)`. The fix: always use `model.config.head_dim` or `d_model // n_heads` for reshaping, and be aware that GQA has fewer KV heads than Q heads. Test patching hooks on a single layer before running full sweeps.
+24. **Subagent file conflicts when delegating script writing:** When dispatching parallel subagents to write experiment scripts for the same repo, multiple agents may write to the same filename. The last writer wins and silently overwrites. Mitigation: assign each subagent a unique filename, or write to a staging directory and merge after. Check for sibling-subagent warnings in write_file output.
+25. **Offline GPU host workflow:** When the GPU host is unavailable, build all infrastructure locally (configs, task suite, registry, report stubs, scripts). Push to git. When the host returns, `git pull` and run. The scaffold is the high-value work; GPU execution is mechanical.
+26. **Phase 2 orchestrator pattern:** Use `run_full_phase2_atlas.py` as the single entry point. It dispatches blocks by priority, handles model override, --force, --dry-run, and logs every run to `experiments/runs/`. Never run individual block scripts manually when the orchestrator exists.
+27. **Registry entries before experiments:** Write experiment registry entries BEFORE running experiments. This forces you to specify what you're testing and what would falsify it. The registry is the scientific contract; the results are the evidence.
+28. **Orchestrator-script argument contract:** The orchestrator passes `--model <full_model_id>` to every block script. ALL block scripts MUST accept `--model`, `--force`, and `--seed`. If a script's argparse omits `--model`, the orchestrator crashes with `unrecognized arguments`. Always include all three args, even if the script hardcodes the model.
+29. **Cross-model adapter loading fails:** LoRA adapters are model-specific — they encode weight deltas sized to the base model's hidden dimension. Loading a 0.5B adapter (d=896) into 1.5B (d=1536) causes `size mismatch`. Always use adapters trained on THAT model.
+30. **Metric function availability:** Subagents may import functions from `mi_atlas.metrics` that don't exist yet. Before dispatching script-writing subagents, audit `src/mi_atlas/` for required functions and add them FIRST.
+31. **Script output buffering with quantized models:** 3B+ models with 4-bit quantization appear to hang during ablation sweeps (10+ min per sweep with no output). This is normal — dequantization overhead. Use `python -u` for unbuffered output and check `ps aux | grep python` to confirm the process is alive.
+32. **LoRA effect testing in robustness scripts:** When testing LoRA effects across prompt lengths, the adapter must match the model. A 0.5B adapter cannot load into 1.5B. Either train model-specific adapters or gracefully skip with an error message.
 
-## Adapting to a New Model
+## Complete New Model Atlas Procedure
 
-To run this workflow on a different model:
+Use this procedure to run the full MI-Atlas on any new model (e.g., Qwen3.5-0.8B, Qwen2.5-Coder-3B, Phi-4-mini, etc.). The output is directly comparable to existing Qwen2.5-0.5B/1.5B/3B results.
 
-1. Update `config/model.yaml` with the new model name
-2. Verify it loads: `python -c "from mi_atlas.model_loader import load_model_hf; load_model_hf('<new_model>')"`
-3. Check architecture: ensure n_layers, n_heads, d_model are detected correctly
-4. Run tokenizer diagnostics: verify all task suite targets are single-token
-5. If GQA: confirm HF native hooks work (TransformerLens likely won't)
-6. If larger model (>1B): may need >8GB VRAM, consider quantization
-7. Run Phase 2 (component mapping) first — the atlas structure will differ from Qwen2.5-0.5B
-8. Update AGENTS.md with the new model details
-9. Start a fresh progress.md for the new model
+### Step 0: Check prerequisites
+
+```bash
+ssh <gpu_host>
+cd ~/work/autonomous-small-model-exploration
+source .venv/bin/activate
+
+# Check GPU
+python3 -c "import torch; print(torch.cuda.get_device_name(0), torch.cuda.mem_get_info())"
+
+# Check packages
+python3 -c "import transformers, peft, torch; print(f'transformers={transformers.__version__}, peft={peft.__version__}')"
+```
+
+### Step 1: Register the model in configs/models.yaml
+
+Add a new entry:
+
+```yaml
+  qwen35_08b:
+    id: "Qwen/Qwen3.5-0.8B"       # exact HF model ID
+    slug: "qwen35_0.8b"            # short slug for filenames
+    n_layers: null                  # filled after first load
+    n_heads: null
+    d_model: null
+    d_head: null
+    vocab_size: null
+    context_length: null
+    activation_function: null
+    dtype: "bfloat16"
+    vram_bf16_mb: null              # filled after first load
+    vram_4bit_mb: null
+    notes: "New model to atlas"
+```
+
+### Step 2: Verify model loads and detect architecture
+
+```bash
+python3 -c "
+from src.mi_atlas.model_loader import load_model_hf
+bundle = load_model_hf('Qwen/Qwen3.5-0.8B')
+print(f'Layers: {bundle.model.config.num_hidden_layers}')
+print(f'Heads: {bundle.model.config.num_attention_heads}')
+print(f'KV Heads: {bundle.model.config.num_key_value_heads}')
+print(f'd_model: {bundle.model.config.hidden_size}')
+print(f'd_head: {bundle.model.config.head_dim}')
+print(f'Vocab: {bundle.model.config.vocab_size}')
+import torch
+print(f'VRAM: {torch.cuda.memory_allocated()/1024**2:.0f}MB')
+"
+```
+
+Update configs/models.yaml with actual values. Also check:
+- Is it GQA? (num_key_value_heads < num_attention_heads) → HF hooks work, TransformerLens won't
+- Does it fit in bf16 on 8GB? If not, use 4bit NF4 for training
+
+### Step 3: Run tokenizer diagnostics
+
+```bash
+python scripts/run_smoke_tests.py  # includes tokenizer checks
+```
+
+Verify all task targets are single-token. If not, update task suite targets.
+
+### Step 4: Build the canonical task suite (if not already built)
+
+```bash
+python scripts/build_phase2_task_suite.py
+# Creates data/tasks/canonical_short/, canonical_long/, deobfuscation/
+# and data/tasks/task_manifest.json (34 entries, 4300 examples)
+```
+
+Skip if `data/tasks/task_manifest.json` already exists.
+
+### Step 5: Run Phase 1 atlas (component mapping + training perturbation)
+
+This is the core atlas — it identifies where behaviours live.
+
+```bash
+# Full Phase 1 atlas (runs all 7 phases)
+python scripts/run_full_atlas.py --model Qwen/Qwen3.5-0.8B --suffix qwen35_08b
+```
+
+Or run phases individually:
+
+```bash
+# Component mapping
+python scripts/run_layer_ablation.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_head_ablation.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_mlp_ablation.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_position_ablation.py --model Qwen/Qwen3.5-0.8B
+
+# Causal interventions
+python scripts/run_steering_sweep.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_patching_v1.py --model Qwen/Qwen3.5-0.8B
+
+# Training perturbation
+python scripts/train_lora_json.py --model Qwen/Qwen3.5-0.8B
+python scripts/compare_lora_ablation.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_lora_rank_sweep.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_lora_module_sweep.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_dataset_shard_ablation.py --model Qwen/Qwen3.5-0.8B
+
+# Advanced
+python scripts/run_cross_model_patching.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_skill_knockout.py --model Qwen/Qwen3.5-0.8B
+python scripts/run_adapter_ablation.py --model Qwen/Qwen3.5-0.8B
+
+# Efficiency
+python scripts/run_layer_skipping_early_exit.py --model Qwen/Qwen3.5-0.8B
+```
+
+### Step 6: Run Phase 2 blocks
+
+```bash
+# Run all Phase 2 blocks for the new model
+python scripts/run_full_phase2_atlas.py --model Qwen/Qwen3.5-0.8B --blocks all
+
+# Or specific blocks
+python scripts/run_full_phase2_atlas.py --model Qwen/Qwen3.5-0.8B --blocks B,C,D
+```
+
+### Step 7: Generate claim cards
+
+```bash
+# For each experiment
+python scripts/generate_claim_card.py \
+  --experiment P2-STEER-001 \
+  --result experiments/results/steering_migration_qwen35_08b.json \
+  --verdict confirmed
+```
+
+### Step 8: Add to cross-scale comparison table
+
+Update the cross-scale table in this skill file AND in `docs/05-phase2-repeatability.html`:
+
+| Metric | 0.5B | 1.5B | 3B | NEW_MODEL |
+|--------|------|------|-----|-----------|
+| Universal hub | L2 (8%) | L26 (93%) | L34 (94%) | L?? (??%) |
+| Hub total KL | 19.11 | 13.70 | 221.34 | ?.?? |
+| ... | ... | ... | ... | ... |
+
+### Step 9: Write reports
+
+```bash
+# Generate report for the new model
+# Write reports/phase2/NN_<model>_atlas.md following REPORT_TEMPLATES.md
+# Update reports/phase2/10_final_phase2_findings.md with new data point
+```
+
+### Step 10: Update GitHub Pages
+
+Add a new HTML page in `docs/` following the existing pattern:
+- `docs/06-<model>-analysis.html` — full atlas for the new model
+- Update `docs/index.html` navigation and card grid
+- Update `docs/05-phase2-repeatability.html` cross-scale table
+
+### Step 11: Commit and push
+
+```bash
+cd ~/work/autonomous-small-model-exploration
+git add -A && git commit -m "Atlas: <model_name> — hub at L?, key findings..."
+git push origin master
+```
+
+### Quick Atlas (reduced — for fast comparison)
+
+If you just want a quick comparison point (2-3 hours instead of 20+), run only the critical experiments:
+
+```bash
+python scripts/run_full_phase2_atlas.py --model <model_id> --blocks B,C,D
+```
+
+This gives you: hub identification (ablation), steering effectiveness, and the cross-scale comparison data points. Skip adapter surgery, deobfuscation, and separability for a quick pass.
+
+### VRAM Budget Table
+
+| Model Size | bf16 VRAM | 4bit NF4 VRAM | Training Config | Notes |
+|------------|-----------|---------------|-----------------|-------|
+| 0.3-0.5B | ~1GB | N/A | LoRA r=8, bs=2, 100 steps | Fits easily |
+| 0.8-1.5B | ~3GB | N/A | LoRA r=8, bs=1, grad_ckpt, 100 steps | Needs grad checkpointing |
+| 2-3B | ~6GB | ~2GB | LoRA r=8, bs=1, grad_ckpt, 100 steps | bf16 tight; 4bit recommended |
+| 7B | OOM | ~4GB | LoRA r=4, bs=1, grad_ckpt, 50 steps | 4bit only on 8GB |
+| 14B+ | OOM | ~7-8GB | LoRA r=2, bs=1, grad_ckpt | Barely fits on 8GB |
+
+### Cross-Family Checklist
+
+When testing a completely different architecture (not Qwen):
+
+1. Verify `model.config` has `num_hidden_layers`, `num_attention_heads`, `num_key_value_heads`, `hidden_size`, `head_dim`
+2. Check if GQA: `num_key_value_heads < num_attention_heads`
+3. Run layer ablation FIRST — the hub will be at a completely different position
+4. Don't assume Qwen's L2/L26/L34 pattern applies
+5. The model may have NO clear hub (distributed processing) — report this honestly
+6. Test steering at the top 3-5 ablation layers, not at Qwen's hub positions
+7. Cross-family comparison = "does each model have a hub, and where?" NOT "does this model match Qwen"
 
 ## Efficiency Findings Template
 
@@ -368,7 +569,7 @@ To run this workflow on a different model:
 
 5. **"Naive layer skipping doesn't work — here's what does"** — Honest negative result + constructive alternatives. Good for HN.
 
-6. **"What changes inside an LLM when you triple its size?"** — Cross-scale comparison. The universal hub migrates from L2 to L26. MLPs lose importance. Heads gain 22x specialization. Steering becomes 70x harder. Skill knockout goes from 11654x selective to non-functional. Practical punchline: small models are steerable, large models are robust.
+6. **"What changes inside an LLM when you triple its size?"** — Cross-scale comparison. The universal hub migrates from L2 to L26 to L34. MLPs lose importance. Heads gain 22x specialization. Steering MIGRATES (not collapses) — L21 at 1.5B is 2x stronger than L2 at 0.5B. Skill knockout goes from 11654x selective to non-functional. SmolLM2 hub at L0 shows architecture matters more than size. Practical punchline: each model scale needs its own atlas, and steering is about finding the right layer, not giving up.
 
 ## GitHub Push
 
@@ -409,26 +610,225 @@ These require additional GPU time or new data:
 11. **Layer fusion** — Train a student model that merges adjacent layers. Distillation from 24L to 18L.
 12. **Mixture of Depths (MoD)** — Train the model to conditionally skip layers. Requires architecture modification.
 
-## Cross-Scale Comparison: 0.5B vs 1.5B
+## Phase 2: Repeatable Small-Model Surgery Protocol
 
-Running the full atlas on Qwen2.5-1.5B revealed critical scaling insights:
+Phase 2 turns Phase 1's findings into a repeatable scientific protocol. Every experiment has a registry entry, claim card, and multi-seed replication.
 
-| Metric | 0.5B | 1.5B | Change |
-|--------|------|------|--------|
-| Architecture | 24L, 14H, d=896 | 28L, 12H, d=1536 | +4 layers, -2 heads, +71% width |
-| Universal hub | L2 (KL 19.11) | L26 (KL 13.70) | Hub moves from early to late |
-| MLP max effect | L0 (KL 8.12) | L0 (KL 2.58) | 3x weaker MLPs at scale |
-| Head max effect | 0.046 | 1.023 | 22x stronger head specialization |
-| Steering boost | 0.213 (3.3x) | 0.003 (~1x) | 70x harder to steer |
-| Skill knockout | L19, 11654x | L21, 0.24x | Selective suppression fails at scale |
-| Norm-effect corr | 0.85 | 0.54 | Weaker norm-effect relationship |
-| Cross-model best | L23 (100%) | L27 (99.9%) | Same pattern, shifted layers |
-| Layer skipping | 0% top-5 overlap | 0% top-5 overlap | All layers necessary in both |
+### Phase 2 Entry Points
+
+```bash
+# Run ALL Phase 2 blocks in priority order
+python scripts/run_full_phase2_atlas.py --model Qwen/Qwen2.5-0.5B --blocks all
+
+# Run specific blocks
+python scripts/run_full_phase2_atlas.py --blocks A,B,C --model Qwen/Qwen2.5-1.5B
+
+# List available blocks
+python scripts/run_full_phase2_atlas.py --list-blocks
+
+# Dry run (show what would execute)
+python scripts/run_full_phase2_atlas.py --blocks all --dry-run
+```
+
+### Phase 2 Block Map
+
+See `references/phase2-block-map.md` for full block map, VRAM budgets, dependency graph, hypothesis→block mapping, metrics per block, and quality gates.
+
+| Block | Script | Description | Priority |
+|-------|--------|-------------|----------|
+| A | run_phase2_parity.py | Fill missing 1.5B experiments | 1 |
+| B | run_phase2_steering_migration.py | Steering at hub layers + strength sweeps | 2 |
+| C | run_phase2_ablation_controls.py | Zero/mean/resample/patch comparison | 3 |
+| F | run_phase2_adapter_surgery.py | Adapter surgery + compatibility matrix | 4 |
+| H | run_phase2_deobfuscation.py | Deobfuscation subskill atlas | 5 |
+| G | run_phase2_skill_separability.py | Skill separability benchmark | 6 |
+| D | run_phase2_third_scale.py | 3B reduced atlas | 7 |
+| E | run_phase2_cross_family.py | Gemma/SmolLM cross-family | 8 |
+| I | run_phase2_long_task_robustness.py | Short/medium/long prompt robustness | 9 |
+
+### Phase 2 Hypotheses
+
+H1: Hub migration is real. Dominant hub moves from early layers in 0.5B to later/distributed in 1.5B+.
+H2: MLP/attention responsibility changes with scale. 0.5B → MLP dominance, 1.5B+ → attention head specialization.
+H3: Steering did not collapse at 1.5B; leverage moved from L2 to newly identified hubs.
+H4: Skill knockout selectivity decreases with scale (skills become entangled).
+H5: Fine-tuned transfer concentrates in final ~10% of layers (universal invariant).
+H6: LoRA weight norms insufficient; functional effect must be measured causally.
+H7: Naive layer skipping invalid; inference compression needs structured pruning + recovery.
+H8: Some adapters compose cleanly, others destructively interfere; compatibility predictable from localization.
+
+### Phase 2 Configuration
+
+All configs in `configs/` directory:
+- `models.yaml` — model identifiers, architecture metadata, VRAM budgets
+- `tasks.yaml` — 16 task families with scorers and length splits
+- `experiment_defaults.yaml` — seeds, ablation types, steering strengths, training config, metrics, weights
+
+### Phase 2 Registry
+
+`experiments/registry.jsonl` — one JSON line per experiment. Required fields:
+```json
+{"id": "P2-STEER-001", "title": "...", "hypothesis": "...", "models": [...], "tasks": [...],
+ "independent_variables": [...], "dependent_metrics": [...], "controls": [...],
+ "seeds": [1,2,3], "expected_artifacts": [...], "status": "planned|running|success|failed"}
+```
+
+### Claim Cards
+
+Every completed experiment must produce a claim card at `reports/claims/<experiment_id>.md`.
+Use: `python scripts/generate_claim_card.py --experiment P2-STEER-001 --result experiments/results/steering_migration_0.5b.json --verdict confirmed`
+
+Claim card sections: Claim, Result (metrics table), Controls, Seeds (per-seed table), Artifacts, Environment, Interpretation, Limitations, Verdict.
+
+### Run ID Format
+
+`P2_{experiment_id}_{model_slug}_{task_slug}_{YYYYMMDD_HHMMSS}_seed{seed}`
+
+All scripts must be resumable — skip completed run IDs unless `--force` is passed.
+
+### Procedure: Run standard Phase 2 atlas on a new model
+
+#### Purpose
+Generate a comparable causal/control-surface profile for a small LM.
+
+#### Inputs
+- model id (e.g., Qwen/Qwen2.5-3B)
+- model revision
+- tokenizer revision
+- task suite (configs/tasks.yaml)
+- output directory
+- seeds (default: [1,2,3])
+
+#### Command
+```bash
+python scripts/run_full_phase2_atlas.py --model <model_id> --blocks all
+```
+
+#### Outputs
+- Raw JSONL in experiments/results/
+- Summary CSV in results/summaries/
+- Plots in results/plots/
+- Claim cards in reports/claims/
+- Updated registry entries in experiments/registry.jsonl
+
+#### Quality gates
+- All controls completed
+- No missing seed results (3 seeds unless marked pilot)
+- Raw artifacts saved
+- Claim card generated
+- Limitations documented
+
+### Procedure: Add a new task family
+
+1. Add entry to `configs/tasks.yaml` with name, family, scorer, splits
+2. Add examples to `data/tasks/canonical_short/` and `data/tasks/canonical_long/`
+3. Implement scorer in `src/mi_atlas/task_suite.py` or as standalone function
+4. Update `data/tasks/task_manifest.json`
+5. Run on both models: `python scripts/run_phase2_parity.py --tasks <new_family>`
+
+### Procedure: Run steering sweeps
+
+```bash
+# Full steering migration sweep
+python scripts/run_phase2_steering_migration.py --model Qwen/Qwen2.5-1.5B
+
+# Tests: target/random/wrong-task/anti vectors
+# Strengths: [-4, -2, -1, -0.5, 0.5, 1, 2, 4]
+# Layers: L2, L6, L14, L21, L25, L26, L27 (1.5B)
+# Metrics: target_logit_delta, KL, task_accuracy, format_validity, collateral_damage
+```
+
+### Procedure: Run ablation controls
+
+```bash
+python scripts/run_phase2_ablation_controls.py --model Qwen/Qwen2.5-0.5B
+
+# Compares: zero, mean, resample_gaussian, clean→corrupt, corrupt→clean, random_patch
+# Per layer, per task family
+# Key output: rank-order stability across methods
+```
+
+### Procedure: Run adapter surgery
+
+```bash
+python scripts/run_phase2_adapter_surgery.py --model Qwen/Qwen2.5-0.5B
+
+# For each adapter:
+#   layer-wise norm, module-wise norm, causal ablation, rank truncation
+# Compatibility matrix: all-pairs merge + test
+# Output: adapter_compatibility_matrix.csv
+```
+
+### Procedure: Run skill separability scoring
+
+```bash
+python scripts/run_phase2_skill_separability.py --model Qwen/Qwen2.5-0.5B
+
+# 5 operations per skill: Insert, Remove, Move, Compose, Localize
+# SSS = 0.20*insertion + 0.20*removal + 0.15*transfer + 0.15*composition + 0.15*localization - 0.15*collateral
+# Output: skill_separability_scores.csv
+```
+
+### Procedure: Run deobfuscation surgery
+
+```bash
+python scripts/run_phase2_deobfuscation.py --model Qwen/Qwen2.5-0.5B
+
+# Subskills: variable_renaming, dead_code, string_decoding, constant_folding, control_flow, semantic_preservation
+# Tests: localization overlap, interference, transfer, joint vs composed
+# Eval: exact match, AST equivalence, hallucination rate
+```
+
+### Procedure: Generate reports
+
+After experiments complete:
+1. Generate claim cards for each experiment
+2. Write report per block in reports/phase2/
+3. Write reports/phase2/10_final_phase2_findings.md
+4. Update reports/negative_results.md
+5. Update reports/open_hypotheses.md
+6. Update reports/replication_status.md
+7. Push to GitHub
+
+### Distinguishing real findings from artifacts
+
+1. Check seed variance — if std > 50% of effect, finding is fragile
+2. Check ablation method — if finding disappears with mean ablation, it was an artifact of zeroing
+3. Check controls — if random vector has same effect as task vector, finding is not task-specific
+4. Check prompt length — if finding only works on short prompts, it may be a toy-task artifact
+5. Check model family — if finding doesn't replicate on a different architecture, it may be Qwen-specific
+
+---
+
+## Cross-Scale Comparison: 0.5B vs 1.5B vs 3B
+
+Running the full atlas across Qwen2.5-0.5B, 1.5B, and 3B revealed critical scaling insights:
+
+| Metric | 0.5B | 1.5B | 3B | Trend |
+|--------|------|------|-----|-------|
+| Architecture | 24L, 14H, d=896 | 28L, 12H, d=1536 | 36L, 16H, d=2048 | More layers + wider |
+| Universal hub | L2 (8% depth) | L26 (93% depth) | L34 (94% depth) | Hub migrates to final layers |
+| Hub total KL | 19.11 | 13.70 | 221.34 | Effect grows with scale |
+| MLP max effect | L0 (KL 8.12) | L0 (KL 2.58) | ? | 3x weaker MLPs at scale |
+| Head max effect | 0.046 | 1.023 | ? | 22x stronger head specialization |
+| Steering (best single-layer) | L2 +2.13 (3.3x) | L21 +4.64 | ? | MIGRATED, not collapsed |
+| Steering (multi-layer) | N/A | -7.20 | ? | Multi-layer steering stronger |
+| Skill knockout | L19, 11654x | L21, 0.24x | ? | Selective suppression fails at scale |
+| Norm-effect corr | 0.85 | 0.54 | ? | Weaker norm-effect relationship |
+| Cross-model best | L23 (100%) | L27 (99.9%) | ? | Same pattern, shifted layers |
+| Layer skipping | 0% top-5 overlap | 0% top-5 overlap | ? | All layers necessary in both |
 
 Key insight: **the atlas is NOT transferable across scales.** Each model size has a fundamentally different internal architecture. What works for 0.5B (L2 steering, L19 knockout, o_proj injection) does NOT work for 1.5B. New models need their own atlas.
+
+Phase 2 correction: **Steering did NOT collapse at 1.5B.** The Phase 1 conclusion that "steering sensitivity drops 70x" was an artifact of only testing L2 (the 0.5B hub) at 1.5B. Phase 2 steering migration tested all candidate hub layers and found strong effects at L6 (+3.14), L21 (+4.64), L26 (-5.88), and multi-layer distributed steering (-7.20). The steering leverage migrated to the new hub layers — it didn't disappear.
+
+Cross-family finding: **SmolLM2-1.7B has hub at L0** (all 4 task families, hub_consistent=True). This is completely different from Qwen's pattern (L2→L26→L34). Hub position is architecture-specific, not just depth-dependent. SmolLM2's steering effects were small but consistent (0.01-0.15 boost across tasks).
 
 What IS consistent across scales:
 - L0 MLP is always the top MLP (early processing matters universally)
 - Cross-model patching always shows monotonic recovery (late layers encode trained behavior)
 - Layer skipping always fails (all layers necessary)
 - Core circuit locks in early in training (step 10 pattern)
+- Hub position is architecture-specific, not just depth-dependent (SmolLM2 hub at L0 vs Qwen L2/L26/L34)
+
+See `references/phase2-execution-lessons.md` for real bugs encountered during Phase 2 orchestrator runs and their fixes.
