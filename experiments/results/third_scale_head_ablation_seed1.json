@@ -1,0 +1,434 @@
+{
+  "run_id": "P2_D02_qwen3b_head_ablation_20260622_125142_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "head_ablation",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T13:00:46.209209+00:00",
+  "n_layers": 36,
+  "n_heads": 16,
+  "tested_layers": [
+    2,
+    10,
+    18,
+    26,
+    30,
+    34
+  ],
+  "results": [
+    {
+      "layer": 2,
+      "heads": {
+        "head_00": {
+          "mean_effect": 1.0922444661458333,
+          "max_effect": 2.546875
+        },
+        "head_01": {
+          "mean_effect": 0.01192315419514974,
+          "max_effect": 0.0341796875
+        },
+        "head_02": {
+          "mean_effect": 0.5317789713541666,
+          "max_effect": 1.21875
+        },
+        "head_03": {
+          "mean_effect": 0.0313568115234375,
+          "max_effect": 0.07275390625
+        },
+        "head_04": {
+          "mean_effect": 0.0540320078531901,
+          "max_effect": 0.1552734375
+        },
+        "head_05": {
+          "mean_effect": 0.033489227294921875,
+          "max_effect": 0.09228515625
+        },
+        "head_06": {
+          "mean_effect": 0.08494377136230469,
+          "max_effect": 0.267578125
+        },
+        "head_07": {
+          "mean_effect": 0.018268247445424397,
+          "max_effect": 0.056884765625
+        },
+        "head_08": {
+          "mean_effect": 0.0148468017578125,
+          "max_effect": 0.034423828125
+        },
+        "head_09": {
+          "mean_effect": 0.022928873697916668,
+          "max_effect": 0.083984375
+        },
+        "head_10": {
+          "mean_effect": 0.015516281127929688,
+          "max_effect": 0.041748046875
+        },
+        "head_11": {
+          "mean_effect": 0.044342041015625,
+          "max_effect": 0.1298828125
+        },
+        "head_12": {
+          "mean_effect": 0.06810506184895833,
+          "max_effect": 0.12451171875
+        },
+        "head_13": {
+          "mean_effect": 0.04965972900390625,
+          "max_effect": 0.08935546875
+        },
+        "head_14": {
+          "mean_effect": 0.17279052734375,
+          "max_effect": 0.439453125
+        },
+        "head_15": {
+          "mean_effect": 0.032834370930989586,
+          "max_effect": 0.07080078125
+        }
+      }
+    },
+    {
+      "layer": 10,
+      "heads": {
+        "head_00": {
+          "mean_effect": 0.089569091796875,
+          "max_effect": 0.1708984375
+        },
+        "head_01": {
+          "mean_effect": 0.034136454264322914,
+          "max_effect": 0.20703125
+        },
+        "head_02": {
+          "mean_effect": 0.3144124348958333,
+          "max_effect": 0.84765625
+        },
+        "head_03": {
+          "mean_effect": 0.056437174479166664,
+          "max_effect": 0.171875
+        },
+        "head_04": {
+          "mean_effect": 0.051539103190104164,
+          "max_effect": 0.1982421875
+        },
+        "head_05": {
+          "mean_effect": 0.040419578552246094,
+          "max_effect": 0.09765625
+        },
+        "head_06": {
+          "mean_effect": 0.07672119140625,
+          "max_effect": 0.3359375
+        },
+        "head_07": {
+          "mean_effect": 0.011746724446614584,
+          "max_effect": 0.028564453125
+        },
+        "head_08": {
+          "mean_effect": 0.027013142903645832,
+          "max_effect": 0.1025390625
+        },
+        "head_09": {
+          "mean_effect": 0.023679097493489582,
+          "max_effect": 0.054443359375
+        },
+        "head_10": {
+          "mean_effect": 0.02100372314453125,
+          "max_effect": 0.0546875
+        },
+        "head_11": {
+          "mean_effect": 0.057581583658854164,
+          "max_effect": 0.18359375
+        },
+        "head_12": {
+          "mean_effect": 0.07994588216145833,
+          "max_effect": 0.2021484375
+        },
+        "head_13": {
+          "mean_effect": 0.051717122395833336,
+          "max_effect": 0.1201171875
+        },
+        "head_14": {
+          "mean_effect": 0.7722981770833334,
+          "max_effect": 3.59375
+        },
+        "head_15": {
+          "mean_effect": 0.062123616536458336,
+          "max_effect": 0.1689453125
+        }
+      }
+    },
+    {
+      "layer": 18,
+      "heads": {
+        "head_00": {
+          "mean_effect": 0.153076171875,
+          "max_effect": 0.33203125
+        },
+        "head_01": {
+          "mean_effect": 0.016617457071940105,
+          "max_effect": 0.03857421875
+        },
+        "head_02": {
+          "mean_effect": 0.2986246744791667,
+          "max_effect": 1.3984375
+        },
+        "head_03": {
+          "mean_effect": 0.07068379720052083,
+          "max_effect": 0.18359375
+        },
+        "head_04": {
+          "mean_effect": 0.07530593872070312,
+          "max_effect": 0.3359375
+        },
+        "head_05": {
+          "mean_effect": 0.06373914082845052,
+          "max_effect": 0.171875
+        },
+        "head_06": {
+          "mean_effect": 0.0665435791015625,
+          "max_effect": 0.251953125
+        },
+        "head_07": {
+          "mean_effect": 0.01390695571899414,
+          "max_effect": 0.0277099609375
+        },
+        "head_08": {
+          "mean_effect": 0.043796539306640625,
+          "max_effect": 0.1533203125
+        },
+        "head_09": {
+          "mean_effect": 0.041585286458333336,
+          "max_effect": 0.0751953125
+        },
+        "head_10": {
+          "mean_effect": 0.029154141743977863,
+          "max_effect": 0.1357421875
+        },
+        "head_11": {
+          "mean_effect": 0.054941813151041664,
+          "max_effect": 0.103515625
+        },
+        "head_12": {
+          "mean_effect": 0.11879475911458333,
+          "max_effect": 0.439453125
+        },
+        "head_13": {
+          "mean_effect": 0.043530782063802086,
+          "max_effect": 0.1123046875
+        },
+        "head_14": {
+          "mean_effect": 2.05419921875,
+          "max_effect": 9.0
+        },
+        "head_15": {
+          "mean_effect": 0.08551025390625,
+          "max_effect": 0.18359375
+        }
+      }
+    },
+    {
+      "layer": 26,
+      "heads": {
+        "head_00": {
+          "mean_effect": 0.07507832845052083,
+          "max_effect": 0.2158203125
+        },
+        "head_01": {
+          "mean_effect": 0.02069091796875,
+          "max_effect": 0.0576171875
+        },
+        "head_02": {
+          "mean_effect": 0.182464599609375,
+          "max_effect": 0.48828125
+        },
+        "head_03": {
+          "mean_effect": 0.046216328938802086,
+          "max_effect": 0.09765625
+        },
+        "head_04": {
+          "mean_effect": 0.058858235677083336,
+          "max_effect": 0.220703125
+        },
+        "head_05": {
+          "mean_effect": 0.12549336751302084,
+          "max_effect": 0.427734375
+        },
+        "head_06": {
+          "mean_effect": 0.0952301025390625,
+          "max_effect": 0.23828125
+        },
+        "head_07": {
+          "mean_effect": 0.018544514973958332,
+          "max_effect": 0.0322265625
+        },
+        "head_08": {
+          "mean_effect": 0.033665974934895836,
+          "max_effect": 0.08203125
+        },
+        "head_09": {
+          "mean_effect": 0.0473779042561849,
+          "max_effect": 0.083984375
+        },
+        "head_10": {
+          "mean_effect": 0.024045308430989582,
+          "max_effect": 0.05908203125
+        },
+        "head_11": {
+          "mean_effect": 0.047999064127604164,
+          "max_effect": 0.10498046875
+        },
+        "head_12": {
+          "mean_effect": 0.09935251871744792,
+          "max_effect": 0.3125
+        },
+        "head_13": {
+          "mean_effect": 0.049285888671875,
+          "max_effect": 0.087890625
+        },
+        "head_14": {
+          "mean_effect": 1.295379638671875,
+          "max_effect": 4.59375
+        },
+        "head_15": {
+          "mean_effect": 0.0728899637858073,
+          "max_effect": 0.216796875
+        }
+      }
+    },
+    {
+      "layer": 30,
+      "heads": {
+        "head_00": {
+          "mean_effect": 0.050142923990885414,
+          "max_effect": 0.1484375
+        },
+        "head_01": {
+          "mean_effect": 0.026415506998697918,
+          "max_effect": 0.0498046875
+        },
+        "head_02": {
+          "mean_effect": 0.5203043619791666,
+          "max_effect": 2.84375
+        },
+        "head_03": {
+          "mean_effect": 0.09126536051432292,
+          "max_effect": 0.333984375
+        },
+        "head_04": {
+          "mean_effect": 0.061030069986979164,
+          "max_effect": 0.1943359375
+        },
+        "head_05": {
+          "mean_effect": 0.09857940673828125,
+          "max_effect": 0.40625
+        },
+        "head_06": {
+          "mean_effect": 0.20342508951822916,
+          "max_effect": 0.9609375
+        },
+        "head_07": {
+          "mean_effect": 0.017838795979817707,
+          "max_effect": 0.03125
+        },
+        "head_08": {
+          "mean_effect": 0.034182230631510414,
+          "max_effect": 0.06005859375
+        },
+        "head_09": {
+          "mean_effect": 0.03412501017252604,
+          "max_effect": 0.08837890625
+        },
+        "head_10": {
+          "mean_effect": 0.023829142252604168,
+          "max_effect": 0.041259765625
+        },
+        "head_11": {
+          "mean_effect": 0.057111104329427086,
+          "max_effect": 0.1591796875
+        },
+        "head_12": {
+          "mean_effect": 0.20725631713867188,
+          "max_effect": 0.90234375
+        },
+        "head_13": {
+          "mean_effect": 0.030420939127604168,
+          "max_effect": 0.0625
+        },
+        "head_14": {
+          "mean_effect": 0.9517822265625,
+          "max_effect": 2.0
+        },
+        "head_15": {
+          "mean_effect": 0.12433624267578125,
+          "max_effect": 0.59375
+        }
+      }
+    },
+    {
+      "layer": 34,
+      "heads": {
+        "head_00": {
+          "mean_effect": 0.07077789306640625,
+          "max_effect": 0.1611328125
+        },
+        "head_01": {
+          "mean_effect": 0.04503758748372396,
+          "max_effect": 0.0927734375
+        },
+        "head_02": {
+          "mean_effect": 0.2581583658854167,
+          "max_effect": 1.3203125
+        },
+        "head_03": {
+          "mean_effect": 0.04499212900797526,
+          "max_effect": 0.1337890625
+        },
+        "head_04": {
+          "mean_effect": 0.040760040283203125,
+          "max_effect": 0.0625
+        },
+        "head_05": {
+          "mean_effect": 0.042667388916015625,
+          "max_effect": 0.1064453125
+        },
+        "head_06": {
+          "mean_effect": 0.057543436686197914,
+          "max_effect": 0.2333984375
+        },
+        "head_07": {
+          "mean_effect": 0.031598409016927086,
+          "max_effect": 0.07763671875
+        },
+        "head_08": {
+          "mean_effect": 0.04316838582356771,
+          "max_effect": 0.08544921875
+        },
+        "head_09": {
+          "mean_effect": 0.040659586588541664,
+          "max_effect": 0.06689453125
+        },
+        "head_10": {
+          "mean_effect": 0.038014729817708336,
+          "max_effect": 0.07763671875
+        },
+        "head_11": {
+          "mean_effect": 0.041941324869791664,
+          "max_effect": 0.08349609375
+        },
+        "head_12": {
+          "mean_effect": 0.07873026529947917,
+          "max_effect": 0.1572265625
+        },
+        "head_13": {
+          "mean_effect": 0.027369181315104168,
+          "max_effect": 0.042236328125
+        },
+        "head_14": {
+          "mean_effect": 10.162760416666666,
+          "max_effect": 19.875
+        },
+        "head_15": {
+          "mean_effect": 0.08014424641927083,
+          "max_effect": 0.220703125
+        }
+      }
+    }
+  ]
+}
