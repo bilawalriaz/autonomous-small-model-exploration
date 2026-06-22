@@ -1,0 +1,2806 @@
+{
+  "family": "variable_renaming",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "variable_renaming_train_0000",
+      "prompt": "x = 21\ncount = x + 27\nprint(count)\n# Rename x to count. What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x",
+        "new_name": "count",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0001",
+      "prompt": "y = 26\nresult = y * 2\n# Rename y to total. What is result?\n",
+      "target": "52",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y",
+        "new_name": "total",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0002",
+      "prompt": "z = 28\nvalue = z\nprint(value)\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "z",
+        "new_name": "value",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0003",
+      "prompt": "a = [4, 7, 3]\nfirst = a[0]\n# Rename a to start. What is first?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "a",
+        "new_name": "start",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0004",
+      "prompt": "b = 22\nif b > 41:\n    print('yes')\nelse:\n    print('no')\n# Rename b to end. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "b",
+        "new_name": "end",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0005",
+      "prompt": "c = 3\nstep = c + 20\nprint(step)\n# Rename c to step. What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "c",
+        "new_name": "step",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0006",
+      "prompt": "i = 29\nresult = i * 2\n# Rename i to index. What is result?\n",
+      "target": "58",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "i",
+        "new_name": "index",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0007",
+      "prompt": "j = 15\nposition = j\nprint(position)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "j",
+        "new_name": "position",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0008",
+      "prompt": "n = [3, 1, 9]\nfirst = n[0]\n# Rename n to size. What is first?\n",
+      "target": "3",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "n",
+        "new_name": "size",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0009",
+      "prompt": "m = 40\nif m > 22:\n    print('yes')\nelse:\n    print('no')\n# Rename m to length. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "m",
+        "new_name": "length",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0010",
+      "prompt": "tmp = 9\nbuffer = tmp + 39\nprint(buffer)\n# Rename tmp to buffer. What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "tmp",
+        "new_name": "buffer",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0011",
+      "prompt": "val = 35\nresult = val * 2\n# Rename val to input_num. What is result?\n",
+      "target": "70",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "val",
+        "new_name": "input_num",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0012",
+      "prompt": "res = 47\noutput = res\nprint(output)\n# What prints?\n",
+      "target": "47",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "res",
+        "new_name": "output",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0013",
+      "prompt": "data = [5, 5, 8]\nfirst = data[0]\n# Rename data to items. What is first?\n",
+      "target": "5",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "data",
+        "new_name": "items",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0014",
+      "prompt": "flag = 5\nif flag > 42:\n    print('yes')\nelse:\n    print('no')\n# Rename flag to is_ready. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "flag",
+        "new_name": "is_ready",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0015",
+      "prompt": "msg = 4\ngreeting = msg + 34\nprint(greeting)\n# Rename msg to greeting. What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "msg",
+        "new_name": "greeting",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0016",
+      "prompt": "arr = 14\nresult = arr * 2\n# Rename arr to elements. What is result?\n",
+      "target": "28",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "arr",
+        "new_name": "elements",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0017",
+      "prompt": "cnt = 35\ncounter = cnt\nprint(counter)\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "cnt",
+        "new_name": "counter",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0018",
+      "prompt": "idx = [6, 3, 4]\nfirst = idx[0]\n# Rename idx to offset. What is first?\n",
+      "target": "6",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "idx",
+        "new_name": "offset",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0019",
+      "prompt": "ptr = 11\nif ptr > 24:\n    print('yes')\nelse:\n    print('no')\n# Rename ptr to cursor. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "ptr",
+        "new_name": "cursor",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0020",
+      "prompt": "buf = 22\ncache = buf + 27\nprint(cache)\n# Rename buf to cache. What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "buf",
+        "new_name": "cache",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0021",
+      "prompt": "str = 14\nresult = str * 2\n# Rename str to text. What is result?\n",
+      "target": "28",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "str",
+        "new_name": "text",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0022",
+      "prompt": "num = 47\namount = num\nprint(amount)\n# What prints?\n",
+      "target": "47",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "num",
+        "new_name": "amount",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0023",
+      "prompt": "lst = [0, 8, 1]\nfirst = lst[0]\n# Rename lst to records. What is first?\n",
+      "target": "0",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "lst",
+        "new_name": "records",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0024",
+      "prompt": "d = 33\nif d > 26:\n    print('yes')\nelse:\n    print('no')\n# Rename d to mapping. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "d",
+        "new_name": "mapping",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0025",
+      "prompt": "s = 32\nsequence = s + 3\nprint(sequence)\n# Rename s to sequence. What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "s",
+        "new_name": "sequence",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0026",
+      "prompt": "t = 11\nresult = t * 2\n# Rename t to timestamp. What is result?\n",
+      "target": "22",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "t",
+        "new_name": "timestamp",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0027",
+      "prompt": "f = 20\nhandler = f\nprint(handler)\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "f",
+        "new_name": "handler",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0028",
+      "prompt": "r = [3, 0, 4]\nfirst = r[0]\n# Rename r to response. What is first?\n",
+      "target": "3",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "r",
+        "new_name": "response",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0029",
+      "prompt": "p = 48\nif p > 8:\n    print('yes')\nelse:\n    print('no')\n# Rename p to parameter. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "p",
+        "new_name": "parameter",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0030",
+      "prompt": "v = 25\nvariable = v + 42\nprint(variable)\n# Rename v to variable. What prints?\n",
+      "target": "67",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "v",
+        "new_name": "variable",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0031",
+      "prompt": "w = 26\nresult = w * 2\n# Rename w to width. What is result?\n",
+      "target": "52",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "w",
+        "new_name": "width",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0032",
+      "prompt": "h = 48\nheight = h\nprint(height)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "h",
+        "new_name": "height",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0033",
+      "prompt": "x1 = [1, 8, 6]\nfirst = x1[0]\n# Rename x1 to left. What is first?\n",
+      "target": "1",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "x1",
+        "new_name": "left",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0034",
+      "prompt": "x2 = 2\nif x2 > 1:\n    print('yes')\nelse:\n    print('no')\n# Rename x2 to right. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x2",
+        "new_name": "right",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0035",
+      "prompt": "y1 = 48\ntop = y1 + 35\nprint(top)\n# Rename y1 to top. What prints?\n",
+      "target": "83",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y1",
+        "new_name": "top",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0036",
+      "prompt": "y2 = 39\nresult = y2 * 2\n# Rename y2 to bottom. What is result?\n",
+      "target": "78",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y2",
+        "new_name": "bottom",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0037",
+      "prompt": "ok = 7\nsuccess = ok\nprint(success)\n# What prints?\n",
+      "target": "7",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "ok",
+        "new_name": "success",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0038",
+      "prompt": "err = [3, 9, 4]\nfirst = err[0]\n# Rename err to failure. What is first?\n",
+      "target": "3",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "err",
+        "new_name": "failure",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0039",
+      "prompt": "fn = 21\nif fn > 28:\n    print('yes')\nelse:\n    print('no')\n# Rename fn to callback. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "fn",
+        "new_name": "callback",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0040",
+      "prompt": "x = 33\ncount = x + 48\nprint(count)\n# Rename x to count. What prints?\n",
+      "target": "81",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x",
+        "new_name": "count",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0041",
+      "prompt": "y = 2\nresult = y * 2\n# Rename y to total. What is result?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y",
+        "new_name": "total",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0042",
+      "prompt": "z = 18\nvalue = z\nprint(value)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "z",
+        "new_name": "value",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0043",
+      "prompt": "a = [4, 9, 7]\nfirst = a[0]\n# Rename a to start. What is first?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "a",
+        "new_name": "start",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0044",
+      "prompt": "b = 25\nif b > 19:\n    print('yes')\nelse:\n    print('no')\n# Rename b to end. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "b",
+        "new_name": "end",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0045",
+      "prompt": "c = 28\nstep = c + 6\nprint(step)\n# Rename c to step. What prints?\n",
+      "target": "34",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "c",
+        "new_name": "step",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0046",
+      "prompt": "i = 15\nresult = i * 2\n# Rename i to index. What is result?\n",
+      "target": "30",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "i",
+        "new_name": "index",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0047",
+      "prompt": "j = 36\nposition = j\nprint(position)\n# What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "j",
+        "new_name": "position",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0048",
+      "prompt": "n = [8, 8, 3]\nfirst = n[0]\n# Rename n to size. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "n",
+        "new_name": "size",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0049",
+      "prompt": "m = 25\nif m > 2:\n    print('yes')\nelse:\n    print('no')\n# Rename m to length. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "m",
+        "new_name": "length",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0050",
+      "prompt": "tmp = 32\nbuffer = tmp + 47\nprint(buffer)\n# Rename tmp to buffer. What prints?\n",
+      "target": "79",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "tmp",
+        "new_name": "buffer",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0051",
+      "prompt": "val = 26\nresult = val * 2\n# Rename val to input_num. What is result?\n",
+      "target": "52",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "val",
+        "new_name": "input_num",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0052",
+      "prompt": "res = 49\noutput = res\nprint(output)\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "res",
+        "new_name": "output",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0053",
+      "prompt": "data = [7, 3, 9]\nfirst = data[0]\n# Rename data to items. What is first?\n",
+      "target": "7",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "data",
+        "new_name": "items",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0054",
+      "prompt": "flag = 2\nif flag > 26:\n    print('yes')\nelse:\n    print('no')\n# Rename flag to is_ready. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "flag",
+        "new_name": "is_ready",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0055",
+      "prompt": "msg = 50\ngreeting = msg + 15\nprint(greeting)\n# Rename msg to greeting. What prints?\n",
+      "target": "65",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "msg",
+        "new_name": "greeting",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0056",
+      "prompt": "arr = 29\nresult = arr * 2\n# Rename arr to elements. What is result?\n",
+      "target": "58",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "arr",
+        "new_name": "elements",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0057",
+      "prompt": "cnt = 31\ncounter = cnt\nprint(counter)\n# What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "cnt",
+        "new_name": "counter",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0058",
+      "prompt": "idx = [4, 5, 2]\nfirst = idx[0]\n# Rename idx to offset. What is first?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "idx",
+        "new_name": "offset",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0059",
+      "prompt": "ptr = 41\nif ptr > 6:\n    print('yes')\nelse:\n    print('no')\n# Rename ptr to cursor. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "ptr",
+        "new_name": "cursor",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0060",
+      "prompt": "buf = 7\ncache = buf + 36\nprint(cache)\n# Rename buf to cache. What prints?\n",
+      "target": "43",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "buf",
+        "new_name": "cache",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0061",
+      "prompt": "str = 11\nresult = str * 2\n# Rename str to text. What is result?\n",
+      "target": "22",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "str",
+        "new_name": "text",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0062",
+      "prompt": "num = 32\namount = num\nprint(amount)\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "num",
+        "new_name": "amount",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0063",
+      "prompt": "lst = [2, 6, 9]\nfirst = lst[0]\n# Rename lst to records. What is first?\n",
+      "target": "2",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "lst",
+        "new_name": "records",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0064",
+      "prompt": "d = 31\nif d > 34:\n    print('yes')\nelse:\n    print('no')\n# Rename d to mapping. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "d",
+        "new_name": "mapping",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0065",
+      "prompt": "s = 47\nsequence = s + 37\nprint(sequence)\n# Rename s to sequence. What prints?\n",
+      "target": "84",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "s",
+        "new_name": "sequence",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0066",
+      "prompt": "t = 49\nresult = t * 2\n# Rename t to timestamp. What is result?\n",
+      "target": "98",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "t",
+        "new_name": "timestamp",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0067",
+      "prompt": "f = 4\nhandler = f\nprint(handler)\n# What prints?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "f",
+        "new_name": "handler",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0068",
+      "prompt": "r = [6, 4, 5]\nfirst = r[0]\n# Rename r to response. What is first?\n",
+      "target": "6",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "r",
+        "new_name": "response",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0069",
+      "prompt": "p = 10\nif p > 3:\n    print('yes')\nelse:\n    print('no')\n# Rename p to parameter. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "p",
+        "new_name": "parameter",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0070",
+      "prompt": "v = 21\nvariable = v + 45\nprint(variable)\n# Rename v to variable. What prints?\n",
+      "target": "66",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "v",
+        "new_name": "variable",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0071",
+      "prompt": "w = 37\nresult = w * 2\n# Rename w to width. What is result?\n",
+      "target": "74",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "w",
+        "new_name": "width",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0072",
+      "prompt": "h = 27\nheight = h\nprint(height)\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "h",
+        "new_name": "height",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0073",
+      "prompt": "x1 = [3, 8, 7]\nfirst = x1[0]\n# Rename x1 to left. What is first?\n",
+      "target": "3",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "x1",
+        "new_name": "left",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0074",
+      "prompt": "x2 = 35\nif x2 > 32:\n    print('yes')\nelse:\n    print('no')\n# Rename x2 to right. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x2",
+        "new_name": "right",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0075",
+      "prompt": "y1 = 21\ntop = y1 + 42\nprint(top)\n# Rename y1 to top. What prints?\n",
+      "target": "63",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y1",
+        "new_name": "top",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0076",
+      "prompt": "y2 = 16\nresult = y2 * 2\n# Rename y2 to bottom. What is result?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y2",
+        "new_name": "bottom",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0077",
+      "prompt": "ok = 30\nsuccess = ok\nprint(success)\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "ok",
+        "new_name": "success",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0078",
+      "prompt": "err = [8, 1, 1]\nfirst = err[0]\n# Rename err to failure. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "err",
+        "new_name": "failure",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0079",
+      "prompt": "fn = 28\nif fn > 45:\n    print('yes')\nelse:\n    print('no')\n# Rename fn to callback. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "fn",
+        "new_name": "callback",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0080",
+      "prompt": "x = 5\ncount = x + 25\nprint(count)\n# Rename x to count. What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x",
+        "new_name": "count",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0081",
+      "prompt": "y = 9\nresult = y * 2\n# Rename y to total. What is result?\n",
+      "target": "18",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y",
+        "new_name": "total",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0082",
+      "prompt": "z = 1\nvalue = z\nprint(value)\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "z",
+        "new_name": "value",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0083",
+      "prompt": "a = [1, 2, 3]\nfirst = a[0]\n# Rename a to start. What is first?\n",
+      "target": "1",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "a",
+        "new_name": "start",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0084",
+      "prompt": "b = 29\nif b > 8:\n    print('yes')\nelse:\n    print('no')\n# Rename b to end. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "b",
+        "new_name": "end",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0085",
+      "prompt": "c = 3\nstep = c + 28\nprint(step)\n# Rename c to step. What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "c",
+        "new_name": "step",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0086",
+      "prompt": "i = 32\nresult = i * 2\n# Rename i to index. What is result?\n",
+      "target": "64",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "i",
+        "new_name": "index",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0087",
+      "prompt": "j = 41\nposition = j\nprint(position)\n# What prints?\n",
+      "target": "41",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "j",
+        "new_name": "position",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0088",
+      "prompt": "n = [8, 6, 6]\nfirst = n[0]\n# Rename n to size. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "n",
+        "new_name": "size",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0089",
+      "prompt": "m = 1\nif m > 19:\n    print('yes')\nelse:\n    print('no')\n# Rename m to length. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "m",
+        "new_name": "length",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0090",
+      "prompt": "tmp = 8\nbuffer = tmp + 28\nprint(buffer)\n# Rename tmp to buffer. What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "tmp",
+        "new_name": "buffer",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0091",
+      "prompt": "val = 19\nresult = val * 2\n# Rename val to input_num. What is result?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "val",
+        "new_name": "input_num",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0092",
+      "prompt": "res = 44\noutput = res\nprint(output)\n# What prints?\n",
+      "target": "44",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "res",
+        "new_name": "output",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0093",
+      "prompt": "data = [9, 5, 9]\nfirst = data[0]\n# Rename data to items. What is first?\n",
+      "target": "9",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "data",
+        "new_name": "items",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0094",
+      "prompt": "flag = 42\nif flag > 11:\n    print('yes')\nelse:\n    print('no')\n# Rename flag to is_ready. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "flag",
+        "new_name": "is_ready",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0095",
+      "prompt": "msg = 10\ngreeting = msg + 19\nprint(greeting)\n# Rename msg to greeting. What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "msg",
+        "new_name": "greeting",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0096",
+      "prompt": "arr = 34\nresult = arr * 2\n# Rename arr to elements. What is result?\n",
+      "target": "68",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "arr",
+        "new_name": "elements",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0097",
+      "prompt": "cnt = 14\ncounter = cnt\nprint(counter)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "cnt",
+        "new_name": "counter",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0098",
+      "prompt": "idx = [8, 9, 4]\nfirst = idx[0]\n# Rename idx to offset. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "idx",
+        "new_name": "offset",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0099",
+      "prompt": "ptr = 31\nif ptr > 30:\n    print('yes')\nelse:\n    print('no')\n# Rename ptr to cursor. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "ptr",
+        "new_name": "cursor",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0100",
+      "prompt": "buf = 14\ncache = buf + 22\nprint(cache)\n# Rename buf to cache. What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "buf",
+        "new_name": "cache",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0101",
+      "prompt": "str = 48\nresult = str * 2\n# Rename str to text. What is result?\n",
+      "target": "96",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "str",
+        "new_name": "text",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0102",
+      "prompt": "num = 9\namount = num\nprint(amount)\n# What prints?\n",
+      "target": "9",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "num",
+        "new_name": "amount",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0103",
+      "prompt": "lst = [7, 0, 5]\nfirst = lst[0]\n# Rename lst to records. What is first?\n",
+      "target": "7",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "lst",
+        "new_name": "records",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0104",
+      "prompt": "d = 27\nif d > 12:\n    print('yes')\nelse:\n    print('no')\n# Rename d to mapping. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "d",
+        "new_name": "mapping",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0105",
+      "prompt": "s = 10\nsequence = s + 31\nprint(sequence)\n# Rename s to sequence. What prints?\n",
+      "target": "41",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "s",
+        "new_name": "sequence",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0106",
+      "prompt": "t = 5\nresult = t * 2\n# Rename t to timestamp. What is result?\n",
+      "target": "10",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "t",
+        "new_name": "timestamp",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0107",
+      "prompt": "f = 20\nhandler = f\nprint(handler)\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "f",
+        "new_name": "handler",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0108",
+      "prompt": "r = [1, 8, 7]\nfirst = r[0]\n# Rename r to response. What is first?\n",
+      "target": "1",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "r",
+        "new_name": "response",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0109",
+      "prompt": "p = 22\nif p > 7:\n    print('yes')\nelse:\n    print('no')\n# Rename p to parameter. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "p",
+        "new_name": "parameter",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0110",
+      "prompt": "v = 4\nvariable = v + 40\nprint(variable)\n# Rename v to variable. What prints?\n",
+      "target": "44",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "v",
+        "new_name": "variable",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0111",
+      "prompt": "w = 30\nresult = w * 2\n# Rename w to width. What is result?\n",
+      "target": "60",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "w",
+        "new_name": "width",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0112",
+      "prompt": "h = 11\nheight = h\nprint(height)\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "h",
+        "new_name": "height",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0113",
+      "prompt": "x1 = [8, 3, 5]\nfirst = x1[0]\n# Rename x1 to left. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "x1",
+        "new_name": "left",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0114",
+      "prompt": "x2 = 41\nif x2 > 1:\n    print('yes')\nelse:\n    print('no')\n# Rename x2 to right. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x2",
+        "new_name": "right",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0115",
+      "prompt": "y1 = 13\ntop = y1 + 18\nprint(top)\n# Rename y1 to top. What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y1",
+        "new_name": "top",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0116",
+      "prompt": "y2 = 19\nresult = y2 * 2\n# Rename y2 to bottom. What is result?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y2",
+        "new_name": "bottom",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0117",
+      "prompt": "ok = 38\nsuccess = ok\nprint(success)\n# What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "ok",
+        "new_name": "success",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0118",
+      "prompt": "err = [9, 6, 4]\nfirst = err[0]\n# Rename err to failure. What is first?\n",
+      "target": "9",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "err",
+        "new_name": "failure",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0119",
+      "prompt": "fn = 36\nif fn > 35:\n    print('yes')\nelse:\n    print('no')\n# Rename fn to callback. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "fn",
+        "new_name": "callback",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0120",
+      "prompt": "x = 42\ncount = x + 43\nprint(count)\n# Rename x to count. What prints?\n",
+      "target": "85",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x",
+        "new_name": "count",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0121",
+      "prompt": "y = 13\nresult = y * 2\n# Rename y to total. What is result?\n",
+      "target": "26",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y",
+        "new_name": "total",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0122",
+      "prompt": "z = 38\nvalue = z\nprint(value)\n# What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "z",
+        "new_name": "value",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0123",
+      "prompt": "a = [3, 4, 2]\nfirst = a[0]\n# Rename a to start. What is first?\n",
+      "target": "3",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "a",
+        "new_name": "start",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0124",
+      "prompt": "b = 17\nif b > 37:\n    print('yes')\nelse:\n    print('no')\n# Rename b to end. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "b",
+        "new_name": "end",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0125",
+      "prompt": "c = 7\nstep = c + 9\nprint(step)\n# Rename c to step. What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "c",
+        "new_name": "step",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0126",
+      "prompt": "i = 34\nresult = i * 2\n# Rename i to index. What is result?\n",
+      "target": "68",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "i",
+        "new_name": "index",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0127",
+      "prompt": "j = 42\nposition = j\nprint(position)\n# What prints?\n",
+      "target": "42",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "j",
+        "new_name": "position",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0128",
+      "prompt": "n = [9, 9, 9]\nfirst = n[0]\n# Rename n to size. What is first?\n",
+      "target": "9",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "n",
+        "new_name": "size",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0129",
+      "prompt": "m = 18\nif m > 48:\n    print('yes')\nelse:\n    print('no')\n# Rename m to length. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "m",
+        "new_name": "length",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0130",
+      "prompt": "tmp = 40\nbuffer = tmp + 43\nprint(buffer)\n# Rename tmp to buffer. What prints?\n",
+      "target": "83",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "tmp",
+        "new_name": "buffer",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0131",
+      "prompt": "val = 31\nresult = val * 2\n# Rename val to input_num. What is result?\n",
+      "target": "62",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "val",
+        "new_name": "input_num",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0132",
+      "prompt": "res = 11\noutput = res\nprint(output)\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "res",
+        "new_name": "output",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0133",
+      "prompt": "data = [1, 9, 2]\nfirst = data[0]\n# Rename data to items. What is first?\n",
+      "target": "1",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "data",
+        "new_name": "items",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0134",
+      "prompt": "flag = 10\nif flag > 11:\n    print('yes')\nelse:\n    print('no')\n# Rename flag to is_ready. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "flag",
+        "new_name": "is_ready",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0135",
+      "prompt": "msg = 31\ngreeting = msg + 1\nprint(greeting)\n# Rename msg to greeting. What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "msg",
+        "new_name": "greeting",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0136",
+      "prompt": "arr = 21\nresult = arr * 2\n# Rename arr to elements. What is result?\n",
+      "target": "42",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "arr",
+        "new_name": "elements",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0137",
+      "prompt": "cnt = 4\ncounter = cnt\nprint(counter)\n# What prints?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "cnt",
+        "new_name": "counter",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0138",
+      "prompt": "idx = [6, 7, 5]\nfirst = idx[0]\n# Rename idx to offset. What is first?\n",
+      "target": "6",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "idx",
+        "new_name": "offset",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0139",
+      "prompt": "ptr = 20\nif ptr > 33:\n    print('yes')\nelse:\n    print('no')\n# Rename ptr to cursor. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "ptr",
+        "new_name": "cursor",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0140",
+      "prompt": "buf = 49\ncache = buf + 8\nprint(cache)\n# Rename buf to cache. What prints?\n",
+      "target": "57",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "buf",
+        "new_name": "cache",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0141",
+      "prompt": "str = 16\nresult = str * 2\n# Rename str to text. What is result?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "str",
+        "new_name": "text",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0142",
+      "prompt": "num = 26\namount = num\nprint(amount)\n# What prints?\n",
+      "target": "26",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "num",
+        "new_name": "amount",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0143",
+      "prompt": "lst = [7, 5, 4]\nfirst = lst[0]\n# Rename lst to records. What is first?\n",
+      "target": "7",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "lst",
+        "new_name": "records",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0144",
+      "prompt": "d = 34\nif d > 21:\n    print('yes')\nelse:\n    print('no')\n# Rename d to mapping. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "d",
+        "new_name": "mapping",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0145",
+      "prompt": "s = 34\nsequence = s + 6\nprint(sequence)\n# Rename s to sequence. What prints?\n",
+      "target": "40",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "s",
+        "new_name": "sequence",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0146",
+      "prompt": "t = 39\nresult = t * 2\n# Rename t to timestamp. What is result?\n",
+      "target": "78",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "t",
+        "new_name": "timestamp",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0147",
+      "prompt": "f = 11\nhandler = f\nprint(handler)\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "f",
+        "new_name": "handler",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0148",
+      "prompt": "r = [2, 6, 8]\nfirst = r[0]\n# Rename r to response. What is first?\n",
+      "target": "2",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "r",
+        "new_name": "response",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0149",
+      "prompt": "p = 29\nif p > 32:\n    print('yes')\nelse:\n    print('no')\n# Rename p to parameter. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "p",
+        "new_name": "parameter",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0150",
+      "prompt": "v = 45\nvariable = v + 17\nprint(variable)\n# Rename v to variable. What prints?\n",
+      "target": "62",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "v",
+        "new_name": "variable",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0151",
+      "prompt": "w = 44\nresult = w * 2\n# Rename w to width. What is result?\n",
+      "target": "88",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "w",
+        "new_name": "width",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0152",
+      "prompt": "h = 36\nheight = h\nprint(height)\n# What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "h",
+        "new_name": "height",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0153",
+      "prompt": "x1 = [2, 0, 5]\nfirst = x1[0]\n# Rename x1 to left. What is first?\n",
+      "target": "2",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "x1",
+        "new_name": "left",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0154",
+      "prompt": "x2 = 30\nif x2 > 50:\n    print('yes')\nelse:\n    print('no')\n# Rename x2 to right. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x2",
+        "new_name": "right",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0155",
+      "prompt": "y1 = 43\ntop = y1 + 23\nprint(top)\n# Rename y1 to top. What prints?\n",
+      "target": "66",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y1",
+        "new_name": "top",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0156",
+      "prompt": "y2 = 47\nresult = y2 * 2\n# Rename y2 to bottom. What is result?\n",
+      "target": "94",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y2",
+        "new_name": "bottom",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0157",
+      "prompt": "ok = 14\nsuccess = ok\nprint(success)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "ok",
+        "new_name": "success",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0158",
+      "prompt": "err = [6, 5, 2]\nfirst = err[0]\n# Rename err to failure. What is first?\n",
+      "target": "6",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "err",
+        "new_name": "failure",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0159",
+      "prompt": "fn = 48\nif fn > 1:\n    print('yes')\nelse:\n    print('no')\n# Rename fn to callback. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "fn",
+        "new_name": "callback",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0160",
+      "prompt": "x = 13\ncount = x + 29\nprint(count)\n# Rename x to count. What prints?\n",
+      "target": "42",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x",
+        "new_name": "count",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0161",
+      "prompt": "y = 24\nresult = y * 2\n# Rename y to total. What is result?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y",
+        "new_name": "total",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0162",
+      "prompt": "z = 13\nvalue = z\nprint(value)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "z",
+        "new_name": "value",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0163",
+      "prompt": "a = [5, 1, 5]\nfirst = a[0]\n# Rename a to start. What is first?\n",
+      "target": "5",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "a",
+        "new_name": "start",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0164",
+      "prompt": "b = 17\nif b > 33:\n    print('yes')\nelse:\n    print('no')\n# Rename b to end. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "b",
+        "new_name": "end",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0165",
+      "prompt": "c = 1\nstep = c + 39\nprint(step)\n# Rename c to step. What prints?\n",
+      "target": "40",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "c",
+        "new_name": "step",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0166",
+      "prompt": "i = 18\nresult = i * 2\n# Rename i to index. What is result?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "i",
+        "new_name": "index",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0167",
+      "prompt": "j = 42\nposition = j\nprint(position)\n# What prints?\n",
+      "target": "42",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "j",
+        "new_name": "position",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0168",
+      "prompt": "n = [6, 0, 4]\nfirst = n[0]\n# Rename n to size. What is first?\n",
+      "target": "6",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "n",
+        "new_name": "size",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0169",
+      "prompt": "m = 18\nif m > 41:\n    print('yes')\nelse:\n    print('no')\n# Rename m to length. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "m",
+        "new_name": "length",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0170",
+      "prompt": "tmp = 4\nbuffer = tmp + 37\nprint(buffer)\n# Rename tmp to buffer. What prints?\n",
+      "target": "41",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "tmp",
+        "new_name": "buffer",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0171",
+      "prompt": "val = 2\nresult = val * 2\n# Rename val to input_num. What is result?\n",
+      "target": "4",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "val",
+        "new_name": "input_num",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0172",
+      "prompt": "res = 31\noutput = res\nprint(output)\n# What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "res",
+        "new_name": "output",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0173",
+      "prompt": "data = [7, 2, 7]\nfirst = data[0]\n# Rename data to items. What is first?\n",
+      "target": "7",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "data",
+        "new_name": "items",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0174",
+      "prompt": "flag = 48\nif flag > 42:\n    print('yes')\nelse:\n    print('no')\n# Rename flag to is_ready. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "flag",
+        "new_name": "is_ready",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0175",
+      "prompt": "msg = 49\ngreeting = msg + 35\nprint(greeting)\n# Rename msg to greeting. What prints?\n",
+      "target": "84",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "msg",
+        "new_name": "greeting",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0176",
+      "prompt": "arr = 7\nresult = arr * 2\n# Rename arr to elements. What is result?\n",
+      "target": "14",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "arr",
+        "new_name": "elements",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0177",
+      "prompt": "cnt = 24\ncounter = cnt\nprint(counter)\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "cnt",
+        "new_name": "counter",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0178",
+      "prompt": "idx = [2, 2, 2]\nfirst = idx[0]\n# Rename idx to offset. What is first?\n",
+      "target": "2",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "idx",
+        "new_name": "offset",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0179",
+      "prompt": "ptr = 6\nif ptr > 27:\n    print('yes')\nelse:\n    print('no')\n# Rename ptr to cursor. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "ptr",
+        "new_name": "cursor",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0180",
+      "prompt": "buf = 8\ncache = buf + 4\nprint(cache)\n# Rename buf to cache. What prints?\n",
+      "target": "12",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "buf",
+        "new_name": "cache",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0181",
+      "prompt": "str = 29\nresult = str * 2\n# Rename str to text. What is result?\n",
+      "target": "58",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "str",
+        "new_name": "text",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0182",
+      "prompt": "num = 46\namount = num\nprint(amount)\n# What prints?\n",
+      "target": "46",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "num",
+        "new_name": "amount",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0183",
+      "prompt": "lst = [8, 4, 3]\nfirst = lst[0]\n# Rename lst to records. What is first?\n",
+      "target": "8",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "lst",
+        "new_name": "records",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0184",
+      "prompt": "d = 42\nif d > 40:\n    print('yes')\nelse:\n    print('no')\n# Rename d to mapping. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "d",
+        "new_name": "mapping",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0185",
+      "prompt": "s = 48\nsequence = s + 2\nprint(sequence)\n# Rename s to sequence. What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "s",
+        "new_name": "sequence",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0186",
+      "prompt": "t = 22\nresult = t * 2\n# Rename t to timestamp. What is result?\n",
+      "target": "44",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "t",
+        "new_name": "timestamp",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0187",
+      "prompt": "f = 21\nhandler = f\nprint(handler)\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "f",
+        "new_name": "handler",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0188",
+      "prompt": "r = [5, 8, 0]\nfirst = r[0]\n# Rename r to response. What is first?\n",
+      "target": "5",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "r",
+        "new_name": "response",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0189",
+      "prompt": "p = 43\nif p > 26:\n    print('yes')\nelse:\n    print('no')\n# Rename p to parameter. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "p",
+        "new_name": "parameter",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0190",
+      "prompt": "v = 27\nvariable = v + 43\nprint(variable)\n# Rename v to variable. What prints?\n",
+      "target": "70",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "v",
+        "new_name": "variable",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0191",
+      "prompt": "w = 43\nresult = w * 2\n# Rename w to width. What is result?\n",
+      "target": "86",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "w",
+        "new_name": "width",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0192",
+      "prompt": "h = 5\nheight = h\nprint(height)\n# What prints?\n",
+      "target": "5",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "h",
+        "new_name": "height",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0193",
+      "prompt": "x1 = [2, 4, 1]\nfirst = x1[0]\n# Rename x1 to left. What is first?\n",
+      "target": "2",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "x1",
+        "new_name": "left",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0194",
+      "prompt": "x2 = 12\nif x2 > 29:\n    print('yes')\nelse:\n    print('no')\n# Rename x2 to right. What prints?\n",
+      "target": "no",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "x2",
+        "new_name": "right",
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0195",
+      "prompt": "y1 = 3\ntop = y1 + 18\nprint(top)\n# Rename y1 to top. What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y1",
+        "new_name": "top",
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0196",
+      "prompt": "y2 = 39\nresult = y2 * 2\n# Rename y2 to bottom. What is result?\n",
+      "target": "78",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "y2",
+        "new_name": "bottom",
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0197",
+      "prompt": "ok = 45\nsuccess = ok\nprint(success)\n# What prints?\n",
+      "target": "45",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "ok",
+        "new_name": "success",
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0198",
+      "prompt": "err = [0, 4, 4]\nfirst = err[0]\n# Rename err to failure. What is first?\n",
+      "target": "0",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "old_name": "err",
+        "new_name": "failure",
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0199",
+      "prompt": "fn = 36\nif fn > 23:\n    print('yes')\nelse:\n    print('no')\n# Rename fn to callback. What prints?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "old_name": "fn",
+        "new_name": "callback",
+        "variant": "variant_4"
+      }
+    }
+  ]
+}

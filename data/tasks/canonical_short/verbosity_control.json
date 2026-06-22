@@ -1,0 +1,1306 @@
+{
+  "family": "verbosity_control",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "verbosity_train_0000",
+      "prompt": "What is the capital of France? Keep it to one word.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0001",
+      "prompt": "Is 7 a prime number? Just the number.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0002",
+      "prompt": "Convert 100 cm to meters. Just the number.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0003",
+      "prompt": "What color is the sky? Answer with one word only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0004",
+      "prompt": "How many sides does a triangle have? Just the number.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0005",
+      "prompt": "What is 2 + 2? Keep it to one word.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0006",
+      "prompt": "Name the first planet from the Sun. Yes or no only.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0007",
+      "prompt": "What programming language has a snake logo? Keep it to one word.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0008",
+      "prompt": "Is the Earth flat? Keep it to one word.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0009",
+      "prompt": "How many continents are there? Keep it to one word.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0010",
+      "prompt": "What is the capital of France? Keep it to one word.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0011",
+      "prompt": "Is 7 a prime number? Yes or no only.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0012",
+      "prompt": "Convert 100 cm to meters. Just the number.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0013",
+      "prompt": "What color is the sky? Keep it to one word.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0014",
+      "prompt": "How many sides does a triangle have? Just the number.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0015",
+      "prompt": "What is 2 + 2? Keep it to one word.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0016",
+      "prompt": "Name the first planet from the Sun. Answer with one word only.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0017",
+      "prompt": "What programming language has a snake logo? Just the number.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0018",
+      "prompt": "Is the Earth flat? Just the number.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0019",
+      "prompt": "How many continents are there? Answer with one word only.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0020",
+      "prompt": "What is the capital of France? Yes or no only.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0021",
+      "prompt": "Is 7 a prime number? Yes or no only.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0022",
+      "prompt": "Convert 100 cm to meters. Answer with one word only.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0023",
+      "prompt": "What color is the sky? Yes or no only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0024",
+      "prompt": "How many sides does a triangle have? Keep it to one word.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0025",
+      "prompt": "What is 2 + 2? Keep it to one word.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0026",
+      "prompt": "Name the first planet from the Sun. Keep it to one word.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0027",
+      "prompt": "What programming language has a snake logo? Answer with one word only.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0028",
+      "prompt": "Is the Earth flat? Single word answer:\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0029",
+      "prompt": "How many continents are there? Yes or no only.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0030",
+      "prompt": "What is the capital of France? Yes or no only.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0031",
+      "prompt": "Is 7 a prime number? Single word answer:\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0032",
+      "prompt": "Convert 100 cm to meters. Single word answer:\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0033",
+      "prompt": "What color is the sky? Keep it to one word.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0034",
+      "prompt": "How many sides does a triangle have? Answer with one word only.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0035",
+      "prompt": "What is 2 + 2? Keep it to one word.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0036",
+      "prompt": "Name the first planet from the Sun. Answer with one word only.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0037",
+      "prompt": "What programming language has a snake logo? Yes or no only.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0038",
+      "prompt": "Is the Earth flat? Yes or no only.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0039",
+      "prompt": "How many continents are there? Just the number.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0040",
+      "prompt": "What is the capital of France? Yes or no only.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0041",
+      "prompt": "Is 7 a prime number? Single word answer:\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0042",
+      "prompt": "Convert 100 cm to meters. Just the number.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0043",
+      "prompt": "What color is the sky? Answer with one word only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0044",
+      "prompt": "How many sides does a triangle have? Answer with one word only.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0045",
+      "prompt": "What is 2 + 2? Just the number.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0046",
+      "prompt": "Name the first planet from the Sun. Single word answer:\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0047",
+      "prompt": "What programming language has a snake logo? Yes or no only.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0048",
+      "prompt": "Is the Earth flat? Answer with one word only.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0049",
+      "prompt": "How many continents are there? Answer with one word only.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0050",
+      "prompt": "What is the capital of France? Single word answer:\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0051",
+      "prompt": "Is 7 a prime number? Just the number.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0052",
+      "prompt": "Convert 100 cm to meters. Single word answer:\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0053",
+      "prompt": "What color is the sky? Yes or no only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0054",
+      "prompt": "How many sides does a triangle have? Answer with one word only.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0055",
+      "prompt": "What is 2 + 2? Keep it to one word.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0056",
+      "prompt": "Name the first planet from the Sun. Keep it to one word.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0057",
+      "prompt": "What programming language has a snake logo? Yes or no only.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0058",
+      "prompt": "Is the Earth flat? Single word answer:\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0059",
+      "prompt": "How many continents are there? Keep it to one word.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0060",
+      "prompt": "What is the capital of France? Yes or no only.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0061",
+      "prompt": "Is 7 a prime number? Single word answer:\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0062",
+      "prompt": "Convert 100 cm to meters. Yes or no only.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0063",
+      "prompt": "What color is the sky? Yes or no only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0064",
+      "prompt": "How many sides does a triangle have? Yes or no only.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0065",
+      "prompt": "What is 2 + 2? Answer with one word only.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0066",
+      "prompt": "Name the first planet from the Sun. Single word answer:\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0067",
+      "prompt": "What programming language has a snake logo? Single word answer:\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0068",
+      "prompt": "Is the Earth flat? Answer with one word only.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0069",
+      "prompt": "How many continents are there? Keep it to one word.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0070",
+      "prompt": "What is the capital of France? Keep it to one word.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0071",
+      "prompt": "Is 7 a prime number? Keep it to one word.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0072",
+      "prompt": "Convert 100 cm to meters. Single word answer:\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0073",
+      "prompt": "What color is the sky? Answer with one word only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0074",
+      "prompt": "How many sides does a triangle have? Single word answer:\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0075",
+      "prompt": "What is 2 + 2? Single word answer:\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0076",
+      "prompt": "Name the first planet from the Sun. Single word answer:\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0077",
+      "prompt": "What programming language has a snake logo? Answer with one word only.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0078",
+      "prompt": "Is the Earth flat? Just the number.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0079",
+      "prompt": "How many continents are there? Keep it to one word.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0080",
+      "prompt": "What is the capital of France? Yes or no only.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0081",
+      "prompt": "Is 7 a prime number? Keep it to one word.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0082",
+      "prompt": "Convert 100 cm to meters. Yes or no only.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0083",
+      "prompt": "What color is the sky? Just the number.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0084",
+      "prompt": "How many sides does a triangle have? Just the number.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0085",
+      "prompt": "What is 2 + 2? Just the number.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0086",
+      "prompt": "Name the first planet from the Sun. Answer with one word only.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0087",
+      "prompt": "What programming language has a snake logo? Single word answer:\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0088",
+      "prompt": "Is the Earth flat? Keep it to one word.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0089",
+      "prompt": "How many continents are there? Yes or no only.\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0090",
+      "prompt": "What is the capital of France? Keep it to one word.\n",
+      "target": "Paris",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0091",
+      "prompt": "Is 7 a prime number? Just the number.\n",
+      "target": "yes",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0092",
+      "prompt": "Convert 100 cm to meters. Answer with one word only.\n",
+      "target": "1",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0093",
+      "prompt": "What color is the sky? Answer with one word only.\n",
+      "target": "blue",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0094",
+      "prompt": "How many sides does a triangle have? Yes or no only.\n",
+      "target": "3",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0095",
+      "prompt": "What is 2 + 2? Answer with one word only.\n",
+      "target": "4",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "single_digit",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0096",
+      "prompt": "Name the first planet from the Sun. Just the number.\n",
+      "target": "Mercury",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0097",
+      "prompt": "What programming language has a snake logo? Just the number.\n",
+      "target": "Python",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0098",
+      "prompt": "Is the Earth flat? Keep it to one word.\n",
+      "target": "no",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "yes_or_no",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0099",
+      "prompt": "How many continents are there? Single word answer:\n",
+      "target": "7",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "just_number",
+        "scoring_rubric": "Score 1.0 if response matches constraint exactly. Score 0.5 if response is correct but verbose. Score 0.0 if response is wrong or ignores constraint."
+      }
+    }
+  ]
+}

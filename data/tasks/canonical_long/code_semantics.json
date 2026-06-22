@@ -1,0 +1,1206 @@
+{
+  "family": "code_semantics",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "code_semantics_train_0000",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(5, 19)\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0001",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([4, 3, 8, 1, 3, 2]))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0002",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(7))\n# What prints?\n",
+      "target": "5040",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0003",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0004",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(18, 16)\nprint(result)\n# What prints?\n",
+      "target": "68",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0005",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 1, 7]))\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0006",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(1))\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0007",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0008",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(6, 3)\nprint(result)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0009",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([9, 9, 7, 7]))\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0010",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))\n# What prints?\n",
+      "target": "720",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0011",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('world'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0012",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(13, 18)\nprint(result)\n# What prints?\n",
+      "target": "62",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0013",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([5, 2, 6, 6]))\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0014",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0015",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0016",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(2, 3)\nprint(result)\n# What prints?\n",
+      "target": "10",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0017",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([8, 7, 8, 7, 5]))\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0018",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(8))\n# What prints?\n",
+      "target": "40320",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0019",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0020",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(5, 6)\nprint(result)\n# What prints?\n",
+      "target": "22",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0021",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 1, 10]))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0022",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))\n# What prints?\n",
+      "target": "720",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0023",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0024",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(15, 13)\nprint(result)\n# What prints?\n",
+      "target": "56",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0025",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([8, 3, 9, 10, 5]))\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0026",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0027",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('world'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0028",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(10, 16)\nprint(result)\n# What prints?\n",
+      "target": "52",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0029",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([1, 10, 9, 9, 10]))\n# What prints?\n",
+      "target": "39",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0030",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(7))\n# What prints?\n",
+      "target": "5040",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0031",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0032",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(11, 13)\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0033",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 3, 1, 4, 7]))\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0034",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\n# What prints?\n",
+      "target": "120",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0035",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('python'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0036",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(20, 11)\nprint(result)\n# What prints?\n",
+      "target": "62",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0037",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([6, 5, 3]))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0038",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0039",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0040",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(9, 16)\nprint(result)\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0041",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([4, 3, 5, 5, 10, 2]))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0042",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(4))\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0043",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0044",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(9, 5)\nprint(result)\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0045",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([4, 9, 9]))\n# What prints?\n",
+      "target": "22",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0046",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(3))\n# What prints?\n",
+      "target": "6",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0047",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('hello'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0048",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(20, 2)\nprint(result)\n# What prints?\n",
+      "target": "44",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0049",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([1, 8, 1, 6]))\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0050",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(4))\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0051",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0052",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(19, 14)\nprint(result)\n# What prints?\n",
+      "target": "66",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0053",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([9, 3, 8, 5, 2, 2]))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0054",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(8))\n# What prints?\n",
+      "target": "40320",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0055",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('level'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0056",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(16, 9)\nprint(result)\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0057",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 5, 2]))\n# What prints?\n",
+      "target": "10",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0058",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))\n# What prints?\n",
+      "target": "720",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_train_0059",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('hello'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0060",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(8, 3)\nprint(result)\n# What prints?\n",
+      "target": "22",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0061",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 9, 6, 5, 8]))\n# What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0062",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0063",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0064",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(11, 2)\nprint(result)\n# What prints?\n",
+      "target": "26",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0065",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([2, 9, 6, 4, 9, 1]))\n# What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0066",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(1))\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0067",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('world'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0068",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(5, 19)\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0069",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([4, 4, 5, 8, 3, 8]))\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0070",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(3))\n# What prints?\n",
+      "target": "6",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0071",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0072",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(16, 10)\nprint(result)\n# What prints?\n",
+      "target": "52",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0073",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([4, 2, 9, 4]))\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0074",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(1))\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0075",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('level'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0076",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(3, 16)\nprint(result)\n# What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0077",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 1, 7, 5]))\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0078",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(7))\n# What prints?\n",
+      "target": "5040",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_val_0079",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0080",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(19, 8)\nprint(result)\n# What prints?\n",
+      "target": "54",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0081",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([8, 9, 3, 5, 4]))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0082",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\n# What prints?\n",
+      "target": "120",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0083",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0084",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(16, 16)\nprint(result)\n# What prints?\n",
+      "target": "64",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0085",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([10, 6, 9, 8, 5, 2]))\n# What prints?\n",
+      "target": "40",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0086",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(4))\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0087",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('hello'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0088",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(10, 14)\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0089",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([6, 4, 7, 2, 3, 8]))\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0090",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(6))\n# What prints?\n",
+      "target": "720",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0091",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0092",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(4, 12)\nprint(result)\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0093",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([3, 8, 8, 10, 7, 4]))\n# What prints?\n",
+      "target": "40",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0094",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(1))\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0095",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))\n# What prints?\n",
+      "target": "True",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0096",
+      "prompt": "def calc(x, y):\n    z = x + y\n    return z * 2\n\nresult = calc(9, 17)\nprint(result)\n# What prints?\n",
+      "target": "52",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_0"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0097",
+      "prompt": "def sum_list(lst):\n    total = 0\n    for x in lst:\n        total += x\n    return total\n\nprint(sum_list([7, 1, 9, 6]))\n# What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_1"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0098",
+      "prompt": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\nprint(factorial(5))\n# What prints?\n",
+      "target": "120",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_2"
+      }
+    },
+    {
+      "task_id": "code_semantics_test_0099",
+      "prompt": "def is_palindrome(s):\n    return s == s[::-1]\n\nprint(is_palindrome('test'))\n# What prints?\n",
+      "target": "False",
+      "metadata": {
+        "family": "code_semantics",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "func_variant_3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1306 @@
+{
+  "family": "json_schema",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "json_schema_train_0000",
+      "prompt": "Create a JSON object with the following fields: tag=Eve_prod, level=683, active=True, score=785, role=Alice, city=Charlie_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Eve_prod\",\"level\":683,\"active\":true,\"score\":785,\"role\":\"Alice\",\"city\":\"Charlie_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0001",
+      "prompt": "Create a JSON object with the following fields: age=7, country=Frank_prod, city=Bob_prod, level=720, score=512. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":7,\"country\":\"Frank_prod\",\"city\":\"Bob_prod\",\"level\":720,\"score\":512}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0002",
+      "prompt": "Create a JSON object with the following fields: tag=Charlie, phone=Alice_prod, age=882, email=Eve_prod, role=Diana_prod, active=True. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Charlie\",\"phone\":\"Alice_prod\",\"age\":882,\"email\":\"Eve_prod\",\"role\":\"Diana_prod\",\"active\":true}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0003",
+      "prompt": "Create a JSON object with the following fields: name=Charlie_dev, role=Diana_test, age=249, phone=Eve_prod, level=80. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Charlie_dev\",\"role\":\"Diana_test\",\"age\":249,\"phone\":\"Eve_prod\",\"level\":80}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0004",
+      "prompt": "Create a JSON object with the following fields: active=False, score=927, city=Alice, level=522, email=Charlie_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"active\":false,\"score\":927,\"city\":\"Alice\",\"level\":522,\"email\":\"Charlie_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0005",
+      "prompt": "Create a JSON object with the following fields: age=149, active=True, city=Eve_dev, tag=Alice_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":149,\"active\":true,\"city\":\"Eve_dev\",\"tag\":\"Alice_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0006",
+      "prompt": "Create a JSON object with the following fields: country=Frank_test, tag=Charlie_dev, active=False, email=Eve. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Frank_test\",\"tag\":\"Charlie_dev\",\"active\":false,\"email\":\"Eve\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0007",
+      "prompt": "Create a JSON object with the following fields: name=Alice_test, active=True, tag=Alice_prod, country=Eve_dev, email=Eve_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Alice_test\",\"active\":true,\"tag\":\"Alice_prod\",\"country\":\"Eve_dev\",\"email\":\"Eve_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0008",
+      "prompt": "Create a JSON object with the following fields: city=Alice_dev, age=830, email=Frank, level=661, count=448, country=Eve_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Alice_dev\",\"age\":830,\"email\":\"Frank\",\"level\":661,\"count\":448,\"country\":\"Eve_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0009",
+      "prompt": "Create a JSON object with the following fields: email=Charlie_prod, phone=Charlie, tag=Frank_test, age=571. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Charlie_prod\",\"phone\":\"Charlie\",\"tag\":\"Frank_test\",\"age\":571}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0010",
+      "prompt": "Create a JSON object with the following fields: phone=Charlie_test, count=872, tag=Charlie_dev, email=Charlie_prod, city=Eve, active=False. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Charlie_test\",\"count\":872,\"tag\":\"Charlie_dev\",\"email\":\"Charlie_prod\",\"city\":\"Eve\",\"active\":false}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0011",
+      "prompt": "Create a JSON object with the following fields: count=701, level=370, tag=Frank_prod, name=Charlie_test, city=Bob_test, country=Bob_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":701,\"level\":370,\"tag\":\"Frank_prod\",\"name\":\"Charlie_test\",\"city\":\"Bob_test\",\"country\":\"Bob_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0012",
+      "prompt": "Create a JSON object with the following fields: city=Alice_test, age=519, level=855, count=904. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Alice_test\",\"age\":519,\"level\":855,\"count\":904}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0013",
+      "prompt": "Create a JSON object with the following fields: name=Diana_test, role=Bob_prod, city=Bob_dev, count=789, tag=Frank_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Diana_test\",\"role\":\"Bob_prod\",\"city\":\"Bob_dev\",\"count\":789,\"tag\":\"Frank_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0014",
+      "prompt": "Create a JSON object with the following fields: role=Charlie_prod, score=316, country=Charlie_prod, tag=Eve_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Charlie_prod\",\"score\":316,\"country\":\"Charlie_prod\",\"tag\":\"Eve_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0015",
+      "prompt": "Create a JSON object with the following fields: level=871, city=Bob_dev, active=True, tag=Diana_test, age=728. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":871,\"city\":\"Bob_dev\",\"active\":true,\"tag\":\"Diana_test\",\"age\":728}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0016",
+      "prompt": "Create a JSON object with the following fields: active=True, city=Charlie_prod, level=150. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"active\":true,\"city\":\"Charlie_prod\",\"level\":150}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0017",
+      "prompt": "Create a JSON object with the following fields: age=969, score=395, country=Charlie, phone=Alice_prod, level=382. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":969,\"score\":395,\"country\":\"Charlie\",\"phone\":\"Alice_prod\",\"level\":382}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0018",
+      "prompt": "Create a JSON object with the following fields: email=Alice_test, city=Bob. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Alice_test\",\"city\":\"Bob\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 2,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0019",
+      "prompt": "Create a JSON object with the following fields: country=Eve, count=480, age=19, active=True. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Eve\",\"count\":480,\"age\":19,\"active\":true}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0020",
+      "prompt": "Create a JSON object with the following fields: level=433, count=623, age=794. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":433,\"count\":623,\"age\":794}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0021",
+      "prompt": "Create a JSON object with the following fields: score=429, age=113, tag=Eve_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":429,\"age\":113,\"tag\":\"Eve_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0022",
+      "prompt": "Create a JSON object with the following fields: role=Eve, tag=Eve_dev, count=147, active=False, name=Eve_test, score=584. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Eve\",\"tag\":\"Eve_dev\",\"count\":147,\"active\":false,\"name\":\"Eve_test\",\"score\":584}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0023",
+      "prompt": "Create a JSON object with the following fields: city=Frank, level=998, email=Alice, phone=Diana, tag=Diana_test, active=True. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Frank\",\"level\":998,\"email\":\"Alice\",\"phone\":\"Diana\",\"tag\":\"Diana_test\",\"active\":true}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0024",
+      "prompt": "Create a JSON object with the following fields: age=353, score=750, tag=Frank, role=Frank_test, city=Alice_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":353,\"score\":750,\"tag\":\"Frank\",\"role\":\"Frank_test\",\"city\":\"Alice_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0025",
+      "prompt": "Create a JSON object with the following fields: email=Frank_dev, tag=Bob_dev, age=733, country=Alice_test, score=907. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Frank_dev\",\"tag\":\"Bob_dev\",\"age\":733,\"country\":\"Alice_test\",\"score\":907}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0026",
+      "prompt": "Create a JSON object with the following fields: email=Charlie_prod, level=484, active=True. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Charlie_prod\",\"level\":484,\"active\":true}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0027",
+      "prompt": "Create a JSON object with the following fields: score=292, email=Eve_test, active=True, count=450, phone=Charlie_dev, country=Frank_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":292,\"email\":\"Eve_test\",\"active\":true,\"count\":450,\"phone\":\"Charlie_dev\",\"country\":\"Frank_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0028",
+      "prompt": "Create a JSON object with the following fields: count=434, age=440, role=Bob_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":434,\"age\":440,\"role\":\"Bob_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0029",
+      "prompt": "Create a JSON object with the following fields: age=81, email=Frank_test, active=False, role=Frank_prod, city=Frank_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":81,\"email\":\"Frank_test\",\"active\":false,\"role\":\"Frank_prod\",\"city\":\"Frank_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0030",
+      "prompt": "Create a JSON object with the following fields: country=Alice_test, role=Diana_test, tag=Frank_prod, email=Eve_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Alice_test\",\"role\":\"Diana_test\",\"tag\":\"Frank_prod\",\"email\":\"Eve_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0031",
+      "prompt": "Create a JSON object with the following fields: city=Eve_prod, name=Bob, score=797. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Eve_prod\",\"name\":\"Bob\",\"score\":797}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0032",
+      "prompt": "Create a JSON object with the following fields: email=Diana, role=Bob_test, tag=Diana_test, phone=Charlie_test, score=983, age=26. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Diana\",\"role\":\"Bob_test\",\"tag\":\"Diana_test\",\"phone\":\"Charlie_test\",\"score\":983,\"age\":26}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0033",
+      "prompt": "Create a JSON object with the following fields: city=Alice_prod, level=120, active=False, count=456, score=125. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Alice_prod\",\"level\":120,\"active\":false,\"count\":456,\"score\":125}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0034",
+      "prompt": "Create a JSON object with the following fields: count=66, age=829, tag=Charlie_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":66,\"age\":829,\"tag\":\"Charlie_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0035",
+      "prompt": "Create a JSON object with the following fields: level=297, active=True, count=653, city=Bob_prod, age=205. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":297,\"active\":true,\"count\":653,\"city\":\"Bob_prod\",\"age\":205}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0036",
+      "prompt": "Create a JSON object with the following fields: email=Eve_test, country=Eve_dev, role=Alice. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Eve_test\",\"country\":\"Eve_dev\",\"role\":\"Alice\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0037",
+      "prompt": "Create a JSON object with the following fields: phone=Eve, level=420, city=Charlie, country=Diana_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Eve\",\"level\":420,\"city\":\"Charlie\",\"country\":\"Diana_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0038",
+      "prompt": "Create a JSON object with the following fields: level=655, role=Bob_dev, phone=Eve, age=530. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":655,\"role\":\"Bob_dev\",\"phone\":\"Eve\",\"age\":530}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0039",
+      "prompt": "Create a JSON object with the following fields: active=True, city=Charlie_dev, email=Eve_test, age=256. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"active\":true,\"city\":\"Charlie_dev\",\"email\":\"Eve_test\",\"age\":256}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0040",
+      "prompt": "Create a JSON object with the following fields: tag=Eve_test, city=Frank_test, role=Eve, level=656. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Eve_test\",\"city\":\"Frank_test\",\"role\":\"Eve\",\"level\":656}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0041",
+      "prompt": "Create a JSON object with the following fields: role=Alice, city=Frank_test, age=46. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Alice\",\"city\":\"Frank_test\",\"age\":46}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0042",
+      "prompt": "Create a JSON object with the following fields: role=Diana, country=Alice, tag=Diana_test, score=824, city=Diana_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Diana\",\"country\":\"Alice\",\"tag\":\"Diana_test\",\"score\":824,\"city\":\"Diana_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0043",
+      "prompt": "Create a JSON object with the following fields: country=Bob_test, role=Bob_test, count=881, email=Eve. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Bob_test\",\"role\":\"Bob_test\",\"count\":881,\"email\":\"Eve\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0044",
+      "prompt": "Create a JSON object with the following fields: score=477, age=51, country=Bob_dev, active=False. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":477,\"age\":51,\"country\":\"Bob_dev\",\"active\":false}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0045",
+      "prompt": "Create a JSON object with the following fields: phone=Bob_dev, email=Eve_test, score=781, city=Diana_prod, country=Charlie_prod, name=Alice_prod, level=468. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Bob_dev\",\"email\":\"Eve_test\",\"score\":781,\"city\":\"Diana_prod\",\"country\":\"Charlie_prod\",\"name\":\"Alice_prod\",\"level\":468}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 7,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0046",
+      "prompt": "Create a JSON object with the following fields: score=597, email=Alice, active=False, role=Frank_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":597,\"email\":\"Alice\",\"active\":false,\"role\":\"Frank_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0047",
+      "prompt": "Create a JSON object with the following fields: level=8, age=441, city=Charlie_test, phone=Alice_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":8,\"age\":441,\"city\":\"Charlie_test\",\"phone\":\"Alice_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0048",
+      "prompt": "Create a JSON object with the following fields: level=286, age=395, role=Frank. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":286,\"age\":395,\"role\":\"Frank\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0049",
+      "prompt": "Create a JSON object with the following fields: age=403, email=Charlie_test, city=Bob_prod, level=41. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":403,\"email\":\"Charlie_test\",\"city\":\"Bob_prod\",\"level\":41}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0050",
+      "prompt": "Create a JSON object with the following fields: name=Bob_test, country=Eve_prod, city=Eve_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Bob_test\",\"country\":\"Eve_prod\",\"city\":\"Eve_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0051",
+      "prompt": "Create a JSON object with the following fields: role=Charlie_prod, phone=Eve_test, count=576, active=False. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Charlie_prod\",\"phone\":\"Eve_test\",\"count\":576,\"active\":false}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0052",
+      "prompt": "Create a JSON object with the following fields: email=Charlie, phone=Eve_test, count=893. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Charlie\",\"phone\":\"Eve_test\",\"count\":893}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0053",
+      "prompt": "Create a JSON object with the following fields: tag=Alice_prod, active=True, count=634, role=Diana_dev, level=644, phone=Bob_dev, name=Eve. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Alice_prod\",\"active\":true,\"count\":634,\"role\":\"Diana_dev\",\"level\":644,\"phone\":\"Bob_dev\",\"name\":\"Eve\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 7,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0054",
+      "prompt": "Create a JSON object with the following fields: name=Diana_test, phone=Eve_prod, count=208. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Diana_test\",\"phone\":\"Eve_prod\",\"count\":208}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0055",
+      "prompt": "Create a JSON object with the following fields: count=141, level=362, tag=Diana_prod, email=Bob_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":141,\"level\":362,\"tag\":\"Diana_prod\",\"email\":\"Bob_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0056",
+      "prompt": "Create a JSON object with the following fields: count=212, tag=Frank_test, role=Diana_dev, score=964, level=305, active=False. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":212,\"tag\":\"Frank_test\",\"role\":\"Diana_dev\",\"score\":964,\"level\":305,\"active\":false}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0057",
+      "prompt": "Create a JSON object with the following fields: count=280, email=Diana_test, level=956, active=True, role=Frank_prod, phone=Charlie_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":280,\"email\":\"Diana_test\",\"level\":956,\"active\":true,\"role\":\"Frank_prod\",\"phone\":\"Charlie_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0058",
+      "prompt": "Create a JSON object with the following fields: count=490, email=Diana_test, score=206, level=277. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":490,\"email\":\"Diana_test\",\"score\":206,\"level\":277}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0059",
+      "prompt": "Create a JSON object with the following fields: count=278, city=Alice_dev, score=51, tag=Bob, age=423, email=Frank_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":278,\"city\":\"Alice_dev\",\"score\":51,\"tag\":\"Bob\",\"age\":423,\"email\":\"Frank_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0060",
+      "prompt": "Create a JSON object with the following fields: tag=Bob, level=951, city=Diana_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Bob\",\"level\":951,\"city\":\"Diana_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0061",
+      "prompt": "Create a JSON object with the following fields: tag=Bob_test, email=Charlie, age=667, role=Bob, city=Diana_dev, name=Diana_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Bob_test\",\"email\":\"Charlie\",\"age\":667,\"role\":\"Bob\",\"city\":\"Diana_dev\",\"name\":\"Diana_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0062",
+      "prompt": "Create a JSON object with the following fields: count=985, active=True, name=Charlie, email=Charlie_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":985,\"active\":true,\"name\":\"Charlie\",\"email\":\"Charlie_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0063",
+      "prompt": "Create a JSON object with the following fields: level=536, country=Bob_prod, active=True, age=338, city=Frank_prod, tag=Charlie_dev, name=Frank_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":536,\"country\":\"Bob_prod\",\"active\":true,\"age\":338,\"city\":\"Frank_prod\",\"tag\":\"Charlie_dev\",\"name\":\"Frank_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 7,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0064",
+      "prompt": "Create a JSON object with the following fields: role=Frank_prod, phone=Eve_test, age=410, tag=Alice_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Frank_prod\",\"phone\":\"Eve_test\",\"age\":410,\"tag\":\"Alice_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0065",
+      "prompt": "Create a JSON object with the following fields: country=Charlie_dev, name=Charlie_prod, score=457, active=False. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Charlie_dev\",\"name\":\"Charlie_prod\",\"score\":457,\"active\":false}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0066",
+      "prompt": "Create a JSON object with the following fields: role=Frank, active=False, count=241, name=Frank, country=Charlie_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Frank\",\"active\":false,\"count\":241,\"name\":\"Frank\",\"country\":\"Charlie_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0067",
+      "prompt": "Create a JSON object with the following fields: tag=Charlie_test, count=120, role=Bob_dev, city=Diana_dev, country=Frank_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Charlie_test\",\"count\":120,\"role\":\"Bob_dev\",\"city\":\"Diana_dev\",\"country\":\"Frank_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0068",
+      "prompt": "Create a JSON object with the following fields: count=562, country=Eve_dev, score=696, role=Alice_prod, level=720, email=Alice. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":562,\"country\":\"Eve_dev\",\"score\":696,\"role\":\"Alice_prod\",\"level\":720,\"email\":\"Alice\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0069",
+      "prompt": "Create a JSON object with the following fields: level=207, role=Eve_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":207,\"role\":\"Eve_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 2,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0070",
+      "prompt": "Create a JSON object with the following fields: email=Eve_prod, age=696, score=734, role=Diana. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"email\":\"Eve_prod\",\"age\":696,\"score\":734,\"role\":\"Diana\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0071",
+      "prompt": "Create a JSON object with the following fields: country=Eve, city=Eve_prod, level=473, tag=Charlie, phone=Charlie, count=223. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Eve\",\"city\":\"Eve_prod\",\"level\":473,\"tag\":\"Charlie\",\"phone\":\"Charlie\",\"count\":223}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0072",
+      "prompt": "Create a JSON object with the following fields: age=956, phone=Bob_dev, level=61, country=Alice_test, tag=Frank_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"age\":956,\"phone\":\"Bob_dev\",\"level\":61,\"country\":\"Alice_test\",\"tag\":\"Frank_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0073",
+      "prompt": "Create a JSON object with the following fields: phone=Alice_dev, tag=Charlie, city=Eve_prod, level=130. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Alice_dev\",\"tag\":\"Charlie\",\"city\":\"Eve_prod\",\"level\":130}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0074",
+      "prompt": "Create a JSON object with the following fields: score=253, name=Alice_test, country=Charlie_dev, level=388, active=True, count=783. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":253,\"name\":\"Alice_test\",\"country\":\"Charlie_dev\",\"level\":388,\"active\":true,\"count\":783}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0075",
+      "prompt": "Create a JSON object with the following fields: name=Frank_prod, role=Alice_dev, score=68. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Frank_prod\",\"role\":\"Alice_dev\",\"score\":68}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0076",
+      "prompt": "Create a JSON object with the following fields: role=Frank, score=758. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Frank\",\"score\":758}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 2,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0077",
+      "prompt": "Create a JSON object with the following fields: phone=Diana_dev, level=222, name=Bob_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Diana_dev\",\"level\":222,\"name\":\"Bob_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0078",
+      "prompt": "Create a JSON object with the following fields: count=589, email=Eve_test, score=309, city=Frank_dev. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":589,\"email\":\"Eve_test\",\"score\":309,\"city\":\"Frank_dev\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0079",
+      "prompt": "Create a JSON object with the following fields: active=False, name=Charlie_prod, tag=Frank_prod, level=326. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"active\":false,\"name\":\"Charlie_prod\",\"tag\":\"Frank_prod\",\"level\":326}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0080",
+      "prompt": "Create a JSON object with the following fields: phone=Eve_dev, active=False, city=Eve_prod, score=307, count=147, country=Alice_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Eve_dev\",\"active\":false,\"city\":\"Eve_prod\",\"score\":307,\"count\":147,\"country\":\"Alice_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0081",
+      "prompt": "Create a JSON object with the following fields: score=338, tag=Eve, email=Alice_dev, name=Charlie_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":338,\"tag\":\"Eve\",\"email\":\"Alice_dev\",\"name\":\"Charlie_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0082",
+      "prompt": "Create a JSON object with the following fields: score=823, role=Frank_dev, country=Bob_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":823,\"role\":\"Frank_dev\",\"country\":\"Bob_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0083",
+      "prompt": "Create a JSON object with the following fields: name=Bob_dev, count=772, country=Bob_dev, phone=Bob_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"name\":\"Bob_dev\",\"count\":772,\"country\":\"Bob_dev\",\"phone\":\"Bob_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0084",
+      "prompt": "Create a JSON object with the following fields: phone=Diana_test, active=False, email=Bob_test, country=Alice_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Diana_test\",\"active\":false,\"email\":\"Bob_test\",\"country\":\"Alice_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0085",
+      "prompt": "Create a JSON object with the following fields: phone=Alice_dev, count=149, name=Charlie_prod, active=True, score=337. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Alice_dev\",\"count\":149,\"name\":\"Charlie_prod\",\"active\":true,\"score\":337}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0086",
+      "prompt": "Create a JSON object with the following fields: phone=Eve_dev, country=Eve_test, active=False, count=657. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Eve_dev\",\"country\":\"Eve_test\",\"active\":false,\"count\":657}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0087",
+      "prompt": "Create a JSON object with the following fields: country=Bob, count=559, email=Bob_dev, level=34, age=967, tag=Alice. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"country\":\"Bob\",\"count\":559,\"email\":\"Bob_dev\",\"level\":34,\"age\":967,\"tag\":\"Alice\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 6,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0088",
+      "prompt": "Create a JSON object with the following fields: city=Alice_dev, age=724, level=466, email=Alice_prod, tag=Diana. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"city\":\"Alice_dev\",\"age\":724,\"level\":466,\"email\":\"Alice_prod\",\"tag\":\"Diana\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 5,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0089",
+      "prompt": "Create a JSON object with the following fields: level=739, phone=Alice. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":739,\"phone\":\"Alice\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 2,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0090",
+      "prompt": "Create a JSON object with the following fields: level=832, active=True, count=690, phone=Bob. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":832,\"active\":true,\"count\":690,\"phone\":\"Bob\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0091",
+      "prompt": "Create a JSON object with the following fields: level=152, score=196, role=Eve_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"level\":152,\"score\":196,\"role\":\"Eve_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0092",
+      "prompt": "Create a JSON object with the following fields: active=True, age=382, phone=Diana_dev, count=231. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"active\":true,\"age\":382,\"phone\":\"Diana_dev\",\"count\":231}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0093",
+      "prompt": "Create a JSON object with the following fields: tag=Alice, phone=Frank_test, level=487, name=Frank, count=175, age=511, role=Alice. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"tag\":\"Alice\",\"phone\":\"Frank_test\",\"level\":487,\"name\":\"Frank\",\"count\":175,\"age\":511,\"role\":\"Alice\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 7,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0094",
+      "prompt": "Create a JSON object with the following fields: score=922, count=908, role=Diana_test, name=Alice_test. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"score\":922,\"count\":908,\"role\":\"Diana_test\",\"name\":\"Alice_test\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0095",
+      "prompt": "Create a JSON object with the following fields: role=Diana_test, city=Eve_dev, score=601, age=306. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Diana_test\",\"city\":\"Eve_dev\",\"score\":601,\"age\":306}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0096",
+      "prompt": "Create a JSON object with the following fields: count=997, age=512, email=Alice, phone=Bob. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"count\":997,\"age\":512,\"email\":\"Alice\",\"phone\":\"Bob\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0097",
+      "prompt": "Create a JSON object with the following fields: role=Eve_prod, email=Eve_prod, country=Diana_dev, phone=Bob_prod. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Eve_prod\",\"email\":\"Eve_prod\",\"country\":\"Diana_dev\",\"phone\":\"Bob_prod\"}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0098",
+      "prompt": "Create a JSON object with the following fields: role=Charlie_dev, count=75, age=274. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"role\":\"Charlie_dev\",\"count\":75,\"age\":274}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 3,
+        "variant": "multi_key_object"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0099",
+      "prompt": "Create a JSON object with the following fields: phone=Frank_dev, count=398, email=Charlie, age=5. Return only valid JSON with no extra text. Use compact format with no spaces around colons or commas.\n",
+      "target": "{\"phone\":\"Frank_dev\",\"count\":398,\"email\":\"Charlie\",\"age\":5}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "num_keys": 4,
+        "variant": "multi_key_object"
+      }
+    }
+  ]
+}

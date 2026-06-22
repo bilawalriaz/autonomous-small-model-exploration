@@ -1,0 +1,1306 @@
+{
+  "family": "control_flow_simplification",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "control_flow_train_0000",
+      "prompt": "x = 88\ny = 91\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 88,
+        "y": 91
+      }
+    },
+    {
+      "task_id": "control_flow_train_0001",
+      "prompt": "x = 43\ny = 63\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 43,
+        "y": 63
+      }
+    },
+    {
+      "task_id": "control_flow_train_0002",
+      "prompt": "x = 15\ny = 42\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 15,
+        "y": 42
+      }
+    },
+    {
+      "task_id": "control_flow_train_0003",
+      "prompt": "x = 94\ny = 48\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 94,
+        "y": 48
+      }
+    },
+    {
+      "task_id": "control_flow_train_0004",
+      "prompt": "x = 71\ny = 51\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 71,
+        "y": 51
+      }
+    },
+    {
+      "task_id": "control_flow_train_0005",
+      "prompt": "x = 67\ny = 85\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 67,
+        "y": 85
+      }
+    },
+    {
+      "task_id": "control_flow_train_0006",
+      "prompt": "x = 51\ny = 29\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 51,
+        "y": 29
+      }
+    },
+    {
+      "task_id": "control_flow_train_0007",
+      "prompt": "x = 74\ny = 45\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 74,
+        "y": 45
+      }
+    },
+    {
+      "task_id": "control_flow_train_0008",
+      "prompt": "x = 96\ny = 53\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 96,
+        "y": 53
+      }
+    },
+    {
+      "task_id": "control_flow_train_0009",
+      "prompt": "x = 89\ny = 97\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 89,
+        "y": 97
+      }
+    },
+    {
+      "task_id": "control_flow_train_0010",
+      "prompt": "x = 14\ny = 29\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 14,
+        "y": 29
+      }
+    },
+    {
+      "task_id": "control_flow_train_0011",
+      "prompt": "x = 82\ny = 83\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 82,
+        "y": 83
+      }
+    },
+    {
+      "task_id": "control_flow_train_0012",
+      "prompt": "x = 59\ny = 20\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 59,
+        "y": 20
+      }
+    },
+    {
+      "task_id": "control_flow_train_0013",
+      "prompt": "x = 89\ny = 97\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 89,
+        "y": 97
+      }
+    },
+    {
+      "task_id": "control_flow_train_0014",
+      "prompt": "x = 25\ny = 92\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 25,
+        "y": 92
+      }
+    },
+    {
+      "task_id": "control_flow_train_0015",
+      "prompt": "x = 1\ny = 65\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 1,
+        "y": 65
+      }
+    },
+    {
+      "task_id": "control_flow_train_0016",
+      "prompt": "x = 14\ny = 64\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 14,
+        "y": 64
+      }
+    },
+    {
+      "task_id": "control_flow_train_0017",
+      "prompt": "x = 19\ny = 10\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 19,
+        "y": 10
+      }
+    },
+    {
+      "task_id": "control_flow_train_0018",
+      "prompt": "x = 89\ny = 40\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 89,
+        "y": 40
+      }
+    },
+    {
+      "task_id": "control_flow_train_0019",
+      "prompt": "x = 31\ny = 97\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 31,
+        "y": 97
+      }
+    },
+    {
+      "task_id": "control_flow_train_0020",
+      "prompt": "x = 52\ny = 39\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 52,
+        "y": 39
+      }
+    },
+    {
+      "task_id": "control_flow_train_0021",
+      "prompt": "x = 27\ny = 70\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 27,
+        "y": 70
+      }
+    },
+    {
+      "task_id": "control_flow_train_0022",
+      "prompt": "x = 82\ny = 13\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 82,
+        "y": 13
+      }
+    },
+    {
+      "task_id": "control_flow_train_0023",
+      "prompt": "x = 25\ny = 4\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 25,
+        "y": 4
+      }
+    },
+    {
+      "task_id": "control_flow_train_0024",
+      "prompt": "x = 3\ny = 4\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 3,
+        "y": 4
+      }
+    },
+    {
+      "task_id": "control_flow_train_0025",
+      "prompt": "x = 38\ny = 16\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 38,
+        "y": 16
+      }
+    },
+    {
+      "task_id": "control_flow_train_0026",
+      "prompt": "x = 27\ny = 24\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 27,
+        "y": 24
+      }
+    },
+    {
+      "task_id": "control_flow_train_0027",
+      "prompt": "x = 100\ny = 88\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 100,
+        "y": 88
+      }
+    },
+    {
+      "task_id": "control_flow_train_0028",
+      "prompt": "x = 10\ny = 9\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 10,
+        "y": 9
+      }
+    },
+    {
+      "task_id": "control_flow_train_0029",
+      "prompt": "x = 33\ny = 58\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 33,
+        "y": 58
+      }
+    },
+    {
+      "task_id": "control_flow_train_0030",
+      "prompt": "x = 16\ny = 55\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 16,
+        "y": 55
+      }
+    },
+    {
+      "task_id": "control_flow_train_0031",
+      "prompt": "x = 46\ny = 85\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 46,
+        "y": 85
+      }
+    },
+    {
+      "task_id": "control_flow_train_0032",
+      "prompt": "x = 52\ny = 2\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 52,
+        "y": 2
+      }
+    },
+    {
+      "task_id": "control_flow_train_0033",
+      "prompt": "x = 90\ny = 77\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 90,
+        "y": 77
+      }
+    },
+    {
+      "task_id": "control_flow_train_0034",
+      "prompt": "x = 39\ny = 44\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 39,
+        "y": 44
+      }
+    },
+    {
+      "task_id": "control_flow_train_0035",
+      "prompt": "x = 50\ny = 48\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 50,
+        "y": 48
+      }
+    },
+    {
+      "task_id": "control_flow_train_0036",
+      "prompt": "x = 27\ny = 39\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 27,
+        "y": 39
+      }
+    },
+    {
+      "task_id": "control_flow_train_0037",
+      "prompt": "x = 55\ny = 80\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 55,
+        "y": 80
+      }
+    },
+    {
+      "task_id": "control_flow_train_0038",
+      "prompt": "x = 76\ny = 62\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 76,
+        "y": 62
+      }
+    },
+    {
+      "task_id": "control_flow_train_0039",
+      "prompt": "x = 82\ny = 79\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 82,
+        "y": 79
+      }
+    },
+    {
+      "task_id": "control_flow_train_0040",
+      "prompt": "x = 76\ny = 6\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 76,
+        "y": 6
+      }
+    },
+    {
+      "task_id": "control_flow_train_0041",
+      "prompt": "x = 87\ny = 63\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 87,
+        "y": 63
+      }
+    },
+    {
+      "task_id": "control_flow_train_0042",
+      "prompt": "x = 5\ny = 64\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 5,
+        "y": 64
+      }
+    },
+    {
+      "task_id": "control_flow_train_0043",
+      "prompt": "x = 41\ny = 45\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 41,
+        "y": 45
+      }
+    },
+    {
+      "task_id": "control_flow_train_0044",
+      "prompt": "x = 4\ny = 33\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 4,
+        "y": 33
+      }
+    },
+    {
+      "task_id": "control_flow_train_0045",
+      "prompt": "x = 90\ny = 61\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 90,
+        "y": 61
+      }
+    },
+    {
+      "task_id": "control_flow_train_0046",
+      "prompt": "x = 50\ny = 97\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 50,
+        "y": 97
+      }
+    },
+    {
+      "task_id": "control_flow_train_0047",
+      "prompt": "x = 69\ny = 99\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 69,
+        "y": 99
+      }
+    },
+    {
+      "task_id": "control_flow_train_0048",
+      "prompt": "x = 13\ny = 55\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 13,
+        "y": 55
+      }
+    },
+    {
+      "task_id": "control_flow_train_0049",
+      "prompt": "x = 89\ny = 76\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 89,
+        "y": 76
+      }
+    },
+    {
+      "task_id": "control_flow_train_0050",
+      "prompt": "x = 80\ny = 45\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 80,
+        "y": 45
+      }
+    },
+    {
+      "task_id": "control_flow_train_0051",
+      "prompt": "x = 88\ny = 63\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 88,
+        "y": 63
+      }
+    },
+    {
+      "task_id": "control_flow_train_0052",
+      "prompt": "x = 4\ny = 49\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 4,
+        "y": 49
+      }
+    },
+    {
+      "task_id": "control_flow_train_0053",
+      "prompt": "x = 5\ny = 63\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 5,
+        "y": 63
+      }
+    },
+    {
+      "task_id": "control_flow_train_0054",
+      "prompt": "x = 98\ny = 12\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 98,
+        "y": 12
+      }
+    },
+    {
+      "task_id": "control_flow_train_0055",
+      "prompt": "x = 61\ny = 33\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 61,
+        "y": 33
+      }
+    },
+    {
+      "task_id": "control_flow_train_0056",
+      "prompt": "x = 70\ny = 12\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 70,
+        "y": 12
+      }
+    },
+    {
+      "task_id": "control_flow_train_0057",
+      "prompt": "x = 11\ny = 32\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 11,
+        "y": 32
+      }
+    },
+    {
+      "task_id": "control_flow_train_0058",
+      "prompt": "x = 93\ny = 92\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 93,
+        "y": 92
+      }
+    },
+    {
+      "task_id": "control_flow_train_0059",
+      "prompt": "x = 81\ny = 13\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 81,
+        "y": 13
+      }
+    },
+    {
+      "task_id": "control_flow_val_0060",
+      "prompt": "x = 59\ny = 49\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 59,
+        "y": 49
+      }
+    },
+    {
+      "task_id": "control_flow_val_0061",
+      "prompt": "x = 96\ny = 44\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 96,
+        "y": 44
+      }
+    },
+    {
+      "task_id": "control_flow_val_0062",
+      "prompt": "x = 31\ny = 78\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 31,
+        "y": 78
+      }
+    },
+    {
+      "task_id": "control_flow_val_0063",
+      "prompt": "x = 61\ny = 5\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 61,
+        "y": 5
+      }
+    },
+    {
+      "task_id": "control_flow_val_0064",
+      "prompt": "x = 42\ny = 40\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 42,
+        "y": 40
+      }
+    },
+    {
+      "task_id": "control_flow_val_0065",
+      "prompt": "x = 71\ny = 100\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 71,
+        "y": 100
+      }
+    },
+    {
+      "task_id": "control_flow_val_0066",
+      "prompt": "x = 91\ny = 58\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 91,
+        "y": 58
+      }
+    },
+    {
+      "task_id": "control_flow_val_0067",
+      "prompt": "x = 28\ny = 79\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 28,
+        "y": 79
+      }
+    },
+    {
+      "task_id": "control_flow_val_0068",
+      "prompt": "x = 53\ny = 13\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 53,
+        "y": 13
+      }
+    },
+    {
+      "task_id": "control_flow_val_0069",
+      "prompt": "x = 2\ny = 88\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 2,
+        "y": 88
+      }
+    },
+    {
+      "task_id": "control_flow_val_0070",
+      "prompt": "x = 17\ny = 76\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 17,
+        "y": 76
+      }
+    },
+    {
+      "task_id": "control_flow_val_0071",
+      "prompt": "x = 87\ny = 100\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 87,
+        "y": 100
+      }
+    },
+    {
+      "task_id": "control_flow_val_0072",
+      "prompt": "x = 4\ny = 65\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 4,
+        "y": 65
+      }
+    },
+    {
+      "task_id": "control_flow_val_0073",
+      "prompt": "x = 57\ny = 9\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 57,
+        "y": 9
+      }
+    },
+    {
+      "task_id": "control_flow_val_0074",
+      "prompt": "x = 65\ny = 24\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 65,
+        "y": 24
+      }
+    },
+    {
+      "task_id": "control_flow_val_0075",
+      "prompt": "x = 60\ny = 36\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 60,
+        "y": 36
+      }
+    },
+    {
+      "task_id": "control_flow_val_0076",
+      "prompt": "x = 90\ny = 73\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 90,
+        "y": 73
+      }
+    },
+    {
+      "task_id": "control_flow_val_0077",
+      "prompt": "x = 50\ny = 69\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 50,
+        "y": 69
+      }
+    },
+    {
+      "task_id": "control_flow_val_0078",
+      "prompt": "x = 84\ny = 93\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 84,
+        "y": 93
+      }
+    },
+    {
+      "task_id": "control_flow_val_0079",
+      "prompt": "x = 7\ny = 33\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 7,
+        "y": 33
+      }
+    },
+    {
+      "task_id": "control_flow_test_0080",
+      "prompt": "x = 75\ny = 16\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 75,
+        "y": 16
+      }
+    },
+    {
+      "task_id": "control_flow_test_0081",
+      "prompt": "x = 90\ny = 67\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 90,
+        "y": 67
+      }
+    },
+    {
+      "task_id": "control_flow_test_0082",
+      "prompt": "x = 63\ny = 23\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 63,
+        "y": 23
+      }
+    },
+    {
+      "task_id": "control_flow_test_0083",
+      "prompt": "x = 58\ny = 38\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 58,
+        "y": 38
+      }
+    },
+    {
+      "task_id": "control_flow_test_0084",
+      "prompt": "x = 21\ny = 6\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 21,
+        "y": 6
+      }
+    },
+    {
+      "task_id": "control_flow_test_0085",
+      "prompt": "x = 38\ny = 77\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 38,
+        "y": 77
+      }
+    },
+    {
+      "task_id": "control_flow_test_0086",
+      "prompt": "x = 43\ny = 55\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 43,
+        "y": 55
+      }
+    },
+    {
+      "task_id": "control_flow_test_0087",
+      "prompt": "x = 15\ny = 88\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 15,
+        "y": 88
+      }
+    },
+    {
+      "task_id": "control_flow_test_0088",
+      "prompt": "x = 20\ny = 10\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 20,
+        "y": 10
+      }
+    },
+    {
+      "task_id": "control_flow_test_0089",
+      "prompt": "x = 26\ny = 62\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 26,
+        "y": 62
+      }
+    },
+    {
+      "task_id": "control_flow_test_0090",
+      "prompt": "x = 63\ny = 32\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 63,
+        "y": 32
+      }
+    },
+    {
+      "task_id": "control_flow_test_0091",
+      "prompt": "x = 1\ny = 50\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 1,
+        "y": 50
+      }
+    },
+    {
+      "task_id": "control_flow_test_0092",
+      "prompt": "x = 100\ny = 96\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 100,
+        "y": 96
+      }
+    },
+    {
+      "task_id": "control_flow_test_0093",
+      "prompt": "x = 84\ny = 23\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 84,
+        "y": 23
+      }
+    },
+    {
+      "task_id": "control_flow_test_0094",
+      "prompt": "x = 99\ny = 49\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "x_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 99,
+        "y": 49
+      }
+    },
+    {
+      "task_id": "control_flow_test_0095",
+      "prompt": "x = 6\ny = 39\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 6,
+        "y": 39
+      }
+    },
+    {
+      "task_id": "control_flow_test_0096",
+      "prompt": "x = 24\ny = 29\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 24,
+        "y": 29
+      }
+    },
+    {
+      "task_id": "control_flow_test_0097",
+      "prompt": "x = 44\ny = 88\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 44,
+        "y": 88
+      }
+    },
+    {
+      "task_id": "control_flow_test_0098",
+      "prompt": "x = 75\ny = 64\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "both_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 75,
+        "y": 64
+      }
+    },
+    {
+      "task_id": "control_flow_test_0099",
+      "prompt": "x = 30\ny = 92\nif x > 50:\n    if y > 50:\n        r = 'both_high'\n    else:\n        r = 'x_high'\nelse:\n    if y > 50:\n        r = 'y_high'\n    else:\n        r = 'both_low'\n# What is r?\n",
+      "target": "y_high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "x": 30,
+        "y": 92
+      }
+    }
+  ]
+}

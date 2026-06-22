@@ -1,0 +1,1306 @@
+{
+  "family": "factual_recall",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "factual_recall_train_0000",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Paris every year. The country has a rich cultural heritage. France is a country in Europe.\nWhat is the capital of France?\nAnswer: ",
+      "target": "Paris",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "France"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0001",
+      "prompt": "Its capital city is well known for its history. Germany is a country in Europe.\nWhat is the capital of Germany?\nAnswer: ",
+      "target": "Berlin",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Germany"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0002",
+      "prompt": "Japan is a country in Europe. The country has a rich cultural heritage. Many tourists visit Tokyo every year.\nWhat is the capital of Japan?\nAnswer: ",
+      "target": "Tokyo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Japan"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0003",
+      "prompt": "Many tourists visit Rome every year. Italy is a country in Europe.\nWhat is the capital of Italy?\nAnswer: ",
+      "target": "Rome",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Italy"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0004",
+      "prompt": "Spain is a country in Europe. Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of Spain?\nAnswer: ",
+      "target": "Madrid",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Spain"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0005",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of England?\nAnswer: ",
+      "target": "London",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "England"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0006",
+      "prompt": "The country has a rich cultural heritage. China is a country in Europe. Its capital city is well known for its history. Many tourists visit Beijing every year.\nWhat is the capital of China?\nAnswer: ",
+      "target": "Beijing",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "China"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0007",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Russia is a country in Europe.\nWhat is the capital of Russia?\nAnswer: ",
+      "target": "Moscow",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Russia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0008",
+      "prompt": "Its capital city is well known for its history. Egypt is a country in Europe.\nWhat is the capital of Egypt?\nAnswer: ",
+      "target": "Cairo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Egypt"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0009",
+      "prompt": "Its capital city is well known for its history. Peru is a country in Europe. Many tourists visit Lima every year.\nWhat is the capital of Peru?\nAnswer: ",
+      "target": "Lima",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Peru"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0010",
+      "prompt": "The country has a rich cultural heritage. Brazil is a country in Europe. Many tourists visit Brasilia every year.\nWhat is the capital of Brazil?\nAnswer: ",
+      "target": "Brasilia",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Brazil"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0011",
+      "prompt": "India is a country in Europe. Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of India?\nAnswer: ",
+      "target": "New Delhi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "India"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0012",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Canberra every year. Australia is a country in Europe. Its capital city is well known for its history.\nWhat is the capital of Australia?\nAnswer: ",
+      "target": "Canberra",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Australia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0013",
+      "prompt": "Many tourists visit Ottawa every year. The country has a rich cultural heritage. Canada is a country in Europe. Its capital city is well known for its history.\nWhat is the capital of Canada?\nAnswer: ",
+      "target": "Ottawa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Canada"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0014",
+      "prompt": "Many tourists visit Mexico City every year. Mexico is a country in Europe. The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of Mexico?\nAnswer: ",
+      "target": "Mexico City",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Mexico"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0015",
+      "prompt": "Many tourists visit Buenos Aires every year. Argentina is a country in the world. The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of Argentina?\nAnswer: ",
+      "target": "Buenos Aires",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Argentina"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0016",
+      "prompt": "Many tourists visit Ankara every year. Its capital city is well known for its history.\nWhat is the capital of Turkey?\nAnswer: ",
+      "target": "Ankara",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Turkey"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0017",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Bangkok every year. Its capital city is well known for its history.\nWhat is the capital of Thailand?\nAnswer: ",
+      "target": "Bangkok",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Thailand"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0018",
+      "prompt": "Vietnam is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Vietnam?\nAnswer: ",
+      "target": "Hanoi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Vietnam"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0019",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Nairobi every year.\nWhat is the capital of Kenya?\nAnswer: ",
+      "target": "Nairobi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Kenya"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0020",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Abuja every year. Nigeria is a country in the world.\nWhat is the capital of Nigeria?\nAnswer: ",
+      "target": "Abuja",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Nigeria"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0021",
+      "prompt": "The country has a rich cultural heritage. Greece is a country in the world.\nWhat is the capital of Greece?\nAnswer: ",
+      "target": "Athens",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Greece"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0022",
+      "prompt": "Many tourists visit Stockholm every year. The country has a rich cultural heritage. Its capital city is well known for its history. Sweden is a country in the world.\nWhat is the capital of Sweden?\nAnswer: ",
+      "target": "Stockholm",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Sweden"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0023",
+      "prompt": "Many tourists visit Oslo every year. Its capital city is well known for its history. Norway is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Norway?\nAnswer: ",
+      "target": "Oslo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Norway"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0024",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Finland is a country in the world.\nWhat is the capital of Finland?\nAnswer: ",
+      "target": "Helsinki",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Finland"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0025",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Warsaw every year.\nWhat is the capital of Poland?\nAnswer: ",
+      "target": "Warsaw",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Poland"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0026",
+      "prompt": "Many tourists visit Lisbon every year. The country has a rich cultural heritage.\nWhat is the capital of Portugal?\nAnswer: ",
+      "target": "Lisbon",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Portugal"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0027",
+      "prompt": "The country has a rich cultural heritage. Netherlands is a country in the world. Its capital city is well known for its history. Many tourists visit Amsterdam every year.\nWhat is the capital of Netherlands?\nAnswer: ",
+      "target": "Amsterdam",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Netherlands"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0028",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Brussels every year.\nWhat is the capital of Belgium?\nAnswer: ",
+      "target": "Brussels",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Belgium"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0029",
+      "prompt": "Austria is a country in the world. Its capital city is well known for its history. Many tourists visit Vienna every year. The country has a rich cultural heritage.\nWhat is the capital of Austria?\nAnswer: ",
+      "target": "Vienna",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Austria"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0030",
+      "prompt": "The country has a rich cultural heritage. Switzerland is a country in the world. Its capital city is well known for its history.\nWhat is the capital of Switzerland?\nAnswer: ",
+      "target": "Bern",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0031",
+      "prompt": "Many tourists visit Dublin every year. Its capital city is well known for its history. Ireland is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Ireland?\nAnswer: ",
+      "target": "Dublin",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Ireland"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0032",
+      "prompt": "The country has a rich cultural heritage. Iceland is a country in the world. Its capital city is well known for its history. Many tourists visit Reykjavik every year.\nWhat is the capital of Iceland?\nAnswer: ",
+      "target": "Reykjavik",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iceland"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0033",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Havana every year.\nWhat is the capital of Cuba?\nAnswer: ",
+      "target": "Havana",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Cuba"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0034",
+      "prompt": "Jamaica is a country in the world. The country has a rich cultural heritage. Many tourists visit Kingston every year. Its capital city is well known for its history.\nWhat is the capital of Jamaica?\nAnswer: ",
+      "target": "Kingston",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Jamaica"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0035",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Santiago every year. Chile is a country in the world.\nWhat is the capital of Chile?\nAnswer: ",
+      "target": "Santiago",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Chile"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0036",
+      "prompt": "Many tourists visit Bogota every year. Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of Colombia?\nAnswer: ",
+      "target": "Bogota",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Colombia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0037",
+      "prompt": "Morocco is a country in the world. Many tourists visit Rabat every year. Its capital city is well known for its history.\nWhat is the capital of Morocco?\nAnswer: ",
+      "target": "Rabat",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Morocco"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0038",
+      "prompt": "Tunisia is a country in the world. Many tourists visit Tunis every year. The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of Tunisia?\nAnswer: ",
+      "target": "Tunis",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Tunisia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0039",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Many tourists visit Tehran every year.\nWhat is the capital of Iran?\nAnswer: ",
+      "target": "Tehran",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iran"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0040",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Baghdad every year.\nWhat is the capital of Iraq?\nAnswer: ",
+      "target": "Baghdad",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iraq"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0041",
+      "prompt": "Israel is a country in the world. Many tourists visit Jerusalem every year. The country has a rich cultural heritage.\nWhat is the capital of Israel?\nAnswer: ",
+      "target": "Jerusalem",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Israel"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0042",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Seoul every year. South Korea is a country in the world.\nWhat is the capital of South Korea?\nAnswer: ",
+      "target": "Seoul",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "South Korea"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0043",
+      "prompt": "Many tourists visit Manila every year. Philippines is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Philippines?\nAnswer: ",
+      "target": "Manila",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Philippines"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0044",
+      "prompt": "Its capital city is well known for its history. Indonesia is a country in the world. The country has a rich cultural heritage. Many tourists visit Jakarta every year.\nWhat is the capital of Indonesia?\nAnswer: ",
+      "target": "Jakarta",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Indonesia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0045",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Kuala Lumpur every year. The country has a rich cultural heritage. Malaysia is a country in the world.\nWhat is the capital of Malaysia?\nAnswer: ",
+      "target": "Kuala Lumpur",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Malaysia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0046",
+      "prompt": "Singapore is a country in the world. Its capital city is well known for its history.\nWhat is the capital of Singapore?\nAnswer: ",
+      "target": "Singapore",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Singapore"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0047",
+      "prompt": "Its capital city is well known for its history. New Zealand is a country in the world. Many tourists visit Wellington every year.\nWhat is the capital of New Zealand?\nAnswer: ",
+      "target": "Wellington",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "New Zealand"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0048",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Pretoria every year. South Africa is a country in the world.\nWhat is the capital of South Africa?\nAnswer: ",
+      "target": "Pretoria",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "South Africa"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0049",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Riyadh every year.\nWhat is the capital of Saudi Arabia?\nAnswer: ",
+      "target": "Riyadh",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Saudi Arabia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0050",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Abu Dhabi every year. Its capital city is well known for its history.\nWhat is the capital of UAE?\nAnswer: ",
+      "target": "Abu Dhabi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "UAE"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0051",
+      "prompt": "Many tourists visit Paris every year. France is a country in Europe.\nWhat is the capital of France?\nAnswer: ",
+      "target": "Paris",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "France"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0052",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Berlin every year. Germany is a country in Europe. Its capital city is well known for its history.\nWhat is the capital of Germany?\nAnswer: ",
+      "target": "Berlin",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Germany"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0053",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Japan is a country in Europe.\nWhat is the capital of Japan?\nAnswer: ",
+      "target": "Tokyo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Japan"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0054",
+      "prompt": "Its capital city is well known for its history. Italy is a country in Europe. Many tourists visit Rome every year. The country has a rich cultural heritage.\nWhat is the capital of Italy?\nAnswer: ",
+      "target": "Rome",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Italy"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0055",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Madrid every year. Spain is a country in Europe. The country has a rich cultural heritage.\nWhat is the capital of Spain?\nAnswer: ",
+      "target": "Madrid",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Spain"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0056",
+      "prompt": "England is a country in Europe. Many tourists visit London every year. Its capital city is well known for its history.\nWhat is the capital of England?\nAnswer: ",
+      "target": "London",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "England"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0057",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of China?\nAnswer: ",
+      "target": "Beijing",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "China"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0058",
+      "prompt": "Its capital city is well known for its history. Russia is a country in Europe.\nWhat is the capital of Russia?\nAnswer: ",
+      "target": "Moscow",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Russia"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0059",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Cairo every year. Egypt is a country in Europe. Its capital city is well known for its history.\nWhat is the capital of Egypt?\nAnswer: ",
+      "target": "Cairo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Egypt"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0060",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of Peru?\nAnswer: ",
+      "target": "Lima",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Peru"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0061",
+      "prompt": "The country has a rich cultural heritage. Brazil is a country in Europe.\nWhat is the capital of Brazil?\nAnswer: ",
+      "target": "Brasilia",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Brazil"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0062",
+      "prompt": "Many tourists visit New Delhi every year. The country has a rich cultural heritage.\nWhat is the capital of India?\nAnswer: ",
+      "target": "New Delhi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "India"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0063",
+      "prompt": "Its capital city is well known for its history. Australia is a country in Europe. The country has a rich cultural heritage.\nWhat is the capital of Australia?\nAnswer: ",
+      "target": "Canberra",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Australia"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0064",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Canada is a country in Europe.\nWhat is the capital of Canada?\nAnswer: ",
+      "target": "Ottawa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Canada"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0065",
+      "prompt": "Mexico is a country in Europe. The country has a rich cultural heritage.\nWhat is the capital of Mexico?\nAnswer: ",
+      "target": "Mexico City",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Mexico"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0066",
+      "prompt": "Its capital city is well known for its history. Argentina is a country in the world. Many tourists visit Buenos Aires every year.\nWhat is the capital of Argentina?\nAnswer: ",
+      "target": "Buenos Aires",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Argentina"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0067",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Ankara every year. Turkey is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Turkey?\nAnswer: ",
+      "target": "Ankara",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Turkey"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0068",
+      "prompt": "Thailand is a country in the world. The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Bangkok every year.\nWhat is the capital of Thailand?\nAnswer: ",
+      "target": "Bangkok",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Thailand"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0069",
+      "prompt": "The country has a rich cultural heritage. Vietnam is a country in the world. Many tourists visit Hanoi every year. Its capital city is well known for its history.\nWhat is the capital of Vietnam?\nAnswer: ",
+      "target": "Hanoi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Vietnam"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0070",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Nairobi every year. The country has a rich cultural heritage.\nWhat is the capital of Kenya?\nAnswer: ",
+      "target": "Nairobi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Kenya"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0071",
+      "prompt": "Nigeria is a country in the world. The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of Nigeria?\nAnswer: ",
+      "target": "Abuja",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Nigeria"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0072",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Greece is a country in the world. Many tourists visit Athens every year.\nWhat is the capital of Greece?\nAnswer: ",
+      "target": "Athens",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Greece"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0073",
+      "prompt": "Many tourists visit Stockholm every year. Sweden is a country in the world. Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of Sweden?\nAnswer: ",
+      "target": "Stockholm",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Sweden"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0074",
+      "prompt": "Norway is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Norway?\nAnswer: ",
+      "target": "Oslo",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Norway"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0075",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Helsinki every year. The country has a rich cultural heritage.\nWhat is the capital of Finland?\nAnswer: ",
+      "target": "Helsinki",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Finland"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0076",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Many tourists visit Warsaw every year. Poland is a country in the world.\nWhat is the capital of Poland?\nAnswer: ",
+      "target": "Warsaw",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Poland"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0077",
+      "prompt": "Many tourists visit Lisbon every year. Portugal is a country in the world. Its capital city is well known for its history.\nWhat is the capital of Portugal?\nAnswer: ",
+      "target": "Lisbon",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Portugal"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0078",
+      "prompt": "Its capital city is well known for its history. Netherlands is a country in the world.\nWhat is the capital of Netherlands?\nAnswer: ",
+      "target": "Amsterdam",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Netherlands"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0079",
+      "prompt": "Belgium is a country in the world. The country has a rich cultural heritage. Many tourists visit Brussels every year.\nWhat is the capital of Belgium?\nAnswer: ",
+      "target": "Brussels",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Belgium"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0080",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Vienna every year. Its capital city is well known for its history. Austria is a country in the world.\nWhat is the capital of Austria?\nAnswer: ",
+      "target": "Vienna",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Austria"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0081",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Switzerland is a country in the world. Many tourists visit Bern every year.\nWhat is the capital of Switzerland?\nAnswer: ",
+      "target": "Bern",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Switzerland"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0082",
+      "prompt": "Ireland is a country in the world. The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Dublin every year.\nWhat is the capital of Ireland?\nAnswer: ",
+      "target": "Dublin",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Ireland"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0083",
+      "prompt": "Its capital city is well known for its history. Many tourists visit Reykjavik every year. The country has a rich cultural heritage.\nWhat is the capital of Iceland?\nAnswer: ",
+      "target": "Reykjavik",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iceland"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0084",
+      "prompt": "Cuba is a country in the world. Its capital city is well known for its history. The country has a rich cultural heritage.\nWhat is the capital of Cuba?\nAnswer: ",
+      "target": "Havana",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Cuba"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0085",
+      "prompt": "Its capital city is well known for its history. The country has a rich cultural heritage. Many tourists visit Kingston every year.\nWhat is the capital of Jamaica?\nAnswer: ",
+      "target": "Kingston",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Jamaica"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0086",
+      "prompt": "Chile is a country in the world. The country has a rich cultural heritage. Many tourists visit Santiago every year. Its capital city is well known for its history.\nWhat is the capital of Chile?\nAnswer: ",
+      "target": "Santiago",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Chile"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0087",
+      "prompt": "Colombia is a country in the world. The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Bogota every year.\nWhat is the capital of Colombia?\nAnswer: ",
+      "target": "Bogota",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Colombia"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0088",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Many tourists visit Rabat every year. Morocco is a country in the world.\nWhat is the capital of Morocco?\nAnswer: ",
+      "target": "Rabat",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Morocco"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0089",
+      "prompt": "Its capital city is well known for its history. Tunisia is a country in the world.\nWhat is the capital of Tunisia?\nAnswer: ",
+      "target": "Tunis",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Tunisia"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0090",
+      "prompt": "The country has a rich cultural heritage. Iran is a country in the world.\nWhat is the capital of Iran?\nAnswer: ",
+      "target": "Tehran",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iran"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0091",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history. Iraq is a country in the world.\nWhat is the capital of Iraq?\nAnswer: ",
+      "target": "Baghdad",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Iraq"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0092",
+      "prompt": "Israel is a country in the world. The country has a rich cultural heritage.\nWhat is the capital of Israel?\nAnswer: ",
+      "target": "Jerusalem",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Israel"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0093",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Seoul every year. Its capital city is well known for its history. South Korea is a country in the world.\nWhat is the capital of South Korea?\nAnswer: ",
+      "target": "Seoul",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "South Korea"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0094",
+      "prompt": "The country has a rich cultural heritage. Many tourists visit Manila every year.\nWhat is the capital of Philippines?\nAnswer: ",
+      "target": "Manila",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Philippines"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0095",
+      "prompt": "Many tourists visit Jakarta every year. Its capital city is well known for its history. Indonesia is a country in the world.\nWhat is the capital of Indonesia?\nAnswer: ",
+      "target": "Jakarta",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Indonesia"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0096",
+      "prompt": "The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of Malaysia?\nAnswer: ",
+      "target": "Kuala Lumpur",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Malaysia"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0097",
+      "prompt": "Many tourists visit Singapore every year. The country has a rich cultural heritage.\nWhat is the capital of Singapore?\nAnswer: ",
+      "target": "Singapore",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "Singapore"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0098",
+      "prompt": "Many tourists visit Wellington every year. The country has a rich cultural heritage. Its capital city is well known for its history.\nWhat is the capital of New Zealand?\nAnswer: ",
+      "target": "Wellington",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "New Zealand"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0099",
+      "prompt": "Many tourists visit Pretoria every year. The country has a rich cultural heritage. South Africa is a country in the world.\nWhat is the capital of South Africa?\nAnswer: ",
+      "target": "Pretoria",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "contextual",
+        "country": "South Africa"
+      }
+    }
+  ]
+}

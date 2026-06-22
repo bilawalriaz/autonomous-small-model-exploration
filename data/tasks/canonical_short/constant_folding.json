@@ -1,0 +1,1206 @@
+{
+  "family": "constant_folding",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "constant_folding_train_0000",
+      "prompt": "(9 + 19) * 2 = ",
+      "target": "56",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0001",
+      "prompt": "1 + 8 * 10 = ",
+      "target": "81",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0002",
+      "prompt": "2 ** 5 = ",
+      "target": "32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0003",
+      "prompt": "41 // 6 = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0004",
+      "prompt": "37 % 2 = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0005",
+      "prompt": "(2 + 1) * (5 + 1) = ",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0006",
+      "prompt": "(15 + 18) * 2 = ",
+      "target": "66",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0007",
+      "prompt": "1 + 6 * 8 = ",
+      "target": "49",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0008",
+      "prompt": "2 ** 8 = ",
+      "target": "256",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0009",
+      "prompt": "19 // 2 = ",
+      "target": "9",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0010",
+      "prompt": "32 % 2 = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0011",
+      "prompt": "(3 + 5) * (3 + 1) = ",
+      "target": "32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0012",
+      "prompt": "(1 + 20) * 2 = ",
+      "target": "42",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0013",
+      "prompt": "8 + 7 * 3 = ",
+      "target": "29",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0014",
+      "prompt": "2 ** 5 = ",
+      "target": "32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0015",
+      "prompt": "23 // 7 = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0016",
+      "prompt": "38 % 4 = ",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0017",
+      "prompt": "(5 + 3) * (3 + 1) = ",
+      "target": "32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0018",
+      "prompt": "(8 + 19) * 2 = ",
+      "target": "54",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0019",
+      "prompt": "9 + 7 * 3 = ",
+      "target": "30",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0020",
+      "prompt": "2 ** 8 = ",
+      "target": "256",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0021",
+      "prompt": "44 // 7 = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0022",
+      "prompt": "47 % 4 = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0023",
+      "prompt": "(1 + 5) * (1 + 1) = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0024",
+      "prompt": "(12 + 19) * 2 = ",
+      "target": "62",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0025",
+      "prompt": "2 + 2 * 10 = ",
+      "target": "22",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0026",
+      "prompt": "2 ** 2 = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0027",
+      "prompt": "43 // 5 = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0028",
+      "prompt": "20 % 7 = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0029",
+      "prompt": "(2 + 2) * (5 + 1) = ",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0030",
+      "prompt": "(6 + 6) * 2 = ",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0031",
+      "prompt": "1 + 8 * 2 = ",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0032",
+      "prompt": "2 ** 4 = ",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0033",
+      "prompt": "15 // 2 = ",
+      "target": "7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0034",
+      "prompt": "35 % 6 = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0035",
+      "prompt": "(4 + 4) * (4 + 1) = ",
+      "target": "40",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0036",
+      "prompt": "(16 + 5) * 2 = ",
+      "target": "42",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0037",
+      "prompt": "6 + 3 * 2 = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0038",
+      "prompt": "2 ** 4 = ",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0039",
+      "prompt": "32 // 3 = ",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0040",
+      "prompt": "37 % 4 = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0041",
+      "prompt": "(4 + 1) * (2 + 1) = ",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0042",
+      "prompt": "(9 + 13) * 2 = ",
+      "target": "44",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0043",
+      "prompt": "4 + 4 * 6 = ",
+      "target": "28",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0044",
+      "prompt": "2 ** 7 = ",
+      "target": "128",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0045",
+      "prompt": "50 // 2 = ",
+      "target": "25",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0046",
+      "prompt": "31 % 5 = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0047",
+      "prompt": "(1 + 5) * (3 + 1) = ",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0048",
+      "prompt": "(1 + 20) * 2 = ",
+      "target": "42",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0049",
+      "prompt": "1 + 9 * 1 = ",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0050",
+      "prompt": "2 ** 7 = ",
+      "target": "128",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0051",
+      "prompt": "33 // 2 = ",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0052",
+      "prompt": "20 % 2 = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0053",
+      "prompt": "(5 + 1) * (1 + 1) = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0054",
+      "prompt": "(11 + 13) * 2 = ",
+      "target": "48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0055",
+      "prompt": "5 + 1 * 10 = ",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0056",
+      "prompt": "2 ** 6 = ",
+      "target": "64",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0057",
+      "prompt": "33 // 8 = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0058",
+      "prompt": "14 % 3 = ",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0059",
+      "prompt": "(2 + 5) * (4 + 1) = ",
+      "target": "35",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0060",
+      "prompt": "(6 + 18) * 2 = ",
+      "target": "48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0061",
+      "prompt": "4 + 6 * 2 = ",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0062",
+      "prompt": "2 ** 8 = ",
+      "target": "256",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0063",
+      "prompt": "19 // 6 = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0064",
+      "prompt": "33 % 6 = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0065",
+      "prompt": "(2 + 4) * (2 + 1) = ",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0066",
+      "prompt": "(17 + 5) * 2 = ",
+      "target": "44",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0067",
+      "prompt": "8 + 1 * 10 = ",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0068",
+      "prompt": "2 ** 2 = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0069",
+      "prompt": "44 // 8 = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0070",
+      "prompt": "17 % 8 = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0071",
+      "prompt": "(3 + 3) * (1 + 1) = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0072",
+      "prompt": "(12 + 6) * 2 = ",
+      "target": "36",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0073",
+      "prompt": "10 + 9 * 3 = ",
+      "target": "37",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0074",
+      "prompt": "2 ** 2 = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0075",
+      "prompt": "41 // 3 = ",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0076",
+      "prompt": "48 % 3 = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0077",
+      "prompt": "(5 + 3) * (4 + 1) = ",
+      "target": "40",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0078",
+      "prompt": "(18 + 13) * 2 = ",
+      "target": "62",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0079",
+      "prompt": "8 + 2 * 9 = ",
+      "target": "26",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0080",
+      "prompt": "2 ** 2 = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0081",
+      "prompt": "31 // 3 = ",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0082",
+      "prompt": "33 % 3 = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0083",
+      "prompt": "(2 + 4) * (2 + 1) = ",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0084",
+      "prompt": "(13 + 2) * 2 = ",
+      "target": "30",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0085",
+      "prompt": "6 + 1 * 8 = ",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0086",
+      "prompt": "2 ** 8 = ",
+      "target": "256",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0087",
+      "prompt": "47 // 2 = ",
+      "target": "23",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0088",
+      "prompt": "43 % 2 = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0089",
+      "prompt": "(3 + 5) * (5 + 1) = ",
+      "target": "48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0090",
+      "prompt": "(19 + 18) * 2 = ",
+      "target": "74",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0091",
+      "prompt": "9 + 7 * 9 = ",
+      "target": "72",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0092",
+      "prompt": "2 ** 7 = ",
+      "target": "128",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0093",
+      "prompt": "22 // 4 = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0094",
+      "prompt": "30 % 3 = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0095",
+      "prompt": "(4 + 2) * (3 + 1) = ",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0096",
+      "prompt": "(14 + 13) * 2 = ",
+      "target": "54",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0097",
+      "prompt": "7 + 7 * 2 = ",
+      "target": "21",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0098",
+      "prompt": "2 ** 5 = ",
+      "target": "32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0099",
+      "prompt": "11 // 5 = ",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    }
+  ]
+}

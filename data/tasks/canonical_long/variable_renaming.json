@@ -1,0 +1,1306 @@
+{
+  "family": "variable_renaming",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "variable_renaming_train_0000",
+      "prompt": "str = 37\np = 45\nresult = str + p\n# Renamed: str->text, p->parameter\nprint(result)\n# What prints?\n",
+      "target": "82",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "str->text, p->parameter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0001",
+      "prompt": "y2 = 6\np = 8\nresult = y2 + p\n# Renamed: y2->bottom, p->parameter\nprint(result)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "y2->bottom, p->parameter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0002",
+      "prompt": "val = 12\nc = 21\nresult = val + c\n# Renamed: val->input_num, c->step\nprint(result)\n# What prints?\n",
+      "target": "33",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "val->input_num, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0003",
+      "prompt": "y = 41\ntmp = 24\nx = 30\ndata = 6\nresult = y + tmp + x\n# Renamed: y->total, tmp->buffer, x->count, data->items\nprint(result)\n# What prints?\n",
+      "target": "95",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "y->total, tmp->buffer, x->count, data->items"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0004",
+      "prompt": "msg = 20\nptr = 4\nres = 25\nn = 46\nresult = msg + ptr + res\n# Renamed: msg->greeting, ptr->cursor, res->output, n->size\nprint(result)\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "msg->greeting, ptr->cursor, res->output, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0005",
+      "prompt": "val = 37\ncnt = 21\nn = 27\nresult = val + cnt + n\n# Renamed: val->input_num, cnt->counter, n->size\nprint(result)\n# What prints?\n",
+      "target": "85",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "val->input_num, cnt->counter, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0006",
+      "prompt": "res = 13\ncnt = 12\nresult = res + cnt\n# Renamed: res->output, cnt->counter\nprint(result)\n# What prints?\n",
+      "target": "25",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "res->output, cnt->counter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0007",
+      "prompt": "arr = 32\nr = 23\nc = 38\nresult = arr + r + c\n# Renamed: arr->elements, r->response, c->step\nprint(result)\n# What prints?\n",
+      "target": "93",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "arr->elements, r->response, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0008",
+      "prompt": "num = 41\nx1 = 44\nr = 11\nresult = num + x1 + r\n# Renamed: num->amount, x1->left, r->response\nprint(result)\n# What prints?\n",
+      "target": "96",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "num->amount, x1->left, r->response"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0009",
+      "prompt": "ok = 10\nd = 35\nresult = ok + d\n# Renamed: ok->success, d->mapping\nprint(result)\n# What prints?\n",
+      "target": "45",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "ok->success, d->mapping"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0010",
+      "prompt": "data = 14\nf = 22\nnum = 45\nidx = 33\nresult = data + f + num\n# Renamed: data->items, f->handler, num->amount, idx->offset\nprint(result)\n# What prints?\n",
+      "target": "81",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "data->items, f->handler, num->amount, idx->offset"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0011",
+      "prompt": "cnt = 17\nc = 14\nh = 30\ndata = 17\nresult = cnt + c + h\n# Renamed: cnt->counter, c->step, h->height, data->items\nprint(result)\n# What prints?\n",
+      "target": "61",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "cnt->counter, c->step, h->height, data->items"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0012",
+      "prompt": "j = 43\nx1 = 41\nresult = j + x1\n# Renamed: j->position, x1->left\nprint(result)\n# What prints?\n",
+      "target": "84",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "j->position, x1->left"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0013",
+      "prompt": "v = 30\nn = 38\nresult = v + n\n# Renamed: v->variable, n->size\nprint(result)\n# What prints?\n",
+      "target": "68",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "v->variable, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0014",
+      "prompt": "lst = 43\ny2 = 38\nd = 3\nresult = lst + y2 + d\n# Renamed: lst->records, y2->bottom, d->mapping\nprint(result)\n# What prints?\n",
+      "target": "84",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "lst->records, y2->bottom, d->mapping"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0015",
+      "prompt": "i = 11\nnum = 27\nx = 31\nresult = i + num + x\n# Renamed: i->index, num->amount, x->count\nprint(result)\n# What prints?\n",
+      "target": "69",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "i->index, num->amount, x->count"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0016",
+      "prompt": "str = 23\ni = 20\nval = 11\nresult = str + i + val\n# Renamed: str->text, i->index, val->input_num\nprint(result)\n# What prints?\n",
+      "target": "54",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "str->text, i->index, val->input_num"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0017",
+      "prompt": "x2 = 29\nval = 40\ny = 30\nresult = x2 + val + y\n# Renamed: x2->right, val->input_num, y->total\nprint(result)\n# What prints?\n",
+      "target": "99",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "x2->right, val->input_num, y->total"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0018",
+      "prompt": "y2 = 16\nf = 17\ns = 47\nv = 24\nresult = y2 + f + s\n# Renamed: y2->bottom, f->handler, s->sequence, v->variable\nprint(result)\n# What prints?\n",
+      "target": "80",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "y2->bottom, f->handler, s->sequence, v->variable"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0019",
+      "prompt": "str = 3\nv = 15\ns = 49\nptr = 33\nresult = str + v + s\n# Renamed: str->text, v->variable, s->sequence, ptr->cursor\nprint(result)\n# What prints?\n",
+      "target": "67",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "str->text, v->variable, s->sequence, ptr->cursor"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0020",
+      "prompt": "t = 50\nf = 18\nresult = t + f\n# Renamed: t->timestamp, f->handler\nprint(result)\n# What prints?\n",
+      "target": "68",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "t->timestamp, f->handler"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0021",
+      "prompt": "s = 33\nok = 11\ny = 20\ntmp = 39\nresult = s + ok + y\n# Renamed: s->sequence, ok->success, y->total, tmp->buffer\nprint(result)\n# What prints?\n",
+      "target": "64",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "s->sequence, ok->success, y->total, tmp->buffer"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0022",
+      "prompt": "x1 = 9\nres = 43\ny2 = 22\nn = 4\nresult = x1 + res + y2\n# Renamed: x1->left, res->output, y2->bottom, n->size\nprint(result)\n# What prints?\n",
+      "target": "74",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "x1->left, res->output, y2->bottom, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0023",
+      "prompt": "ptr = 23\nm = 30\nresult = ptr + m\n# Renamed: ptr->cursor, m->length\nprint(result)\n# What prints?\n",
+      "target": "53",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "ptr->cursor, m->length"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0024",
+      "prompt": "tmp = 43\np = 10\nx = 13\nresult = tmp + p + x\n# Renamed: tmp->buffer, p->parameter, x->count\nprint(result)\n# What prints?\n",
+      "target": "66",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "tmp->buffer, p->parameter, x->count"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0025",
+      "prompt": "ptr = 12\nc = 16\nresult = ptr + c\n# Renamed: ptr->cursor, c->step\nprint(result)\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "ptr->cursor, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0026",
+      "prompt": "f = 47\nc = 16\nresult = f + c\n# Renamed: f->handler, c->step\nprint(result)\n# What prints?\n",
+      "target": "63",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "f->handler, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0027",
+      "prompt": "y1 = 1\nlst = 31\nresult = y1 + lst\n# Renamed: y1->top, lst->records\nprint(result)\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "y1->top, lst->records"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0028",
+      "prompt": "num = 31\ni = 36\nresult = num + i\n# Renamed: num->amount, i->index\nprint(result)\n# What prints?\n",
+      "target": "67",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "num->amount, i->index"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0029",
+      "prompt": "s = 30\ndata = 46\nv = 16\nd = 49\nresult = s + data + v\n# Renamed: s->sequence, data->items, v->variable, d->mapping\nprint(result)\n# What prints?\n",
+      "target": "92",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "s->sequence, data->items, v->variable, d->mapping"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0030",
+      "prompt": "d = 21\nn = 49\nresult = d + n\n# Renamed: d->mapping, n->size\nprint(result)\n# What prints?\n",
+      "target": "70",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "d->mapping, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0031",
+      "prompt": "s = 19\nbuf = 44\nresult = s + buf\n# Renamed: s->sequence, buf->cache\nprint(result)\n# What prints?\n",
+      "target": "63",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "s->sequence, buf->cache"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0032",
+      "prompt": "f = 5\nerr = 23\ns = 32\nx2 = 43\nresult = f + err + s\n# Renamed: f->handler, err->failure, s->sequence, x2->right\nprint(result)\n# What prints?\n",
+      "target": "60",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "f->handler, err->failure, s->sequence, x2->right"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0033",
+      "prompt": "ok = 12\ny = 50\nflag = 16\nerr = 24\nresult = ok + y + flag\n# Renamed: ok->success, y->total, flag->is_ready, err->failure\nprint(result)\n# What prints?\n",
+      "target": "78",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "ok->success, y->total, flag->is_ready, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0034",
+      "prompt": "str = 40\nh = 39\nx = 49\nresult = str + h + x\n# Renamed: str->text, h->height, x->count\nprint(result)\n# What prints?\n",
+      "target": "128",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "str->text, h->height, x->count"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0035",
+      "prompt": "b = 32\nflag = 13\nn = 3\nresult = b + flag + n\n# Renamed: b->end, flag->is_ready, n->size\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "b->end, flag->is_ready, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0036",
+      "prompt": "ptr = 6\nf = 22\nresult = ptr + f\n# Renamed: ptr->cursor, f->handler\nprint(result)\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "ptr->cursor, f->handler"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0037",
+      "prompt": "val = 19\nf = 20\nm = 25\nresult = val + f + m\n# Renamed: val->input_num, f->handler, m->length\nprint(result)\n# What prints?\n",
+      "target": "64",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "val->input_num, f->handler, m->length"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0038",
+      "prompt": "v = 12\nz = 11\narr = 26\nt = 44\nresult = v + z + arr\n# Renamed: v->variable, z->value, arr->elements, t->timestamp\nprint(result)\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "v->variable, z->value, arr->elements, t->timestamp"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0039",
+      "prompt": "i = 44\np = 47\nc = 7\nnum = 42\nresult = i + p + c\n# Renamed: i->index, p->parameter, c->step, num->amount\nprint(result)\n# What prints?\n",
+      "target": "98",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "i->index, p->parameter, c->step, num->amount"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0040",
+      "prompt": "x = 9\ntmp = 37\nbuf = 33\nresult = x + tmp + buf\n# Renamed: x->count, tmp->buffer, buf->cache\nprint(result)\n# What prints?\n",
+      "target": "79",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "x->count, tmp->buffer, buf->cache"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0041",
+      "prompt": "p = 42\nx = 43\nw = 26\nresult = p + x + w\n# Renamed: p->parameter, x->count, w->width\nprint(result)\n# What prints?\n",
+      "target": "111",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "p->parameter, x->count, w->width"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0042",
+      "prompt": "a = 17\nptr = 48\nf = 41\nresult = a + ptr + f\n# Renamed: a->start, ptr->cursor, f->handler\nprint(result)\n# What prints?\n",
+      "target": "106",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "a->start, ptr->cursor, f->handler"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0043",
+      "prompt": "err = 33\nr = 24\nresult = err + r\n# Renamed: err->failure, r->response\nprint(result)\n# What prints?\n",
+      "target": "57",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "err->failure, r->response"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0044",
+      "prompt": "str = 8\nx2 = 12\nlst = 28\nresult = str + x2 + lst\n# Renamed: str->text, x2->right, lst->records\nprint(result)\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "str->text, x2->right, lst->records"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0045",
+      "prompt": "d = 22\nc = 46\nm = 38\nx = 17\nresult = d + c + m\n# Renamed: d->mapping, c->step, m->length, x->count\nprint(result)\n# What prints?\n",
+      "target": "106",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "d->mapping, c->step, m->length, x->count"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0046",
+      "prompt": "h = 47\nfn = 30\nresult = h + fn\n# Renamed: h->height, fn->callback\nprint(result)\n# What prints?\n",
+      "target": "77",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "h->height, fn->callback"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0047",
+      "prompt": "a = 3\np = 8\nidx = 32\nresult = a + p + idx\n# Renamed: a->start, p->parameter, idx->offset\nprint(result)\n# What prints?\n",
+      "target": "43",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "a->start, p->parameter, idx->offset"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0048",
+      "prompt": "lst = 44\na = 24\nerr = 17\nresult = lst + a + err\n# Renamed: lst->records, a->start, err->failure\nprint(result)\n# What prints?\n",
+      "target": "85",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "lst->records, a->start, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0049",
+      "prompt": "str = 35\nidx = 18\ny = 12\nresult = str + idx + y\n# Renamed: str->text, idx->offset, y->total\nprint(result)\n# What prints?\n",
+      "target": "65",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "str->text, idx->offset, y->total"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0050",
+      "prompt": "num = 29\nt = 21\ny = 20\nresult = num + t + y\n# Renamed: num->amount, t->timestamp, y->total\nprint(result)\n# What prints?\n",
+      "target": "70",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "num->amount, t->timestamp, y->total"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0051",
+      "prompt": "z = 47\nerr = 3\nj = 35\nnum = 48\nresult = z + err + j\n# Renamed: z->value, err->failure, j->position, num->amount\nprint(result)\n# What prints?\n",
+      "target": "85",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "z->value, err->failure, j->position, num->amount"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0052",
+      "prompt": "msg = 35\nval = 7\nc = 9\nresult = msg + val + c\n# Renamed: msg->greeting, val->input_num, c->step\nprint(result)\n# What prints?\n",
+      "target": "51",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "msg->greeting, val->input_num, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0053",
+      "prompt": "m = 23\nw = 30\nf = 45\ncnt = 40\nresult = m + w + f\n# Renamed: m->length, w->width, f->handler, cnt->counter\nprint(result)\n# What prints?\n",
+      "target": "98",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "m->length, w->width, f->handler, cnt->counter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0054",
+      "prompt": "x1 = 30\ny2 = 3\nresult = x1 + y2\n# Renamed: x1->left, y2->bottom\nprint(result)\n# What prints?\n",
+      "target": "33",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "x1->left, y2->bottom"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0055",
+      "prompt": "buf = 3\nlst = 10\nresult = buf + lst\n# Renamed: buf->cache, lst->records\nprint(result)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "buf->cache, lst->records"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0056",
+      "prompt": "i = 22\nd = 41\nh = 48\nc = 20\nresult = i + d + h\n# Renamed: i->index, d->mapping, h->height, c->step\nprint(result)\n# What prints?\n",
+      "target": "111",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "i->index, d->mapping, h->height, c->step"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0057",
+      "prompt": "s = 48\ny = 17\nval = 47\nresult = s + y + val\n# Renamed: s->sequence, y->total, val->input_num\nprint(result)\n# What prints?\n",
+      "target": "112",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "s->sequence, y->total, val->input_num"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0058",
+      "prompt": "c = 37\nf = 17\nj = 20\nres = 40\nresult = c + f + j\n# Renamed: c->step, f->handler, j->position, res->output\nprint(result)\n# What prints?\n",
+      "target": "74",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "c->step, f->handler, j->position, res->output"
+      }
+    },
+    {
+      "task_id": "variable_renaming_train_0059",
+      "prompt": "x2 = 37\nmsg = 31\na = 14\nlst = 49\nresult = x2 + msg + a\n# Renamed: x2->right, msg->greeting, a->start, lst->records\nprint(result)\n# What prints?\n",
+      "target": "82",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "x2->right, msg->greeting, a->start, lst->records"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0060",
+      "prompt": "cnt = 43\nval = 3\nh = 39\nresult = cnt + val + h\n# Renamed: cnt->counter, val->input_num, h->height\nprint(result)\n# What prints?\n",
+      "target": "85",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "cnt->counter, val->input_num, h->height"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0061",
+      "prompt": "val = 1\nidx = 27\ncnt = 14\nresult = val + idx + cnt\n# Renamed: val->input_num, idx->offset, cnt->counter\nprint(result)\n# What prints?\n",
+      "target": "42",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "val->input_num, idx->offset, cnt->counter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0062",
+      "prompt": "t = 18\nn = 18\nresult = t + n\n# Renamed: t->timestamp, n->size\nprint(result)\n# What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "t->timestamp, n->size"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0063",
+      "prompt": "err = 15\nbuf = 15\ni = 2\nresult = err + buf + i\n# Renamed: err->failure, buf->cache, i->index\nprint(result)\n# What prints?\n",
+      "target": "32",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "err->failure, buf->cache, i->index"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0064",
+      "prompt": "buf = 19\nflag = 47\nb = 46\nfn = 39\nresult = buf + flag + b\n# Renamed: buf->cache, flag->is_ready, b->end, fn->callback\nprint(result)\n# What prints?\n",
+      "target": "112",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "buf->cache, flag->is_ready, b->end, fn->callback"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0065",
+      "prompt": "ok = 22\nt = 35\nerr = 25\nresult = ok + t + err\n# Renamed: ok->success, t->timestamp, err->failure\nprint(result)\n# What prints?\n",
+      "target": "82",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "ok->success, t->timestamp, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0066",
+      "prompt": "y1 = 22\nx = 21\nstr = 23\nresult = y1 + x + str\n# Renamed: y1->top, x->count, str->text\nprint(result)\n# What prints?\n",
+      "target": "66",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "y1->top, x->count, str->text"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0067",
+      "prompt": "m = 14\np = 35\nw = 45\nresult = m + p + w\n# Renamed: m->length, p->parameter, w->width\nprint(result)\n# What prints?\n",
+      "target": "94",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "m->length, p->parameter, w->width"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0068",
+      "prompt": "d = 26\narr = 3\nresult = d + arr\n# Renamed: d->mapping, arr->elements\nprint(result)\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "d->mapping, arr->elements"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0069",
+      "prompt": "y2 = 23\nc = 6\nw = 14\ny1 = 48\nresult = y2 + c + w\n# Renamed: y2->bottom, c->step, w->width, y1->top\nprint(result)\n# What prints?\n",
+      "target": "43",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "y2->bottom, c->step, w->width, y1->top"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0070",
+      "prompt": "lst = 29\nptr = 44\nidx = 30\nbuf = 2\nresult = lst + ptr + idx\n# Renamed: lst->records, ptr->cursor, idx->offset, buf->cache\nprint(result)\n# What prints?\n",
+      "target": "103",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "lst->records, ptr->cursor, idx->offset, buf->cache"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0071",
+      "prompt": "fn = 11\nok = 40\nresult = fn + ok\n# Renamed: fn->callback, ok->success\nprint(result)\n# What prints?\n",
+      "target": "51",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "fn->callback, ok->success"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0072",
+      "prompt": "y2 = 49\nf = 2\nt = 49\nresult = y2 + f + t\n# Renamed: y2->bottom, f->handler, t->timestamp\nprint(result)\n# What prints?\n",
+      "target": "100",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "y2->bottom, f->handler, t->timestamp"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0073",
+      "prompt": "y1 = 25\nw = 35\nmsg = 9\nresult = y1 + w + msg\n# Renamed: y1->top, w->width, msg->greeting\nprint(result)\n# What prints?\n",
+      "target": "69",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "y1->top, w->width, msg->greeting"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0074",
+      "prompt": "err = 26\nj = 14\ni = 14\nresult = err + j + i\n# Renamed: err->failure, j->position, i->index\nprint(result)\n# What prints?\n",
+      "target": "54",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "err->failure, j->position, i->index"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0075",
+      "prompt": "y2 = 12\nidx = 11\nresult = y2 + idx\n# Renamed: y2->bottom, idx->offset\nprint(result)\n# What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "y2->bottom, idx->offset"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0076",
+      "prompt": "s = 49\ny1 = 14\nt = 27\nnum = 39\nresult = s + y1 + t\n# Renamed: s->sequence, y1->top, t->timestamp, num->amount\nprint(result)\n# What prints?\n",
+      "target": "90",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "s->sequence, y1->top, t->timestamp, num->amount"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0077",
+      "prompt": "buf = 43\nlst = 44\ni = 41\nresult = buf + lst + i\n# Renamed: buf->cache, lst->records, i->index\nprint(result)\n# What prints?\n",
+      "target": "128",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "buf->cache, lst->records, i->index"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0078",
+      "prompt": "buf = 15\nh = 26\nx2 = 32\ns = 49\nresult = buf + h + x2\n# Renamed: buf->cache, h->height, x2->right, s->sequence\nprint(result)\n# What prints?\n",
+      "target": "73",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "buf->cache, h->height, x2->right, s->sequence"
+      }
+    },
+    {
+      "task_id": "variable_renaming_val_0079",
+      "prompt": "idx = 12\nr = 26\ntmp = 19\nresult = idx + r + tmp\n# Renamed: idx->offset, r->response, tmp->buffer\nprint(result)\n# What prints?\n",
+      "target": "57",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "idx->offset, r->response, tmp->buffer"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0080",
+      "prompt": "x2 = 49\nstr = 30\nresult = x2 + str\n# Renamed: x2->right, str->text\nprint(result)\n# What prints?\n",
+      "target": "79",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "x2->right, str->text"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0081",
+      "prompt": "val = 42\ni = 27\nd = 27\nok = 27\nresult = val + i + d\n# Renamed: val->input_num, i->index, d->mapping, ok->success\nprint(result)\n# What prints?\n",
+      "target": "96",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "val->input_num, i->index, d->mapping, ok->success"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0082",
+      "prompt": "y = 15\nfn = 9\nresult = y + fn\n# Renamed: y->total, fn->callback\nprint(result)\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "y->total, fn->callback"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0083",
+      "prompt": "fn = 37\nh = 47\nc = 27\nerr = 2\nresult = fn + h + c\n# Renamed: fn->callback, h->height, c->step, err->failure\nprint(result)\n# What prints?\n",
+      "target": "111",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "fn->callback, h->height, c->step, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0084",
+      "prompt": "fn = 37\nmsg = 41\ntmp = 31\nresult = fn + msg + tmp\n# Renamed: fn->callback, msg->greeting, tmp->buffer\nprint(result)\n# What prints?\n",
+      "target": "109",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "fn->callback, msg->greeting, tmp->buffer"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0085",
+      "prompt": "c = 42\nlst = 25\ny = 36\nerr = 33\nresult = c + lst + y\n# Renamed: c->step, lst->records, y->total, err->failure\nprint(result)\n# What prints?\n",
+      "target": "103",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "c->step, lst->records, y->total, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0086",
+      "prompt": "tmp = 24\np = 47\nresult = tmp + p\n# Renamed: tmp->buffer, p->parameter\nprint(result)\n# What prints?\n",
+      "target": "71",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "tmp->buffer, p->parameter"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0087",
+      "prompt": "val = 46\nv = 13\nresult = val + v\n# Renamed: val->input_num, v->variable\nprint(result)\n# What prints?\n",
+      "target": "59",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "val->input_num, v->variable"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0088",
+      "prompt": "n = 2\nidx = 14\nb = 37\nresult = n + idx + b\n# Renamed: n->size, idx->offset, b->end\nprint(result)\n# What prints?\n",
+      "target": "53",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "n->size, idx->offset, b->end"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0089",
+      "prompt": "p = 29\nmsg = 16\nerr = 12\nresult = p + msg + err\n# Renamed: p->parameter, msg->greeting, err->failure\nprint(result)\n# What prints?\n",
+      "target": "57",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "p->parameter, msg->greeting, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0090",
+      "prompt": "h = 22\nj = 11\nerr = 16\nresult = h + j + err\n# Renamed: h->height, j->position, err->failure\nprint(result)\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "h->height, j->position, err->failure"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0091",
+      "prompt": "b = 44\nx = 44\nz = 27\nresult = b + x + z\n# Renamed: b->end, x->count, z->value\nprint(result)\n# What prints?\n",
+      "target": "115",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "b->end, x->count, z->value"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0092",
+      "prompt": "v = 17\nd = 46\nb = 35\nt = 8\nresult = v + d + b\n# Renamed: v->variable, d->mapping, b->end, t->timestamp\nprint(result)\n# What prints?\n",
+      "target": "98",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "v->variable, d->mapping, b->end, t->timestamp"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0093",
+      "prompt": "err = 31\nx2 = 47\ny = 4\nr = 19\nresult = err + x2 + y\n# Renamed: err->failure, x2->right, y->total, r->response\nprint(result)\n# What prints?\n",
+      "target": "82",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "err->failure, x2->right, y->total, r->response"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0094",
+      "prompt": "z = 46\nlst = 33\ns = 41\nresult = z + lst + s\n# Renamed: z->value, lst->records, s->sequence\nprint(result)\n# What prints?\n",
+      "target": "120",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "z->value, lst->records, s->sequence"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0095",
+      "prompt": "r = 10\nf = 17\nj = 49\ni = 38\nresult = r + f + j\n# Renamed: r->response, f->handler, j->position, i->index\nprint(result)\n# What prints?\n",
+      "target": "76",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 4,
+        "renames": "r->response, f->handler, j->position, i->index"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0096",
+      "prompt": "tmp = 27\nlst = 43\nresult = tmp + lst\n# Renamed: tmp->buffer, lst->records\nprint(result)\n# What prints?\n",
+      "target": "70",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 2,
+        "renames": "tmp->buffer, lst->records"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0097",
+      "prompt": "m = 14\nmsg = 17\nv = 7\nresult = m + msg + v\n# Renamed: m->length, msg->greeting, v->variable\nprint(result)\n# What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "m->length, msg->greeting, v->variable"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0098",
+      "prompt": "b = 49\np = 16\nw = 49\nresult = b + p + w\n# Renamed: b->end, p->parameter, w->width\nprint(result)\n# What prints?\n",
+      "target": "114",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "b->end, p->parameter, w->width"
+      }
+    },
+    {
+      "task_id": "variable_renaming_test_0099",
+      "prompt": "str = 22\nidx = 29\nr = 45\nresult = str + idx + r\n# Renamed: str->text, idx->offset, r->response\nprint(result)\n# What prints?\n",
+      "target": "96",
+      "metadata": {
+        "family": "variable_renaming",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "num_renames": 3,
+        "renames": "str->text, idx->offset, r->response"
+      }
+    }
+  ]
+}

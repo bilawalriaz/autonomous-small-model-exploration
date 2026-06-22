@@ -1,0 +1,3909 @@
+{
+  "family": "delimiter_tracking",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "delimiter_tracking_train_0000",
+      "prompt": "Complete: function([[[",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([[[",
+      "corrupt_prompt": "Complete: function([[[",
+      "target_token": "]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0001",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0002",
+      "prompt": "([{{{0",
+      "target": "}}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "([{{{0",
+      "corrupt_prompt": "([{{{0",
+      "target_token": "}}}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0003",
+      "prompt": "What closes: {({ ... ",
+      "target": "})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: {({ ... ",
+      "corrupt_prompt": "What closes: {({ ... ",
+      "target_token": "})}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0004",
+      "prompt": "Complete the delimiters: f(([[[arg",
+      "target": "]]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(([[[arg",
+      "corrupt_prompt": "Complete the delimiters: f(([[[arg",
+      "target_token": "]]])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0005",
+      "prompt": "Complete: function({[",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function({[",
+      "corrupt_prompt": "Complete: function({[",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0006",
+      "prompt": "Close these brackets: [[",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [[",
+      "corrupt_prompt": "Close these brackets: [[",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0007",
+      "prompt": "(((([a",
+      "target": "])))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "()",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "(((([a",
+      "corrupt_prompt": "(((([a",
+      "target_token": "])))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0008",
+      "prompt": "What closes: [ ... ",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [ ... ",
+      "corrupt_prompt": "What closes: [ ... ",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0009",
+      "prompt": "Complete the delimiters: f(({{arg",
+      "target": "}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(({{arg",
+      "corrupt_prompt": "Complete the delimiters: f(({{arg",
+      "target_token": "}})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0010",
+      "prompt": "Complete: function((([(",
+      "target": ")]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function((([(",
+      "corrupt_prompt": "Complete: function((([(",
+      "target_token": ")]))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0011",
+      "prompt": "Close these brackets: [[[",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [[[",
+      "corrupt_prompt": "Close these brackets: [[[",
+      "target_token": "]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0012",
+      "prompt": "([{{1",
+      "target": "}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "([{{1",
+      "corrupt_prompt": "([{{1",
+      "target_token": "}}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0013",
+      "prompt": "What closes: [[ ... ",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [[ ... ",
+      "corrupt_prompt": "What closes: [[ ... ",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0014",
+      "prompt": "Complete the delimiters: f({([[arg",
+      "target": "]])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "()",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({([[arg",
+      "corrupt_prompt": "Complete the delimiters: f({([[arg",
+      "target_token": "]])}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0015",
+      "prompt": "Complete: function({",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({",
+      "corrupt_prompt": "Complete: function({",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0016",
+      "prompt": "Close these brackets: {{",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {{",
+      "corrupt_prompt": "Close these brackets: {{",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0017",
+      "prompt": "({0",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "({0",
+      "corrupt_prompt": "({0",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0018",
+      "prompt": "What closes: [[ ... ",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [[ ... ",
+      "corrupt_prompt": "What closes: [[ ... ",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0019",
+      "prompt": "Complete the delimiters: f({[({arg",
+      "target": "})]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[({arg",
+      "corrupt_prompt": "Complete the delimiters: f({[({arg",
+      "target_token": "})]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0020",
+      "prompt": "Complete: function({[",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function({[",
+      "corrupt_prompt": "Complete: function({[",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0021",
+      "prompt": "Close these brackets: [",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [",
+      "corrupt_prompt": "Close these brackets: [",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0022",
+      "prompt": "({[{{0",
+      "target": "}}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "({[{{0",
+      "corrupt_prompt": "({[{{0",
+      "target_token": "}}]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0023",
+      "prompt": "What closes: ( ... ",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: ( ... ",
+      "corrupt_prompt": "What closes: ( ... ",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0024",
+      "prompt": "Complete the delimiters: f(({{arg",
+      "target": "}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(({{arg",
+      "corrupt_prompt": "Complete the delimiters: f(({{arg",
+      "target_token": "}})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0025",
+      "prompt": "Complete: function([((",
+      "target": "))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function([((",
+      "corrupt_prompt": "Complete: function([((",
+      "target_token": "))]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0026",
+      "prompt": "Close these brackets: {{",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {{",
+      "corrupt_prompt": "Close these brackets: {{",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0027",
+      "prompt": "([[[{n",
+      "target": "}]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "([[[{n",
+      "corrupt_prompt": "([[[{n",
+      "target_token": "}]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0028",
+      "prompt": "What closes: ([[( ... ",
+      "target": ")]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: ([[( ... ",
+      "corrupt_prompt": "What closes: ([[( ... ",
+      "target_token": ")]])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0029",
+      "prompt": "Complete the delimiters: f([[[arg",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([[[arg",
+      "corrupt_prompt": "Complete the delimiters: f([[[arg",
+      "target_token": "]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0030",
+      "prompt": "Complete: function([([",
+      "target": "])]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([([",
+      "corrupt_prompt": "Complete: function([([",
+      "target_token": "])]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0031",
+      "prompt": "Close these brackets: ([(",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ([(",
+      "corrupt_prompt": "Close these brackets: ([(",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0032",
+      "prompt": "([x",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "([x",
+      "corrupt_prompt": "([x",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0033",
+      "prompt": "What closes: {( ... ",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: {( ... ",
+      "corrupt_prompt": "What closes: {( ... ",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0034",
+      "prompt": "Complete the delimiters: f([{arg",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([{arg",
+      "corrupt_prompt": "Complete the delimiters: f([{arg",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0035",
+      "prompt": "Complete: function(([{(",
+      "target": ")}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function(([{(",
+      "corrupt_prompt": "Complete: function(([{(",
+      "target_token": ")}])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0036",
+      "prompt": "Close these brackets: ({{(",
+      "target": ")}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "{}",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ({{(",
+      "corrupt_prompt": "Close these brackets: ({{(",
+      "target_token": ")}})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0037",
+      "prompt": "(({((a",
+      "target": "))})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "{}",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "(({((a",
+      "corrupt_prompt": "(({((a",
+      "target_token": "))})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0038",
+      "prompt": "What closes: [[ ... ",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [[ ... ",
+      "corrupt_prompt": "What closes: [[ ... ",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0039",
+      "prompt": "Complete the delimiters: f(([{[arg",
+      "target": "]}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(([{[arg",
+      "corrupt_prompt": "Complete the delimiters: f(([{[arg",
+      "target_token": "]}])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0040",
+      "prompt": "Complete: function({([[",
+      "target": "]])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "()",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function({([[",
+      "corrupt_prompt": "Complete: function({([[",
+      "target_token": "]])}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0041",
+      "prompt": "Close these brackets: {{(",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {{(",
+      "corrupt_prompt": "Close these brackets: {{(",
+      "target_token": ")}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0042",
+      "prompt": "((([x",
+      "target": "]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "((([x",
+      "corrupt_prompt": "((([x",
+      "target_token": "]))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0043",
+      "prompt": "What closes: {[ ... ",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {[ ... ",
+      "corrupt_prompt": "What closes: {[ ... ",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0044",
+      "prompt": "Complete the delimiters: f({[arg",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[arg",
+      "corrupt_prompt": "Complete the delimiters: f({[arg",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0045",
+      "prompt": "Complete: function([{",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function([{",
+      "corrupt_prompt": "Complete: function([{",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0046",
+      "prompt": "Close these brackets: [[",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [[",
+      "corrupt_prompt": "Close these brackets: [[",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0047",
+      "prompt": "([[n",
+      "target": "]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "([[n",
+      "corrupt_prompt": "([[n",
+      "target_token": "]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0048",
+      "prompt": "What closes: ([( ... ",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: ([( ... ",
+      "corrupt_prompt": "What closes: ([( ... ",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0049",
+      "prompt": "Complete the delimiters: f([{[[arg",
+      "target": "]]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([{[[arg",
+      "corrupt_prompt": "Complete the delimiters: f([{[[arg",
+      "target_token": "]]}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0050",
+      "prompt": "Complete: function({",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({",
+      "corrupt_prompt": "Complete: function({",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0051",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0052",
+      "prompt": "(([(n",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "(([(n",
+      "corrupt_prompt": "(([(n",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0053",
+      "prompt": "What closes: {{[{ ... ",
+      "target": "}]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: {{[{ ... ",
+      "corrupt_prompt": "What closes: {{[{ ... ",
+      "target_token": "}]}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0054",
+      "prompt": "Complete the delimiters: f({[{arg",
+      "target": "}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[{arg",
+      "corrupt_prompt": "Complete the delimiters: f({[{arg",
+      "target_token": "}]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0055",
+      "prompt": "Complete: function([(",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function([(",
+      "corrupt_prompt": "Complete: function([(",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0056",
+      "prompt": "Close these brackets: ([[",
+      "target": "]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ([[",
+      "corrupt_prompt": "Close these brackets: ([[",
+      "target_token": "]])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0057",
+      "prompt": "(((({n",
+      "target": "})))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "()",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "(((({n",
+      "corrupt_prompt": "(((({n",
+      "target_token": "})))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0058",
+      "prompt": "What closes: {( ... ",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: {( ... ",
+      "corrupt_prompt": "What closes: {( ... ",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0059",
+      "prompt": "Complete the delimiters: f(({arg",
+      "target": "})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(({arg",
+      "corrupt_prompt": "Complete the delimiters: f(({arg",
+      "target_token": "})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0060",
+      "prompt": "Complete: function({{(",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function({{(",
+      "corrupt_prompt": "Complete: function({{(",
+      "target_token": ")}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0061",
+      "prompt": "Close these brackets: {[{",
+      "target": "}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {[{",
+      "corrupt_prompt": "Close these brackets: {[{",
+      "target_token": "}]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0062",
+      "prompt": "([(a",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "([(a",
+      "corrupt_prompt": "([(a",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0063",
+      "prompt": "What closes: (( ... ",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: (( ... ",
+      "corrupt_prompt": "What closes: (( ... ",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0064",
+      "prompt": "Complete the delimiters: f({[arg",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[arg",
+      "corrupt_prompt": "Complete the delimiters: f({[arg",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0065",
+      "prompt": "Complete: function({{",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({{",
+      "corrupt_prompt": "Complete: function({{",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0066",
+      "prompt": "Close these brackets: [[({",
+      "target": "})]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [[({",
+      "corrupt_prompt": "Close these brackets: [[({",
+      "target_token": "})]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0067",
+      "prompt": "([[[n",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "([[[n",
+      "corrupt_prompt": "([[[n",
+      "target_token": "]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0068",
+      "prompt": "What closes: {{{[ ... ",
+      "target": "]}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {{{[ ... ",
+      "corrupt_prompt": "What closes: {{{[ ... ",
+      "target_token": "]}}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0069",
+      "prompt": "Complete the delimiters: f([(arg",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([(arg",
+      "corrupt_prompt": "Complete the delimiters: f([(arg",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0070",
+      "prompt": "Complete: function([[[",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([[[",
+      "corrupt_prompt": "Complete: function([[[",
+      "target_token": "]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0071",
+      "prompt": "Close these brackets: [{((",
+      "target": "))}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [{((",
+      "corrupt_prompt": "Close these brackets: [{((",
+      "target_token": "))}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0072",
+      "prompt": "((1",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "((1",
+      "corrupt_prompt": "((1",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0073",
+      "prompt": "What closes: [([( ... ",
+      "target": ")])]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [([( ... ",
+      "corrupt_prompt": "What closes: [([( ... ",
+      "target_token": ")])]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0074",
+      "prompt": "Complete the delimiters: f([(arg",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([(arg",
+      "corrupt_prompt": "Complete the delimiters: f([(arg",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0075",
+      "prompt": "Complete: function(([{",
+      "target": "}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function(([{",
+      "corrupt_prompt": "Complete: function(([{",
+      "target_token": "}])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0076",
+      "prompt": "Close these brackets: [",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [",
+      "corrupt_prompt": "Close these brackets: [",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0077",
+      "prompt": "({{(0",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "({{(0",
+      "corrupt_prompt": "({{(0",
+      "target_token": ")}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0078",
+      "prompt": "What closes: ( ... ",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: ( ... ",
+      "corrupt_prompt": "What closes: ( ... ",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0079",
+      "prompt": "Complete the delimiters: f([(arg",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([(arg",
+      "corrupt_prompt": "Complete the delimiters: f([(arg",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0080",
+      "prompt": "Complete: function({{",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({{",
+      "corrupt_prompt": "Complete: function({{",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0081",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0082",
+      "prompt": "(([{1",
+      "target": "}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "(([{1",
+      "corrupt_prompt": "(([{1",
+      "target_token": "}])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0083",
+      "prompt": "What closes: [( ... ",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [( ... ",
+      "corrupt_prompt": "What closes: [( ... ",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0084",
+      "prompt": "Complete the delimiters: f([arg",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([arg",
+      "corrupt_prompt": "Complete the delimiters: f([arg",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0085",
+      "prompt": "Complete: function([([",
+      "target": "])]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([([",
+      "corrupt_prompt": "Complete: function([([",
+      "target_token": "])]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0086",
+      "prompt": "Close these brackets: {",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {",
+      "corrupt_prompt": "Close these brackets: {",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0087",
+      "prompt": "({1",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "({1",
+      "corrupt_prompt": "({1",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0088",
+      "prompt": "What closes: [{({ ... ",
+      "target": "})}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: [{({ ... ",
+      "corrupt_prompt": "What closes: [{({ ... ",
+      "target_token": "})}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0089",
+      "prompt": "Complete the delimiters: f(((arg",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(((arg",
+      "corrupt_prompt": "Complete the delimiters: f(((arg",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0090",
+      "prompt": "Complete: function({",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({",
+      "corrupt_prompt": "Complete: function({",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0091",
+      "prompt": "Close these brackets: [[[(",
+      "target": ")]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [[[(",
+      "corrupt_prompt": "Close these brackets: [[[(",
+      "target_token": ")]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0092",
+      "prompt": "({{n",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "({{n",
+      "corrupt_prompt": "({{n",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0093",
+      "prompt": "What closes: { ... ",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: { ... ",
+      "corrupt_prompt": "What closes: { ... ",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0094",
+      "prompt": "Complete the delimiters: f(({{arg",
+      "target": "}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(({{arg",
+      "corrupt_prompt": "Complete the delimiters: f(({{arg",
+      "target_token": "}})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0095",
+      "prompt": "Complete: function([{((",
+      "target": "))}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function([{((",
+      "corrupt_prompt": "Complete: function([{((",
+      "target_token": "))}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0096",
+      "prompt": "Close these brackets: [{",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [{",
+      "corrupt_prompt": "Close these brackets: [{",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0097",
+      "prompt": "([a",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "([a",
+      "corrupt_prompt": "([a",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0098",
+      "prompt": "What closes: [{ ... ",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: [{ ... ",
+      "corrupt_prompt": "What closes: [{ ... ",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0099",
+      "prompt": "Complete the delimiters: f({{(arg",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({{(arg",
+      "corrupt_prompt": "Complete the delimiters: f({{(arg",
+      "target_token": ")}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0100",
+      "prompt": "Complete: function({",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({",
+      "corrupt_prompt": "Complete: function({",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0101",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0102",
+      "prompt": "((((0",
+      "target": ")))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "((((0",
+      "corrupt_prompt": "((((0",
+      "target_token": ")))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0103",
+      "prompt": "What closes: [{[( ... ",
+      "target": ")]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [{[( ... ",
+      "corrupt_prompt": "What closes: [{[( ... ",
+      "target_token": ")]}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0104",
+      "prompt": "Complete the delimiters: f(({(arg",
+      "target": ")})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(({(arg",
+      "corrupt_prompt": "Complete the delimiters: f(({(arg",
+      "target_token": ")})"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0105",
+      "prompt": "Complete: function({{{{",
+      "target": "}}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({{{{",
+      "corrupt_prompt": "Complete: function({{{{",
+      "target_token": "}}}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0106",
+      "prompt": "Close these brackets: ((",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ((",
+      "corrupt_prompt": "Close these brackets: ((",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0107",
+      "prompt": "(([{{x",
+      "target": "}}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "(([{{x",
+      "corrupt_prompt": "(([{{x",
+      "target_token": "}}])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0108",
+      "prompt": "What closes: ( ... ",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: ( ... ",
+      "corrupt_prompt": "What closes: ( ... ",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0109",
+      "prompt": "Complete the delimiters: f({(arg",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({(arg",
+      "corrupt_prompt": "Complete the delimiters: f({(arg",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0110",
+      "prompt": "Complete: function([{{{",
+      "target": "}}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function([{{{",
+      "corrupt_prompt": "Complete: function([{{{",
+      "target_token": "}}}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0111",
+      "prompt": "Close these brackets: {[",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {[",
+      "corrupt_prompt": "Close these brackets: {[",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0112",
+      "prompt": "([0",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "([0",
+      "corrupt_prompt": "([0",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0113",
+      "prompt": "What closes: {([ ... ",
+      "target": "])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {([ ... ",
+      "corrupt_prompt": "What closes: {([ ... ",
+      "target_token": "])}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0114",
+      "prompt": "Complete the delimiters: f([{[(arg",
+      "target": ")]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([{[(arg",
+      "corrupt_prompt": "Complete the delimiters: f([{[(arg",
+      "target_token": ")]}]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0115",
+      "prompt": "Complete: function(([(",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function(([(",
+      "corrupt_prompt": "Complete: function(([(",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0116",
+      "prompt": "Close these brackets: {{",
+      "target": "}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {{",
+      "corrupt_prompt": "Close these brackets: {{",
+      "target_token": "}}"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0117",
+      "prompt": "((1",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "((1",
+      "corrupt_prompt": "((1",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0118",
+      "prompt": "What closes: [ ... ",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [ ... ",
+      "corrupt_prompt": "What closes: [ ... ",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_train_0119",
+      "prompt": "Complete the delimiters: f([((arg",
+      "target": "))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([((arg",
+      "corrupt_prompt": "Complete the delimiters: f([((arg",
+      "target_token": "))]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0120",
+      "prompt": "Complete: function([(",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function([(",
+      "corrupt_prompt": "Complete: function([(",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0121",
+      "prompt": "Close these brackets: [({",
+      "target": "})]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [({",
+      "corrupt_prompt": "Close these brackets: [({",
+      "target_token": "})]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0122",
+      "prompt": "((1",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "((1",
+      "corrupt_prompt": "((1",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0123",
+      "prompt": "What closes: [ ... ",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [ ... ",
+      "corrupt_prompt": "What closes: [ ... ",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0124",
+      "prompt": "Complete the delimiters: f([arg",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([arg",
+      "corrupt_prompt": "Complete the delimiters: f([arg",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0125",
+      "prompt": "Complete: function([[(",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function([[(",
+      "corrupt_prompt": "Complete: function([[(",
+      "target_token": ")]]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0126",
+      "prompt": "Close these brackets: [",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [",
+      "corrupt_prompt": "Close these brackets: [",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0127",
+      "prompt": "([{a",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "([{a",
+      "corrupt_prompt": "([{a",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0128",
+      "prompt": "What closes: [{[( ... ",
+      "target": ")]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [{[( ... ",
+      "corrupt_prompt": "What closes: [{[( ... ",
+      "target_token": ")]}]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0129",
+      "prompt": "Complete the delimiters: f((({[arg",
+      "target": "]}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "()",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f((({[arg",
+      "corrupt_prompt": "Complete the delimiters: f((({[arg",
+      "target_token": "]}))"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0130",
+      "prompt": "Complete: function({{[(",
+      "target": ")]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function({{[(",
+      "corrupt_prompt": "Complete: function({{[(",
+      "target_token": ")]}}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0131",
+      "prompt": "Close these brackets: [(({",
+      "target": "}))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [(({",
+      "corrupt_prompt": "Close these brackets: [(({",
+      "target_token": "}))]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0132",
+      "prompt": "({[a",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "({[a",
+      "corrupt_prompt": "({[a",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0133",
+      "prompt": "What closes: { ... ",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: { ... ",
+      "corrupt_prompt": "What closes: { ... ",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0134",
+      "prompt": "Complete the delimiters: f({arg",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({arg",
+      "corrupt_prompt": "Complete the delimiters: f({arg",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0135",
+      "prompt": "Complete: function({[",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function({[",
+      "corrupt_prompt": "Complete: function({[",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0136",
+      "prompt": "Close these brackets: [",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [",
+      "corrupt_prompt": "Close these brackets: [",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0137",
+      "prompt": "(([a",
+      "target": "])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "(([a",
+      "corrupt_prompt": "(([a",
+      "target_token": "])"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0138",
+      "prompt": "What closes: {{[[ ... ",
+      "target": "]]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {{[[ ... ",
+      "corrupt_prompt": "What closes: {{[[ ... ",
+      "target_token": "]]}}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0139",
+      "prompt": "Complete the delimiters: f((arg",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f((arg",
+      "corrupt_prompt": "Complete the delimiters: f((arg",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0140",
+      "prompt": "Complete: function({(",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function({(",
+      "corrupt_prompt": "Complete: function({(",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0141",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0142",
+      "prompt": "([[[(n",
+      "target": ")]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "([[[(n",
+      "corrupt_prompt": "([[[(n",
+      "target_token": ")]]]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0143",
+      "prompt": "What closes: [[( ... ",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [[( ... ",
+      "corrupt_prompt": "What closes: [[( ... ",
+      "target_token": ")]]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0144",
+      "prompt": "Complete the delimiters: f({{{arg",
+      "target": "}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({{{arg",
+      "corrupt_prompt": "Complete the delimiters: f({{{arg",
+      "target_token": "}}}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0145",
+      "prompt": "Complete: function((({",
+      "target": "}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function((({",
+      "corrupt_prompt": "Complete: function((({",
+      "target_token": "}))"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0146",
+      "prompt": "Close these brackets: {({[",
+      "target": "]})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "()",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {({[",
+      "corrupt_prompt": "Close these brackets: {({[",
+      "target_token": "]})}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0147",
+      "prompt": "([{{{1",
+      "target": "}}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "([{{{1",
+      "corrupt_prompt": "([{{{1",
+      "target_token": "}}}]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0148",
+      "prompt": "What closes: (( ... ",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: (( ... ",
+      "corrupt_prompt": "What closes: (( ... ",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0149",
+      "prompt": "Complete the delimiters: f(((arg",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(((arg",
+      "corrupt_prompt": "Complete the delimiters: f(((arg",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0150",
+      "prompt": "Complete: function({{{",
+      "target": "}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete: function({{{",
+      "corrupt_prompt": "Complete: function({{{",
+      "target_token": "}}}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0151",
+      "prompt": "Close these brackets: (",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: (",
+      "corrupt_prompt": "Close these brackets: (",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0152",
+      "prompt": "((0",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "((0",
+      "corrupt_prompt": "((0",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0153",
+      "prompt": "What closes: ([ ... ",
+      "target": "])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: ([ ... ",
+      "corrupt_prompt": "What closes: ([ ... ",
+      "target_token": "])"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0154",
+      "prompt": "Complete the delimiters: f([arg",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([arg",
+      "corrupt_prompt": "Complete the delimiters: f([arg",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0155",
+      "prompt": "Complete: function((",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function((",
+      "corrupt_prompt": "Complete: function((",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0156",
+      "prompt": "Close these brackets: {[[(",
+      "target": ")]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {[[(",
+      "corrupt_prompt": "Close these brackets: {[[(",
+      "target_token": ")]]}"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0157",
+      "prompt": "([(1",
+      "target": ")]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "([(1",
+      "corrupt_prompt": "([(1",
+      "target_token": ")]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0158",
+      "prompt": "What closes: [(( ... ",
+      "target": "))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [(( ... ",
+      "corrupt_prompt": "What closes: [(( ... ",
+      "target_token": "))]"
+    },
+    {
+      "task_id": "delimiter_tracking_val_0159",
+      "prompt": "Complete the delimiters: f([[{arg",
+      "target": "}]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([[{arg",
+      "corrupt_prompt": "Complete the delimiters: f([[{arg",
+      "target_token": "}]]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0160",
+      "prompt": "Complete: function([",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([",
+      "corrupt_prompt": "Complete: function([",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0161",
+      "prompt": "Close these brackets: ([({",
+      "target": "})])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ([({",
+      "corrupt_prompt": "Close these brackets: ([({",
+      "target_token": "})])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0162",
+      "prompt": "({[[{0",
+      "target": "}]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "({[[{0",
+      "corrupt_prompt": "({[[{0",
+      "target_token": "}]]}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0163",
+      "prompt": "What closes: [(([ ... ",
+      "target": "]))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [(([ ... ",
+      "corrupt_prompt": "What closes: [(([ ... ",
+      "target_token": "]))]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0164",
+      "prompt": "Complete the delimiters: f([arg",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f([arg",
+      "corrupt_prompt": "Complete the delimiters: f([arg",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0165",
+      "prompt": "Complete: function({((",
+      "target": "))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function({((",
+      "corrupt_prompt": "Complete: function({((",
+      "target_token": "))}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0166",
+      "prompt": "Close these brackets: [{",
+      "target": "}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [{",
+      "corrupt_prompt": "Close these brackets: [{",
+      "target_token": "}]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0167",
+      "prompt": "({[a",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "({[a",
+      "corrupt_prompt": "({[a",
+      "target_token": "]}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0168",
+      "prompt": "What closes: ({ ... ",
+      "target": "})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "What closes: ({ ... ",
+      "corrupt_prompt": "What closes: ({ ... ",
+      "target_token": "})"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0169",
+      "prompt": "Complete the delimiters: f({({arg",
+      "target": "})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({({arg",
+      "corrupt_prompt": "Complete the delimiters: f({({arg",
+      "target_token": "})}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0170",
+      "prompt": "Complete: function({(",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function({(",
+      "corrupt_prompt": "Complete: function({(",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0171",
+      "prompt": "Close these brackets: ([(",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ([(",
+      "corrupt_prompt": "Close these brackets: ([(",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0172",
+      "prompt": "({(x",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "({(x",
+      "corrupt_prompt": "({(x",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0173",
+      "prompt": "What closes: [ ... ",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: [ ... ",
+      "corrupt_prompt": "What closes: [ ... ",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0174",
+      "prompt": "Complete the delimiters: f(([arg",
+      "target": "])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(([arg",
+      "corrupt_prompt": "Complete the delimiters: f(([arg",
+      "target_token": "])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0175",
+      "prompt": "Complete: function((((",
+      "target": ")))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function((((",
+      "corrupt_prompt": "Complete: function((((",
+      "target_token": ")))"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0176",
+      "prompt": "Close these brackets: {",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {",
+      "corrupt_prompt": "Close these brackets: {",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0177",
+      "prompt": "(([{0",
+      "target": "}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}"
+        ]
+      },
+      "clean_prompt": "(([{0",
+      "corrupt_prompt": "(([{0",
+      "target_token": "}])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0178",
+      "prompt": "What closes: [[( ... ",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: [[( ... ",
+      "corrupt_prompt": "What closes: [[( ... ",
+      "target_token": ")]]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0179",
+      "prompt": "Complete the delimiters: f({[({arg",
+      "target": "})]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[({arg",
+      "corrupt_prompt": "Complete the delimiters: f({[({arg",
+      "target_token": "})]}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0180",
+      "prompt": "Complete: function([{{[",
+      "target": "]}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "[]",
+          "{}",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function([{{[",
+      "corrupt_prompt": "Complete: function([{{[",
+      "target_token": "]}}]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0181",
+      "prompt": "Close these brackets: {(({",
+      "target": "}))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "()",
+          "()",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {(({",
+      "corrupt_prompt": "Close these brackets: {(({",
+      "target_token": "}))}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0182",
+      "prompt": "([1",
+      "target": "]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "[]"
+        ]
+      },
+      "clean_prompt": "([1",
+      "corrupt_prompt": "([1",
+      "target_token": "]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0183",
+      "prompt": "What closes: {(( ... ",
+      "target": "))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: {(( ... ",
+      "corrupt_prompt": "What closes: {(( ... ",
+      "target_token": "))}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0184",
+      "prompt": "Complete the delimiters: f({(arg",
+      "target": ")}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({(arg",
+      "corrupt_prompt": "Complete the delimiters: f({(arg",
+      "target_token": ")}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0185",
+      "prompt": "Complete: function(([((",
+      "target": "))])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function(([((",
+      "corrupt_prompt": "Complete: function(([((",
+      "target_token": "))])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0186",
+      "prompt": "Close these brackets: {",
+      "target": "}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "{}"
+        ]
+      },
+      "clean_prompt": "Close these brackets: {",
+      "corrupt_prompt": "Close these brackets: {",
+      "target_token": "}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0187",
+      "prompt": "((0",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "((0",
+      "corrupt_prompt": "((0",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0188",
+      "prompt": "What closes: {[([ ... ",
+      "target": "])]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "[]",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {[([ ... ",
+      "corrupt_prompt": "What closes: {[([ ... ",
+      "target_token": "])]}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0189",
+      "prompt": "Complete the delimiters: f(([{{arg",
+      "target": "}}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "[]",
+          "{}",
+          "{}"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f(([{{arg",
+      "corrupt_prompt": "Complete the delimiters: f(([{{arg",
+      "target_token": "}}])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0190",
+      "prompt": "Complete: function((",
+      "target": ")",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 1,
+        "bracket_types": [
+          "()"
+        ]
+      },
+      "clean_prompt": "Complete: function((",
+      "corrupt_prompt": "Complete: function((",
+      "target_token": ")"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0191",
+      "prompt": "Close these brackets: ([[",
+      "target": "]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Close these brackets: ([[",
+      "corrupt_prompt": "Close these brackets: ([[",
+      "target_token": "]])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0192",
+      "prompt": "(([(x",
+      "target": ")])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "(([(x",
+      "corrupt_prompt": "(([(x",
+      "target_token": ")])"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0193",
+      "prompt": "What closes: {{[ ... ",
+      "target": "]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "{}",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "What closes: {{[ ... ",
+      "corrupt_prompt": "What closes: {{[ ... ",
+      "target_token": "]}}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0194",
+      "prompt": "Complete the delimiters: f({({[arg",
+      "target": "]})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "{}",
+          "()",
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({({[arg",
+      "corrupt_prompt": "Complete the delimiters: f({({[arg",
+      "target_token": "]})}"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0195",
+      "prompt": "Complete: function((([",
+      "target": "]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "()",
+          "()",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete: function((([",
+      "corrupt_prompt": "Complete: function((([",
+      "target_token": "]))"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0196",
+      "prompt": "Close these brackets: [((",
+      "target": "))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 3,
+        "bracket_types": [
+          "[]",
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "Close these brackets: [((",
+      "corrupt_prompt": "Close these brackets: [((",
+      "target_token": "))]"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0197",
+      "prompt": "((([(0",
+      "target": ")]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "depth": 4,
+        "bracket_types": [
+          "()",
+          "()",
+          "[]",
+          "()"
+        ]
+      },
+      "clean_prompt": "((([(0",
+      "corrupt_prompt": "((([(0",
+      "target_token": ")]))"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0198",
+      "prompt": "What closes: (( ... ",
+      "target": "))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "()",
+          "()"
+        ]
+      },
+      "clean_prompt": "What closes: (( ... ",
+      "corrupt_prompt": "What closes: (( ... ",
+      "target_token": "))"
+    },
+    {
+      "task_id": "delimiter_tracking_test_0199",
+      "prompt": "Complete the delimiters: f({[arg",
+      "target": "]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "depth": 2,
+        "bracket_types": [
+          "{}",
+          "[]"
+        ]
+      },
+      "clean_prompt": "Complete the delimiters: f({[arg",
+      "corrupt_prompt": "Complete the delimiters: f({[arg",
+      "target_token": "]}"
+    }
+  ]
+}

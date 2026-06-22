@@ -1,0 +1,1706 @@
+{
+  "family": "string_decoding",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "string_decoding_train_0000",
+      "prompt": "s = 'hello baz world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "baz",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0001",
+      "prompt": "s = 'test\\tbaz\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "baz",
+          "bar"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0002",
+      "prompt": "s = 'data\\tworld\\tend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "world",
+          "end"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0003",
+      "prompt": "s = 'foo\\tend\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "end",
+          "hello"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0004",
+      "prompt": "s = 'hello bar world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "bar",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0005",
+      "prompt": "s = 'data test foo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "test",
+          "foo"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0006",
+      "prompt": "s = 'test hello data'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "hello",
+          "data"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0007",
+      "prompt": "s = 'hello\\tbar\\tend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "bar",
+          "end"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0008",
+      "prompt": "s = 'data\\n\\thello\\n\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "hello",
+          "baz"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0009",
+      "prompt": "s = 'foo\\nworld\\nhello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "world",
+          "hello"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0010",
+      "prompt": "s = 'test\\n\\tworld\\n\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "16",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "world",
+          "hello"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0011",
+      "prompt": "s = 'world\\n\\thello\\n\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "15",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "hello",
+          "bar"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0012",
+      "prompt": "s = 'data\\n\\tend\\n\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "end",
+          "baz"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0013",
+      "prompt": "s = 'foo\\ndata\\nbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "data",
+          "baz"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0014",
+      "prompt": "s = 'baz bar data'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "bar",
+          "data"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0015",
+      "prompt": "s = 'foo end test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "end",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0016",
+      "prompt": "s = 'world\\tbar\\tdata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "bar",
+          "data"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0017",
+      "prompt": "s = 'foo\\tworld\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "world",
+          "baz"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0018",
+      "prompt": "s = 'foo\\nworld\\ntest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "world",
+          "test"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0019",
+      "prompt": "s = 'world test bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "test",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0020",
+      "prompt": "s = 'world end data'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "end",
+          "data"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0021",
+      "prompt": "s = 'foo test data'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "test",
+          "data"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0022",
+      "prompt": "s = 'test end bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "end",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0023",
+      "prompt": "s = 'foo end bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "10",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "end",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0024",
+      "prompt": "s = 'foo\\nbaz\\ntest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "baz",
+          "test"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0025",
+      "prompt": "s = 'data\\ttest\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "test",
+          "hello"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0026",
+      "prompt": "s = 'foo\\nhello\\nworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "hello",
+          "world"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0027",
+      "prompt": "s = 'bar world end'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "world",
+          "end"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0028",
+      "prompt": "s = 'hello\\n\\tbaz\\n\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "baz",
+          "bar"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0029",
+      "prompt": "s = 'test\\n\\tworld\\n\\tend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "world",
+          "end"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0030",
+      "prompt": "s = 'end world bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "world",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0031",
+      "prompt": "s = 'end hello test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "hello",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0032",
+      "prompt": "s = 'test foo world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "foo",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0033",
+      "prompt": "s = 'test\\n\\tdata\\n\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "data",
+          "bar"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0034",
+      "prompt": "s = 'world test foo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "test",
+          "foo"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0035",
+      "prompt": "s = 'world\\n\\tdata\\n\\tfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "data",
+          "foo"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0036",
+      "prompt": "s = 'hello\\nbaz\\nworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "baz",
+          "world"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0037",
+      "prompt": "s = 'bar\\nend\\nhello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "end",
+          "hello"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0038",
+      "prompt": "s = 'baz world foo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "world",
+          "foo"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0039",
+      "prompt": "s = 'end\\nbar\\nbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "10",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "bar",
+          "baz"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0040",
+      "prompt": "s = 'foo\\tbar\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "10",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "bar",
+          "baz"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0041",
+      "prompt": "s = 'foo\\tdata\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "data",
+          "test"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0042",
+      "prompt": "s = 'hello world test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "15",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "world",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0043",
+      "prompt": "s = 'foo\\nbaz\\ndata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "baz",
+          "data"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0044",
+      "prompt": "s = 'test\\tbaz\\tworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "baz",
+          "world"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0045",
+      "prompt": "s = 'test\\tworld\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "15",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "world",
+          "hello"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0046",
+      "prompt": "s = 'bar\\tdata\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "data",
+          "test"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0047",
+      "prompt": "s = 'data end world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "end",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0048",
+      "prompt": "s = 'hello\\n\\tbar\\n\\tfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "bar",
+          "foo"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0049",
+      "prompt": "s = 'data bar end'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "bar",
+          "end"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0050",
+      "prompt": "s = 'foo\\ntest\\nend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "test",
+          "end"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0051",
+      "prompt": "s = 'world foo test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "foo",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0052",
+      "prompt": "s = 'bar\\ntest\\nbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "test",
+          "baz"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0053",
+      "prompt": "s = 'hello\\tdata\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "data",
+          "bar"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0054",
+      "prompt": "s = 'foo\\tbar\\tworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "bar",
+          "world"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0055",
+      "prompt": "s = 'data\\n\\tend\\n\\tworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "end",
+          "world"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0056",
+      "prompt": "s = 'data\\tbaz\\tworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "baz",
+          "world"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0057",
+      "prompt": "s = 'test hello world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "15",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "hello",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0058",
+      "prompt": "s = 'foo\\tbar\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "bar",
+          "hello"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0059",
+      "prompt": "s = 'bar end world'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "end",
+          "world"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0060",
+      "prompt": "s = 'test\\nhello\\nend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "hello",
+          "end"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0061",
+      "prompt": "s = 'baz\\n\\tend\\n\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "end",
+          "hello"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0062",
+      "prompt": "s = 'bar test end'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "test",
+          "end"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0063",
+      "prompt": "s = 'world\\n\\tbaz\\n\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "baz",
+          "test"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0064",
+      "prompt": "s = 'foo hello test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "hello",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0065",
+      "prompt": "s = 'baz hello bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "hello",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0066",
+      "prompt": "s = 'world\\n\\ttest\\n\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "test",
+          "bar"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0067",
+      "prompt": "s = 'foo\\n\\ttest\\n\\tdata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "test",
+          "data"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0068",
+      "prompt": "s = 'baz\\nworld\\nend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "world",
+          "end"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0069",
+      "prompt": "s = 'world test baz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "test",
+          "baz"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0070",
+      "prompt": "s = 'bar\\n\\tdata\\n\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "data",
+          "test"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0071",
+      "prompt": "s = 'data\\nbar\\nhello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "bar",
+          "hello"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0072",
+      "prompt": "s = 'baz data test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "data",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0073",
+      "prompt": "s = 'baz test end'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "test",
+          "end"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0074",
+      "prompt": "s = 'data test foo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "test",
+          "foo"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0075",
+      "prompt": "s = 'world\\n\\thello\\n\\tdata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "16",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "hello",
+          "data"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0076",
+      "prompt": "s = 'bar\\tbaz\\tend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "10",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "baz",
+          "end"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0077",
+      "prompt": "s = 'data\\ntest\\nfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "test",
+          "foo"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0078",
+      "prompt": "s = 'end\\n\\tbaz\\n\\tdata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "baz",
+          "data"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0079",
+      "prompt": "s = 'data\\nhello\\nbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "hello",
+          "baz"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0080",
+      "prompt": "s = 'world\\nbaz\\nhello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "baz",
+          "hello"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0081",
+      "prompt": "s = 'bar\\n\\tfoo\\n\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "foo",
+          "baz"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0082",
+      "prompt": "s = 'data\\ntest\\nend'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "test",
+          "end"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0083",
+      "prompt": "s = 'test\\n\\tend\\n\\tbar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "end",
+          "bar"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0084",
+      "prompt": "s = 'hello\\n\\tbar\\n\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "bar",
+          "test"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0085",
+      "prompt": "s = 'hello\\tworld\\tbaz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "world",
+          "baz"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0086",
+      "prompt": "s = 'hello\\ntest\\nfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "test",
+          "foo"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0087",
+      "prompt": "s = 'baz\\n\\tbar\\n\\thello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "bar",
+          "hello"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0088",
+      "prompt": "s = 'baz foo test'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "baz",
+          "foo",
+          "test"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0089",
+      "prompt": "s = 'test\\n\\tworld\\n\\tfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "world",
+          "foo"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0090",
+      "prompt": "s = 'hello foo bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "hello",
+          "foo",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0091",
+      "prompt": "s = 'foo world baz'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "foo",
+          "world",
+          "baz"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0092",
+      "prompt": "s = 'data\\tend\\tfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "data",
+          "end",
+          "foo"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0093",
+      "prompt": "s = 'end data hello'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "data",
+          "hello"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0094",
+      "prompt": "s = 'test\\tbaz\\tdata'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "baz",
+          "data"
+        ],
+        "separator": "\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0095",
+      "prompt": "s = 'test\\ndata\\nfoo'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "data",
+          "foo"
+        ],
+        "separator": "\\n"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0096",
+      "prompt": "s = 'world test bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "13",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "world",
+          "test",
+          "bar"
+        ],
+        "separator": " "
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0097",
+      "prompt": "s = 'end\\n\\ttest\\n\\tworld'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "14",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "end",
+          "test",
+          "world"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0098",
+      "prompt": "s = 'bar\\n\\tfoo\\n\\ttest'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "12",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "bar",
+          "foo",
+          "test"
+        ],
+        "separator": "\\n\\t"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0099",
+      "prompt": "s = 'test foo bar'\nprint(len(s))\n# What prints? (count escapes as single chars)\n",
+      "target": "11",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "words": [
+          "test",
+          "foo",
+          "bar"
+        ],
+        "separator": " "
+      }
+    }
+  ]
+}

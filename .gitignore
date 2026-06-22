@@ -45,3 +45,10 @@ Thumbs.db
 # Temporary
 /tmp/
 *.tmp
+
+# Phase 2 large artifacts (keep summaries and plots, exclude raw)
+results/raw/
+experiments/runs/*.json
+
+# GGUF models
+*.gguf

@@ -1,0 +1,2610 @@
+{
+  "family": "factual_recall",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "factual_recall_train_0000",
+      "prompt": "The capital of France is ",
+      "target": "Paris",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of France is ",
+      "corrupt_prompt": "The capital of Germany is ",
+      "target_token": "Paris"
+    },
+    {
+      "task_id": "factual_recall_train_0001",
+      "prompt": "The chemical symbol for Helium is ",
+      "target": "He",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Helium is ",
+      "corrupt_prompt": "The chemical symbol for Carbon is ",
+      "target_token": "He"
+    },
+    {
+      "task_id": "factual_recall_train_0002",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0003",
+      "prompt": "'hello' in Italian is ",
+      "target": "ciao",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0004",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0005",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0006",
+      "prompt": "The capital of China is ",
+      "target": "Beijing",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of China is ",
+      "corrupt_prompt": "The capital of Russia is ",
+      "target_token": "Beijing"
+    },
+    {
+      "task_id": "factual_recall_train_0007",
+      "prompt": "The chemical symbol for Neon is ",
+      "target": "Ne",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Neon is ",
+      "corrupt_prompt": "The chemical symbol for Magnesium is ",
+      "target_token": "Ne"
+    },
+    {
+      "task_id": "factual_recall_train_0008",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0009",
+      "prompt": "'thank you' in Spanish is ",
+      "target": "gracias",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0010",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0011",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0012",
+      "prompt": "The capital of Australia is ",
+      "target": "Canberra",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Australia is ",
+      "corrupt_prompt": "The capital of Canada is ",
+      "target_token": "Canberra"
+    },
+    {
+      "task_id": "factual_recall_train_0013",
+      "prompt": "The chemical symbol for Sulfur is ",
+      "target": "S",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Sulfur is ",
+      "corrupt_prompt": "The chemical symbol for Argon is ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "factual_recall_train_0014",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0015",
+      "prompt": "'no' in Spanish is ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0016",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0017",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0018",
+      "prompt": "The capital of Vietnam is ",
+      "target": "Hanoi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Vietnam is ",
+      "corrupt_prompt": "The capital of Kenya is ",
+      "target_token": "Hanoi"
+    },
+    {
+      "task_id": "factual_recall_train_0019",
+      "prompt": "The chemical symbol for Copper is ",
+      "target": "Cu",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Copper is ",
+      "corrupt_prompt": "The chemical symbol for Silver is ",
+      "target_token": "Cu"
+    },
+    {
+      "task_id": "factual_recall_train_0020",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0021",
+      "prompt": "'hello' in Japanese is ",
+      "target": "konnichiwa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0022",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0023",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0024",
+      "prompt": "The capital of Finland is ",
+      "target": "Helsinki",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Finland is ",
+      "corrupt_prompt": "The capital of Poland is ",
+      "target_token": "Helsinki"
+    },
+    {
+      "task_id": "factual_recall_train_0025",
+      "prompt": "The chemical symbol for Tin is ",
+      "target": "Sn",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Tin is ",
+      "corrupt_prompt": "The chemical symbol for Nickel is ",
+      "target_token": "Sn"
+    },
+    {
+      "task_id": "factual_recall_train_0026",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0027",
+      "prompt": "'please' in Spanish is ",
+      "target": "por favor",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0028",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0029",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0030",
+      "prompt": "The capital of Switzerland is ",
+      "target": "Bern",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Switzerland is ",
+      "corrupt_prompt": "The capital of Ireland is ",
+      "target_token": "Bern"
+    },
+    {
+      "task_id": "factual_recall_train_0031",
+      "prompt": "The chemical symbol for Tungsten is ",
+      "target": "W",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Tungsten is ",
+      "corrupt_prompt": "The chemical symbol for Helium is ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "factual_recall_train_0032",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0033",
+      "prompt": "'hello' in Spanish is ",
+      "target": "hola",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0034",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0035",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0036",
+      "prompt": "The capital of Colombia is ",
+      "target": "Bogota",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Colombia is ",
+      "corrupt_prompt": "The capital of Morocco is ",
+      "target_token": "Bogota"
+    },
+    {
+      "task_id": "factual_recall_train_0037",
+      "prompt": "The chemical symbol for Oxygen is ",
+      "target": "O",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Oxygen is ",
+      "corrupt_prompt": "The chemical symbol for Neon is ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "factual_recall_train_0038",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0039",
+      "prompt": "'goodbye' in Spanish is ",
+      "target": "adios",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0040",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0041",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0042",
+      "prompt": "The capital of South Korea is ",
+      "target": "Seoul",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of South Korea is ",
+      "corrupt_prompt": "The capital of Philippines is ",
+      "target_token": "Seoul"
+    },
+    {
+      "task_id": "factual_recall_train_0043",
+      "prompt": "The chemical symbol for Silicon is ",
+      "target": "Si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Silicon is ",
+      "corrupt_prompt": "The chemical symbol for Sulfur is ",
+      "target_token": "Si"
+    },
+    {
+      "task_id": "factual_recall_train_0044",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0045",
+      "prompt": "'yes' in Spanish is ",
+      "target": "si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0046",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0047",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0048",
+      "prompt": "The capital of South Africa is ",
+      "target": "Pretoria",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of South Africa is ",
+      "corrupt_prompt": "The capital of Saudi Arabia is ",
+      "target_token": "Pretoria"
+    },
+    {
+      "task_id": "factual_recall_train_0049",
+      "prompt": "The chemical symbol for Calcium is ",
+      "target": "Ca",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Calcium is ",
+      "corrupt_prompt": "The chemical symbol for Copper is ",
+      "target_token": "Ca"
+    },
+    {
+      "task_id": "factual_recall_train_0050",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0051",
+      "prompt": "'hello' in Italian is ",
+      "target": "ciao",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0052",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0053",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0054",
+      "prompt": "The capital of Italy is ",
+      "target": "Rome",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Italy is ",
+      "corrupt_prompt": "The capital of Spain is ",
+      "target_token": "Rome"
+    },
+    {
+      "task_id": "factual_recall_train_0055",
+      "prompt": "The chemical symbol for Platinum is ",
+      "target": "Pt",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Platinum is ",
+      "corrupt_prompt": "The chemical symbol for Tin is ",
+      "target_token": "Pt"
+    },
+    {
+      "task_id": "factual_recall_train_0056",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0057",
+      "prompt": "'thank you' in Spanish is ",
+      "target": "gracias",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0058",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0059",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0060",
+      "prompt": "The capital of Peru is ",
+      "target": "Lima",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Peru is ",
+      "corrupt_prompt": "The capital of Brazil is ",
+      "target_token": "Lima"
+    },
+    {
+      "task_id": "factual_recall_train_0061",
+      "prompt": "The chemical symbol for Manganese is ",
+      "target": "Mn",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Manganese is ",
+      "corrupt_prompt": "The chemical symbol for Tungsten is ",
+      "target_token": "Mn"
+    },
+    {
+      "task_id": "factual_recall_train_0062",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0063",
+      "prompt": "'no' in Spanish is ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0064",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0065",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0066",
+      "prompt": "The capital of Argentina is ",
+      "target": "Buenos Aires",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Argentina is ",
+      "corrupt_prompt": "The capital of Turkey is ",
+      "target_token": "Buenos Aires"
+    },
+    {
+      "task_id": "factual_recall_train_0067",
+      "prompt": "The chemical symbol for Carbon is ",
+      "target": "C",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Carbon is ",
+      "corrupt_prompt": "The chemical symbol for Oxygen is ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "factual_recall_train_0068",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0069",
+      "prompt": "'hello' in Japanese is ",
+      "target": "konnichiwa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0070",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0071",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0072",
+      "prompt": "The capital of Greece is ",
+      "target": "Athens",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Greece is ",
+      "corrupt_prompt": "The capital of Sweden is ",
+      "target_token": "Athens"
+    },
+    {
+      "task_id": "factual_recall_train_0073",
+      "prompt": "The chemical symbol for Magnesium is ",
+      "target": "Mg",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Magnesium is ",
+      "corrupt_prompt": "The chemical symbol for Silicon is ",
+      "target_token": "Mg"
+    },
+    {
+      "task_id": "factual_recall_train_0074",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0075",
+      "prompt": "'please' in Spanish is ",
+      "target": "por favor",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0076",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0077",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0078",
+      "prompt": "The capital of Netherlands is ",
+      "target": "Amsterdam",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Netherlands is ",
+      "corrupt_prompt": "The capital of Belgium is ",
+      "target_token": "Amsterdam"
+    },
+    {
+      "task_id": "factual_recall_train_0079",
+      "prompt": "The chemical symbol for Argon is ",
+      "target": "Ar",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Argon is ",
+      "corrupt_prompt": "The chemical symbol for Calcium is ",
+      "target_token": "Ar"
+    },
+    {
+      "task_id": "factual_recall_train_0080",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0081",
+      "prompt": "'hello' in Spanish is ",
+      "target": "hola",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0082",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0083",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0084",
+      "prompt": "The capital of Cuba is ",
+      "target": "Havana",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Cuba is ",
+      "corrupt_prompt": "The capital of Jamaica is ",
+      "target_token": "Havana"
+    },
+    {
+      "task_id": "factual_recall_train_0085",
+      "prompt": "The chemical symbol for Silver is ",
+      "target": "Ag",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Silver is ",
+      "corrupt_prompt": "The chemical symbol for Platinum is ",
+      "target_token": "Ag"
+    },
+    {
+      "task_id": "factual_recall_train_0086",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0087",
+      "prompt": "'goodbye' in Spanish is ",
+      "target": "adios",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0088",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0089",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0090",
+      "prompt": "The capital of Iran is ",
+      "target": "Tehran",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Iran is ",
+      "corrupt_prompt": "The capital of Iraq is ",
+      "target_token": "Tehran"
+    },
+    {
+      "task_id": "factual_recall_train_0091",
+      "prompt": "The chemical symbol for Nickel is ",
+      "target": "Ni",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Nickel is ",
+      "corrupt_prompt": "The chemical symbol for Manganese is ",
+      "target_token": "Ni"
+    },
+    {
+      "task_id": "factual_recall_train_0092",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0093",
+      "prompt": "'yes' in Spanish is ",
+      "target": "si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0094",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0095",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0096",
+      "prompt": "The capital of Malaysia is ",
+      "target": "Kuala Lumpur",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Malaysia is ",
+      "corrupt_prompt": "The capital of Singapore is ",
+      "target_token": "Kuala Lumpur"
+    },
+    {
+      "task_id": "factual_recall_train_0097",
+      "prompt": "The chemical symbol for Helium is ",
+      "target": "He",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Helium is ",
+      "corrupt_prompt": "The chemical symbol for Carbon is ",
+      "target_token": "He"
+    },
+    {
+      "task_id": "factual_recall_train_0098",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0099",
+      "prompt": "'hello' in Italian is ",
+      "target": "ciao",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0100",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0101",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0102",
+      "prompt": "The capital of France is ",
+      "target": "Paris",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of France is ",
+      "corrupt_prompt": "The capital of Germany is ",
+      "target_token": "Paris"
+    },
+    {
+      "task_id": "factual_recall_train_0103",
+      "prompt": "The chemical symbol for Neon is ",
+      "target": "Ne",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Neon is ",
+      "corrupt_prompt": "The chemical symbol for Magnesium is ",
+      "target_token": "Ne"
+    },
+    {
+      "task_id": "factual_recall_train_0104",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0105",
+      "prompt": "'thank you' in Spanish is ",
+      "target": "gracias",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0106",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0107",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0108",
+      "prompt": "The capital of China is ",
+      "target": "Beijing",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of China is ",
+      "corrupt_prompt": "The capital of Russia is ",
+      "target_token": "Beijing"
+    },
+    {
+      "task_id": "factual_recall_train_0109",
+      "prompt": "The chemical symbol for Sulfur is ",
+      "target": "S",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Sulfur is ",
+      "corrupt_prompt": "The chemical symbol for Argon is ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "factual_recall_train_0110",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0111",
+      "prompt": "'no' in Spanish is ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0112",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0113",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0114",
+      "prompt": "The capital of Australia is ",
+      "target": "Canberra",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Australia is ",
+      "corrupt_prompt": "The capital of Canada is ",
+      "target_token": "Canberra"
+    },
+    {
+      "task_id": "factual_recall_train_0115",
+      "prompt": "The chemical symbol for Copper is ",
+      "target": "Cu",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Copper is ",
+      "corrupt_prompt": "The chemical symbol for Silver is ",
+      "target_token": "Cu"
+    },
+    {
+      "task_id": "factual_recall_train_0116",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0117",
+      "prompt": "'hello' in Japanese is ",
+      "target": "konnichiwa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0118",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_train_0119",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0120",
+      "prompt": "The capital of Vietnam is ",
+      "target": "Hanoi",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Vietnam is ",
+      "corrupt_prompt": "The capital of Kenya is ",
+      "target_token": "Hanoi"
+    },
+    {
+      "task_id": "factual_recall_val_0121",
+      "prompt": "The chemical symbol for Tin is ",
+      "target": "Sn",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Tin is ",
+      "corrupt_prompt": "The chemical symbol for Nickel is ",
+      "target_token": "Sn"
+    },
+    {
+      "task_id": "factual_recall_val_0122",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0123",
+      "prompt": "'please' in Spanish is ",
+      "target": "por favor",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0124",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0125",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0126",
+      "prompt": "The capital of Finland is ",
+      "target": "Helsinki",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Finland is ",
+      "corrupt_prompt": "The capital of Poland is ",
+      "target_token": "Helsinki"
+    },
+    {
+      "task_id": "factual_recall_val_0127",
+      "prompt": "The chemical symbol for Tungsten is ",
+      "target": "W",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Tungsten is ",
+      "corrupt_prompt": "The chemical symbol for Helium is ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "factual_recall_val_0128",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0129",
+      "prompt": "'hello' in Spanish is ",
+      "target": "hola",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0130",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0131",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0132",
+      "prompt": "The capital of Switzerland is ",
+      "target": "Bern",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Switzerland is ",
+      "corrupt_prompt": "The capital of Ireland is ",
+      "target_token": "Bern"
+    },
+    {
+      "task_id": "factual_recall_val_0133",
+      "prompt": "The chemical symbol for Oxygen is ",
+      "target": "O",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Oxygen is ",
+      "corrupt_prompt": "The chemical symbol for Neon is ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "factual_recall_val_0134",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0135",
+      "prompt": "'goodbye' in Spanish is ",
+      "target": "adios",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0136",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0137",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0138",
+      "prompt": "The capital of Colombia is ",
+      "target": "Bogota",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Colombia is ",
+      "corrupt_prompt": "The capital of Morocco is ",
+      "target_token": "Bogota"
+    },
+    {
+      "task_id": "factual_recall_val_0139",
+      "prompt": "The chemical symbol for Silicon is ",
+      "target": "Si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Silicon is ",
+      "corrupt_prompt": "The chemical symbol for Sulfur is ",
+      "target_token": "Si"
+    },
+    {
+      "task_id": "factual_recall_val_0140",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0141",
+      "prompt": "'yes' in Spanish is ",
+      "target": "si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0142",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0143",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0144",
+      "prompt": "The capital of South Korea is ",
+      "target": "Seoul",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of South Korea is ",
+      "corrupt_prompt": "The capital of Philippines is ",
+      "target_token": "Seoul"
+    },
+    {
+      "task_id": "factual_recall_val_0145",
+      "prompt": "The chemical symbol for Calcium is ",
+      "target": "Ca",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Calcium is ",
+      "corrupt_prompt": "The chemical symbol for Copper is ",
+      "target_token": "Ca"
+    },
+    {
+      "task_id": "factual_recall_val_0146",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0147",
+      "prompt": "'hello' in Italian is ",
+      "target": "ciao",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0148",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0149",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0150",
+      "prompt": "The capital of South Africa is ",
+      "target": "Pretoria",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of South Africa is ",
+      "corrupt_prompt": "The capital of Saudi Arabia is ",
+      "target_token": "Pretoria"
+    },
+    {
+      "task_id": "factual_recall_val_0151",
+      "prompt": "The chemical symbol for Platinum is ",
+      "target": "Pt",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Platinum is ",
+      "corrupt_prompt": "The chemical symbol for Tin is ",
+      "target_token": "Pt"
+    },
+    {
+      "task_id": "factual_recall_val_0152",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0153",
+      "prompt": "'thank you' in Spanish is ",
+      "target": "gracias",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0154",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0155",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0156",
+      "prompt": "The capital of Italy is ",
+      "target": "Rome",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Italy is ",
+      "corrupt_prompt": "The capital of Spain is ",
+      "target_token": "Rome"
+    },
+    {
+      "task_id": "factual_recall_val_0157",
+      "prompt": "The chemical symbol for Manganese is ",
+      "target": "Mn",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Manganese is ",
+      "corrupt_prompt": "The chemical symbol for Tungsten is ",
+      "target_token": "Mn"
+    },
+    {
+      "task_id": "factual_recall_val_0158",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_val_0159",
+      "prompt": "'no' in Spanish is ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0160",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0161",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0162",
+      "prompt": "The capital of Peru is ",
+      "target": "Lima",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Peru is ",
+      "corrupt_prompt": "The capital of Brazil is ",
+      "target_token": "Lima"
+    },
+    {
+      "task_id": "factual_recall_test_0163",
+      "prompt": "The chemical symbol for Carbon is ",
+      "target": "C",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Carbon is ",
+      "corrupt_prompt": "The chemical symbol for Oxygen is ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "factual_recall_test_0164",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0165",
+      "prompt": "'hello' in Japanese is ",
+      "target": "konnichiwa",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0166",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0167",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0168",
+      "prompt": "The capital of Argentina is ",
+      "target": "Buenos Aires",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Argentina is ",
+      "corrupt_prompt": "The capital of Turkey is ",
+      "target_token": "Buenos Aires"
+    },
+    {
+      "task_id": "factual_recall_test_0169",
+      "prompt": "The chemical symbol for Magnesium is ",
+      "target": "Mg",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Magnesium is ",
+      "corrupt_prompt": "The chemical symbol for Silicon is ",
+      "target_token": "Mg"
+    },
+    {
+      "task_id": "factual_recall_test_0170",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0171",
+      "prompt": "'please' in Spanish is ",
+      "target": "por favor",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0172",
+      "prompt": "The square of 3 is ",
+      "target": "9",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0173",
+      "prompt": "Is 4 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0174",
+      "prompt": "The capital of Greece is ",
+      "target": "Athens",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Greece is ",
+      "corrupt_prompt": "The capital of Sweden is ",
+      "target_token": "Athens"
+    },
+    {
+      "task_id": "factual_recall_test_0175",
+      "prompt": "The chemical symbol for Argon is ",
+      "target": "Ar",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Argon is ",
+      "corrupt_prompt": "The chemical symbol for Calcium is ",
+      "target_token": "Ar"
+    },
+    {
+      "task_id": "factual_recall_test_0176",
+      "prompt": "Planet #1 from the Sun is ",
+      "target": "Mercury",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0177",
+      "prompt": "'hello' in Spanish is ",
+      "target": "hola",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0178",
+      "prompt": "The square of 9 is ",
+      "target": "81",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0179",
+      "prompt": "Is 10 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0180",
+      "prompt": "The capital of Netherlands is ",
+      "target": "Amsterdam",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Netherlands is ",
+      "corrupt_prompt": "The capital of Belgium is ",
+      "target_token": "Amsterdam"
+    },
+    {
+      "task_id": "factual_recall_test_0181",
+      "prompt": "The chemical symbol for Silver is ",
+      "target": "Ag",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Silver is ",
+      "corrupt_prompt": "The chemical symbol for Platinum is ",
+      "target_token": "Ag"
+    },
+    {
+      "task_id": "factual_recall_test_0182",
+      "prompt": "Planet #7 from the Sun is ",
+      "target": "Uranus",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0183",
+      "prompt": "'goodbye' in Spanish is ",
+      "target": "adios",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0184",
+      "prompt": "The square of 5 is ",
+      "target": "25",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0185",
+      "prompt": "Is 6 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0186",
+      "prompt": "The capital of Cuba is ",
+      "target": "Havana",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Cuba is ",
+      "corrupt_prompt": "The capital of Jamaica is ",
+      "target_token": "Havana"
+    },
+    {
+      "task_id": "factual_recall_test_0187",
+      "prompt": "The chemical symbol for Nickel is ",
+      "target": "Ni",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Nickel is ",
+      "corrupt_prompt": "The chemical symbol for Manganese is ",
+      "target_token": "Ni"
+    },
+    {
+      "task_id": "factual_recall_test_0188",
+      "prompt": "Planet #5 from the Sun is ",
+      "target": "Jupiter",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0189",
+      "prompt": "'yes' in Spanish is ",
+      "target": "si",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0190",
+      "prompt": "The square of 1 is ",
+      "target": "1",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0191",
+      "prompt": "Is 2 greater than 5? ",
+      "target": "no",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0192",
+      "prompt": "The capital of Iran is ",
+      "target": "Tehran",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Iran is ",
+      "corrupt_prompt": "The capital of Iraq is ",
+      "target_token": "Tehran"
+    },
+    {
+      "task_id": "factual_recall_test_0193",
+      "prompt": "The chemical symbol for Helium is ",
+      "target": "He",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Helium is ",
+      "corrupt_prompt": "The chemical symbol for Carbon is ",
+      "target_token": "He"
+    },
+    {
+      "task_id": "factual_recall_test_0194",
+      "prompt": "Planet #3 from the Sun is ",
+      "target": "Earth",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "planet_order"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0195",
+      "prompt": "'hello' in Italian is ",
+      "target": "ciao",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "translation"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0196",
+      "prompt": "The square of 7 is ",
+      "target": "49",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "math_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0197",
+      "prompt": "Is 8 greater than 5? ",
+      "target": "yes",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "boolean_fact"
+      }
+    },
+    {
+      "task_id": "factual_recall_test_0198",
+      "prompt": "The capital of Malaysia is ",
+      "target": "Kuala Lumpur",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "capital"
+      },
+      "clean_prompt": "The capital of Malaysia is ",
+      "corrupt_prompt": "The capital of Singapore is ",
+      "target_token": "Kuala Lumpur"
+    },
+    {
+      "task_id": "factual_recall_test_0199",
+      "prompt": "The chemical symbol for Neon is ",
+      "target": "Ne",
+      "metadata": {
+        "family": "factual_recall",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "element_symbol"
+      },
+      "clean_prompt": "The chemical symbol for Neon is ",
+      "corrupt_prompt": "The chemical symbol for Magnesium is ",
+      "target_token": "Ne"
+    }
+  ]
+}

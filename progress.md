@@ -191,3 +191,154 @@ git push origin master
 - Steering uses activation addition at residual stream
 - Python 3.12 on aero, venv at ~/work/autonomous-small-model-exploration/.venv
 - PeftModel wraps base model in-place — use disable_adapter() context for base behavior
+
+---
+
+# Phase 2: Reproducibility & Scale-Dependent Control Surfaces
+
+## Status: STARTED (2026-06-22)
+
+## What Phase 1 Established
+
+- 21 experiments completed across 5 sessions on Qwen2.5-0.5B
+- 9 confirmed findings with confidence levels (expandable to 21 numbered findings)
+- Component atlas with 11 entries mapping layers to functional roles
+- Key cross-scale insights:
+  - L2 is a universal importance hub (HIGH confidence)
+  - LoRA training rewires component importance — each skill concentrates in DIFFERENT layers (H002 rejected)
+  - Adapter effects are concentrated at late layers (L19-L23), not propagated upstream (H6 updated/rejected)
+  - Positional specialization: L22=last-token, L0/L2=first+last, L9=instruction
+  - Cross-model patching confirms trained behavior encoded in late-layer activations
+  - Skill knockout at L19 is selective (11654x) — L2 is non-selective
+  - o_proj most efficient for skill injection
+  - Training locks in core circuit by step 10 (first 10% of training)
+
+## What Is Still Uncertain
+
+1. **Single-seed**: All Phase 1 experiments used seed=0 only. No variance estimates exist. Findings may be seed-dependent.
+2. **Zero-ablation only**: All ablations zero out component outputs. Mean-ablation or resample-ablation may give different effect sizes (and zero ablation can create distribution-shift artifacts).
+3. **No cross-family validation**: o_proj finding only tested on JSON. L19 selectivity only tested factual vs JSON/copying.
+4. **Steering may have moved, not collapsed**: Steering at L2 boosted "rome" 3.3x — but did it collapse the model's distribution or redirect it? No KL-to-uniform measured.
+5. **No variance on adapter stacking**: factual+json synergy and delimiter destruction measured once. Unknown if stable.
+6. **LoRA rank sweep at single training config**: Higher rank distributes skill — but is this an artifact of lr=2e-4 with more parameters?
+7. **Checkpoint timeline at single family (JSON)**: Core circuit locks in by step 10 — but for which skills? Only JSON tested.
+8. **Cross-model patching at single skill (JSON)**: Monotonic recovery — but does it hold for factual recall?
+
+## Phase 2 Hypotheses
+
+### H1: Multi-seed variance is low for top findings (L2 hub, positional specialization, adapter concentration)
+- Test: Replicate top 5 findings × 3 seeds. If σ > 20% of effect size, mark LOW confidence.
+- Seeds: 42, 137, 2026
+
+### H2: Mean-ablation gives larger effect sizes than zero-ablation at important layers
+- Test: Compare zero vs mean ablation at L0, L1, L2, L19, L22, L23. Mean ablation replaces with dataset-mean activation.
+- Prediction: Effect sizes at L2 will be larger under mean ablation (zero may be "close to mean" for some layers).
+
+### H3: Steering at L2 redirects distribution rather than collapsing it
+- Test: Measure KL(steered || base) and KL(steered || uniform) at multiple steering strengths. If KL(steered || uniform) stays high, distribution is redirected not collapsed.
+
+### H4: o_proj efficiency generalizes beyond JSON to factual recall and code
+- Test: LoRA on o_proj only for factual_recall and code_semantics adapters. Compare to all-linear adapters.
+
+### H5: L19 selectivity holds for code skills (not just factual recall)
+- Test: Skill knockout at L19 for code_semantics and json_schema. Measure selectivity ratio.
+
+### H6: Adapter stacking interference is rank-dependent
+- Test: Stack factual+delimiter at r=1, r=4, r=8. If delimiter destruction decreases at lower rank, it's a capacity conflict.
+
+### H7: Mean-ablation changes the relative ranking of layers
+- Test: Full layer mean-ablation sweep. Compare ranking to zero-ablation ranking. If top-3 layers change, Phase 1 ranking is ablation-method-dependent.
+
+### H8: Training effect at step 10 is family-dependent
+- Test: Checkpoint timeline for factual_recall and code_semantics (not just JSON). If core circuit lock-in timing differs, Phase 1 generalization is overstated.
+
+## Execution Plan (Blocks A-I)
+
+### Block A: Multi-seed replication (H1)
+- Experiments: layer_ablation, steering_sweep, adapter_archaeology, position_ablation, skill_knockout
+- Seeds: 42, 137, 2026
+- 15 runs total (5 experiments × 3 seeds)
+- Deliverable: variance table, σ/μ ratios, confidence recalibration
+
+### Block B: Mean-ablation pilot (H2, H7)
+- Experiments: layer_ablation with mean-replacement at L0-L23, 3 seeds
+- 3 runs (1 experiment × 3 seeds)
+- Deliverable: zero-vs-mean comparison table, layer ranking delta
+
+### Block C: Steering distribution analysis (H3)
+- Experiments: steering_sweep with KL diagnostics at s=+1,+2,+4,+8, 3 seeds
+- 12 runs (4 strengths × 3 seeds)
+- Deliverable: KL(steered||base), KL(steered||uniform) plots
+
+### Block D: o_proj cross-family (H4)
+- Experiments: train o_proj-only LoRA for factual_recall, code_semantics; eval + ablation, 3 seeds
+- 6 runs (2 families × 3 seeds)
+- Deliverable: o_proj vs all-linear comparison table
+
+### Block E: L19 cross-skill knockout (H5)
+- Experiments: skill_knockout at L19 for code_semantics, json_schema, 3 seeds
+- 6 runs (2 skills × 3 seeds)
+- Deliverable: selectivity matrix (L19 vs L2, across all skills)
+
+### Block F: Adapter stacking rank-sweep (H6)
+- Experiments: train factual+delimiter at r=1, r=4, r=8; eval stacking interference, 3 seeds
+- 9 runs (3 ranks × 3 seeds)
+- Deliverable: interference vs rank plot
+
+### Block G: Checkpoint timeline cross-family (H8)
+- Experiments: train factual_recall checkpoints at step 10/25/50/75/100; eval ablation maps, 1 seed (pilot)
+- 5 runs (5 checkpoints × 1 seed, marked pilot)
+- Deliverable: circuit lock-in timing comparison (JSON vs factual)
+
+### Block H: Cross-skill cross-model patching (H1 validation)
+- Experiments: cross_model_patching for factual_recall (not just JSON), 1 seed (pilot)
+- 1 run
+- Deliverable: monotonic recovery check for non-JSON skill
+
+### Block I: Claims reconciliation
+- No new experiments. Review all Block A-H results.
+- Recalibrate confidence levels for all 21 Phase 1 findings.
+- Write Phase 2 claims report.
+- Deliverable: reports/phase2_claims.md, updated component_atlas
+
+## Current Assumptions
+
+1. Qwen2.5-0.5B architecture is representative of small transformers (24L, 14H GQA, d=896)
+2. Synthetic task suite transfers to natural language (not yet validated)
+3. LoRA training at r=8, lr=2e-4, 100 steps is a reasonable "standard" training config
+4. Zero-ablation is a valid (if conservative) causal test
+5. BF16 precision does not meaningfully affect ablation measurements vs FP32
+6. 92-example task suite is large enough for stable metrics (not validated)
+
+## Compute Constraints
+
+- Hardware: aero (RTX 2070 Super 8GB)
+- Precision: bf16 (model ~1GB VRAM)
+- Training: LoRA-only (full SFT OOMs on 8GB)
+- Max batch size: 2 (training), variable (eval with empty_cache)
+- Single GPU — no data parallelism
+- Estimated Block A runtime: ~4 hours (15 runs × ~15 min each)
+- Estimated total Phase 2 runtime: ~20-25 hours across all blocks
+- Must serialize training runs (VRAM not shared)
+
+## Risks
+
+1. **Seed variance is high**: If σ/μ > 30% for top findings, Phase 1 conclusions need major revision. Probability: LOW (effect sizes are large).
+2. **Mean ablation invalidates ranking**: If top-3 layers change under mean ablation, Phase 1 causal atlas needs rebuilding. Probability: MEDIUM.
+3. **Steering is redirection not control**: If L2 steering redistributes rather than controls, steering-based claims weaken. Probability: MEDIUM.
+4. **o_proj doesn't generalize**: If o_proj-only training fails for non-JSON families, o_proj efficiency is family-specific. Probability: MEDIUM.
+5. **Compute budget exhaustion**: 56+ runs may exceed patience. Blocks are prioritized; Block A is mandatory, Blocks B-I are optional but ordered by value. Probability: HIGH (mitigated by prioritization).
+6. **Training non-determinism**: Even with same seed, CUDA non-determinism may add noise. Mitigated by 3-seed design.
+
+## Phase 2 Deliverables
+
+1. Variance table for top findings (Block A)
+2. Zero-vs-mean ablation comparison (Block B)
+3. Steering KL diagnostic plots (Block C)
+4. Cross-family o_proj table (Block D)
+5. L19 selectivity matrix (Block E)
+6. Interference-vs-rank plot (Block F)
+7. Cross-family checkpoint timeline (Block G, pilot)
+8. Cross-skill cross-model patching (Block H, pilot)
+9. Phase 2 claims report with recalibrated confidence (Block I)
+10. Updated component_atlas with Phase 2 evidence

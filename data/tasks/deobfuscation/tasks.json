@@ -1,0 +1,3666 @@
+{
+  "description": "All deobfuscation tasks",
+  "split": "deobfuscation",
+  "num_examples": 300,
+  "created_by": "phase2",
+  "seed": 42,
+  "scorers": {
+    "json_parse_and_schema_check": {
+      "description": "Checks if output is valid JSON with required keys",
+      "type": "deterministic",
+      "check": "json.loads(output) succeeds and contains required keys"
+    },
+    "exact_match": {
+      "description": "Exact string match between target and output",
+      "type": "deterministic",
+      "check": "output.strip() == target.strip()"
+    },
+    "numeric_match": {
+      "description": "Numeric equivalence check",
+      "type": "deterministic",
+      "check": "float(output) == float(target)"
+    },
+    "bracket_closure_check": {
+      "description": "Checks if brackets are properly closed in order",
+      "type": "deterministic",
+      "check": "output completes valid bracket nesting"
+    },
+    "pattern_continuation": {
+      "description": "Checks if output continues the pattern correctly",
+      "type": "deterministic",
+      "check": "output matches expected pattern element"
+    },
+    "code_trace_check": {
+      "description": "Checks code execution trace output",
+      "type": "deterministic",
+      "check": "output matches Python eval/print result"
+    },
+    "expression_eval": {
+      "description": "Checks arithmetic expression evaluation",
+      "type": "deterministic",
+      "check": "eval(expression) == int(output)"
+    },
+    "fuzzy_style_check": {
+      "description": "Checks style/verbosity constraint with rubric",
+      "type": "fuzzy",
+      "check": "Manual rubric scoring required"
+    },
+    "refusal_check": {
+      "description": "Checks appropriate refusal or compliance",
+      "type": "fuzzy",
+      "check": "Check if model complies with benign or refuses harmful"
+    },
+    "uncertainty_check": {
+      "description": "Checks if model expresses appropriate uncertainty",
+      "type": "fuzzy",
+      "check": "Check for hedging language or refusal to answer"
+    },
+    "deobfuscation_check": {
+      "description": "Checks decoded/deobfuscated output",
+      "type": "deterministic",
+      "check": "output matches expected decoded value"
+    }
+  },
+  "examples": [
+    {
+      "task_id": "string_decoding_deobfuscation_0000",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0001",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0002",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0003",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0004",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0005",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0006",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0007",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0008",
+      "prompt": "ASCII codes 117 112 spell: ",
+      "target": "up",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0009",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0010",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0011",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0012",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0013",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0014",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0015",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0016",
+      "prompt": "Reverse this: 'nohtyp' ",
+      "target": "python",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0017",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0018",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0019",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0020",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0021",
+      "prompt": "Reverse this: 'neddih' ",
+      "target": "hidden",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0022",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0023",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0024",
+      "prompt": "Combine 'bl' and 'end': ",
+      "target": "blend",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0025",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0026",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0027",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0028",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0029",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0030",
+      "prompt": "Decode hex string '68656c6c6f': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0031",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0032",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0033",
+      "prompt": "ASCII codes 117 112 spell: ",
+      "target": "up",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0034",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0035",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0036",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0037",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0038",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0039",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0040",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0041",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0042",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0043",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0044",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0045",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0046",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0047",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0048",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0049",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0050",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0051",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0052",
+      "prompt": "ROT13 decode 'uryyb': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0053",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0054",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0055",
+      "prompt": "Decode hex string '68656c6c6f': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0056",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0057",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0058",
+      "prompt": "ASCII codes 103 111 spell: ",
+      "target": "go",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0059",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0060",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0061",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0062",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0063",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0064",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0065",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0066",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0067",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0068",
+      "prompt": "ASCII codes 103 111 spell: ",
+      "target": "go",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0069",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0070",
+      "prompt": "Decode hex string '616263': ",
+      "target": "abc",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0071",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0072",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0073",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0074",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0075",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0076",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0077",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0078",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0079",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0080",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0081",
+      "prompt": "Reverse this: 'nohtyp' ",
+      "target": "python",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0082",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0083",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0084",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0085",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0086",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0087",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0088",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0089",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0090",
+      "prompt": "Decode hex string '616263': ",
+      "target": "abc",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0091",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0092",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0093",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0094",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0095",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0096",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0097",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0098",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0099",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0000",
+      "prompt": "x = 9\ny = 5\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0001",
+      "prompt": "x = 12\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0002",
+      "prompt": "a = 16\nb = 8\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0003",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0004",
+      "prompt": "x = 11\ny = 12\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0005",
+      "prompt": "x = 20\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0006",
+      "prompt": "a = 18\nb = 5\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0007",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0008",
+      "prompt": "x = 16\ny = 11\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0009",
+      "prompt": "x = 20\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0010",
+      "prompt": "a = 7\nb = 7\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0011",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0012",
+      "prompt": "x = 4\ny = 10\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0013",
+      "prompt": "x = 2\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0014",
+      "prompt": "a = 17\nb = 17\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "34",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0015",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0016",
+      "prompt": "x = 13\ny = 14\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0017",
+      "prompt": "x = 1\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0018",
+      "prompt": "a = 9\nb = 7\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0019",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0020",
+      "prompt": "x = 1\ny = 1\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0021",
+      "prompt": "x = 14\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0022",
+      "prompt": "a = 12\nb = 15\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0023",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0024",
+      "prompt": "x = 13\ny = 18\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "31",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0025",
+      "prompt": "x = 6\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0026",
+      "prompt": "a = 15\nb = 11\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "26",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0027",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0028",
+      "prompt": "x = 15\ny = 9\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0029",
+      "prompt": "x = 7\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0030",
+      "prompt": "a = 15\nb = 10\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "25",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0031",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0032",
+      "prompt": "x = 5\ny = 11\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0033",
+      "prompt": "x = 1\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0034",
+      "prompt": "a = 2\nb = 11\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0035",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0036",
+      "prompt": "x = 12\ny = 5\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0037",
+      "prompt": "x = 11\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0038",
+      "prompt": "a = 18\nb = 1\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0039",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0040",
+      "prompt": "x = 13\ny = 6\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0041",
+      "prompt": "x = 11\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0042",
+      "prompt": "a = 2\nb = 10\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0043",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0044",
+      "prompt": "x = 19\ny = 2\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0045",
+      "prompt": "x = 17\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0046",
+      "prompt": "a = 5\nb = 16\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0047",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0048",
+      "prompt": "x = 5\ny = 5\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0049",
+      "prompt": "x = 4\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0050",
+      "prompt": "a = 6\nb = 8\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0051",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0052",
+      "prompt": "x = 12\ny = 11\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "23",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0053",
+      "prompt": "x = 3\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0054",
+      "prompt": "a = 11\nb = 3\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0055",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0056",
+      "prompt": "x = 18\ny = 2\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0057",
+      "prompt": "x = 17\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0058",
+      "prompt": "a = 13\nb = 5\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0059",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0060",
+      "prompt": "x = 7\ny = 15\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "22",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0061",
+      "prompt": "x = 6\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0062",
+      "prompt": "a = 9\nb = 8\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0063",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0064",
+      "prompt": "x = 18\ny = 1\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0065",
+      "prompt": "x = 2\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0066",
+      "prompt": "a = 16\nb = 2\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0067",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0068",
+      "prompt": "x = 8\ny = 5\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0069",
+      "prompt": "x = 5\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0070",
+      "prompt": "a = 11\nb = 11\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "22",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0071",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0072",
+      "prompt": "x = 1\ny = 17\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0073",
+      "prompt": "x = 10\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0074",
+      "prompt": "a = 1\nb = 14\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0075",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0076",
+      "prompt": "x = 2\ny = 7\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "9",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0077",
+      "prompt": "x = 19\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0078",
+      "prompt": "a = 7\nb = 8\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0079",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0080",
+      "prompt": "x = 1\ny = 12\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0081",
+      "prompt": "x = 3\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0082",
+      "prompt": "a = 12\nb = 17\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0083",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0084",
+      "prompt": "x = 7\ny = 5\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0085",
+      "prompt": "x = 18\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0086",
+      "prompt": "a = 20\nb = 10\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0087",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0088",
+      "prompt": "x = 12\ny = 17\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0089",
+      "prompt": "x = 13\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0090",
+      "prompt": "a = 7\nb = 20\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0091",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0092",
+      "prompt": "x = 7\ny = 11\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0093",
+      "prompt": "x = 9\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "9",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0094",
+      "prompt": "a = 4\nb = 10\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0095",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0096",
+      "prompt": "x = 15\ny = 20\nz = x + y\nw = z * 1\nprint(w)\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0097",
+      "prompt": "x = 17\ny = x + 0\nz = y * 1\nprint(z)\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0098",
+      "prompt": "a = 7\nb = 6\nc = a\nd = b\ne = c + d\nprint(e)\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "constant_folding_deobfuscation_0099",
+      "prompt": "x = 5\ny = 10\nz = x + y\nif z > 10:\n    print(z)\nelse:\n    print(0)\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0000",
+      "prompt": "x = 29\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0001",
+      "prompt": "x = 45\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0002",
+      "prompt": "a = 2\nb = 3\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0003",
+      "prompt": "x = 9\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "no",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0004",
+      "prompt": "x = 9\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0005",
+      "prompt": "x = 48\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0006",
+      "prompt": "a = 10\nb = 1\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0007",
+      "prompt": "x = 29\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0008",
+      "prompt": "x = 32\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0009",
+      "prompt": "x = 24\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0010",
+      "prompt": "a = 7\nb = 1\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0011",
+      "prompt": "x = 46\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0012",
+      "prompt": "x = 34\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0013",
+      "prompt": "x = 45\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0014",
+      "prompt": "a = 9\nb = 2\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0015",
+      "prompt": "x = 27\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0016",
+      "prompt": "x = 31\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0017",
+      "prompt": "x = 3\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0018",
+      "prompt": "a = 7\nb = 9\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_not_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0019",
+      "prompt": "x = 45\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0020",
+      "prompt": "x = 28\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0021",
+      "prompt": "x = 5\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0022",
+      "prompt": "a = 2\nb = 5\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0023",
+      "prompt": "x = 43\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0024",
+      "prompt": "x = 23\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0025",
+      "prompt": "x = 31\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0026",
+      "prompt": "a = 9\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0027",
+      "prompt": "x = 9\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "no",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0028",
+      "prompt": "x = 8\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0029",
+      "prompt": "x = 2\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0030",
+      "prompt": "a = 2\nb = 10\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0031",
+      "prompt": "x = 12\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0032",
+      "prompt": "x = 43\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0033",
+      "prompt": "x = 13\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0034",
+      "prompt": "a = 9\nb = 6\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_not_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0035",
+      "prompt": "x = 36\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0036",
+      "prompt": "x = 17\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0037",
+      "prompt": "x = 31\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0038",
+      "prompt": "a = 3\nb = 10\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0039",
+      "prompt": "x = 27\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0040",
+      "prompt": "x = 8\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0041",
+      "prompt": "x = 36\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0042",
+      "prompt": "a = 4\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0043",
+      "prompt": "x = 10\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "no",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0044",
+      "prompt": "x = 20\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0045",
+      "prompt": "x = 9\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0046",
+      "prompt": "a = 7\nb = 1\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0047",
+      "prompt": "x = 24\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0048",
+      "prompt": "x = 4\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0049",
+      "prompt": "x = 33\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0050",
+      "prompt": "a = 2\nb = 9\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0051",
+      "prompt": "x = 43\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0052",
+      "prompt": "x = 18\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0053",
+      "prompt": "x = 38\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0054",
+      "prompt": "a = 1\nb = 5\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0055",
+      "prompt": "x = 9\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "no",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0056",
+      "prompt": "x = 21\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0057",
+      "prompt": "x = 16\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0058",
+      "prompt": "a = 4\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0059",
+      "prompt": "x = 43\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0060",
+      "prompt": "x = 31\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0061",
+      "prompt": "x = 31\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0062",
+      "prompt": "a = 4\nb = 2\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0063",
+      "prompt": "x = 12\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0064",
+      "prompt": "x = 25\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0065",
+      "prompt": "x = 36\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0066",
+      "prompt": "a = 9\nb = 2\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0067",
+      "prompt": "x = 10\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "no",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0068",
+      "prompt": "x = 43\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0069",
+      "prompt": "x = 9\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0070",
+      "prompt": "a = 3\nb = 2\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0071",
+      "prompt": "x = 31\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0072",
+      "prompt": "x = 33\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0073",
+      "prompt": "x = 5\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0074",
+      "prompt": "a = 3\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0075",
+      "prompt": "x = 41\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0076",
+      "prompt": "x = 49\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0077",
+      "prompt": "x = 27\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0078",
+      "prompt": "a = 6\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0079",
+      "prompt": "x = 17\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0080",
+      "prompt": "x = 27\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0081",
+      "prompt": "x = 4\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0082",
+      "prompt": "a = 7\nb = 1\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0083",
+      "prompt": "x = 21\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0084",
+      "prompt": "x = 50\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0085",
+      "prompt": "x = 26\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0086",
+      "prompt": "a = 4\nb = 6\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0087",
+      "prompt": "x = 26\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0088",
+      "prompt": "x = 29\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0089",
+      "prompt": "x = 39\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0090",
+      "prompt": "a = 3\nb = 8\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0091",
+      "prompt": "x = 40\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0092",
+      "prompt": "x = 33\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0093",
+      "prompt": "x = 27\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0094",
+      "prompt": "a = 3\nb = 4\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0095",
+      "prompt": "x = 39\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0096",
+      "prompt": "x = 34\nr = 'big' if x > 25 else 'small'\nprint(r)\n# What prints?\n",
+      "target": "big",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0097",
+      "prompt": "x = 19\nif x > 0:\n    if x > 0:\n        r = 'pos'\nprint(r)\n# What prints?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0098",
+      "prompt": "a = 2\nb = 7\nif not (a > 5 and b > 5):\n    r = 'condition_met'\nelse:\n    r = 'condition_not_met'\n# What is r?\n",
+      "target": "condition_met",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "control_flow_deobfuscation_0099",
+      "prompt": "x = 39\nflag = (x > 10) and True\nif flag:\n    r = 'yes'\nelse:\n    r = 'no'\n# What is r?\n",
+      "target": "yes",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1206 @@
+{
+  "family": "string_decoding",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "string_decoding_deobfuscation_0000",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0001",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0002",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0003",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0004",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0005",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0006",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0007",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0008",
+      "prompt": "ASCII codes 117 112 spell: ",
+      "target": "up",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0009",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0010",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0011",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0012",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0013",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0014",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0015",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0016",
+      "prompt": "Reverse this: 'nohtyp' ",
+      "target": "python",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0017",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0018",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0019",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0020",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0021",
+      "prompt": "Reverse this: 'neddih' ",
+      "target": "hidden",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0022",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0023",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0024",
+      "prompt": "Combine 'bl' and 'end': ",
+      "target": "blend",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0025",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0026",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0027",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0028",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0029",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0030",
+      "prompt": "Decode hex string '68656c6c6f': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0031",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0032",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0033",
+      "prompt": "ASCII codes 117 112 spell: ",
+      "target": "up",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0034",
+      "prompt": "Combine 'con' and 'cat': ",
+      "target": "concat",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0035",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0036",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0037",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0038",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0039",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0040",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0041",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0042",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0043",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0044",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0045",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0046",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0047",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0048",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0049",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0050",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0051",
+      "prompt": "Reverse this: 'edoced' ",
+      "target": "decode",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0052",
+      "prompt": "ROT13 decode 'uryyb': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0053",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0054",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0055",
+      "prompt": "Decode hex string '68656c6c6f': ",
+      "target": "hello",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0056",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0057",
+      "prompt": "ROT13 decode 'pbqr': ",
+      "target": "code",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0058",
+      "prompt": "ASCII codes 103 111 spell: ",
+      "target": "go",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0059",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0060",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0061",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0062",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0063",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0064",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0065",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0066",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0067",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0068",
+      "prompt": "ASCII codes 103 111 spell: ",
+      "target": "go",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0069",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0070",
+      "prompt": "Decode hex string '616263': ",
+      "target": "abc",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0071",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0072",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0073",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0074",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0075",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0076",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0077",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0078",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0079",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0080",
+      "prompt": "Decode hex string '74657374': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0081",
+      "prompt": "Reverse this: 'nohtyp' ",
+      "target": "python",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0082",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0083",
+      "prompt": "ASCII codes 97 98 spell: ",
+      "target": "ab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0084",
+      "prompt": "Combine 'me' and 'rge': ",
+      "target": "merge",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0085",
+      "prompt": "Decode hex string '666c6167': ",
+      "target": "flag",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0086",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0087",
+      "prompt": "ROT13 decode 'jbeyq': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0088",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0089",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0090",
+      "prompt": "Decode hex string '616263': ",
+      "target": "abc",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0091",
+      "prompt": "Reverse this: 'rehpic' ",
+      "target": "cipher",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0092",
+      "prompt": "ROT13 decode 'grfg': ",
+      "target": "test",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0093",
+      "prompt": "ASCII codes 104 105 spell: ",
+      "target": "hi",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0094",
+      "prompt": "Combine 'joi' and 'ned': ",
+      "target": "joined",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0095",
+      "prompt": "Decode hex string '776f726c64': ",
+      "target": "world",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0096",
+      "prompt": "Reverse this: 'terces' ",
+      "target": "secret",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0097",
+      "prompt": "ROT13 decode 'qngn': ",
+      "target": "data",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0098",
+      "prompt": "ASCII codes 111 107 spell: ",
+      "target": "ok",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_deobfuscation_0099",
+      "prompt": "Combine 'fu' and 'sed': ",
+      "target": "fused",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "deobfuscation",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "deobf_4"
+      }
+    }
+  ]
+}

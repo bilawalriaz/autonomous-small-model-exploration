@@ -1,0 +1,1206 @@
+{
+  "family": "constant_folding",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "constant_folding_train_0000",
+      "prompt": "Evaluate: (2 // 6) - (9 * 8)\nResult = ",
+      "target": "-72",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 // 6) - (9 * 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0001",
+      "prompt": "Evaluate: (5 - 1) + (9 // 1)\nResult = ",
+      "target": "13",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 - 1) + (9 // 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0002",
+      "prompt": "Evaluate: (10 * 10) // (9 + 3)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 * 10) // (9 + 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0003",
+      "prompt": "Evaluate: (9 // 1) + (1 - 5)\nResult = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 // 1) + (1 - 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0004",
+      "prompt": "Evaluate: (9 - 1) * (7 // 9)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 - 1) * (7 // 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0005",
+      "prompt": "Evaluate: (1 - 4) + (2 // 8)\nResult = ",
+      "target": "-3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 - 4) + (2 // 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0006",
+      "prompt": "Evaluate: (2 + 4) // (8 - 4)\nResult = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 + 4) // (8 - 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0007",
+      "prompt": "Evaluate: (4 - 2) * (5 // 1)\nResult = ",
+      "target": "10",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 - 2) * (5 // 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0008",
+      "prompt": "Evaluate: (3 // 7) + (4 * 6)\nResult = ",
+      "target": "24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 // 7) + (4 * 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0009",
+      "prompt": "Evaluate: (3 * 10) - (4 // 10)\nResult = ",
+      "target": "30",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 * 10) - (4 // 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0010",
+      "prompt": "Evaluate: (4 // 5) - (7 * 1)\nResult = ",
+      "target": "-7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 5) - (7 * 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0011",
+      "prompt": "Evaluate: (5 + 4) * (8 - 5)\nResult = ",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 + 4) * (8 - 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0012",
+      "prompt": "Evaluate: (1 + 8) * (3 // 4)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 + 8) * (3 // 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0013",
+      "prompt": "Evaluate: (2 - 3) * (8 // 2)\nResult = ",
+      "target": "-4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 - 3) * (8 // 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0014",
+      "prompt": "Evaluate: (3 * 5) - (7 // 5)\nResult = ",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 * 5) - (7 // 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0015",
+      "prompt": "Evaluate: (2 + 2) * (7 - 4)\nResult = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 + 2) * (7 - 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0016",
+      "prompt": "Evaluate: (4 // 3) - (9 + 1)\nResult = ",
+      "target": "-9",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 3) - (9 + 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0017",
+      "prompt": "Evaluate: (2 - 4) + (1 * 7)\nResult = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 - 4) + (1 * 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0018",
+      "prompt": "Evaluate: (4 // 7) * (10 + 6)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 7) * (10 + 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0019",
+      "prompt": "Evaluate: (8 - 10) + (1 // 9)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 - 10) + (1 // 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0020",
+      "prompt": "Evaluate: (1 * 10) - (1 + 3)\nResult = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 * 10) - (1 + 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0021",
+      "prompt": "Evaluate: (6 // 8) - (4 + 1)\nResult = ",
+      "target": "-5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 // 8) - (4 + 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0022",
+      "prompt": "Evaluate: (5 - 9) * (2 + 4)\nResult = ",
+      "target": "-24",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 - 9) * (2 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0023",
+      "prompt": "Evaluate: (6 + 8) // (1 - 8)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 + 8) // (1 - 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0024",
+      "prompt": "Evaluate: (9 * 3) + (3 // 9)\nResult = ",
+      "target": "27",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 * 3) + (3 // 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0025",
+      "prompt": "Evaluate: (2 + 7) * (9 // 9)\nResult = ",
+      "target": "9",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 + 7) * (9 // 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0026",
+      "prompt": "Evaluate: (6 + 6) * (1 // 3)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 + 6) * (1 // 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0027",
+      "prompt": "Evaluate: (1 + 7) - (1 // 10)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 + 7) - (1 // 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0028",
+      "prompt": "Evaluate: (4 + 1) // (10 - 9)\nResult = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 + 1) // (10 - 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0029",
+      "prompt": "Evaluate: (10 // 7) - (5 + 10)\nResult = ",
+      "target": "-14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 // 7) - (5 + 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0030",
+      "prompt": "Evaluate: (8 // 10) - (5 + 6)\nResult = ",
+      "target": "-11",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 // 10) - (5 + 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0031",
+      "prompt": "Evaluate: (8 - 9) // (6 + 4)\nResult = ",
+      "target": "-1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 - 9) // (6 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0032",
+      "prompt": "Evaluate: (7 + 5) - (3 * 6)\nResult = ",
+      "target": "-6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 + 5) - (3 * 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0033",
+      "prompt": "Evaluate: (3 - 1) // (8 + 7)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 - 1) // (8 + 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0034",
+      "prompt": "Evaluate: (6 // 4) - (7 * 7)\nResult = ",
+      "target": "-48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 // 4) - (7 * 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0035",
+      "prompt": "Evaluate: (8 * 7) - (8 // 6)\nResult = ",
+      "target": "55",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 * 7) - (8 // 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0036",
+      "prompt": "Evaluate: (3 - 9) * (4 + 4)\nResult = ",
+      "target": "-48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 - 9) * (4 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0037",
+      "prompt": "Evaluate: (10 // 4) * (10 - 6)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 // 4) * (10 - 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0038",
+      "prompt": "Evaluate: (6 - 5) // (4 + 7)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 - 5) // (4 + 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0039",
+      "prompt": "Evaluate: (9 // 8) + (5 * 10)\nResult = ",
+      "target": "51",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 // 8) + (5 * 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0040",
+      "prompt": "Evaluate: (4 // 6) * (9 - 3)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 6) * (9 - 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0041",
+      "prompt": "Evaluate: (3 // 8) * (1 + 4)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 // 8) * (1 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0042",
+      "prompt": "Evaluate: (5 - 10) + (3 // 7)\nResult = ",
+      "target": "-5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 - 10) + (3 // 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0043",
+      "prompt": "Evaluate: (6 // 8) - (4 + 3)\nResult = ",
+      "target": "-7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 // 8) - (4 + 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0044",
+      "prompt": "Evaluate: (2 + 2) // (2 - 1)\nResult = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 + 2) // (2 - 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0045",
+      "prompt": "Evaluate: (2 - 6) + (6 // 4)\nResult = ",
+      "target": "-3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 - 6) + (6 // 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0046",
+      "prompt": "Evaluate: (2 // 6) - (10 * 6)\nResult = ",
+      "target": "-60",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 // 6) - (10 * 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0047",
+      "prompt": "Evaluate: (3 - 5) + (5 * 2)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 - 5) + (5 * 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0048",
+      "prompt": "Evaluate: (7 // 2) + (9 - 10)\nResult = ",
+      "target": "2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 // 2) + (9 - 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0049",
+      "prompt": "Evaluate: (5 // 4) + (2 * 3)\nResult = ",
+      "target": "7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 // 4) + (2 * 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0050",
+      "prompt": "Evaluate: (3 // 7) + (8 * 7)\nResult = ",
+      "target": "56",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 // 7) + (8 * 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0051",
+      "prompt": "Evaluate: (10 - 6) // (8 + 10)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 - 6) // (8 + 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0052",
+      "prompt": "Evaluate: (8 + 10) - (6 // 6)\nResult = ",
+      "target": "17",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 + 10) - (6 // 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0053",
+      "prompt": "Evaluate: (3 // 3) + (10 * 5)\nResult = ",
+      "target": "51",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 // 3) + (10 * 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0054",
+      "prompt": "Evaluate: (4 * 6) // (5 - 2)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 * 6) // (5 - 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0055",
+      "prompt": "Evaluate: (1 - 10) // (10 * 7)\nResult = ",
+      "target": "-1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 - 10) // (10 * 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0056",
+      "prompt": "Evaluate: (4 + 9) - (5 * 9)\nResult = ",
+      "target": "-32",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 + 9) - (5 * 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0057",
+      "prompt": "Evaluate: (3 * 1) - (4 // 5)\nResult = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 * 1) - (4 // 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0058",
+      "prompt": "Evaluate: (6 + 1) - (5 // 8)\nResult = ",
+      "target": "7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 + 1) - (5 // 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_train_0059",
+      "prompt": "Evaluate: (3 + 10) - (1 * 10)\nResult = ",
+      "target": "3",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 + 10) - (1 * 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0060",
+      "prompt": "Evaluate: (4 + 8) * (7 - 7)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 + 8) * (7 - 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0061",
+      "prompt": "Evaluate: (7 // 6) - (6 * 9)\nResult = ",
+      "target": "-53",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 // 6) - (6 * 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0062",
+      "prompt": "Evaluate: (3 - 6) // (5 * 9)\nResult = ",
+      "target": "-1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 - 6) // (5 * 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0063",
+      "prompt": "Evaluate: (5 * 2) // (8 + 2)\nResult = ",
+      "target": "1",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 * 2) // (8 + 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0064",
+      "prompt": "Evaluate: (1 + 3) // (2 - 4)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 + 3) // (2 - 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0065",
+      "prompt": "Evaluate: (2 + 3) // (10 * 4)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 + 3) // (10 * 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0066",
+      "prompt": "Evaluate: (1 - 6) * (10 // 2)\nResult = ",
+      "target": "-25",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 - 6) * (10 // 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0067",
+      "prompt": "Evaluate: (6 + 2) * (10 // 2)\nResult = ",
+      "target": "40",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 + 2) * (10 // 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0068",
+      "prompt": "Evaluate: (4 + 2) // (3 - 2)\nResult = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 + 2) // (3 - 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0069",
+      "prompt": "Evaluate: (4 // 4) - (1 + 2)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 4) - (1 + 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0070",
+      "prompt": "Evaluate: (8 - 4) // (8 * 10)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 - 4) // (8 * 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0071",
+      "prompt": "Evaluate: (10 + 1) // (8 * 3)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 + 1) // (8 * 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0072",
+      "prompt": "Evaluate: (4 - 5) * (3 + 9)\nResult = ",
+      "target": "-12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 - 5) * (3 + 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0073",
+      "prompt": "Evaluate: (2 - 4) + (3 // 6)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 - 4) + (3 // 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0074",
+      "prompt": "Evaluate: (10 * 5) + (10 - 7)\nResult = ",
+      "target": "53",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 * 5) + (10 - 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0075",
+      "prompt": "Evaluate: (5 + 6) * (4 - 9)\nResult = ",
+      "target": "-55",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 + 6) * (4 - 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0076",
+      "prompt": "Evaluate: (5 + 3) - (2 * 1)\nResult = ",
+      "target": "6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(5 + 3) - (2 * 1)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0077",
+      "prompt": "Evaluate: (1 // 10) + (7 * 2)\nResult = ",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 // 10) + (7 * 2)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0078",
+      "prompt": "Evaluate: (6 + 10) * (6 - 10)\nResult = ",
+      "target": "-64",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 + 10) * (6 - 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_val_0079",
+      "prompt": "Evaluate: (6 * 8) - (6 // 8)\nResult = ",
+      "target": "48",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 * 8) - (6 // 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0080",
+      "prompt": "Evaluate: (8 - 6) * (9 + 4)\nResult = ",
+      "target": "26",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 - 6) * (9 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0081",
+      "prompt": "Evaluate: (1 // 6) - (7 * 8)\nResult = ",
+      "target": "-56",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(1 // 6) - (7 * 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0082",
+      "prompt": "Evaluate: (8 - 8) * (8 // 3)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 - 8) * (8 // 3)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0083",
+      "prompt": "Evaluate: (7 // 1) * (3 + 6)\nResult = ",
+      "target": "63",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 // 1) * (3 + 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0084",
+      "prompt": "Evaluate: (7 - 6) + (1 * 7)\nResult = ",
+      "target": "8",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 - 6) + (1 * 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0085",
+      "prompt": "Evaluate: (4 // 2) + (1 - 7)\nResult = ",
+      "target": "-4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 // 2) + (1 - 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0086",
+      "prompt": "Evaluate: (6 // 4) + (1 - 8)\nResult = ",
+      "target": "-6",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 // 4) + (1 - 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0087",
+      "prompt": "Evaluate: (9 // 5) * (4 - 4)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 // 5) * (4 - 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0088",
+      "prompt": "Evaluate: (7 + 7) - (3 // 8)\nResult = ",
+      "target": "14",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 + 7) - (3 // 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0089",
+      "prompt": "Evaluate: (2 * 6) + (8 // 10)\nResult = ",
+      "target": "12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(2 * 6) + (8 // 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0090",
+      "prompt": "Evaluate: (9 // 8) + (4 - 7)\nResult = ",
+      "target": "-2",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(9 // 8) + (4 - 7)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0091",
+      "prompt": "Evaluate: (3 // 6) * (5 + 10)\nResult = ",
+      "target": "0",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 // 6) * (5 + 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0092",
+      "prompt": "Evaluate: (10 * 3) // (9 - 5)\nResult = ",
+      "target": "7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(10 * 3) // (9 - 5)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0093",
+      "prompt": "Evaluate: (3 + 6) // (10 - 8)\nResult = ",
+      "target": "4",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(3 + 6) // (10 - 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0094",
+      "prompt": "Evaluate: (6 * 7) // (4 + 4)\nResult = ",
+      "target": "5",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 * 7) // (4 + 4)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0095",
+      "prompt": "Evaluate: (6 * 8) // (5 - 9)\nResult = ",
+      "target": "-12",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(6 * 8) // (5 - 9)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0096",
+      "prompt": "Evaluate: (4 - 3) * (6 + 10)\nResult = ",
+      "target": "16",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 - 3) * (6 + 10)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0097",
+      "prompt": "Evaluate: (4 + 8) - (10 // 8)\nResult = ",
+      "target": "11",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(4 + 8) - (10 // 8)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0098",
+      "prompt": "Evaluate: (7 + 3) * (10 - 6)\nResult = ",
+      "target": "40",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(7 + 3) * (10 - 6)"
+      }
+    },
+    {
+      "task_id": "constant_folding_test_0099",
+      "prompt": "Evaluate: (8 // 10) - (5 + 2)\nResult = ",
+      "target": "-7",
+      "metadata": {
+        "family": "constant_folding",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "expression": "(8 // 10) - (5 + 2)"
+      }
+    }
+  ]
+}

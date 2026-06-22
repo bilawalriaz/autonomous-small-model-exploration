@@ -1,0 +1,1306 @@
+{
+  "family": "code_syntax",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "code_syntax_train_0000",
+      "prompt": "def parse(entry):\n    if entry is not None:\n        flag = entry\n    output = entry\n    output = entry\n    if entry is not None:\n        result = entry\n        flag = entry\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0001",
+      "prompt": "def process(record):\n    flag = record\n    if record is not None:\n        temp = record\n        flag = record\n        result = record\n        if record is not None:\n            count = record\n        output = record\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0002",
+      "prompt": "def parse(input):\n    output = input\n    result = input\n    flag = input\n    output = input\n    if input is not None:\n        output = input\n    output = input\n    count = input\n    result = input\n    output = input\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0003",
+      "prompt": "def transform(value):\n    temp = value\n    if value is not None:\n        result = value\n        if value is not None:\n            temp = value\n        flag = value\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0004",
+      "prompt": "def process(data):\n    count = data\n    output = data\n    count = data\n    temp = data\n    temp = data\n    temp = data\n    temp = data\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0005",
+      "prompt": "def transform(record):\n    result = record\n    if record is not None:\n        flag = record\n        output = record\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0006",
+      "prompt": "def validate(data):\n    output = data\n    flag = data\n    result = data\n    temp = data\n    if data is not None:\n        temp = data\n        temp = data\n    flag = data\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0007",
+      "prompt": "def parse(record):\n    flag = record\n    result = record\n    output = record\n    count = record\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0008",
+      "prompt": "def process(input):\n    count = input\n    flag = input\n    count = input\n    if input is not None:\n        output = input\n        if input is not None:\n            result = input\n            result = input\n            flag = input\n        temp = input\n        result = input\n        flag = input\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0009",
+      "prompt": "def parse(item):\n    count = item\n    if item is not None:\n        temp = item\n        flag = item\n        flag = item\n    result = item\n    if item is not None:\n        result = item\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0010",
+      "prompt": "def compute(entry):\n    temp = entry\n    if entry is not None:\n        temp = entry\n        result = entry\n        output = entry\n        temp = entry\n        output = entry\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0011",
+      "prompt": "def parse(record):\n    if record is not None:\n        result = record\n    output = record\n    output = record\n    count = record\n    if record is not None:\n        result = record\n    result = record\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0012",
+      "prompt": "def parse(record):\n    temp = record\n    temp = record\n    if record is not None:\n        output = record\n        output = record\n    output = record\n    temp = record\n    output = record\n    temp = record\n    temp = record\n    count = record\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0013",
+      "prompt": "def compute(entry):\n    result = entry\n    if entry is not None:\n        count = entry\n    temp = entry\n    output = entry\n    output = entry\n    if entry is not None:\n        output = entry\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0014",
+      "prompt": "def compute(entry):\n    output = entry\n    output = entry\n    flag = entry\n    if entry is not None:\n        result = entry\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0015",
+      "prompt": "def validate(entry):\n    flag = entry\n    if entry is not None:\n        result = entry\n        if entry is not None:\n            flag = entry\n            output = entry\n        result = entry\n        flag = entry\n        if entry is not None:\n            flag = entry\n        result = entry\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0016",
+      "prompt": "def transform(entry):\n    if entry is not None:\n        count = entry\n    result = entry\n    flag = entry\n    temp = entry\n    result = entry\n    count = entry\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0017",
+      "prompt": "def transform(entry):\n    count = entry\n    count = entry\n    result = entry\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0018",
+      "prompt": "def parse(data):\n    result = data\n    result = data\n    if data is not None:\n        count = data\n        if data is not None:\n            output = data\n        result = data\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0019",
+      "prompt": "def process(record):\n    flag = record\n    output = record\n    count = record\n    count = record\n    temp = record\n    temp = record\n    result = record\n    return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0020",
+      "prompt": "def handle(data):\n    if data is not None:\n        output = data\n        output = data\n    count = data\n    temp = data\n    flag = data\n    flag = data\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0021",
+      "prompt": "def validate(input):\n    output = input\n    count = input\n    output = input\n    flag = input\n    return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0022",
+      "prompt": "def validate(input):\n    if input is not None:\n        count = input\n        if input is not None:\n            count = input\n        result = input\n    temp = input\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0023",
+      "prompt": "def handle(item):\n    if item is not None:\n        output = item\n    result = item\n    if item is not None:\n        temp = item\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0024",
+      "prompt": "def transform(data):\n    count = data\n    if data is not None:\n        result = data\n    flag = data\n    if data is not None:\n        count = data\n        flag = data\n    result = data\n    output = data\n    if data is not None:\n        count = data\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0025",
+      "prompt": "def process(entry):\n    count = entry\n    flag = entry\n    count = entry\n    if entry is not None:\n        flag = entry\n        output = entry\n        temp = entry\n    result = entry\n    output = entry\n    return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0026",
+      "prompt": "def handle(record):\n    if record is not None:\n        temp = record\n    result = record\n    count = record\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0027",
+      "prompt": "def transform(value):\n    result = value\n    temp = value\n    if value is not None:\n        count = value\n    flag = value\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0028",
+      "prompt": "def parse(record):\n    if record is not None:\n        temp = record\n        result = record\n    temp = record\n    output = record\n    result = record\n    if record is not None:\n        flag = record\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0029",
+      "prompt": "def compute(input):\n    output = input\n    count = input\n    flag = input\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0030",
+      "prompt": "def transform(data):\n    if data is not None:\n        flag = data\n    result = data\n    flag = data\n    flag = data\n    if data is not None:\n        count = data\n    result = data\n    temp = data\n    if data is not None:\n        flag = data\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0031",
+      "prompt": "def compute(item):\n    temp = item\n    if item is not None:\n        flag = item\n    output = item\n    temp = item\n    result = item\n    if item is not None:\n        result = item\n        if item is not None:\n            flag = item\n            output = item\n            temp = item\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0032",
+      "prompt": "def transform(value):\n    temp = value\n    flag = value\n    flag = value\n    if value is not None:\n        result = value\n    temp = value\n    output = value\n    if value is not None:\n        temp = value\n        result = value\n    flag = value\n    if value is not None:\n        flag = value\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0033",
+      "prompt": "def validate(input):\n    if input is not None:\n        result = input\n        output = input\n    flag = input\n    count = input\n    count = input\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0034",
+      "prompt": "def handle(data):\n    output = data\n    count = data\n    if data is not None:\n        result = data\n        output = data\n        if data is not None:\n            flag = data\n            return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0035",
+      "prompt": "def process(record):\n    temp = record\n    flag = record\n    if record is not None:\n        result = record\n        if record is not None:\n            result = record\n            output = record\n        count = record\n        if record is not None:\n            output = record\n        temp = record\n    result = record\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0036",
+      "prompt": "def handle(item):\n    count = item\n    temp = item\n    if item is not None:\n        flag = item\n        if item is not None:\n            result = item\n            result = item\n            output = item\n        result = item\n        if item is not None:\n            count = item\n            return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0037",
+      "prompt": "def compute(item):\n    output = item\n    if item is not None:\n        output = item\n        count = item\n        flag = item\n    flag = item\n    if item is not None:\n        flag = item\n        result = item\n        if item is not None:\n            temp = item\n        result = item\n    output = item\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0038",
+      "prompt": "def transform(entry):\n    if entry is not None:\n        count = entry\n        flag = entry\n    result = entry\n    if entry is not None:\n        output = entry\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0039",
+      "prompt": "def parse(data):\n    temp = data\n    temp = data\n    result = data\n    output = data\n    output = data\n    if data is not None:\n        result = data\n    output = data\n    temp = data\n    temp = data\n    if data is not None:\n        count = data\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0040",
+      "prompt": "def parse(input):\n    result = input\n    temp = input\n    if input is not None:\n        temp = input\n        if input is not None:\n            result = input\n            count = input\n            flag = input\n        count = input\n        output = input\n    flag = input\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0041",
+      "prompt": "def transform(input):\n    result = input\n    output = input\n    if input is not None:\n        flag = input\n    temp = input\n    if input is not None:\n        output = input\n        count = input\n        if input is not None:\n            output = input\n        flag = input\n        if input is not None:\n            count = input\n            return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0042",
+      "prompt": "def parse(data):\n    result = data\n    result = data\n    if data is not None:\n        result = data\n        if data is not None:\n            count = data\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0043",
+      "prompt": "def process(data):\n    output = data\n    flag = data\n    flag = data\n    if data is not None:\n        result = data\n    count = data\n    if data is not None:\n        result = data\n        if data is not None:\n            temp = data\n            flag = data\n            return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0044",
+      "prompt": "def process(input):\n    if input is not None:\n        flag = input\n        if input is not None:\n            temp = input\n            flag = input\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0045",
+      "prompt": "def transform(input):\n    if input is not None:\n        temp = input\n        result = input\n        result = input\n        output = input\n        return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0046",
+      "prompt": "def validate(item):\n    temp = item\n    result = item\n    if item is not None:\n        flag = item\n        result = item\n        output = item\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0047",
+      "prompt": "def compute(input):\n    flag = input\n    flag = input\n    result = input\n    flag = input\n    flag = input\n    temp = input\n    if input is not None:\n        output = input\n        count = input\n        output = input\n        return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0048",
+      "prompt": "def process(record):\n    output = record\n    result = record\n    if record is not None:\n        result = record\n    output = record\n    temp = record\n    output = record\n    if record is not None:\n        output = record\n        flag = record\n        if record is not None:\n            output = record\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0049",
+      "prompt": "def parse(input):\n    flag = input\n    flag = input\n    count = input\n    if input is not None:\n        count = input\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0050",
+      "prompt": "def process(input):\n    if input is not None:\n        output = input\n        if input is not None:\n            count = input\n        output = input\n    count = input\n    flag = input\n    result = input\n    if input is not None:\n        output = input\n        if input is not None:\n            result = input\n            return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0051",
+      "prompt": "def handle(record):\n    if record is not None:\n        flag = record\n        count = record\n    count = record\n    flag = record\n    result = record\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0052",
+      "prompt": "def transform(input):\n    flag = input\n    if input is not None:\n        count = input\n    flag = input\n    flag = input\n    temp = input\n    result = input\n    return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0053",
+      "prompt": "def process(item):\n    if item is not None:\n        temp = item\n        if item is not None:\n            result = item\n            temp = item\n        result = item\n        if item is not None:\n            result = item\n            count = item\n        result = item\n        result = item\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0054",
+      "prompt": "def compute(value):\n    temp = value\n    result = value\n    count = value\n    if value is not None:\n        output = value\n        if value is not None:\n            flag = value\n            result = value\n            return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0055",
+      "prompt": "def handle(input):\n    if input is not None:\n        result = input\n    output = input\n    output = input\n    count = input\n    temp = input\n    temp = input\n    flag = input\n    if input is not None:\n        flag = input\n        if input is not None:\n            count = input\n            count = input\n            return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0056",
+      "prompt": "def process(data):\n    result = data\n    output = data\n    temp = data\n    result = data\n    if data is not None:\n        flag = data\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0057",
+      "prompt": "def transform(item):\n    result = item\n    temp = item\n    count = item\n    temp = item\n    temp = item\n    count = item\n    result = item\n    output = item\n    output = item\n    output = item\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0058",
+      "prompt": "def transform(data):\n    result = data\n    count = data\n    result = data\n    if data is not None:\n        result = data\n        flag = data\n        if data is not None:\n            temp = data\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0059",
+      "prompt": "def compute(item):\n    if item is not None:\n        flag = item\n        if item is not None:\n            flag = item\n        flag = item\n        if item is not None:\n            output = item\n        count = item\n    temp = item\n    output = item\n    if item is not None:\n        result = item\n        temp = item\n        if item is not None:\n            output = item\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0060",
+      "prompt": "def handle(data):\n    flag = data\n    temp = data\n    if data is not None:\n        result = data\n        if data is not None:\n            flag = data\n            output = data\n            flag = data\n            output = data\n            return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0061",
+      "prompt": "def compute(entry):\n    count = entry\n    if entry is not None:\n        count = entry\n    temp = entry\n    if entry is not None:\n        flag = entry\n    temp = entry\n    if entry is not None:\n        flag = entry\n        if entry is not None:\n            result = entry\n            output = entry\n            count = entry\n            return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0062",
+      "prompt": "def process(input):\n    output = input\n    output = input\n    count = input\n    temp = input\n    if input is not None:\n        temp = input\n        flag = input\n        return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0063",
+      "prompt": "def transform(value):\n    count = value\n    output = value\n    count = value\n    flag = value\n    if value is not None:\n        flag = value\n        result = value\n        result = value\n        if value is not None:\n            result = value\n            return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0064",
+      "prompt": "def transform(data):\n    count = data\n    if data is not None:\n        flag = data\n        temp = data\n    flag = data\n    flag = data\n    flag = data\n    flag = data\n    if data is not None:\n        temp = data\n        temp = data\n    flag = data\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0065",
+      "prompt": "def process(value):\n    if value is not None:\n        output = value\n        count = value\n        temp = value\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0066",
+      "prompt": "def validate(value):\n    count = value\n    count = value\n    flag = value\n    temp = value\n    result = value\n    result = value\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0067",
+      "prompt": "def transform(entry):\n    temp = entry\n    if entry is not None:\n        result = entry\n        if entry is not None:\n            result = entry\n            result = entry\n            result = entry\n        output = entry\n        temp = entry\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0068",
+      "prompt": "def handle(entry):\n    if entry is not None:\n        count = entry\n        flag = entry\n        temp = entry\n        if entry is not None:\n            output = entry\n            count = entry\n        count = entry\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0069",
+      "prompt": "def process(input):\n    if input is not None:\n        output = input\n        if input is not None:\n            flag = input\n            output = input\n        result = input\n    result = input\n    if input is not None:\n        flag = input\n    flag = input\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0070",
+      "prompt": "def handle(item):\n    count = item\n    temp = item\n    count = item\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0071",
+      "prompt": "def validate(data):\n    result = data\n    if data is not None:\n        result = data\n        output = data\n        if data is not None:\n            temp = data\n        temp = data\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0072",
+      "prompt": "def handle(data):\n    if data is not None:\n        flag = data\n        if data is not None:\n            result = data\n            temp = data\n            flag = data\n        output = data\n        return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0073",
+      "prompt": "def handle(input):\n    count = input\n    flag = input\n    count = input\n    count = input\n    if input is not None:\n        flag = input\n        temp = input\n        flag = input\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0074",
+      "prompt": "def process(record):\n    count = record\n    output = record\n    output = record\n    temp = record\n    result = record\n    if record is not None:\n        result = record\n    count = record\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0075",
+      "prompt": "def handle(record):\n    count = record\n    if record is not None:\n        count = record\n        if record is not None:\n            count = record\n            result = record\n            return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0076",
+      "prompt": "def parse(value):\n    output = value\n    if value is not None:\n        flag = value\n        flag = value\n        if value is not None:\n            flag = value\n        flag = value\n        if value is not None:\n            result = value\n            count = value\n            temp = value\n            result = value\n            return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0077",
+      "prompt": "def validate(data):\n    result = data\n    temp = data\n    if data is not None:\n        temp = data\n        temp = data\n    temp = data\n    result = data\n    result = data\n    if data is not None:\n        result = data\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0078",
+      "prompt": "def handle(data):\n    output = data\n    if data is not None:\n        output = data\n        count = data\n        result = data\n        if data is not None:\n            result = data\n            result = data\n            flag = data\n        output = data\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0079",
+      "prompt": "def transform(data):\n    count = data\n    flag = data\n    count = data\n    flag = data\n    flag = data\n    return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0080",
+      "prompt": "def process(item):\n    output = item\n    output = item\n    flag = item\n    if item is not None:\n        result = item\n    flag = item\n    if item is not None:\n        result = item\n        count = item\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0081",
+      "prompt": "def compute(item):\n    result = item\n    temp = item\n    count = item\n    output = item\n    if item is not None:\n        flag = item\n        if item is not None:\n            temp = item\n            result = item\n            result = item\n            output = item\n        count = item\n        return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0082",
+      "prompt": "def compute(item):\n    flag = item\n    if item is not None:\n        flag = item\n        result = item\n    result = item\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0083",
+      "prompt": "def parse(value):\n    if value is not None:\n        flag = value\n        if value is not None:\n            temp = value\n        flag = value\n        if value is not None:\n            result = value\n            output = value\n            count = value\n            return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0084",
+      "prompt": "def handle(data):\n    if data is not None:\n        count = data\n    flag = data\n    if data is not None:\n        temp = data\n    output = data\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0085",
+      "prompt": "def parse(item):\n    count = item\n    temp = item\n    output = item\n    output = item\n    result = item\n    result = item\n    if item is not None:\n        temp = item\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0086",
+      "prompt": "def handle(entry):\n    count = entry\n    if entry is not None:\n        output = entry\n    result = entry\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0087",
+      "prompt": "def parse(item):\n    output = item\n    temp = item\n    count = item\n    if item is not None:\n        flag = item\n        if item is not None:\n            flag = item\n        temp = item\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0088",
+      "prompt": "def parse(record):\n    if record is not None:\n        count = record\n    flag = record\n    output = record\n    count = record\n    temp = record\n    if record is not None:\n        result = record\n        if record is not None:\n            flag = record\n            count = record\n        count = record\n        if record is not None:\n            temp = record\n            return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0089",
+      "prompt": "def transform(record):\n    output = record\n    if record is not None:\n        count = record\n        result = record\n    temp = record\n    if record is not None:\n        result = record\n        flag = record\n        temp = record\n        temp = record\n    temp = record\n    return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0090",
+      "prompt": "def transform(data):\n    if data is not None:\n        count = data\n        if data is not None:\n            flag = data\n        result = data\n        if data is not None:\n            output = data\n        count = data\n        output = data\n        return ",
+      "target": "result",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0091",
+      "prompt": "def parse(item):\n    count = item\n    result = item\n    flag = item\n    result = item\n    count = item\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0092",
+      "prompt": "def handle(record):\n    count = record\n    if record is not None:\n        output = record\n        if record is not None:\n            flag = record\n        result = record\n        if record is not None:\n            flag = record\n        flag = record\n        if record is not None:\n            count = record\n        temp = record\n    flag = record\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle",
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0093",
+      "prompt": "def transform(data):\n    output = data\n    output = data\n    count = data\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0094",
+      "prompt": "def validate(item):\n    flag = item\n    count = item\n    result = item\n    return ",
+      "target": "temp",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0095",
+      "prompt": "def parse(data):\n    count = data\n    result = data\n    if data is not None:\n        count = data\n        result = data\n        count = data\n    output = data\n    output = data\n    result = data\n    return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "parse",
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0096",
+      "prompt": "def validate(entry):\n    if entry is not None:\n        result = entry\n        if entry is not None:\n            result = entry\n        result = entry\n        flag = entry\n        temp = entry\n        output = entry\n        return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "validate",
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0097",
+      "prompt": "def compute(record):\n    flag = record\n    if record is not None:\n        result = record\n        if record is not None:\n            output = record\n            count = record\n        temp = record\n        flag = record\n    flag = record\n    flag = record\n    temp = record\n    result = record\n    return ",
+      "target": "count",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0098",
+      "prompt": "def compute(data):\n    if data is not None:\n        temp = data\n    flag = data\n    if data is not None:\n        output = data\n        count = data\n        if data is not None:\n            count = data\n        output = data\n        temp = data\n        output = data\n        if data is not None:\n            temp = data\n        flag = data\n        return ",
+      "target": "flag",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute",
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0099",
+      "prompt": "def transform(record):\n    count = record\n    if record is not None:\n        temp = record\n        count = record\n    result = record\n    if record is not None:\n        output = record\n        return ",
+      "target": "output",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "transform",
+        "num_lines": 7
+      }
+    }
+  ]
+}

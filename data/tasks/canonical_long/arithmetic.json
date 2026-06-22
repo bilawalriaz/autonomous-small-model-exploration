@@ -1,0 +1,1206 @@
+{
+  "family": "arithmetic",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "arithmetic_train_0000",
+      "prompt": "Frank has 9 apples. Frank buys 39 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "48",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0001",
+      "prompt": "Bob has 20 marbles. Bob gives 11 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "9",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0002",
+      "prompt": "There are 10 boxes with 3 items each. What is the total number of items?\nNumber only: ",
+      "target": "30",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0003",
+      "prompt": "187 cookies are shared equally among 5 people. How many does each person get?\nJust the number: ",
+      "target": "37",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0004",
+      "prompt": "Charlie has 48 apples. Charlie buys 24 more. How many apples does Charlie have now?\nAnswer with just the number: ",
+      "target": "72",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0005",
+      "prompt": "Diana has 27 marbles. Diana gives 7 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "20",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0006",
+      "prompt": "There are 11 boxes with 7 items each. What is the total number of items?\nNumber only: ",
+      "target": "77",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0007",
+      "prompt": "167 cookies are shared equally among 5 people. How many does each person get?\nJust the number: ",
+      "target": "33",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0008",
+      "prompt": "Frank has 17 apples. Frank buys 16 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "33",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0009",
+      "prompt": "Eve has 25 marbles. Eve gives 17 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0010",
+      "prompt": "There are 6 boxes with 6 items each. What is the total number of items?\nNumber only: ",
+      "target": "36",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0011",
+      "prompt": "149 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "74",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0012",
+      "prompt": "Frank has 49 apples. Frank buys 27 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "76",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0013",
+      "prompt": "Diana has 30 marbles. Diana gives 25 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "5",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0014",
+      "prompt": "There are 6 boxes with 4 items each. What is the total number of items?\nNumber only: ",
+      "target": "24",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0015",
+      "prompt": "99 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "33",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0016",
+      "prompt": "Frank has 42 apples. Frank buys 20 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "62",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0017",
+      "prompt": "Diana has 69 marbles. Diana gives 9 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "60",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0018",
+      "prompt": "There are 7 boxes with 9 items each. What is the total number of items?\nNumber only: ",
+      "target": "63",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0019",
+      "prompt": "165 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "55",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0020",
+      "prompt": "Alice has 26 apples. Alice buys 8 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "34",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0021",
+      "prompt": "Charlie has 25 marbles. Charlie gives 17 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0022",
+      "prompt": "There are 6 boxes with 10 items each. What is the total number of items?\nNumber only: ",
+      "target": "60",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0023",
+      "prompt": "187 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "93",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0024",
+      "prompt": "Frank has 42 apples. Frank buys 19 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "61",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0025",
+      "prompt": "Alice has 24 marbles. Alice gives 16 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0026",
+      "prompt": "There are 10 boxes with 2 items each. What is the total number of items?\nNumber only: ",
+      "target": "20",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0027",
+      "prompt": "61 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "30",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0028",
+      "prompt": "Frank has 46 apples. Frank buys 13 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "59",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0029",
+      "prompt": "Alice has 42 marbles. Alice gives 8 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "34",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0030",
+      "prompt": "There are 4 boxes with 9 items each. What is the total number of items?\nNumber only: ",
+      "target": "36",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0031",
+      "prompt": "93 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "31",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0032",
+      "prompt": "Alice has 12 apples. Alice buys 36 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "48",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0033",
+      "prompt": "Eve has 98 marbles. Eve gives 33 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "65",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0034",
+      "prompt": "There are 6 boxes with 8 items each. What is the total number of items?\nNumber only: ",
+      "target": "48",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0035",
+      "prompt": "152 cookies are shared equally among 4 people. How many does each person get?\nJust the number: ",
+      "target": "38",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0036",
+      "prompt": "Alice has 48 apples. Alice buys 41 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "89",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0037",
+      "prompt": "Eve has 37 marbles. Eve gives 15 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "22",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0038",
+      "prompt": "There are 3 boxes with 4 items each. What is the total number of items?\nNumber only: ",
+      "target": "12",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0039",
+      "prompt": "66 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "33",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0040",
+      "prompt": "Charlie has 14 apples. Charlie buys 31 more. How many apples does Charlie have now?\nAnswer with just the number: ",
+      "target": "45",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0041",
+      "prompt": "Bob has 67 marbles. Bob gives 40 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "27",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0042",
+      "prompt": "There are 10 boxes with 5 items each. What is the total number of items?\nNumber only: ",
+      "target": "50",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0043",
+      "prompt": "60 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "20",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0044",
+      "prompt": "Alice has 45 apples. Alice buys 44 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "89",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0045",
+      "prompt": "Diana has 40 marbles. Diana gives 5 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "35",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0046",
+      "prompt": "There are 4 boxes with 2 items each. What is the total number of items?\nNumber only: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0047",
+      "prompt": "95 cookies are shared equally among 5 people. How many does each person get?\nJust the number: ",
+      "target": "19",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0048",
+      "prompt": "Frank has 46 apples. Frank buys 42 more. How many apples does Frank have now?\nAnswer with just the number: ",
+      "target": "88",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0049",
+      "prompt": "Charlie has 73 marbles. Charlie gives 65 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0050",
+      "prompt": "There are 5 boxes with 5 items each. What is the total number of items?\nNumber only: ",
+      "target": "25",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0051",
+      "prompt": "119 cookies are shared equally among 7 people. How many does each person get?\nJust the number: ",
+      "target": "17",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0052",
+      "prompt": "Diana has 20 apples. Diana buys 16 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "36",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0053",
+      "prompt": "Eve has 24 marbles. Eve gives 14 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "10",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0054",
+      "prompt": "There are 10 boxes with 3 items each. What is the total number of items?\nNumber only: ",
+      "target": "30",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0055",
+      "prompt": "127 cookies are shared equally among 5 people. How many does each person get?\nJust the number: ",
+      "target": "25",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0056",
+      "prompt": "Diana has 5 apples. Diana buys 40 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "45",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0057",
+      "prompt": "Bob has 44 marbles. Bob gives 12 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "32",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0058",
+      "prompt": "There are 4 boxes with 7 items each. What is the total number of items?\nNumber only: ",
+      "target": "28",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_train_0059",
+      "prompt": "179 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "89",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0060",
+      "prompt": "Diana has 45 apples. Diana buys 47 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "92",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0061",
+      "prompt": "Bob has 55 marbles. Bob gives 8 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "47",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0062",
+      "prompt": "There are 4 boxes with 4 items each. What is the total number of items?\nNumber only: ",
+      "target": "16",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0063",
+      "prompt": "171 cookies are shared equally among 9 people. How many does each person get?\nJust the number: ",
+      "target": "19",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0064",
+      "prompt": "Bob has 15 apples. Bob buys 47 more. How many apples does Bob have now?\nAnswer with just the number: ",
+      "target": "62",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0065",
+      "prompt": "Alice has 26 marbles. Alice gives 16 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "10",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0066",
+      "prompt": "There are 6 boxes with 8 items each. What is the total number of items?\nNumber only: ",
+      "target": "48",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0067",
+      "prompt": "135 cookies are shared equally among 9 people. How many does each person get?\nJust the number: ",
+      "target": "15",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0068",
+      "prompt": "Diana has 7 apples. Diana buys 11 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "18",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0069",
+      "prompt": "Frank has 26 marbles. Frank gives 10 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "16",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0070",
+      "prompt": "There are 3 boxes with 9 items each. What is the total number of items?\nNumber only: ",
+      "target": "27",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0071",
+      "prompt": "79 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "39",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0072",
+      "prompt": "Bob has 33 apples. Bob buys 42 more. How many apples does Bob have now?\nAnswer with just the number: ",
+      "target": "75",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0073",
+      "prompt": "Eve has 61 marbles. Eve gives 31 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "30",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0074",
+      "prompt": "There are 8 boxes with 5 items each. What is the total number of items?\nNumber only: ",
+      "target": "40",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0075",
+      "prompt": "133 cookies are shared equally among 7 people. How many does each person get?\nJust the number: ",
+      "target": "19",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0076",
+      "prompt": "Alice has 20 apples. Alice buys 31 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "51",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0077",
+      "prompt": "Bob has 68 marbles. Bob gives 62 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "6",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0078",
+      "prompt": "There are 4 boxes with 9 items each. What is the total number of items?\nNumber only: ",
+      "target": "36",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_val_0079",
+      "prompt": "174 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "87",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0080",
+      "prompt": "Diana has 14 apples. Diana buys 18 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "32",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0081",
+      "prompt": "Eve has 78 marbles. Eve gives 27 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "51",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0082",
+      "prompt": "There are 8 boxes with 4 items each. What is the total number of items?\nNumber only: ",
+      "target": "32",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0083",
+      "prompt": "99 cookies are shared equally among 9 people. How many does each person get?\nJust the number: ",
+      "target": "11",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0084",
+      "prompt": "Charlie has 17 apples. Charlie buys 26 more. How many apples does Charlie have now?\nAnswer with just the number: ",
+      "target": "43",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0085",
+      "prompt": "Bob has 24 marbles. Bob gives 16 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "8",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0086",
+      "prompt": "There are 3 boxes with 6 items each. What is the total number of items?\nNumber only: ",
+      "target": "18",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0087",
+      "prompt": "78 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "26",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0088",
+      "prompt": "Diana has 31 apples. Diana buys 15 more. How many apples does Diana have now?\nAnswer with just the number: ",
+      "target": "46",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0089",
+      "prompt": "Charlie has 48 marbles. Charlie gives 23 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "25",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0090",
+      "prompt": "There are 5 boxes with 4 items each. What is the total number of items?\nNumber only: ",
+      "target": "20",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0091",
+      "prompt": "191 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "95",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0092",
+      "prompt": "Alice has 31 apples. Alice buys 38 more. How many apples does Alice have now?\nAnswer with just the number: ",
+      "target": "69",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0093",
+      "prompt": "Diana has 47 marbles. Diana gives 42 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "5",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0094",
+      "prompt": "There are 10 boxes with 6 items each. What is the total number of items?\nNumber only: ",
+      "target": "60",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0095",
+      "prompt": "159 cookies are shared equally among 3 people. How many does each person get?\nJust the number: ",
+      "target": "53",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0096",
+      "prompt": "Bob has 25 apples. Bob buys 32 more. How many apples does Bob have now?\nAnswer with just the number: ",
+      "target": "57",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0097",
+      "prompt": "Eve has 48 marbles. Eve gives 42 to a friend. How many marbles remain?\nJust the number: ",
+      "target": "6",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0098",
+      "prompt": "There are 12 boxes with 2 items each. What is the total number of items?\nNumber only: ",
+      "target": "24",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    },
+    {
+      "task_id": "arithmetic_test_0099",
+      "prompt": "61 cookies are shared equally among 2 people. How many does each person get?\nJust the number: ",
+      "target": "30",
+      "metadata": {
+        "family": "arithmetic",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "word_problem"
+      }
+    }
+  ]
+}

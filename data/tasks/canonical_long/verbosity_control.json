@@ -1,0 +1,1406 @@
+{
+  "family": "verbosity_control",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "verbosity_train_0000",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0001",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0002",
+      "prompt": "write in bullet points (3 bullets) magnetism.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0003",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0004",
+      "prompt": "explain in exactly 3 sentences gravity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0005",
+      "prompt": "write a haiku about photosynthesis.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0006",
+      "prompt": "explain in exactly 3 sentences relativity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0007",
+      "prompt": "use only words with 4 letters or fewer evolution.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0008",
+      "prompt": "explain in exactly 3 sentences relativity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0009",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0010",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0011",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0012",
+      "prompt": "use only words with 4 letters or fewer quantum mechanics.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0013",
+      "prompt": "explain to a 5-year-old relativity.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0014",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0015",
+      "prompt": "use only words with 4 letters or fewer relativity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0016",
+      "prompt": "write in bullet points (3 bullets) evolution.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0017",
+      "prompt": "write in bullet points (3 bullets) thermodynamics.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0018",
+      "prompt": "explain to a 5-year-old relativity.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0019",
+      "prompt": "explain to a 5-year-old quantum mechanics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0020",
+      "prompt": "write a haiku about thermodynamics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0021",
+      "prompt": "write in bullet points (3 bullets) quantum mechanics.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0022",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0023",
+      "prompt": "write in bullet points (3 bullets) relativity.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0024",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0025",
+      "prompt": "explain in exactly 3 sentences gravity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0026",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0027",
+      "prompt": "explain to a 5-year-old evolution.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0028",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0029",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0030",
+      "prompt": "write in bullet points (3 bullets) photosynthesis.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0031",
+      "prompt": "explain to a 5-year-old evolution.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0032",
+      "prompt": "write a haiku about photosynthesis.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0033",
+      "prompt": "write a haiku about thermodynamics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0034",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0035",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0036",
+      "prompt": "explain in exactly 3 sentences gravity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0037",
+      "prompt": "write in bullet points (3 bullets) quantum mechanics.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0038",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0039",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0040",
+      "prompt": "write in bullet points (3 bullets) magnetism.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0041",
+      "prompt": "explain to a 5-year-old evolution.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0042",
+      "prompt": "write a haiku about photosynthesis.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0043",
+      "prompt": "write in bullet points (3 bullets) gravity.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0044",
+      "prompt": "explain in exactly 3 sentences magnetism.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0045",
+      "prompt": "explain to a 5-year-old relativity.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0046",
+      "prompt": "use only words with 4 letters or fewer photosynthesis.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0047",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0048",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0049",
+      "prompt": "explain in exactly 3 sentences magnetism.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0050",
+      "prompt": "explain to a 5-year-old evolution.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0051",
+      "prompt": "explain to a 5-year-old photosynthesis.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0052",
+      "prompt": "use only words with 4 letters or fewer gravity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0053",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0054",
+      "prompt": "write a haiku about thermodynamics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0055",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0056",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0057",
+      "prompt": "write a haiku about evolution.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0058",
+      "prompt": "write a haiku about thermodynamics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_train_0059",
+      "prompt": "write a haiku about evolution.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0060",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0061",
+      "prompt": "use only words with 4 letters or fewer thermodynamics.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0062",
+      "prompt": "explain in exactly 3 sentences relativity.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0063",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0064",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0065",
+      "prompt": "write in bullet points (3 bullets) gravity.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0066",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0067",
+      "prompt": "write a haiku about photosynthesis.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0068",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0069",
+      "prompt": "write a haiku about magnetism.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0070",
+      "prompt": "write a haiku about photosynthesis.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0071",
+      "prompt": "explain to a 5-year-old evolution.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0072",
+      "prompt": "explain to a 5-year-old quantum mechanics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0073",
+      "prompt": "write in bullet points (3 bullets) quantum mechanics.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0074",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0075",
+      "prompt": "explain to a 5-year-old gravity.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0076",
+      "prompt": "explain in exactly 3 sentences evolution.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0077",
+      "prompt": "write in bullet points (3 bullets) photosynthesis.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0078",
+      "prompt": "explain in exactly 3 sentences photosynthesis.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_val_0079",
+      "prompt": "explain in exactly 3 sentences thermodynamics.\n",
+      "target": "[Style: three_sentences]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "three_sentences",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain in exactly 3 sentences' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0080",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0081",
+      "prompt": "write a haiku about relativity.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0082",
+      "prompt": "use only words with 4 letters or fewer magnetism.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "magnetism",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0083",
+      "prompt": "explain to a 5-year-old photosynthesis.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0084",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0085",
+      "prompt": "write in bullet points (3 bullets) thermodynamics.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0086",
+      "prompt": "write in bullet points (3 bullets) photosynthesis.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0087",
+      "prompt": "write a haiku about evolution.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0088",
+      "prompt": "use only words with 4 letters or fewer photosynthesis.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0089",
+      "prompt": "explain to a 5-year-old thermodynamics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0090",
+      "prompt": "write in bullet points (3 bullets) gravity.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "gravity",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0091",
+      "prompt": "use only words with 4 letters or fewer photosynthesis.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0092",
+      "prompt": "write a haiku about thermodynamics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "thermodynamics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0093",
+      "prompt": "explain to a 5-year-old quantum mechanics.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0094",
+      "prompt": "use only words with 4 letters or fewer photosynthesis.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "photosynthesis",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0095",
+      "prompt": "explain to a 5-year-old relativity.\n",
+      "target": "[Style: simple]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "simple",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'explain to a 5-year-old' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0096",
+      "prompt": "write a haiku about quantum mechanics.\n",
+      "target": "[Style: haiku]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "haiku",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'write a haiku about' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0097",
+      "prompt": "use only words with 4 letters or fewer quantum mechanics.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "quantum mechanics",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0098",
+      "prompt": "use only words with 4 letters or fewer relativity.\n",
+      "target": "[Style: short_words]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "short_words",
+        "topic": "relativity",
+        "scoring_rubric": "Score 1.0 if response follows 'use only words with 4 letters or fewer' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    },
+    {
+      "task_id": "verbosity_test_0099",
+      "prompt": "write in bullet points (3 bullets) evolution.\n",
+      "target": "[Style: bullets]",
+      "metadata": {
+        "family": "verbosity_control",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "constraint": "bullets",
+        "topic": "evolution",
+        "scoring_rubric": "Score 1.0 if response follows 'write in bullet points (3 bullets)' constraint. Score 0.5 if partially follows. Score 0.0 if ignores constraint entirely."
+      }
+    }
+  ]
+}

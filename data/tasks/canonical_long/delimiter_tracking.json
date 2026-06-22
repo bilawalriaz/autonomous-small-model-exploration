@@ -1,0 +1,1306 @@
+{
+  "family": "delimiter_tracking",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "delimiter_tracking_train_0000",
+      "prompt": "def example():\n    (b\n    [data\n    [y\n    [z\n    [value\n        pass\n    (b\n# Complete the closing delimiters: ",
+      "target": ")]]]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0001",
+      "prompt": "def example():\n    (b\n    (y\n        pass\n    [item\n    {a\n    [item\n# Complete the closing delimiters: ",
+      "target": "]}]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0002",
+      "prompt": "def example():\n    [a\n    (item\n    {x\n    {z\n        pass\n    [z\n    (a\n    (x\n    {item\n        pass\n# Complete the closing delimiters: ",
+      "target": "}))]}})]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0003",
+      "prompt": "def example():\n    (b\n    {y\n        pass\n    {item\n    [data\n    (item\n        pass\n    (z\n    {y\n    {y\n# Complete the closing delimiters: ",
+      "target": "}}))]}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0004",
+      "prompt": "def example():\n    [item\n        pass\n    {data\n    [x\n        pass\n    [z\n    {item\n        pass\n    [a\n        pass\n    [b\n# Complete the closing delimiters: ",
+      "target": "]]}]]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0005",
+      "prompt": "def example():\n    [b\n    [y\n    (z\n# Complete the closing delimiters: ",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0006",
+      "prompt": "def example():\n    [value\n        pass\n    [y\n        pass\n    (item\n    {value\n    {z\n        pass\n    {item\n        pass\n    {x\n        pass\n    (x\n        pass\n# Complete the closing delimiters: ",
+      "target": ")}}}})]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 15
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0007",
+      "prompt": "def example():\n    (value\n    [value\n    {item\n    (x\n        pass\n    [data\n        pass\n    [value\n# Complete the closing delimiters: ",
+      "target": "]])}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0008",
+      "prompt": "def example():\n    {y\n        pass\n    [x\n        pass\n    {a\n    {a\n    [item\n# Complete the closing delimiters: ",
+      "target": "]}}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0009",
+      "prompt": "def example():\n    (data\n    {z\n    (a\n        pass\n    [b\n    [value\n    (data\n    {item\n    (value\n# Complete the closing delimiters: ",
+      "target": ")})]])})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0010",
+      "prompt": "def example():\n    {b\n        pass\n    (data\n        pass\n    [value\n    [b\n        pass\n    {a\n    {item\n    {z\n# Complete the closing delimiters: ",
+      "target": "}}}]])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0011",
+      "prompt": "def example():\n    [b\n        pass\n    [item\n    (a\n    {a\n    {data\n    {value\n    (z\n        pass\n    [z\n# Complete the closing delimiters: ",
+      "target": "])}}})]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0012",
+      "prompt": "def example():\n    {z\n    [y\n        pass\n    (b\n    [value\n        pass\n    [data\n    [x\n    {y\n    (y\n# Complete the closing delimiters: ",
+      "target": ")}]]])]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0013",
+      "prompt": "def example():\n    {b\n    (z\n    [item\n    [z\n    {z\n    [value\n# Complete the closing delimiters: ",
+      "target": "]}]])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0014",
+      "prompt": "def example():\n    [x\n        pass\n    [a\n    (z\n    (z\n# Complete the closing delimiters: ",
+      "target": "))]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0015",
+      "prompt": "def example():\n    [item\n    [item\n        pass\n    {a\n    (value\n    {a\n        pass\n    (a\n        pass\n    [b\n        pass\n    [b\n        pass\n# Complete the closing delimiters: ",
+      "target": "]])})}]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 14
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0016",
+      "prompt": "def example():\n    [b\n    {value\n    {z\n# Complete the closing delimiters: ",
+      "target": "}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0017",
+      "prompt": "def example():\n    [a\n        pass\n    [x\n        pass\n    {z\n        pass\n    (z\n        pass\n    {x\n    {b\n# Complete the closing delimiters: ",
+      "target": "}})}]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0018",
+      "prompt": "def example():\n    (x\n    {x\n        pass\n    (item\n    (b\n    (a\n    {x\n    {y\n# Complete the closing delimiters: ",
+      "target": "}})))})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0019",
+      "prompt": "def example():\n    {z\n    (y\n        pass\n    (data\n        pass\n    (b\n    (value\n# Complete the closing delimiters: ",
+      "target": "))))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0020",
+      "prompt": "def example():\n    (x\n    (data\n    (x\n    (data\n        pass\n    (y\n# Complete the closing delimiters: ",
+      "target": ")))))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0021",
+      "prompt": "def example():\n    [a\n    [b\n    (z\n# Complete the closing delimiters: ",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0022",
+      "prompt": "def example():\n    [value\n    (y\n    (x\n    {z\n    [b\n# Complete the closing delimiters: ",
+      "target": "]}))]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0023",
+      "prompt": "def example():\n    [value\n        pass\n    [item\n    [item\n# Complete the closing delimiters: ",
+      "target": "]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0024",
+      "prompt": "def example():\n    [z\n        pass\n    {x\n    (y\n    {data\n    {data\n        pass\n    [value\n# Complete the closing delimiters: ",
+      "target": "]}})}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0025",
+      "prompt": "def example():\n    {z\n    [y\n    [x\n        pass\n    {value\n        pass\n    {a\n    {value\n    {y\n    {a\n# Complete the closing delimiters: ",
+      "target": "}}}}}]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0026",
+      "prompt": "def example():\n    {item\n        pass\n    {x\n        pass\n    (data\n    (y\n    [a\n    [x\n    {item\n    (y\n# Complete the closing delimiters: ",
+      "target": ")}]]))}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0027",
+      "prompt": "def example():\n    [y\n    [value\n        pass\n    [x\n        pass\n    [x\n    (y\n    {b\n    {a\n# Complete the closing delimiters: ",
+      "target": "}})]]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0028",
+      "prompt": "def example():\n    [value\n    (data\n    {data\n    [data\n        pass\n    {a\n        pass\n    [b\n# Complete the closing delimiters: ",
+      "target": "]}]})]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0029",
+      "prompt": "def example():\n    {y\n        pass\n    (data\n        pass\n    {item\n        pass\n    {a\n        pass\n    [a\n# Complete the closing delimiters: ",
+      "target": "]}})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0030",
+      "prompt": "def example():\n    {value\n        pass\n    [x\n    {y\n    [data\n# Complete the closing delimiters: ",
+      "target": "]}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0031",
+      "prompt": "def example():\n    (data\n        pass\n    {x\n    [data\n    (z\n    (y\n    {value\n    [item\n# Complete the closing delimiters: ",
+      "target": "]}))]})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0032",
+      "prompt": "def example():\n    (b\n    [b\n    (z\n    {b\n    {value\n    {a\n        pass\n    {b\n    {z\n# Complete the closing delimiters: ",
+      "target": "}}}}})])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0033",
+      "prompt": "def example():\n    (value\n    [data\n    {item\n    {b\n    [x\n    (item\n        pass\n    {x\n        pass\n    (b\n# Complete the closing delimiters: ",
+      "target": ")})]}}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0034",
+      "prompt": "def example():\n    (b\n        pass\n    {x\n    [y\n    {a\n# Complete the closing delimiters: ",
+      "target": "}]})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0035",
+      "prompt": "def example():\n    [a\n    {b\n    (item\n    {value\n    (x\n    (data\n    {value\n# Complete the closing delimiters: ",
+      "target": "}))})}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0036",
+      "prompt": "def example():\n    {a\n    (b\n    {y\n        pass\n    (y\n    [b\n    (z\n    [x\n# Complete the closing delimiters: ",
+      "target": "])])})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0037",
+      "prompt": "def example():\n    (x\n        pass\n    [x\n    {b\n    {value\n        pass\n    {value\n    (y\n    (item\n    [y\n# Complete the closing delimiters: ",
+      "target": "]))}}}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0038",
+      "prompt": "def example():\n    {value\n    [a\n    {data\n    {x\n        pass\n# Complete the closing delimiters: ",
+      "target": "}}]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0039",
+      "prompt": "def example():\n    [a\n    {a\n    {value\n    (item\n        pass\n    {b\n        pass\n# Complete the closing delimiters: ",
+      "target": "})}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0040",
+      "prompt": "def example():\n    [data\n    [a\n    (y\n        pass\n    {x\n    (a\n    [y\n        pass\n    {item\n# Complete the closing delimiters: ",
+      "target": "}])})]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0041",
+      "prompt": "def example():\n    {z\n        pass\n    {value\n        pass\n    (x\n        pass\n# Complete the closing delimiters: ",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0042",
+      "prompt": "def example():\n    {y\n    (b\n    [item\n    (item\n    {x\n# Complete the closing delimiters: ",
+      "target": "})])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0043",
+      "prompt": "def example():\n    (x\n    (value\n    (b\n    [y\n        pass\n    [item\n    {x\n    {a\n        pass\n# Complete the closing delimiters: ",
+      "target": "}}]])))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0044",
+      "prompt": "def example():\n    {b\n    (b\n    {value\n    (z\n        pass\n    (item\n    (b\n        pass\n# Complete the closing delimiters: ",
+      "target": ")))})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0045",
+      "prompt": "def example():\n    {value\n        pass\n    {z\n        pass\n    (b\n        pass\n    (x\n    {data\n    (b\n    [y\n        pass\n    {data\n# Complete the closing delimiters: ",
+      "target": "}])}))}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 13
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0046",
+      "prompt": "def example():\n    (a\n        pass\n    {y\n    [data\n    {b\n    (value\n# Complete the closing delimiters: ",
+      "target": ")}]})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0047",
+      "prompt": "def example():\n    (x\n    (item\n        pass\n    [z\n    [data\n    [b\n    (z\n# Complete the closing delimiters: ",
+      "target": ")]]]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0048",
+      "prompt": "def example():\n    [z\n    (b\n    {y\n# Complete the closing delimiters: ",
+      "target": "})]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0049",
+      "prompt": "def example():\n    {x\n    {item\n    (x\n# Complete the closing delimiters: ",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0050",
+      "prompt": "def example():\n    {data\n    (value\n    {b\n        pass\n    {y\n    {x\n    {z\n    (data\n        pass\n# Complete the closing delimiters: ",
+      "target": ")}}}})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0051",
+      "prompt": "def example():\n    {z\n    [value\n        pass\n    [a\n        pass\n    [a\n        pass\n    (value\n    [x\n        pass\n    {value\n        pass\n# Complete the closing delimiters: ",
+      "target": "}])]]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 13
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0052",
+      "prompt": "def example():\n    {b\n    [z\n    [value\n    (b\n    (item\n    [data\n    {x\n# Complete the closing delimiters: ",
+      "target": "}]))]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0053",
+      "prompt": "def example():\n    [z\n        pass\n    {b\n        pass\n    (z\n    {y\n# Complete the closing delimiters: ",
+      "target": "})}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0054",
+      "prompt": "def example():\n    [y\n    [data\n        pass\n    (item\n        pass\n    (z\n    (z\n    (z\n        pass\n# Complete the closing delimiters: ",
+      "target": "))))]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0055",
+      "prompt": "def example():\n    (item\n    {x\n    {b\n    (data\n    [data\n        pass\n# Complete the closing delimiters: ",
+      "target": "])}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0056",
+      "prompt": "def example():\n    {z\n    (b\n        pass\n    {value\n    {y\n        pass\n    [z\n        pass\n    (item\n# Complete the closing delimiters: ",
+      "target": ")]}})}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0057",
+      "prompt": "def example():\n    (z\n    {x\n    {y\n        pass\n    {z\n    {x\n    {item\n    [x\n# Complete the closing delimiters: ",
+      "target": "]}}}}})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0058",
+      "prompt": "def example():\n    (data\n    [value\n    {y\n    [data\n    (b\n    {item\n        pass\n# Complete the closing delimiters: ",
+      "target": "})]}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_train_0059",
+      "prompt": "def example():\n    {x\n    (x\n    (value\n# Complete the closing delimiters: ",
+      "target": "))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0060",
+      "prompt": "def example():\n    (item\n    [b\n    [value\n# Complete the closing delimiters: ",
+      "target": "]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0061",
+      "prompt": "def example():\n    [a\n    {data\n        pass\n    {data\n        pass\n    [value\n    [z\n    {y\n    [z\n        pass\n    {item\n# Complete the closing delimiters: ",
+      "target": "}]}]]}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 12
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0062",
+      "prompt": "def example():\n    {x\n        pass\n    {x\n    (data\n    [y\n        pass\n    (value\n        pass\n    (item\n    [b\n# Complete the closing delimiters: ",
+      "target": "]))])}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0063",
+      "prompt": "def example():\n    (z\n    [x\n        pass\n    {b\n        pass\n    {a\n    {x\n    {x\n    (b\n# Complete the closing delimiters: ",
+      "target": ")}}}}])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0064",
+      "prompt": "def example():\n    {item\n    (x\n    (y\n    {value\n    [a\n# Complete the closing delimiters: ",
+      "target": "]}))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0065",
+      "prompt": "def example():\n    [item\n    [z\n    (y\n    [y\n# Complete the closing delimiters: ",
+      "target": "])]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0066",
+      "prompt": "def example():\n    {b\n    [data\n    [data\n    {x\n    [y\n# Complete the closing delimiters: ",
+      "target": "]}]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0067",
+      "prompt": "def example():\n    {a\n    [value\n    (b\n        pass\n    (item\n# Complete the closing delimiters: ",
+      "target": "))]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0068",
+      "prompt": "def example():\n    (z\n    [a\n    [z\n    {a\n    (a\n# Complete the closing delimiters: ",
+      "target": ")}]])",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0069",
+      "prompt": "def example():\n    (a\n        pass\n    (value\n        pass\n    (y\n    {data\n    {x\n# Complete the closing delimiters: ",
+      "target": "}})))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0070",
+      "prompt": "def example():\n    {value\n    {b\n    {b\n    {z\n        pass\n    [data\n# Complete the closing delimiters: ",
+      "target": "]}}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0071",
+      "prompt": "def example():\n    {value\n    {z\n    (data\n# Complete the closing delimiters: ",
+      "target": ")}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0072",
+      "prompt": "def example():\n    (a\n    (value\n    [z\n# Complete the closing delimiters: ",
+      "target": "]))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0073",
+      "prompt": "def example():\n    [data\n    [value\n        pass\n    [a\n    [value\n# Complete the closing delimiters: ",
+      "target": "]]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0074",
+      "prompt": "def example():\n    [z\n    {a\n    {b\n    {item\n    (z\n# Complete the closing delimiters: ",
+      "target": ")}}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0075",
+      "prompt": "def example():\n    (data\n    (item\n    {value\n    [b\n    {x\n    {z\n        pass\n    [data\n    (data\n# Complete the closing delimiters: ",
+      "target": ")]}}]}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 10
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0076",
+      "prompt": "def example():\n    [value\n    [value\n        pass\n    (value\n    {a\n    {z\n# Complete the closing delimiters: ",
+      "target": "}})]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0077",
+      "prompt": "def example():\n    [value\n    [data\n    [b\n    (z\n    [item\n# Complete the closing delimiters: ",
+      "target": "])]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0078",
+      "prompt": "def example():\n    [y\n        pass\n    [a\n    {b\n    {item\n        pass\n    [value\n    {data\n    (x\n        pass\n# Complete the closing delimiters: ",
+      "target": ")}]}}]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_val_0079",
+      "prompt": "def example():\n    {b\n    {y\n        pass\n    [y\n        pass\n    [x\n        pass\n# Complete the closing delimiters: ",
+      "target": "]]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0080",
+      "prompt": "def example():\n    {y\n        pass\n    {z\n        pass\n    [b\n        pass\n    {b\n    (z\n    (x\n        pass\n# Complete the closing delimiters: ",
+      "target": "))}]}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0081",
+      "prompt": "def example():\n    [data\n    {b\n    (z\n    [item\n    {b\n# Complete the closing delimiters: ",
+      "target": "}])}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0082",
+      "prompt": "def example():\n    {a\n    [b\n    [z\n    (z\n    [x\n    [data\n        pass\n# Complete the closing delimiters: ",
+      "target": "]])]]}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0083",
+      "prompt": "def example():\n    [a\n    {value\n        pass\n    {item\n    (item\n    (b\n        pass\n    {a\n# Complete the closing delimiters: ",
+      "target": "}))}}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0084",
+      "prompt": "def example():\n    {b\n        pass\n    {b\n    (z\n        pass\n    (data\n    [data\n        pass\n    (z\n        pass\n    {x\n        pass\n# Complete the closing delimiters: ",
+      "target": "})]))}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 13
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0085",
+      "prompt": "def example():\n    [b\n        pass\n    [x\n        pass\n    (x\n# Complete the closing delimiters: ",
+      "target": ")]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0086",
+      "prompt": "def example():\n    [b\n    [value\n    (value\n        pass\n    (x\n        pass\n    [y\n# Complete the closing delimiters: ",
+      "target": "]))]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 5,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0087",
+      "prompt": "def example():\n    (b\n    (y\n    {a\n    [a\n# Complete the closing delimiters: ",
+      "target": "]}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0088",
+      "prompt": "def example():\n    (data\n    (a\n    {b\n# Complete the closing delimiters: ",
+      "target": "}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 4
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0089",
+      "prompt": "def example():\n    {x\n    {y\n        pass\n    {b\n        pass\n    (a\n# Complete the closing delimiters: ",
+      "target": ")}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0090",
+      "prompt": "def example():\n    {item\n    (b\n    [a\n        pass\n    (data\n# Complete the closing delimiters: ",
+      "target": ")])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0091",
+      "prompt": "def example():\n    [y\n        pass\n    [y\n    [x\n        pass\n    {z\n# Complete the closing delimiters: ",
+      "target": "}]]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 7
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0092",
+      "prompt": "def example():\n    (data\n        pass\n    {value\n    [a\n        pass\n# Complete the closing delimiters: ",
+      "target": "]})",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0093",
+      "prompt": "def example():\n    [z\n        pass\n    (data\n    {b\n    [a\n    {value\n    [b\n# Complete the closing delimiters: ",
+      "target": "]}]})]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 6,
+        "num_lines": 8
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0094",
+      "prompt": "def example():\n    {z\n        pass\n    (data\n        pass\n    [value\n    {item\n    (value\n    (value\n    {item\n        pass\n# Complete the closing delimiters: ",
+      "target": "}))}])}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0095",
+      "prompt": "def example():\n    [z\n    [item\n    (y\n    (x\n    (z\n    (y\n    (x\n    [data\n# Complete the closing delimiters: ",
+      "target": "])))))]]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 9
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0096",
+      "prompt": "def example():\n    {b\n        pass\n    (y\n        pass\n    (data\n    (data\n    (value\n    [value\n    (b\n    {y\n# Complete the closing delimiters: ",
+      "target": "})]))))}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 8,
+        "num_lines": 11
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0097",
+      "prompt": "def example():\n    (y\n        pass\n    (item\n        pass\n    {a\n# Complete the closing delimiters: ",
+      "target": "}))",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 3,
+        "num_lines": 6
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0098",
+      "prompt": "def example():\n    {item\n    {value\n    {item\n    (z\n# Complete the closing delimiters: ",
+      "target": ")}}}",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 4,
+        "num_lines": 5
+      }
+    },
+    {
+      "task_id": "delimiter_tracking_test_0099",
+      "prompt": "def example():\n    [z\n    {data\n    [value\n    [item\n    [a\n    (item\n    {b\n# Complete the closing delimiters: ",
+      "target": "})]]]}]",
+      "metadata": {
+        "family": "delimiter_tracking",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "depth": 7,
+        "num_lines": 8
+      }
+    }
+  ]
+}

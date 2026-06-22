@@ -1,0 +1,184 @@
+# Phase 2 Canonical Task Suite Configuration
+# 16 task families × 3 length splits + clean/corrupt pairs
+
+task_families:
+  # === Existing from Phase 1 (extended) ===
+  - name: "json_schema"
+    family: "json"
+    priority: 1
+    description: "JSON formatting and schema compliance"
+    scorer: "json_parse_and_schema_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "delimiter_tracking"
+    family: "delimiter"
+    priority: 2
+    description: "Bracket/delimiter matching and nesting"
+    scorer: "bracket_match_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "factual_recall"
+    family: "factual"
+    priority: 3
+    description: "Factual recall (synthetic and real facts)"
+    scorer: "target_logprob_and_exact_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "arithmetic"
+    family: "arithmetic"
+    priority: 4
+    description: "Arithmetic micro-reasoning"
+    scorer: "exact_numeric_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "copying"
+    family: "copying"
+    priority: 5
+    description: "Copying and pattern completion"
+    scorer: "exact_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "code_syntax"
+    family: "code"
+    priority: 6
+    description: "Code syntax recognition and completion"
+    scorer: "ast_parse_and_exact_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "code_semantics"
+    family: "code"
+    priority: 7
+    description: "Code semantic preservation under transformation"
+    scorer: "semantic_equivalence_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "variable_renaming"
+    family: "code"
+    priority: 8
+    description: "Variable renaming consistency"
+    scorer: "rename_consistency_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "dead_code"
+    family: "code"
+    priority: 9
+    description: "Dead-code detection and removal"
+    scorer: "dead_code_removal_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase1_extended"
+
+  - name: "string_decoding"
+    family: "deobfuscation"
+    priority: 10
+    description: "String decoding (escape sequences, encoded strings)"
+    scorer: "exact_decode_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "constant_folding"
+    family: "deobfuscation"
+    priority: 11
+    description: "Constant expression evaluation and folding"
+    scorer: "exact_numeric_match"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "control_flow_simplification"
+    family: "deobfuscation"
+    priority: 12
+    description: "Control flow simplification (simplify if/else, loops)"
+    scorer: "semantic_equivalence_check"
+    has_clean_corrupt_pairs: false
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  # === New Phase 2 families ===
+  - name: "uncertainty_expression"
+    family: "uncertainty"
+    priority: 13
+    description: "Uncertainty and hedging expression"
+    scorer: "uncertainty_rubric_score"
+    has_clean_corrupt_pairs: false
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "verbosity_control"
+    family: "style"
+    priority: 14
+    description: "Verbosity and style control"
+    scorer: "length_and_style_rubric"
+    has_clean_corrupt_pairs: false
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "instruction_following"
+    family: "instruction"
+    priority: 15
+    description: "Instruction following compliance"
+    scorer: "instruction_compliance_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short", "canonical_long"]
+    created_by: "phase2"
+
+  - name: "harmless_refusal"
+    family: "refusal"
+    priority: 16
+    description: "Harmless refusal/compliance toy tasks"
+    scorer: "refusal_detection_check"
+    has_clean_corrupt_pairs: true
+    length_splits: ["canonical_short"]
+    created_by: "phase2"
+    notes: "Safe synthetic only. No cyber abuse, evasion, malware, or harmful instruction datasets."
+
+scoring:
+  deterministic_scorers:
+    - "json_parse_and_schema_check"
+    - "bracket_match_check"
+    - "exact_match"
+    - "exact_numeric_match"
+    - "ast_parse_and_exact_match"
+    - "rename_consistency_check"
+    - "dead_code_removal_check"
+    - "exact_decode_match"
+    - "instruction_compliance_check"
+    - "refusal_detection_check"
+  fuzzy_scorers:
+    - "target_logprob_and_exact_match"
+    - "semantic_equivalence_check"
+    - "uncertainty_rubric_score"
+    - "length_and_style_rubric"
+  fuzzy_note: "Fuzzy scorers use rubric + stored examples. Not solely LLM judge."
+
+length_splits:
+  canonical_short:
+    min_tokens: 5
+    max_tokens: 30
+    target_examples: 200
+  canonical_long:
+    min_tokens: 30
+    max_tokens: 1000
+    target_examples: 100
+  deobfuscation:
+    min_tokens: 50
+    max_tokens: 500
+    target_examples: 100
+    notes: "Deobfuscation-specific prompts with code context"

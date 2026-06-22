@@ -1,0 +1,1206 @@
+{
+  "family": "control_flow_simplification",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "control_flow_train_0000",
+      "prompt": "x = 25\nif x > 7:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0001",
+      "prompt": "n = 48\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0002",
+      "prompt": "score = 72\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "C",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0003",
+      "prompt": "x = -1\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0004",
+      "prompt": "x = 45\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0005",
+      "prompt": "x = 14\nif x > 38:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0006",
+      "prompt": "n = 20\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0007",
+      "prompt": "score = 82\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "B",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0008",
+      "prompt": "x = 8\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0009",
+      "prompt": "x = 17\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0010",
+      "prompt": "x = 33\nif x > 2:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0011",
+      "prompt": "n = 20\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0012",
+      "prompt": "score = 42\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0013",
+      "prompt": "x = 2\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0014",
+      "prompt": "x = 47\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0015",
+      "prompt": "x = 30\nif x > 26:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0016",
+      "prompt": "n = 39\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0017",
+      "prompt": "score = 61\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0018",
+      "prompt": "x = -1\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0019",
+      "prompt": "x = 43\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0020",
+      "prompt": "x = 5\nif x > 40:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0021",
+      "prompt": "n = 7\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0022",
+      "prompt": "score = 6\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0023",
+      "prompt": "x = -10\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0024",
+      "prompt": "x = 20\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0025",
+      "prompt": "x = 25\nif x > 47:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0026",
+      "prompt": "n = 37\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0027",
+      "prompt": "score = 47\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0028",
+      "prompt": "x = -4\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0029",
+      "prompt": "x = 28\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0030",
+      "prompt": "x = 24\nif x > 5:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0031",
+      "prompt": "n = 18\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0032",
+      "prompt": "score = 38\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0033",
+      "prompt": "x = -7\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0034",
+      "prompt": "x = 20\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0035",
+      "prompt": "x = 17\nif x > 30:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0036",
+      "prompt": "n = 14\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0037",
+      "prompt": "score = 87\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "B",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0038",
+      "prompt": "x = -5\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0039",
+      "prompt": "x = 1\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0040",
+      "prompt": "x = 6\nif x > 47:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0041",
+      "prompt": "n = 16\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0042",
+      "prompt": "score = 71\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "C",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0043",
+      "prompt": "x = -10\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0044",
+      "prompt": "x = 45\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0045",
+      "prompt": "x = 31\nif x > 5:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0046",
+      "prompt": "n = 47\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0047",
+      "prompt": "score = 8\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0048",
+      "prompt": "x = 2\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0049",
+      "prompt": "x = 2\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0050",
+      "prompt": "x = 32\nif x > 28:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0051",
+      "prompt": "n = 30\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0052",
+      "prompt": "score = 73\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "C",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0053",
+      "prompt": "x = -8\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0054",
+      "prompt": "x = 50\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0055",
+      "prompt": "x = 46\nif x > 19:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0056",
+      "prompt": "n = 47\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0057",
+      "prompt": "score = 3\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0058",
+      "prompt": "x = -4\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_train_0059",
+      "prompt": "x = 16\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0060",
+      "prompt": "x = 29\nif x > 1:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0061",
+      "prompt": "n = 42\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0062",
+      "prompt": "score = 71\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "C",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0063",
+      "prompt": "x = -3\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0064",
+      "prompt": "x = 46\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0065",
+      "prompt": "x = 4\nif x > 19:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0066",
+      "prompt": "n = 24\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0067",
+      "prompt": "score = 58\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0068",
+      "prompt": "x = -5\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0069",
+      "prompt": "x = 24\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0070",
+      "prompt": "x = 24\nif x > 47:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0071",
+      "prompt": "n = 36\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0072",
+      "prompt": "score = 94\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "A",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0073",
+      "prompt": "x = 3\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0074",
+      "prompt": "x = 12\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0075",
+      "prompt": "x = 26\nif x > 24:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0076",
+      "prompt": "n = 30\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0077",
+      "prompt": "score = 18\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0078",
+      "prompt": "x = 5\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_val_0079",
+      "prompt": "x = 44\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0080",
+      "prompt": "x = 27\nif x > 24:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0081",
+      "prompt": "n = 28\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0082",
+      "prompt": "score = 17\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0083",
+      "prompt": "x = 10\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0084",
+      "prompt": "x = 30\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0085",
+      "prompt": "x = 49\nif x > 35:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0086",
+      "prompt": "n = 44\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0087",
+      "prompt": "score = 64\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0088",
+      "prompt": "x = 9\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0089",
+      "prompt": "x = 22\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0090",
+      "prompt": "x = 41\nif x > 48:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "low",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0091",
+      "prompt": "n = 11\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "odd",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0092",
+      "prompt": "score = 88\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "B",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0093",
+      "prompt": "x = 3\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "pos",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0094",
+      "prompt": "x = 8\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0095",
+      "prompt": "x = 35\nif x > 3:\n    result = 'high'\nelse:\n    result = 'low'\n# What is result?\n",
+      "target": "high",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0096",
+      "prompt": "n = 34\nif n % 2 == 0:\n    print('even')\nelse:\n    print('odd')\n# What prints?\n",
+      "target": "even",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0097",
+      "prompt": "score = 32\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\n# What is grade?\n",
+      "target": "F",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0098",
+      "prompt": "x = -5\nif x > 0:\n    r = 'pos'\nelif x < 0:\n    r = 'neg'\nelse:\n    r = 'zero'\n# What is r?\n",
+      "target": "neg",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "control_flow_test_0099",
+      "prompt": "x = 48\nif x > 100:\n    r = 'big'\nelse:\n    r = 'small'\n# What is r?\n",
+      "target": "small",
+      "metadata": {
+        "family": "control_flow_simplification",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1949 @@
+{
+  "family": "copying",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "copying_train_0000",
+      "prompt": "Sequence: gamma, iota, theta, kappa, gamma, iota, theta, kappa, gamma, iota, theta, kappa, gamma, iota, theta, kappa, gamma, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "gamma",
+          "iota",
+          "theta",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0001",
+      "prompt": "Sequence: beta, kappa, lambda, eta, iota, beta, kappa, lambda, eta, iota, beta, kappa, lambda, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "beta",
+          "kappa",
+          "lambda",
+          "eta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0002",
+      "prompt": "Sequence: iota, alpha, theta, epsilon, beta, iota, alpha, theta, epsilon, beta, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "iota",
+          "alpha",
+          "theta",
+          "epsilon",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0003",
+      "prompt": "Sequence: iota, lambda, beta, mu, kappa, iota, lambda, beta, mu, kappa, iota, lambda, beta, mu, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "iota",
+          "lambda",
+          "beta",
+          "mu",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0004",
+      "prompt": "Sequence: kappa, iota, delta, kappa, iota, delta, kappa, iota, delta, kappa, iota, delta, kappa, iota, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "kappa",
+          "iota",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0005",
+      "prompt": "Sequence: beta, lambda, iota, beta, lambda, iota, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "beta",
+          "lambda",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0006",
+      "prompt": "Sequence: delta, mu, kappa, theta, beta, delta, mu, kappa, theta, beta, delta, mu, kappa, theta, beta, delta, mu, kappa, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "delta",
+          "mu",
+          "kappa",
+          "theta",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0007",
+      "prompt": "Sequence: theta, alpha, zeta, theta, alpha, zeta, theta, alpha, zeta, theta, alpha, zeta, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "theta",
+          "alpha",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0008",
+      "prompt": "Sequence: alpha, iota, zeta, eta, epsilon, mu, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "alpha",
+          "iota",
+          "zeta",
+          "eta",
+          "epsilon",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0009",
+      "prompt": "Sequence: epsilon, gamma, lambda, mu, epsilon, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "epsilon",
+          "gamma",
+          "lambda",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0010",
+      "prompt": "Sequence: eta, lambda, gamma, alpha, zeta, eta, lambda, gamma, alpha, zeta, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "lambda",
+          "gamma",
+          "alpha",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0011",
+      "prompt": "Sequence: epsilon, eta, beta, epsilon, eta, beta, epsilon, eta, beta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "eta",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0012",
+      "prompt": "Sequence: zeta, epsilon, eta, beta, alpha, iota, zeta, epsilon, eta, beta, alpha, iota, zeta, epsilon, eta, beta, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 3,
+        "pattern": [
+          "zeta",
+          "epsilon",
+          "eta",
+          "beta",
+          "alpha",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0013",
+      "prompt": "Sequence: theta, iota, lambda, eta, theta, iota, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "theta",
+          "iota",
+          "lambda",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0014",
+      "prompt": "Sequence: zeta, theta, iota, zeta, theta, iota, zeta, theta, iota, zeta, theta, iota, ",
+      "target": "zeta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "zeta",
+          "theta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0015",
+      "prompt": "Sequence: alpha, eta, delta, mu, epsilon, theta, alpha, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "alpha",
+          "eta",
+          "delta",
+          "mu",
+          "epsilon",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0016",
+      "prompt": "Sequence: epsilon, kappa, eta, theta, epsilon, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "epsilon",
+          "kappa",
+          "eta",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0017",
+      "prompt": "Sequence: zeta, iota, gamma, delta, zeta, iota, gamma, delta, zeta, iota, gamma, delta, zeta, iota, gamma, delta, zeta, iota, gamma, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "zeta",
+          "iota",
+          "gamma",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0018",
+      "prompt": "Sequence: alpha, theta, kappa, alpha, theta, kappa, alpha, theta, kappa, alpha, theta, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "alpha",
+          "theta",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0019",
+      "prompt": "Sequence: alpha, mu, theta, epsilon, alpha, mu, theta, epsilon, alpha, mu, theta, epsilon, alpha, mu, theta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "alpha",
+          "mu",
+          "theta",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0020",
+      "prompt": "Sequence: lambda, delta, kappa, iota, epsilon, lambda, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 2,
+        "pattern": [
+          "lambda",
+          "delta",
+          "kappa",
+          "iota",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0021",
+      "prompt": "Sequence: epsilon, beta, eta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "epsilon",
+          "beta",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0022",
+      "prompt": "Sequence: eta, delta, kappa, iota, zeta, eta, delta, kappa, iota, zeta, eta, delta, kappa, iota, zeta, eta, delta, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "eta",
+          "delta",
+          "kappa",
+          "iota",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0023",
+      "prompt": "Sequence: epsilon, delta, zeta, kappa, lambda, theta, epsilon, delta, zeta, kappa, lambda, theta, epsilon, delta, zeta, kappa, lambda, theta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "delta",
+          "zeta",
+          "kappa",
+          "lambda",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0024",
+      "prompt": "Sequence: lambda, alpha, kappa, theta, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "lambda",
+          "alpha",
+          "kappa",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0025",
+      "prompt": "Sequence: eta, iota, theta, mu, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "eta",
+          "iota",
+          "theta",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0026",
+      "prompt": "Sequence: lambda, theta, beta, lambda, theta, beta, lambda, theta, beta, lambda, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "lambda",
+          "theta",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0027",
+      "prompt": "Sequence: eta, gamma, alpha, beta, theta, eta, gamma, alpha, beta, theta, eta, gamma, alpha, beta, theta, eta, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "eta",
+          "gamma",
+          "alpha",
+          "beta",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0028",
+      "prompt": "Sequence: alpha, delta, mu, epsilon, zeta, beta, alpha, delta, mu, epsilon, ",
+      "target": "zeta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "alpha",
+          "delta",
+          "mu",
+          "epsilon",
+          "zeta",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0029",
+      "prompt": "Sequence: mu, delta, lambda, theta, zeta, mu, delta, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 2,
+        "pattern": [
+          "mu",
+          "delta",
+          "lambda",
+          "theta",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0030",
+      "prompt": "Sequence: mu, kappa, delta, alpha, lambda, eta, mu, kappa, delta, alpha, lambda, eta, mu, kappa, delta, alpha, lambda, eta, mu, kappa, delta, alpha, lambda, eta, ",
+      "target": "mu",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "mu",
+          "kappa",
+          "delta",
+          "alpha",
+          "lambda",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0031",
+      "prompt": "Sequence: kappa, iota, theta, gamma, delta, kappa, iota, theta, gamma, delta, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "kappa",
+          "iota",
+          "theta",
+          "gamma",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0032",
+      "prompt": "Sequence: mu, beta, gamma, epsilon, mu, beta, gamma, epsilon, mu, beta, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 3,
+        "pattern": [
+          "mu",
+          "beta",
+          "gamma",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0033",
+      "prompt": "Sequence: lambda, alpha, iota, epsilon, lambda, alpha, iota, epsilon, lambda, alpha, iota, epsilon, lambda, alpha, iota, epsilon, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "lambda",
+          "alpha",
+          "iota",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0034",
+      "prompt": "Sequence: lambda, mu, alpha, zeta, eta, theta, lambda, mu, alpha, zeta, eta, theta, lambda, mu, alpha, zeta, eta, theta, lambda, mu, alpha, zeta, eta, theta, lambda, mu, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "lambda",
+          "mu",
+          "alpha",
+          "zeta",
+          "eta",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0035",
+      "prompt": "Sequence: lambda, iota, theta, lambda, iota, theta, lambda, iota, theta, lambda, iota, theta, lambda, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "lambda",
+          "iota",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0036",
+      "prompt": "Sequence: mu, delta, alpha, mu, delta, alpha, mu, delta, alpha, mu, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "mu",
+          "delta",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0037",
+      "prompt": "Sequence: zeta, alpha, eta, delta, mu, lambda, zeta, alpha, eta, delta, mu, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "zeta",
+          "alpha",
+          "eta",
+          "delta",
+          "mu",
+          "lambda"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0038",
+      "prompt": "Sequence: mu, eta, beta, delta, mu, eta, beta, delta, mu, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 3,
+        "pattern": [
+          "mu",
+          "eta",
+          "beta",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0039",
+      "prompt": "Sequence: epsilon, beta, lambda, alpha, theta, epsilon, beta, lambda, alpha, theta, epsilon, beta, lambda, alpha, theta, epsilon, beta, lambda, alpha, theta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 5,
+        "pattern": [
+          "epsilon",
+          "beta",
+          "lambda",
+          "alpha",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0040",
+      "prompt": "Sequence: epsilon, delta, beta, theta, lambda, epsilon, delta, beta, theta, lambda, epsilon, delta, beta, theta, lambda, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "delta",
+          "beta",
+          "theta",
+          "lambda"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0041",
+      "prompt": "Sequence: iota, delta, beta, theta, kappa, iota, delta, beta, theta, kappa, iota, delta, beta, theta, kappa, iota, delta, beta, theta, kappa, iota, delta, beta, theta, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 5,
+        "pattern": [
+          "iota",
+          "delta",
+          "beta",
+          "theta",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0042",
+      "prompt": "Sequence: beta, alpha, lambda, beta, alpha, lambda, beta, alpha, lambda, beta, alpha, lambda, beta, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "beta",
+          "alpha",
+          "lambda"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0043",
+      "prompt": "Sequence: gamma, alpha, theta, gamma, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "gamma",
+          "alpha",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0044",
+      "prompt": "Sequence: beta, mu, alpha, iota, kappa, gamma, beta, mu, alpha, iota, kappa, gamma, beta, mu, alpha, iota, kappa, gamma, beta, mu, alpha, iota, kappa, gamma, beta, mu, alpha, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "beta",
+          "mu",
+          "alpha",
+          "iota",
+          "kappa",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0045",
+      "prompt": "Sequence: kappa, eta, delta, kappa, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "kappa",
+          "eta",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0046",
+      "prompt": "Sequence: theta, eta, kappa, beta, zeta, mu, theta, eta, kappa, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "theta",
+          "eta",
+          "kappa",
+          "beta",
+          "zeta",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0047",
+      "prompt": "Sequence: kappa, delta, beta, mu, alpha, kappa, delta, beta, mu, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 2,
+        "pattern": [
+          "kappa",
+          "delta",
+          "beta",
+          "mu",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0048",
+      "prompt": "Sequence: kappa, gamma, iota, epsilon, kappa, gamma, iota, epsilon, kappa, gamma, iota, epsilon, kappa, gamma, iota, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "kappa",
+          "gamma",
+          "iota",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0049",
+      "prompt": "Sequence: mu, kappa, theta, gamma, delta, beta, ",
+      "target": "mu",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "mu",
+          "kappa",
+          "theta",
+          "gamma",
+          "delta",
+          "beta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0050",
+      "prompt": "Sequence: epsilon, kappa, eta, iota, epsilon, kappa, eta, iota, epsilon, kappa, eta, iota, epsilon, kappa, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "kappa",
+          "eta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0051",
+      "prompt": "Sequence: gamma, theta, epsilon, zeta, gamma, theta, epsilon, zeta, gamma, theta, epsilon, zeta, gamma, theta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "gamma",
+          "theta",
+          "epsilon",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0052",
+      "prompt": "Sequence: iota, kappa, gamma, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "iota",
+          "kappa",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0053",
+      "prompt": "Sequence: eta, zeta, delta, eta, zeta, delta, eta, zeta, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "zeta",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0054",
+      "prompt": "Sequence: beta, zeta, delta, theta, beta, zeta, delta, theta, beta, zeta, delta, theta, beta, zeta, delta, theta, beta, zeta, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "beta",
+          "zeta",
+          "delta",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0055",
+      "prompt": "Sequence: kappa, epsilon, eta, zeta, gamma, kappa, epsilon, eta, ",
+      "target": "zeta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 2,
+        "pattern": [
+          "kappa",
+          "epsilon",
+          "eta",
+          "zeta",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0056",
+      "prompt": "Sequence: theta, delta, alpha, theta, delta, alpha, theta, delta, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "theta",
+          "delta",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0057",
+      "prompt": "Sequence: theta, kappa, delta, lambda, theta, kappa, delta, lambda, theta, kappa, delta, lambda, theta, kappa, delta, lambda, theta, kappa, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "theta",
+          "kappa",
+          "delta",
+          "lambda"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0058",
+      "prompt": "Sequence: delta, eta, gamma, alpha, zeta, iota, delta, eta, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "delta",
+          "eta",
+          "gamma",
+          "alpha",
+          "zeta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_train_0059",
+      "prompt": "Sequence: iota, beta, gamma, iota, beta, gamma, iota, beta, gamma, iota, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "iota",
+          "beta",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0060",
+      "prompt": "Sequence: lambda, kappa, zeta, alpha, lambda, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "lambda",
+          "kappa",
+          "zeta",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0061",
+      "prompt": "Sequence: epsilon, gamma, delta, mu, epsilon, gamma, delta, mu, epsilon, gamma, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 3,
+        "pattern": [
+          "epsilon",
+          "gamma",
+          "delta",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0062",
+      "prompt": "Sequence: gamma, delta, alpha, mu, gamma, delta, alpha, mu, gamma, delta, alpha, mu, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "gamma",
+          "delta",
+          "alpha",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0063",
+      "prompt": "Sequence: lambda, gamma, eta, lambda, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "lambda",
+          "gamma",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0064",
+      "prompt": "Sequence: epsilon, theta, delta, zeta, epsilon, theta, delta, zeta, epsilon, theta, delta, zeta, epsilon, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "theta",
+          "delta",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0065",
+      "prompt": "Sequence: mu, beta, lambda, gamma, iota, eta, mu, beta, lambda, gamma, iota, eta, mu, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 3,
+        "pattern": [
+          "mu",
+          "beta",
+          "lambda",
+          "gamma",
+          "iota",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0066",
+      "prompt": "Sequence: mu, zeta, lambda, eta, delta, alpha, mu, zeta, lambda, eta, delta, alpha, mu, zeta, lambda, eta, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 3,
+        "pattern": [
+          "mu",
+          "zeta",
+          "lambda",
+          "eta",
+          "delta",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0067",
+      "prompt": "Sequence: gamma, zeta, delta, alpha, epsilon, gamma, zeta, delta, alpha, epsilon, gamma, zeta, delta, alpha, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "gamma",
+          "zeta",
+          "delta",
+          "alpha",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0068",
+      "prompt": "Sequence: delta, beta, theta, lambda, gamma, epsilon, delta, beta, theta, lambda, gamma, epsilon, delta, beta, theta, lambda, gamma, epsilon, delta, beta, theta, lambda, gamma, epsilon, delta, beta, theta, lambda, gamma, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "delta",
+          "beta",
+          "theta",
+          "lambda",
+          "gamma",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0069",
+      "prompt": "Sequence: theta, iota, mu, gamma, zeta, theta, iota, mu, gamma, zeta, theta, iota, mu, gamma, zeta, theta, iota, mu, gamma, ",
+      "target": "zeta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "theta",
+          "iota",
+          "mu",
+          "gamma",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0070",
+      "prompt": "Sequence: mu, theta, lambda, epsilon, eta, zeta, mu, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "mu",
+          "theta",
+          "lambda",
+          "epsilon",
+          "eta",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0071",
+      "prompt": "Sequence: delta, theta, mu, eta, delta, theta, mu, eta, delta, theta, ",
+      "target": "mu",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 3,
+        "pattern": [
+          "delta",
+          "theta",
+          "mu",
+          "eta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0072",
+      "prompt": "Sequence: eta, kappa, gamma, zeta, epsilon, theta, eta, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "eta",
+          "kappa",
+          "gamma",
+          "zeta",
+          "epsilon",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0073",
+      "prompt": "Sequence: epsilon, theta, iota, epsilon, theta, iota, epsilon, theta, iota, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "epsilon",
+          "theta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0074",
+      "prompt": "Sequence: theta, iota, kappa, theta, iota, kappa, theta, iota, kappa, theta, ",
+      "target": "iota",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "theta",
+          "iota",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0075",
+      "prompt": "Sequence: theta, eta, lambda, zeta, mu, gamma, theta, eta, lambda, zeta, mu, gamma, theta, eta, lambda, zeta, mu, gamma, theta, eta, lambda, ",
+      "target": "zeta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 4,
+        "pattern": [
+          "theta",
+          "eta",
+          "lambda",
+          "zeta",
+          "mu",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0076",
+      "prompt": "Sequence: gamma, theta, delta, gamma, theta, delta, gamma, theta, delta, gamma, theta, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 4,
+        "pattern": [
+          "gamma",
+          "theta",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0077",
+      "prompt": "Sequence: zeta, beta, epsilon, zeta, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "zeta",
+          "beta",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0078",
+      "prompt": "Sequence: beta, mu, lambda, zeta, beta, ",
+      "target": "mu",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 2,
+        "pattern": [
+          "beta",
+          "mu",
+          "lambda",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_val_0079",
+      "prompt": "Sequence: delta, lambda, zeta, epsilon, iota, delta, lambda, zeta, epsilon, iota, delta, lambda, zeta, epsilon, iota, delta, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "delta",
+          "lambda",
+          "zeta",
+          "epsilon",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0080",
+      "prompt": "Sequence: mu, iota, epsilon, alpha, mu, iota, epsilon, alpha, mu, iota, epsilon, alpha, mu, iota, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 4,
+        "pattern": [
+          "mu",
+          "iota",
+          "epsilon",
+          "alpha"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0081",
+      "prompt": "Sequence: eta, mu, kappa, alpha, theta, eta, mu, kappa, alpha, theta, eta, mu, kappa, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "mu",
+          "kappa",
+          "alpha",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0082",
+      "prompt": "Sequence: delta, mu, theta, lambda, delta, mu, theta, lambda, delta, mu, theta, lambda, delta, mu, theta, lambda, delta, mu, theta, ",
+      "target": "lambda",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "delta",
+          "mu",
+          "theta",
+          "lambda"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0083",
+      "prompt": "Sequence: beta, zeta, delta, eta, iota, beta, zeta, delta, eta, iota, beta, zeta, delta, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "beta",
+          "zeta",
+          "delta",
+          "eta",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0084",
+      "prompt": "Sequence: iota, alpha, zeta, gamma, mu, theta, iota, alpha, zeta, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "iota",
+          "alpha",
+          "zeta",
+          "gamma",
+          "mu",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0085",
+      "prompt": "Sequence: zeta, delta, eta, kappa, iota, zeta, delta, eta, kappa, iota, zeta, delta, eta, kappa, iota, zeta, delta, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 4,
+        "pattern": [
+          "zeta",
+          "delta",
+          "eta",
+          "kappa",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0086",
+      "prompt": "Sequence: kappa, alpha, gamma, kappa, alpha, gamma, kappa, ",
+      "target": "alpha",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "kappa",
+          "alpha",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0087",
+      "prompt": "Sequence: eta, delta, mu, beta, kappa, iota, eta, delta, mu, beta, kappa, iota, eta, delta, mu, beta, kappa, iota, eta, delta, mu, beta, kappa, iota, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "eta",
+          "delta",
+          "mu",
+          "beta",
+          "kappa",
+          "iota"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0088",
+      "prompt": "Sequence: kappa, theta, epsilon, beta, gamma, kappa, theta, epsilon, beta, ",
+      "target": "gamma",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 2,
+        "pattern": [
+          "kappa",
+          "theta",
+          "epsilon",
+          "beta",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0089",
+      "prompt": "Sequence: alpha, kappa, theta, mu, alpha, kappa, theta, mu, alpha, ",
+      "target": "kappa",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 3,
+        "pattern": [
+          "alpha",
+          "kappa",
+          "theta",
+          "mu"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0090",
+      "prompt": "Sequence: eta, epsilon, delta, eta, epsilon, delta, eta, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "epsilon",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0091",
+      "prompt": "Sequence: theta, alpha, zeta, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 2,
+        "pattern": [
+          "theta",
+          "alpha",
+          "zeta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0092",
+      "prompt": "Sequence: eta, mu, gamma, beta, kappa, eta, mu, gamma, beta, kappa, eta, mu, gamma, beta, kappa, eta, mu, gamma, beta, kappa, eta, mu, gamma, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 5,
+        "pattern": [
+          "eta",
+          "mu",
+          "gamma",
+          "beta",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0093",
+      "prompt": "Sequence: eta, delta, gamma, eta, delta, gamma, eta, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "delta",
+          "gamma"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0094",
+      "prompt": "Sequence: mu, lambda, theta, gamma, epsilon, kappa, mu, lambda, theta, gamma, epsilon, kappa, mu, lambda, theta, gamma, ",
+      "target": "epsilon",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 3,
+        "pattern": [
+          "mu",
+          "lambda",
+          "theta",
+          "gamma",
+          "epsilon",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0095",
+      "prompt": "Sequence: epsilon, delta, alpha, gamma, theta, kappa, epsilon, delta, alpha, gamma, theta, kappa, epsilon, delta, alpha, gamma, theta, kappa, epsilon, delta, alpha, gamma, theta, kappa, epsilon, delta, alpha, gamma, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 5,
+        "pattern": [
+          "epsilon",
+          "delta",
+          "alpha",
+          "gamma",
+          "theta",
+          "kappa"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0096",
+      "prompt": "Sequence: iota, zeta, kappa, theta, iota, zeta, kappa, theta, iota, zeta, kappa, theta, iota, zeta, kappa, theta, iota, zeta, kappa, ",
+      "target": "theta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 4,
+        "repeats": 5,
+        "pattern": [
+          "iota",
+          "zeta",
+          "kappa",
+          "theta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0097",
+      "prompt": "Sequence: mu, beta, epsilon, mu, beta, epsilon, mu, beta, epsilon, mu, beta, epsilon, mu, ",
+      "target": "beta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 3,
+        "repeats": 5,
+        "pattern": [
+          "mu",
+          "beta",
+          "epsilon"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0098",
+      "prompt": "Sequence: eta, kappa, gamma, mu, delta, eta, kappa, gamma, mu, delta, eta, kappa, gamma, mu, ",
+      "target": "delta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 5,
+        "repeats": 3,
+        "pattern": [
+          "eta",
+          "kappa",
+          "gamma",
+          "mu",
+          "delta"
+        ]
+      }
+    },
+    {
+      "task_id": "copying_test_0099",
+      "prompt": "Sequence: theta, eta, gamma, beta, lambda, zeta, theta, ",
+      "target": "eta",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "seq_len": 6,
+        "repeats": 2,
+        "pattern": [
+          "theta",
+          "eta",
+          "gamma",
+          "beta",
+          "lambda",
+          "zeta"
+        ]
+      }
+    }
+  ]
+}

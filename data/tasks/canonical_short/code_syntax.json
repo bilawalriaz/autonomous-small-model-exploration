@@ -1,0 +1,2406 @@
+{
+  "family": "code_syntax",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "code_syntax_train_0000",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0001",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0002",
+      "prompt": "if x > 0:\n    result = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0003",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0004",
+      "prompt": "x = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0005",
+      "prompt": "lambda x: x * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0006",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0007",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0008",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0009",
+      "prompt": "def f(x):\n    if x:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0010",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0011",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0012",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0013",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0014",
+      "prompt": "x = 5\nassert x > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0015",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0016",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0017",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0018",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0019",
+      "prompt": "print(f'{x = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0020",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0021",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0022",
+      "prompt": "if a > 0:\n    ans = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0023",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0024",
+      "prompt": "val = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0025",
+      "prompt": "lambda a: a * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0026",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0027",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0028",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0029",
+      "prompt": "def f(b):\n    if b:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0030",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0031",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0032",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0033",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0034",
+      "prompt": "n = 5\nassert n > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0035",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0036",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0037",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0038",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0039",
+      "prompt": "print(f'{b = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0040",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0041",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0042",
+      "prompt": "if a > 0:\n    ans = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0043",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0044",
+      "prompt": "val = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0045",
+      "prompt": "lambda val: val * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0046",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0047",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0048",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0049",
+      "prompt": "def f(n):\n    if n:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0050",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0051",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0052",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0053",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0054",
+      "prompt": "n = 5\nassert n > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0055",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0056",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0057",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0058",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0059",
+      "prompt": "print(f'{val = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0060",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0061",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0062",
+      "prompt": "if a > 0:\n    res = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0063",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0064",
+      "prompt": "a = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0065",
+      "prompt": "lambda a: a * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0066",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0067",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0068",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0069",
+      "prompt": "def f(a):\n    if a:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0070",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0071",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0072",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0073",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0074",
+      "prompt": "a = 5\nassert a > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0075",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0076",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0077",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0078",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0079",
+      "prompt": "print(f'{n = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0080",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0081",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0082",
+      "prompt": "if val > 0:\n    res = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0083",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0084",
+      "prompt": "b = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0085",
+      "prompt": "lambda n: n * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0086",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0087",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0088",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0089",
+      "prompt": "def f(val):\n    if val:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0090",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0091",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0092",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0093",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0094",
+      "prompt": "a = 5\nassert a > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0095",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0096",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0097",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0098",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0099",
+      "prompt": "print(f'{b = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0100",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0101",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0102",
+      "prompt": "if val > 0:\n    ans = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0103",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0104",
+      "prompt": "b = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0105",
+      "prompt": "lambda n: n * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0106",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0107",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0108",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0109",
+      "prompt": "def f(val):\n    if val:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0110",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0111",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0112",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0113",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0114",
+      "prompt": "a = 5\nassert a > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0115",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0116",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0117",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0118",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_train_0119",
+      "prompt": "print(f'{a = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0120",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0121",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0122",
+      "prompt": "if b > 0:\n    res = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0123",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0124",
+      "prompt": "a = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0125",
+      "prompt": "lambda data: data * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0126",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0127",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0128",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0129",
+      "prompt": "def f(val):\n    if val:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0130",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0131",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0132",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0133",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0134",
+      "prompt": "data = 5\nassert data > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0135",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0136",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0137",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0138",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0139",
+      "prompt": "print(f'{val = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0140",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0141",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0142",
+      "prompt": "if b > 0:\n    out = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0143",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0144",
+      "prompt": "b = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0145",
+      "prompt": "lambda b: b * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0146",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0147",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0148",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0149",
+      "prompt": "def f(val):\n    if val:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0150",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0151",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0152",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0153",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0154",
+      "prompt": "n = 5\nassert n > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0155",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0156",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0157",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0158",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_val_0159",
+      "prompt": "print(f'{val = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0160",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0161",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0162",
+      "prompt": "if data > 0:\n    ans = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0163",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0164",
+      "prompt": "val = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0165",
+      "prompt": "lambda val: val * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0166",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0167",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0168",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0169",
+      "prompt": "def f(b):\n    if b:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0170",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0171",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0172",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0173",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0174",
+      "prompt": "val = 5\nassert val > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0175",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0176",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0177",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0178",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0179",
+      "prompt": "print(f'{data = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0180",
+      "prompt": "def add(a, b):\n    return a + ",
+      "target": "b",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 0
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0181",
+      "prompt": "for i in range(10):\n    print(",
+      "target": "i",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 1
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0182",
+      "prompt": "if val > 0:\n    ans = ",
+      "target": "x",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 2
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0183",
+      "prompt": "class Dog:\n    def __init__(self, name):\n        self.name = ",
+      "target": "name",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 3
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0184",
+      "prompt": "val = [i ** 2 for i in range(",
+      "target": "10",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 4
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0185",
+      "prompt": "lambda data: data * ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 5
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0186",
+      "prompt": "with open('f') as fp:\n    data = fp.",
+      "target": "read()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 6
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0187",
+      "prompt": "try:\n    r = 1/",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 7
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0188",
+      "prompt": "while True:\n    break\n",
+      "target": "break",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 8
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0189",
+      "prompt": "def f(b):\n    if b:\n        return ",
+      "target": "True",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "snippet_idx": 9
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0190",
+      "prompt": "import json\njson.",
+      "target": "dumps(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 10
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0191",
+      "prompt": "lst = [1,2,3]\nlst.",
+      "target": "append(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 11
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0192",
+      "prompt": "d = {}\nd['key'] = ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 12
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0193",
+      "prompt": "s = 'hello'\ns.",
+      "target": "upper()",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 13
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0194",
+      "prompt": "a = 5\nassert a > ",
+      "target": "0",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 14
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0195",
+      "prompt": "from os import path\npath.",
+      "target": "exists(",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 15
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0196",
+      "prompt": "raise ValueError('",
+      "target": "error",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 16
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0197",
+      "prompt": "yield ",
+      "target": "value",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 17
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0198",
+      "prompt": "a, b = 1, ",
+      "target": "2",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 18
+      }
+    },
+    {
+      "task_id": "code_syntax_test_0199",
+      "prompt": "print(f'{a = }')",
+      "target": "",
+      "metadata": {
+        "family": "code_syntax",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "snippet_idx": 19
+      }
+    }
+  ]
+}

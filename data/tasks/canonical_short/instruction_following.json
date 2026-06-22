@@ -1,0 +1,1306 @@
+{
+  "family": "instruction_following",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "instruction_following_train_0000",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0001",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0002",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0003",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0004",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0005",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0006",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0007",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0008",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0009",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0010",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0011",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0012",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0013",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0014",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0015",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0016",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0017",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0018",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0019",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0020",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0021",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0022",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0023",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0024",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0025",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0026",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0027",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0028",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0029",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0030",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0031",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0032",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0033",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0034",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0035",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0036",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0037",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0038",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0039",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0040",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0041",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0042",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0043",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0044",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0045",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0046",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0047",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0048",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0049",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0050",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0051",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0052",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0053",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0054",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0055",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0056",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0057",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0058",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_train_0059",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0060",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0061",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0062",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0063",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0064",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0065",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0066",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0067",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0068",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0069",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0070",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0071",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0072",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0073",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0074",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0075",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0076",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0077",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0078",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_val_0079",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0080",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0081",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0082",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0083",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0084",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0085",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0086",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0087",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0088",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0089",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0090",
+      "prompt": "List three primary colors.\n",
+      "target": "red, blue, yellow",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_three",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0091",
+      "prompt": "Say 'hello world'.\n",
+      "target": "hello world",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0092",
+      "prompt": "Write the number 42.\n",
+      "target": "42",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_number",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0093",
+      "prompt": "Count from 1 to 5.\n",
+      "target": "1 2 3 4 5",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "counting",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0094",
+      "prompt": "Name two even numbers.\n",
+      "target": "2, 4",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "list_two",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0095",
+      "prompt": "What is the opposite of hot?\n",
+      "target": "cold",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0096",
+      "prompt": "Write a word that rhymes with 'cat'.\n",
+      "target": "hat",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0097",
+      "prompt": "Name a fruit that starts with 'A'.\n",
+      "target": "apple",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "one_word",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0098",
+      "prompt": "Say 'I can follow instructions'.\n",
+      "target": "I can follow instructions",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "exact_phrase",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    },
+    {
+      "task_id": "instruction_following_test_0099",
+      "prompt": "Write the alphabet backwards starting from Z.\n",
+      "target": "Z",
+      "metadata": {
+        "family": "instruction_following",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "constraint": "first_letter",
+        "scoring_rubric": "Score 1.0 if model follows instruction precisely. Score 0.5 if partially follows. Score 0.0 if ignores or refuses."
+      }
+    }
+  ]
+}

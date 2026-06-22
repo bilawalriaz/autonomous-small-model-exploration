@@ -1,0 +1,342 @@
+[
+  {
+    "task_id": "json_schema_short_v1",
+    "family": "json_schema",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "json_parse_and_schema_check",
+    "has_clean_corrupt_pairs": true,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for json_schema"
+  },
+  {
+    "task_id": "json_schema_long_v1",
+    "family": "json_schema",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "json_parse_and_schema_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for json_schema"
+  },
+  {
+    "task_id": "delimiter_tracking_short_v1",
+    "family": "delimiter_tracking",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "bracket_closure_check",
+    "has_clean_corrupt_pairs": true,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for delimiter_tracking"
+  },
+  {
+    "task_id": "delimiter_tracking_long_v1",
+    "family": "delimiter_tracking",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "bracket_closure_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for delimiter_tracking"
+  },
+  {
+    "task_id": "factual_recall_short_v1",
+    "family": "factual_recall",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": true,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for factual_recall"
+  },
+  {
+    "task_id": "factual_recall_long_v1",
+    "family": "factual_recall",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for factual_recall"
+  },
+  {
+    "task_id": "arithmetic_short_v1",
+    "family": "arithmetic",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "numeric_match",
+    "has_clean_corrupt_pairs": true,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for arithmetic"
+  },
+  {
+    "task_id": "arithmetic_long_v1",
+    "family": "arithmetic",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "numeric_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for arithmetic"
+  },
+  {
+    "task_id": "copying_short_v1",
+    "family": "copying",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "pattern_continuation",
+    "has_clean_corrupt_pairs": true,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for copying"
+  },
+  {
+    "task_id": "copying_long_v1",
+    "family": "copying",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "pattern_continuation",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for copying"
+  },
+  {
+    "task_id": "code_syntax_short_v1",
+    "family": "code_syntax",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for code_syntax"
+  },
+  {
+    "task_id": "code_syntax_long_v1",
+    "family": "code_syntax",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for code_syntax"
+  },
+  {
+    "task_id": "code_semantics_short_v1",
+    "family": "code_semantics",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for code_semantics"
+  },
+  {
+    "task_id": "code_semantics_long_v1",
+    "family": "code_semantics",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for code_semantics"
+  },
+  {
+    "task_id": "variable_renaming_short_v1",
+    "family": "variable_renaming",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for variable_renaming"
+  },
+  {
+    "task_id": "variable_renaming_long_v1",
+    "family": "variable_renaming",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for variable_renaming"
+  },
+  {
+    "task_id": "dead_code_short_v1",
+    "family": "dead_code",
+    "split": "canonical_short",
+    "num_examples": 200,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for dead_code"
+  },
+  {
+    "task_id": "dead_code_long_v1",
+    "family": "dead_code",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for dead_code"
+  },
+  {
+    "task_id": "string_decoding_short_v1",
+    "family": "string_decoding",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "deobfuscation_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for string_decoding"
+  },
+  {
+    "task_id": "string_decoding_long_v1",
+    "family": "string_decoding",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "deobfuscation_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for string_decoding"
+  },
+  {
+    "task_id": "string_decoding_deobfuscation_v1",
+    "family": "string_decoding",
+    "split": "deobfuscation",
+    "num_examples": 100,
+    "scorer": "deobfuscation_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Deobfuscation examples for string_decoding"
+  },
+  {
+    "task_id": "constant_folding_short_v1",
+    "family": "constant_folding",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "expression_eval",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for constant_folding"
+  },
+  {
+    "task_id": "constant_folding_long_v1",
+    "family": "constant_folding",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "expression_eval",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for constant_folding"
+  },
+  {
+    "task_id": "constant_folding_deobfuscation_v1",
+    "family": "constant_folding",
+    "split": "deobfuscation",
+    "num_examples": 100,
+    "scorer": "deobfuscation_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Deobfuscation examples for constant_folding"
+  },
+  {
+    "task_id": "control_flow_simplification_short_v1",
+    "family": "control_flow_simplification",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for control_flow_simplification"
+  },
+  {
+    "task_id": "control_flow_simplification_long_v1",
+    "family": "control_flow_simplification",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "code_trace_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for control_flow_simplification"
+  },
+  {
+    "task_id": "control_flow_simplification_deobfuscation_v1",
+    "family": "control_flow_simplification",
+    "split": "deobfuscation",
+    "num_examples": 100,
+    "scorer": "deobfuscation_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Deobfuscation examples for control_flow_simplification"
+  },
+  {
+    "task_id": "uncertainty_expression_short_v1",
+    "family": "uncertainty_expression",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "uncertainty_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for uncertainty_expression"
+  },
+  {
+    "task_id": "uncertainty_expression_long_v1",
+    "family": "uncertainty_expression",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "uncertainty_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for uncertainty_expression"
+  },
+  {
+    "task_id": "verbosity_control_short_v1",
+    "family": "verbosity_control",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "fuzzy_style_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for verbosity_control"
+  },
+  {
+    "task_id": "verbosity_control_long_v1",
+    "family": "verbosity_control",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "fuzzy_style_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for verbosity_control"
+  },
+  {
+    "task_id": "instruction_following_short_v1",
+    "family": "instruction_following",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Short (5-30 token) examples for instruction_following"
+  },
+  {
+    "task_id": "instruction_following_long_v1",
+    "family": "instruction_following",
+    "split": "canonical_long",
+    "num_examples": 100,
+    "scorer": "exact_match",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Long (30-1000 token) examples for instruction_following"
+  },
+  {
+    "task_id": "harmless_refusal_short_v1",
+    "family": "harmless_refusal",
+    "split": "canonical_short",
+    "num_examples": 100,
+    "scorer": "refusal_check",
+    "has_clean_corrupt_pairs": false,
+    "created_by": "phase2",
+    "notes": "Benign and harmful prompts testing refusal behavior"
+  }
+]

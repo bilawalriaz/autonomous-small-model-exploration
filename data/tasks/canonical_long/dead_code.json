@@ -1,0 +1,1206 @@
+{
+  "family": "dead_code",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "dead_code_train_0000",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 257\n    if 0:\n        result = 258\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0001",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 492\n    if 0:\n        result = 493\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0002",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 450\n    if 0:\n        result = 451\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(7))\n# What prints?\n",
+      "target": "7",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0003",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 207\n    if 0:\n        result = 208\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(40))\n# What prints?\n",
+      "target": "40",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0004",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 180\n    if 0:\n        result = 181\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0005",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 302\n    if 0:\n        result = 303\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(50))\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0006",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 412\n    if 0:\n        result = 413\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(11))\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0007",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 364\n    if 0:\n        result = 365\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0008",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 404\n    if 0:\n        result = 405\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(42))\n# What prints?\n",
+      "target": "42",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0009",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 471\n    if 0:\n        result = 472\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(50))\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0010",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 234\n    if 0:\n        result = 235\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(15))\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0011",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 289\n    if 0:\n        result = 290\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(20))\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0012",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 270\n    if 0:\n        result = 271\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(20))\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0013",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 261\n    if 0:\n        result = 262\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(48))\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0014",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 317\n    if 0:\n        result = 318\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(20))\n# What prints?\n",
+      "target": "20",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0015",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 313\n    if 0:\n        result = 314\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(49))\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0016",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 306\n    if 0:\n        result = 307\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(49))\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0017",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 281\n    if 0:\n        result = 282\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(27))\n# What prints?\n",
+      "target": "27",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0018",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 492\n    if 0:\n        result = 493\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(30))\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0019",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 460\n    if 0:\n        result = 461\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0020",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 438\n    if 0:\n        result = 439\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0021",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 291\n    if 0:\n        result = 292\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(19))\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0022",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 318\n    if 0:\n        result = 319\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0023",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 385\n    if 0:\n        result = 386\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0024",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 416\n    if 0:\n        result = 417\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0025",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 154\n    if 0:\n        result = 155\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(18))\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0026",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 182\n    if 0:\n        result = 183\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(16))\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0027",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 345\n    if 0:\n        result = 346\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(47))\n# What prints?\n",
+      "target": "47",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0028",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 499\n    if 0:\n        result = 500\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(3))\n# What prints?\n",
+      "target": "3",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0029",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 461\n    if 0:\n        result = 462\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(45))\n# What prints?\n",
+      "target": "45",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0030",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 243\n    if 0:\n        result = 244\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(16))\n# What prints?\n",
+      "target": "16",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0031",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 151\n    if 0:\n        result = 152\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(4))\n# What prints?\n",
+      "target": "4",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0032",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 275\n    if 0:\n        result = 276\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(41))\n# What prints?\n",
+      "target": "41",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0033",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 289\n    if 0:\n        result = 290\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(35))\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0034",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 156\n    if 0:\n        result = 157\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(19))\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0035",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 483\n    if 0:\n        result = 484\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(9))\n# What prints?\n",
+      "target": "9",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0036",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 496\n    if 0:\n        result = 497\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0037",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 177\n    if 0:\n        result = 178\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(10))\n# What prints?\n",
+      "target": "10",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0038",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 202\n    if 0:\n        result = 203\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(37))\n# What prints?\n",
+      "target": "37",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0039",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 225\n    if 0:\n        result = 226\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(29))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0040",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 379\n    if 0:\n        result = 380\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(37))\n# What prints?\n",
+      "target": "37",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0041",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 371\n    if 0:\n        result = 372\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(36))\n# What prints?\n",
+      "target": "36",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0042",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 111\n    if 0:\n        result = 112\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(45))\n# What prints?\n",
+      "target": "45",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0043",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 494\n    if 0:\n        result = 495\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(50))\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0044",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 464\n    if 0:\n        result = 465\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(45))\n# What prints?\n",
+      "target": "45",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0045",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 495\n    if 0:\n        result = 496\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(24))\n# What prints?\n",
+      "target": "24",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0046",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 209\n    if 0:\n        result = 210\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(48))\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0047",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 339\n    if 0:\n        result = 340\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0048",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 285\n    if 0:\n        result = 286\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(30))\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0049",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 446\n    if 0:\n        result = 447\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(13))\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0050",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 409\n    if 0:\n        result = 410\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(17))\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0051",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 161\n    if 0:\n        result = 162\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(9))\n# What prints?\n",
+      "target": "9",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0052",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 302\n    if 0:\n        result = 303\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(28))\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0053",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 370\n    if 0:\n        result = 371\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(4))\n# What prints?\n",
+      "target": "4",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0054",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 291\n    if 0:\n        result = 292\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(33))\n# What prints?\n",
+      "target": "33",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0055",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 323\n    if 0:\n        result = 324\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(37))\n# What prints?\n",
+      "target": "37",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0056",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 267\n    if 0:\n        result = 268\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(33))\n# What prints?\n",
+      "target": "33",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0057",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 394\n    if 0:\n        result = 395\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(19))\n# What prints?\n",
+      "target": "19",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0058",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 134\n    if 0:\n        result = 135\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(41))\n# What prints?\n",
+      "target": "41",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_train_0059",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 147\n    if 0:\n        result = 148\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(37))\n# What prints?\n",
+      "target": "37",
+      "metadata": {
+        "family": "dead_code",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0060",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 181\n    if 0:\n        result = 182\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(35))\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0061",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 339\n    if 0:\n        result = 340\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(37))\n# What prints?\n",
+      "target": "37",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0062",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 137\n    if 0:\n        result = 138\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(49))\n# What prints?\n",
+      "target": "49",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0063",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 338\n    if 0:\n        result = 339\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(18))\n# What prints?\n",
+      "target": "18",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0064",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 177\n    if 0:\n        result = 178\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(48))\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0065",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 193\n    if 0:\n        result = 194\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(5))\n# What prints?\n",
+      "target": "5",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0066",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 370\n    if 0:\n        result = 371\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(30))\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0067",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 305\n    if 0:\n        result = 306\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0068",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 419\n    if 0:\n        result = 420\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(1))\n# What prints?\n",
+      "target": "1",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0069",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 104\n    if 0:\n        result = 105\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0070",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 318\n    if 0:\n        result = 319\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(21))\n# What prints?\n",
+      "target": "21",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0071",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 214\n    if 0:\n        result = 215\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(17))\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0072",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 334\n    if 0:\n        result = 335\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(35))\n# What prints?\n",
+      "target": "35",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0073",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 394\n    if 0:\n        result = 395\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(50))\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0074",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 395\n    if 0:\n        result = 396\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(46))\n# What prints?\n",
+      "target": "46",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0075",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 495\n    if 0:\n        result = 496\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(13))\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0076",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 257\n    if 0:\n        result = 258\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0077",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 113\n    if 0:\n        result = 114\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(7))\n# What prints?\n",
+      "target": "7",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0078",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 165\n    if 0:\n        result = 166\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(50))\n# What prints?\n",
+      "target": "50",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_val_0079",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 267\n    if 0:\n        result = 268\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(5))\n# What prints?\n",
+      "target": "5",
+      "metadata": {
+        "family": "dead_code",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0080",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 436\n    if 0:\n        result = 437\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(15))\n# What prints?\n",
+      "target": "15",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0081",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 255\n    if 0:\n        result = 256\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(13))\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0082",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 238\n    if 0:\n        result = 239\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(28))\n# What prints?\n",
+      "target": "28",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0083",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 495\n    if 0:\n        result = 496\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0084",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 170\n    if 0:\n        result = 171\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(2))\n# What prints?\n",
+      "target": "2",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0085",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 292\n    if 0:\n        result = 293\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(8))\n# What prints?\n",
+      "target": "8",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0086",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 480\n    if 0:\n        result = 481\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(29))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0087",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 125\n    if 0:\n        result = 126\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(25))\n# What prints?\n",
+      "target": "25",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0088",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 304\n    if 0:\n        result = 305\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(29))\n# What prints?\n",
+      "target": "29",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0089",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 494\n    if 0:\n        result = 495\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(14))\n# What prints?\n",
+      "target": "14",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0090",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 163\n    if 0:\n        result = 164\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(38))\n# What prints?\n",
+      "target": "38",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0091",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 359\n    if 0:\n        result = 360\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(12))\n# What prints?\n",
+      "target": "12",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0092",
+      "prompt": "def handle(x):\n    result = x\n    if False:\n        result = 487\n    if 0:\n        result = 488\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(handle(11))\n# What prints?\n",
+      "target": "11",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "handle"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0093",
+      "prompt": "def compute(x):\n    result = x\n    if False:\n        result = 350\n    if 0:\n        result = 351\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(compute(8))\n# What prints?\n",
+      "target": "8",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "compute"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0094",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 262\n    if 0:\n        result = 263\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(48))\n# What prints?\n",
+      "target": "48",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0095",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 207\n    if 0:\n        result = 208\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(13))\n# What prints?\n",
+      "target": "13",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0096",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 284\n    if 0:\n        result = 285\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(33))\n# What prints?\n",
+      "target": "33",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0097",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 360\n    if 0:\n        result = 361\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(17))\n# What prints?\n",
+      "target": "17",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0098",
+      "prompt": "def process(x):\n    result = x\n    if False:\n        result = 108\n    if 0:\n        result = 109\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(process(30))\n# What prints?\n",
+      "target": "30",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "process"
+      }
+    },
+    {
+      "task_id": "dead_code_test_0099",
+      "prompt": "def evaluate(x):\n    result = x\n    if False:\n        result = 315\n    if 0:\n        result = 316\n    while False:\n        result += 1\n    for i in range(0):\n        result -= 1\n    return result\n\nprint(evaluate(25))\n# What prints?\n",
+      "target": "25",
+      "metadata": {
+        "family": "dead_code",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "func_name": "evaluate"
+      }
+    }
+  ]
+}

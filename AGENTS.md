@@ -112,3 +112,93 @@ Every claim must include:
 ## Rule
 
 If a conclusion sounds exciting, attack it harder before reporting it.
+
+---
+
+## Phase 2 Rules (2026-06-22)
+
+Phase 2 focuses on reproducibility and testing whether Phase 1 findings hold under stricter methodology. All Phase 1 rules remain in effect. The following additional rules apply to Phase 2 experiments.
+
+### Experiment card required
+
+Before any experiment runs, an experiment card must exist at `experiments/cards/{experiment_id}.md` with:
+- Hypothesis (which H1-H8 it tests)
+- Method (ablation type, steering config, training config)
+- Seeds (default 3, or "pilot" with justification)
+- Metrics to collect
+- Expected result (quantitative prediction)
+- Falsification criteria (what would reject the hypothesis)
+- Estimated compute time
+- Dependencies on prior experiments
+
+No experiment runs without a card. Cards can be created in-line during a session but must exist before the first run_id is generated.
+
+### Multi-seed replication is the default
+
+All Phase 2 experiments must run with 3 seeds (42, 137, 2026) unless explicitly marked as **pilot** in the experiment card. Pilot experiments use 1 seed and must justify why (e.g., expensive checkpoint training, exploratory cross-model patching).
+
+Pilot results are provisional and cannot upgrade Phase 1 findings to higher confidence without replication.
+
+### Claim cards required for head results
+
+Any experiment result that would update a confidence level, confirm/reject a hypothesis, or modify the component atlas must produce a claim card at `experiments/claims/{experiment_id}_claim.md` with:
+- Finding (one sentence)
+- Evidence (run_ids, metrics, effect sizes)
+- Variance (σ across seeds, or "pilot — no variance")
+- Confidence level (Weak/Medium/Strong/Very strong)
+- Comparison to Phase 1 (same / upgraded / downgraded / new)
+- Reproduction command
+
+### Negative results are first-class
+
+Negative results (null effects, failed predictions, rejected hypotheses) must be logged in `reports/negative_results.md` with the same rigor as positive results. A negative result that replicates across 3 seeds is **more informative** than a positive result from a single seed.
+
+### Configs directory for reproducibility
+
+All experiment configurations must be saved as JSON at `configs/{experiment_id}_{config_slug}.json` before execution. Configs must include:
+- model_name_or_path
+- seeds
+- ablation_type (zero/mean/resample)
+- task_family
+- lora_config (if training)
+- steering_config (if steering)
+- hardware info (auto-populated)
+
+Configs enable exact re-execution without code inspection.
+
+### run_id format
+
+All Phase 2 runs use the format:
+```
+P2_{experiment_id}_{model_slug}_{task_slug}_{YYYYMMDD_HHMMSS}_seed{seed}
+```
+
+Example: `P2_A01_qwen05b_factual_20260622_143022_seed42`
+
+- experiment_id: Block letter + sequence (A01, B01, C01, etc.)
+- model_slug: short model identifier (qwen05b, qwen15b, etc.)
+- task_slug: task family short name
+- timestamp: run start time
+- seed: integer seed value
+
+run_ids are written to `experiments/registry.jsonl` as in Phase 1.
+
+### Resumability
+
+Before running an experiment, check `experiments/registry.jsonl` for existing run_ids matching the planned experiment_id + model + task + seed combination. If a completed run_id exists, skip it unless `--force` is passed.
+
+This allows interrupted sessions to resume without re-running completed work.
+
+Implementation: each experiment script should accept `--force` flag (default: False) and check registry before executing.
+
+### Phase 2 evidence ladder addition
+
+Phase 2 adds a new tier above "Very strong":
+
+**Very strong + replicated:**
+- All "Very strong" criteria met
+- Replicated across 3 seeds with σ < 20% of effect size
+- Replicated across at least 2 ablation methods (zero + mean)
+- Claim card with variance table
+
+This tier is the minimum for publication-ready claims.

@@ -1,0 +1,81 @@
+# Phase 2 Model Configurations
+# Each model entry includes exact identifiers for reproducibility
+
+models:
+  qwen25_05b:
+    id: "Qwen/Qwen2.5-0.5B"
+    slug: "qwen25_0.5b"
+    n_layers: 24
+    n_heads: 14  # GQA
+    d_model: 896
+    d_head: 64
+    vocab_size: 151936
+    context_length: 32768
+    activation_function: "silu"
+    dtype: "bfloat16"
+    vram_bf16_mb: ~1000
+    notes: "Phase 1 primary model. 24L, 14H GQA. L2 universal hub."
+
+  qwen25_15b:
+    id: "Qwen/Qwen2.5-1.5B"
+    slug: "qwen25_1.5b"
+    n_layers: 28
+    n_heads: 12  # GQA
+    d_model: 1536
+    d_head: 128
+    vocab_size: 151936
+    context_length: 32768
+    activation_function: "silu"
+    dtype: "bfloat16"
+    vram_bf16_mb: ~3000
+    notes: "Phase 1 secondary model. 28L, 12H GQA. L26 hub. 70x harder steering."
+
+  qwen25_3b:
+    id: "Qwen/Qwen2.5-3B"
+    slug: "qwen25_3b"
+    n_layers: 36
+    n_heads: 16  # GQA
+    d_model: 2048
+    d_head: 128
+    vocab_size: 151936
+    context_length: 32768
+    activation_function: "silu"
+    dtype: "bfloat16"
+    vram_bf16_mb: ~6000
+    vram_4bit_mb: ~2000
+    notes: "Phase 2 third scale point. 36L, 16H GQA. Needs 4bit for 8GB VRAM training."
+
+  gemma2_2b:
+    id: "google/gemma-2-2b"
+    slug: "gemma2_2b"
+    n_layers: 26
+    n_heads: 8
+    d_model: 2304
+    d_head: 256
+    vocab_size: 256000
+    context_length: 8192
+    activation_function: "gelu"
+    dtype: "bfloat16"
+    vram_bf16_mb: ~4500
+    vram_4bit_mb: ~1500
+    notes: "Cross-family target 1. Different architecture (Gemma 2). Sliding window attention."
+
+  smollm2_17b:
+    id: "HuggingFaceTB/SmolLM2-1.7B"
+    slug: "smollm2_1.7b"
+    n_layers: 24
+    n_heads: 16
+    d_model: 2048
+    d_head: 128
+    vocab_size: 49152
+    context_length: 8192
+    activation_function: "silu"
+    dtype: "bfloat16"
+    vram_bf16_mb: ~3500
+    notes: "Cross-family target 2. SmolLM2 family. Similar scale to 1.5B."
+
+defaults:
+  device: "auto"
+  trust_remote_code: true
+  output_hidden_states: true
+  output_attentions: true

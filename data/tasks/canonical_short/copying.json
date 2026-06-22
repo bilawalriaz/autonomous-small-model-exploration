@@ -1,0 +1,4396 @@
+{
+  "family": "copying",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "copying_train_0000",
+      "prompt": "N Q M P Z ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "N",
+          "Q",
+          "M",
+          "P",
+          "Z"
+        ]
+      },
+      "clean_prompt": "N Q M P Z ",
+      "corrupt_prompt": "N Q M P S N Q M ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0001",
+      "prompt": "R Y A R Y ",
+      "target": "A",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "R",
+          "Y",
+          "A"
+        ]
+      },
+      "clean_prompt": "R Y A R Y ",
+      "corrupt_prompt": "R Y O ",
+      "target_token": "A"
+    },
+    {
+      "task_id": "copying_train_0002",
+      "prompt": "J H U J H U J H U ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "J",
+          "H",
+          "U"
+        ]
+      },
+      "clean_prompt": "J H U J H U J H U ",
+      "corrupt_prompt": "J H A J H A J H A J ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0003",
+      "prompt": "W O S X W O S X ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "W",
+          "O",
+          "S",
+          "X"
+        ]
+      },
+      "clean_prompt": "W O S X W O S X ",
+      "corrupt_prompt": "W O S P W O S P W O S ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0004",
+      "prompt": "F Z L F Z L F Z L F Z L F Z ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "F",
+          "Z",
+          "L"
+        ]
+      },
+      "clean_prompt": "F Z L F Z L F Z L F Z L F Z ",
+      "corrupt_prompt": "F Z Q F Z Q F Z Q F Z Q F Z ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0005",
+      "prompt": "M W M ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "M",
+          "W"
+        ]
+      },
+      "clean_prompt": "M W M ",
+      "corrupt_prompt": "M R ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0006",
+      "prompt": "Y I W T Y I W T Y I W T Y I W T Y ",
+      "target": "I",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "Y",
+          "I",
+          "W",
+          "T"
+        ]
+      },
+      "clean_prompt": "Y I W T Y I W T Y I W T Y I W T Y ",
+      "corrupt_prompt": "Y I W Z Y I W Z Y I W Z Y I W Z ",
+      "target_token": "I"
+    },
+    {
+      "task_id": "copying_train_0007",
+      "prompt": "X B Q V L Y X B Q V L Y X B Q V L Y ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "X",
+          "B",
+          "Q",
+          "V",
+          "L",
+          "Y"
+        ]
+      },
+      "clean_prompt": "X B Q V L Y X B Q V L Y X B Q V L Y ",
+      "corrupt_prompt": "X B Q V L O X B Q V L O X B Q V L O X B ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0008",
+      "prompt": "L F U R W ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "L",
+          "F",
+          "U",
+          "R",
+          "W"
+        ]
+      },
+      "clean_prompt": "L F U R W ",
+      "corrupt_prompt": "L F U R V L ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0009",
+      "prompt": "H R D H R D H R D H R ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "H",
+          "R",
+          "D"
+        ]
+      },
+      "clean_prompt": "H R D H R D H R D H R ",
+      "corrupt_prompt": "H R S H R S H R S H R ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0010",
+      "prompt": "Y X H K L I Y X H K L I Y X H K ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "Y",
+          "X",
+          "H",
+          "K",
+          "L",
+          "I"
+        ]
+      },
+      "clean_prompt": "Y X H K L I Y X H K L I Y X H K ",
+      "corrupt_prompt": "Y X H K L R Y X H K L R Y X ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0011",
+      "prompt": "L O L ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "L",
+          "O"
+        ]
+      },
+      "clean_prompt": "L O L ",
+      "corrupt_prompt": "L S ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_train_0012",
+      "prompt": "O T L Z V O T L Z V O T L Z V ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "O",
+          "T",
+          "L",
+          "Z",
+          "V"
+        ]
+      },
+      "clean_prompt": "O T L Z V O T L Z V O T L Z V ",
+      "corrupt_prompt": "O T L Z G O T L Z G O T L Z G O T L ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_train_0013",
+      "prompt": "M F M ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "M",
+          "F"
+        ]
+      },
+      "clean_prompt": "M F M ",
+      "corrupt_prompt": "M C ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0014",
+      "prompt": "D W E D W E D W E D ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "D",
+          "W",
+          "E"
+        ]
+      },
+      "clean_prompt": "D W E D W E D W E D ",
+      "corrupt_prompt": "D W G D W G D W G ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0015",
+      "prompt": "J N V R E P J N ",
+      "target": "V",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "J",
+          "N",
+          "V",
+          "R",
+          "E",
+          "P"
+        ]
+      },
+      "clean_prompt": "J N V R E P J N ",
+      "corrupt_prompt": "J N V R E S J N V ",
+      "target_token": "V"
+    },
+    {
+      "task_id": "copying_train_0016",
+      "prompt": "G C G C G C ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "G",
+          "C"
+        ]
+      },
+      "clean_prompt": "G C G C G C ",
+      "corrupt_prompt": "G J G J G J G ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0017",
+      "prompt": "U Z K P S U Z K P S U Z K P S U Z K P ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "U",
+          "Z",
+          "K",
+          "P",
+          "S"
+        ]
+      },
+      "clean_prompt": "U Z K P S U Z K P S U Z K P S U Z K P ",
+      "corrupt_prompt": "U Z K P V U Z K P V U Z K P V U Z K ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_train_0018",
+      "prompt": "S E Z J F S E Z J F S E Z J F S E ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "S",
+          "E",
+          "Z",
+          "J",
+          "F"
+        ]
+      },
+      "clean_prompt": "S E Z J F S E Z J F S E Z J F S E ",
+      "corrupt_prompt": "S E Z J K S E Z J K S E Z J K S E Z ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_train_0019",
+      "prompt": "Y B E L Y B E L Y B E L Y B ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "Y",
+          "B",
+          "E",
+          "L"
+        ]
+      },
+      "clean_prompt": "Y B E L Y B E L Y B E L Y B ",
+      "corrupt_prompt": "Y B E R Y B E R Y B E R Y ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0020",
+      "prompt": "W R J F Z E W R J F Z E W ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "W",
+          "R",
+          "J",
+          "F",
+          "Z",
+          "E"
+        ]
+      },
+      "clean_prompt": "W R J F Z E W R J F Z E W ",
+      "corrupt_prompt": "W R J F Z K W R J F Z K ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_train_0021",
+      "prompt": "S E S E S E S ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "S",
+          "E"
+        ]
+      },
+      "clean_prompt": "S E S E S E S ",
+      "corrupt_prompt": "S J S J S J S ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0022",
+      "prompt": "R W B R W B R W ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "R",
+          "W",
+          "B"
+        ]
+      },
+      "clean_prompt": "R W B R W B R W ",
+      "corrupt_prompt": "R W L R W L R ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_train_0023",
+      "prompt": "O R F O R F O R F O R ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "O",
+          "R",
+          "F"
+        ]
+      },
+      "clean_prompt": "O R F O R F O R F O R ",
+      "corrupt_prompt": "O R K O R K O R K ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0024",
+      "prompt": "P Y P Y P Y P Y ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "P",
+          "Y"
+        ]
+      },
+      "clean_prompt": "P Y P Y P Y P Y ",
+      "corrupt_prompt": "P O P O P O P O P ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_train_0025",
+      "prompt": "X R Q X ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "R",
+          "Q"
+        ]
+      },
+      "clean_prompt": "X R Q X ",
+      "corrupt_prompt": "X R W X R ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_train_0026",
+      "prompt": "J Y S V J Y S V J Y S V J Y S V J ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "Y",
+          "S",
+          "V"
+        ]
+      },
+      "clean_prompt": "J Y S V J Y S V J Y S V J Y S V J ",
+      "corrupt_prompt": "J Y S U J Y S U J Y S U J Y S U J Y S ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_train_0027",
+      "prompt": "X P B E ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "P",
+          "B",
+          "E"
+        ]
+      },
+      "clean_prompt": "X P B E ",
+      "corrupt_prompt": "X P B L ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0028",
+      "prompt": "O L C K B O L C K B O L C K ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "O",
+          "L",
+          "C",
+          "K",
+          "B"
+        ]
+      },
+      "clean_prompt": "O L C K B O L C K B O L C K ",
+      "corrupt_prompt": "O L C K Z O L C K Z O ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_train_0029",
+      "prompt": "Z Y I G A C Z Y I G A C Z Y I G ",
+      "target": "A",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "Z",
+          "Y",
+          "I",
+          "G",
+          "A",
+          "C"
+        ]
+      },
+      "clean_prompt": "Z Y I G A C Z Y I G A C Z Y I G ",
+      "corrupt_prompt": "Z Y I G A S Z Y I G A S Z Y I G A ",
+      "target_token": "A"
+    },
+    {
+      "task_id": "copying_train_0030",
+      "prompt": "G P G P G P G P G ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "G",
+          "P"
+        ]
+      },
+      "clean_prompt": "G P G P G P G P G ",
+      "corrupt_prompt": "G V G V G V G V ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_train_0031",
+      "prompt": "E W N L E W N L E W N L E W N L E W N ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "E",
+          "W",
+          "N",
+          "L"
+        ]
+      },
+      "clean_prompt": "E W N L E W N L E W N L E W N L E W N ",
+      "corrupt_prompt": "E W N O E W N O E W N O E W N O ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0032",
+      "prompt": "L J O R L J O R L J O R ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "L",
+          "J",
+          "O",
+          "R"
+        ]
+      },
+      "clean_prompt": "L J O R L J O R L J O R ",
+      "corrupt_prompt": "L J O G L J O G L J O G L J O ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0033",
+      "prompt": "J F Z X N J F Z X N J F Z X N J F Z X N J F Z ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "F",
+          "Z",
+          "X",
+          "N"
+        ]
+      },
+      "clean_prompt": "J F Z X N J F Z X N J F Z X N J F Z X N J F Z ",
+      "corrupt_prompt": "J F Z X E J F Z X E J F Z X E J F Z X E J F Z X ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0034",
+      "prompt": "E G J P Q K ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "E",
+          "G",
+          "J",
+          "P",
+          "Q",
+          "K"
+        ]
+      },
+      "clean_prompt": "E G J P Q K ",
+      "corrupt_prompt": "E G J P Q Y E G J ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0035",
+      "prompt": "N U N ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "N",
+          "U"
+        ]
+      },
+      "clean_prompt": "N U N ",
+      "corrupt_prompt": "N O ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_train_0036",
+      "prompt": "W S E G F M W S E G F M W S E G F M W S E G F M W S ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "W",
+          "S",
+          "E",
+          "G",
+          "F",
+          "M"
+        ]
+      },
+      "clean_prompt": "W S E G F M W S E G F M W S E G F M W S E G F M W S ",
+      "corrupt_prompt": "W S E G F X W S E G F X W S E G F X W S E G F X W S E ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0037",
+      "prompt": "S J S J S J S ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "S",
+          "J"
+        ]
+      },
+      "clean_prompt": "S J S J S J S ",
+      "corrupt_prompt": "S T S T S T S ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0038",
+      "prompt": "Z A E Z ",
+      "target": "A",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "Z",
+          "A",
+          "E"
+        ]
+      },
+      "clean_prompt": "Z A E Z ",
+      "corrupt_prompt": "Z A L Z A ",
+      "target_token": "A"
+    },
+    {
+      "task_id": "copying_train_0039",
+      "prompt": "U V J N F U V J ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "U",
+          "V",
+          "J",
+          "N",
+          "F"
+        ]
+      },
+      "clean_prompt": "U V J N F U V J ",
+      "corrupt_prompt": "U V J N Z U ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0040",
+      "prompt": "Y I Y ",
+      "target": "I",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "Y",
+          "I"
+        ]
+      },
+      "clean_prompt": "Y I Y ",
+      "corrupt_prompt": "Y C Y ",
+      "target_token": "I"
+    },
+    {
+      "task_id": "copying_train_0041",
+      "prompt": "S N I U V P S N I U V P S N I U V P S N I U V P S N I U V ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "S",
+          "N",
+          "I",
+          "U",
+          "V",
+          "P"
+        ]
+      },
+      "clean_prompt": "S N I U V P S N I U V P S N I U V P S N I U V P S N I U V ",
+      "corrupt_prompt": "S N I U V D S N I U V D S N I U V D S N I U V D S N ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_train_0042",
+      "prompt": "I F S B E K I F S ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "I",
+          "F",
+          "S",
+          "B",
+          "E",
+          "K"
+        ]
+      },
+      "clean_prompt": "I F S B E K I F S ",
+      "corrupt_prompt": "I F S B E H I F ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_train_0043",
+      "prompt": "I L N I L ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "I",
+          "L",
+          "N"
+        ]
+      },
+      "clean_prompt": "I L N I L ",
+      "corrupt_prompt": "I L O ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0044",
+      "prompt": "Q U C G Q U C G Q U C G Q ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "Q",
+          "U",
+          "C",
+          "G"
+        ]
+      },
+      "clean_prompt": "Q U C G Q U C G Q U C G Q ",
+      "corrupt_prompt": "Q U C E Q U C E Q U C E Q ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_train_0045",
+      "prompt": "K V J I Y L K V J I Y L K V J I Y L ",
+      "target": "K",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "K",
+          "V",
+          "J",
+          "I",
+          "Y",
+          "L"
+        ]
+      },
+      "clean_prompt": "K V J I Y L K V J I Y L K V J I Y L ",
+      "corrupt_prompt": "K V J I Y W K V J I Y W K V J I Y W K V J I ",
+      "target_token": "K"
+    },
+    {
+      "task_id": "copying_train_0046",
+      "prompt": "A E Q J A E Q J A E ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "E",
+          "Q",
+          "J"
+        ]
+      },
+      "clean_prompt": "A E Q J A E Q J A E ",
+      "corrupt_prompt": "A E Q T A E Q T A E Q ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0047",
+      "prompt": "D G E Q D G E Q D ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "D",
+          "G",
+          "E",
+          "Q"
+        ]
+      },
+      "clean_prompt": "D G E Q D G E Q D ",
+      "corrupt_prompt": "D G E J D G E J ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0048",
+      "prompt": "C D E A P C D E A P C D E A P C D E A P C D ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "C",
+          "D",
+          "E",
+          "A",
+          "P"
+        ]
+      },
+      "clean_prompt": "C D E A P C D E A P C D E A P C D E A P C D ",
+      "corrupt_prompt": "C D E A N C D E A N C D E A N C D E A N C D ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0049",
+      "prompt": "T Q Y T Q Y T Q Y T Q Y T ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "T",
+          "Q",
+          "Y"
+        ]
+      },
+      "clean_prompt": "T Q Y T Q Y T Q Y T Q Y T ",
+      "corrupt_prompt": "T Q F T Q F T Q F T Q F T Q ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0050",
+      "prompt": "X D H E X ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "D",
+          "H",
+          "E"
+        ]
+      },
+      "clean_prompt": "X D H E X ",
+      "corrupt_prompt": "X D H K X D ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0051",
+      "prompt": "E C N E C N E C ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "E",
+          "C",
+          "N"
+        ]
+      },
+      "clean_prompt": "E C N E C N E C ",
+      "corrupt_prompt": "E C F E C F ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0052",
+      "prompt": "Y N Y N Y N Y N ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "Y",
+          "N"
+        ]
+      },
+      "clean_prompt": "Y N Y N Y N Y N ",
+      "corrupt_prompt": "Y G Y G Y G Y G ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_train_0053",
+      "prompt": "P D P ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "P",
+          "D"
+        ]
+      },
+      "clean_prompt": "P D P ",
+      "corrupt_prompt": "P B ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0054",
+      "prompt": "Y D Z T Y ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "Y",
+          "D",
+          "Z",
+          "T"
+        ]
+      },
+      "clean_prompt": "Y D Z T Y ",
+      "corrupt_prompt": "Y D Z U Y ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0055",
+      "prompt": "A C E A C E A C E A C ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "A",
+          "C",
+          "E"
+        ]
+      },
+      "clean_prompt": "A C E A C E A C E A C ",
+      "corrupt_prompt": "A C L A C L A C L A C ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0056",
+      "prompt": "F Q Y X F Q Y X F Q Y X F ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "F",
+          "Q",
+          "Y",
+          "X"
+        ]
+      },
+      "clean_prompt": "F Q Y X F Q Y X F Q Y X F ",
+      "corrupt_prompt": "F Q Y S F Q Y S F Q Y S ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0057",
+      "prompt": "Q G ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "Q",
+          "G"
+        ]
+      },
+      "clean_prompt": "Q G ",
+      "corrupt_prompt": "Q K ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0058",
+      "prompt": "X D G Q P L X D G Q P ",
+      "target": "L",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "D",
+          "G",
+          "Q",
+          "P",
+          "L"
+        ]
+      },
+      "clean_prompt": "X D G Q P L X D G Q P ",
+      "corrupt_prompt": "X D G Q P Y X ",
+      "target_token": "L"
+    },
+    {
+      "task_id": "copying_train_0059",
+      "prompt": "F L M N G F L M N ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "F",
+          "L",
+          "M",
+          "N",
+          "G"
+        ]
+      },
+      "clean_prompt": "F L M N G F L M N ",
+      "corrupt_prompt": "F L M N J F L M ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0060",
+      "prompt": "D O D O D O ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "D",
+          "O"
+        ]
+      },
+      "clean_prompt": "D O D O D O ",
+      "corrupt_prompt": "D S D S D S ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0061",
+      "prompt": "W J R X B W J R X B W J R X B ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "W",
+          "J",
+          "R",
+          "X",
+          "B"
+        ]
+      },
+      "clean_prompt": "W J R X B W J R X B W J R X B ",
+      "corrupt_prompt": "W J R X M W J R X M W J R X M W J R ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0062",
+      "prompt": "J O J O J O J O J ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "O"
+        ]
+      },
+      "clean_prompt": "J O J O J O J O J ",
+      "corrupt_prompt": "J X J X J X J X J ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_train_0063",
+      "prompt": "J N G J N G J N G J N G ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "N",
+          "G"
+        ]
+      },
+      "clean_prompt": "J N G J N G J N G J N G ",
+      "corrupt_prompt": "J N S J N S J N S J N S J N ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0064",
+      "prompt": "A V P D A V P D A V P ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "V",
+          "P",
+          "D"
+        ]
+      },
+      "clean_prompt": "A V P D A V P D A V P ",
+      "corrupt_prompt": "A V P R A V P R ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0065",
+      "prompt": "M W M W ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "M",
+          "W"
+        ]
+      },
+      "clean_prompt": "M W M W ",
+      "corrupt_prompt": "M Z M Z ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_train_0066",
+      "prompt": "G K G K G K ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "G",
+          "K"
+        ]
+      },
+      "clean_prompt": "G K G K G K ",
+      "corrupt_prompt": "G V G V G V G ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0067",
+      "prompt": "N X N X N ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "N",
+          "X"
+        ]
+      },
+      "clean_prompt": "N X N X N ",
+      "corrupt_prompt": "N I N I N ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0068",
+      "prompt": "P V T M Q P V T M Q P V T M Q P V ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "P",
+          "V",
+          "T",
+          "M",
+          "Q"
+        ]
+      },
+      "clean_prompt": "P V T M Q P V T M Q P V T M Q P V ",
+      "corrupt_prompt": "P V T M E P V T M E P V T M E P V T ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_train_0069",
+      "prompt": "I P I ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "I",
+          "P"
+        ]
+      },
+      "clean_prompt": "I P I ",
+      "corrupt_prompt": "I H ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_train_0070",
+      "prompt": "X B ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "B"
+        ]
+      },
+      "clean_prompt": "X B ",
+      "corrupt_prompt": "X Q ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0071",
+      "prompt": "T V K T V K T V K T V K ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "T",
+          "V",
+          "K"
+        ]
+      },
+      "clean_prompt": "T V K T V K T V K T V K ",
+      "corrupt_prompt": "T V J T V J T V J T V J T V ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_train_0072",
+      "prompt": "Y C V Q P O Y ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "Y",
+          "C",
+          "V",
+          "Q",
+          "P",
+          "O"
+        ]
+      },
+      "clean_prompt": "Y C V Q P O Y ",
+      "corrupt_prompt": "Y C V Q P K Y C V Q P ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_train_0073",
+      "prompt": "Q I R K Z Q I R K Z Q I R K Z Q I R K Z Q I R K ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "Q",
+          "I",
+          "R",
+          "K",
+          "Z"
+        ]
+      },
+      "clean_prompt": "Q I R K Z Q I R K Z Q I R K Z Q I R K Z Q I R K ",
+      "corrupt_prompt": "Q I R K V Q I R K V Q I R K V Q I R K V ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_train_0074",
+      "prompt": "D M D M D M D M D ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "D",
+          "M"
+        ]
+      },
+      "clean_prompt": "D M D M D M D M D ",
+      "corrupt_prompt": "D L D L D L D L D ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_train_0075",
+      "prompt": "B F R V Y B F R V Y B F R V Y B F R V Y B F ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "B",
+          "F",
+          "R",
+          "V",
+          "Y"
+        ]
+      },
+      "clean_prompt": "B F R V Y B F R V Y B F R V Y B F R V Y B F ",
+      "corrupt_prompt": "B F R V H B F R V H B F R V H B F R V H B F R ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_train_0076",
+      "prompt": "J W M P Y J W M P Y ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "J",
+          "W",
+          "M",
+          "P",
+          "Y"
+        ]
+      },
+      "clean_prompt": "J W M P Y J W M P Y ",
+      "corrupt_prompt": "J W M P V J W M P V J W M ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0077",
+      "prompt": "P R F Q B M P R F Q B M P R F Q B M P R F Q B M P R ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "P",
+          "R",
+          "F",
+          "Q",
+          "B",
+          "M"
+        ]
+      },
+      "clean_prompt": "P R F Q B M P R F Q B M P R F Q B M P R F Q B M P R ",
+      "corrupt_prompt": "P R F Q B V P R F Q B V P R F Q B V P R F Q B V P R F Q ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0078",
+      "prompt": "Y J K B A Y J K B A Y J K B A Y J K B ",
+      "target": "A",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "Y",
+          "J",
+          "K",
+          "B",
+          "A"
+        ]
+      },
+      "clean_prompt": "Y J K B A Y J K B A Y J K B A Y J K B ",
+      "corrupt_prompt": "Y J K B D Y J K B D Y J K B D Y ",
+      "target_token": "A"
+    },
+    {
+      "task_id": "copying_train_0079",
+      "prompt": "Z X S A Z X S A Z X S A Z X ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "Z",
+          "X",
+          "S",
+          "A"
+        ]
+      },
+      "clean_prompt": "Z X S A Z X S A Z X S A Z X ",
+      "corrupt_prompt": "Z X S N Z X S N Z X S N ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_train_0080",
+      "prompt": "L N B V H L N B V H L N B V H L ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "L",
+          "N",
+          "B",
+          "V",
+          "H"
+        ]
+      },
+      "clean_prompt": "L N B V H L N B V H L N B V H L ",
+      "corrupt_prompt": "L N B V J L N B V J L N B V J L N ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0081",
+      "prompt": "W C J D K F ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "W",
+          "C",
+          "J",
+          "D",
+          "K",
+          "F"
+        ]
+      },
+      "clean_prompt": "W C J D K F ",
+      "corrupt_prompt": "W C J D K X W C ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0082",
+      "prompt": "V N V N V N V N V ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "V",
+          "N"
+        ]
+      },
+      "clean_prompt": "V N V N V N V N V ",
+      "corrupt_prompt": "V I V I V I V I ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_train_0083",
+      "prompt": "K M S D Z K M S ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "K",
+          "M",
+          "S",
+          "D",
+          "Z"
+        ]
+      },
+      "clean_prompt": "K M S D Z K M S ",
+      "corrupt_prompt": "K M S D E K ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_train_0084",
+      "prompt": "Q Z Y V Q Z Y V Q Z Y V Q Z Y V Q Z ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "Q",
+          "Z",
+          "Y",
+          "V"
+        ]
+      },
+      "clean_prompt": "Q Z Y V Q Z Y V Q Z Y V Q Z Y V Q Z ",
+      "corrupt_prompt": "Q Z Y F Q Z Y F Q Z Y F Q Z Y F Q Z ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_train_0085",
+      "prompt": "G P U Z G P U Z G P U Z G P U Z ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "G",
+          "P",
+          "U",
+          "Z"
+        ]
+      },
+      "clean_prompt": "G P U Z G P U Z G P U Z G P U Z ",
+      "corrupt_prompt": "G P U T G P U T G P U T G P U T G ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0086",
+      "prompt": "B J S M B J S M B J S M B ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "B",
+          "J",
+          "S",
+          "M"
+        ]
+      },
+      "clean_prompt": "B J S M B J S M B J S M B ",
+      "corrupt_prompt": "B J S X B J S X B J S X ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0087",
+      "prompt": "S K I C Z Q S K I ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "S",
+          "K",
+          "I",
+          "C",
+          "Z",
+          "Q"
+        ]
+      },
+      "clean_prompt": "S K I C Z Q S K I ",
+      "corrupt_prompt": "S K I C Z R S ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_train_0088",
+      "prompt": "U J Q Z U J ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "U",
+          "J",
+          "Q",
+          "Z"
+        ]
+      },
+      "clean_prompt": "U J Q Z U J ",
+      "corrupt_prompt": "U J Q O U J ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0089",
+      "prompt": "M I T M I T M I T M I T M I ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "M",
+          "I",
+          "T"
+        ]
+      },
+      "clean_prompt": "M I T M I T M I T M I T M I ",
+      "corrupt_prompt": "M I Q M I Q M I Q M I Q M I ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_train_0090",
+      "prompt": "A U W Q F S A U W Q F S A U W ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "U",
+          "W",
+          "Q",
+          "F",
+          "S"
+        ]
+      },
+      "clean_prompt": "A U W Q F S A U W Q F S A U W ",
+      "corrupt_prompt": "A U W Q F I A U W Q F I A U W Q F ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_train_0091",
+      "prompt": "U R Z T Y U R Z T Y U R Z T Y U R Z ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "U",
+          "R",
+          "Z",
+          "T",
+          "Y"
+        ]
+      },
+      "clean_prompt": "U R Z T Y U R Z T Y U R Z T Y U R Z ",
+      "corrupt_prompt": "U R Z T V U R Z T V U R Z T V ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_train_0092",
+      "prompt": "L O E H X J L O E H X J L O E ",
+      "target": "H",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "L",
+          "O",
+          "E",
+          "H",
+          "X",
+          "J"
+        ]
+      },
+      "clean_prompt": "L O E H X J L O E H X J L O E ",
+      "corrupt_prompt": "L O E H X S L O E H X S L O ",
+      "target_token": "H"
+    },
+    {
+      "task_id": "copying_train_0093",
+      "prompt": "N I N I N ",
+      "target": "I",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "N",
+          "I"
+        ]
+      },
+      "clean_prompt": "N I N I N ",
+      "corrupt_prompt": "N W N W ",
+      "target_token": "I"
+    },
+    {
+      "task_id": "copying_train_0094",
+      "prompt": "M H D E M H D E M ",
+      "target": "H",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "M",
+          "H",
+          "D",
+          "E"
+        ]
+      },
+      "clean_prompt": "M H D E M H D E M ",
+      "corrupt_prompt": "M H D A M H D A M ",
+      "target_token": "H"
+    },
+    {
+      "task_id": "copying_train_0095",
+      "prompt": "P R N U P R N U P R N U P R N U ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "P",
+          "R",
+          "N",
+          "U"
+        ]
+      },
+      "clean_prompt": "P R N U P R N U P R N U P R N U ",
+      "corrupt_prompt": "P R N G P R N G P R N G P R N G P ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_train_0096",
+      "prompt": "A I Z V A I Z V A ",
+      "target": "I",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "I",
+          "Z",
+          "V"
+        ]
+      },
+      "clean_prompt": "A I Z V A I Z V A ",
+      "corrupt_prompt": "A I Z X A I Z X ",
+      "target_token": "I"
+    },
+    {
+      "task_id": "copying_train_0097",
+      "prompt": "B C K T J ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "B",
+          "C",
+          "K",
+          "T",
+          "J"
+        ]
+      },
+      "clean_prompt": "B C K T J ",
+      "corrupt_prompt": "B C K T R B C ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_train_0098",
+      "prompt": "X E X E X E X E ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "X",
+          "E"
+        ]
+      },
+      "clean_prompt": "X E X E X E X E ",
+      "corrupt_prompt": "X D X D X D X D ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0099",
+      "prompt": "P C H T D K P C H T D K P C H T D K P C ",
+      "target": "H",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "P",
+          "C",
+          "H",
+          "T",
+          "D",
+          "K"
+        ]
+      },
+      "clean_prompt": "P C H T D K P C H T D K P C H T D K P C ",
+      "corrupt_prompt": "P C H T D Y P C H T D Y P C H T D Y P C H T D ",
+      "target_token": "H"
+    },
+    {
+      "task_id": "copying_train_0100",
+      "prompt": "N G E D F N G E D F N ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "N",
+          "G",
+          "E",
+          "D",
+          "F"
+        ]
+      },
+      "clean_prompt": "N G E D F N G E D F N ",
+      "corrupt_prompt": "N G E D M N G E D M N G E ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0101",
+      "prompt": "S B P R L S B P R L S B P R L ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "S",
+          "B",
+          "P",
+          "R",
+          "L"
+        ]
+      },
+      "clean_prompt": "S B P R L S B P R L S B P R L ",
+      "corrupt_prompt": "S B P R M S B P R M S B P R M S B P R ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_train_0102",
+      "prompt": "V H I Z E V H I Z E V H I Z E V H I Z E V H ",
+      "target": "I",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "V",
+          "H",
+          "I",
+          "Z",
+          "E"
+        ]
+      },
+      "clean_prompt": "V H I Z E V H I Z E V H I Z E V H I Z E V H ",
+      "corrupt_prompt": "V H I Z S V H I Z S V H I Z S V H I Z S V H ",
+      "target_token": "I"
+    },
+    {
+      "task_id": "copying_train_0103",
+      "prompt": "U T B X ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "U",
+          "T",
+          "B",
+          "X"
+        ]
+      },
+      "clean_prompt": "U T B X ",
+      "corrupt_prompt": "U T B Z U ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_train_0104",
+      "prompt": "J U W L J U W L J U W L J U W L ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "U",
+          "W",
+          "L"
+        ]
+      },
+      "clean_prompt": "J U W L J U W L J U W L J U W L ",
+      "corrupt_prompt": "J U W T J U W T J U W T J U W T J ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_train_0105",
+      "prompt": "A M I J C A M I J C A M I J C A M I J C A ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "A",
+          "M",
+          "I",
+          "J",
+          "C"
+        ]
+      },
+      "clean_prompt": "A M I J C A M I J C A M I J C A M I J C A ",
+      "corrupt_prompt": "A M I J O A M I J O A M I J O A M I J O A ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_train_0106",
+      "prompt": "U K Z U K Z U K Z U K Z U K ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "U",
+          "K",
+          "Z"
+        ]
+      },
+      "clean_prompt": "U K Z U K Z U K Z U K Z U K ",
+      "corrupt_prompt": "U K O U K O U K O U K O ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_train_0107",
+      "prompt": "Y P X N Y P ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 1,
+        "symbols": [
+          "Y",
+          "P",
+          "X",
+          "N"
+        ]
+      },
+      "clean_prompt": "Y P X N Y P ",
+      "corrupt_prompt": "Y P X O ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0108",
+      "prompt": "Q C L Q C L Q C L Q ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "Q",
+          "C",
+          "L"
+        ]
+      },
+      "clean_prompt": "Q C L Q C L Q C L Q ",
+      "corrupt_prompt": "Q C W Q C W Q C W Q C ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_train_0109",
+      "prompt": "O W A B U V O W A B U V O W A B U V O ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "O",
+          "W",
+          "A",
+          "B",
+          "U",
+          "V"
+        ]
+      },
+      "clean_prompt": "O W A B U V O W A B U V O W A B U V O ",
+      "corrupt_prompt": "O W A B U R O W A B U R O W A B U R O W A B U ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0110",
+      "prompt": "M G U M ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "M",
+          "G",
+          "U"
+        ]
+      },
+      "clean_prompt": "M G U M ",
+      "corrupt_prompt": "M G L M G ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0111",
+      "prompt": "F H ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "F",
+          "H"
+        ]
+      },
+      "clean_prompt": "F H ",
+      "corrupt_prompt": "F V F ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0112",
+      "prompt": "P X E I P X E I P X E I P X E I P ",
+      "target": "X",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "P",
+          "X",
+          "E",
+          "I"
+        ]
+      },
+      "clean_prompt": "P X E I P X E I P X E I P X E I P ",
+      "corrupt_prompt": "P X E Z P X E Z P X E Z P X E Z P X ",
+      "target_token": "X"
+    },
+    {
+      "task_id": "copying_train_0113",
+      "prompt": "C N L F C N L F C N L ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "C",
+          "N",
+          "L",
+          "F"
+        ]
+      },
+      "clean_prompt": "C N L F C N L F C N L ",
+      "corrupt_prompt": "C N L Q C N L Q C ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0114",
+      "prompt": "R U ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "R",
+          "U"
+        ]
+      },
+      "clean_prompt": "R U ",
+      "corrupt_prompt": "R C R ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_train_0115",
+      "prompt": "W F B W F B W F B W ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "W",
+          "F",
+          "B"
+        ]
+      },
+      "clean_prompt": "W F B W F B W F B W ",
+      "corrupt_prompt": "W F V W F V W F V W ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_train_0116",
+      "prompt": "E C L F S D E C L F S D E C L F S D ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "E",
+          "C",
+          "L",
+          "F",
+          "S",
+          "D"
+        ]
+      },
+      "clean_prompt": "E C L F S D E C L F S D E C L F S D ",
+      "corrupt_prompt": "E C L F S W E C L F S W E C L F S W E C L ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_train_0117",
+      "prompt": "D H W G Z D H W G Z D H W G Z D H W G Z D H ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "D",
+          "H",
+          "W",
+          "G",
+          "Z"
+        ]
+      },
+      "clean_prompt": "D H W G Z D H W G Z D H W G Z D H W G Z D H ",
+      "corrupt_prompt": "D H W G M D H W G M D H W G M D H W G M D H W ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_train_0118",
+      "prompt": "N G T J X N G T J X N ",
+      "target": "G",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "N",
+          "G",
+          "T",
+          "J",
+          "X"
+        ]
+      },
+      "clean_prompt": "N G T J X N G T J X N ",
+      "corrupt_prompt": "N G T J Q N G T J Q N ",
+      "target_token": "G"
+    },
+    {
+      "task_id": "copying_train_0119",
+      "prompt": "A J I H T A J I H T A J I ",
+      "target": "H",
+      "metadata": {
+        "family": "copying",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "J",
+          "I",
+          "H",
+          "T"
+        ]
+      },
+      "clean_prompt": "A J I H T A J I H T A J I ",
+      "corrupt_prompt": "A J I H L A J I H L A J ",
+      "target_token": "H"
+    },
+    {
+      "task_id": "copying_val_0120",
+      "prompt": "C A P E K M C A P E K M C A P E K M C A P E K M C A P E K ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "C",
+          "A",
+          "P",
+          "E",
+          "K",
+          "M"
+        ]
+      },
+      "clean_prompt": "C A P E K M C A P E K M C A P E K M C A P E K M C A P E K ",
+      "corrupt_prompt": "C A P E K J C A P E K J C A P E K J C A P E K J C A P E K ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_val_0121",
+      "prompt": "X T I C D X T I C D X T I C D X T I C D X T I C ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "X",
+          "T",
+          "I",
+          "C",
+          "D"
+        ]
+      },
+      "clean_prompt": "X T I C D X T I C D X T I C D X T I C D X T I C ",
+      "corrupt_prompt": "X T I C B X T I C B X T I C B X T I C B ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_val_0122",
+      "prompt": "P L T V P L T V ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "P",
+          "L",
+          "T",
+          "V"
+        ]
+      },
+      "clean_prompt": "P L T V P L T V ",
+      "corrupt_prompt": "P L T A P L T A P L ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_val_0123",
+      "prompt": "J M V L E R J M V L E R J M V L E R J M V L E R ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "M",
+          "V",
+          "L",
+          "E",
+          "R"
+        ]
+      },
+      "clean_prompt": "J M V L E R J M V L E R J M V L E R J M V L E R ",
+      "corrupt_prompt": "J M V L E Y J M V L E Y J M V L E Y J M V L E Y J ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_val_0124",
+      "prompt": "Q P K O Q P K O Q ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "Q",
+          "P",
+          "K",
+          "O"
+        ]
+      },
+      "clean_prompt": "Q P K O Q P K O Q ",
+      "corrupt_prompt": "Q P K C Q P K C Q P ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_val_0125",
+      "prompt": "E I D K B Z E I D K B Z E I D K B Z E I D K B Z E I D ",
+      "target": "K",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "E",
+          "I",
+          "D",
+          "K",
+          "B",
+          "Z"
+        ]
+      },
+      "clean_prompt": "E I D K B Z E I D K B Z E I D K B Z E I D K B Z E I D ",
+      "corrupt_prompt": "E I D K B N E I D K B N E I D K B N E I D K B N E I D K B ",
+      "target_token": "K"
+    },
+    {
+      "task_id": "copying_val_0126",
+      "prompt": "J I T Y J I T Y J I T Y J I T Y J I ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "J",
+          "I",
+          "T",
+          "Y"
+        ]
+      },
+      "clean_prompt": "J I T Y J I T Y J I T Y J I T Y J I ",
+      "corrupt_prompt": "J I T S J I T S J I T S J I T S J I ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_val_0127",
+      "prompt": "K X P Y E K X P Y E K X P Y ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "K",
+          "X",
+          "P",
+          "Y",
+          "E"
+        ]
+      },
+      "clean_prompt": "K X P Y E K X P Y E K X P Y ",
+      "corrupt_prompt": "K X P Y Z K X P Y Z K X P ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_val_0128",
+      "prompt": "E B E B ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "E",
+          "B"
+        ]
+      },
+      "clean_prompt": "E B E B ",
+      "corrupt_prompt": "E H E H ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_val_0129",
+      "prompt": "F W O N D F W O N D F W O N D F W O ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "F",
+          "W",
+          "O",
+          "N",
+          "D"
+        ]
+      },
+      "clean_prompt": "F W O N D F W O N D F W O N D F W O ",
+      "corrupt_prompt": "F W O N B F W O N B F W O N B F W O ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_val_0130",
+      "prompt": "O P D X O P D X O P D X O P D X O ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "O",
+          "P",
+          "D",
+          "X"
+        ]
+      },
+      "clean_prompt": "O P D X O P D X O P D X O P D X O ",
+      "corrupt_prompt": "O P D E O P D E O P D E O P D E O P ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_val_0131",
+      "prompt": "J F J F ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "J",
+          "F"
+        ]
+      },
+      "clean_prompt": "J F J F ",
+      "corrupt_prompt": "J Z J Z J ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_val_0132",
+      "prompt": "S A Q Z F N S A Q Z F N ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "S",
+          "A",
+          "Q",
+          "Z",
+          "F",
+          "N"
+        ]
+      },
+      "clean_prompt": "S A Q Z F N S A Q Z F N ",
+      "corrupt_prompt": "S A Q Z F J S A Q Z F J S A Q ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_val_0133",
+      "prompt": "A J A J A J ",
+      "target": "A",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "A",
+          "J"
+        ]
+      },
+      "clean_prompt": "A J A J A J ",
+      "corrupt_prompt": "A O A O A O A ",
+      "target_token": "A"
+    },
+    {
+      "task_id": "copying_val_0134",
+      "prompt": "K E A C O P K E A ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "K",
+          "E",
+          "A",
+          "C",
+          "O",
+          "P"
+        ]
+      },
+      "clean_prompt": "K E A C O P K E A ",
+      "corrupt_prompt": "K E A C O M K E A C ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_val_0135",
+      "prompt": "B U B U B U B ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "B",
+          "U"
+        ]
+      },
+      "clean_prompt": "B U B U B U B ",
+      "corrupt_prompt": "B L B L B L ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_val_0136",
+      "prompt": "Z U J Z ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "Z",
+          "U",
+          "J"
+        ]
+      },
+      "clean_prompt": "Z U J Z ",
+      "corrupt_prompt": "Z U B Z U ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_val_0137",
+      "prompt": "C M C M C M C M C ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "C",
+          "M"
+        ]
+      },
+      "clean_prompt": "C M C M C M C M C ",
+      "corrupt_prompt": "C G C G C G C G ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_val_0138",
+      "prompt": "A G F M Y A G F ",
+      "target": "M",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "A",
+          "G",
+          "F",
+          "M",
+          "Y"
+        ]
+      },
+      "clean_prompt": "A G F M Y A G F ",
+      "corrupt_prompt": "A G F M N A ",
+      "target_token": "M"
+    },
+    {
+      "task_id": "copying_val_0139",
+      "prompt": "P Z P Z P Z P ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "P",
+          "Z"
+        ]
+      },
+      "clean_prompt": "P Z P Z P Z P ",
+      "corrupt_prompt": "P Y P Y P Y P ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_val_0140",
+      "prompt": "L V D Z Q G L V D Z Q G L V D ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "L",
+          "V",
+          "D",
+          "Z",
+          "Q",
+          "G"
+        ]
+      },
+      "clean_prompt": "L V D Z Q G L V D Z Q G L V D ",
+      "corrupt_prompt": "L V D Z Q S L V D Z Q S L V D ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_val_0141",
+      "prompt": "S T N C Y S T N C Y S T N C Y S T N ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "S",
+          "T",
+          "N",
+          "C",
+          "Y"
+        ]
+      },
+      "clean_prompt": "S T N C Y S T N C Y S T N C Y S T N ",
+      "corrupt_prompt": "S T N C M S T N C M S T N C M S T N C ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_val_0142",
+      "prompt": "U N C U N C U N C U N C ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "U",
+          "N",
+          "C"
+        ]
+      },
+      "clean_prompt": "U N C U N C U N C U N C ",
+      "corrupt_prompt": "U N S U N S U N S U N S U ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_val_0143",
+      "prompt": "U V W E P U V W E P U V W E ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "U",
+          "V",
+          "W",
+          "E",
+          "P"
+        ]
+      },
+      "clean_prompt": "U V W E P U V W E P U V W E ",
+      "corrupt_prompt": "U V W E Z U V W E Z U V W E ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_val_0144",
+      "prompt": "O N O N O N ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "O",
+          "N"
+        ]
+      },
+      "clean_prompt": "O N O N O N ",
+      "corrupt_prompt": "O R O R O R O ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_val_0145",
+      "prompt": "V J H V J H V J ",
+      "target": "H",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "V",
+          "J",
+          "H"
+        ]
+      },
+      "clean_prompt": "V J H V J H V J ",
+      "corrupt_prompt": "V J P V J P V ",
+      "target_token": "H"
+    },
+    {
+      "task_id": "copying_val_0146",
+      "prompt": "R C B Q D W R C B ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "R",
+          "C",
+          "B",
+          "Q",
+          "D",
+          "W"
+        ]
+      },
+      "clean_prompt": "R C B Q D W R C B ",
+      "corrupt_prompt": "R C B Q D S ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_val_0147",
+      "prompt": "L I S C Y L I S C Y L I S C Y L I S C ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "L",
+          "I",
+          "S",
+          "C",
+          "Y"
+        ]
+      },
+      "clean_prompt": "L I S C Y L I S C Y L I S C Y L I S C ",
+      "corrupt_prompt": "L I S C A L I S C A L I S C A ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_val_0148",
+      "prompt": "Z F M B C Z F M B C Z F M ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "Z",
+          "F",
+          "M",
+          "B",
+          "C"
+        ]
+      },
+      "clean_prompt": "Z F M B C Z F M B C Z F M ",
+      "corrupt_prompt": "Z F M B N Z F M B N Z F ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_val_0149",
+      "prompt": "Y V O T I K Y V O T I K Y V O T I K Y V O T I K Y ",
+      "target": "V",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 4,
+        "symbols": [
+          "Y",
+          "V",
+          "O",
+          "T",
+          "I",
+          "K"
+        ]
+      },
+      "clean_prompt": "Y V O T I K Y V O T I K Y V O T I K Y V O T I K Y ",
+      "corrupt_prompt": "Y V O T I G Y V O T I G Y V O T I G Y V O T I G Y ",
+      "target_token": "V"
+    },
+    {
+      "task_id": "copying_val_0150",
+      "prompt": "V D V D V D V ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "V",
+          "D"
+        ]
+      },
+      "clean_prompt": "V D V D V D V ",
+      "corrupt_prompt": "V S V S V S ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_val_0151",
+      "prompt": "D A D A D A D A ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "D",
+          "A"
+        ]
+      },
+      "clean_prompt": "D A D A D A D A ",
+      "corrupt_prompt": "D W D W D W D W D ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_val_0152",
+      "prompt": "V X T P J V X T P J V X T P J V X T P J V X T P ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "V",
+          "X",
+          "T",
+          "P",
+          "J"
+        ]
+      },
+      "clean_prompt": "V X T P J V X T P J V X T P J V X T P J V X T P ",
+      "corrupt_prompt": "V X T P Y V X T P Y V X T P Y V X T P Y V X ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_val_0153",
+      "prompt": "C E A G D C E A G D C E A G D ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "C",
+          "E",
+          "A",
+          "G",
+          "D"
+        ]
+      },
+      "clean_prompt": "C E A G D C E A G D C E A G D ",
+      "corrupt_prompt": "C E A G L C E A G L C E A G L ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_val_0154",
+      "prompt": "U E H U E H U E H U E H U ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "U",
+          "E",
+          "H"
+        ]
+      },
+      "clean_prompt": "U E H U E H U E H U E H U ",
+      "corrupt_prompt": "U E X U E X U E X U E X U E ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_val_0155",
+      "prompt": "J Y O ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 1,
+        "symbols": [
+          "J",
+          "Y",
+          "O"
+        ]
+      },
+      "clean_prompt": "J Y O ",
+      "corrupt_prompt": "J Y R J ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_val_0156",
+      "prompt": "F E F ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "F",
+          "E"
+        ]
+      },
+      "clean_prompt": "F E F ",
+      "corrupt_prompt": "F R F ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_val_0157",
+      "prompt": "S H S H S H S H ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "S",
+          "H"
+        ]
+      },
+      "clean_prompt": "S H S H S H S H ",
+      "corrupt_prompt": "S K S K S K S K S ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_val_0158",
+      "prompt": "A D A D A D A ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "A",
+          "D"
+        ]
+      },
+      "clean_prompt": "A D A D A D A ",
+      "corrupt_prompt": "A P A P A P A ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_val_0159",
+      "prompt": "B P M Y Q S B P M Y Q S B P M Y Q S B P M Y Q ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "B",
+          "P",
+          "M",
+          "Y",
+          "Q",
+          "S"
+        ]
+      },
+      "clean_prompt": "B P M Y Q S B P M Y Q S B P M Y Q S B P M Y Q ",
+      "corrupt_prompt": "B P M Y Q Z B P M Y Q Z B P M Y Q Z B P M Y Q ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_test_0160",
+      "prompt": "W B Q A N W B Q A N W B Q A ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "W",
+          "B",
+          "Q",
+          "A",
+          "N"
+        ]
+      },
+      "clean_prompt": "W B Q A N W B Q A N W B Q A ",
+      "corrupt_prompt": "W B Q A M W B Q A M W B Q A ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_test_0161",
+      "prompt": "U N U N U N U ",
+      "target": "N",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "U",
+          "N"
+        ]
+      },
+      "clean_prompt": "U N U N U N U ",
+      "corrupt_prompt": "U D U D U D U ",
+      "target_token": "N"
+    },
+    {
+      "task_id": "copying_test_0162",
+      "prompt": "O W N A F J O W N A F J O W N A F J O W N A F ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "O",
+          "W",
+          "N",
+          "A",
+          "F",
+          "J"
+        ]
+      },
+      "clean_prompt": "O W N A F J O W N A F J O W N A F J O W N A F ",
+      "corrupt_prompt": "O W N A F I O W N A F I O W N A F I O W N ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_test_0163",
+      "prompt": "H Q S V H Q S V H Q S V H Q S V H Q ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "H",
+          "Q",
+          "S",
+          "V"
+        ]
+      },
+      "clean_prompt": "H Q S V H Q S V H Q S V H Q S V H Q ",
+      "corrupt_prompt": "H Q S X H Q S X H Q S X H Q S X H Q S ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_test_0164",
+      "prompt": "X W M X W M X W M X ",
+      "target": "W",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "X",
+          "W",
+          "M"
+        ]
+      },
+      "clean_prompt": "X W M X W M X W M X ",
+      "corrupt_prompt": "X W Y X W Y X W Y X W ",
+      "target_token": "W"
+    },
+    {
+      "task_id": "copying_test_0165",
+      "prompt": "Z F T G Z F T G Z F T G Z F T G Z F ",
+      "target": "T",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "Z",
+          "F",
+          "T",
+          "G"
+        ]
+      },
+      "clean_prompt": "Z F T G Z F T G Z F T G Z F T G Z F ",
+      "corrupt_prompt": "Z F T C Z F T C Z F T C Z F T C Z F T ",
+      "target_token": "T"
+    },
+    {
+      "task_id": "copying_test_0166",
+      "prompt": "G F T G F T G ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "G",
+          "F",
+          "T"
+        ]
+      },
+      "clean_prompt": "G F T G F T G ",
+      "corrupt_prompt": "G F D G F D G ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_test_0167",
+      "prompt": "H G R B A H G R B A H G R B A H G ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 3,
+        "symbols": [
+          "H",
+          "G",
+          "R",
+          "B",
+          "A"
+        ]
+      },
+      "clean_prompt": "H G R B A H G R B A H G R B A H G ",
+      "corrupt_prompt": "H G R B M H G R B M H G R B M H G ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_test_0168",
+      "prompt": "Q B Z Q B Z ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "Q",
+          "B",
+          "Z"
+        ]
+      },
+      "clean_prompt": "Q B Z Q B Z ",
+      "corrupt_prompt": "Q B L Q B L Q ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_test_0169",
+      "prompt": "D R D R ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 2,
+        "symbols": [
+          "D",
+          "R"
+        ]
+      },
+      "clean_prompt": "D R D R ",
+      "corrupt_prompt": "D Q D Q D ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0170",
+      "prompt": "Y B R I Y B R I Y B R I Y ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "Y",
+          "B",
+          "R",
+          "I"
+        ]
+      },
+      "clean_prompt": "Y B R I Y B R I Y B R I Y ",
+      "corrupt_prompt": "Y B R T Y B R T Y B R T ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_test_0171",
+      "prompt": "Z O Z O Z O Z O ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "Z",
+          "O"
+        ]
+      },
+      "clean_prompt": "Z O Z O Z O Z O ",
+      "corrupt_prompt": "Z D Z D Z D Z D ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_test_0172",
+      "prompt": "Q D F U Y G Q D ",
+      "target": "F",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 1,
+        "symbols": [
+          "Q",
+          "D",
+          "F",
+          "U",
+          "Y",
+          "G"
+        ]
+      },
+      "clean_prompt": "Q D F U Y G Q D ",
+      "corrupt_prompt": "Q D F U Y I Q D F U Y ",
+      "target_token": "F"
+    },
+    {
+      "task_id": "copying_test_0173",
+      "prompt": "Y Q P X Y Q P X Y Q P X Y Q P X ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "Y",
+          "Q",
+          "P",
+          "X"
+        ]
+      },
+      "clean_prompt": "Y Q P X Y Q P X Y Q P X Y Q P X ",
+      "corrupt_prompt": "Y Q P E Y Q P E Y Q P E Y Q P E Y Q ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_test_0174",
+      "prompt": "D G O N D G O N ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "D",
+          "G",
+          "O",
+          "N"
+        ]
+      },
+      "clean_prompt": "D G O N D G O N ",
+      "corrupt_prompt": "D G O J D G O J D G O ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0175",
+      "prompt": "Q F C I Q F C I Q F C I Q F ",
+      "target": "C",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 3,
+        "symbols": [
+          "Q",
+          "F",
+          "C",
+          "I"
+        ]
+      },
+      "clean_prompt": "Q F C I Q F C I Q F C I Q F ",
+      "corrupt_prompt": "Q F C R Q F C R Q F C R Q F ",
+      "target_token": "C"
+    },
+    {
+      "task_id": "copying_test_0176",
+      "prompt": "Y Q N Y Q N ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "Y",
+          "Q",
+          "N"
+        ]
+      },
+      "clean_prompt": "Y Q N Y Q N ",
+      "corrupt_prompt": "Y Q E Y Q E Y ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_test_0177",
+      "prompt": "O Q Z V L O Q Z V L O Q Z V L O Q Z V L ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "O",
+          "Q",
+          "Z",
+          "V",
+          "L"
+        ]
+      },
+      "clean_prompt": "O Q Z V L O Q Z V L O Q Z V L O Q Z V L ",
+      "corrupt_prompt": "O Q Z V R O Q Z V R O Q Z V R O Q Z V R O ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_test_0178",
+      "prompt": "C K C ",
+      "target": "K",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "C",
+          "K"
+        ]
+      },
+      "clean_prompt": "C K C ",
+      "corrupt_prompt": "C O ",
+      "target_token": "K"
+    },
+    {
+      "task_id": "copying_test_0179",
+      "prompt": "M Y B V U M ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "M",
+          "Y",
+          "B",
+          "V",
+          "U"
+        ]
+      },
+      "clean_prompt": "M Y B V U M ",
+      "corrupt_prompt": "M Y B V W ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_test_0180",
+      "prompt": "N M V W R J N M V W R J N M V W R J N M V W R ",
+      "target": "J",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "N",
+          "M",
+          "V",
+          "W",
+          "R",
+          "J"
+        ]
+      },
+      "clean_prompt": "N M V W R J N M V W R J N M V W R J N M V W R ",
+      "corrupt_prompt": "N M V W R L N M V W R L N M V W R L N M ",
+      "target_token": "J"
+    },
+    {
+      "task_id": "copying_test_0181",
+      "prompt": "Q T Q T Q T ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 3,
+        "symbols": [
+          "Q",
+          "T"
+        ]
+      },
+      "clean_prompt": "Q T Q T Q T ",
+      "corrupt_prompt": "Q Y Q Y Q Y Q ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_test_0182",
+      "prompt": "R T Z U O R T Z U O R T ",
+      "target": "Z",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 2,
+        "symbols": [
+          "R",
+          "T",
+          "Z",
+          "U",
+          "O"
+        ]
+      },
+      "clean_prompt": "R T Z U O R T Z U O R T ",
+      "corrupt_prompt": "R T Z U Y R T Z U Y R T Z ",
+      "target_token": "Z"
+    },
+    {
+      "task_id": "copying_test_0183",
+      "prompt": "C B R C B R C B R C ",
+      "target": "B",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "C",
+          "B",
+          "R"
+        ]
+      },
+      "clean_prompt": "C B R C B R C B R C ",
+      "corrupt_prompt": "C B O C B O C B O C B ",
+      "target_token": "B"
+    },
+    {
+      "task_id": "copying_test_0184",
+      "prompt": "G C Q G C Q G C Q G C ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "G",
+          "C",
+          "Q"
+        ]
+      },
+      "clean_prompt": "G C Q G C Q G C Q G C ",
+      "corrupt_prompt": "G C L G C L G C L G C ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_test_0185",
+      "prompt": "A Z R S A Z R S A Z ",
+      "target": "R",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 2,
+        "symbols": [
+          "A",
+          "Z",
+          "R",
+          "S"
+        ]
+      },
+      "clean_prompt": "A Z R S A Z R S A Z ",
+      "corrupt_prompt": "A Z R I A Z R I A Z ",
+      "target_token": "R"
+    },
+    {
+      "task_id": "copying_test_0186",
+      "prompt": "X B L I U X B L I ",
+      "target": "U",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "X",
+          "B",
+          "L",
+          "I",
+          "U"
+        ]
+      },
+      "clean_prompt": "X B L I U X B L I ",
+      "corrupt_prompt": "X B L I O ",
+      "target_token": "U"
+    },
+    {
+      "task_id": "copying_test_0187",
+      "prompt": "O J ",
+      "target": "O",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 1,
+        "symbols": [
+          "O",
+          "J"
+        ]
+      },
+      "clean_prompt": "O J ",
+      "corrupt_prompt": "O Q O ",
+      "target_token": "O"
+    },
+    {
+      "task_id": "copying_test_0188",
+      "prompt": "L J V L J V L J ",
+      "target": "V",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 2,
+        "symbols": [
+          "L",
+          "J",
+          "V"
+        ]
+      },
+      "clean_prompt": "L J V L J V L J ",
+      "corrupt_prompt": "L J U L J U L J ",
+      "target_token": "V"
+    },
+    {
+      "task_id": "copying_test_0189",
+      "prompt": "Q X H Q X H Q X H Q X H ",
+      "target": "Q",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "Q",
+          "X",
+          "H"
+        ]
+      },
+      "clean_prompt": "Q X H Q X H Q X H Q X H ",
+      "corrupt_prompt": "Q X L Q X L Q X L Q X L Q X ",
+      "target_token": "Q"
+    },
+    {
+      "task_id": "copying_test_0190",
+      "prompt": "Y L O D E N Y L O D E N Y L O ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 2,
+        "symbols": [
+          "Y",
+          "L",
+          "O",
+          "D",
+          "E",
+          "N"
+        ]
+      },
+      "clean_prompt": "Y L O D E N Y L O D E N Y L O ",
+      "corrupt_prompt": "Y L O D E C Y L O D E C ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0191",
+      "prompt": "E P E P E P E P ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 2,
+        "repeats": 4,
+        "symbols": [
+          "E",
+          "P"
+        ]
+      },
+      "clean_prompt": "E P E P E P E P ",
+      "corrupt_prompt": "E Q E Q E Q E Q ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_test_0192",
+      "prompt": "S R Q Y S R Q Y S R Q Y S R Q Y S R Q ",
+      "target": "Y",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 4,
+        "repeats": 4,
+        "symbols": [
+          "S",
+          "R",
+          "Q",
+          "Y"
+        ]
+      },
+      "clean_prompt": "S R Q Y S R Q Y S R Q Y S R Q Y S R Q ",
+      "corrupt_prompt": "S R Q I S R Q I S R Q I S R Q I S R Q ",
+      "target_token": "Y"
+    },
+    {
+      "task_id": "copying_test_0193",
+      "prompt": "W P X N F W P X N F W P X N F W P X N F W ",
+      "target": "P",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "W",
+          "P",
+          "X",
+          "N",
+          "F"
+        ]
+      },
+      "clean_prompt": "W P X N F W P X N F W P X N F W P X N F W ",
+      "corrupt_prompt": "W P X N T W P X N T W P X N T W P X N T W ",
+      "target_token": "P"
+    },
+    {
+      "task_id": "copying_test_0194",
+      "prompt": "E W Q D G E W Q D G E W Q D G E W Q D G E W Q ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "E",
+          "W",
+          "Q",
+          "D",
+          "G"
+        ]
+      },
+      "clean_prompt": "E W Q D G E W Q D G E W Q D G E W Q D G E W Q ",
+      "corrupt_prompt": "E W Q D T E W Q D T E W Q D T E W Q D T ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0195",
+      "prompt": "D T N D T N D T N ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 3,
+        "symbols": [
+          "D",
+          "T",
+          "N"
+        ]
+      },
+      "clean_prompt": "D T N D T N D T N ",
+      "corrupt_prompt": "D T E D T E D T E D ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0196",
+      "prompt": "B Q E D L J B Q E D L J B Q E D L J B Q ",
+      "target": "E",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 6,
+        "repeats": 3,
+        "symbols": [
+          "B",
+          "Q",
+          "E",
+          "D",
+          "L",
+          "J"
+        ]
+      },
+      "clean_prompt": "B Q E D L J B Q E D L J B Q E D L J B Q ",
+      "corrupt_prompt": "B Q E D L O B Q E D L O B Q E D L O B Q ",
+      "target_token": "E"
+    },
+    {
+      "task_id": "copying_test_0197",
+      "prompt": "Z E S N B Z E ",
+      "target": "S",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 1,
+        "symbols": [
+          "Z",
+          "E",
+          "S",
+          "N",
+          "B"
+        ]
+      },
+      "clean_prompt": "Z E S N B Z E ",
+      "corrupt_prompt": "Z E S N L Z ",
+      "target_token": "S"
+    },
+    {
+      "task_id": "copying_test_0198",
+      "prompt": "A D R A D R A D R A D R A ",
+      "target": "D",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "seq_len": 3,
+        "repeats": 4,
+        "symbols": [
+          "A",
+          "D",
+          "R"
+        ]
+      },
+      "clean_prompt": "A D R A D R A D R A D R A ",
+      "corrupt_prompt": "A D E A D E A D E A D E ",
+      "target_token": "D"
+    },
+    {
+      "task_id": "copying_test_0199",
+      "prompt": "S J O K Z S J O K Z S J O K Z S J O K Z S J O ",
+      "target": "K",
+      "metadata": {
+        "family": "copying",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "seq_len": 5,
+        "repeats": 4,
+        "symbols": [
+          "S",
+          "J",
+          "O",
+          "K",
+          "Z"
+        ]
+      },
+      "clean_prompt": "S J O K Z S J O K Z S J O K Z S J O K Z S J O ",
+      "corrupt_prompt": "S J O K T S J O K T S J O K T S J O K T S J O K ",
+      "target_token": "K"
+    }
+  ]
+}

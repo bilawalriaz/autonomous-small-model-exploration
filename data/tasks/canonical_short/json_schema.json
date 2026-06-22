@@ -1,0 +1,2781 @@
+{
+  "family": "json_schema",
+  "num_examples": 200,
+  "examples": [
+    {
+      "task_id": "json_schema_train_0000",
+      "prompt": "Return valid JSON: name=Diana, age=19\n",
+      "target": "{\"name\":\"Diana\",\"age\":19}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Diana, age=19\n",
+      "corrupt_prompt": "{\"name\": \"Diana\", \"age\": 19}",
+      "target_token": "{\"name\":\"Diana\",\"age\":19}"
+    },
+    {
+      "task_id": "json_schema_train_0001",
+      "prompt": "JSON with keys color and count. color=blue, count=4\n",
+      "target": "{\"color\":\"blue\",\"count\":4}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=blue, count=4\n",
+      "corrupt_prompt": "{color: blue, count: 4}",
+      "target_token": "{\"color\":\"blue\",\"count\":4}"
+    },
+    {
+      "task_id": "json_schema_train_0002",
+      "prompt": "Return this as a JSON array: 91, 83, 89\n",
+      "target": "[91,83,89]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 91, 83, 89\n",
+      "corrupt_prompt": "[91, 83, 89]",
+      "target_token": "[91,83,89]"
+    },
+    {
+      "task_id": "json_schema_train_0003",
+      "prompt": "{\"city\": \"Rome\", \"pop\": 2679638}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Rome\", \"pop\": 2679638}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Rome\", pop: 7091293}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0004",
+      "prompt": "Fix this JSON: {\"name\": \"Kate\" \"age\": 35}\n",
+      "target": "{\"name\":\"Kate\",\"age\":35}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0005",
+      "prompt": "Return nested JSON with user.name=Diana and user.score=45\n",
+      "target": "{\"user\":{\"name\":\"Diana\",\"score\":45}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Diana and user.score=45\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Diana\"},\"score\":45}",
+      "target_token": "{\"user\":{\"name\":\"Diana\",\"score\":45}}"
+    },
+    {
+      "task_id": "json_schema_train_0006",
+      "prompt": "JSON array of names: Mia, Charlie\n",
+      "target": "[\"Mia\",\"Charlie\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0007",
+      "prompt": "Is this valid JSON? {\"x\": 9}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0008",
+      "prompt": "Return valid JSON: name=Hank, age=67\n",
+      "target": "{\"name\":\"Hank\",\"age\":67}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Hank, age=67\n",
+      "corrupt_prompt": "{\"name\": \"Hank\", \"age\": 67}",
+      "target_token": "{\"name\":\"Hank\",\"age\":67}"
+    },
+    {
+      "task_id": "json_schema_train_0009",
+      "prompt": "JSON with keys color and count. color=gray, count=20\n",
+      "target": "{\"color\":\"gray\",\"count\":20}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=20\n",
+      "corrupt_prompt": "{color: gray, count: 20}",
+      "target_token": "{\"color\":\"gray\",\"count\":20}"
+    },
+    {
+      "task_id": "json_schema_train_0010",
+      "prompt": "Return this as a JSON array: 68, 93, 31\n",
+      "target": "[68,93,31]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 68, 93, 31\n",
+      "corrupt_prompt": "[68, 93, 31]",
+      "target_token": "[68,93,31]"
+    },
+    {
+      "task_id": "json_schema_train_0011",
+      "prompt": "{\"city\": \"London\", \"pop\": 5441561}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 5441561}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 939483}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0012",
+      "prompt": "Fix this JSON: {\"name\": \"Hank\" \"age\": 70}\n",
+      "target": "{\"name\":\"Hank\",\"age\":70}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0013",
+      "prompt": "Return nested JSON with user.name=Charlie and user.score=83\n",
+      "target": "{\"user\":{\"name\":\"Charlie\",\"score\":83}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Charlie and user.score=83\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Charlie\"},\"score\":83}",
+      "target_token": "{\"user\":{\"name\":\"Charlie\",\"score\":83}}"
+    },
+    {
+      "task_id": "json_schema_train_0014",
+      "prompt": "JSON array of names: Hank, Ivy\n",
+      "target": "[\"Hank\",\"Ivy\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0015",
+      "prompt": "Is this valid JSON? {\"x\": 18}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0016",
+      "prompt": "Return valid JSON: name=Pete, age=23\n",
+      "target": "{\"name\":\"Pete\",\"age\":23}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Pete, age=23\n",
+      "corrupt_prompt": "{\"name\": \"Pete\", \"age\": 23}",
+      "target_token": "{\"name\":\"Pete\",\"age\":23}"
+    },
+    {
+      "task_id": "json_schema_train_0017",
+      "prompt": "JSON with keys color and count. color=brown, count=49\n",
+      "target": "{\"color\":\"brown\",\"count\":49}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=brown, count=49\n",
+      "corrupt_prompt": "{color: brown, count: 49}",
+      "target_token": "{\"color\":\"brown\",\"count\":49}"
+    },
+    {
+      "task_id": "json_schema_train_0018",
+      "prompt": "Return this as a JSON array: 87, 68\n",
+      "target": "[87,68]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 87, 68\n",
+      "corrupt_prompt": "[87, 68]",
+      "target_token": "[87,68]"
+    },
+    {
+      "task_id": "json_schema_train_0019",
+      "prompt": "{\"city\": \"Oslo\", \"pop\": 7613220}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Oslo\", \"pop\": 7613220}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Oslo\", pop: 55447}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0020",
+      "prompt": "Fix this JSON: {\"name\": \"Ivy\" \"age\": 80}\n",
+      "target": "{\"name\":\"Ivy\",\"age\":80}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0021",
+      "prompt": "Return nested JSON with user.name=Grace and user.score=69\n",
+      "target": "{\"user\":{\"name\":\"Grace\",\"score\":69}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Grace and user.score=69\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Grace\"},\"score\":69}",
+      "target_token": "{\"user\":{\"name\":\"Grace\",\"score\":69}}"
+    },
+    {
+      "task_id": "json_schema_train_0022",
+      "prompt": "JSON array of names: Leo, Jack\n",
+      "target": "[\"Leo\",\"Jack\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0023",
+      "prompt": "Is this valid JSON? {\"x\": 63}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0024",
+      "prompt": "Return valid JSON: name=Eve, age=26\n",
+      "target": "{\"name\":\"Eve\",\"age\":26}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Eve, age=26\n",
+      "corrupt_prompt": "{\"name\": \"Eve\", \"age\": 26}",
+      "target_token": "{\"name\":\"Eve\",\"age\":26}"
+    },
+    {
+      "task_id": "json_schema_train_0025",
+      "prompt": "JSON with keys color and count. color=white, count=91\n",
+      "target": "{\"color\":\"white\",\"count\":91}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=white, count=91\n",
+      "corrupt_prompt": "{color: white, count: 91}",
+      "target_token": "{\"color\":\"white\",\"count\":91}"
+    },
+    {
+      "task_id": "json_schema_train_0026",
+      "prompt": "Return this as a JSON array: 15, 31, 28, 8, 43\n",
+      "target": "[15,31,28,8,43]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 15, 31, 28, 8, 43\n",
+      "corrupt_prompt": "[15, 31, 28, 8, 43]",
+      "target_token": "[15,31,28,8,43]"
+    },
+    {
+      "task_id": "json_schema_train_0027",
+      "prompt": "{\"city\": \"Paris\", \"pop\": 988737}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Paris\", \"pop\": 988737}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Paris\", pop: 3842005}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0028",
+      "prompt": "Fix this JSON: {\"name\": \"Charlie\" \"age\": 75}\n",
+      "target": "{\"name\":\"Charlie\",\"age\":75}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0029",
+      "prompt": "Return nested JSON with user.name=Hank and user.score=69\n",
+      "target": "{\"user\":{\"name\":\"Hank\",\"score\":69}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Hank and user.score=69\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Hank\"},\"score\":69}",
+      "target_token": "{\"user\":{\"name\":\"Hank\",\"score\":69}}"
+    },
+    {
+      "task_id": "json_schema_train_0030",
+      "prompt": "JSON array of names: Diana, Noah\n",
+      "target": "[\"Diana\",\"Noah\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0031",
+      "prompt": "Is this valid JSON? {\"x\": 84}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0032",
+      "prompt": "Return valid JSON: name=Diana, age=21\n",
+      "target": "{\"name\":\"Diana\",\"age\":21}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Diana, age=21\n",
+      "corrupt_prompt": "{\"name\": \"Diana\", \"age\": 21}",
+      "target_token": "{\"name\":\"Diana\",\"age\":21}"
+    },
+    {
+      "task_id": "json_schema_train_0033",
+      "prompt": "JSON with keys color and count. color=gray, count=54\n",
+      "target": "{\"color\":\"gray\",\"count\":54}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=54\n",
+      "corrupt_prompt": "{color: gray, count: 54}",
+      "target_token": "{\"color\":\"gray\",\"count\":54}"
+    },
+    {
+      "task_id": "json_schema_train_0034",
+      "prompt": "Return this as a JSON array: 6, 83\n",
+      "target": "[6,83]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 6, 83\n",
+      "corrupt_prompt": "[6, 83]",
+      "target_token": "[6,83]"
+    },
+    {
+      "task_id": "json_schema_train_0035",
+      "prompt": "{\"city\": \"London\", \"pop\": 6819496}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 6819496}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 8148706}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0036",
+      "prompt": "Fix this JSON: {\"name\": \"Pete\" \"age\": 31}\n",
+      "target": "{\"name\":\"Pete\",\"age\":31}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0037",
+      "prompt": "Return nested JSON with user.name=Alice and user.score=36\n",
+      "target": "{\"user\":{\"name\":\"Alice\",\"score\":36}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Alice and user.score=36\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Alice\"},\"score\":36}",
+      "target_token": "{\"user\":{\"name\":\"Alice\",\"score\":36}}"
+    },
+    {
+      "task_id": "json_schema_train_0038",
+      "prompt": "JSON array of names: Bob, Kate\n",
+      "target": "[\"Bob\",\"Kate\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0039",
+      "prompt": "Is this valid JSON? {\"x\": 66}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0040",
+      "prompt": "Return valid JSON: name=Frank, age=22\n",
+      "target": "{\"name\":\"Frank\",\"age\":22}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Frank, age=22\n",
+      "corrupt_prompt": "{\"name\": \"Frank\", \"age\": 22}",
+      "target_token": "{\"name\":\"Frank\",\"age\":22}"
+    },
+    {
+      "task_id": "json_schema_train_0041",
+      "prompt": "JSON with keys color and count. color=red, count=53\n",
+      "target": "{\"color\":\"red\",\"count\":53}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=red, count=53\n",
+      "corrupt_prompt": "{color: red, count: 53}",
+      "target_token": "{\"color\":\"red\",\"count\":53}"
+    },
+    {
+      "task_id": "json_schema_train_0042",
+      "prompt": "Return this as a JSON array: 30, 33, 50, 16\n",
+      "target": "[30,33,50,16]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 30, 33, 50, 16\n",
+      "corrupt_prompt": "[30, 33, 50, 16]",
+      "target_token": "[30,33,50,16]"
+    },
+    {
+      "task_id": "json_schema_train_0043",
+      "prompt": "{\"city\": \"Tokyo\", \"pop\": 7689755}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Tokyo\", \"pop\": 7689755}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Tokyo\", pop: 9446465}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0044",
+      "prompt": "Fix this JSON: {\"name\": \"Diana\" \"age\": 22}\n",
+      "target": "{\"name\":\"Diana\",\"age\":22}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0045",
+      "prompt": "Return nested JSON with user.name=Charlie and user.score=36\n",
+      "target": "{\"user\":{\"name\":\"Charlie\",\"score\":36}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Charlie and user.score=36\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Charlie\"},\"score\":36}",
+      "target_token": "{\"user\":{\"name\":\"Charlie\",\"score\":36}}"
+    },
+    {
+      "task_id": "json_schema_train_0046",
+      "prompt": "JSON array of names: Jack, Diana, Eve, Ivy\n",
+      "target": "[\"Jack\",\"Diana\",\"Eve\",\"Ivy\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0047",
+      "prompt": "Is this valid JSON? {\"x\": 78}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0048",
+      "prompt": "Return valid JSON: name=Kate, age=31\n",
+      "target": "{\"name\":\"Kate\",\"age\":31}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Kate, age=31\n",
+      "corrupt_prompt": "{\"name\": \"Kate\", \"age\": 31}",
+      "target_token": "{\"name\":\"Kate\",\"age\":31}"
+    },
+    {
+      "task_id": "json_schema_train_0049",
+      "prompt": "JSON with keys color and count. color=brown, count=5\n",
+      "target": "{\"color\":\"brown\",\"count\":5}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=brown, count=5\n",
+      "corrupt_prompt": "{color: brown, count: 5}",
+      "target_token": "{\"color\":\"brown\",\"count\":5}"
+    },
+    {
+      "task_id": "json_schema_train_0050",
+      "prompt": "Return this as a JSON array: 70, 90, 54, 71, 1\n",
+      "target": "[70,90,54,71,1]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 70, 90, 54, 71, 1\n",
+      "corrupt_prompt": "[70, 90, 54, 71, 1]",
+      "target_token": "[70,90,54,71,1]"
+    },
+    {
+      "task_id": "json_schema_train_0051",
+      "prompt": "{\"city\": \"Paris\", \"pop\": 9773888}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Paris\", \"pop\": 9773888}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Paris\", pop: 9270832}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0052",
+      "prompt": "Fix this JSON: {\"name\": \"Eve\" \"age\": 45}\n",
+      "target": "{\"name\":\"Eve\",\"age\":45}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0053",
+      "prompt": "Return nested JSON with user.name=Bob and user.score=87\n",
+      "target": "{\"user\":{\"name\":\"Bob\",\"score\":87}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Bob and user.score=87\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Bob\"},\"score\":87}",
+      "target_token": "{\"user\":{\"name\":\"Bob\",\"score\":87}}"
+    },
+    {
+      "task_id": "json_schema_train_0054",
+      "prompt": "JSON array of names: Frank, Noah\n",
+      "target": "[\"Frank\",\"Noah\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0055",
+      "prompt": "Is this valid JSON? {\"x\": 95}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0056",
+      "prompt": "Return valid JSON: name=Ivy, age=28\n",
+      "target": "{\"name\":\"Ivy\",\"age\":28}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Ivy, age=28\n",
+      "corrupt_prompt": "{\"name\": \"Ivy\", \"age\": 28}",
+      "target_token": "{\"name\":\"Ivy\",\"age\":28}"
+    },
+    {
+      "task_id": "json_schema_train_0057",
+      "prompt": "JSON with keys color and count. color=gray, count=39\n",
+      "target": "{\"color\":\"gray\",\"count\":39}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=39\n",
+      "corrupt_prompt": "{color: gray, count: 39}",
+      "target_token": "{\"color\":\"gray\",\"count\":39}"
+    },
+    {
+      "task_id": "json_schema_train_0058",
+      "prompt": "Return this as a JSON array: 8, 98, 35, 44\n",
+      "target": "[8,98,35,44]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 8, 98, 35, 44\n",
+      "corrupt_prompt": "[8, 98, 35, 44]",
+      "target_token": "[8,98,35,44]"
+    },
+    {
+      "task_id": "json_schema_train_0059",
+      "prompt": "{\"city\": \"Paris\", \"pop\": 4383463}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Paris\", \"pop\": 4383463}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Paris\", pop: 2996870}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0060",
+      "prompt": "Fix this JSON: {\"name\": \"Ivy\" \"age\": 20}\n",
+      "target": "{\"name\":\"Ivy\",\"age\":20}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0061",
+      "prompt": "Return nested JSON with user.name=Kate and user.score=73\n",
+      "target": "{\"user\":{\"name\":\"Kate\",\"score\":73}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Kate and user.score=73\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Kate\"},\"score\":73}",
+      "target_token": "{\"user\":{\"name\":\"Kate\",\"score\":73}}"
+    },
+    {
+      "task_id": "json_schema_train_0062",
+      "prompt": "JSON array of names: Grace, Leo, Noah, Charlie\n",
+      "target": "[\"Grace\",\"Leo\",\"Noah\",\"Charlie\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0063",
+      "prompt": "Is this valid JSON? {\"x\": 39}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0064",
+      "prompt": "Return valid JSON: name=Jack, age=60\n",
+      "target": "{\"name\":\"Jack\",\"age\":60}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Jack, age=60\n",
+      "corrupt_prompt": "{\"name\": \"Jack\", \"age\": 60}",
+      "target_token": "{\"name\":\"Jack\",\"age\":60}"
+    },
+    {
+      "task_id": "json_schema_train_0065",
+      "prompt": "JSON with keys color and count. color=green, count=53\n",
+      "target": "{\"color\":\"green\",\"count\":53}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=green, count=53\n",
+      "corrupt_prompt": "{color: green, count: 53}",
+      "target_token": "{\"color\":\"green\",\"count\":53}"
+    },
+    {
+      "task_id": "json_schema_train_0066",
+      "prompt": "Return this as a JSON array: 38, 36\n",
+      "target": "[38,36]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 38, 36\n",
+      "corrupt_prompt": "[38, 36]",
+      "target_token": "[38,36]"
+    },
+    {
+      "task_id": "json_schema_train_0067",
+      "prompt": "{\"city\": \"Lima\", \"pop\": 7419210}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Lima\", \"pop\": 7419210}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Lima\", pop: 3586314}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0068",
+      "prompt": "Fix this JSON: {\"name\": \"Pete\" \"age\": 68}\n",
+      "target": "{\"name\":\"Pete\",\"age\":68}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0069",
+      "prompt": "Return nested JSON with user.name=Kate and user.score=28\n",
+      "target": "{\"user\":{\"name\":\"Kate\",\"score\":28}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Kate and user.score=28\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Kate\"},\"score\":28}",
+      "target_token": "{\"user\":{\"name\":\"Kate\",\"score\":28}}"
+    },
+    {
+      "task_id": "json_schema_train_0070",
+      "prompt": "JSON array of names: Charlie, Olivia, Noah, Grace\n",
+      "target": "[\"Charlie\",\"Olivia\",\"Noah\",\"Grace\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0071",
+      "prompt": "Is this valid JSON? {\"x\": 84}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0072",
+      "prompt": "Return valid JSON: name=Alice, age=75\n",
+      "target": "{\"name\":\"Alice\",\"age\":75}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Alice, age=75\n",
+      "corrupt_prompt": "{\"name\": \"Alice\", \"age\": 75}",
+      "target_token": "{\"name\":\"Alice\",\"age\":75}"
+    },
+    {
+      "task_id": "json_schema_train_0073",
+      "prompt": "JSON with keys color and count. color=white, count=58\n",
+      "target": "{\"color\":\"white\",\"count\":58}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=white, count=58\n",
+      "corrupt_prompt": "{color: white, count: 58}",
+      "target_token": "{\"color\":\"white\",\"count\":58}"
+    },
+    {
+      "task_id": "json_schema_train_0074",
+      "prompt": "Return this as a JSON array: 70, 57, 20, 95, 60\n",
+      "target": "[70,57,20,95,60]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 70, 57, 20, 95, 60\n",
+      "corrupt_prompt": "[70, 57, 20, 95, 60]",
+      "target_token": "[70,57,20,95,60]"
+    },
+    {
+      "task_id": "json_schema_train_0075",
+      "prompt": "{\"city\": \"Rome\", \"pop\": 8746959}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Rome\", \"pop\": 8746959}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Rome\", pop: 8131188}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0076",
+      "prompt": "Fix this JSON: {\"name\": \"Hank\" \"age\": 35}\n",
+      "target": "{\"name\":\"Hank\",\"age\":35}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0077",
+      "prompt": "Return nested JSON with user.name=Hank and user.score=69\n",
+      "target": "{\"user\":{\"name\":\"Hank\",\"score\":69}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Hank and user.score=69\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Hank\"},\"score\":69}",
+      "target_token": "{\"user\":{\"name\":\"Hank\",\"score\":69}}"
+    },
+    {
+      "task_id": "json_schema_train_0078",
+      "prompt": "JSON array of names: Grace, Charlie\n",
+      "target": "[\"Grace\",\"Charlie\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0079",
+      "prompt": "Is this valid JSON? {\"x\": 27}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0080",
+      "prompt": "Return valid JSON: name=Mia, age=75\n",
+      "target": "{\"name\":\"Mia\",\"age\":75}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Mia, age=75\n",
+      "corrupt_prompt": "{\"name\": \"Mia\", \"age\": 75}",
+      "target_token": "{\"name\":\"Mia\",\"age\":75}"
+    },
+    {
+      "task_id": "json_schema_train_0081",
+      "prompt": "JSON with keys color and count. color=brown, count=68\n",
+      "target": "{\"color\":\"brown\",\"count\":68}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=brown, count=68\n",
+      "corrupt_prompt": "{color: brown, count: 68}",
+      "target_token": "{\"color\":\"brown\",\"count\":68}"
+    },
+    {
+      "task_id": "json_schema_train_0082",
+      "prompt": "Return this as a JSON array: 3, 49, 43, 85, 86\n",
+      "target": "[3,49,43,85,86]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 3, 49, 43, 85, 86\n",
+      "corrupt_prompt": "[3, 49, 43, 85, 86]",
+      "target_token": "[3,49,43,85,86]"
+    },
+    {
+      "task_id": "json_schema_train_0083",
+      "prompt": "{\"city\": \"Berlin\", \"pop\": 8962107}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Berlin\", \"pop\": 8962107}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Berlin\", pop: 453421}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0084",
+      "prompt": "Fix this JSON: {\"name\": \"Mia\" \"age\": 55}\n",
+      "target": "{\"name\":\"Mia\",\"age\":55}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0085",
+      "prompt": "Return nested JSON with user.name=Eve and user.score=6\n",
+      "target": "{\"user\":{\"name\":\"Eve\",\"score\":6}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Eve and user.score=6\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Eve\"},\"score\":6}",
+      "target_token": "{\"user\":{\"name\":\"Eve\",\"score\":6}}"
+    },
+    {
+      "task_id": "json_schema_train_0086",
+      "prompt": "JSON array of names: Mia, Ivy, Noah\n",
+      "target": "[\"Mia\",\"Ivy\",\"Noah\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0087",
+      "prompt": "Is this valid JSON? {\"x\": 29}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0088",
+      "prompt": "Return valid JSON: name=Charlie, age=67\n",
+      "target": "{\"name\":\"Charlie\",\"age\":67}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Charlie, age=67\n",
+      "corrupt_prompt": "{\"name\": \"Charlie\", \"age\": 67}",
+      "target_token": "{\"name\":\"Charlie\",\"age\":67}"
+    },
+    {
+      "task_id": "json_schema_train_0089",
+      "prompt": "JSON with keys color and count. color=green, count=16\n",
+      "target": "{\"color\":\"green\",\"count\":16}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=green, count=16\n",
+      "corrupt_prompt": "{color: green, count: 16}",
+      "target_token": "{\"color\":\"green\",\"count\":16}"
+    },
+    {
+      "task_id": "json_schema_train_0090",
+      "prompt": "Return this as a JSON array: 98, 47, 21, 77\n",
+      "target": "[98,47,21,77]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 98, 47, 21, 77\n",
+      "corrupt_prompt": "[98, 47, 21, 77]",
+      "target_token": "[98,47,21,77]"
+    },
+    {
+      "task_id": "json_schema_train_0091",
+      "prompt": "{\"city\": \"Rome\", \"pop\": 9709718}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Rome\", \"pop\": 9709718}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Rome\", pop: 431812}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0092",
+      "prompt": "Fix this JSON: {\"name\": \"Jack\" \"age\": 54}\n",
+      "target": "{\"name\":\"Jack\",\"age\":54}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0093",
+      "prompt": "Return nested JSON with user.name=Charlie and user.score=89\n",
+      "target": "{\"user\":{\"name\":\"Charlie\",\"score\":89}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Charlie and user.score=89\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Charlie\"},\"score\":89}",
+      "target_token": "{\"user\":{\"name\":\"Charlie\",\"score\":89}}"
+    },
+    {
+      "task_id": "json_schema_train_0094",
+      "prompt": "JSON array of names: Leo, Charlie, Kate\n",
+      "target": "[\"Leo\",\"Charlie\",\"Kate\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0095",
+      "prompt": "Is this valid JSON? {\"x\": 47}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0096",
+      "prompt": "Return valid JSON: name=Olivia, age=63\n",
+      "target": "{\"name\":\"Olivia\",\"age\":63}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Olivia, age=63\n",
+      "corrupt_prompt": "{\"name\": \"Olivia\", \"age\": 63}",
+      "target_token": "{\"name\":\"Olivia\",\"age\":63}"
+    },
+    {
+      "task_id": "json_schema_train_0097",
+      "prompt": "JSON with keys color and count. color=gray, count=55\n",
+      "target": "{\"color\":\"gray\",\"count\":55}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=55\n",
+      "corrupt_prompt": "{color: gray, count: 55}",
+      "target_token": "{\"color\":\"gray\",\"count\":55}"
+    },
+    {
+      "task_id": "json_schema_train_0098",
+      "prompt": "Return this as a JSON array: 31, 96, 59, 72, 78\n",
+      "target": "[31,96,59,72,78]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 31, 96, 59, 72, 78\n",
+      "corrupt_prompt": "[31, 96, 59, 72, 78]",
+      "target_token": "[31,96,59,72,78]"
+    },
+    {
+      "task_id": "json_schema_train_0099",
+      "prompt": "{\"city\": \"Lima\", \"pop\": 3051766}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Lima\", \"pop\": 3051766}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Lima\", pop: 8180730}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0100",
+      "prompt": "Fix this JSON: {\"name\": \"Grace\" \"age\": 40}\n",
+      "target": "{\"name\":\"Grace\",\"age\":40}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0101",
+      "prompt": "Return nested JSON with user.name=Ivy and user.score=10\n",
+      "target": "{\"user\":{\"name\":\"Ivy\",\"score\":10}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Ivy and user.score=10\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Ivy\"},\"score\":10}",
+      "target_token": "{\"user\":{\"name\":\"Ivy\",\"score\":10}}"
+    },
+    {
+      "task_id": "json_schema_train_0102",
+      "prompt": "JSON array of names: Pete, Olivia, Alice, Charlie\n",
+      "target": "[\"Pete\",\"Olivia\",\"Alice\",\"Charlie\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0103",
+      "prompt": "Is this valid JSON? {\"x\": 75}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0104",
+      "prompt": "Return valid JSON: name=Pete, age=53\n",
+      "target": "{\"name\":\"Pete\",\"age\":53}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Pete, age=53\n",
+      "corrupt_prompt": "{\"name\": \"Pete\", \"age\": 53}",
+      "target_token": "{\"name\":\"Pete\",\"age\":53}"
+    },
+    {
+      "task_id": "json_schema_train_0105",
+      "prompt": "JSON with keys color and count. color=gray, count=39\n",
+      "target": "{\"color\":\"gray\",\"count\":39}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=39\n",
+      "corrupt_prompt": "{color: gray, count: 39}",
+      "target_token": "{\"color\":\"gray\",\"count\":39}"
+    },
+    {
+      "task_id": "json_schema_train_0106",
+      "prompt": "Return this as a JSON array: 24, 27, 94\n",
+      "target": "[24,27,94]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 24, 27, 94\n",
+      "corrupt_prompt": "[24, 27, 94]",
+      "target_token": "[24,27,94]"
+    },
+    {
+      "task_id": "json_schema_train_0107",
+      "prompt": "{\"city\": \"Tokyo\", \"pop\": 4971190}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Tokyo\", \"pop\": 4971190}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Tokyo\", pop: 3817534}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0108",
+      "prompt": "Fix this JSON: {\"name\": \"Leo\" \"age\": 29}\n",
+      "target": "{\"name\":\"Leo\",\"age\":29}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0109",
+      "prompt": "Return nested JSON with user.name=Eve and user.score=70\n",
+      "target": "{\"user\":{\"name\":\"Eve\",\"score\":70}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Eve and user.score=70\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Eve\"},\"score\":70}",
+      "target_token": "{\"user\":{\"name\":\"Eve\",\"score\":70}}"
+    },
+    {
+      "task_id": "json_schema_train_0110",
+      "prompt": "JSON array of names: Jack, Pete, Pete, Olivia\n",
+      "target": "[\"Jack\",\"Pete\",\"Pete\",\"Olivia\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0111",
+      "prompt": "Is this valid JSON? {\"x\": 15}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0112",
+      "prompt": "Return valid JSON: name=Mia, age=49\n",
+      "target": "{\"name\":\"Mia\",\"age\":49}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Mia, age=49\n",
+      "corrupt_prompt": "{\"name\": \"Mia\", \"age\": 49}",
+      "target_token": "{\"name\":\"Mia\",\"age\":49}"
+    },
+    {
+      "task_id": "json_schema_train_0113",
+      "prompt": "JSON with keys color and count. color=white, count=71\n",
+      "target": "{\"color\":\"white\",\"count\":71}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=white, count=71\n",
+      "corrupt_prompt": "{color: white, count: 71}",
+      "target_token": "{\"color\":\"white\",\"count\":71}"
+    },
+    {
+      "task_id": "json_schema_train_0114",
+      "prompt": "Return this as a JSON array: 75, 54, 39, 72\n",
+      "target": "[75,54,39,72]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 75, 54, 39, 72\n",
+      "corrupt_prompt": "[75, 54, 39, 72]",
+      "target_token": "[75,54,39,72]"
+    },
+    {
+      "task_id": "json_schema_train_0115",
+      "prompt": "{\"city\": \"London\", \"pop\": 3541415}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 3541415}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 4441025}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_train_0116",
+      "prompt": "Fix this JSON: {\"name\": \"Charlie\" \"age\": 28}\n",
+      "target": "{\"name\":\"Charlie\",\"age\":28}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0117",
+      "prompt": "Return nested JSON with user.name=Frank and user.score=88\n",
+      "target": "{\"user\":{\"name\":\"Frank\",\"score\":88}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Frank and user.score=88\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Frank\"},\"score\":88}",
+      "target_token": "{\"user\":{\"name\":\"Frank\",\"score\":88}}"
+    },
+    {
+      "task_id": "json_schema_train_0118",
+      "prompt": "JSON array of names: Jack, Olivia, Charlie, Hank\n",
+      "target": "[\"Jack\",\"Olivia\",\"Charlie\",\"Hank\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_train_0119",
+      "prompt": "Is this valid JSON? {\"x\": 20}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "train",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0120",
+      "prompt": "Return valid JSON: name=Eve, age=22\n",
+      "target": "{\"name\":\"Eve\",\"age\":22}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Eve, age=22\n",
+      "corrupt_prompt": "{\"name\": \"Eve\", \"age\": 22}",
+      "target_token": "{\"name\":\"Eve\",\"age\":22}"
+    },
+    {
+      "task_id": "json_schema_val_0121",
+      "prompt": "JSON with keys color and count. color=blue, count=88\n",
+      "target": "{\"color\":\"blue\",\"count\":88}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=blue, count=88\n",
+      "corrupt_prompt": "{color: blue, count: 88}",
+      "target_token": "{\"color\":\"blue\",\"count\":88}"
+    },
+    {
+      "task_id": "json_schema_val_0122",
+      "prompt": "Return this as a JSON array: 76, 5\n",
+      "target": "[76,5]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 76, 5\n",
+      "corrupt_prompt": "[76, 5]",
+      "target_token": "[76,5]"
+    },
+    {
+      "task_id": "json_schema_val_0123",
+      "prompt": "{\"city\": \"Paris\", \"pop\": 3841714}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Paris\", \"pop\": 3841714}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Paris\", pop: 9651239}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_val_0124",
+      "prompt": "Fix this JSON: {\"name\": \"Alice\" \"age\": 66}\n",
+      "target": "{\"name\":\"Alice\",\"age\":66}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0125",
+      "prompt": "Return nested JSON with user.name=Pete and user.score=23\n",
+      "target": "{\"user\":{\"name\":\"Pete\",\"score\":23}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Pete and user.score=23\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Pete\"},\"score\":23}",
+      "target_token": "{\"user\":{\"name\":\"Pete\",\"score\":23}}"
+    },
+    {
+      "task_id": "json_schema_val_0126",
+      "prompt": "JSON array of names: Noah, Kate, Kate\n",
+      "target": "[\"Noah\",\"Kate\",\"Kate\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0127",
+      "prompt": "Is this valid JSON? {\"x\": 89}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0128",
+      "prompt": "Return valid JSON: name=Jack, age=60\n",
+      "target": "{\"name\":\"Jack\",\"age\":60}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Jack, age=60\n",
+      "corrupt_prompt": "{\"name\": \"Jack\", \"age\": 60}",
+      "target_token": "{\"name\":\"Jack\",\"age\":60}"
+    },
+    {
+      "task_id": "json_schema_val_0129",
+      "prompt": "JSON with keys color and count. color=pink, count=98\n",
+      "target": "{\"color\":\"pink\",\"count\":98}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=pink, count=98\n",
+      "corrupt_prompt": "{color: pink, count: 98}",
+      "target_token": "{\"color\":\"pink\",\"count\":98}"
+    },
+    {
+      "task_id": "json_schema_val_0130",
+      "prompt": "Return this as a JSON array: 66, 46, 79\n",
+      "target": "[66,46,79]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 66, 46, 79\n",
+      "corrupt_prompt": "[66, 46, 79]",
+      "target_token": "[66,46,79]"
+    },
+    {
+      "task_id": "json_schema_val_0131",
+      "prompt": "{\"city\": \"London\", \"pop\": 9215376}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 9215376}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 2199037}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_val_0132",
+      "prompt": "Fix this JSON: {\"name\": \"Jack\" \"age\": 46}\n",
+      "target": "{\"name\":\"Jack\",\"age\":46}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0133",
+      "prompt": "Return nested JSON with user.name=Hank and user.score=70\n",
+      "target": "{\"user\":{\"name\":\"Hank\",\"score\":70}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Hank and user.score=70\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Hank\"},\"score\":70}",
+      "target_token": "{\"user\":{\"name\":\"Hank\",\"score\":70}}"
+    },
+    {
+      "task_id": "json_schema_val_0134",
+      "prompt": "JSON array of names: Eve, Pete\n",
+      "target": "[\"Eve\",\"Pete\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0135",
+      "prompt": "Is this valid JSON? {\"x\": 61}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0136",
+      "prompt": "Return valid JSON: name=Olivia, age=53\n",
+      "target": "{\"name\":\"Olivia\",\"age\":53}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Olivia, age=53\n",
+      "corrupt_prompt": "{\"name\": \"Olivia\", \"age\": 53}",
+      "target_token": "{\"name\":\"Olivia\",\"age\":53}"
+    },
+    {
+      "task_id": "json_schema_val_0137",
+      "prompt": "JSON with keys color and count. color=blue, count=98\n",
+      "target": "{\"color\":\"blue\",\"count\":98}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=blue, count=98\n",
+      "corrupt_prompt": "{color: blue, count: 98}",
+      "target_token": "{\"color\":\"blue\",\"count\":98}"
+    },
+    {
+      "task_id": "json_schema_val_0138",
+      "prompt": "Return this as a JSON array: 75, 74, 84, 62\n",
+      "target": "[75,74,84,62]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 75, 74, 84, 62\n",
+      "corrupt_prompt": "[75, 74, 84, 62]",
+      "target_token": "[75,74,84,62]"
+    },
+    {
+      "task_id": "json_schema_val_0139",
+      "prompt": "{\"city\": \"Madrid\", \"pop\": 9260637}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Madrid\", \"pop\": 9260637}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Madrid\", pop: 9118243}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_val_0140",
+      "prompt": "Fix this JSON: {\"name\": \"Mia\" \"age\": 47}\n",
+      "target": "{\"name\":\"Mia\",\"age\":47}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0141",
+      "prompt": "Return nested JSON with user.name=Mia and user.score=40\n",
+      "target": "{\"user\":{\"name\":\"Mia\",\"score\":40}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Mia and user.score=40\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Mia\"},\"score\":40}",
+      "target_token": "{\"user\":{\"name\":\"Mia\",\"score\":40}}"
+    },
+    {
+      "task_id": "json_schema_val_0142",
+      "prompt": "JSON array of names: Eve, Pete, Bob, Eve\n",
+      "target": "[\"Eve\",\"Pete\",\"Bob\",\"Eve\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0143",
+      "prompt": "Is this valid JSON? {\"x\": 68}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0144",
+      "prompt": "Return valid JSON: name=Alice, age=64\n",
+      "target": "{\"name\":\"Alice\",\"age\":64}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Alice, age=64\n",
+      "corrupt_prompt": "{\"name\": \"Alice\", \"age\": 64}",
+      "target_token": "{\"name\":\"Alice\",\"age\":64}"
+    },
+    {
+      "task_id": "json_schema_val_0145",
+      "prompt": "JSON with keys color and count. color=black, count=79\n",
+      "target": "{\"color\":\"black\",\"count\":79}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=black, count=79\n",
+      "corrupt_prompt": "{color: black, count: 79}",
+      "target_token": "{\"color\":\"black\",\"count\":79}"
+    },
+    {
+      "task_id": "json_schema_val_0146",
+      "prompt": "Return this as a JSON array: 40, 80, 91, 97, 62\n",
+      "target": "[40,80,91,97,62]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 40, 80, 91, 97, 62\n",
+      "corrupt_prompt": "[40, 80, 91, 97, 62]",
+      "target_token": "[40,80,91,97,62]"
+    },
+    {
+      "task_id": "json_schema_val_0147",
+      "prompt": "{\"city\": \"London\", \"pop\": 4822419}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 4822419}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 3817586}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_val_0148",
+      "prompt": "Fix this JSON: {\"name\": \"Charlie\" \"age\": 45}\n",
+      "target": "{\"name\":\"Charlie\",\"age\":45}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0149",
+      "prompt": "Return nested JSON with user.name=Jack and user.score=41\n",
+      "target": "{\"user\":{\"name\":\"Jack\",\"score\":41}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Jack and user.score=41\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Jack\"},\"score\":41}",
+      "target_token": "{\"user\":{\"name\":\"Jack\",\"score\":41}}"
+    },
+    {
+      "task_id": "json_schema_val_0150",
+      "prompt": "JSON array of names: Noah, Frank\n",
+      "target": "[\"Noah\",\"Frank\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0151",
+      "prompt": "Is this valid JSON? {\"x\": 75}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0152",
+      "prompt": "Return valid JSON: name=Hank, age=47\n",
+      "target": "{\"name\":\"Hank\",\"age\":47}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Hank, age=47\n",
+      "corrupt_prompt": "{\"name\": \"Hank\", \"age\": 47}",
+      "target_token": "{\"name\":\"Hank\",\"age\":47}"
+    },
+    {
+      "task_id": "json_schema_val_0153",
+      "prompt": "JSON with keys color and count. color=gray, count=86\n",
+      "target": "{\"color\":\"gray\",\"count\":86}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=86\n",
+      "corrupt_prompt": "{color: gray, count: 86}",
+      "target_token": "{\"color\":\"gray\",\"count\":86}"
+    },
+    {
+      "task_id": "json_schema_val_0154",
+      "prompt": "Return this as a JSON array: 81, 54, 88, 32\n",
+      "target": "[81,54,88,32]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 81, 54, 88, 32\n",
+      "corrupt_prompt": "[81, 54, 88, 32]",
+      "target_token": "[81,54,88,32]"
+    },
+    {
+      "task_id": "json_schema_val_0155",
+      "prompt": "{\"city\": \"Lima\", \"pop\": 3980651}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Lima\", \"pop\": 3980651}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Lima\", pop: 6399231}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_val_0156",
+      "prompt": "Fix this JSON: {\"name\": \"Leo\" \"age\": 54}\n",
+      "target": "{\"name\":\"Leo\",\"age\":54}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0157",
+      "prompt": "Return nested JSON with user.name=Mia and user.score=77\n",
+      "target": "{\"user\":{\"name\":\"Mia\",\"score\":77}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Mia and user.score=77\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Mia\"},\"score\":77}",
+      "target_token": "{\"user\":{\"name\":\"Mia\",\"score\":77}}"
+    },
+    {
+      "task_id": "json_schema_val_0158",
+      "prompt": "JSON array of names: Hank, Grace, Ivy\n",
+      "target": "[\"Hank\",\"Grace\",\"Ivy\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_val_0159",
+      "prompt": "Is this valid JSON? {\"x\": 57}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0160",
+      "prompt": "Return valid JSON: name=Leo, age=64\n",
+      "target": "{\"name\":\"Leo\",\"age\":64}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Leo, age=64\n",
+      "corrupt_prompt": "{\"name\": \"Leo\", \"age\": 64}",
+      "target_token": "{\"name\":\"Leo\",\"age\":64}"
+    },
+    {
+      "task_id": "json_schema_test_0161",
+      "prompt": "JSON with keys color and count. color=white, count=100\n",
+      "target": "{\"color\":\"white\",\"count\":100}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=white, count=100\n",
+      "corrupt_prompt": "{color: white, count: 100}",
+      "target_token": "{\"color\":\"white\",\"count\":100}"
+    },
+    {
+      "task_id": "json_schema_test_0162",
+      "prompt": "Return this as a JSON array: 37, 95, 43, 14, 59\n",
+      "target": "[37,95,43,14,59]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 37, 95, 43, 14, 59\n",
+      "corrupt_prompt": "[37, 95, 43, 14, 59]",
+      "target_token": "[37,95,43,14,59]"
+    },
+    {
+      "task_id": "json_schema_test_0163",
+      "prompt": "{\"city\": \"Oslo\", \"pop\": 6137687}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Oslo\", \"pop\": 6137687}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Oslo\", pop: 1516030}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_test_0164",
+      "prompt": "Fix this JSON: {\"name\": \"Mia\" \"age\": 18}\n",
+      "target": "{\"name\":\"Mia\",\"age\":18}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0165",
+      "prompt": "Return nested JSON with user.name=Ivy and user.score=13\n",
+      "target": "{\"user\":{\"name\":\"Ivy\",\"score\":13}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Ivy and user.score=13\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Ivy\"},\"score\":13}",
+      "target_token": "{\"user\":{\"name\":\"Ivy\",\"score\":13}}"
+    },
+    {
+      "task_id": "json_schema_test_0166",
+      "prompt": "JSON array of names: Charlie, Olivia\n",
+      "target": "[\"Charlie\",\"Olivia\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0167",
+      "prompt": "Is this valid JSON? {\"x\": 6}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0168",
+      "prompt": "Return valid JSON: name=Jack, age=49\n",
+      "target": "{\"name\":\"Jack\",\"age\":49}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Jack, age=49\n",
+      "corrupt_prompt": "{\"name\": \"Jack\", \"age\": 49}",
+      "target_token": "{\"name\":\"Jack\",\"age\":49}"
+    },
+    {
+      "task_id": "json_schema_test_0169",
+      "prompt": "JSON with keys color and count. color=gray, count=85\n",
+      "target": "{\"color\":\"gray\",\"count\":85}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=gray, count=85\n",
+      "corrupt_prompt": "{color: gray, count: 85}",
+      "target_token": "{\"color\":\"gray\",\"count\":85}"
+    },
+    {
+      "task_id": "json_schema_test_0170",
+      "prompt": "Return this as a JSON array: 62, 78\n",
+      "target": "[62,78]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 62, 78\n",
+      "corrupt_prompt": "[62, 78]",
+      "target_token": "[62,78]"
+    },
+    {
+      "task_id": "json_schema_test_0171",
+      "prompt": "{\"city\": \"London\", \"pop\": 7461758}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"London\", \"pop\": 7461758}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"London\", pop: 3962312}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_test_0172",
+      "prompt": "Fix this JSON: {\"name\": \"Leo\" \"age\": 24}\n",
+      "target": "{\"name\":\"Leo\",\"age\":24}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0173",
+      "prompt": "Return nested JSON with user.name=Ivy and user.score=11\n",
+      "target": "{\"user\":{\"name\":\"Ivy\",\"score\":11}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Ivy and user.score=11\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Ivy\"},\"score\":11}",
+      "target_token": "{\"user\":{\"name\":\"Ivy\",\"score\":11}}"
+    },
+    {
+      "task_id": "json_schema_test_0174",
+      "prompt": "JSON array of names: Hank, Eve, Grace\n",
+      "target": "[\"Hank\",\"Eve\",\"Grace\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0175",
+      "prompt": "Is this valid JSON? {\"x\": 100}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0176",
+      "prompt": "Return valid JSON: name=Alice, age=35\n",
+      "target": "{\"name\":\"Alice\",\"age\":35}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Alice, age=35\n",
+      "corrupt_prompt": "{\"name\": \"Alice\", \"age\": 35}",
+      "target_token": "{\"name\":\"Alice\",\"age\":35}"
+    },
+    {
+      "task_id": "json_schema_test_0177",
+      "prompt": "JSON with keys color and count. color=red, count=1\n",
+      "target": "{\"color\":\"red\",\"count\":1}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=red, count=1\n",
+      "corrupt_prompt": "{color: red, count: 1}",
+      "target_token": "{\"color\":\"red\",\"count\":1}"
+    },
+    {
+      "task_id": "json_schema_test_0178",
+      "prompt": "Return this as a JSON array: 6, 16, 94, 53\n",
+      "target": "[6,16,94,53]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 6, 16, 94, 53\n",
+      "corrupt_prompt": "[6, 16, 94, 53]",
+      "target_token": "[6,16,94,53]"
+    },
+    {
+      "task_id": "json_schema_test_0179",
+      "prompt": "{\"city\": \"Lima\", \"pop\": 6075006}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Lima\", \"pop\": 6075006}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Lima\", pop: 8611704}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_test_0180",
+      "prompt": "Fix this JSON: {\"name\": \"Diana\" \"age\": 46}\n",
+      "target": "{\"name\":\"Diana\",\"age\":46}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0181",
+      "prompt": "Return nested JSON with user.name=Jack and user.score=61\n",
+      "target": "{\"user\":{\"name\":\"Jack\",\"score\":61}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Jack and user.score=61\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Jack\"},\"score\":61}",
+      "target_token": "{\"user\":{\"name\":\"Jack\",\"score\":61}}"
+    },
+    {
+      "task_id": "json_schema_test_0182",
+      "prompt": "JSON array of names: Charlie, Charlie, Kate\n",
+      "target": "[\"Charlie\",\"Charlie\",\"Kate\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0183",
+      "prompt": "Is this valid JSON? {\"x\": 82}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0184",
+      "prompt": "Return valid JSON: name=Kate, age=42\n",
+      "target": "{\"name\":\"Kate\",\"age\":42}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Kate, age=42\n",
+      "corrupt_prompt": "{\"name\": \"Kate\", \"age\": 42}",
+      "target_token": "{\"name\":\"Kate\",\"age\":42}"
+    },
+    {
+      "task_id": "json_schema_test_0185",
+      "prompt": "JSON with keys color and count. color=blue, count=55\n",
+      "target": "{\"color\":\"blue\",\"count\":55}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=blue, count=55\n",
+      "corrupt_prompt": "{color: blue, count: 55}",
+      "target_token": "{\"color\":\"blue\",\"count\":55}"
+    },
+    {
+      "task_id": "json_schema_test_0186",
+      "prompt": "Return this as a JSON array: 93, 12, 40, 54, 40\n",
+      "target": "[93,12,40,54,40]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 93, 12, 40, 54, 40\n",
+      "corrupt_prompt": "[93, 12, 40, 54, 40]",
+      "target_token": "[93,12,40,54,40]"
+    },
+    {
+      "task_id": "json_schema_test_0187",
+      "prompt": "{\"city\": \"Lima\", \"pop\": 1531497}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Lima\", \"pop\": 1531497}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Lima\", pop: 1433176}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_test_0188",
+      "prompt": "Fix this JSON: {\"name\": \"Charlie\" \"age\": 45}\n",
+      "target": "{\"name\":\"Charlie\",\"age\":45}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0189",
+      "prompt": "Return nested JSON with user.name=Bob and user.score=52\n",
+      "target": "{\"user\":{\"name\":\"Bob\",\"score\":52}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Bob and user.score=52\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Bob\"},\"score\":52}",
+      "target_token": "{\"user\":{\"name\":\"Bob\",\"score\":52}}"
+    },
+    {
+      "task_id": "json_schema_test_0190",
+      "prompt": "JSON array of names: Leo, Diana, Grace\n",
+      "target": "[\"Leo\",\"Diana\",\"Grace\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0191",
+      "prompt": "Is this valid JSON? {\"x\": 48}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0192",
+      "prompt": "Return valid JSON: name=Ivy, age=54\n",
+      "target": "{\"name\":\"Ivy\",\"age\":54}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "hard",
+        "has_clean_corrupt": true,
+        "variant": "variant_0"
+      },
+      "clean_prompt": "Return valid JSON: name=Ivy, age=54\n",
+      "corrupt_prompt": "{\"name\": \"Ivy\", \"age\": 54}",
+      "target_token": "{\"name\":\"Ivy\",\"age\":54}"
+    },
+    {
+      "task_id": "json_schema_test_0193",
+      "prompt": "JSON with keys color and count. color=black, count=23\n",
+      "target": "{\"color\":\"black\",\"count\":23}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_1"
+      },
+      "clean_prompt": "JSON with keys color and count. color=black, count=23\n",
+      "corrupt_prompt": "{color: black, count: 23}",
+      "target_token": "{\"color\":\"black\",\"count\":23}"
+    },
+    {
+      "task_id": "json_schema_test_0194",
+      "prompt": "Return this as a JSON array: 18, 72, 84\n",
+      "target": "[18,72,84]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": true,
+        "variant": "variant_2"
+      },
+      "clean_prompt": "Return this as a JSON array: 18, 72, 84\n",
+      "corrupt_prompt": "[18, 72, 84]",
+      "target_token": "[18,72,84]"
+    },
+    {
+      "task_id": "json_schema_test_0195",
+      "prompt": "{\"city\": \"Tokyo\", \"pop\": 8901022}\nIs this valid JSON? ",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "validity_check"
+      },
+      "clean_prompt": "{\"city\": \"Tokyo\", \"pop\": 8901022}\nIs this valid JSON? ",
+      "corrupt_prompt": "{city: \"Tokyo\", pop: 3610330}\nIs this valid JSON? ",
+      "target_token": "yes"
+    },
+    {
+      "task_id": "json_schema_test_0196",
+      "prompt": "Fix this JSON: {\"name\": \"Mia\" \"age\": 44}\n",
+      "target": "{\"name\":\"Mia\",\"age\":44}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0197",
+      "prompt": "Return nested JSON with user.name=Jack and user.score=6\n",
+      "target": "{\"user\":{\"name\":\"Jack\",\"score\":6}}",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": true,
+        "variant": "variant_5"
+      },
+      "clean_prompt": "Return nested JSON with user.name=Jack and user.score=6\n",
+      "corrupt_prompt": "{\"user\":{\"name\":\"Jack\"},\"score\":6}",
+      "target_token": "{\"user\":{\"name\":\"Jack\",\"score\":6}}"
+    },
+    {
+      "task_id": "json_schema_test_0198",
+      "prompt": "JSON array of names: Noah, Pete, Olivia\n",
+      "target": "[\"Noah\",\"Pete\",\"Olivia\"]",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_6"
+      }
+    },
+    {
+      "task_id": "json_schema_test_0199",
+      "prompt": "Is this valid JSON? {\"x\": 15}\n",
+      "target": "yes",
+      "metadata": {
+        "family": "json_schema",
+        "split": "test",
+        "difficulty": "medium",
+        "has_clean_corrupt": false,
+        "variant": "variant_7"
+      }
+    }
+  ]
+}

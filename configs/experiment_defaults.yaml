@@ -1,0 +1,72 @@
+# Phase 2 Experiment Defaults
+# All experiments inherit these unless overridden
+
+reproducibility:
+  seeds: [1, 2, 3]
+  default_seed: 1
+  deterministic: true
+  torch_compile: false
+  
+run_id_format: "P2_{experiment_id}_{model_slug}_{task_slug}_{timestamp}_seed{seed}"
+
+ablation:
+  types: ["zero", "mean", "resample_gaussian"]
+  zero_ablation: true
+  mean_ablation: true
+  resample_n_samples: 10
+  resample_noise_std: 0.1
+
+steering:
+  strengths: [-4.0, -2.0, -1.0, -0.5, 0.5, 1.0, 2.0, 4.0]
+  fine_strengths: [-2.0, -1.5, -1.0, -0.75, -0.5, -0.25, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0]
+  vector_source: "mean_diff"  # mean(positive) - mean(negative)
+  n_vector_examples: 20
+
+patching:
+  patch_types: ["zero", "mean", "gaussian", "clean_to_corrupt", "corrupt_to_clean", "trained_to_base", "base_to_trained", "random_same_shape"]
+  activation_patching: true
+  path_patching: true
+
+training:
+  method: "lora"
+  r: 8
+  alpha: 16
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj"]
+  lr: 2e-4
+  batch_size: 1
+  gradient_accumulation: 2
+  gradient_checkpointing: true
+  max_steps: 100
+  max_length: 256
+  warmup_steps: 5
+  weight_decay: 0.01
+  
+  rank_sweep: [1, 2, 4, 8, 16]
+  module_sweep: ["q_proj_only", "v_proj_only", "o_proj_only", "mlp_only", "attn_all", "all_linear"]
+
+metrics:
+  primary: "kl_divergence"
+  secondary: ["target_logprob", "exact_match", "format_validity"]
+  collateral: ["unrelated_task_accuracy", "unrelated_kl"]
+  
+  # Skill separability weights
+  separability_weights:
+    insertion_gain: 0.20
+    removal_selectivity: 0.20
+    transfer_recovery: 0.15
+    composition_compatibility: 0.15
+    localization_sharpness: 0.15
+    collateral_damage_penalty: 0.15
+
+reporting:
+  claim_card_dir: "reports/claims"
+  phase2_report_dir: "reports/phase2"
+  negative_results: "reports/negative_results.md"
+  open_hypotheses: "reports/open_hypotheses.md"
+  
+compute:
+  gpu: "RTX 2070 Super"
+  vram_mb: 8192
+  max_model_vram_mb: 6000  # leave headroom
+  preferred_dtype: "bfloat16"
+  fallback_quantization: "4bit_nf4"

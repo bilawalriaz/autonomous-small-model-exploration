@@ -1,0 +1,1206 @@
+{
+  "family": "string_decoding",
+  "num_examples": 100,
+  "examples": [
+    {
+      "task_id": "string_decoding_train_0000",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0001",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0002",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0003",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0004",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0005",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0006",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0007",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0008",
+      "prompt": "len('world\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0009",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0010",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0011",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0012",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0013",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0014",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0015",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0016",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0017",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0018",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0019",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0020",
+      "prompt": "len('test\\n') = ",
+      "target": "5",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0021",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0022",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0023",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0024",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0025",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0026",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0027",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0028",
+      "prompt": "How to escape '\\' in Python? ",
+      "target": "\\\\",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0029",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0030",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0031",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0032",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0033",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0034",
+      "prompt": "How to escape '\\' in Python? ",
+      "target": "\\\\",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0035",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0036",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0037",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0038",
+      "prompt": "len('test\\n') = ",
+      "target": "5",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0039",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0040",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0041",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0042",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0043",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0044",
+      "prompt": "len('world\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0045",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0046",
+      "prompt": "How to escape ''' in Python? ",
+      "target": "\\'",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0047",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0048",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0049",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0050",
+      "prompt": "len('world\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0051",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0052",
+      "prompt": "How to escape '\\' in Python? ",
+      "target": "\\\\",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0053",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0054",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0055",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0056",
+      "prompt": "len('test\\n') = ",
+      "target": "5",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0057",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0058",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_train_0059",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "train",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0060",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0061",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0062",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0063",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0064",
+      "prompt": "How to escape ''' in Python? ",
+      "target": "\\'",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0065",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0066",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0067",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0068",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0069",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0070",
+      "prompt": "How to escape ''' in Python? ",
+      "target": "\\'",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0071",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0072",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0073",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0074",
+      "prompt": "len('test\\n') = ",
+      "target": "5",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0075",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0076",
+      "prompt": "How to escape ''' in Python? ",
+      "target": "\\'",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0077",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0078",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_val_0079",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "val",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0080",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0081",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0082",
+      "prompt": "How to escape '\\' in Python? ",
+      "target": "\\\\",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0083",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0084",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0085",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0086",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0087",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0088",
+      "prompt": "How to escape ''' in Python? ",
+      "target": "\\'",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0089",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0090",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0091",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0092",
+      "prompt": "len('test\\n') = ",
+      "target": "5",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0093",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0094",
+      "prompt": "How to escape '\"' in Python? ",
+      "target": "\\\"",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_4"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0095",
+      "prompt": "len('abc\\ndef') = ",
+      "target": "7",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_5"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0096",
+      "prompt": "What does '\\n' represent? ",
+      "target": "newline",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_0"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0097",
+      "prompt": "What does '\\t' represent? ",
+      "target": "tab",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_1"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0098",
+      "prompt": "len('hello\\n') = ",
+      "target": "6",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_2"
+      }
+    },
+    {
+      "task_id": "string_decoding_test_0099",
+      "prompt": "print('a\\tb') outputs: ",
+      "target": "a\tb",
+      "metadata": {
+        "family": "string_decoding",
+        "split": "test",
+        "difficulty": "easy",
+        "has_clean_corrupt": false,
+        "variant": "variant_3"
+      }
+    }
+  ]
+}
