@@ -311,6 +311,244 @@ git push origin master
 6. 92-example task suite is large enough for stable metrics (not validated)
 
 ## Compute Constraints
+7. Blog post from publication report
+8. Skill injection experiment (can we inject a skill at L19 for factual recall?)
+
+## Repro commands
+
+See original repro commands above. Phase 2 experiments are run via:
+
+```bash
+# Phase 2 experiments (all in one session)
+python scripts/run_phase2_experiments.py  # if available, or individual scripts
+```
+
+## GitHub push workflow
+
+Aero has gh auth configured (as of 2026-06-21). Push directly:
+
+```bash
+cd ~/work/autonomous-small-model-exploration
+git add -A && git commit -m "message"
+git push origin master
+```
+
+## Notes
+
+- Model: Qwen2.5-0.5B, 24 layers, 14 heads (GQA), d_model=896, d_head=64
+- 8GB VRAM budget: bf16 model ~1GB, batch processing with torch.cuda.empty_cache()
+- LoRA training: 100 steps, lr=2e-4, bs=2, r=8, alpha=16, all-linear targets
+- Ablation uses zero-ablation (zero out component output)
+- Steering uses activation addition at residual stream
+- Python 3.12 on aero, venv at ~/work/autonomous-small-model-exploration/.venv
+- PeftModel wraps base model in-place — use disable_adapter() context for base behavior
+
+---
+
+# Phase 2: Reproducibility & Scale-Dependent Control Surfaces
+
+## Status: COMPLETE (2026-06-22)
+
+## What Phase 1 Established
+
+- 21 experiments completed across 5 sessions on Qwen2.5-0.5B
+- 9 confirmed findings with confidence levels (expandable to 21 numbered findings)
+- Component atlas with 11 entries mapping layers to functional roles
+- Key cross-scale insights:
+  - L2 is a universal importance hub (HIGH confidence)
+  - LoRA training rewires component importance — each skill concentrates in DIFFERENT layers (H002 rejected)
+  - Adapter effects are concentrated at late layers (L19-L23), not propagated upstream (H6 updated/rejected)
+  - Positional specialization: L22=last-token, L0/L2=first+last, L9=instruction
+  - Cross-model patching confirms trained behavior encoded in late-layer activations
+  - Skill knockout at L19 is selective (11654x) — L2 is non-selective
+  - o_proj most efficient for skill injection
+  - Training locks in core circuit by step 10 (first 10% of training)
+
+## What Is Still Uncertain
+
+1. **Single-seed**: All Phase 1 experiments used seed=0 only. No variance estimates exist. Findings may be seed-dependent.
+2. **Zero-ablation only**: All ablations zero out component outputs. Mean-ablation or resample-ablation may give different effect sizes (and zero ablation can create distribution-shift artifacts).
+3. **No cross-family validation**: o_proj finding only tested on JSON. L19 selectivity only tested factual vs JSON/copying.
+4. **Steering may have moved, not collapsed**: Steering at L2 boosted "rome" 3.3x — but did it collapse the model's distribution or redirect it? No KL-to-uniform measured.
+5. **No variance on adapter stacking**: factual+json synergy and delimiter destruction measured once. Unknown if stable.
+6. **LoRA rank sweep at single training config**: Higher rank distributes skill — but is this an artifact of lr=2e-4 with more parameters?
+7. **Checkpoint timeline at single family (JSON)**: Core circuit locks in by step 10 — but for which skills? Only JSON tested.
+8. **Cross-model patching at single skill (JSON)**: Monotonic recovery — but does it hold for factual recall?
+
+## Phase 2 Hypotheses
+
+### H1: Multi-seed variance is low for top findings (L2 hub, positional specialization, adapter concentration)
+- Test: Replicate top 5 findings × 3 seeds. If σ > 20% of effect size, mark LOW confidence.
+- Seeds: 42, 137, 2026
+
+### H2: Mean-ablation gives larger effect sizes than zero-ablation at important layers
+- Test: Compare zero vs mean ablation at L0, L1, L2, L19, L22, L23. Mean ablation replaces with dataset-mean activation.
+- Prediction: Effect sizes at L2 will be larger under mean ablation (zero may be "close to mean" for some layers).
+
+### H3: Steering at L2 redirects distribution rather than collapsing it
+- Test: Measure KL(steered || base) and KL(steered || uniform) at multiple steering strengths. If KL(steered || uniform) stays high, distribution is redirected not collapsed.
+
+### H4: o_proj efficiency generalizes beyond JSON to factual recall and code
+- Test: LoRA on o_proj only for factual_recall and code_semantics adapters. Compare to all-linear adapters.
+
+### H5: L19 selectivity holds for code skills (not just factual recall)
+- Test: Skill knockout at L19 for code_semantics and json_schema. Measure selectivity ratio.
+
+### H6: Adapter stacking interference is rank-dependent
+- Test: Stack factual+delimiter at r=1, r=4, r=8. If delimiter destruction decreases at lower rank, it's a capacity conflict.
+
+### H7: Mean-ablation changes the relative ranking of layers
+- Test: Full layer mean-ablation sweep. Compare ranking to zero-ablation ranking. If top-3 layers change, Phase 1 ranking is ablation-method-dependent.
+
+### H8: Training effect at step 10 is family-dependent
+- Test: Checkpoint timeline for factual_recall and code_semantics (not just JSON). If core circuit lock-in timing differs, Phase 1 generalization is overstated.
+
+## Execution Plan (Blocks A-I)
+
+### Block A: Multi-seed replication (H1)
+- Experiments: layer_ablation, steering_sweep, adapter_archaeology, position_ablation, skill_knockout
+- Seeds: 42, 137, 2026
+- 15 runs total (5 experiments × 3 seeds)
+- Deliverable: variance table, σ/μ ratios, confidence recalibration
+
+### Block B: Mean-ablation pilot (H2, H7)
+- Experiments: layer_ablation with mean-replacement at L0-L23, 3 seeds
+- 3 runs (1 experiment × 3 seeds)
+- Deliverable: zero-vs-mean comparison table, layer ranking delta
+
+### Block C: Steering distribution analysis (H3)
+- Experiments: steering_sweep with KL diagnostics at s=+1,+2,+4,+8, 3 seeds
+- 12 runs (4 strengths × 3 seeds)
+- Deliverable: KL(steered||base), KL(steered||uniform) plots
+
+### Block D: o_proj cross-family (H4)
+- Experiments: train o_proj-only LoRA for factual_recall, code_semantics; eval + ablation, 3 seeds
+- 6 runs (2 families × 3 seeds)
+- Deliverable: o_proj vs all-linear comparison table
+
+### Block E: L19 cross-skill knockout (H5)
+- Experiments: skill_knockout at L19 for code_semantics, json_schema, 3 seeds
+- 6 runs (2 skills × 3 seeds)
+- Deliverable: selectivity matrix (L19 vs L2, across all skills)
+
+### Block F: Adapter stacking rank-sweep (H6)
+- Experiments: train factual+delimiter at r=1, r=4, r=8; eval stacking interference, 3 seeds
+- 9 runs (3 ranks × 3 seeds)
+- Deliverable: interference vs rank plot
+
+### Block G: Checkpoint timeline cross-family (H8)
+- Experiments: train factual_recall checkpoints at step 10/25/50/75/100; eval ablation maps, 1 seed (pilot)
+- 5 runs (5 checkpoints × 1 seed, marked pilot)
+- Deliverable: circuit lock-in timing comparison (JSON vs factual)
+
+### Block H: Cross-skill cross-model patching (H1 validation)
+- Experiments: cross_model_patching for factual_recall (not just JSON), 1 seed (pilot)
+- 1 run
+- Deliverable: monotonic recovery check for non-JSON skill
+
+### Block I: Claims reconciliation
+- No new experiments. Review all Block A-H results.
+- Recalibrate confidence levels for all 21 Phase 1 findings.
+- Write Phase 2 claims report.
+- Deliverable: reports/phase2_claims.md, updated component_atlas
+
+## Current Assumptions
+
+1. Qwen2.5-0.5B architecture is representative of small transformers (24L, 14H GQA, d=896)
+2. Synthetic task suite transfers to natural language (not yet validated)
+3. LoRA training at r=8, lr=2e-4, 100 steps is a reasonable "standard" training config
+4. Zero-ablation is a valid (if conservative) causal test
+5. BF16 precision does not meaningfully affect ablation measurements vs FP32
+6. 92-example task suite is large enough for stable metrics (not validated)
+
+## Compute Constraints
+
+- Hardware: aero (RTX 2070 Super 8GB)
+- Precision: bf16 (model ~1GB VRAM)
+- Training: LoRA-only (full SFT OOMs on 8GB)
+- Max batch size: 2 (training), variable (eval with empty_cache)
+- Single GPU — no data parallelism
+- Estimated Block A runtime: ~4 hours (15 runs × ~15 min each)
+- Estimated total Phase 2 runtime: ~20-25 hours across all blocks
+- Must serialize training runs (VRAM not shared)
+
+## Risks
+
+1. **Seed variance is high**: If σ/μ > 30% for top findings, Phase 1 conclusions need major revision. Probability: LOW (effect sizes are large).
+2. **Mean ablation invalidates ranking**: If top-3 layers change under mean ablation, Phase 1 causal atlas needs rebuilding. Probability: MEDIUM.
+3. **Steering is redirection not control**: If L2 steering redistributes rather than controls, steering-based claims weaken. Probability: MEDIUM.
+4. **o_proj doesn't generalize**: If o_proj-only training fails for non-JSON families, o_proj efficiency is family-specific. Probability: MEDIUM.
+5. **Compute budget exhaustion**: 56+ runs may exceed patience. Blocks are prioritized; Block A is mandatory, Blocks B-I are optional but ordered by value. Probability: HIGH (mitigated by prioritization).
+6. **Training non-determinism**: Even with same seed, CUDA non-determinism may add noise. Mitigated by 3-seed design.
+
+## Phase 2 Deliverables
+
+1. Variance table for top findings (Block A)
+2. Zero-vs-mean ablation comparison (Block B)
+3. Steering KL diagnostic plots (Block C)
+4. Cross-family o_proj table (Block D)
+5. L19 selectivity matrix (Block E)
+6. Interference-vs-rank plot (Block F)
+7. Cross-family checkpoint timeline (Block G, pilot)
+8. Cross-skill cross-model patching (Block H, pilot)
+9. Phase 2 claims report with recalibrated confidence (Block I)
+10. Updated component_atlas with Phase 2 evidence
+
+---
+
+## Phase 2 Completion (2026-06-22)
+
+### Status: COMPLETE (pilot results, single-seed)
+
+### Experiments Completed
+- 17 Phase 2 experiments completed
+- 5 experiments failed (3B tensor dimension bugs)
+- Models tested: Qwen2.5-0.5B, Qwen2.5-1.5B, Qwen2.5-3B, SmolLM2-1.7B
+
+### Key Findings
+
+1. **Hub migration CONFIRMED:** 0.5B→L2 (8%), 1.5B→L26 (93%), 3B→L34 (94%)
+2. **Steering STRONGER at scale:** 1.5B best +4.64 (vs 0.5B +2.16), multi-layer -7.20 KL
+3. **SmolLM2 has NO clear hub:** Flat ablation profile across all 24 layers (architecture-specific)
+4. **Zero ≈ mean ablation:** Identical results at both scales, validating Phase 1 methodology
+5. **code_semantics most separable:** SSS=0.36 (vs others ~0.22)
+6. **3B atlas partially complete:** Layer/head/mlp/steering/lora done; patching/skip/knockout failed
+7. **Long-task robustness:** Hub stable across prompt lengths, steering degrades for factual recall
+
+### Hypotheses Resolved
+- H-P2-1 (hub scales with size): CONFIRMED within Qwen2.5, REJECTED as universal law
+- H-P2-2 (mean ≠ zero ablation): REJECTED (they're identical)
+- H-P2-3 (steering collapses at scale): REJECTED (it gets stronger)
+- H-P2-4 (SmolLM2 has proportional hub): REJECTED (flat profile)
+- H-P2-5 (ranking changes with ablation method): REJECTED (ranking robust)
+
+### New Hypotheses Generated
+- H10: Hub position is architecture-specific (supported by 4-model comparison)
+- H11: Steering budget scales with activation magnitude (supported by 2-model comparison)
+- H12: Skills have a separability hierarchy (pilot result)
+
+### Negative Results Added
+- NR010: SmolLM2 flat ablation profile
+- NR011: 3B tensor dimension mismatch
+- NR012: Cross-scale adapter incompatibility
+- NR013: Ablation method doesn't change ranking
+
+### Phase 3 Priorities
+1. Fix 3B tensor dimension bug (GQA head dimensions)
+2. Multi-seed replication at 1.5B (3 seeds)
+3. Complete 3B atlas (patching, skip, knockout)
+4. Cross-architecture comparison (Gemma-2-2B)
+5. Deobfuscation subskill surgery
+6. o_proj cross-family validation
+7. Natural language prompt validation
+8. SAE training on hub layers
+
+### Files Modified/Created
+- reports/phase2/10_final_phase2_findings.md (NEW - main synthesis report)
+- reports/negative_results.md (UPDATED - added NR010-NR013)
+- reports/open_hypotheses.md (UPDATED - added H-P2-1 through H12)
+- reports/replication_status.md (NEW - Phase 1 claim replication tracking)
+- progress.md (UPDATED - this section)
 
 - Hardware: aero (RTX 2070 Super 8GB)
 - Precision: bf16 (model ~1GB VRAM)

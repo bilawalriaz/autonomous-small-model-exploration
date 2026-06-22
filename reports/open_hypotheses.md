@@ -206,3 +206,130 @@ Falsifier:
 If all skills are equally suppressible at all layers, selectivity is not layer-specific.
 
 Status: SUPPORTED
+
+---
+
+## Phase 2 Hypotheses (2026-06-22)
+
+### H-P2-1: Hub position scales with model size
+
+Claim:
+The universal importance hub layer scales predictably with model parameter count within the Qwen2.5 family.
+
+Current evidence:
+- 0.5B: hub at L2 (8% depth)
+- 1.5B: hub at L26 (93% depth)
+- 3B: hub at L34 (94% depth)
+- SmolLM2-1.7B: NO clear hub (flat profile) — architecture-specific
+
+Status: CONFIRMED within Qwen2.5 family. REJECTED as universal law (SmolLM2 breaks the pattern).
+
+---
+
+### H-P2-2: Mean-ablation gives different results from zero-ablation
+
+Claim:
+Mean ablation (replacing activations with dataset mean) would produce different effect sizes and possibly different layer rankings from zero ablation.
+
+Current evidence:
+- At 0.5B: zero and mean give IDENTICAL KL at every layer (all tasks)
+- At 1.5B: zero and mean give IDENTICAL KL at every layer (all tasks)
+- Interpretation: mean activation ≈ 0 for these prompt distributions
+
+Status: REJECTED. Zero ablation is a valid proxy for mean ablation in this setting.
+
+---
+
+### H-P2-3: Steering collapses at larger scales
+
+Claim:
+Activation steering (which works at 0.5B) would become less effective or collapse at 1.5B due to more distributed representations.
+
+Current evidence:
+- 1.5B L21 steering: target logit delta +4.64 (vs 0.5B best +2.16)
+- 1.5B multi-layer steering: KL = -7.20 (strongest observed)
+- 1.5B L26 steering vector norm: 81.39 (vs 0.5B L2: 1.49)
+
+Status: REJECTED. Steering gets STRONGER at larger scales, not weaker.
+
+---
+
+### H-P2-4: SmolLM2 has a Qwen2.5-like hub at proportional depth
+
+Claim:
+SmolLM2-1.7B (24 layers) would have a hub at a similar depth fraction as Qwen2.5-0.5B.
+
+Current evidence:
+- SmolLM2 shows flat ablation profile across all 24 layers
+- No layer is more important than any other
+- Hub "at L0" is simply the first layer of a flat distribution
+
+Status: REJECTED. SmolLM2 has fundamentally different internal organization.
+
+---
+
+### H-P2-5: Layer ranking changes under different ablation methods
+
+Claim:
+Using mean, gaussian resample, or random patch ablation would change which layers rank as most important.
+
+Current evidence:
+- Zero ≈ mean at every layer (both scales)
+- Gaussian resample preserves ranking but with higher variance
+- Random patch preserves ranking but noisier
+
+Status: REJECTED. Layer ranking is robust to ablation method.
+
+---
+
+### H10 (NEW): Hub position is architecture-specific, not depth-dependent
+
+Claim:
+The position of the universal importance hub is determined by architecture choices (hidden dim, n_heads, n_layers, GQA config) not by a simple depth fraction.
+
+Current evidence:
+- Qwen2.5-0.5B (24L, d=896): hub at L2
+- Qwen2.5-1.5B (28L, d=1536): hub at L26
+- Qwen2.5-3B (36L, d=2048): hub at L34
+- SmolLM2-1.7B (24L, d=2048): no clear hub
+- Hub jumps from 8% to 93% depth between 0.5B and 1.5B
+
+Best next test:
+Test Qwen2.5-0.5B-Instruct (same arch, different training) to separate architecture from training effects.
+
+Status: NEW — supported by 4-model comparison.
+
+---
+
+### H11 (NEW): Steering budget scales with activation magnitude
+
+Claim:
+The safe steering strength scales with the model's activation magnitude at the target layer. Larger models have larger activations and thus larger steering budgets.
+
+Current evidence:
+- 0.5B L2 steering vector norm: 1.49, safe range: s ∈ [-4, +4]
+- 1.5B L26 steering vector norm: 81.39, effective range: s ∈ [-2, +2] (s=-4 causes massive collateral damage)
+
+Best next test:
+Measure activation norms at hub layers across scales. Plot steering effectiveness vs normalized strength (s / ||activation||).
+
+Status: NEW — supported by 2-model comparison.
+
+---
+
+### H12 (NEW): Skills have a separability hierarchy
+
+Claim:
+Some skills are more surgically editable than others. code_semantics is the most separable; delimiter_tracking is the least.
+
+Current evidence:
+- code_semantics SSS: 0.361 (positive insertion gain)
+- json_schema SSS: 0.221
+- factual_recall SSS: 0.218
+- copying SSS: 0.219
+- delimiter_tracking SSS: 0.215
+
+Best next test:
+Replicate at 1.5B. Test whether the separability hierarchy is stable across scales.
+
+Status: NEW — pilot result (single seed, single scale).

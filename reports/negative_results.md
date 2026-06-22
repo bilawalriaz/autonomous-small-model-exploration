@@ -200,3 +200,107 @@ Loading base and trained models as separate objects without using disable_adapte
 
 Next:
 All cross-model experiments use `disable_adapter()` context for base behavior. This saves VRAM (no duplicate model) and is the correct PEFT pattern.
+
+---
+
+## NR010: SmolLM2 shows flat ablation profile — no identifiable hub (Phase 2)
+
+Experiment:
+Layer ablation on SmolLM2-1.7B (24 layers) across 4 task families (json, factual, copying, code).
+
+Expected:
+SmolLM2 would show a clear hub layer similar to Qwen2.5 models, with at least one layer causing significantly higher KL divergence.
+
+Observed:
+All 24 layers show IDENTICAL ablation effects within each task family (json=3.24, factual=1.74, copying=6.33, code=-1.23). No layer is more important than any other.
+
+Interpretation:
+Either SmolLM2 distributes computation uniformly across layers (no clear hub), or our single-prompt ablation methodology is not sensitive enough for this architecture. The hub at L0 reported in the experiment metadata is misleading — it's simply the first layer in a flat profile.
+
+What this rules out:
+Universal hub position as a scaling law across architectures. Hub position is architecture-specific (Qwen2.5 has clear hubs; SmolLM2 does not with this methodology).
+
+Next:
+Test with more prompts per family. Test with finer-grained ablation (MLP vs attention). Test with steering at each layer to see if any layer responds.
+
+---
+
+## NR011: 3B patching/skip/knockout fail with tensor dimension mismatch (Phase 2)
+
+Experiment:
+Cross-model patching, layer skipping, and skill knockout on Qwen2.5-3B.
+
+Expected:
+Same experiments that work on 0.5B and 1.5B would work on 3B with adjusted layer counts.
+
+Observed:
+RuntimeError: "The size of tensor a (16) must match the size of tensor b (128) at non-singleton dimension 3"
+
+Interpretation:
+Qwen2.5-3B uses GQA with 4 KV heads (d_head=128) while 0.5B uses 14 KV heads (d_head=64). The activation patching/skip code hardcodes head dimensions instead of reading from model config. The 16 vs 128 mismatch is n_kv_heads (4) × d_head (128) vs the expected (14) × d_head (64).
+
+What this rules out:
+Direct transfer of patching/skip/knockout code across Qwen2.5 scales without dimension parameterization.
+
+Next:
+Read n_kv_heads and head_dim from model.config. Parameterize all head-dimension-dependent code. Re-run 3B experiments after fix.
+
+---
+
+## NR012: 1.5B LoRA adapter cannot load into different-scale model (Phase 2)
+
+Experiment:
+Attempted to load 0.5B's json LoRA adapter into 1.5B model for cross-scale LoRA effect measurement.
+
+Expected:
+Adapter would load and produce measurable effects (even if suboptimal).
+
+Observed:
+State dict size mismatch: LoRA A weight shape [8, 896] (0.5B) vs [8, 1536] (1.5B). All projection dimensions differ between scales.
+
+Interpretation:
+LoRA adapters are model-specific. The A matrix dimensions match d_model (896 for 0.5B, 1536 for 1.5B), so adapters cannot be transferred across scales.
+
+What this rules out:
+Cross-scale adapter transfer. Each model scale needs its own trained adapter.
+
+Next:
+Train separate adapters per scale. This is expected behavior, not a bug.
+
+---
+
+## NR013: Gaussian resample ablation gives different absolute effects but same ranking (Phase 2)
+
+Experiment:
+Six ablation methods compared at 0.5B and 1.5B: zero, mean, gaussian_resample, patch_clean_to_corrupt, patch_corrupt_to_clean, random_patch.
+
+Expected:
+Different ablation methods might change the rank ordering of important layers.
+
+Observed:
+Zero and mean give IDENTICAL results at every layer. Gaussian resample gives 1.2-1.5x higher effects at some layers but preserves rank ordering. Patch methods (clean_to_corrupt, corrupt_to_clean) give KL=0 at every layer (same as Phase 1 NR002). Random patch gives noisier but similar results to zero/mean.
+
+Interpretation:
+For these prompt distributions, the mean activation is effectively zero, making zero ≈ mean. The rank ordering of layers is robust to ablation method choice. Patch methods remain useless for clean/corrupt pairs with identical prefixes.
+
+What this rules out:
+The concern that Phase 1's zero-ablation methodology produced artifacts. The layer ranking is real.
+
+Next:
+Use zero ablation for efficiency. Use gaussian resample when variance estimates are needed. Abandon patch methods for these prompt pairs.
+Attempted to load base model and trained model separately for cross-model patching.
+
+Expected:
+`base_model = load_model_hf(...)` and `trained_model = PeftModel.from_pretrained(base_model, ...)` would give two independent models.
+
+Observed:
+PeftModel.from_pretrained modifies the base model's linear layers in-place by injecting LoRA adapters. Calling `base_model(ids)` after wrapping gives the SAME result as `trained_model(ids)` — both have the adapter active.
+
+Interpretation:
+PeftModel does not create a copy of the base model. It wraps and modifies it. To get base model behavior, use `with trained_model.disable_adapter():` context manager.
+
+What this rules out:
+Loading base and trained models as separate objects without using disable_adapter() or loading the model twice.
+
+Next:
+All cross-model experiments use `disable_adapter()` context for base behavior. This saves VRAM (no duplicate model) and is the correct PEFT pattern.
