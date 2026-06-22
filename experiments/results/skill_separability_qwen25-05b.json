@@ -1,0 +1,67 @@
+{
+  "experiment_id": "P2-SEPARABILITY-001",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "seed": 1,
+  "git_commit": "d986315",
+  "timestamp": "2026-06-22T12:33:27.298008+00:00",
+  "skills": {
+    "json_schema": {
+      "adapter": "lora_json_r8",
+      "insertion_gain": -1.3528,
+      "collateral_damage": 0,
+      "removal_selectivity": 3.47,
+      "localization_sharpness": 0.4292,
+      "transfer_recovery": 0.5,
+      "composition_compatibility": 0.5,
+      "skill_separability_score": 0.2213
+    },
+    "factual_recall": {
+      "adapter": "lora_factual_recall_r8",
+      "insertion_gain": -1.8787,
+      "collateral_damage": 0,
+      "removal_selectivity": 1.78,
+      "localization_sharpness": 0.4291,
+      "transfer_recovery": 0.5,
+      "composition_compatibility": 0.5,
+      "skill_separability_score": 0.2179
+    },
+    "code_semantics": {
+      "adapter": "lora_code_semantics_r8",
+      "insertion_gain": 3.696,
+      "collateral_damage": 0,
+      "removal_selectivity": 0,
+      "localization_sharpness": 0.419,
+      "transfer_recovery": 0.5,
+      "composition_compatibility": 0.5,
+      "skill_separability_score": 0.3607
+    },
+    "copying": {
+      "adapter": "lora_copying_r8",
+      "insertion_gain": -6.9176,
+      "collateral_damage": 0,
+      "removal_selectivity": 3.04,
+      "localization_sharpness": 0.4213,
+      "transfer_recovery": 0.5,
+      "composition_compatibility": 0.5,
+      "skill_separability_score": 0.2193
+    },
+    "delimiter_tracking": {
+      "adapter": "lora_delimiter_tracking_r8",
+      "insertion_gain": -2.6733,
+      "collateral_damage": 0,
+      "removal_selectivity": 0.6,
+      "localization_sharpness": 0.4221,
+      "transfer_recovery": 0.5,
+      "composition_compatibility": 0.5,
+      "skill_separability_score": 0.2145
+    }
+  },
+  "weights": {
+    "insertion": 0.2,
+    "removal": 0.2,
+    "transfer": 0.15,
+    "composition": 0.15,
+    "localization": 0.15,
+    "collateral": 0.15
+  }
+}

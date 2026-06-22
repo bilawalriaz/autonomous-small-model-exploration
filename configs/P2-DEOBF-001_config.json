@@ -1,0 +1,29 @@
+{
+  "experiment_id": "P2-DEOBF-001",
+  "run_id": "P2_DEOBF_qwen05b_20260622_133302_seed1",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "seed": 1,
+  "lora_config": {
+    "r": 8,
+    "alpha": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "lr": 0.0002,
+    "max_steps": 100,
+    "batch_size": 1,
+    "gradient_checkpointing": true
+  },
+  "subskills": [
+    "variable_renaming",
+    "dead_code_removal",
+    "string_decoding",
+    "constant_folding",
+    "control_flow_simplification",
+    "semantic_preservation"
+  ],
+  "timestamp": "2026-06-22T12:33:02.671596+00:00"
+}

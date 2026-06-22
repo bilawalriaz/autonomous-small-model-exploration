@@ -1,0 +1,37 @@
+{
+  "experiment_id": "P2-DEOBF-001",
+  "run_id": "P2_DEOBF_qwen05b_20260622_133302_seed1",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "seed": 1,
+  "n_layers": 24,
+  "lora_config": {
+    "r": 8,
+    "alpha": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "lr": 0.0002,
+    "max_steps": 100,
+    "batch_size": 1,
+    "gradient_checkpointing": true
+  },
+  "timestamp": "2026-06-22T12:33:15.680923+00:00",
+  "subskills_trained": [],
+  "ablation_maps": {},
+  "eval_results": {},
+  "eval_detailed": {},
+  "overlap_analysis": {},
+  "stacking_interference": {},
+  "semantic_preservation_signature": {},
+  "joint_vs_composed": {
+    "individual_scores": {},
+    "note": "Full joint training comparison requires training a combined adapter (future work)"
+  },
+  "transfer_results": {
+    "note": "Full cross-model patching requires matching architecture (deferred to P2-SEPARABILITY-001)",
+    "available_adapters": []
+  }
+}

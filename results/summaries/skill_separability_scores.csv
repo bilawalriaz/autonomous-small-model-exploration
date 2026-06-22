@@ -1,0 +1,6 @@
+skill,insertion_gain,collateral_damage,removal_selectivity,localization_sharpness,transfer_recovery,composition_compatibility,SSS
+json_schema,-1.3528,0,3.47,0.4292,0.5,0.5,0.2213
+factual_recall,-1.8787,0,1.78,0.4291,0.5,0.5,0.2179
+code_semantics,3.696,0,0,0.419,0.5,0.5,0.3607
+copying,-6.9176,0,3.04,0.4213,0.5,0.5,0.2193
+delimiter_tracking,-2.6733,0,0.6,0.4221,0.5,0.5,0.2145

@@ -739,7 +739,7 @@ def main():
 
     models_to_run = MODELS
     if args.model:
-        models_to_run = [m for m in MODELS if m["slug"] == args.model]
+        models_to_run = [m for m in MODELS if m["slug"] == args.model or m["name"] == args.model]
         if not models_to_run:
             print(f"Unknown model: {args.model}")
             print(f"Available: {[m['slug'] for m in MODELS]}")
