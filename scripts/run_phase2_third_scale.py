@@ -138,15 +138,21 @@ def compute_kl(logits_a, logits_b):
     ).item()
 
 
-def get_activation_at_layer(model, input_ids, layer_idx, position=-1):
-    """Get activation at a specific layer and position."""
+def get_activation_at_layer(model, input_ids, layer_idx, position=-1, full=False):
+    """Get activation at a specific layer (full 3D or at a specific position)."""
     activation = {}
 
     def hook_fn(module, input, output):
         if isinstance(output, tuple):
-            activation["value"] = output[0][:, position, :].detach().clone()
+            if full:
+                activation["value"] = output[0].detach().clone()
+            else:
+                activation["value"] = output[0][:, position, :].detach().clone()
         else:
-            activation["value"] = output[:, position, :].detach().clone()
+            if full:
+                activation["value"] = output.detach().clone()
+            else:
+                activation["value"] = output[:, position, :].detach().clone()
 
     layers = get_layers(model)
     handle = layers[layer_idx].register_forward_hook(hook_fn)
@@ -723,9 +729,9 @@ def exp_final_layer_patching(bundle, seed, force=False):
 
         layer_patches = []
         for layer_idx in patch_layers:
-            # Get base activation at this layer
+            # Get base activation at this layer (full 3D for patching)
             with trained_model.disable_adapter():
-                base_act = get_activation_at_layer(trained_model, ids, layer_idx)
+                base_act = get_activation_at_layer(trained_model, ids, layer_idx, full=True)
 
             if base_act is None:
                 continue
@@ -918,9 +924,9 @@ def exp_adapter_knockout(bundle, seed, force=False):
             ids = tokenizer(prompt, return_tensors="pt", truncation=True,
                             max_length=512)["input_ids"].to(device)
 
-            # Get base activation at this layer
+            # Get base activation at this layer (full 3D for patching)
             with trained_model.disable_adapter():
-                base_act = get_activation_at_layer(trained_model, ids, layer_idx)
+                base_act = get_activation_at_layer(trained_model, ids, layer_idx, full=True)
 
             if base_act is None:
                 continue

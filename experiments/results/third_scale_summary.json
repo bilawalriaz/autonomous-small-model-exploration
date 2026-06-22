@@ -4,39 +4,11 @@
   "seeds": [
     1
   ],
-  "timestamp": "2026-06-22T13:09:59.105004+00:00",
+  "timestamp": "2026-06-22T14:14:48.265609+00:00",
   "results": {
-    "layer_ablation_seed1": {
-      "status": "success",
-      "run_id": "P2_D01_qwen3b_layer_ablation_20260622_124731_seed1"
-    },
-    "head_ablation_seed1": {
-      "status": "success",
-      "run_id": "P2_D02_qwen3b_head_ablation_20260622_125142_seed1"
-    },
-    "mlp_ablation_seed1": {
-      "status": "success",
-      "run_id": "P2_D03_qwen3b_mlp_ablation_20260622_130046_seed1"
-    },
-    "steering_seed1": {
-      "status": "success",
-      "run_id": "P2_D04_qwen3b_steering_sweep_20260622_130413_seed1"
-    },
-    "lora_seed1": {
-      "status": "success",
-      "run_id": "P2_D05_qwen3b_lora_json_20260622_130444_seed1"
-    },
-    "patching_seed1": {
-      "status": "error",
-      "error": "The size of tensor a (16) must match the size of tensor b (128) at non-singleton dimension 3"
-    },
-    "skip_seed1": {
-      "status": "error",
-      "error": "The size of tensor a (16) must match the size of tensor b (128) at non-singleton dimension 3"
-    },
     "knockout_seed1": {
-      "status": "error",
-      "error": "The size of tensor a (16) must match the size of tensor b (128) at non-singleton dimension 3"
+      "status": "success",
+      "run_id": "P2_D08_qwen3b_adapter_knockout_20260622_141352_seed1"
     }
   }
 }

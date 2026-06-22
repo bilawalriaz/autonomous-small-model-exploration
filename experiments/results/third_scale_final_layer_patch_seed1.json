@@ -1,0 +1,129 @@
+{
+  "run_id": "P2_D06_qwen3b_final_layer_patch_20260622_141307_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "final_layer_patching",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T14:13:18.033494+00:00",
+  "patch_layers": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "results": [
+    {
+      "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+      "family": "json_schema",
+      "total_adapter_kl": 6.5,
+      "layer_patches": [
+        {
+          "layer": 30,
+          "patch_kl": 1.359375,
+          "effect_fraction": 0.209135
+        },
+        {
+          "layer": 31,
+          "patch_kl": 1.789062,
+          "effect_fraction": 0.27524
+        },
+        {
+          "layer": 32,
+          "patch_kl": 3.015625,
+          "effect_fraction": 0.463942
+        },
+        {
+          "layer": 33,
+          "patch_kl": 4.3125,
+          "effect_fraction": 0.663462
+        },
+        {
+          "layer": 34,
+          "patch_kl": 5.46875,
+          "effect_fraction": 0.841346
+        },
+        {
+          "layer": 35,
+          "patch_kl": 6.5,
+          "effect_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "prompt": "The capital of France is ",
+      "family": "factual_recall",
+      "total_adapter_kl": 0.167969,
+      "layer_patches": [
+        {
+          "layer": 30,
+          "patch_kl": 0.029419,
+          "effect_fraction": 0.175145
+        },
+        {
+          "layer": 31,
+          "patch_kl": 0.040527,
+          "effect_fraction": 0.241279
+        },
+        {
+          "layer": 32,
+          "patch_kl": 0.058105,
+          "effect_fraction": 0.34593
+        },
+        {
+          "layer": 33,
+          "patch_kl": 0.141602,
+          "effect_fraction": 0.843023
+        },
+        {
+          "layer": 34,
+          "patch_kl": 0.158203,
+          "effect_fraction": 0.94186
+        },
+        {
+          "layer": 35,
+          "patch_kl": 0.167969,
+          "effect_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "prompt": "A B C A B ",
+      "family": "copying",
+      "total_adapter_kl": 0.014465,
+      "layer_patches": [
+        {
+          "layer": 30,
+          "patch_kl": 0.00296,
+          "effect_fraction": 0.204641
+        },
+        {
+          "layer": 31,
+          "patch_kl": 0.007996,
+          "effect_fraction": 0.552743
+        },
+        {
+          "layer": 32,
+          "patch_kl": 0.007996,
+          "effect_fraction": 0.552743
+        },
+        {
+          "layer": 33,
+          "patch_kl": 0.013367,
+          "effect_fraction": 0.924051
+        },
+        {
+          "layer": 34,
+          "patch_kl": 0.014587,
+          "effect_fraction": 1.008439
+        },
+        {
+          "layer": 35,
+          "patch_kl": 0.014465,
+          "effect_fraction": 1.0
+        }
+      ]
+    }
+  ]
+}

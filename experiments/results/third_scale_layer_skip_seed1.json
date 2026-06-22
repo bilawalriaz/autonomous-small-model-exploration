@@ -1,0 +1,173 @@
+{
+  "run_id": "P2_D07_qwen3b_layer_skip_20260622_141331_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "layer_skipping",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T14:13:39.136587+00:00",
+  "n_layers": 36,
+  "results": [
+    {
+      "config": "skip_every_other",
+      "skip_layers": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34
+      ],
+      "n_skipped": 18,
+      "prompts": [
+        {
+          "family": "factual_recall",
+          "kl": 20.25,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 19.625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 19.625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 21.5,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 20.25,
+      "mean_top5_overlap": 0.0
+    },
+    {
+      "config": "skip_last_6",
+      "skip_layers": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "n_skipped": 6,
+      "prompts": [
+        {
+          "family": "factual_recall",
+          "kl": 8.375,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 9.4375,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 8.5625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 10.375,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 9.1875,
+      "mean_top5_overlap": 0.0
+    },
+    {
+      "config": "skip_first_6",
+      "skip_layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "n_skipped": 6,
+      "prompts": [
+        {
+          "family": "factual_recall",
+          "kl": 10.0625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "json_schema",
+          "kl": 15.625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 9.625,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "code_syntax",
+          "kl": 9.1875,
+          "top5_overlap": 0.0
+        }
+      ],
+      "mean_kl": 11.125,
+      "mean_top5_overlap": 0.0
+    },
+    {
+      "config": "skip_mid_third",
+      "skip_layers": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "n_skipped": 12,
+      "prompts": [
+        {
+          "family": "factual_recall",
+          "kl": 5.6875,
+          "top5_overlap": 0.2
+        },
+        {
+          "family": "json_schema",
+          "kl": 14.6875,
+          "top5_overlap": 0.0
+        },
+        {
+          "family": "copying",
+          "kl": 4.0,
+          "top5_overlap": 0.2
+        },
+        {
+          "family": "code_syntax",
+          "kl": 7.1875,
+          "top5_overlap": 0.2
+        }
+      ],
+      "mean_kl": 7.890625,
+      "mean_top5_overlap": 0.15
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "run_id": "P2_D08_qwen3b_adapter_knockout_20260622_141352_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "adapter_knockout",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T14:14:48.264668+00:00",
+  "n_layers": 36,
+  "results": [
+    {
+      "layer": 0,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": -0.000469
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.001892
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.000607
+        }
+      ],
+      "mean_knockout_kl": 0.000677
+    },
+    {
+      "layer": 1,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.003036
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.000136
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.000336
+        }
+      ],
+      "mean_knockout_kl": 0.000945
+    },
+    {
+      "layer": 2,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.00293
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.002579
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.003143
+        }
+      ],
+      "mean_knockout_kl": 0.000789
+    },
+    {
+      "layer": 3,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.002777
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": -9.9e-05
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.004913
+        }
+      ],
+      "mean_knockout_kl": -0.000745
+    },
+    {
+      "layer": 4,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.00264
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.00415
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.00235
+        }
+      ],
+      "mean_knockout_kl": 0.003047
+    },
+    {
+      "layer": 5,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.002579
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.000851
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.001869
+        }
+      ],
+      "mean_knockout_kl": 0.00052
+    },
+    {
+      "layer": 6,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.002304
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.00264
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.00164
+        }
+      ],
+      "mean_knockout_kl": 0.001101
+    },
+    {
+      "layer": 7,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.006226
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.006897
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.001869
+        }
+      ],
+      "mean_knockout_kl": 0.003751
+    },
+    {
+      "layer": 8,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.006073
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": -0.000797
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.001076
+        }
+      ],
+      "mean_knockout_kl": 0.002117
+    },
+    {
+      "layer": 9,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.013184
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.001595
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.002075
+        }
+      ],
+      "mean_knockout_kl": 0.004235
+    },
+    {
+      "layer": 10,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.013
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.006592
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.002838
+        }
+      ],
+      "mean_knockout_kl": 0.005585
+    },
+    {
+      "layer": 11,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.01709
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.007416
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.001328
+        }
+      ],
+      "mean_knockout_kl": 0.007726
+    },
+    {
+      "layer": 12,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.013306
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.008911
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.002396
+        }
+      ],
+      "mean_knockout_kl": 0.006607
+    },
+    {
+      "layer": 13,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.009521
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.003082
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.000549
+        }
+      ],
+      "mean_knockout_kl": 0.004018
+    },
+    {
+      "layer": 14,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.009827
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.000351
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.002884
+        }
+      ],
+      "mean_knockout_kl": 0.002431
+    },
+    {
+      "layer": 15,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.006134
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.006226
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.000645
+        }
+      ],
+      "mean_knockout_kl": 0.003905
+    },
+    {
+      "layer": 16,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.01001
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.004517
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.004425
+        }
+      ],
+      "mean_knockout_kl": 0.003367
+    },
+    {
+      "layer": 17,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.010132
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.003448
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.000481
+        }
+      ],
+      "mean_knockout_kl": 0.004366
+    },
+    {
+      "layer": 18,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.010071
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.003937
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.001602
+        }
+      ],
+      "mean_knockout_kl": 0.004135
+    },
+    {
+      "layer": 19,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.017822
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.007782
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.001648
+        }
+      ],
+      "mean_knockout_kl": 0.009084
+    },
+    {
+      "layer": 20,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.025513
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.012573
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.000633
+        }
+      ],
+      "mean_knockout_kl": 0.012484
+    },
+    {
+      "layer": 21,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.033447
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.010498
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.001083
+        }
+      ],
+      "mean_knockout_kl": 0.015009
+    },
+    {
+      "layer": 22,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.049316
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.015076
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.002457
+        }
+      ],
+      "mean_knockout_kl": 0.020645
+    },
+    {
+      "layer": 23,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.103516
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.017944
+        },
+        {
+          "family": "copying",
+          "knockout_kl": -0.00135
+        }
+      ],
+      "mean_knockout_kl": 0.040037
+    },
+    {
+      "layer": 24,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.148438
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.018066
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.002686
+        }
+      ],
+      "mean_knockout_kl": 0.056397
+    },
+    {
+      "layer": 25,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.204102
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.01355
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.001228
+        }
+      ],
+      "mean_knockout_kl": 0.07296
+    },
+    {
+      "layer": 26,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.229492
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.016235
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.006989
+        }
+      ],
+      "mean_knockout_kl": 0.084239
+    },
+    {
+      "layer": 27,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.376953
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.017334
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.006744
+        }
+      ],
+      "mean_knockout_kl": 0.133677
+    },
+    {
+      "layer": 28,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.730469
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.024658
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.00589
+        }
+      ],
+      "mean_knockout_kl": 0.253672
+    },
+    {
+      "layer": 29,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 0.957031
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.033447
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.003418
+        }
+      ],
+      "mean_knockout_kl": 0.331299
+    },
+    {
+      "layer": 30,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 1.359375
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.029419
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.00296
+        }
+      ],
+      "mean_knockout_kl": 0.463918
+    },
+    {
+      "layer": 31,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 1.789062
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.040527
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.007996
+        }
+      ],
+      "mean_knockout_kl": 0.612528
+    },
+    {
+      "layer": 32,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 3.015625
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.058105
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.007996
+        }
+      ],
+      "mean_knockout_kl": 1.027242
+    },
+    {
+      "layer": 33,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 4.3125
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.141602
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.013367
+        }
+      ],
+      "mean_knockout_kl": 1.489156
+    },
+    {
+      "layer": 34,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 5.46875
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.158203
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.014587
+        }
+      ],
+      "mean_knockout_kl": 1.880513
+    },
+    {
+      "layer": 35,
+      "prompts": [
+        {
+          "family": "json_schema",
+          "knockout_kl": 6.5
+        },
+        {
+          "family": "factual_recall",
+          "knockout_kl": 0.167969
+        },
+        {
+          "family": "copying",
+          "knockout_kl": 0.014465
+        }
+      ],
+      "mean_knockout_kl": 2.227478
+    }
+  ],
+  "top5_critical_layers": [
+    35,
+    34,
+    33,
+    32,
+    31
+  ]
+}
