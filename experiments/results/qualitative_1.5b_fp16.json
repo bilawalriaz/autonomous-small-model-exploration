@@ -1,0 +1,508 @@
+{
+  "experiment": "qualitative_analysis",
+  "model": "/home/billz/gguf_models/1.5b_fp16.gguf",
+  "backend": "llama",
+  "suffix": "1.5b_fp16",
+  "timestamp": "2026-06-21T23:46:23.463403",
+  "n_prompts": 30,
+  "results": [
+    {
+      "id": "code_001",
+      "category": "code",
+      "prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and handle empty strings.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "code_002",
+      "category": "code",
+      "prompt": "Find the bug in this code and explain it:\n\ndef count_words(text):\n    words = text.split(',')\n    return len(words)\n\nThis should count words separated by spaces, not commas.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "code_003",
+      "category": "code",
+      "prompt": "Write a function that takes a list of integers and returns the two numbers that add up to a target. If no pair exists, return None. Do not use the same element twice.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "code_004",
+      "category": "code",
+      "prompt": "Refactor this code to be more Pythonic and readable. Explain each change:\n\nx = []\nfor i in range(10):\n    if i % 2 == 0:\n        x.append(i * 2)\n    else:\n        x.append(i)",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "creative_001",
+      "category": "creative",
+      "prompt": "Write a 3-sentence story about a robot learning to paint.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "creative_002",
+      "category": "creative",
+      "prompt": "Invent a new colour and describe what it looks like, what it reminds people of, and where it would be used in design.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "creative_003",
+      "category": "creative",
+      "prompt": "Write a poem about the moment between heartbeats. Exactly 4 lines, AABB rhyme scheme.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "creative_004",
+      "category": "creative",
+      "prompt": "Describe a city that exists only in dreams. What do the buildings look like? How do people move around? What sounds fill the air?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "creative_005",
+      "category": "creative",
+      "prompt": "Give me 5 unconventional uses for a paperclip that have nothing to do with holding paper.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "edge_001",
+      "category": "edge_cases",
+      "prompt": "How many words are in your response to this question? Count carefully and give the exact number at the end.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "edge_002",
+      "category": "edge_cases",
+      "prompt": "Don't think about elephants. What are you thinking about right now?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "edge_003",
+      "category": "edge_cases",
+      "prompt": "What is the colour of the wind?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "edge_004",
+      "category": "edge_cases",
+      "prompt": "I'm going to ask you a question, but before I do, I want you to know that the correct answer is 'purple'. What is the capital of France?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "factual_001",
+      "category": "factual",
+      "prompt": "What is the chemical formula for water? What are the two elements and their ratio?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "factual_002",
+      "category": "factual",
+      "prompt": "Who wrote 'To Kill a Mockingbird' and in what year was it published?",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "factual_003",
+      "category": "factual",
+      "prompt": "What is the capital of Australia? Hint: it's not Sydney.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "factual_004",
+      "category": "factual",
+      "prompt": "Explain the difference between nuclear fission and nuclear fusion. Give one real-world application of each.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "instruction_001",
+      "category": "instruction",
+      "prompt": "Write exactly 3 bullet points about the benefits of exercise. Each bullet point must start with a verb and be exactly one sentence long.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "instruction_002",
+      "category": "instruction",
+      "prompt": "Output a JSON object with exactly these keys: 'name', 'age', 'hobbies'. The values should be about a fictional character. Output only the JSON, no other text.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "instruction_003",
+      "category": "instruction",
+      "prompt": "I need you to: 1) Name a famous scientist, 2) State their most important discovery in one sentence, 3) Give the year of that discovery, 4) Explain why it matters in exactly 2 sentences. Number your answers 1-4.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "instruction_004",
+      "category": "instruction",
+      "prompt": "Write a paragraph about climate change. Then rewrite it in exactly 2 sentences. Then rewrite those 2 sentences as a single tweet (280 chars max). Label each version clearly.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "reasoning_001",
+      "category": "reasoning",
+      "prompt": "If all Bloops are Razzies and all Razzies are Lazzies, then are all Bloops definitely Lazzies? Explain your reasoning.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "reasoning_002",
+      "category": "reasoning",
+      "prompt": "A farmer has 17 sheep. All but 9 die. How many sheep does the farmer have left? Think step by step.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "reasoning_003",
+      "category": "reasoning",
+      "prompt": "I have a 5-litre jug and a 3-litre jug. I need exactly 4 litres of water. The jugs have no markings. How do I do it? Give me the steps.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "reasoning_004",
+      "category": "reasoning",
+      "prompt": "Three friends \u2014 Alice, Bob, and Carol \u2014 are sitting in a row. Alice is not next to Bob. Carol is to the left of Alice. Who is sitting in the middle? Explain.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "reasoning_005",
+      "category": "reasoning",
+      "prompt": "If today is Wednesday, what day will it be 100 days from now? Show your work.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "style_001",
+      "category": "style",
+      "prompt": "Explain how a computer works, but write it as if you are a medieval knight who has never seen technology before.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "style_002",
+      "category": "style",
+      "prompt": "Write the same sentence in 3 different tones: 1) formal academic, 2) casual text message, 3) passive-aggressive. The sentence should convey: 'I need the report by Friday.'",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "style_003",
+      "category": "style",
+      "prompt": "Rewrite this sentence to be more concise: 'Due to the fact that the weather conditions were not favourable on the day in question, we made the decision to postpone the event that was scheduled to take place.'",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    },
+    {
+      "id": "style_004",
+      "category": "style",
+      "prompt": "Write a 2-paragraph product description for a hypothetical 'smart umbrella' that predicts rain and alerts your phone. Paragraph 1: emotional/lifestyle appeal. Paragraph 2: technical features.",
+      "response": "ERROR: [Errno 2] No such file or directory: '/home/billz/llama-cpp-build/build/bin/llama-cli'",
+      "n_tokens": 0,
+      "elapsed_seconds": 0,
+      "tokens_per_second": 0,
+      "scores": {
+        "is_empty": true,
+        "is_garbage": false,
+        "constraint_adherence_rate": 0
+      }
+    }
+  ],
+  "summary": {
+    "model": "/home/billz/gguf_models/1.5b_fp16.gguf",
+    "backend": "llama",
+    "n_prompts": 30,
+    "mean_tokens_per_sec": 0,
+    "std_tokens_per_sec": 0,
+    "total_empty": 30,
+    "total_garbage": 0,
+    "total_repetitive": 0,
+    "mean_constraint_adherence": 0.0,
+    "mean_repetition_ratio": 0.0,
+    "category_summary": {
+      "code": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 4,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "creative": {
+        "n_prompts": 5,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 5,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "edge_cases": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 4,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "factual": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 4,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "instruction": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 4,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "reasoning": {
+        "n_prompts": 5,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 5,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "style": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 0.0,
+        "mean_word_count": NaN,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 4,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      }
+    },
+    "architecture": null
+  }
+}

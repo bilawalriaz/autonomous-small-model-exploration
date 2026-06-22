@@ -17,6 +17,20 @@ Run a complete mechanistic interpretability investigation on a small language mo
 - You want to produce publishable findings with real evidence (not just attention maps)
 - A new model has released and you want to map its architecture quickly
 
+## Related Skills
+
+- **`devops/mechanistic-interpretability`** (v1.4.0) — The original detailed MI skill with code patterns, PyTorch hook snippets, VRAM budgeting tables, and 7 reference files covering session-specific findings. This skill (`mi-atlas-experimentation`) focuses on the workflow/process/publication side; the other has the deep code-level detail. Load both when doing MI work — the code patterns from `mechanistic-interpretability` are essential for implementation, while this skill provides the 7-phase workflow and cross-scale comparison data.
+
+## Quick Start: Single Entry Point
+
+```bash
+# Run the full 7-phase atlas on any model
+python scripts/run_full_atlas.py --model Qwen/Qwen2.5-1.5B --suffix 1.5b
+python scripts/run_full_atlas.py --model Qwen/Qwen2.5-0.5B --suffix 0.5b
+```
+
+This runs all phases (component mapping → causal interventions → training perturbation → advanced interventions → efficiency) and saves results with the suffix to avoid overwriting.
+
 ## Prerequisites
 
 - CUDA GPU with >=8GB VRAM (RTX 2070 Super or better)
@@ -49,6 +63,9 @@ mi-atlas/
 │   └── tables/            # JSON data tables for plots
 ├── reports/               # Findings, hypotheses, decisions, negative results
 ├── data/                  # Task suites, clean/corrupt pairs
+├── prompts/               # Prompt library submodule (bilawalriaz/mi-prompt-library)
+│   └── prompts/           # JSON prompt files by category
+├── docs/                  # GitHub Pages site (HTML, CSS inline)
 └── config/                # YAML configs (model, experiment_plan, training_plan)
 ```
 
@@ -194,6 +211,60 @@ python scripts/plot_efficiency.py
 python scripts/build_component_atlas.py
 ```
 
+### Phase 8: Qualitative Analysis (Day 5-6)
+
+The structural atlas tells you WHICH components matter. Qualitative analysis tells you what the model FEELS like — prose quality, creativity, correctness, malleability, and inference speed. Both are needed for a complete picture.
+
+**Prompt Library:** The `prompts/` submodule (from `bilawalriaz/mi-prompt-library`) contains structured prompts across 7 categories: creative, reasoning, code, instruction, factual, style, edge_cases. Each prompt has constraints and a scoring rubric. Add new prompts as you discover useful test cases.
+
+```bash
+# Run qualitative analysis on HF model
+python scripts/run_qualitative_analysis.py --model Qwen/Qwen2.5-0.5B --suffix 0.5b_hf --backend hf
+python scripts/run_qualitative_analysis.py --model Qwen/Qwen2.5-1.5B --suffix 1.5b_hf --backend hf
+
+# Run on GGUF quants (requires llama.cpp)
+python scripts/run_qualitative_analysis.py --model ~/gguf_models/0.5b_fp16.gguf --suffix 0.5b_fp16 --backend llama
+python scripts/run_qualitative_analysis.py --model ~/gguf_models/0.5b_q8_0.gguf --suffix 0.5b_q8 --backend llama
+python scripts/run_qualitative_analysis.py --model ~/gguf_models/0.5b_q4_k_m.gguf --suffix 0.5b_q4 --backend llama
+```
+
+**What qualitative analysis captures that MI doesn't:**
+- **Prose quality:** coherence, fluency, voice, does it sound human or robotic?
+- **Creativity:** divergent thinking, originality, idea generation
+- **Correctness:** factual accuracy, logical reasoning, code correctness
+- **Malleability:** instruction following, constraint adherence, format compliance, persona adoption
+- **Inference speed:** tokens/sec at different quantization levels
+- **Failure modes:** empty outputs, garbage/degenerate text, repetition loops, Chinese character degeneration
+
+**Automated scoring vs human review:** The script provides automated heuristic scores (word count, constraint adherence, repetition ratio, empty/garbage detection). These capture structural properties but NOT nuanced quality. Human review of the actual generated text is needed for final qualitative scoring using the rubrics in the prompt library.
+
+**Prompt library schema:** See `prompts/README.md`. Each prompt has: id, category, prompt text, constraints, scoring_rubric (1-5 scales), expected_behavior, notes.
+
+### Phase 9: Quantization Testing
+
+Test how quantization affects both inference speed and output quality. This determines the optimal quant level for practical deployment.
+
+```bash
+# Convert models to GGUF and quantize
+bash scripts/convert_and_quantize.sh Qwen/Qwen2.5-0.5B 0.5b
+bash scripts/convert_and_quantize.sh Qwen/Qwen2.5-1.5B 1.5b
+
+# Then run qualitative analysis on each quant (see Phase 8)
+```
+
+**Quantization levels tested:**
+- **fp16 (half precision):** Baseline quality, largest file, reference for comparison
+- **Q8_0 (8-bit):** Expected sweet spot — minimal quality loss, ~50% size reduction, fast inference
+- **Q4_K_M (4-bit K-quants medium):** Maximum compression, may lose quality on complex tasks
+
+**What to measure:**
+- File size (MB)
+- Inference speed (tokens/sec)
+- Output quality: constraint adherence rate, repetition ratio, empty/garbage count
+- Qualitative comparison: does the prose degrade? Does reasoning break? Does code still work?
+
+**Default recommendation:** Based on initial testing, **Q8_0 (8-bit) is the recommended default quantization for all MI-Atlas experiments.** It provides near-fp16 quality with significant speed gains and file size reduction. Specify this in the skill when running future analyses. Q4_K_M can be used when VRAM is extremely constrained but expect quality degradation on reasoning and code tasks.
+
 ## Session Protocol
 
 ### Startup
@@ -257,6 +328,9 @@ Every claim must include:
 13. **Head ablation hook signature:** `register_forward_pre_hook` takes `(module, args)` not `(module, input, output)`. The hook returns a tuple of modified args.
 14. **Trainer needs labels:** HuggingFace Trainer requires `labels` in the dataset for causal LM. Add `tokenized["labels"] = tokenized["input_ids"].copy()` in the tokenize function.
 15. **Early exit gives inf KL on larger models:** Projecting intermediate hidden states through lm_head on 1.5B gives KL=inf for some layers (numerical overflow in bf16). Use torch.float32 for the projection step.
+16. **GGUF conversion needs sentencepiece:** The `convert_hf_to_gguf.py` script requires the `sentencepiece` package. Install it in the venv: `pip install sentencepiece`. The script also needs a local model directory path, not a HF model name — use `snapshot_download()` first.
+17. **Q8_0 is the recommended default quantization:** 8-bit GGUF provides near-fp16 quality with ~50% file size reduction and faster inference. Use Q8_0 for all future MI-Atlas qualitative analyses unless VRAM is extremely constrained (then Q4_K_M).
+18. **Prompt library is a git submodule:** The `prompts/` directory is a submodule from `bilawalriaz/mi-prompt-library`. Run `git submodule update --init` after cloning. Add new prompts to the prompt library repo directly.
 
 ## Adapting to a New Model
 
@@ -273,8 +347,6 @@ To run this workflow on a different model:
 9. Start a fresh progress.md for the new model
 
 ## Efficiency Findings Template
-
-The efficiency experiment typically reveals:
 
 - **Naive layer skipping fails:** 0% top-5 overlap for all skip configs. Every layer is necessary.
 - **Early exit fails:** Intermediate hidden states are not directly projectable to vocab.
@@ -296,7 +368,11 @@ The efficiency experiment typically reveals:
 
 5. **"Naive layer skipping doesn't work — here's what does"** — Honest negative result + constructive alternatives. Good for HN.
 
+6. **"What changes inside an LLM when you triple its size?"** — Cross-scale comparison. The universal hub migrates from L2 to L26. MLPs lose importance. Heads gain 22x specialization. Steering becomes 70x harder. Skill knockout goes from 11654x selective to non-functional. Practical punchline: small models are steerable, large models are robust.
+
 ## GitHub Push
+
+See `references/github-pages-publishing.md` for instructions on publishing results as a GitHub Pages site.
 
 If gh auth is configured on the GPU host:
 ```bash

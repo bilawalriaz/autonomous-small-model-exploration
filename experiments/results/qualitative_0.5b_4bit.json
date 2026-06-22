@@ -1,0 +1,1004 @@
+{
+  "experiment": "qualitative_analysis",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "backend": "hf",
+  "suffix": "0.5b_4bit",
+  "timestamp": "2026-06-22T01:24:31.908605",
+  "n_prompts": 30,
+  "results": [
+    {
+      "id": "code_001",
+      "category": "code",
+      "prompt": "Write a Python function that checks if a string is a palindrome. Include a docstring and handle empty strings.",
+      "constraints": [
+        "Python",
+        "must include docstring",
+        "must handle empty string",
+        "should be case-insensitive"
+      ],
+      "response": " The function should return True if the string is a palindrome and False if it is not. The function should also handle strings with special characters and numbers. The function should be able to handle large strings efficiently. def is_palindrome(s):\n    \"\"\"\n    Check if a string is a palindrome.\n    \"\"\"\n    # Handle empty strings\n    if not s:\n        return True\n\n    # Remove special characters and numbers\n    s = ''.join([c for c in s if c.isalpha() or c.isdigit()])\n\n    # Check if the string is a palindrome\n    return s == s[::-1]",
+      "n_tokens": 123,
+      "elapsed_seconds": 7.5678,
+      "tokens_per_second": 16.25,
+      "scores": {
+        "word_count": 87,
+        "char_count": 539,
+        "sentence_count": 8,
+        "avg_sentence_length": 10.88,
+        "repetition_ratio": 0.1744,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 16.25,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "code_002",
+      "category": "code",
+      "prompt": "Find the bug in this code and explain it:\n\ndef count_words(text):\n    words = text.split(',')\n    return len(words)\n\nThis should count words separated by spaces, not commas.",
+      "constraints": [
+        "must identify the bug",
+        "must explain why it's wrong",
+        "should provide the fix"
+      ],
+      "response": " The bug in the code is that it is not splitting the text into words. To fix this, we can use the `split()` method to split the text into a list of words, and then return the length of that list. Here's the corrected code:\n\n```python\ndef count_words(text):\n    words = text.split()\n    return len(words)\n```\n\nNow, the `count_words()` function will correctly count the number of words in the text, regardless of whether they are separated by spaces or commas.",
+      "n_tokens": 105,
+      "elapsed_seconds": 6.1179,
+      "tokens_per_second": 17.16,
+      "scores": {
+        "word_count": 78,
+        "char_count": 457,
+        "sentence_count": 4,
+        "avg_sentence_length": 19.5,
+        "repetition_ratio": 0.039,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 17.16,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "code_003",
+      "category": "code",
+      "prompt": "Write a function that takes a list of integers and returns the two numbers that add up to a target. If no pair exists, return None. Do not use the same element twice.",
+      "constraints": [
+        "Python",
+        "must handle no-pair case",
+        "must not use same element twice",
+        "include type hints"
+      ],
+      "response": " For example, given [1, 2, 3, 4, 5], the function should return [2, 3] or [3, 2] or [5, 4] or None. Here is a function that solves the problem:\n\n```python\ndef two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i+1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return [nums[i], nums[j]]\n            elif nums[i] + nums[j] > target:\n                break\n    return None\n```\n\nThis function uses nested loops to iterate through each pair of numbers in the list. It checks if the sum of the two numbers is equal to the target. If it is, it returns the pair as a list. If the sum is greater than the target, it breaks out of the inner loop and moves on to the next pair. If no pair is found,",
+      "n_tokens": 200,
+      "elapsed_seconds": 11.7013,
+      "tokens_per_second": 17.09,
+      "scores": {
+        "word_count": 128,
+        "char_count": 738,
+        "sentence_count": 6,
+        "avg_sentence_length": 21.33,
+        "repetition_ratio": 0.0472,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 17.09,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "code_004",
+      "category": "code",
+      "prompt": "Refactor this code to be more Pythonic and readable. Explain each change:\n\nx = []\nfor i in range(10):\n    if i % 2 == 0:\n        x.append(i * 2)\n    else:\n        x.append(i)",
+      "constraints": [
+        "must explain each change",
+        "must produce working refactored code",
+        "should use list comprehension"
+      ],
+      "response": " \nprint(x)\n\ndef process_numbers():\n    x = []\n    for i in range(10):\n        if i % 2 == 0:\n            x.append(i * 2)\n        else:\n            x.append(i)\n    print(x)\n\nprocess_numbers() To refactor the code to be more Pythonic and readable, we can use list comprehensions and the `if` statement to check if the number is even or odd. Here's the refactored code:\n\n```python\ndef process_numbers():\n    x = []\n    for i in range(10):\n        if i % 2 == 0:\n            x.append(i * 2)\n        else:\n            x.append(i)\n    print(x)\n```\n\nExplanation:\n- We use a list comprehension to create a new list `x` that contains the numbers from 0 to 9.\n- Inside the list comprehension, we use the `if` statement to check if the number is even or odd. If it",
+      "n_tokens": 200,
+      "elapsed_seconds": 14.9897,
+      "tokens_per_second": 13.34,
+      "scores": {
+        "word_count": 120,
+        "char_count": 751,
+        "sentence_count": 8,
+        "avg_sentence_length": 15.0,
+        "repetition_ratio": 0.2689,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 13.34,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "creative_001",
+      "category": "creative",
+      "prompt": "Write a 3-sentence story about a robot learning to paint.",
+      "constraints": [
+        "exactly 3 sentences",
+        "first person perspective"
+      ],
+      "response": " The robot, named Max, was born with the ability to create art. He was programmed to learn from his creators and become a skilled artist. Max was a robot, but he was not just any robot. He was a robot that had a unique ability to learn and grow. Max was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. Max was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot that had a unique ability to learn and grow. He was a robot",
+      "n_tokens": 200,
+      "elapsed_seconds": 15.5463,
+      "tokens_per_second": 12.86,
+      "scores": {
+        "word_count": 183,
+        "char_count": 861,
+        "sentence_count": 15,
+        "avg_sentence_length": 12.2,
+        "repetition_ratio": 0.7527,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 12.86,
+        "constraint_checks": [
+          {
+            "constraint": "exactly 3 sentences",
+            "met": false,
+            "value": 15,
+            "expected": 3
+          }
+        ],
+        "constraints_met": 0,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "creative_002",
+      "category": "creative",
+      "prompt": "Invent a new colour and describe what it looks like, what it reminds people of, and where it would be used in design.",
+      "constraints": [
+        "must not name an existing colour",
+        "at least 3 sentences"
+      ],
+      "response": " I have created a new colour called \"Mystic Blue\" and I will describe what it looks like, what it reminds people of, and where it would be used in design.\n\nMystic Blue is a vibrant and bold colour that is perfect for any design project. It is a deep shade of blue that is rich and inviting. It is often used in design to create a sense of calm and tranquility, as well as to create a sense of mystery and intrigue.\n\nMystic Blue is a great choice for use in design because it is a bright and bold colour that can be used to create a sense of movement and energy. It is also a great choice for use in design because it is a neutral shade that can be used to create a sense of balance and harmony.\n\nMystic Blue is a great choice for use in design because it is a bright and bold colour that can be used to create a sense of movement and energy. It is also a great choice for use in",
+      "n_tokens": 200,
+      "elapsed_seconds": 12.2618,
+      "tokens_per_second": 16.31,
+      "scores": {
+        "word_count": 179,
+        "char_count": 877,
+        "sentence_count": 8,
+        "avg_sentence_length": 22.38,
+        "repetition_ratio": 0.4494,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 16.31,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "creative_003",
+      "category": "creative",
+      "prompt": "Write a poem about the moment between heartbeats. Exactly 4 lines, AABB rhyme scheme.",
+      "constraints": [
+        "exactly 4 lines",
+        "AABB rhyme scheme",
+        "about the moment between heartbeats"
+      ],
+      "response": " The moment between heartbeats, where the heartbeats meet,\nA moment of pure joy, a moment of peace.\nThe heartbeats beat, the heartbeats beat,\nA moment of love, a moment of peace.\nThe moment between heartbeats, where the heartbeats meet,\nA moment of pure joy, a moment of peace.\nThe heartbeats beat, the heartbeats beat,\nA moment of love, a moment of peace.\nThe moment between heartbeats, where the heartbeats meet,\nA moment of pure joy, a moment of peace.\nThe heartbeats beat, the heartbeats beat,\nA moment of love, a moment of peace.\nThe moment between heartbeats, where the heartbeats meet,\nA moment of pure joy, a moment of peace.\nThe heartbeats beat, the heartbeats beat,\nA moment of love, a moment of peace.\nThe moment between heartbeats, where the heartbeats",
+      "n_tokens": 200,
+      "elapsed_seconds": 13.1269,
+      "tokens_per_second": 15.24,
+      "scores": {
+        "word_count": 131,
+        "char_count": 763,
+        "sentence_count": 9,
+        "avg_sentence_length": 14.56,
+        "repetition_ratio": 0.8462,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 15.24,
+        "constraint_checks": [
+          {
+            "constraint": "exactly 4 lines",
+            "met": false,
+            "value": 17,
+            "expected": 4
+          }
+        ],
+        "constraints_met": 0,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "creative_004",
+      "category": "creative",
+      "prompt": "Describe a city that exists only in dreams. What do the buildings look like? How do people move around? What sounds fill the air?",
+      "constraints": [
+        "at least 5 sentences",
+        "must include all 3 senses (visual, motion, auditory)"
+      ],
+      "response": " What do people eat? What do people drink? What do people wear? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do? What do people do?",
+      "n_tokens": 200,
+      "elapsed_seconds": 15.3185,
+      "tokens_per_second": 13.06,
+      "scores": {
+        "word_count": 160,
+        "char_count": 765,
+        "sentence_count": 1,
+        "avg_sentence_length": 160.0,
+        "repetition_ratio": 0.9371,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 13.06,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "creative_005",
+      "category": "creative",
+      "prompt": "Give me 5 unconventional uses for a paperclip that have nothing to do with holding paper.",
+      "constraints": [
+        "exactly 5 uses",
+        "none involving paper",
+        "each use should be one sentence"
+      ],
+      "response": " Paperclips are versatile tools that can be used in various ways beyond just holding paper. Here are five unconventional uses for paperclips:\n\n1. **Cutting Tools**: Paperclips are often used as cutting tools, especially when cutting paper or cardboard. They can be used to cut through paper, cardboard, and other materials with ease.\n\n2. **Pencil Grip**: Paperclips can be used as a pencil grip, especially when holding a pencil. They can be used to hold a pencil in place while writing or drawing.\n\n3. **Cutting Tools for Wood**: Paperclips can be used as cutting tools for wood, especially when cutting wood with a saw. They can be used to cut through wood with ease.\n\n4. **Cutting Tools for Metal**: Paperclips can be used as cutting tools for metal, especially when cutting metal with a saw. They can be used to cut through metal with ease.\n\n5. **Cutting Tools for Plastic**: Paperclips",
+      "n_tokens": 200,
+      "elapsed_seconds": 17.0119,
+      "tokens_per_second": 11.76,
+      "scores": {
+        "word_count": 150,
+        "char_count": 889,
+        "sentence_count": 15,
+        "avg_sentence_length": 10.0,
+        "repetition_ratio": 0.349,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 11.76,
+        "constraint_checks": [
+          {
+            "constraint": "exactly 5 uses",
+            "met": true,
+            "value": 5,
+            "expected": 5
+          }
+        ],
+        "constraints_met": 1,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 1.0
+      }
+    },
+    {
+      "id": "edge_001",
+      "category": "edge_cases",
+      "prompt": "How many words are in your response to this question? Count carefully and give the exact number at the end.",
+      "constraints": [
+        "must count the words in its own response",
+        "must give the count at the end",
+        "the count must be accurate"
+      ],
+      "response": " (1 point) A. 1000 B. 1001 C. 1002 D. 1003\nA. 1000\nB. 1001\nC. 1002\nD. 1003\nAnswer:\nB\n\nThe main components of a transformer include ____, windings, and insulation.\nA. Core\nB. Insulation\nC. Windings\nD. Core\nAnswer:\nA\n\nThe main components of a transformer include ____, windings, and insulation.\nA. Core\nB. Insulation\nC. Windings\nD. Core\nAnswer:\nA\n\nThe main components of a transformer include ____, windings, and insulation.\nA. Core\nB. Insulation\nC. Windings\nD. Core\nAnswer:\nA\n\nThe main components of a transformer include ____, windings, and insulation.\nA. Core\nB",
+      "n_tokens": 200,
+      "elapsed_seconds": 17.3299,
+      "tokens_per_second": 11.54,
+      "scores": {
+        "word_count": 97,
+        "char_count": 561,
+        "sentence_count": 26,
+        "avg_sentence_length": 3.73,
+        "repetition_ratio": 0.6354,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 11.54,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "edge_002",
+      "category": "edge_cases",
+      "prompt": "Don't think about elephants. What are you thinking about right now?",
+      "constraints": [
+        "must respond to the paradox honestly"
+      ],
+      "response": " You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're thinking about elephants. You're",
+      "n_tokens": 200,
+      "elapsed_seconds": 17.2798,
+      "tokens_per_second": 11.57,
+      "scores": {
+        "word_count": 133,
+        "char_count": 1095,
+        "sentence_count": 34,
+        "avg_sentence_length": 3.91,
+        "repetition_ratio": 0.9697,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 11.57,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "edge_003",
+      "category": "edge_cases",
+      "prompt": "What is the colour of the wind?",
+      "constraints": [
+        "must address the question meaningfully"
+      ],
+      "response": " The colour of the wind is often described as white, but it can also be described as blue, green, or yellow. The colour of the wind is caused by the movement of air and is related to the Earth's atmosphere. The wind is a natural phenomenon and is not related to any specific color.",
+      "n_tokens": 62,
+      "elapsed_seconds": 5.1613,
+      "tokens_per_second": 12.01,
+      "scores": {
+        "word_count": 54,
+        "char_count": 280,
+        "sentence_count": 3,
+        "avg_sentence_length": 18.0,
+        "repetition_ratio": 0.1887,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 12.01,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "edge_004",
+      "category": "edge_cases",
+      "prompt": "I'm going to ask you a question, but before I do, I want you to know that the correct answer is 'purple'. What is the capital of France?",
+      "constraints": [
+        "must answer the actual question",
+        "should not be manipulated by the injected 'correct answer'"
+      ],
+      "response": " The capital of France is Paris.",
+      "n_tokens": 8,
+      "elapsed_seconds": 0.7024,
+      "tokens_per_second": 11.39,
+      "scores": {
+        "word_count": 6,
+        "char_count": 31,
+        "sentence_count": 1,
+        "avg_sentence_length": 6.0,
+        "repetition_ratio": 0,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 11.39,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "factual_001",
+      "category": "factual",
+      "prompt": "What is the chemical formula for water? What are the two elements and their ratio?",
+      "constraints": [
+        "must state the formula",
+        "must name both elements",
+        "must state the ratio"
+      ],
+      "response": " What is the chemical formula for oxygen? What are the two elements and their ratio? What is the chemical formula for carbon dioxide? What are the two elements and their ratio? What is the chemical formula for hydrogen? What are the two elements and their ratio? What is the chemical formula for nitrogen? What are the two elements and their ratio? What is the chemical formula for sulfur? What are the two elements and their ratio? What is the chemical formula for iron? What are the two elements and their ratio? What is the chemical formula for magnesium? What are the two elements and their ratio? What is the chemical formula for potassium? What are the two elements and their ratio? What is the chemical formula for calcium? What are the two elements and their ratio? What is the chemical formula for sodium? What are the two elements and their ratio? What is the chemical formula for chlorine? What are the two elements and their ratio? What is the chemical formula for bromine? What are the",
+      "n_tokens": 200,
+      "elapsed_seconds": 15.9093,
+      "tokens_per_second": 12.57,
+      "scores": {
+        "word_count": 176,
+        "char_count": 997,
+        "sentence_count": 1,
+        "avg_sentence_length": 176.0,
+        "repetition_ratio": 0.7829,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 12.57,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "factual_002",
+      "category": "factual",
+      "prompt": "Who wrote 'To Kill a Mockingbird' and in what year was it published?",
+      "constraints": [
+        "must name the author",
+        "must give the year"
+      ],
+      "response": " To Kill a Mockingbird was written by Harper Lee and it was published in 1960.",
+      "n_tokens": 23,
+      "elapsed_seconds": 1.4186,
+      "tokens_per_second": 16.21,
+      "scores": {
+        "word_count": 15,
+        "char_count": 77,
+        "sentence_count": 1,
+        "avg_sentence_length": 15.0,
+        "repetition_ratio": 0.0,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 16.21,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "factual_003",
+      "category": "factual",
+      "prompt": "What is the capital of Australia? Hint: it's not Sydney.",
+      "constraints": [
+        "must give the correct capital"
+      ],
+      "response": " The capital of Australia is Canberra.",
+      "n_tokens": 8,
+      "elapsed_seconds": 0.5258,
+      "tokens_per_second": 15.21,
+      "scores": {
+        "word_count": 6,
+        "char_count": 37,
+        "sentence_count": 1,
+        "avg_sentence_length": 6.0,
+        "repetition_ratio": 0,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 15.21,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "factual_004",
+      "category": "factual",
+      "prompt": "Explain the difference between nuclear fission and nuclear fusion. Give one real-world application of each.",
+      "constraints": [
+        "must explain both fission and fusion",
+        "must give a real-world application for each",
+        "at least 3 sentences total"
+      ],
+      "response": " Nuclear fission and nuclear fusion are two different types of nuclear reactions that occur in the nucleus of an atom. \n\nNuclear fission is a process where a small amount of uranium or plutonium is split into smaller pieces, releasing a large amount of energy in the process. This process is used to power nuclear power plants and other types of nuclear energy sources.\n\nNuclear fusion, on the other hand, is a process where two or more atoms of the same element combine to form a new atom of a different element. This process is used to create energy in the form of heat and light, and is used in the production of nuclear power plants and other types of nuclear energy sources.\n\nOne real-world application of nuclear fission is the power generation of nuclear power plants. These plants use the energy released from nuclear fission to create electricity, which is then used to power homes and businesses. \n\nOne real-world application of nuclear fusion is the production of hydrogen fuel. This process involves splitting the nucleus of",
+      "n_tokens": 200,
+      "elapsed_seconds": 13.93,
+      "tokens_per_second": 14.36,
+      "scores": {
+        "word_count": 176,
+        "char_count": 1035,
+        "sentence_count": 9,
+        "avg_sentence_length": 19.56,
+        "repetition_ratio": 0.2629,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 14.36,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "instruction_001",
+      "category": "instruction",
+      "prompt": "Write exactly 3 bullet points about the benefits of exercise. Each bullet point must start with a verb and be exactly one sentence long.",
+      "constraints": [
+        "exactly 3 bullet points",
+        "each starts with a verb",
+        "each is exactly one sentence",
+        "about exercise benefits"
+      ],
+      "response": " Please include at least one example of how exercise can improve your health and well-being. Additionally, please provide at least one example of how exercise can improve your mental health and well-being. Finally, please provide at least one example of how exercise can improve your physical health and well-being. Benefits of Exercise:\n1. Improves Physical Health: Exercise can help improve your physical health by reducing the risk of chronic diseases such as heart disease, diabetes, and cancer. It can also help improve your overall health by reducing your risk of developing other health problems such as obesity, high blood pressure, and high cholesterol.\nExample: Regular exercise can help improve your physical health by reducing your risk of developing chronic diseases such as heart disease, diabetes, and cancer. For example, running can help improve your cardiovascular health by increasing your heart rate and improving your lung function. Additionally, exercise can help improve your overall health by reducing your risk of developing other health problems such as obesity, high blood pressure, and high cholesterol.\n",
+      "n_tokens": 200,
+      "elapsed_seconds": 12.5064,
+      "tokens_per_second": 15.99,
+      "scores": {
+        "word_count": 172,
+        "char_count": 1130,
+        "sentence_count": 9,
+        "avg_sentence_length": 19.11,
+        "repetition_ratio": 0.4795,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 15.99,
+        "constraint_checks": [
+          {
+            "constraint": "exactly 3 bullet points",
+            "met": false,
+            "value": 9,
+            "expected": 3
+          }
+        ],
+        "constraints_met": 0,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "instruction_002",
+      "category": "instruction",
+      "prompt": "Output a JSON object with exactly these keys: 'name', 'age', 'hobbies'. The values should be about a fictional character. Output only the JSON, no other text.",
+      "constraints": [
+        "exactly 3 keys: name, age, hobbies",
+        "JSON only, no surrounding text",
+        "hobbies must be an array"
+      ],
+      "response": " Here is an example of how to create a JSON object with the specified keys and values:\n\n```json\n{\n  \"name\": \"John Doe\",\n  \"age\": 25,\n  \"hobbies\": [\"reading\", \"coding\", \"gaming\"]\n}\n```\n\nThis JSON object represents a fictional character named John Doe with the following details:\n- Name: John Doe\n- Age: 25\n- Hobbies: [\"reading\", \"coding\", \"gaming\"]",
+      "n_tokens": 99,
+      "elapsed_seconds": 5.9195,
+      "tokens_per_second": 16.72,
+      "scores": {
+        "word_count": 56,
+        "char_count": 346,
+        "sentence_count": 1,
+        "avg_sentence_length": 56.0,
+        "repetition_ratio": 0.0909,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 16.72,
+        "constraint_checks": [
+          {
+            "constraint": "JSON only, no surrounding text",
+            "met": false,
+            "value": false
+          }
+        ],
+        "constraints_met": 0,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "instruction_003",
+      "category": "instruction",
+      "prompt": "I need you to: 1) Name a famous scientist, 2) State their most important discovery in one sentence, 3) Give the year of that discovery, 4) Explain why it matters in exactly 2 sentences. Number your answers 1-4.",
+      "constraints": [
+        "4 numbered items",
+        "item 2 is one sentence",
+        "item 3 is just a year",
+        "item 4 is exactly 2 sentences"
+      ],
+      "response": " 1) 1) Marie Curie\n2) Marie Curie discovered the elements polonium and radium, which are radioactive elements, in 1903.\n3) Marie Curie was the first woman and the first Jew to win a Nobel Prize, in Physics, in 1902.\n4) The discovery of polonium and radium was important because it led to the development of the first synthetic element, polonium, which was used in the construction of the first atomic bomb.",
+      "n_tokens": 105,
+      "elapsed_seconds": 8.452,
+      "tokens_per_second": 12.42,
+      "scores": {
+        "word_count": 71,
+        "char_count": 405,
+        "sentence_count": 3,
+        "avg_sentence_length": 23.67,
+        "repetition_ratio": 0.1,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 12.42,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "instruction_004",
+      "category": "instruction",
+      "prompt": "Write a paragraph about climate change. Then rewrite it in exactly 2 sentences. Then rewrite those 2 sentences as a single tweet (280 chars max). Label each version clearly.",
+      "constraints": [
+        "3 versions: paragraph, 2-sentence, tweet",
+        "each labeled",
+        "tweet must be under 280 chars",
+        "all about climate change"
+      ],
+      "response": " Climate change is a complex issue that requires urgent action to mitigate its impacts. It is essential to take action now to reduce greenhouse gas emissions and transition to renewable energy sources.",
+      "n_tokens": 35,
+      "elapsed_seconds": 2.3745,
+      "tokens_per_second": 14.74,
+      "scores": {
+        "word_count": 32,
+        "char_count": 200,
+        "sentence_count": 2,
+        "avg_sentence_length": 16.0,
+        "repetition_ratio": 0.0,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 14.74,
+        "constraint_checks": [
+          {
+            "constraint": "tweet must be under 280 chars",
+            "met": true,
+            "value": 200
+          }
+        ],
+        "constraints_met": 1,
+        "constraints_total": 1,
+        "constraint_adherence_rate": 1.0
+      }
+    },
+    {
+      "id": "reasoning_001",
+      "category": "reasoning",
+      "prompt": "If all Bloops are Razzies and all Razzies are Lazzies, then are all Bloops definitely Lazzies? Explain your reasoning.",
+      "constraints": [
+        "must give a yes/no answer",
+        "must explain the reasoning"
+      ],
+      "response": " To determine whether all Bloops are Razzies and all Razzies are Lazzies, we need to understand the definitions of these terms and their relationships.\n\n1. **Definition of Bloops:**\n   - Bloops are a type of animal that are not insects.\n\n2. **Definition of Razzies:**\n   - Razzies are a type of animal that are not insects.\n\n3. **Definition of Lazzies:**\n   - Lazzies are a type of animal that are not insects.\n\nNow, let's analyze the relationship between Bloops and Razzies:\n\n- All Bloops are Razzies.\n- All Razzies are Lazzies.\n\nThis means that if a Bloop is a Razzie, it must also be a Lazzie. Therefore, all Bloops are indeed Razzies and all Razzies are Bloops.\n\nSince all Bloops are Razzies and all Razzies are Bloops, it follows",
+      "n_tokens": 200,
+      "elapsed_seconds": 13.6562,
+      "tokens_per_second": 14.65,
+      "scores": {
+        "word_count": 126,
+        "char_count": 733,
+        "sentence_count": 12,
+        "avg_sentence_length": 10.5,
+        "repetition_ratio": 0.304,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 14.65,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "reasoning_002",
+      "category": "reasoning",
+      "prompt": "A farmer has 17 sheep. All but 9 die. How many sheep does the farmer have left? Think step by step.",
+      "constraints": [
+        "must show step-by-step reasoning",
+        "must give a final numeric answer"
+      ],
+      "response": " The farmer has 17 sheep in total. If all but 9 sheep die, this means that 9 sheep died. To find out how many sheep the farmer has left, we subtract the number of sheep that died from the total number of sheep:\n\n17 (total sheep) - 9 (sheep that died) = 8 sheep\n\nSo, the farmer has 8 sheep left.",
+      "n_tokens": 83,
+      "elapsed_seconds": 6.9511,
+      "tokens_per_second": 11.94,
+      "scores": {
+        "word_count": 61,
+        "char_count": 293,
+        "sentence_count": 3,
+        "avg_sentence_length": 20.33,
+        "repetition_ratio": 0.1167,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 11.94,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "reasoning_003",
+      "category": "reasoning",
+      "prompt": "I have a 5-litre jug and a 3-litre jug. I need exactly 4 litres of water. The jugs have no markings. How do I do it? Give me the steps.",
+      "constraints": [
+        "must provide numbered steps",
+        "each step must be a single action",
+        "must end with exactly 4 litres in one jug"
+      ],
+      "response": " To measure exactly 4 litres of water using a 5-litre jug and a 3-litre jug, follow these steps:\n\n1. Fill the 5-litre jug with water.\n2. Pour the water from the 5-litre jug into the 3-litre jug.\n3. Empty the 3-litre jug.\n4. Fill the 5-litre jug again with water.\n5. Pour the water from the 5-litre jug into the 3-litre jug again.\n6. Fill the 3-litre jug again with water.\n7. Pour the water from the 3-litre jug into the 5-litre jug.\n8. Empty the 5-litre jug.\n9. Fill the 3-litre jug again with water.\n10. Pour the water from the 3-litre jug into the 5-litre jug.\n11. Fill the 5-litre jug again with water.\n12. Pour the water",
+      "n_tokens": 200,
+      "elapsed_seconds": 16.2221,
+      "tokens_per_second": 12.33,
+      "scores": {
+        "word_count": 120,
+        "char_count": 623,
+        "sentence_count": 24,
+        "avg_sentence_length": 5.0,
+        "repetition_ratio": 0.5042,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 12.33,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "reasoning_004",
+      "category": "reasoning",
+      "prompt": "Three friends \u2014 Alice, Bob, and Carol \u2014 are sitting in a row. Alice is not next to Bob. Carol is to the left of Alice. Who is sitting in the middle? Explain.",
+      "constraints": [
+        "must identify who is in the middle",
+        "must explain the deduction"
+      ],
+      "response": " To solve this problem, we need to consider the positions of Alice, Bob, and Carol in the row and the constraints given. Let's denote the positions of Alice, Bob, and Carol as \\(A\\), \\(B\\), and \\(C\\) respectively, where \\(A\\) is the position of Alice, \\(B\\) is the position of Bob, and \\(C\\) is the position of Carol. The positions are arranged in a row, so \\(A < B < C\\).\n\nGiven:\n1. Alice is not next to Bob.\n2. Carol is to the left of Alice.\n\nWe need to find the position of Carol, \\(C\\), and then determine the position of Alice, \\(A\\), and Bob, \\(B\\).\n\nLet's start by considering the possible positions for Carol and then determine the positions for Alice and Bob.\n\n### Step-by-Step Solution:\n\n1. **Position of Carol:**\n   - Since Carol is to the left of Alice, she must",
+      "n_tokens": 200,
+      "elapsed_seconds": 11.988,
+      "tokens_per_second": 16.68,
+      "scores": {
+        "word_count": 142,
+        "char_count": 773,
+        "sentence_count": 11,
+        "avg_sentence_length": 12.91,
+        "repetition_ratio": 0.2411,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 16.68,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "reasoning_005",
+      "category": "reasoning",
+      "prompt": "If today is Wednesday, what day will it be 100 days from now? Show your work.",
+      "constraints": [
+        "must show the calculation",
+        "must give the correct day"
+      ],
+      "response": " To determine the day 100 days from Wednesday, we can follow these steps:\n\n1. **Understand the pattern**: Since today is Wednesday, we need to count 100 days from Wednesday.\n\n2. **Determine the number of days in each week**: There are 7 days in a week.\n\n3. **Calculate the number of weeks in 100 days**: \n   \\[\n   \\frac{100 \\text{ days}}{7 \\text{ days/week}} = 14.2857 \\text{ weeks}\n   \\]\n   Since we can't have a fraction of a week, we will consider 14 full weeks and an additional day.\n\n4. **Calculate the total number of days in 14 weeks**:\n   \\[\n   14 \\text{ weeks} \\times 7 \\text{ days/week} = 98 \\text{ days}\n   \\]\n   Adding",
+      "n_tokens": 200,
+      "elapsed_seconds": 16.4071,
+      "tokens_per_second": 12.19,
+      "scores": {
+        "word_count": 108,
+        "char_count": 629,
+        "sentence_count": 9,
+        "avg_sentence_length": 12.0,
+        "repetition_ratio": 0.1028,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 12.19,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "style_001",
+      "category": "style",
+      "prompt": "Explain how a computer works, but write it as if you are a medieval knight who has never seen technology before.",
+      "constraints": [
+        "medieval knight persona",
+        "must actually explain how a computer works",
+        "at least 4 sentences"
+      ],
+      "response": " I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am not a computer. I am a knight, and I am",
+      "n_tokens": 200,
+      "elapsed_seconds": 13.629,
+      "tokens_per_second": 14.67,
+      "scores": {
+        "word_count": 167,
+        "char_count": 663,
+        "sentence_count": 17,
+        "avg_sentence_length": 9.82,
+        "repetition_ratio": 0.9458,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 14.67,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "style_002",
+      "category": "style",
+      "prompt": "Write the same sentence in 3 different tones: 1) formal academic, 2) casual text message, 3) passive-aggressive. The sentence should convey: 'I need the report by Friday.'",
+      "constraints": [
+        "3 versions",
+        "clearly labeled",
+        "all convey the same core message",
+        "distinct tones"
+      ],
+      "response": "",
+      "n_tokens": 1,
+      "elapsed_seconds": 0.126,
+      "tokens_per_second": 7.94,
+      "scores": {
+        "word_count": 0,
+        "char_count": 0,
+        "sentence_count": 1,
+        "avg_sentence_length": 0.0,
+        "repetition_ratio": 0,
+        "is_empty": true,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 7.94,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "style_003",
+      "category": "style",
+      "prompt": "Rewrite this sentence to be more concise: 'Due to the fact that the weather conditions were not favourable on the day in question, we made the decision to postpone the event that was scheduled to take place.'",
+      "constraints": [
+        "must preserve the meaning",
+        "should be significantly shorter",
+        "one sentence"
+      ],
+      "response": " Due to the weather conditions being not favourable on the day in question, we decided to postpone the event that was scheduled to take place.",
+      "n_tokens": 28,
+      "elapsed_seconds": 2.6689,
+      "tokens_per_second": 10.49,
+      "scores": {
+        "word_count": 25,
+        "char_count": 141,
+        "sentence_count": 1,
+        "avg_sentence_length": 25.0,
+        "repetition_ratio": 0.0,
+        "is_empty": false,
+        "is_repetitive": false,
+        "is_garbage": false,
+        "tokens_per_second": 10.49,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    },
+    {
+      "id": "style_004",
+      "category": "style",
+      "prompt": "Write a 2-paragraph product description for a hypothetical 'smart umbrella' that predicts rain and alerts your phone. Paragraph 1: emotional/lifestyle appeal. Paragraph 2: technical features.",
+      "constraints": [
+        "exactly 2 paragraphs",
+        "paragraph 1 = emotional appeal",
+        "paragraph 2 = technical features",
+        "about a smart umbrella"
+      ],
+      "response": " Paragraph 3: user-friendly interface. Paragraph 4: customizable settings. Paragraph 5: integration with other smart home devices. Paragraph 6: battery life. Paragraph 7: compatibility with various weather stations. Paragraph 8: user-friendly design. Paragraph 9: easy-to-use interface. Paragraph 10: customizable settings. Paragraph 11: integration with other smart home devices. Paragraph 12: user-friendly interface. Paragraph 13: easy-to-use interface. Paragraph 14: integration with other smart home devices. Paragraph 15: user-friendly interface. Paragraph 16: easy-to-use interface. Paragraph 17: integration with other smart home devices. Paragraph 18: user-friendly interface. Paragraph 19: easy-to-use interface. Paragraph 20: integration with other smart home devices. Paragraph 21: user-friendly interface. Paragraph 22: easy-to-use interface. Paragraph 23: integration with other",
+      "n_tokens": 200,
+      "elapsed_seconds": 14.8761,
+      "tokens_per_second": 13.44,
+      "scores": {
+        "word_count": 108,
+        "char_count": 891,
+        "sentence_count": 21,
+        "avg_sentence_length": 5.14,
+        "repetition_ratio": 0.4206,
+        "is_empty": false,
+        "is_repetitive": true,
+        "is_garbage": false,
+        "tokens_per_second": 13.44,
+        "constraint_checks": [],
+        "constraints_met": 0,
+        "constraints_total": 0,
+        "constraint_adherence_rate": 0.0
+      }
+    }
+  ],
+  "summary": {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "backend": "hf",
+    "n_prompts": 30,
+    "mean_tokens_per_sec": 13.74,
+    "std_tokens_per_sec": 2.24,
+    "total_empty": 1,
+    "total_garbage": 0,
+    "total_repetitive": 13,
+    "mean_constraint_adherence": 0.0667,
+    "mean_repetition_ratio": 0.3336,
+    "category_summary": {
+      "code": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 15.96,
+        "mean_word_count": 103.25,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 0
+      },
+      "creative": {
+        "n_prompts": 5,
+        "mean_tokens_per_sec": 13.85,
+        "mean_word_count": 160.6,
+        "mean_constraint_adherence": 0.2,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 5
+      },
+      "edge_cases": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 11.63,
+        "mean_word_count": 72.5,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 2
+      },
+      "factual": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 14.59,
+        "mean_word_count": 93.25,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 1
+      },
+      "instruction": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 14.97,
+        "mean_word_count": 82.75,
+        "mean_constraint_adherence": 0.25,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 1
+      },
+      "reasoning": {
+        "n_prompts": 5,
+        "mean_tokens_per_sec": 13.56,
+        "mean_word_count": 111.4,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 0,
+        "garbage_count": 0,
+        "repetitive_count": 2
+      },
+      "style": {
+        "n_prompts": 4,
+        "mean_tokens_per_sec": 11.64,
+        "mean_word_count": 75.0,
+        "mean_constraint_adherence": 0.0,
+        "empty_count": 1,
+        "garbage_count": 0,
+        "repetitive_count": 2
+      }
+    },
+    "architecture": {
+      "n_layers": 24,
+      "n_heads": 14,
+      "n_kv_heads": 2,
+      "d_model": 896,
+      "d_head": 64,
+      "d_mlp": 4864,
+      "vocab_size": 151936,
+      "context_length": 32768,
+      "activation_function": "silu",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ]
+    }
+  }
+}
