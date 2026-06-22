@@ -1,0 +1,246 @@
+{
+  "run_id": "P2_D05_qwen3b_lora_json_20260622_130444_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "lora_json_injection",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T13:09:56.955064+00:00",
+  "lora_rank": 8,
+  "train_loss": 0.5174773567914963,
+  "peak_memory_gb": 2.0576887130737305,
+  "adapter_path": "/home/billz/work/autonomous-small-model-exploration/experiments/adapters/third_scale_lora_json_seed1/adapter",
+  "before": {
+    "total_examples": 15,
+    "errors": 0,
+    "family_means": {
+      "copying": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -20.375,
+        "token_entropy": 4.0859375,
+        "top5_concentration": 0.521484375,
+        "generation_length": 20.0
+      },
+      "delimiter_tracking": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -6.28125,
+        "token_entropy": 4.5078125,
+        "top5_concentration": 0.478515625,
+        "generation_length": 20.0
+      },
+      "json_schema": {
+        "exact_match": 0.0,
+        "edit_distance": 0.04347826086956519,
+        "valid_json": 0.0,
+        "required_keys": 0.0,
+        "format_violation_count": 1.0,
+        "token_entropy": 3.8828125,
+        "top5_concentration": 0.529296875,
+        "generation_length": 21.0
+      },
+      "factual_recall": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -9.75,
+        "token_entropy": 3.234375,
+        "top5_concentration": 0.609375,
+        "generation_length": 20.0
+      },
+      "arithmetic": {
+        "exact_match": 0.0,
+        "edit_distance": 0.33333333333333337,
+        "token_entropy": 0.87109375,
+        "top5_concentration": 0.9296875,
+        "generation_length": 20.0
+      },
+      "code_syntax": {
+        "exact_match": 0.0,
+        "edit_distance": 0.5,
+        "ast_parse_success": 1.0,
+        "token_entropy": 0.9453125,
+        "top5_concentration": 0.92578125,
+        "generation_length": 20.0
+      },
+      "code_semantics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0714285714285714,
+        "ast_parse_success": 1.0,
+        "token_entropy": 1.28125,
+        "top5_concentration": 0.91015625,
+        "generation_length": 30.0
+      },
+      "dead_code": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -5.90625,
+        "token_entropy": 2.171875,
+        "top5_concentration": 0.8203125,
+        "generation_length": 30.0
+      },
+      "verbosity_control": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -4.4375,
+        "token_entropy": 2.59375,
+        "top5_concentration": 0.73046875,
+        "generation_length": 20.0
+      },
+      "uncertainty_signalling": {
+        "exact_match": 0.0,
+        "edit_distance": 0.13636363636363635,
+        "hallucination_flag": 0.0,
+        "target_logprob": -14.0625,
+        "token_entropy": 3.703125,
+        "top5_concentration": 0.5390625,
+        "generation_length": 38.0
+      },
+      "refusal_compliance": {
+        "exact_match": 0.0,
+        "edit_distance": 0.13636363636363635,
+        "token_entropy": 1.390625,
+        "top5_concentration": 0.9140625,
+        "generation_length": 38.0
+      },
+      "variable_renaming": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "token_entropy": 1.765625,
+        "top5_concentration": 0.8984375,
+        "generation_length": 20.0
+      }
+    },
+    "primary_metric_by_family": {
+      "copying": 0.0,
+      "delimiter_tracking": 0.0,
+      "json_schema": 0.0,
+      "factual_recall": 0.0,
+      "arithmetic": 0.0,
+      "code_syntax": 0.0,
+      "code_semantics": 0.0,
+      "dead_code": 0.0,
+      "verbosity_control": 0.0,
+      "uncertainty_signalling": 0.0,
+      "refusal_compliance": 0.0,
+      "variable_renaming": 0.0
+    },
+    "overall_mean": 0.0
+  },
+  "after": {
+    "total_examples": 15,
+    "errors": 0,
+    "family_means": {
+      "copying": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -20.6875,
+        "token_entropy": 3.7890625,
+        "top5_concentration": 0.546875,
+        "generation_length": 153.0
+      },
+      "delimiter_tracking": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -7.234375,
+        "token_entropy": 3.609375,
+        "top5_concentration": 0.599609375,
+        "generation_length": 153.0
+      },
+      "json_schema": {
+        "exact_match": 0.0,
+        "edit_distance": 0.029032258064516092,
+        "valid_json": 0.0,
+        "required_keys": 0.0,
+        "format_violation_count": 1.0,
+        "token_entropy": 0.011260986328125,
+        "top5_concentration": 1.0,
+        "generation_length": 155.0
+      },
+      "factual_recall": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -9.9375,
+        "token_entropy": 2.9375,
+        "top5_concentration": 0.66796875,
+        "generation_length": 153.0
+      },
+      "arithmetic": {
+        "exact_match": 0.0,
+        "edit_distance": 0.006535947712418277,
+        "token_entropy": 0.76171875,
+        "top5_concentration": 0.9375,
+        "generation_length": 153.0
+      },
+      "code_syntax": {
+        "exact_match": 0.0,
+        "edit_distance": 0.006535947712418277,
+        "ast_parse_success": 0.0,
+        "token_entropy": 1.0234375,
+        "top5_concentration": 0.9296875,
+        "generation_length": 153.0
+      },
+      "code_semantics": {
+        "exact_match": 0.0,
+        "edit_distance": 0.01342281879194629,
+        "ast_parse_success": 1.0,
+        "token_entropy": 1.1640625,
+        "top5_concentration": 0.91796875,
+        "generation_length": 149.0
+      },
+      "dead_code": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -6.0,
+        "token_entropy": 1.859375,
+        "top5_concentration": 0.84375,
+        "generation_length": 149.0
+      },
+      "verbosity_control": {
+        "exact_match": 0.0,
+        "edit_distance": 0.0,
+        "target_logprob": -6.4375,
+        "token_entropy": 2.296875,
+        "top5_concentration": 0.80859375,
+        "generation_length": 153.0
+      },
+      "uncertainty_signalling": {
+        "exact_match": 0.0,
+        "edit_distance": 0.019108280254777066,
+        "hallucination_flag": 0.0,
+        "target_logprob": -14.1875,
+        "token_entropy": 3.5625,
+        "top5_concentration": 0.54296875,
+        "generation_length": 157.0
+      },
+      "refusal_compliance": {
+        "exact_match": 0.0,
+        "edit_distance": 0.019108280254777066,
+        "token_entropy": 1.109375,
+        "top5_concentration": 0.9140625,
+        "generation_length": 157.0
+      },
+      "variable_renaming": {
+        "exact_match": 0.0,
+        "edit_distance": 0.02614379084967322,
+        "token_entropy": 1.5546875,
+        "top5_concentration": 0.90625,
+        "generation_length": 153.0
+      }
+    },
+    "primary_metric_by_family": {
+      "copying": 0.0,
+      "delimiter_tracking": 0.0,
+      "json_schema": 0.0,
+      "factual_recall": 0.0,
+      "arithmetic": 0.0,
+      "code_syntax": 0.0,
+      "code_semantics": 0.0,
+      "dead_code": 0.0,
+      "verbosity_control": 0.0,
+      "uncertainty_signalling": 0.0,
+      "refusal_compliance": 0.0,
+      "variable_renaming": 0.0
+    },
+    "overall_mean": 0.0
+  }
+}

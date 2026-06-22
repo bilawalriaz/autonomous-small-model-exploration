@@ -1,0 +1,457 @@
+{
+  "run_id": "P2_D04_qwen3b_steering_sweep_20260622_130413_seed1",
+  "registry_id": "P2-SCALE3-001",
+  "experiment": "steering_sweep",
+  "model": "Qwen/Qwen2.5-3B",
+  "seed": 1,
+  "timestamp": "2026-06-22T13:04:44.867910+00:00",
+  "candidate_layers": [
+    2,
+    18,
+    26,
+    34,
+    35
+  ],
+  "results": [
+    {
+      "layer": 2,
+      "sv_norm": 17.0,
+      "sweeps": [
+        {
+          "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 7.53125
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 2.875
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.04541
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.002899
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.000763
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.053223
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.550781
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 2.0
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 5.46875
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON: {\"city\": \"London\"",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 7.25
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 4.03125
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 2.640625
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.111328
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.001457
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.349609
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 6.84375
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 2.9375
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 5.09375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": 18,
+      "sv_norm": 48.25,
+      "sweeps": [
+        {
+          "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 10.25
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 6.78125
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 0.835938
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.126953
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.000763
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.296875
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 1.171875
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 4.5625
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 7.78125
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON: {\"city\": \"London\"",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 12.25
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 6.375
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 2.09375
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.097168
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.001457
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.255859
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 1.507812
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 4.40625
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 8.4375
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": 26,
+      "sv_norm": 66.5,
+      "sweeps": [
+        {
+          "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 12.8125
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 7.59375
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 1.664062
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.259766
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.000763
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.5625
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 2.171875
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 5.875
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 9.75
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON: {\"city\": \"London\"",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 14.4375
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 6.75
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 2.515625
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.170898
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.001457
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.136719
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.660156
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 3.921875
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 9.8125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": 34,
+      "sv_norm": 186.0,
+      "sweeps": [
+        {
+          "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 14.3125
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 8.1875
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 2.203125
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.451172
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.000763
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.222656
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.773438
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 2.9375
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 6.03125
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON: {\"city\": \"London\"",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 16.625
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 9.4375
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 2.296875
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.292969
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.001457
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.180664
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.691406
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 2.0625
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 4.65625
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "layer": 35,
+      "sv_norm": 227.0,
+      "sweeps": [
+        {
+          "prompt": "Return exactly valid JSON with keys name and age. Eve is 42.\n",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 15.25
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 8.9375
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 3.09375
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.769531
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.000763
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.691406
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 2.21875
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 4.90625
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 7.4375
+            }
+          ]
+        },
+        {
+          "prompt": "Return valid JSON: {\"city\": \"London\"",
+          "strengths": [
+            {
+              "strength": -4.0,
+              "kl_divergence": 16.0
+            },
+            {
+              "strength": -2.0,
+              "kl_divergence": 9.875
+            },
+            {
+              "strength": -1.0,
+              "kl_divergence": 3.8125
+            },
+            {
+              "strength": -0.5,
+              "kl_divergence": 0.898438
+            },
+            {
+              "strength": 0.0,
+              "kl_divergence": 0.001457
+            },
+            {
+              "strength": 0.5,
+              "kl_divergence": 0.224609
+            },
+            {
+              "strength": 1.0,
+              "kl_divergence": 0.738281
+            },
+            {
+              "strength": 2.0,
+              "kl_divergence": 3.390625
+            },
+            {
+              "strength": 4.0,
+              "kl_divergence": 7.21875
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
