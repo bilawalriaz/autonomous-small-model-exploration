@@ -310,7 +310,9 @@ def train_subskill_adapter(
     peft_model.print_trainable_parameters()
 
     def tokenize_fn(examples):
-        return tokenizer(examples["text"], truncation=True, max_length=512, padding="max_length")
+        tokenized = tokenizer(examples["text"], truncation=True, max_length=512, padding="max_length")
+        tokenized["labels"] = tokenized["input_ids"].copy()
+        return tokenized
 
     tokenized = dataset.map(tokenize_fn, batched=True, remove_columns=dataset.column_names)
 
