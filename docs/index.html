@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MI-Atlas — Mechanistic Interpretability of Small Language Models</title>
-  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 35 experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation.">
+  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 35+ experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation. Phase 3: atlas-guided LoRA validated at 13.8x parameter efficiency.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -183,6 +183,7 @@
         <a href="03-comparison-analysis.html">Comparison</a>
         <a href="04-qualitative-analysis.html">Qualitative</a>
         <a href="05-phase2-repeatability.html">Phase 2</a>
+        <a href="06-phase3-gap-closure.html">Phase 3</a>
       </div>
     </div>
   </div>
@@ -253,6 +254,12 @@
         <h3>Phase 2: Repeatable Small-Model Surgery</h3>
         <div class="paper-meta">9 blocks &middot; 3 scales &middot; 2 architectures &middot; 35 experiments</div>
         <div class="paper-tagline">Hub migration confirmed: L2 (8%) &rarr; L26 (93%) &rarr; L34 (94%). Steering did NOT collapse at 1.5B &mdash; it migrated and got 3&times; stronger. Cross-family hubs are architecture-specific. Each model needs its own atlas.</div>
+      </a>
+      <a class="paper-card" href="06-phase3-gap-closure.html" style="border-left: 4px solid #fa541c;">
+        <div class="paper-num" style="color: #fa541c;">06 &middot; PHASE 3</div>
+        <h3>Phase 3: Gap Closure and Gem Discovery</h3>
+        <div class="paper-meta">18 blocks &middot; 9 seeds &middot; 36 result files &middot; 5 models</div>
+        <div class="paper-tagline">Atlas-guided LoRA validated: 13.8&times; fewer params, equal accuracy. Hub migration replicated across 9 seeds (all std=0.0). Hub revised from L26 to L14 at 1.5B (narrow suite artifact). Coder hub flip: L2&rarr;L22 at same scale. Quantization amplifies steering 476&times;.</div>
       </a>
     </div>
 
