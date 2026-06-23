@@ -1,0 +1,143 @@
+{
+  "experiment": "atlas_guided_lora",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "family": "code_semantics",
+  "seed": 42,
+  "rank": 8,
+  "steps": 100,
+  "strategies": {
+    "atlas_guided": {
+      "trainable_params": 319488,
+      "total_params": 494352256,
+      "param_ratio": 0.0006462760028347074,
+      "final_loss": 0.03418434038758278,
+      "module_info": {
+        "strategy": "atlas_guided",
+        "layers": [
+          2,
+          7,
+          9
+        ],
+        "modules": [
+          "o_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "n_target_layers": 3
+      },
+      "eval": {
+        "n_eval": 1,
+        "mean_exact_match": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "words = ['a', 'b', 'c']\nprint('-'.join(words))\n# What prints?\n",
+            "target": "a-b-c",
+            "generated": "abc",
+            "exact_match": 0.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 25.9
+    },
+    "random_matched": {
+      "trainable_params": 319488,
+      "total_params": 494352256,
+      "param_ratio": 0.0006462760028347074,
+      "final_loss": 0.05566263571381569,
+      "module_info": {
+        "strategy": "random_matched",
+        "layers": [
+          4,
+          7,
+          11
+        ],
+        "modules": [
+          "o_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "n_target_layers": 3
+      },
+      "eval": {
+        "n_eval": 1,
+        "mean_exact_match": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "words = ['a', 'b', 'c']\nprint('-'.join(words))\n# What prints?\n",
+            "target": "a-b-c",
+            "generated": "abc",
+            "exact_match": 0.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 25.0
+    },
+    "all_linear": {
+      "trainable_params": 4399104,
+      "total_params": 498431872,
+      "param_ratio": 0.008825888244963597,
+      "final_loss": 1.9331471776240505e-05,
+      "module_info": {
+        "strategy": "all_linear",
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "up_proj",
+          "down_proj",
+          "gate_proj"
+        ],
+        "n_target_layers": 24
+      },
+      "eval": {
+        "n_eval": 1,
+        "mean_exact_match": 1.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "words = ['a', 'b', 'c']\nprint('-'.join(words))\n# What prints?\n",
+            "target": "a-b-c",
+            "generated": "a-b-c",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 30.9
+    }
+  },
+  "timestamp": "2026-06-23T13:02:26.476537+00:00",
+  "winner_accuracy": "all_linear",
+  "winner_efficiency": "all_linear"
+}

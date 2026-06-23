@@ -1,0 +1,164 @@
+{
+  "experiment": "atlas_guided_lora",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "family": "json_schema",
+  "seed": 42,
+  "rank": 8,
+  "steps": 100,
+  "strategies": {
+    "atlas_guided": {
+      "trainable_params": 319488,
+      "total_params": 494352256,
+      "param_ratio": 0.0006462760028347074,
+      "final_loss": 0.01869681291282177,
+      "module_info": {
+        "strategy": "atlas_guided",
+        "layers": [
+          2,
+          7,
+          9
+        ],
+        "modules": [
+          "o_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "n_target_layers": 3
+      },
+      "eval": {
+        "n_eval": 2,
+        "mean_exact_match": 1.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+            "target": "{\"name\":\"Bob\",\"age\":32}",
+            "generated": "{\"name\":\"Bob\",\"age\":32}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          },
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Eve is 56.\n",
+            "target": "{\"name\":\"Eve\",\"age\":56}",
+            "generated": "{\"name\":\"Eve\",\"age\":56}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 29.3
+    },
+    "random_matched": {
+      "trainable_params": 319488,
+      "total_params": 494352256,
+      "param_ratio": 0.0006462760028347074,
+      "final_loss": 0.06188763305544853,
+      "module_info": {
+        "strategy": "random_matched",
+        "layers": [
+          4,
+          7,
+          11
+        ],
+        "modules": [
+          "o_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "n_target_layers": 3
+      },
+      "eval": {
+        "n_eval": 2,
+        "mean_exact_match": 1.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+            "target": "{\"name\":\"Bob\",\"age\":32}",
+            "generated": "{\"name\":\"Bob\",\"age\":32}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          },
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Eve is 56.\n",
+            "target": "{\"name\":\"Eve\",\"age\":56}",
+            "generated": "{\"name\":\"Eve\",\"age\":56}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 28.7
+    },
+    "all_linear": {
+      "trainable_params": 4399104,
+      "total_params": 498431872,
+      "param_ratio": 0.008825888244963597,
+      "final_loss": 0.006949194706976414,
+      "module_info": {
+        "strategy": "all_linear",
+        "layers": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "up_proj",
+          "down_proj",
+          "gate_proj"
+        ],
+        "n_target_layers": 24
+      },
+      "eval": {
+        "n_eval": 2,
+        "mean_exact_match": 1.0,
+        "mean_constraint_satisfaction": 0.0,
+        "per_prompt": [
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Bob is 32.\n",
+            "target": "{\"name\":\"Bob\",\"age\":32}",
+            "generated": "{\"name\":\"Bob\",\"age\":32}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          },
+          {
+            "prompt": "Return exactly valid JSON with keys name and age. Eve is 56.\n",
+            "target": "{\"name\":\"Eve\",\"age\":56}",
+            "generated": "{\"name\":\"Eve\",\"age\":56}",
+            "exact_match": 1.0,
+            "constraint_satisfaction": 0.0
+          }
+        ]
+      },
+      "elapsed_seconds": 35.7
+    }
+  },
+  "timestamp": "2026-06-23T12:59:11.363087+00:00",
+  "winner_accuracy": "atlas_guided",
+  "winner_efficiency": "atlas_guided"
+}
