@@ -1,0 +1,522 @@
+{
+  "experiment": "phase3_module_sweep_with_accuracy",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "model_slug": "Qwen2.5-0.5B",
+  "seed": 42,
+  "n_layers": 24,
+  "timestamp": "2026-06-23T11:23:42.973401+00:00",
+  "baseline_exact_match": 0.0,
+  "baseline_valid_json": 1.0,
+  "module_results": {
+    "o_proj": {
+      "config": "o_proj",
+      "modules": [
+        "o_proj"
+      ],
+      "train_loss": 0.5687093424797058,
+      "n_trainable": 344064,
+      "n_total": 494376832,
+      "param_ratio": 0.0006959549431313157,
+      "adapter_norms": {
+        "layer_00": 1.8951275497674942,
+        "layer_01": 1.8714213371276855,
+        "layer_02": 1.8989176601171494,
+        "layer_03": 1.8811862468719482,
+        "layer_04": 1.8903790265321732,
+        "layer_05": 1.9047468900680542,
+        "layer_06": 1.93313167989254,
+        "layer_07": 1.9266036599874496,
+        "layer_08": 1.9179213047027588,
+        "layer_09": 1.9333705753087997,
+        "layer_10": 1.9476523399353027,
+        "layer_11": 1.96400985121727,
+        "layer_12": 1.9381477534770966,
+        "layer_13": 1.9759298264980316,
+        "layer_14": 1.9989652633666992,
+        "layer_15": 1.9922691881656647,
+        "layer_16": 1.9870315790176392,
+        "layer_17": 2.009149134159088,
+        "layer_18": 2.002226948738098,
+        "layer_19": 2.024423509836197,
+        "layer_20": 2.0090794563293457,
+        "layer_21": 2.0055763125419617,
+        "layer_22": 2.036349266767502,
+        "layer_23": 2.0345274806022644
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "v_proj": {
+      "config": "v_proj",
+      "modules": [
+        "v_proj"
+      ],
+      "train_loss": 0.8137890338897705,
+      "n_trainable": 196608,
+      "n_total": 494229376,
+      "param_ratio": 0.00039780719145273953,
+      "adapter_norms": {
+        "layer_00": 1.8124069795012474,
+        "layer_01": 1.8204856291413307,
+        "layer_02": 1.8254138231277466,
+        "layer_03": 1.800757274031639,
+        "layer_04": 1.7803392484784126,
+        "layer_05": 1.7852029278874397,
+        "layer_06": 1.7739924192428589,
+        "layer_07": 1.8020962104201317,
+        "layer_08": 1.8153632879257202,
+        "layer_09": 1.8489465713500977,
+        "layer_10": 1.851119577884674,
+        "layer_11": 1.855051651597023,
+        "layer_12": 1.8253318965435028,
+        "layer_13": 1.8604168146848679,
+        "layer_14": 1.8822612315416336,
+        "layer_15": 1.914392128586769,
+        "layer_16": 1.914002314209938,
+        "layer_17": 1.8899683952331543,
+        "layer_18": 1.8937054574489594,
+        "layer_19": 1.9220266789197922,
+        "layer_20": 1.9031674265861511,
+        "layer_21": 1.9269804060459137,
+        "layer_22": 1.9631667286157608,
+        "layer_23": 1.913397654891014
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "q_proj": {
+      "config": "q_proj",
+      "modules": [
+        "q_proj"
+      ],
+      "train_loss": 1.2849335670471191,
+      "n_trainable": 344064,
+      "n_total": 494376832,
+      "param_ratio": 0.0006959549431313157,
+      "adapter_norms": {
+        "layer_00": 1.9923075735569,
+        "layer_01": 2.0289383232593536,
+        "layer_02": 2.0856857299804688,
+        "layer_03": 2.0931411683559418,
+        "layer_04": 2.050892472267151,
+        "layer_05": 2.089157998561859,
+        "layer_06": 2.0966212153434753,
+        "layer_07": 2.1323057413101196,
+        "layer_08": 2.078078478574753,
+        "layer_09": 2.0164124369621277,
+        "layer_10": 2.0429416596889496,
+        "layer_11": 2.086495488882065,
+        "layer_12": 2.0971400141716003,
+        "layer_13": 2.1883432269096375,
+        "layer_14": 2.191218614578247,
+        "layer_15": 2.177594542503357,
+        "layer_16": 2.2047246992588043,
+        "layer_17": 2.2450752556324005,
+        "layer_18": 2.2287765741348267,
+        "layer_19": 2.236365854740143,
+        "layer_20": 2.2901788651943207,
+        "layer_21": 2.209513485431671,
+        "layer_22": 2.2755927443504333,
+        "layer_23": 2.2565558552742004
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "k_proj": {
+      "config": "k_proj",
+      "modules": [
+        "k_proj"
+      ],
+      "train_loss": 1.7486627006530762,
+      "n_trainable": 196608,
+      "n_total": 494229376,
+      "param_ratio": 0.00039780719145273953,
+      "adapter_norms": {
+        "layer_00": 1.980805978178978,
+        "layer_01": 2.0043108761310577,
+        "layer_02": 1.9773097336292267,
+        "layer_03": 1.9643194526433945,
+        "layer_04": 1.9153261929750443,
+        "layer_05": 1.9312170892953873,
+        "layer_06": 1.9140424728393555,
+        "layer_07": 1.9846059381961823,
+        "layer_08": 1.9463263750076294,
+        "layer_09": 1.9268361926078796,
+        "layer_10": 1.9431049972772598,
+        "layer_11": 1.942237600684166,
+        "layer_12": 1.9265011250972748,
+        "layer_13": 2.0339546352624893,
+        "layer_14": 2.030046045780182,
+        "layer_15": 1.9948357790708542,
+        "layer_16": 2.040479689836502,
+        "layer_17": 2.0109453052282333,
+        "layer_18": 2.0453349202871323,
+        "layer_19": 1.9870957136154175,
+        "layer_20": 2.0579927563667297,
+        "layer_21": 1.9768763929605484,
+        "layer_22": 2.068831652402878,
+        "layer_23": 2.0236943811178207
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "You are an AI assistant. Provide a detailed answer so user don\u2019t need to search outside.",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "```json\n{\"name\":\"Eve\",\"age\":56}\n```",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "up_proj": {
+      "config": "up_proj",
+      "modules": [
+        "up_proj"
+      ],
+      "train_loss": 0.41307539463043214,
+      "n_trainable": 1105920,
+      "n_total": 495138688,
+      "param_ratio": 0.0022335560254180746,
+      "adapter_norms": {
+        "layer_00": 2.0181387662887573,
+        "layer_01": 1.995120793581009,
+        "layer_02": 2.0085853934288025,
+        "layer_03": 2.0447920858860016,
+        "layer_04": 2.033136337995529,
+        "layer_05": 2.0447134375572205,
+        "layer_06": 2.055468589067459,
+        "layer_07": 2.069793790578842,
+        "layer_08": 2.076435774564743,
+        "layer_09": 2.065862089395523,
+        "layer_10": 2.0780621767044067,
+        "layer_11": 2.078185796737671,
+        "layer_12": 2.1131961941719055,
+        "layer_13": 2.13154673576355,
+        "layer_14": 2.1487701535224915,
+        "layer_15": 2.1647287905216217,
+        "layer_16": 2.165037125349045,
+        "layer_17": 2.170357644557953,
+        "layer_18": 2.180081605911255,
+        "layer_19": 2.212586224079132,
+        "layer_20": 2.2001919746398926,
+        "layer_21": 2.2474435567855835,
+        "layer_22": 2.2413546442985535,
+        "layer_23": 2.2624908685684204
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "down_proj": {
+      "config": "down_proj",
+      "modules": [
+        "down_proj"
+      ],
+      "train_loss": 0.47595396637916565,
+      "n_trainable": 1105920,
+      "n_total": 495138688,
+      "param_ratio": 0.0022335560254180746,
+      "adapter_norms": {
+        "layer_00": 1.8990702778100967,
+        "layer_01": 1.906115710735321,
+        "layer_02": 1.922603964805603,
+        "layer_03": 1.9085593223571777,
+        "layer_04": 1.922865390777588,
+        "layer_05": 1.9217322766780853,
+        "layer_06": 1.9579931199550629,
+        "layer_07": 1.9597880244255066,
+        "layer_08": 1.9885251969099045,
+        "layer_09": 1.9864021092653275,
+        "layer_10": 1.9678663164377213,
+        "layer_11": 1.9710561633110046,
+        "layer_12": 2.0450769662857056,
+        "layer_13": 2.0282276272773743,
+        "layer_14": 2.022264704108238,
+        "layer_15": 2.0324908792972565,
+        "layer_16": 2.04099041223526,
+        "layer_17": 2.055684119462967,
+        "layer_18": 2.067643702030182,
+        "layer_19": 2.0654940009117126,
+        "layer_20": 2.0741118788719177,
+        "layer_21": 1.9353803545236588,
+        "layer_22": 2.1108799874782562,
+        "layer_23": 2.1164731085300446
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "gate_proj": {
+      "config": "gate_proj",
+      "modules": [
+        "gate_proj"
+      ],
+      "train_loss": 0.45178935885429383,
+      "n_trainable": 1105920,
+      "n_total": 495138688,
+      "param_ratio": 0.0022335560254180746,
+      "adapter_norms": {
+        "layer_00": 2.060262143611908,
+        "layer_01": 2.033154845237732,
+        "layer_02": 2.0578869581222534,
+        "layer_03": 2.0889949798583984,
+        "layer_04": 2.0853554010391235,
+        "layer_05": 2.113977789878845,
+        "layer_06": 2.116525173187256,
+        "layer_07": 2.1366394460201263,
+        "layer_08": 2.1337953209877014,
+        "layer_09": 2.137584149837494,
+        "layer_10": 2.147223621606827,
+        "layer_11": 2.138751447200775,
+        "layer_12": 2.168098747730255,
+        "layer_13": 2.1799978017807007,
+        "layer_14": 2.221712291240692,
+        "layer_15": 2.229362726211548,
+        "layer_16": 2.2209538221359253,
+        "layer_17": 2.2220959663391113,
+        "layer_18": 2.2358959913253784,
+        "layer_19": 2.2639231085777283,
+        "layer_20": 2.2420670986175537,
+        "layer_21": 2.285487711429596,
+        "layer_22": 2.2819799184799194,
+        "layer_23": 2.2798969745635986
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    },
+    "all_linear": {
+      "config": "all_linear",
+      "modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "up_proj",
+        "down_proj",
+        "gate_proj"
+      ],
+      "train_loss": 0.3057142782211304,
+      "n_trainable": 4399104,
+      "n_total": 498431872,
+      "param_ratio": 0.008825888244963597,
+      "adapter_norms": {
+        "layer_00": 12.399738132953644,
+        "layer_01": 12.389770768582821,
+        "layer_02": 12.462273735553026,
+        "layer_03": 12.484091397374868,
+        "layer_04": 12.468053538352251,
+        "layer_05": 12.50048229470849,
+        "layer_06": 12.563030451536179,
+        "layer_07": 12.575758691877127,
+        "layer_08": 12.560714162886143,
+        "layer_09": 12.571087148040533,
+        "layer_10": 12.57467756792903,
+        "layer_11": 12.583186961710453,
+        "layer_12": 12.644639633595943,
+        "layer_13": 12.72936886176467,
+        "layer_14": 12.694141916930676,
+        "layer_15": 12.75060759484768,
+        "layer_16": 12.859971962869167,
+        "layer_17": 12.79317094758153,
+        "layer_18": 12.88496994227171,
+        "layer_19": 12.905802384018898,
+        "layer_20": 12.909236937761307,
+        "layer_21": 12.898495331406593,
+        "layer_22": 12.985090591013432,
+        "layer_23": 13.052181363105774
+      },
+      "accuracy_eval": {
+        "mean_exact_match": 0.0,
+        "mean_valid_json": 0.0,
+        "mean_constraint_satisfaction": 0.0,
+        "n_eval": 2,
+        "per_example": [
+          {
+            "example_id": "json_0008",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Bob\",\"age\":32}",
+            "target": "{\"name\":\"Bob\",\"age\":32}"
+          },
+          {
+            "example_id": "json_0009",
+            "exact_match": 0.0,
+            "valid_json": 0.0,
+            "constraint_satisfaction": 0.0,
+            "generated": "### Answer:\n{\"name\":\"Eve\",\"age\":56}",
+            "target": "{\"name\":\"Eve\",\"age\":56}"
+          }
+        ]
+      },
+      "param_efficiency": 0.0,
+      "accuracy_delta": 0.0
+    }
+  },
+  "summary": {
+    "best_module_accuracy": null,
+    "best_accuracy": 0.0,
+    "best_module_efficiency": null,
+    "best_efficiency": 0.0,
+    "baseline_accuracy": 0.0,
+    "elapsed_seconds": 536.1
+  }
+}
