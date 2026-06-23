@@ -1,0 +1,3567 @@
+{
+  "experiment": "phase3_module_ablation",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "seed": 42,
+  "hub_layers": [
+    2,
+    8,
+    12,
+    19,
+    21,
+    22,
+    23
+  ],
+  "modules_tested": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "up_proj",
+    "down_proj",
+    "gate_proj"
+  ],
+  "n_kv_heads": 2,
+  "n_q_heads": 14,
+  "gqa_ratio": "14/2",
+  "layers": {
+    "2": {
+      "layer": 2,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.146016,
+            "std_kl": 0.034567,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.064882,
+            "std_kl": 0.059521,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.027246,
+            "std_kl": 0.024088,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.098484,
+            "std_kl": 0.050478,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.047433,
+            "std_kl": 0.017386,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.136861,
+            "std_kl": 0.118626,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.228128,
+            "std_kl": 0.028835,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.23047,
+            "std_kl": 0.043854,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.079861,
+            "std_kl": 0.035738,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.133284,
+            "std_kl": 0.108932,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.123102,
+            "std_kl": 0.056811,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.217541,
+            "std_kl": 0.171378,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.146016,
+            "std_kl": 0.034567,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.064882,
+            "std_kl": 0.059521,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.027246,
+            "std_kl": 0.024088,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.098484,
+            "std_kl": 0.050478,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.047433,
+            "std_kl": 0.017386,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.136861,
+            "std_kl": 0.118626,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.228128,
+            "std_kl": 0.028835,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.23047,
+            "std_kl": 0.043854,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.079861,
+            "std_kl": 0.035738,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.133284,
+            "std_kl": 0.108932,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.123102,
+            "std_kl": 0.056811,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.217541,
+            "std_kl": 0.171378,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.155751,
+            "std_kl": 0.094024,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.187345,
+            "std_kl": 0.05264,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.026358,
+            "std_kl": 0.019082,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.205922,
+            "std_kl": 0.087802,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.230131,
+            "std_kl": 0.086089,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.126136,
+            "std_kl": 0.034749,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.433183,
+            "std_kl": 0.041624,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.761242,
+            "std_kl": 0.143864,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.267232,
+            "std_kl": 0.33273,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.277054,
+            "std_kl": 0.173245,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.15173,
+            "std_kl": 0.076016,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.406009,
+            "std_kl": 0.213162,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.155751,
+            "std_kl": 0.094024,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.187345,
+            "std_kl": 0.05264,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.026358,
+            "std_kl": 0.019082,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.205922,
+            "std_kl": 0.087802,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.230131,
+            "std_kl": 0.086089,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.126136,
+            "std_kl": 0.034749,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.433183,
+            "std_kl": 0.041624,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.761242,
+            "std_kl": 0.143864,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.267232,
+            "std_kl": 0.33273,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.277054,
+            "std_kl": 0.173245,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.15173,
+            "std_kl": 0.076016,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.406009,
+            "std_kl": 0.213162,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 2.051621,
+            "std_kl": 1.298718,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 2.300133,
+            "std_kl": 1.868789,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 1.648018,
+            "std_kl": 1.24726,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 6.595861,
+            "std_kl": 3.448949,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.610103,
+            "std_kl": 0.15895,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 4.074084,
+            "std_kl": 0.959327,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 4.907303,
+            "std_kl": 0.695347,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 4.808699,
+            "std_kl": 0.293425,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 1.938041,
+            "std_kl": 0.963766,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 3.503176,
+            "std_kl": 0.798834,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 2.414128,
+            "std_kl": 0.985535,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 3.106674,
+            "std_kl": 1.315921,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 2.051621,
+            "std_kl": 1.298718,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 2.300133,
+            "std_kl": 1.868789,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 1.648018,
+            "std_kl": 1.24726,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 6.595861,
+            "std_kl": 3.448949,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.610103,
+            "std_kl": 0.15895,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 4.074084,
+            "std_kl": 0.959327,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 4.907303,
+            "std_kl": 0.695347,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 4.808699,
+            "std_kl": 0.293425,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 1.938041,
+            "std_kl": 0.963766,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 3.503176,
+            "std_kl": 0.798834,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 2.414128,
+            "std_kl": 0.985535,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 3.106674,
+            "std_kl": 1.315921,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 2.051621,
+            "std_kl": 1.298718,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 2.300133,
+            "std_kl": 1.868789,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 1.648018,
+            "std_kl": 1.24726,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 6.595861,
+            "std_kl": 3.448949,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.610103,
+            "std_kl": 0.15895,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 4.074084,
+            "std_kl": 0.959327,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 4.907303,
+            "std_kl": 0.695347,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 4.808699,
+            "std_kl": 0.293425,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 1.938041,
+            "std_kl": 0.963766,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 3.503176,
+            "std_kl": 0.798834,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 2.414128,
+            "std_kl": 0.985535,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 3.106674,
+            "std_kl": 1.315921,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 18.561724,
+          "std_kl": 0.562411,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 22.412819,
+          "std_kl": 0.846753,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 19.831067,
+          "std_kl": 2.26252,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 16.452006,
+          "std_kl": 0.233243,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 21.445272,
+          "std_kl": 0.227147,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 18.217676,
+          "std_kl": 0.620441,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 15.126641,
+          "std_kl": 0.366656,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 20.745321,
+          "std_kl": 0.179556,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 18.68098,
+          "std_kl": 3.117791,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 19.786334,
+          "std_kl": 1.353099,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 22.787812,
+          "std_kl": 0.680541,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 19.738845,
+          "std_kl": 0.766955,
+          "n": 5
+        }
+      }
+    },
+    "8": {
+      "layer": 8,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.021646,
+            "std_kl": 0.024993,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.09692,
+            "std_kl": 0.040666,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.045183,
+            "std_kl": 0.027808,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.0089,
+            "std_kl": 0.002438,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.069389,
+            "std_kl": 0.034085,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.060414,
+            "std_kl": 0.061976,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.555188,
+            "std_kl": 0.13481,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.30544,
+            "std_kl": 0.022085,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.072059,
+            "std_kl": 0.043656,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.174821,
+            "std_kl": 0.055893,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.364735,
+            "std_kl": 0.330597,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.129383,
+            "std_kl": 0.078456,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.021646,
+            "std_kl": 0.024993,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.09692,
+            "std_kl": 0.040666,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.045183,
+            "std_kl": 0.027808,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.0089,
+            "std_kl": 0.002438,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.069389,
+            "std_kl": 0.034085,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.060414,
+            "std_kl": 0.061976,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.555188,
+            "std_kl": 0.13481,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.30544,
+            "std_kl": 0.022085,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.072059,
+            "std_kl": 0.043656,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.174821,
+            "std_kl": 0.055893,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.364735,
+            "std_kl": 0.330597,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.129383,
+            "std_kl": 0.078456,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.018633,
+            "std_kl": 0.019479,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.075309,
+            "std_kl": 0.043056,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.049213,
+            "std_kl": 0.058971,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.073954,
+            "std_kl": 0.03553,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.043302,
+            "std_kl": 0.027347,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.122782,
+            "std_kl": 0.1034,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.192817,
+            "std_kl": 0.062407,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.072052,
+            "std_kl": 0.020724,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.062389,
+            "std_kl": 0.044564,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.05391,
+            "std_kl": 0.046015,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.318827,
+            "std_kl": 0.28142,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.158914,
+            "std_kl": 0.169774,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.018633,
+            "std_kl": 0.019479,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.075309,
+            "std_kl": 0.043056,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.049213,
+            "std_kl": 0.058971,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.073954,
+            "std_kl": 0.03553,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.043302,
+            "std_kl": 0.027347,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.122782,
+            "std_kl": 0.1034,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.192817,
+            "std_kl": 0.062407,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.072052,
+            "std_kl": 0.020724,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.062389,
+            "std_kl": 0.044564,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.05391,
+            "std_kl": 0.046015,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.318827,
+            "std_kl": 0.28142,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.158914,
+            "std_kl": 0.169774,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.012104,
+            "std_kl": 0.007621,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.147185,
+            "std_kl": 0.067937,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.031807,
+            "std_kl": 0.018666,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.034308,
+            "std_kl": 0.01813,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.154995,
+            "std_kl": 0.067229,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.099968,
+            "std_kl": 0.074787,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.544001,
+            "std_kl": 0.111167,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.318412,
+            "std_kl": 0.052705,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.224388,
+            "std_kl": 0.292847,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.132408,
+            "std_kl": 0.064623,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.066736,
+            "std_kl": 0.025823,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.323101,
+            "std_kl": 0.116074,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.012104,
+            "std_kl": 0.007621,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.147185,
+            "std_kl": 0.067937,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.031807,
+            "std_kl": 0.018666,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.034308,
+            "std_kl": 0.01813,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.154995,
+            "std_kl": 0.067229,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.099968,
+            "std_kl": 0.074787,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.544001,
+            "std_kl": 0.111167,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.318412,
+            "std_kl": 0.052705,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.224388,
+            "std_kl": 0.292847,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.132408,
+            "std_kl": 0.064623,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.066736,
+            "std_kl": 0.025823,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.323101,
+            "std_kl": 0.116074,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.012104,
+            "std_kl": 0.007621,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.147185,
+            "std_kl": 0.067937,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.031807,
+            "std_kl": 0.018666,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.034308,
+            "std_kl": 0.01813,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.154995,
+            "std_kl": 0.067229,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.099968,
+            "std_kl": 0.074787,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.544001,
+            "std_kl": 0.111167,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.318412,
+            "std_kl": 0.052705,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.224388,
+            "std_kl": 0.292847,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.132408,
+            "std_kl": 0.064623,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.066736,
+            "std_kl": 0.025823,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.323101,
+            "std_kl": 0.116074,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 14.073175,
+          "std_kl": 0.392624,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 13.491732,
+          "std_kl": 0.186294,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 14.020826,
+          "std_kl": 1.080385,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 11.90642,
+          "std_kl": 0.39697,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 13.179144,
+          "std_kl": 0.081892,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 12.308095,
+          "std_kl": 0.448724,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 10.457962,
+          "std_kl": 0.400461,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 16.9316,
+          "std_kl": 0.103771,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 16.127842,
+          "std_kl": 1.231159,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 17.692656,
+          "std_kl": 1.303787,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 14.852337,
+          "std_kl": 1.17452,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 16.931439,
+          "std_kl": 1.277438,
+          "n": 5
+        }
+      }
+    },
+    "12": {
+      "layer": 12,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.085513,
+            "std_kl": 0.049337,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.024166,
+            "std_kl": 0.017187,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.101376,
+            "std_kl": 0.156434,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.017969,
+            "std_kl": 0.0103,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.018675,
+            "std_kl": 0.005138,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.051107,
+            "std_kl": 0.025185,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.128089,
+            "std_kl": 0.056421,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.054125,
+            "std_kl": 0.003987,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.11709,
+            "std_kl": 0.083033,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.094671,
+            "std_kl": 0.052769,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.220423,
+            "std_kl": 0.081704,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.068464,
+            "std_kl": 0.036762,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.085513,
+            "std_kl": 0.049337,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.024166,
+            "std_kl": 0.017187,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.101376,
+            "std_kl": 0.156434,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.017969,
+            "std_kl": 0.0103,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.018675,
+            "std_kl": 0.005138,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.051107,
+            "std_kl": 0.025185,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.128089,
+            "std_kl": 0.056421,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.054125,
+            "std_kl": 0.003987,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.11709,
+            "std_kl": 0.083033,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.094671,
+            "std_kl": 0.052769,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.220423,
+            "std_kl": 0.081704,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.068464,
+            "std_kl": 0.036762,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.010359,
+            "std_kl": 0.012721,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.065312,
+            "std_kl": 0.052312,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.061609,
+            "std_kl": 0.076083,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.012055,
+            "std_kl": 0.004897,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.072203,
+            "std_kl": 0.014667,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.046677,
+            "std_kl": 0.032858,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.139641,
+            "std_kl": 0.026147,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.166159,
+            "std_kl": 0.021539,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.177242,
+            "std_kl": 0.191569,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.18981,
+            "std_kl": 0.15798,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.345359,
+            "std_kl": 0.137765,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.093824,
+            "std_kl": 0.01547,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.010359,
+            "std_kl": 0.012721,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.065312,
+            "std_kl": 0.052312,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.061609,
+            "std_kl": 0.076083,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.012055,
+            "std_kl": 0.004897,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.072203,
+            "std_kl": 0.014667,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.046677,
+            "std_kl": 0.032858,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.139641,
+            "std_kl": 0.026147,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.166159,
+            "std_kl": 0.021539,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.177242,
+            "std_kl": 0.191569,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.18981,
+            "std_kl": 0.15798,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.345359,
+            "std_kl": 0.137765,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.093824,
+            "std_kl": 0.01547,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.165492,
+            "std_kl": 0.221204,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.037455,
+            "std_kl": 0.014271,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.035256,
+            "std_kl": 0.018532,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.043786,
+            "std_kl": 0.023632,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.03666,
+            "std_kl": 0.015153,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.04352,
+            "std_kl": 0.016738,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.102071,
+            "std_kl": 0.033172,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.720911,
+            "std_kl": 0.131979,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.201647,
+            "std_kl": 0.154763,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.121144,
+            "std_kl": 0.061685,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.129289,
+            "std_kl": 0.074715,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.257663,
+            "std_kl": 0.10937,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.165492,
+            "std_kl": 0.221204,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.037455,
+            "std_kl": 0.014271,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.035256,
+            "std_kl": 0.018532,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.043786,
+            "std_kl": 0.023632,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.03666,
+            "std_kl": 0.015153,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.04352,
+            "std_kl": 0.016738,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.102071,
+            "std_kl": 0.033172,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.720911,
+            "std_kl": 0.131979,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.201647,
+            "std_kl": 0.154763,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.121144,
+            "std_kl": 0.061685,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.129289,
+            "std_kl": 0.074715,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.257663,
+            "std_kl": 0.10937,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.165492,
+            "std_kl": 0.221204,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.037455,
+            "std_kl": 0.014271,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.035256,
+            "std_kl": 0.018532,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.043786,
+            "std_kl": 0.023632,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.03666,
+            "std_kl": 0.015153,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.04352,
+            "std_kl": 0.016738,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.102071,
+            "std_kl": 0.033172,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.720911,
+            "std_kl": 0.131979,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.201647,
+            "std_kl": 0.154763,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.121144,
+            "std_kl": 0.061685,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.129289,
+            "std_kl": 0.074715,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.257663,
+            "std_kl": 0.10937,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 9.968612,
+          "std_kl": 0.810665,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 9.859403,
+          "std_kl": 1.216663,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 10.335928,
+          "std_kl": 2.833681,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 8.173003,
+          "std_kl": 0.255577,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 8.865337,
+          "std_kl": 0.305425,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 9.522811,
+          "std_kl": 0.533759,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 7.419985,
+          "std_kl": 0.240592,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 11.022459,
+          "std_kl": 0.058845,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 13.263228,
+          "std_kl": 1.585499,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 12.523972,
+          "std_kl": 0.520909,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 11.88906,
+          "std_kl": 1.439856,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 12.303958,
+          "std_kl": 0.768927,
+          "n": 5
+        }
+      }
+    },
+    "19": {
+      "layer": 19,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.003032,
+            "std_kl": 0.001245,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.008932,
+            "std_kl": 0.004158,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.033034,
+            "std_kl": 0.029744,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.005338,
+            "std_kl": 0.000843,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.007277,
+            "std_kl": 0.001002,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.023603,
+            "std_kl": 0.013853,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.17063,
+            "std_kl": 0.051245,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.030446,
+            "std_kl": 0.000911,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.059884,
+            "std_kl": 0.048863,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.041087,
+            "std_kl": 0.014355,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.018611,
+            "std_kl": 0.008618,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.046284,
+            "std_kl": 0.008704,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.003032,
+            "std_kl": 0.001245,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.008932,
+            "std_kl": 0.004158,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.033034,
+            "std_kl": 0.029744,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.005338,
+            "std_kl": 0.000843,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.007277,
+            "std_kl": 0.001002,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.023603,
+            "std_kl": 0.013853,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.17063,
+            "std_kl": 0.051245,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.030446,
+            "std_kl": 0.000911,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.059884,
+            "std_kl": 0.048863,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.041087,
+            "std_kl": 0.014355,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.018611,
+            "std_kl": 0.008618,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.046284,
+            "std_kl": 0.008704,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.008769,
+            "std_kl": 0.004719,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.010055,
+            "std_kl": 0.002822,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.033606,
+            "std_kl": 0.029288,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.011344,
+            "std_kl": 0.002178,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.010617,
+            "std_kl": 0.001957,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.017389,
+            "std_kl": 0.003434,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.178646,
+            "std_kl": 0.025929,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.021136,
+            "std_kl": 0.00358,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.08127,
+            "std_kl": 0.07555,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.02291,
+            "std_kl": 0.013412,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.031534,
+            "std_kl": 0.017397,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.031455,
+            "std_kl": 0.013879,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.008769,
+            "std_kl": 0.004719,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.010055,
+            "std_kl": 0.002822,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.033606,
+            "std_kl": 0.029288,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.011344,
+            "std_kl": 0.002178,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.010617,
+            "std_kl": 0.001957,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.017389,
+            "std_kl": 0.003434,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.178646,
+            "std_kl": 0.025929,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.021136,
+            "std_kl": 0.00358,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.08127,
+            "std_kl": 0.07555,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.02291,
+            "std_kl": 0.013412,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.031534,
+            "std_kl": 0.017397,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.031455,
+            "std_kl": 0.013879,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.083335,
+            "std_kl": 0.108988,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.084243,
+            "std_kl": 0.030774,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.131091,
+            "std_kl": 0.162071,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.062116,
+            "std_kl": 0.016757,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.068832,
+            "std_kl": 0.005336,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.241972,
+            "std_kl": 0.080631,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.709975,
+            "std_kl": 0.075846,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.399949,
+            "std_kl": 0.024221,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.356104,
+            "std_kl": 0.244015,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.165276,
+            "std_kl": 0.065147,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.089797,
+            "std_kl": 0.025632,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.305928,
+            "std_kl": 0.151722,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.083335,
+            "std_kl": 0.108988,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.084243,
+            "std_kl": 0.030774,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.131091,
+            "std_kl": 0.162071,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.062116,
+            "std_kl": 0.016757,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.068832,
+            "std_kl": 0.005336,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.241972,
+            "std_kl": 0.080631,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.709975,
+            "std_kl": 0.075846,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.399949,
+            "std_kl": 0.024221,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.356104,
+            "std_kl": 0.244015,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.165276,
+            "std_kl": 0.065147,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.089797,
+            "std_kl": 0.025632,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.305928,
+            "std_kl": 0.151722,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.083335,
+            "std_kl": 0.108988,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.084243,
+            "std_kl": 0.030774,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.131091,
+            "std_kl": 0.162071,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.062116,
+            "std_kl": 0.016757,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.068832,
+            "std_kl": 0.005336,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.241972,
+            "std_kl": 0.080631,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.709975,
+            "std_kl": 0.075846,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.399949,
+            "std_kl": 0.024221,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.356104,
+            "std_kl": 0.244015,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.165276,
+            "std_kl": 0.065147,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.089797,
+            "std_kl": 0.025632,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.305928,
+            "std_kl": 0.151722,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 8.590384,
+          "std_kl": 0.892119,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 11.061892,
+          "std_kl": 1.16331,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 11.270725,
+          "std_kl": 3.741973,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 7.714409,
+          "std_kl": 0.219851,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 10.041858,
+          "std_kl": 0.160047,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 10.573687,
+          "std_kl": 1.447967,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 6.660253,
+          "std_kl": 0.334936,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 8.17871,
+          "std_kl": 0.13856,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 10.266829,
+          "std_kl": 0.913607,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 10.226461,
+          "std_kl": 0.661133,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 13.276607,
+          "std_kl": 1.788549,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 10.192284,
+          "std_kl": 0.948915,
+          "n": 5
+        }
+      }
+    },
+    "21": {
+      "layer": 21,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.009976,
+            "std_kl": 0.008421,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.007229,
+            "std_kl": 0.002744,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.014181,
+            "std_kl": 0.010865,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.013521,
+            "std_kl": 0.002907,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.007642,
+            "std_kl": 0.003465,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.102774,
+            "std_kl": 0.024644,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.070409,
+            "std_kl": 0.018365,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.05133,
+            "std_kl": 0.003969,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.067583,
+            "std_kl": 0.07411,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.030142,
+            "std_kl": 0.020093,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.06586,
+            "std_kl": 0.02602,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.048586,
+            "std_kl": 0.039649,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.009976,
+            "std_kl": 0.008421,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.007229,
+            "std_kl": 0.002744,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.014181,
+            "std_kl": 0.010865,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.013521,
+            "std_kl": 0.002907,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.007642,
+            "std_kl": 0.003465,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.102774,
+            "std_kl": 0.024644,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.070409,
+            "std_kl": 0.018365,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.05133,
+            "std_kl": 0.003969,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.067583,
+            "std_kl": 0.07411,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.030142,
+            "std_kl": 0.020093,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.06586,
+            "std_kl": 0.02602,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.048586,
+            "std_kl": 0.039649,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.023335,
+            "std_kl": 0.009865,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.130797,
+            "std_kl": 0.027171,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.082112,
+            "std_kl": 0.046294,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.042353,
+            "std_kl": 0.002636,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.153225,
+            "std_kl": 0.014855,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.277403,
+            "std_kl": 0.07297,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.247929,
+            "std_kl": 0.039202,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.264214,
+            "std_kl": 0.008424,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.304588,
+            "std_kl": 0.249721,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.200588,
+            "std_kl": 0.030123,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.227151,
+            "std_kl": 0.048355,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.251326,
+            "std_kl": 0.133653,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.023335,
+            "std_kl": 0.009865,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.130797,
+            "std_kl": 0.027171,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.082112,
+            "std_kl": 0.046294,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.042353,
+            "std_kl": 0.002636,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.153225,
+            "std_kl": 0.014855,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.277403,
+            "std_kl": 0.07297,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.247929,
+            "std_kl": 0.039202,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.264214,
+            "std_kl": 0.008424,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.304588,
+            "std_kl": 0.249721,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.200588,
+            "std_kl": 0.030123,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.227151,
+            "std_kl": 0.048355,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.251326,
+            "std_kl": 0.133653,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.396339,
+            "std_kl": 0.630219,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.057473,
+            "std_kl": 0.010423,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.036528,
+            "std_kl": 0.034427,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.128854,
+            "std_kl": 0.069008,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.041438,
+            "std_kl": 0.012098,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.13069,
+            "std_kl": 0.024883,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.366896,
+            "std_kl": 0.029619,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.095961,
+            "std_kl": 0.012906,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.43321,
+            "std_kl": 0.367625,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.311256,
+            "std_kl": 0.221629,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.050112,
+            "std_kl": 0.005609,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.22442,
+            "std_kl": 0.171263,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.396339,
+            "std_kl": 0.630219,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.057473,
+            "std_kl": 0.010423,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.036528,
+            "std_kl": 0.034427,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.128854,
+            "std_kl": 0.069008,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.041438,
+            "std_kl": 0.012098,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.13069,
+            "std_kl": 0.024883,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.366896,
+            "std_kl": 0.029619,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.095961,
+            "std_kl": 0.012906,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.43321,
+            "std_kl": 0.367625,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.311256,
+            "std_kl": 0.221629,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.050112,
+            "std_kl": 0.005609,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.22442,
+            "std_kl": 0.171263,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.396339,
+            "std_kl": 0.630219,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.057473,
+            "std_kl": 0.010423,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.036528,
+            "std_kl": 0.034427,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.128854,
+            "std_kl": 0.069008,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.041438,
+            "std_kl": 0.012098,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.13069,
+            "std_kl": 0.024883,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.366896,
+            "std_kl": 0.029619,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.095961,
+            "std_kl": 0.012906,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.43321,
+            "std_kl": 0.367625,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.311256,
+            "std_kl": 0.221629,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.050112,
+            "std_kl": 0.005609,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.22442,
+            "std_kl": 0.171263,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 15.551531,
+          "std_kl": 0.30756,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 15.950292,
+          "std_kl": 0.745386,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 15.976466,
+          "std_kl": 1.931844,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 12.984259,
+          "std_kl": 0.427361,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 16.303906,
+          "std_kl": 0.150195,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 11.706128,
+          "std_kl": 0.771975,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 11.444798,
+          "std_kl": 0.120418,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 12.252406,
+          "std_kl": 0.093939,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 11.558892,
+          "std_kl": 1.536424,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 13.361468,
+          "std_kl": 0.90616,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 14.228833,
+          "std_kl": 0.108718,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 12.009608,
+          "std_kl": 1.650627,
+          "n": 5
+        }
+      }
+    },
+    "22": {
+      "layer": 22,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004753,
+            "std_kl": 0.004667,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.023685,
+            "std_kl": 0.023067,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.007762,
+            "std_kl": 0.008157,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.009822,
+            "std_kl": 0.002272,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.022389,
+            "std_kl": 0.008635,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.04253,
+            "std_kl": 0.017703,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.015906,
+            "std_kl": 0.005029,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.019781,
+            "std_kl": 0.001386,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.020953,
+            "std_kl": 0.021009,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.017272,
+            "std_kl": 0.010803,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.076507,
+            "std_kl": 0.082743,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.030562,
+            "std_kl": 0.04639,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004753,
+            "std_kl": 0.004667,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.023685,
+            "std_kl": 0.023067,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.007762,
+            "std_kl": 0.008157,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.009822,
+            "std_kl": 0.002272,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.022389,
+            "std_kl": 0.008635,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.04253,
+            "std_kl": 0.017703,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.015906,
+            "std_kl": 0.005029,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.019781,
+            "std_kl": 0.001386,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.020953,
+            "std_kl": 0.021009,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.017272,
+            "std_kl": 0.010803,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.076507,
+            "std_kl": 0.082743,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.030562,
+            "std_kl": 0.04639,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004529,
+            "std_kl": 0.004366,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.026127,
+            "std_kl": 0.020209,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.011688,
+            "std_kl": 0.010855,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.004832,
+            "std_kl": 0.001595,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.027167,
+            "std_kl": 0.010163,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.041345,
+            "std_kl": 0.017237,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.003684,
+            "std_kl": 0.000528,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.020134,
+            "std_kl": 0.001829,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.024704,
+            "std_kl": 0.024312,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.0206,
+            "std_kl": 0.016425,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.067799,
+            "std_kl": 0.081035,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.033176,
+            "std_kl": 0.052513,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004529,
+            "std_kl": 0.004366,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.026127,
+            "std_kl": 0.020209,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.011688,
+            "std_kl": 0.010855,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.004832,
+            "std_kl": 0.001595,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.027167,
+            "std_kl": 0.010163,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.041345,
+            "std_kl": 0.017237,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.003684,
+            "std_kl": 0.000528,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.020134,
+            "std_kl": 0.001829,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.024704,
+            "std_kl": 0.024312,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.0206,
+            "std_kl": 0.016425,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.067799,
+            "std_kl": 0.081035,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.033176,
+            "std_kl": 0.052513,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.07376,
+            "std_kl": 0.076888,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.111862,
+            "std_kl": 0.051609,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.149568,
+            "std_kl": 0.164714,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.221408,
+            "std_kl": 0.040963,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.061387,
+            "std_kl": 0.016042,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.270538,
+            "std_kl": 0.065453,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.599852,
+            "std_kl": 0.205613,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.200168,
+            "std_kl": 0.007787,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.262156,
+            "std_kl": 0.133588,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.135042,
+            "std_kl": 0.08367,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.200006,
+            "std_kl": 0.081216,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.641398,
+            "std_kl": 0.73048,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.07376,
+            "std_kl": 0.076888,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.111862,
+            "std_kl": 0.051609,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.149568,
+            "std_kl": 0.164714,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.221408,
+            "std_kl": 0.040963,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.061387,
+            "std_kl": 0.016042,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.270538,
+            "std_kl": 0.065453,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.599852,
+            "std_kl": 0.205613,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.200168,
+            "std_kl": 0.007787,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.262156,
+            "std_kl": 0.133588,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.135042,
+            "std_kl": 0.08367,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.200006,
+            "std_kl": 0.081216,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.641398,
+            "std_kl": 0.73048,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.07376,
+            "std_kl": 0.076888,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.111862,
+            "std_kl": 0.051609,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.149568,
+            "std_kl": 0.164714,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.221408,
+            "std_kl": 0.040963,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.061387,
+            "std_kl": 0.016042,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.270538,
+            "std_kl": 0.065453,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.599852,
+            "std_kl": 0.205613,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.200168,
+            "std_kl": 0.007787,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.262156,
+            "std_kl": 0.133588,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.135042,
+            "std_kl": 0.08367,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.200006,
+            "std_kl": 0.081216,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.641398,
+            "std_kl": 0.73048,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 17.727148,
+          "std_kl": 0.893919,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 15.9107,
+          "std_kl": 0.600729,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 18.858735,
+          "std_kl": 1.705526,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 14.983825,
+          "std_kl": 0.582023,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 16.165234,
+          "std_kl": 0.164969,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 12.180172,
+          "std_kl": 0.469273,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 13.931392,
+          "std_kl": 0.093666,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 11.79986,
+          "std_kl": 0.047418,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 13.672734,
+          "std_kl": 0.930496,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 14.882182,
+          "std_kl": 1.477523,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 14.767239,
+          "std_kl": 0.60205,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 14.140294,
+          "std_kl": 1.982463,
+          "n": 5
+        }
+      }
+    },
+    "23": {
+      "layer": 23,
+      "modules": {
+        "q_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004329,
+            "std_kl": 0.00293,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.003079,
+            "std_kl": 0.001024,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.011803,
+            "std_kl": 0.007389,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.104342,
+            "std_kl": 0.044019,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.005337,
+            "std_kl": 0.002056,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.069436,
+            "std_kl": 0.022462,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.102683,
+            "std_kl": 0.021085,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.028972,
+            "std_kl": 0.001051,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.079388,
+            "std_kl": 0.077491,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.037479,
+            "std_kl": 0.021043,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.045164,
+            "std_kl": 0.043202,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.027016,
+            "std_kl": 0.011337,
+            "n": 5
+          }
+        },
+        "k_proj": {
+          "arithmetic": {
+            "mean_kl": 0.004329,
+            "std_kl": 0.00293,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.003079,
+            "std_kl": 0.001024,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.011803,
+            "std_kl": 0.007389,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.104342,
+            "std_kl": 0.044019,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.005337,
+            "std_kl": 0.002056,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.069436,
+            "std_kl": 0.022462,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.102683,
+            "std_kl": 0.021085,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.028972,
+            "std_kl": 0.001051,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.079388,
+            "std_kl": 0.077491,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.037479,
+            "std_kl": 0.021043,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.045164,
+            "std_kl": 0.043202,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.027016,
+            "std_kl": 0.011337,
+            "n": 5
+          }
+        },
+        "v_proj": {
+          "arithmetic": {
+            "mean_kl": 0.010854,
+            "std_kl": 0.010468,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.399803,
+            "std_kl": 0.060608,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.300335,
+            "std_kl": 0.393481,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.095899,
+            "std_kl": 0.040745,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.325149,
+            "std_kl": 0.015326,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.197004,
+            "std_kl": 0.053555,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.118237,
+            "std_kl": 0.028257,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.265681,
+            "std_kl": 0.051317,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.132589,
+            "std_kl": 0.062567,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.040469,
+            "std_kl": 0.016765,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.361688,
+            "std_kl": 0.114562,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.089784,
+            "std_kl": 0.026378,
+            "n": 5
+          }
+        },
+        "o_proj": {
+          "arithmetic": {
+            "mean_kl": 0.010854,
+            "std_kl": 0.010468,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.399803,
+            "std_kl": 0.060608,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.300335,
+            "std_kl": 0.393481,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 0.095899,
+            "std_kl": 0.040745,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.325149,
+            "std_kl": 0.015326,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.197004,
+            "std_kl": 0.053555,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 0.118237,
+            "std_kl": 0.028257,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.265681,
+            "std_kl": 0.051317,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.132589,
+            "std_kl": 0.062567,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.040469,
+            "std_kl": 0.016765,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.361688,
+            "std_kl": 0.114562,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.089784,
+            "std_kl": 0.026378,
+            "n": 5
+          }
+        },
+        "up_proj": {
+          "arithmetic": {
+            "mean_kl": 0.292148,
+            "std_kl": 0.072135,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.427012,
+            "std_kl": 0.081426,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.62231,
+            "std_kl": 0.6404,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 3.272721,
+            "std_kl": 0.413336,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.318139,
+            "std_kl": 0.012359,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.803337,
+            "std_kl": 0.108833,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 2.438324,
+            "std_kl": 0.248553,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.620268,
+            "std_kl": 0.048572,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.933294,
+            "std_kl": 0.508081,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.50661,
+            "std_kl": 0.188485,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.539349,
+            "std_kl": 0.356112,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.659379,
+            "std_kl": 0.263457,
+            "n": 5
+          }
+        },
+        "down_proj": {
+          "arithmetic": {
+            "mean_kl": 0.292148,
+            "std_kl": 0.072135,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.427012,
+            "std_kl": 0.081426,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.62231,
+            "std_kl": 0.6404,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 3.272721,
+            "std_kl": 0.413336,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.318139,
+            "std_kl": 0.012359,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.803337,
+            "std_kl": 0.108833,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 2.438324,
+            "std_kl": 0.248553,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.620268,
+            "std_kl": 0.048572,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.933294,
+            "std_kl": 0.508081,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.50661,
+            "std_kl": 0.188485,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.539349,
+            "std_kl": 0.356112,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.659379,
+            "std_kl": 0.263457,
+            "n": 5
+          }
+        },
+        "gate_proj": {
+          "arithmetic": {
+            "mean_kl": 0.292148,
+            "std_kl": 0.072135,
+            "n": 5
+          },
+          "code_semantics": {
+            "mean_kl": 0.427012,
+            "std_kl": 0.081426,
+            "n": 5
+          },
+          "code_syntax": {
+            "mean_kl": 0.62231,
+            "std_kl": 0.6404,
+            "n": 5
+          },
+          "copying": {
+            "mean_kl": 3.272721,
+            "std_kl": 0.413336,
+            "n": 5
+          },
+          "dead_code": {
+            "mean_kl": 0.318139,
+            "std_kl": 0.012359,
+            "n": 5
+          },
+          "delimiter_tracking": {
+            "mean_kl": 0.803337,
+            "std_kl": 0.108833,
+            "n": 5
+          },
+          "factual_recall": {
+            "mean_kl": 2.438324,
+            "std_kl": 0.248553,
+            "n": 5
+          },
+          "json_schema": {
+            "mean_kl": 0.620268,
+            "std_kl": 0.048572,
+            "n": 5
+          },
+          "refusal_compliance": {
+            "mean_kl": 0.933294,
+            "std_kl": 0.508081,
+            "n": 5
+          },
+          "uncertainty_signalling": {
+            "mean_kl": 0.50661,
+            "std_kl": 0.188485,
+            "n": 5
+          },
+          "variable_renaming": {
+            "mean_kl": 0.539349,
+            "std_kl": 0.356112,
+            "n": 5
+          },
+          "verbosity_control": {
+            "mean_kl": 0.659379,
+            "std_kl": 0.263457,
+            "n": 5
+          }
+        }
+      },
+      "full_layer": {
+        "arithmetic": {
+          "mean_kl": 10.430486,
+          "std_kl": 0.291198,
+          "n": 5
+        },
+        "code_semantics": {
+          "mean_kl": 10.357004,
+          "std_kl": 0.104256,
+          "n": 5
+        },
+        "code_syntax": {
+          "mean_kl": 10.642408,
+          "std_kl": 0.793107,
+          "n": 5
+        },
+        "copying": {
+          "mean_kl": 8.029808,
+          "std_kl": 0.37439,
+          "n": 5
+        },
+        "dead_code": {
+          "mean_kl": 10.218513,
+          "std_kl": 0.106494,
+          "n": 5
+        },
+        "delimiter_tracking": {
+          "mean_kl": 6.909708,
+          "std_kl": 0.451579,
+          "n": 5
+        },
+        "factual_recall": {
+          "mean_kl": 6.750955,
+          "std_kl": 0.135554,
+          "n": 5
+        },
+        "json_schema": {
+          "mean_kl": 8.721438,
+          "std_kl": 0.075063,
+          "n": 5
+        },
+        "refusal_compliance": {
+          "mean_kl": 8.57691,
+          "std_kl": 1.321318,
+          "n": 5
+        },
+        "uncertainty_signalling": {
+          "mean_kl": 9.282066,
+          "std_kl": 0.831446,
+          "n": 5
+        },
+        "variable_renaming": {
+          "mean_kl": 9.603471,
+          "std_kl": 0.164857,
+          "n": 5
+        },
+        "verbosity_control": {
+          "mean_kl": 8.748999,
+          "std_kl": 1.019521,
+          "n": 5
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "q_proj": {
+      "mean_kl": 0.07342136904761905,
+      "std_kl": 0.08726562871278482
+    },
+    "k_proj": {
+      "mean_kl": 0.07342136904761905,
+      "std_kl": 0.08726562871278482
+    },
+    "v_proj": {
+      "mean_kl": 0.1325889761904762,
+      "std_kl": 0.13224565760230506
+    },
+    "o_proj": {
+      "mean_kl": 0.1325889761904762,
+      "std_kl": 0.13224565760230506
+    },
+    "up_proj": {
+      "mean_kl": 0.729452130952381,
+      "std_kl": 1.2494790852070523
+    },
+    "down_proj": {
+      "mean_kl": 0.729452130952381,
+      "std_kl": 1.2494790852070523
+    },
+    "gate_proj": {
+      "mean_kl": 0.729452130952381,
+      "std_kl": 1.2494790852070523
+    }
+  },
+  "timestamp": "2026-06-23T11:41:24.721893+00:00",
+  "git_commit": "25d8693"
+}
