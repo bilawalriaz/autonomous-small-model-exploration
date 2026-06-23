@@ -1,0 +1,115 @@
+{
+  "experiment": "steering_by_length",
+  "phase": 3,
+  "model": "Qwen/Qwen2.5-0.5B",
+  "model_slug": "Qwen2.5-0.5B",
+  "seed": 42,
+  "n_layers": 24,
+  "hub_layers": [
+    2,
+    21,
+    22,
+    23
+  ],
+  "strengths": [
+    -4.0,
+    -2.0,
+    -1.0,
+    -0.5,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "timestamp": "2026-06-23T12:39:58.874911+00:00",
+  "families": {
+    "factual_recall": {
+      "short": {
+        "token_range": "5-15",
+        "avg_tokens_measured": 6.0,
+        "n_prompts": 8,
+        "per_layer": {}
+      },
+      "medium": {
+        "token_range": "30-60",
+        "avg_tokens_measured": 19.333333333333332,
+        "n_prompts": 8,
+        "per_layer": {}
+      },
+      "long": {
+        "token_range": "100-256",
+        "avg_tokens_measured": 74.66666666666667,
+        "n_prompts": 8,
+        "per_layer": {}
+      }
+    },
+    "json_schema": {
+      "short": {
+        "token_range": "5-15",
+        "avg_tokens_measured": 11.666666666666666,
+        "n_prompts": 8,
+        "per_layer": {}
+      },
+      "medium": {
+        "token_range": "30-60",
+        "avg_tokens_measured": 30.333333333333332,
+        "n_prompts": 8,
+        "per_layer": {}
+      },
+      "long": {
+        "token_range": "100-256",
+        "avg_tokens_measured": 85.0,
+        "n_prompts": 8,
+        "per_layer": {}
+      }
+    }
+  },
+  "comparisons": {
+    "factual_recall": {
+      "bucket_peaks": {
+        "short": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        },
+        "medium": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        },
+        "long": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        }
+      },
+      "short_peak_kl": 0,
+      "long_peak_kl": 0,
+      "degradation_ratio": 0.0,
+      "degrades_significantly": true
+    },
+    "json_schema": {
+      "bucket_peaks": {
+        "short": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        },
+        "medium": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        },
+        "long": {
+          "peak_kl": 0,
+          "peak_layer": null,
+          "peak_strength": null
+        }
+      },
+      "short_peak_kl": 0,
+      "long_peak_kl": 0,
+      "degradation_ratio": 0.0,
+      "degrades_significantly": true
+    }
+  }
+}

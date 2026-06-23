@@ -101,8 +101,12 @@ def evaluate_model(model, tokenizer, eval_prompts):
     results = []
 
     for prompt_info in eval_prompts:
-        prompt = prompt_info.clean_prompt
-        target = prompt_info.target
+        if isinstance(prompt_info, dict):
+            prompt = prompt_info["prompt"]
+            target = prompt_info.get("target", "")
+        else:
+            prompt = prompt_info.clean_prompt
+            target = prompt_info.target
 
         inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256).to(model.device)
 
@@ -167,7 +171,8 @@ def compute_layer_ablation_effect(model, tokenizer, eval_prompts, n_layers):
     for layer_idx in range(n_layers):
         kl_values = []
         for i in range(n_test):
-            prompt = eval_prompts[i].clean_prompt
+            p = eval_prompts[i]
+            prompt = p["prompt"] if isinstance(p, dict) else p.clean_prompt
             ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256)["input_ids"].to(model.device)
 
             with torch.no_grad():
@@ -237,7 +242,7 @@ def main():
         print("No JSON training data found")
         return
 
-    train_texts = [p.clean_prompt + p.target for p in train_prompts]
+    train_texts = [(p["prompt"] + p.get("target", "")) if isinstance(p, dict) else (p.clean_prompt + p.target) for p in train_prompts]
     print(f"  Train: {len(train_texts)} examples, Eval: {len(eval_prompts)} examples")
 
     # Load model

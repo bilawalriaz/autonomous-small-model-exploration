@@ -95,7 +95,7 @@ def compute_layer_norms(model, tokenizer, prompts, n_layers):
 
         handle = layers[layer_idx].register_forward_hook(capture_hook)
         for i in range(n_test):
-            prompt = prompts[i].clean_prompt if hasattr(prompts[i], 'clean_prompt') else prompts[i]
+            prompt = prompts[i].clean_prompt if hasattr(prompts[i], 'clean_prompt') else (prompts[i]["prompt"] if isinstance(prompts[i], dict) else prompts[i])
             ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256)["input_ids"].to(model.device)
             with torch.no_grad():
                 _ = model(ids)
@@ -117,7 +117,7 @@ def compute_ablation_effects(model, tokenizer, prompts, n_layers):
     for layer_idx in range(n_layers):
         kl_values = []
         for i in range(n_test):
-            prompt = prompts[i].clean_prompt if hasattr(prompts[i], 'clean_prompt') else prompts[i]
+            prompt = prompts[i].clean_prompt if hasattr(prompts[i], 'clean_prompt') else (prompts[i]["prompt"] if isinstance(prompts[i], dict) else prompts[i])
             ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256)["input_ids"].to(model.device)
 
             with torch.no_grad():
@@ -153,8 +153,9 @@ def evaluate_generation_quality(model, tokenizer, prompts, n_layers, skip_layers
     n_test = min(8, len(prompts))
 
     for i in range(n_test):
-        prompt = prompts[i].clean_prompt if hasattr(prompts[i], 'clean_prompt') else prompts[i]
-        target = prompts[i].target if hasattr(prompts[i], 'target') else ""
+        p = prompts[i]
+        prompt = p.clean_prompt if hasattr(p, 'clean_prompt') else (p["prompt"] if isinstance(p, dict) else p)
+        target = p.target if hasattr(p, 'target') else (p.get("target", "") if isinstance(p, dict) else "")
 
         ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256)["input_ids"].to(model.device)
 
@@ -255,7 +256,7 @@ def compute_repetition_rate(text, ngram_size=3):
 
 def recovery_finetune(model, tokenizer, train_prompts, steps=50, lr=2e-4, rank=8):
     """Short recovery finetune on JSON family after layer skipping."""
-    train_texts = [p.clean_prompt + p.target for p in train_prompts]
+    train_texts = [(p["prompt"] + p.get("target", "")) if isinstance(p, dict) else (p.clean_prompt + p.target) for p in train_prompts]
 
     from torch.utils.data import DataLoader, Dataset
 
