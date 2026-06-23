@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>Phase 3: Gap Closure and Gem Discovery — MI-Atlas</title>
   <meta name="description" content="Phase 3 of MI-Atlas: converting exploratory findings into reviewer-grade claims. Atlas-guided LoRA validated, hub migration replicated, new gems discovered.">
 
@@ -17,16 +18,50 @@
       --accent: #d4380d;
       --accent2: #fa541c;
       --bg: #fff;
-      --card-bg: #fafafa;
+      --card-bg: #f5f5f5;
       --border: #e8e8e8;
     }
-    body { font-family: 'Noto Sans', sans-serif; color: var(--ink); background: var(--bg); }
-    .gradient { background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
-    h1.title { font-family: 'Google Sans', sans-serif; font-size: 2.2rem; font-weight: 700; letter-spacing: -0.01em; }
-    h2 { font-family: 'Google Sans', sans-serif; font-size: 1.4rem; font-weight: 700; margin-top: 2rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--ink); }
-    h3 { font-family: 'Google Sans', sans-serif; font-size: 1.1rem; font-weight: 600; margin-top: 1.5rem; }
-    .hero { background: linear-gradient(135deg, #fff7ed 0%, #fff1e6 100%); padding: 3rem 0; border-bottom: 3px solid var(--accent); }
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.2rem; }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    .gradient,
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    h2 {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ink);
+    }
+    h3 {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
     .card.highlight { border-left: 4px solid var(--accent); }
     .card.success { border-left: 4px solid #52c41a; }
     .card.warning { border-left: 4px solid #faad14; }
@@ -39,67 +74,132 @@
     .tag-new { background: #e6f7ff; color: #096dd9; border: 1px solid #91d5ff; }
     .tag-pending { background: #f5f5f5; color: #8c8c8c; border: 1px solid #d9d9d9; }
     table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
-    th { background: #fafafa; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--ink); }
+    th { background: #fff; font-weight: 600; text-align: left; padding: 0.6rem 0.8rem; border-bottom: 2px solid var(--ink); }
     td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
     tr:hover { background: #fafafa; }
-    .nav-brand { font-size: 1.2rem; }
-    .mi-nav { background: var(--ink); padding: 0.8rem 0; }
-    .mi-nav a { color: #fff; margin-right: 1.5rem; font-size: 0.9rem; text-decoration: none; opacity: 0.7; }
-    .mi-nav a:hover, .mi-nav a.active { opacity: 1; }
-    .footer { background: #fafafa; border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
     .columns-gap { margin-top: 1.5rem; }
     .evidence { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; background: #f5f5f5; padding: 0.8rem; border-radius: 4px; margin: 0.5rem 0; }
     .quote { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1rem 0; color: var(--muted); font-style: italic; }
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .mi-nav-inner { justify-content: center; }
+    }
   </style>
+  <link rel="stylesheet" href="assets/hyfl-mi.css">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="mi-nav">
-  <div class="container">
-    <a href="index.html" class="nav-brand"><span class="gradient">MI-Atlas</span></a>
-    <a href="index.html">Home</a>
-    <a href="01-qwen05b-analysis.html">0.5B</a>
-    <a href="02-qwen15b-analysis.html">1.5B</a>
-    <a href="03-comparison-analysis.html">Comparison</a>
-    <a href="04-qualitative-analysis.html">Qualitative</a>
-    <a href="05-phase2-repeatability.html">Phase 2</a>
-    <a href="06-phase3-gap-closure.html" class="active">Phase 3</a>
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+        <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="05-phase2-repeatability.html">Phase 2</a>
+        <a href="06-phase3-gap-closure.html" class="active">Phase 3</a>
+      </div>
+    </div>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="hero">
-  <div class="container">
-    <h1 class="title">Phase 3: Gap Closure<br>and Gem Discovery</h1>
-    <p class="subtitle is-5" style="color: var(--muted); max-width: 700px; margin-top: 1rem;">
-      Converting exploratory findings into reviewer-grade, falsifiable, reproducible claims.
-      18 experiment blocks, 3 model scales, 36 result files, 9 seeds per hub.
-    </p>
-    <div class="columns columns-gap" style="margin-top: 2rem;">
-      <div class="column is-3">
-        <div class="metric">14/18</div>
-        <div class="metric-label">Blocks completed</div>
-      </div>
-      <div class="column is-3">
-        <div class="metric">9</div>
-        <div class="metric-label">Seeds per hub</div>
-      </div>
-      <div class="column is-3">
-        <div class="metric">std=0.0</div>
-        <div class="metric-label">Hub variance</div>
-      </div>
-      <div class="column is-3">
-        <div class="metric">13.8x</div>
-        <div class="metric-label">Param efficiency gain</div>
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">Phase 3</span>
+          </h1>
+          <div class="is-size-5" style="color: #666; margin-top: 0.4em;">
+            Gap Closure and Gem Discovery
+          </div>
+          <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
+            18 blocks &middot; 3 model scales &middot; 36 result files &middot; 9 seeds per hub &middot; Atlas-guided LoRA
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Main content -->
-<section class="section">
-  <div class="container" style="max-width: 900px;">
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns columns-gap" style="margin-top: 1rem;">
+      <div class="column is-3">
+        <div class="card has-text-centered">
+          <div class="metric">14/18</div>
+          <div class="metric-label">Blocks completed</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card has-text-centered">
+          <div class="metric">9</div>
+          <div class="metric-label">Seeds per hub</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card has-text-centered">
+          <div class="metric">std=0.0</div>
+          <div class="metric-label">Hub variance</div>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="card has-text-centered">
+          <div class="metric">13.8x</div>
+          <div class="metric-label">Param efficiency gain</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Headline Result -->
     <h2><i class="fas fa-trophy" style="color: #faad14;"></i> Headline Result: Atlas-Guided LoRA</h2>
@@ -249,7 +349,7 @@
           <tr><th>Component</th><th>Detail</th></tr>
         </thead>
         <tbody>
-          <tr><td>Scripts</td><td>19 Phase 3 experiment scripts (6,560+ lines)</td></tr>
+          <tr><td>Scripts</td><td>16 Phase 3 experiment scripts (6,560+ lines)</td></tr>
           <tr><td>Orchestrator</td><td>24 blocks across 6 priority levels</td></tr>
           <tr><td>Models</td><td>Qwen2.5-0.5B, 1.5B, 3B, Coder-0.5B, SmolLM2-1.7B</td></tr>
           <tr><td>Seeds</td><td>42, 137, 256 (3 seeds per replication)</td></tr>
@@ -278,7 +378,7 @@
         </tbody>
       </table>
       <p style="margin-top: 0.5rem; color: var(--muted); font-size: 0.9rem;">
-        Core Phase 3 success criteria are ALL met: replicated LoRA targeting rule, hub migration warning, causal explanation for scale differences, and deobfuscation improvement.
+        Main Phase 3 success criteria are met: replicated LoRA targeting rule, hub migration warning, causal explanation for scale differences, and deobfuscation improvement. Four follow-up blocks remain open.
       </p>
     </div>
 
@@ -308,8 +408,8 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer">
-  <div class="container" style="max-width: 900px;">
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
     <p><strong>MI-Atlas</strong> — Mechanistic Interpretability of Small Language Models</p>
     <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
     <p style="margin-top: 0.5rem;">Phase 3 completed June 23, 2026. 14/18 blocks. 36 result files. 9 seeds per hub.</p>

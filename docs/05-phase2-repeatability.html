@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>Phase 2: Repeatable Small-Model Surgery — MI-Atlas</title>
   <meta name="description" content="Phase 2 of MI-Atlas: testing scale-dependent control surfaces across 0.5B, 1.5B, and 3B models. Hub migration, steering sweeps, ablation controls, adapter surgery, and cross-family replication.">
 
@@ -209,6 +210,7 @@
       .hub-diagram { flex-direction: column; }
     }
   </style>
+  <link rel="stylesheet" href="assets/hyfl-mi.css">
 </head>
 <body>
 
@@ -224,6 +226,7 @@
         <a href="03-comparison-analysis.html">Comparison</a>
         <a href="04-qualitative-analysis.html">Qualitative</a>
         <a href="05-phase2-repeatability.html" class="active">Phase 2</a>
+        <a href="06-phase3-gap-closure.html">Phase 3</a>
       </div>
     </div>
   </div>
@@ -265,13 +268,13 @@
       <div class="swi-callout-icon">🧭</div>
       <div class="swi-callout-body">
         <strong>Phase 2 thesis:</strong> Small language models have scale-dependent control surfaces. A behaviour may be localized, steerable, and surgically editable at one scale, but distributed, entangled, and resistant at another. Therefore specialist small models need causal atlases, not just benchmark scores.<br><br>
-        <strong>Bottom line:</strong> Confirmed. The universal hub migrates from L2 (8% depth) at 0.5B to L26 (93%) at 1.5B to L34 (94%) at 3B. Steering doesn't collapse at scale — it migrates and gets 3&times; stronger. Each model size needs its own atlas.
+        <strong>Bottom line:</strong> Confirmed with a Phase 3 revision. The universal hub migrates from L2 (8% depth) at 0.5B to L14 (50%) at 1.5B to L34 (94%) at 3B when tested with the full task suite. Steering doesn't collapse at scale — it migrates and gets stronger. Each model size needs its own atlas.
       </div>
     </div>
 
     <!-- HUB MIGRATION VISUALIZATION -->
     <div class="tier-header">The Hub Migration</div>
-    <div class="tier-desc">The dominant causal hub moves from early layers to the final layers as model scale increases. This is the central finding of Phase 2.</div>
+    <div class="tier-desc">The dominant causal hub changes with scale. Phase 2 found the migration; Phase 3 revised the 1.5B location after broadening the task suite.</div>
 
     <div class="hub-diagram">
       <div class="hub-model">
@@ -282,8 +285,8 @@
       <div class="arrow">&rarr;</div>
       <div class="hub-model">
         <div class="model-name">Qwen2.5-1.5B</div>
-        <div class="hub-layer" style="color: #d4380d;">L26</div>
-        <div class="hub-depth">93% of depth &middot; 28 layers</div>
+        <div class="hub-layer" style="color: #d4380d;">L14</div>
+        <div class="hub-depth">50% of depth &middot; 28 layers</div>
       </div>
       <div class="arrow">&rarr;</div>
       <div class="hub-model">
@@ -296,7 +299,7 @@
     <div class="swi-callout">
       <div class="swi-callout-icon">⚠️</div>
       <div class="swi-callout-body">
-        <strong>Cross-family exception:</strong> SmolLM2-1.7B has its hub at <strong>L0</strong> (the very first layer), consistent across all 4 tested task families. Hub position is architecture-specific, not purely depth-dependent. Each model family needs its own atlas.
+        <strong>Cross-family exception:</strong> SmolLM2-1.7B showed a flat Phase 2 ablation profile where no layer was clearly more important than the others. Hub position is architecture-specific, not purely depth-dependent. Each model family needs its own atlas.
       </div>
     </div>
 
@@ -307,7 +310,7 @@
     <div class="finding-card new">
       <div class="finding-verdict new">NEW FINDING</div>
       <h3>Hub migration is real and monotonic</h3>
-      <div class="finding-evidence">0.5B: L2 (KL 19.11, 8% depth) &rarr; 1.5B: L26 (KL 13.70, 93%) &rarr; 3B: L34 (KL 221.34, 94%). The hub moves from early to late layers with scale. At 3B, the hub is the second-to-last layer. Top 5 layers at 3B: L34 (221.3), L27 (192.3), L13 (187.5), L22 (171.5), L18 (160.7). Evidence: layer ablation across 3 scales.</div>
+      <div class="finding-evidence">0.5B: L2 (8% depth) &rarr; 1.5B: L14 (50%, Phase 3 revision from the narrower Phase 2 L26 result) &rarr; 3B: L34 (94%). At 3B, the hub is the second-to-last layer. Top 5 layers at 3B in Phase 2: L34 (221.3), L27 (192.3), L13 (187.5), L22 (171.5), L18 (160.7). Evidence: layer ablation across 3 scales, revised by Phase 3 full-suite replication.</div>
     </div>
 
     <div class="finding-card new">
@@ -331,7 +334,7 @@
     <div class="finding-card new">
       <div class="finding-verdict new">NEW FINDING</div>
       <h3>Cross-family hubs are architecture-specific</h3>
-      <div class="finding-evidence">SmolLM2-1.7B (24 layers) has L0 as its universal hub across JSON, factual, copying, and code tasks. This is fundamentally different from Qwen's hub at L2 (0.5B) or L26 (1.5B). Hub position depends on architecture, not just depth. Steering at L0 gives small positive boosts (0.01&ndash;0.15). Evidence: cross-family reduced atlas.</div>
+      <div class="finding-evidence">SmolLM2-1.7B (24 layers) did not show a Qwen-like hub under the Phase 2 reduced atlas: the layer profile was effectively flat, so the recorded L0 winner should be treated as a tie artifact. This is fundamentally different from Qwen's hub at L2 (0.5B), L14 (1.5B), or L34 (3B). Hub position depends on architecture, task suite, and measurement sensitivity. Evidence: cross-family reduced atlas.</div>
     </div>
 
     <div class="finding-card partial">
@@ -377,16 +380,16 @@
         <tr>
           <td>Universal hub layer</td>
           <td class="num">L2</td>
-          <td class="num">L26</td>
+          <td class="num">L14</td>
           <td class="num">L34</td>
-          <td>Migrates late</td>
+          <td>Nonlinear migration</td>
         </tr>
         <tr>
           <td>Hub depth (%)</td>
           <td class="num">8%</td>
-          <td class="num">93%</td>
+          <td class="num">50%</td>
           <td class="num">94%</td>
-          <td>Early &rarr; Final</td>
+          <td>Nonlinear migration</td>
         </tr>
         <tr>
           <td>Hub max KL</td>
@@ -511,25 +514,25 @@
     <div class="finding-card confirmed">
       <div class="finding-verdict confirmed">RULE 1</div>
       <h3>Each model size needs its own atlas</h3>
-      <div class="finding-evidence">The hub moves from L2 to L26 to L34 across a 3&times; scale-up. What works at 0.5B does not work at 1.5B. Never transfer intervention locations across scales without re-mapping.</div>
+      <div class="finding-evidence">The hub moves from L2 to L14 to L34 across a 3&times; scale-up after Phase 3 full-suite replication. What works at 0.5B does not automatically work at 1.5B. Never transfer intervention locations across scales without re-mapping.</div>
     </div>
 
     <div class="finding-card confirmed">
       <div class="finding-verdict confirmed">RULE 2</div>
       <h3>Each architecture family needs its own atlas</h3>
-      <div class="finding-evidence">SmolLM2 has L0 as hub. Qwen has L2/L26/L34. Hub position is architecture-specific. Do not assume cross-architecture transfer.</div>
+      <div class="finding-evidence">SmolLM2 did not show a Qwen-like hub under the reduced atlas. Qwen has L2/L14/L34 across the tested scales. Hub position is architecture-specific. Do not assume cross-architecture transfer.</div>
     </div>
 
     <div class="finding-card confirmed">
       <div class="finding-verdict confirmed">RULE 3</div>
       <h3>Test steering at ALL candidate hub layers, not just the ablation winner</h3>
-      <div class="finding-evidence">Phase 1 missed 1.5B steering because it only tested L2. Testing L6, L21, L26, L27 revealed steering is 3&times; STRONGER at 1.5B. Always sweep hub candidates.</div>
+      <div class="finding-evidence">Phase 1 missed 1.5B steering because it only tested L2. Testing L6, L21, L26, L27 revealed stronger steering at 1.5B. Always sweep all plausible candidate layers, not just the current ablation winner.</div>
     </div>
 
     <div class="finding-card confirmed">
       <div class="finding-verdict confirmed">RULE 4</div>
       <h3>Steering direction can reverse at scale</h3>
-      <div class="finding-evidence">At 0.5B, positive steering at L2 boosts factual recall. At 1.5B, the hub layers respond to negative steering (L21) or have reversed effects (L26). Always test both directions.</div>
+      <div class="finding-evidence">At 0.5B, positive steering at L2 boosts factual recall. At 1.5B, tested candidate layers respond to negative steering (L21) or have reversed effects (L26). Always test both directions.</div>
     </div>
 
     <div class="finding-card confirmed">
@@ -575,7 +578,7 @@
     <div class="swi-callout">
       <div class="swi-callout-icon">📋</div>
       <div class="swi-callout-body">
-        <strong>Phase 2 added:</strong> Multi-method ablation (6 types: zero, mean, resample, clean&rarr;corrupt, corrupt&rarr;clean, random patch). Steering migration sweeps (7 layers &times; 8 strengths &times; 4 vector types). Adapter surgery (norm profiles, compatibility matrix, rank truncation). Skill separability benchmark (5 operations per skill). Cross-family reduced atlas. Long-prompt robustness testing. Experiment registry with 35 entries. Claim card system. Reproducible configs in YAML.
+        <strong>Phase 2 added:</strong> Multi-method ablation (6 types: zero, mean, resample, clean&rarr;corrupt, corrupt&rarr;clean, random patch). Steering migration sweeps (7 layers &times; 8 strengths &times; 4 vector types). Adapter surgery (norm profiles, compatibility matrix, rank truncation). Skill separability benchmark (5 operations per skill). Cross-family reduced atlas. Long-prompt robustness testing. Experiment registry with 35 entries. Claim card system. Reproducible configs in YAML. <a href="06-phase3-gap-closure.html">Phase 3</a> tightens these findings with multi-seed full-suite replication.
       </div>
     </div>
 

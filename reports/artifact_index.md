@@ -76,3 +76,12 @@
 | Blog Post Outline | reports/blog_post_outline.md | Stub |
 | Paper Outline | reports/paper_outline.md | Stub |
 | Limitations | reports/limitations.md | Stub |
+
+## GitHub Pages
+
+| Artifact | Path | Status |
+|----------|------|--------|
+| Published site index | docs/index.html | Updated with Phase 3 link and Phase 1-3 summary |
+| Shared HYFL-inspired stylesheet | docs/assets/hyfl-mi.css | New shared responsive design layer for all published pages |
+| Phase 2 page | docs/05-phase2-repeatability.html | Updated to link Phase 3 and note the L26 -> L14 revision |
+| Phase 3 page | docs/06-phase3-gap-closure.html | Restyled to match the site and list remaining work |

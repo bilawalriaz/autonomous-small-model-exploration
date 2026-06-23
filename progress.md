@@ -28,23 +28,21 @@
 - [x] C1-C3: Better causal tests — COMPLETE (position ablation, module ablation, method comparison)
 - [x] P1-P3: Prompt robustness — COMPLETE (NL hubs validated, coder hub at L22!)
 - [x] Q1: Quantization steering — COMPLETE (476x amplification at 4-bit)
+- [x] GitHub Pages navigation/design pass — all pages share a HYFL-inspired responsive style, Phase 2 links Phase 3, and mobile overflow checks pass at 390px
 - [ ] C4: Steering controls — needs HF-native steering rewrite
 - [ ] G1: Steering direction transfer — needs memory optimization
 - [ ] G3: Checkpoint lock-in — needs PEFT wrapper fix for ablation
 - [ ] G4: Atlas-guided skip — needs recovery finetune DataLoader fix
 
 ### Blocked
-- [ ] ALL GPU experiments blocked on aero (offline as of 2026-06-23)
+- [ ] Remaining GPU-dependent experiments blocked on aero (offline as of 2026-06-23)
 
 ### Next actions (priority order)
-1. **Multi-seed replication** — Run layer ablation at 0.5B with seeds 42, 137, 256. This is the single highest-priority experiment because it affects confidence in ALL other claims.
-2. **Atlas-guided LoRA** — Train LoRA on atlas-identified critical layers vs random layers vs all-linear. Measure actual task accuracy. This is the most practically valuable experiment.
-3. **Natural language prompt expansion** — Expand from 3 prompts/family to 50+ using the canonical task suite. Re-run hub identification.
-4. **Quantization causal surface** — Run layer ablation and steering on 4-bit NF4 0.5B and 1.5B. Compare hub locations and steering effectiveness.
-5. **Ablation method comparison at all layers** — Not just L2/L26. Full rank-order correlation across methods.
-6. **Steering direction transfer** — Test if the steering vector from 0.5B L2 works at 1.5B L2 (even if the optimal layer changed).
-7. **Random-vector controls for knockout** — Establish baseline selectivity with random vectors and shuffled labels.
-8. **Checkpoint lock-in at 1.5B** — Test if the 10% lock-in rule generalizes.
+1. **C4 steering controls** — Rewrite steering controls against the HF-native steering API; add random-vector and shuffled-label baselines.
+2. **G1 steering direction transfer** — Reduce memory footprint for cross-scale direction transfer; avoid simultaneous full 2-model GPU residency where possible.
+3. **G3 checkpoint lock-in at 1.5B** — Fix PEFT wrapper attribute access so checkpoint ablation can run on the 1.5B adapter timeline.
+4. **G4 atlas-guided layer skip + recovery** — Fix the recovery finetune DataLoader and rerun skip+recovery evaluation.
+5. **Publish docs** — Push the updated GitHub Pages HTML once reviewed locally.
 
 ## Phase 3 experiment plan
 

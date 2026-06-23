@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
   <title>MI-Atlas — Mechanistic Interpretability of Small Language Models</title>
-  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. 35+ experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation. Phase 3: atlas-guided LoRA validated at 13.8x parameter efficiency.">
+  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. Phase 1-3 experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation. Phase 3: atlas-guided LoRA validated at 13.8x parameter efficiency.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -168,6 +169,7 @@
       .mi-nav-inner { justify-content: center; }
     }
   </style>
+  <link rel="stylesheet" href="assets/hyfl-mi.css">
 </head>
 <body>
 
@@ -202,7 +204,7 @@
             Mechanistic Interpretability of Small Language Models
           </div>
           <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
-            35 experiments &middot; Qwen2.5 &middot; 3 scales (0.5B, 1.5B, 3B) &middot; 2 architectures &middot; Causal interventions
+            Phase 1-3 &middot; Qwen2.5 &middot; 3 scales (0.5B, 1.5B, 3B) &middot; 2 architectures &middot; Causal interventions
           </div>
         </div>
       </div>
@@ -252,8 +254,8 @@
       <a class="paper-card" href="05-phase2-repeatability.html" style="border-left: 4px solid #d4380d;">
         <div class="paper-num" style="color: #d4380d;">05 &middot; PHASE 2</div>
         <h3>Phase 2: Repeatable Small-Model Surgery</h3>
-        <div class="paper-meta">9 blocks &middot; 3 scales &middot; 2 architectures &middot; 35 experiments</div>
-        <div class="paper-tagline">Hub migration confirmed: L2 (8%) &rarr; L26 (93%) &rarr; L34 (94%). Steering did NOT collapse at 1.5B &mdash; it migrated and got 3&times; stronger. Cross-family hubs are architecture-specific. Each model needs its own atlas.</div>
+        <div class="paper-meta">9 blocks &middot; 3 scales &middot; 2 architectures &middot; 35 registered Phase 2 experiments</div>
+        <div class="paper-tagline">Hub migration found and then tightened by Phase 3: the original L26 result at 1.5B was revised to L14 with the full 12-family suite. Steering did NOT collapse at 1.5B &mdash; it migrated and strengthened. Cross-family hubs are architecture-specific.</div>
       </a>
       <a class="paper-card" href="06-phase3-gap-closure.html" style="border-left: 4px solid #fa541c;">
         <div class="paper-num" style="color: #fa541c;">06 &middot; PHASE 3</div>
@@ -280,7 +282,7 @@
 
     <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
       <p style="font-size: 0.9rem; color: #666; margin: 0;">
-        35 experiments &middot; 16 task families &middot; 10 LoRA adapters &middot; 3 model scales &middot; 2 architectures<br>
+        Phase 1-3 atlas &middot; 16 task families &middot; 10 LoRA adapters &middot; 3 model scales &middot; 2 architectures<br>
         Fully reproducible: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">python scripts/run_*.py</code>
       </p>
     </div>
