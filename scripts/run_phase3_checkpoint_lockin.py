@@ -294,9 +294,14 @@ def main():
     start_time = time.time()
 
     print(f"\n  Training for {total_steps} steps...")
+    data_iter = iter(dataloader)
     for step in range(total_steps):
-        batch_idx = step % len(dataloader)
-        batch = {k: v.to(model.device) for k, v in dataloader[batch_idx].items()}
+        try:
+            batch = next(data_iter)
+        except StopIteration:
+            data_iter = iter(dataloader)
+            batch = next(data_iter)
+        batch = {k: v.to(model.device) for k, v in batch.items()}
 
         outputs = model(**batch)
         loss = outputs.loss
