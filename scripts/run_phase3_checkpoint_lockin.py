@@ -224,8 +224,14 @@ def main():
     suite_path = str(PROJECT_ROOT / "data" / "eval_sets" / "task_suite_v0.json")
     suite = TaskSuite.load(suite_path)
 
-    train_prompts = suite.get_family("json_schema", split="train")
-    eval_prompts = suite.get_family("json_schema", split="test")
+    family_suite = suite.filter_by_family("json_schema")
+    train_examples = list(family_suite.filter_by_split("train"))
+    eval_examples = list(family_suite.filter_by_split("test"))
+    if not train_examples:
+        train_examples = list(family_suite)[:int(len(family_suite)*0.8)]
+        eval_examples = list(family_suite)[int(len(family_suite)*0.8):]
+    train_prompts = [{"prompt": e.clean_prompt, "target": e.target or ""} for e in train_examples]
+    eval_prompts = [{"prompt": e.clean_prompt, "target": e.target or ""} for e in eval_examples]
 
     if not train_prompts:
         print("No JSON training data found")

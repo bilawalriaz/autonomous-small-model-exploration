@@ -271,14 +271,20 @@ def main():
     suite = TaskSuite.load(suite_path)
 
     # Get training data for the family
-    train_prompts = suite.get_family(args.family, split="train")
-    eval_prompts = suite.get_family(args.family, split="test")
+    family_suite = suite.filter_by_family(args.family)
+    train_examples = list(family_suite.filter_by_split("train"))
+    eval_examples = list(family_suite.filter_by_split("test"))
+    # Fallback: if no train/test split, use all examples
+    if not train_examples:
+        train_examples = list(family_suite)[:int(len(family_suite)*0.8)]
+        eval_examples = list(family_suite)[int(len(family_suite)*0.8):]
 
-    if not train_prompts:
+    if not train_examples:
         print(f"No training data for {args.family}")
         return
 
-    train_texts = [p["prompt"] + p.get("target", "") for p in train_prompts]
+    train_texts = [e.clean_prompt + (e.target or "") for e in train_examples]
+    eval_prompts = [{"prompt": e.clean_prompt, "target": e.target or ""} for e in eval_examples]
 
     # Get model info
     temp_bundle = load_model(args.model)
