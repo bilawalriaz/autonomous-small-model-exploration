@@ -47,11 +47,12 @@ Purpose: Every claim from Phase 1 & 2, classified, with falsifiers and replicati
 - 0.5B: L2 hub (8% depth), mean_effect=19.11 — REPLICATED across 3 seeds (std=0.0)
 - 1.5B: L14 hub (50% depth), mean_effect=15.39 — REPLICATED across 3 seeds (std=0.0)
   — **Phase 3 revision:** Phase 2 reported L26 (93% depth) as the hub, but that was tested with fewer families. Full 12-family suite reveals L14 as the true hub. L26 is #2 (12.84).
-- 3B: L34 hub (94% depth), mean_effect=23.63
-  — L34 is top for 9/12 families; L13 is secondary hub for 3/12 (json, dead_code, refusal)
+- 3B: L34 hub (94% depth), mean_effect=23.63 — REPLICATED across 3 seeds (std=0.0)
+  — L34 is top for all 12 families with full task suite (4-bit NF4 quantization)
+  — L13 secondary hub NOT confirmed with full 12-family suite (only appeared with narrower test)
 - Pattern: hub at 8% -> 50% -> 94% depth (revised from 8% -> 93% -> 94%)
 
-**Seeds:** 3 per model (Phase 3 R1, R2). Single seed for 3B (R3 running).
+**Seeds:** 3 per model (Phase 3 R1, R2, R3). All verdict=robust (std=0.0).
 **Models:** 3 Qwen2.5 scales
 **Controls:** Ablation controls at 0.5B and 1.5B confirm rank order stability
 
