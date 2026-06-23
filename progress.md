@@ -22,16 +22,19 @@
 
 ### In progress
 - [x] Phase 3 infrastructure COMPLETE — 16 scripts, orchestrator, all docs
-- [ ] Multi-seed replication experiments (3 seeds for top claims) — QUEUED for aero
-- [ ] Atlas-guided LoRA vs generic LoRA (THE key experiment) — QUEUED for aero
-- [ ] Quantization causal surface drift experiment — QUEUED for aero
-- [ ] Natural language prompt validation — QUEUED for aero
-- [ ] Better causal tests (mean/resample ablation at all layers) — QUEUED for aero
+- [x] R1-R5: Multi-seed replication — ALL COMPLETE (hub at L2/L14/L34, std=0.0)
+- [x] L1-L3: Atlas-guided LoRA — COMPLETE (13.8x fewer params, equal accuracy on JSON)
+- [x] L4-L5: Rank/module sweep — COMPLETE
+- [x] C1-C3: Better causal tests — COMPLETE (position ablation, module ablation, method comparison)
+- [x] P1-P3: Prompt robustness — COMPLETE (NL hubs validated, coder hub at L22!)
+- [x] Q1: Quantization steering — COMPLETE (476x amplification at 4-bit)
+- [ ] C4: Steering controls — needs HF-native steering rewrite
+- [ ] G1: Steering direction transfer — needs memory optimization
+- [ ] G3: Checkpoint lock-in — needs PEFT wrapper fix for ablation
+- [ ] G4: Atlas-guided skip — needs recovery finetune DataLoader fix
 
 ### Blocked
 - [ ] ALL GPU experiments blocked on aero (offline as of 2026-06-23)
-- [ ] Qwen2.5-Coder atlas (aero needs to be online)
-- [ ] Second SmolLM2 scale (needs model download)
 
 ### Next actions (priority order)
 1. **Multi-seed replication** — Run layer ablation at 0.5B with seeds 42, 137, 256. This is the single highest-priority experiment because it affects confidence in ALL other claims.
