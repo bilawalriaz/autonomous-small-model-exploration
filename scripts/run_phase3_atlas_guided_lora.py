@@ -67,43 +67,37 @@ ATLAS_MODULES = ["o_proj"]  # Most efficient per Phase 1 findings
 def get_lora_target_modules(model_name, strategy, n_layers, seed=42):
     """Get target modules based on strategy.
 
-    Returns (target_modules, trainable_params_info).
+    Returns (target_modules, layers_to_transform, trainable_params_info).
+    target_modules: short module names (e.g., ['o_proj', 'up_proj'])
+    layers_to_transform: list of layer indices to apply LoRA to (None = all)
     """
     rng = random.Random(seed)
 
     if strategy == "atlas_guided":
-        # Use atlas-identified critical layers with o_proj only
-        atlas_key = model_name
-        family_key = None  # Will be set by caller
         critical_layers = ATLAS_LAYERS.get(model_name, {}).get("atlas_guided", [2, 7, 9])
-        target_modules = [f"model.layers.{l}.self_attn.o_proj" for l in critical_layers]
-        # Also add MLP for atlas layers if they include MLP-dominant layers
-        for l in critical_layers:
-            target_modules.append(f"model.layers.{l}.mlp.up_proj")
-            target_modules.append(f"model.layers.{l}.mlp.down_proj")
-        return target_modules, {"strategy": "atlas_guided", "layers": critical_layers, "modules": ATLAS_MODULES + ["up_proj", "down_proj"]}
+        target_modules = ["o_proj", "up_proj", "down_proj"]
+        return target_modules, critical_layers, {
+            "strategy": "atlas_guided", "layers": critical_layers,
+            "modules": target_modules, "n_target_layers": len(critical_layers)
+        }
 
     elif strategy == "random_matched":
-        # Same number of random layers, same modules
-        atlas_key = model_name
         critical_layers = ATLAS_LAYERS.get(model_name, {}).get("json_schema", [2, 7, 9])
         n_target = len(critical_layers)
         all_layers = list(range(n_layers))
-        random_layers = rng.sample(all_layers, min(n_target, n_layers))
-        target_modules = []
-        for l in random_layers:
-            target_modules.append(f"model.layers.{l}.self_attn.o_proj")
-            target_modules.append(f"model.layers.{l}.mlp.up_proj")
-            target_modules.append(f"model.layers.{l}.mlp.down_proj")
-        return target_modules, {"strategy": "random_matched", "layers": random_layers, "modules": ATLAS_MODULES + ["up_proj", "down_proj"]}
+        random_layers = sorted(rng.sample(all_layers, min(n_target, n_layers)))
+        target_modules = ["o_proj", "up_proj", "down_proj"]
+        return target_modules, random_layers, {
+            "strategy": "random_matched", "layers": random_layers,
+            "modules": target_modules, "n_target_layers": len(random_layers)
+        }
 
     elif strategy == "all_linear":
-        # Standard: all linear layers in all transformer blocks
-        target_modules = []
-        for l in range(n_layers):
-            for mod in ALL_LINEAR_MODULES:
-                target_modules.append(f"model.layers.{l}.{mod}")
-        return target_modules, {"strategy": "all_linear", "layers": list(range(n_layers)), "modules": ALL_LINEAR_MODULES}
+        target_modules = ALL_LINEAR_MODULES
+        return target_modules, None, {
+            "strategy": "all_linear", "layers": list(range(n_layers)),
+            "modules": ALL_LINEAR_MODULES, "n_target_layers": n_layers
+        }
 
     else:
         raise ValueError(f"Unknown strategy: {strategy}")
@@ -133,10 +127,10 @@ def train_lora_adapter(model_name, strategy, family, train_data, n_layers, seed=
     tokenizer = bundle.tokenizer
 
     # Get target modules
-    target_modules, module_info = get_lora_target_modules(model_name, strategy, n_layers, seed)
+    target_modules, layers_to_transform, module_info = get_lora_target_modules(model_name, strategy, n_layers, seed)
 
     # Configure LoRA
-    lora_config = LoraConfig(
+    lora_kwargs = dict(
         r=r,
         lora_alpha=alpha,
         target_modules=target_modules,
@@ -144,6 +138,9 @@ def train_lora_adapter(model_name, strategy, family, train_data, n_layers, seed=
         bias="none",
         task_type=TaskType.CAUSAL_LM,
     )
+    if layers_to_transform is not None:
+        lora_kwargs["layers_to_transform"] = layers_to_transform
+    lora_config = LoraConfig(**lora_kwargs)
 
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
