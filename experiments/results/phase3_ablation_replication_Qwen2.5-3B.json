@@ -1,0 +1,18 @@
+{
+  "experiment": "multi_seed_layer_ablation",
+  "model": "Qwen/Qwen2.5-3B",
+  "seeds": [
+    42,
+    137,
+    256
+  ],
+  "n_seeds": 3,
+  "hub_per_seed": [
+    34,
+    34,
+    34
+  ],
+  "hub_mean": 34.0,
+  "hub_std": 0.0,
+  "verdict": "robust"
+}
