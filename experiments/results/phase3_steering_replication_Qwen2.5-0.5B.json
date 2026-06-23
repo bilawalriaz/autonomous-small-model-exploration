@@ -1,0 +1,39 @@
+{
+  "experiment": "multi_seed_steering",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "seeds": [
+    42,
+    137,
+    256
+  ],
+  "layers": {
+    "2": {
+      "layer": 2,
+      "strengths": {}
+    },
+    "8": {
+      "layer": 8,
+      "strengths": {}
+    },
+    "12": {
+      "layer": 12,
+      "strengths": {}
+    },
+    "19": {
+      "layer": 19,
+      "strengths": {}
+    },
+    "21": {
+      "layer": 21,
+      "strengths": {}
+    },
+    "22": {
+      "layer": 22,
+      "strengths": {}
+    },
+    "23": {
+      "layer": 23,
+      "strengths": {}
+    }
+  }
+}
