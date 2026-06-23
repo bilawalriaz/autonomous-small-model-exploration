@@ -162,10 +162,15 @@ def train_lora_adapter(model_name, strategy, family, train_data, n_layers, seed=
     model.train()
     losses = []
     start = time.time()
+    data_iter = iter(dataloader)
 
     for step in range(steps):
-        batch_idx = step % len(dataloader)
-        batch = {k: v.to(model.device) for k, v in dataloader[batch_idx].items()}
+        try:
+            batch = next(data_iter)
+        except StopIteration:
+            data_iter = iter(dataloader)
+            batch = next(data_iter)
+        batch = {k: v.to(model.device) for k, v in batch.items()}
 
         outputs = model(**batch)
         loss = outputs.loss
