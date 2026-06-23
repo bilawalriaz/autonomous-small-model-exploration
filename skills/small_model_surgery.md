@@ -21,7 +21,7 @@ A set of practical rules for training, steering, compressing, and deploying smal
 The "universal processing hub" — the layer most responsible for routing information — moves dramatically with model scale and architecture:
 
 - Qwen2.5-0.5B: L2 (8% depth)
-- Qwen2.5-1.5B: L26 (93% depth)
+- Qwen2.5-1.5B: L14 (50% depth) — REVISED from L26 (93%) by Phase 3 multi-seed with full 12-family suite
 - Qwen2.5-3B: L34 (94% depth)
 - SmolLM2-1.7B: L0 (0% depth)
 

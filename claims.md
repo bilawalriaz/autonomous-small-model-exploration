@@ -17,8 +17,8 @@ Purpose: Every claim from Phase 1 & 2, classified, with falsifiers and replicati
 
 ## C01: L2 is a universal importance hub (0.5B)
 
-**Status:** Causal and actionable
-**Confidence:** HIGH
+**Status:** CAUSAL AND ACTIONABLE — REPLICATED
+**Confidence:** HIGH (upgraded from single-seed)
 **Evidence:**
 - Zero ablation: L2 top layer for all 12 families (KL 0.5-11.5)
 - MLP ablation: L2 MLP is the dominant MLP component
@@ -28,29 +28,30 @@ Purpose: Every claim from Phase 1 & 2, classified, with falsifiers and replicati
   — rank order preserved across methods (L2 remains top)
 - Cross-model patching: L2 among top transfer layers
 
-**Seeds:** 1 (single seed)
+**Seeds:** 3 (Phase 3 R1: seeds 42, 137, 256 — hub at L2 for ALL seeds, std=0.0, verdict=robust)
 **Models:** Qwen2.5-0.5B only
 **Controls:** zero, mean, gaussian_resample, clean/corrupt patch, random_patch (Phase 2)
 **Prompts:** 3 per family (short synthetic)
 
-**Falsifier:** If L2 is not the top ablation layer in 2/3 seeds, or if mean ablation changes the rank order, or if natural language prompts shift the hub.
+**Falsifier:** ~~If L2 is not the top ablation layer in 2/3 seeds~~ TESTED: L2 is top in 3/3 seeds. Remaining falsifier: if natural language prompts shift the hub.
 
-**Gap:** Needs 3-seed replication. Needs natural language prompt validation. Needs mean ablation rank-order confirmation (partially done — zero and mean give identical results at L2).
+**Gap:** ~~Needs 3-seed replication.~~ DONE (hub_std=0.0). Needs natural language prompt validation (P1).
 
 ---
 
-## C02: Hub migrates later with scale (L2 -> L26 -> L34)
+## C02: Hub migrates later with scale (L2 -> L14/L26 -> L34)
 
-**Status:** Replicated
+**Status:** REPLICATED — REVISED
 **Confidence:** HIGH
 **Evidence:**
-- 0.5B: L2 hub (8% depth), mean_effect=19.11
-- 1.5B: L26 hub (93% depth), mean_effect=13.70
+- 0.5B: L2 hub (8% depth), mean_effect=19.11 — REPLICATED across 3 seeds (std=0.0)
+- 1.5B: L14 hub (50% depth), mean_effect=15.39 — REPLICATED across 3 seeds (std=0.0)
+  — **Phase 3 revision:** Phase 2 reported L26 (93% depth) as the hub, but that was tested with fewer families. Full 12-family suite reveals L14 as the true hub. L26 is #2 (12.84).
 - 3B: L34 hub (94% depth), mean_effect=23.63
   — L34 is top for 9/12 families; L13 is secondary hub for 3/12 (json, dead_code, refusal)
-- Pattern: hub at 8% -> 93% -> 94% depth
+- Pattern: hub at 8% -> 50% -> 94% depth (revised from 8% -> 93% -> 94%)
 
-**Seeds:** 1 per model
+**Seeds:** 3 per model (Phase 3 R1, R2). Single seed for 3B (R3 running).
 **Models:** 3 Qwen2.5 scales
 **Controls:** Ablation controls at 0.5B and 1.5B confirm rank order stability
 

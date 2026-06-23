@@ -5,17 +5,19 @@ A gem must satisfy >= 3 of: (1) replicates across seeds/prompts, (2) contradicts
 
 ---
 
-## G01: Hub migrates to final ~10% of layers at scale
+## G01: Hub migrates to later layers at scale (revised)
 
-**Claim:** The universal processing hub moves from early layers (L2, 8% depth) at 0.5B to the final ~10% of layers at 1.5B (L26, 93%) and 3B (L34, 94%).
+**Claim:** The universal processing hub moves from early layers (L2, 8% depth) at 0.5B to mid-layers (L14, 50% depth) at 1.5B to late layers (L34, 94% depth) at 3B.
 
 **Evidence:**
 - Replicated across 3 Qwen2.5 scales (0.5B, 1.5B, 3B)
+- **Phase 3 multi-seed replication:** 0.5B hub at L2 (3/3 seeds, std=0.0), 1.5B hub at L14 (3/3 seeds, std=0.0)
+- Phase 2 reported L26 as 1.5B hub — that was with fewer families. Full 12-family suite shows L14 is the true hub.
 - Ablation controls confirm rank-order stability at 0.5B and 1.5B
 - Hub is top layer for 9/12 task families at 3B
 
 **Criteria met:**
-- (1) Replicated across scales (not seeds — single seed per scale)
+- (1) Replicated across 3 scales (not seeds — single seed per scale). **Phase 3 update:** 0.5B hub replicated across 3 seeds (std=0.0, verdict=robust).
 - (2) Contradicts assumption that early layers are always most important
 - (3) Actionable: when targeting layers for steering/LoRA, use atlas data not heuristics
 - (5) Differs across scale in a meaningful way
