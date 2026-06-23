@@ -245,6 +245,10 @@ def kl_divergence(base_logits: torch.Tensor, test_logits: torch.Tensor, dim: int
     return kl.mean().item()
 
 
+# Alias for backward compatibility
+kl_divergence_from_logits = kl_divergence
+
+
 def compute_metric(metric_type: str, **kwargs) -> float:
     """Compute a metric by name."""
     fn = METRIC_FUNCTIONS.get(metric_type)

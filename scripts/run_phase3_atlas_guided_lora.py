@@ -36,7 +36,7 @@ from mi_atlas.model_loader import load_model
 from mi_atlas.backend import create_backend
 from mi_atlas.task_suite import TaskSuite
 from mi_atlas.ablations import run_layer_ablation_suite
-from mi_atlas.metrics import compute_exact_match, compute_constraint_satisfaction
+from mi_atlas.metrics import exact_match_score, valid_json_score
 from mi_atlas.experiment_registry import register_experiment
 from mi_atlas.utils import save_json, PROJECT_ROOT
 
