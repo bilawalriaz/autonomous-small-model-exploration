@@ -14,6 +14,11 @@
 - [x] Threats to validity catalogued (14 threats in threats.md)
 - [x] Gems inventory (10 candidate gems in gems.md)
 - [x] Phase 3 file structure created
+- [x] Phase 3 infrastructure: 16 experiment scripts (6560 lines), orchestrator (24 blocks)
+- [x] Phase 3 gap closure report (reports/phase3_gap_closure.md)
+- [x] Small model surgery skill (skills/small_model_surgery.md, 10 rules)
+- [x] R1: 0.5B multi-seed ablation — hub at L2, std=0.0, ROBUST
+- [x] R2: 1.5B multi-seed ablation — hub at L14 (REVISED from L26), std=0.0, ROBUST
 
 ### In progress
 - [x] Phase 3 infrastructure COMPLETE — 16 scripts, orchestrator, all docs
