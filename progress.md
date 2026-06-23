@@ -16,13 +16,15 @@
 - [x] Phase 3 file structure created
 
 ### In progress
-- [ ] Multi-seed replication experiments (3 seeds for top claims)
-- [ ] Atlas-guided LoRA vs generic LoRA (THE key experiment)
-- [ ] Quantization causal surface drift experiment
-- [ ] Natural language prompt validation
-- [ ] Better causal tests (mean/resample ablation at all layers)
+- [x] Phase 3 infrastructure COMPLETE — 16 scripts, orchestrator, all docs
+- [ ] Multi-seed replication experiments (3 seeds for top claims) — QUEUED for aero
+- [ ] Atlas-guided LoRA vs generic LoRA (THE key experiment) — QUEUED for aero
+- [ ] Quantization causal surface drift experiment — QUEUED for aero
+- [ ] Natural language prompt validation — QUEUED for aero
+- [ ] Better causal tests (mean/resample ablation at all layers) — QUEUED for aero
 
 ### Blocked
+- [ ] ALL GPU experiments blocked on aero (offline as of 2026-06-23)
 - [ ] Qwen2.5-Coder atlas (aero needs to be online)
 - [ ] Second SmolLM2 scale (needs model download)
 
