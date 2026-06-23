@@ -135,7 +135,8 @@ def evaluate_model(model, tokenizer, eval_prompts):
 
         # Key coverage
         keys_found = 0.0
-        required_keys = prompt_info.metadata.get("required_keys", [])
+        meta = getattr(prompt_info, 'metadata', None) or (prompt_info.get('metadata', {}) if isinstance(prompt_info, dict) else {})
+        required_keys = meta.get("required_keys", [])
         if required_keys:
             try:
                 obj = json.loads(generated.strip())

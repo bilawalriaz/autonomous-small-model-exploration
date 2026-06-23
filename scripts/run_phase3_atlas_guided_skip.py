@@ -282,10 +282,15 @@ def recovery_finetune(model, tokenizer, train_prompts, steps=50, lr=2e-4, rank=8
     model.train()
     losses = []
     start = time.time()
+    data_iter = iter(dataloader)
 
     for step in range(steps):
-        batch_idx = step % len(dataloader)
-        batch = {k: v.to(model.device) for k, v in dataloader[batch_idx].items()}
+        try:
+            batch = next(data_iter)
+        except StopIteration:
+            data_iter = iter(dataloader)
+            batch = next(data_iter)
+        batch = {k: v.to(model.device) for k, v in batch.items()}
         outputs = model(**batch)
         loss = outputs.loss
         loss.backward()
