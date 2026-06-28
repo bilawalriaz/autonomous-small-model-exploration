@@ -151,7 +151,7 @@ def run_conv_gate_analysis(model, input_ids, baseline_logits, attention_mask=Non
         projected = self.in_proj(hidden_states)
         B, C, x = projected.chunk(3, dim=-1)
         Bx = B * x
-        conv_out = conv1d(Bx.transpose(1,2)).transpose(1,2)
+        conv_out = conv_module.conv(Bx.transpose(1,2)).transpose(1,2)
         conv_out = act(conv_out)
         y = C * conv_out
         return out_proj(y)
@@ -170,7 +170,7 @@ def run_conv_gate_analysis(model, input_ids, baseline_logits, attention_mask=Non
             B, C, x = projected.chunk(3, dim=-1)
             B = torch.zeros_like(B)
             Bx = B * x
-            conv_out = conv_module.conv1d(Bx.transpose(1, 2)).transpose(1, 2)
+            conv_out = conv_module.conv(Bx.transpose(1, 2)).transpose(1, 2)
             if hasattr(conv_module, 'act') and conv_module.act is not None:
                 conv_out = conv_module.act(conv_out)
             y = C * conv_out
@@ -182,7 +182,7 @@ def run_conv_gate_analysis(model, input_ids, baseline_logits, attention_mask=Non
             B, C, x = projected.chunk(3, dim=-1)
             C = torch.zeros_like(C)
             Bx = B * x
-            conv_out = conv_module.conv1d(Bx.transpose(1, 2)).transpose(1, 2)
+            conv_out = conv_module.conv(Bx.transpose(1, 2)).transpose(1, 2)
             if hasattr(conv_module, 'act') and conv_module.act is not None:
                 conv_out = conv_module.act(conv_out)
             y = C * conv_out
@@ -193,7 +193,7 @@ def run_conv_gate_analysis(model, input_ids, baseline_logits, attention_mask=Non
             projected = conv_module.in_proj(hidden_states)
             B, C, x = projected.chunk(3, dim=-1)
             Bx = B * x
-            conv_out = conv_module.conv1d(Bx.transpose(1, 2)).transpose(1, 2)
+            conv_out = conv_module.conv(Bx.transpose(1, 2)).transpose(1, 2)
             conv_out = torch.zeros_like(conv_out)
             if hasattr(conv_module, 'act') and conv_module.act is not None:
                 conv_out = conv_module.act(conv_out)
@@ -206,7 +206,7 @@ def run_conv_gate_analysis(model, input_ids, baseline_logits, attention_mask=Non
             B, C, x = projected.chunk(3, dim=-1)
             x = torch.zeros_like(x)
             Bx = B * x
-            conv_out = conv_module.conv1d(Bx.transpose(1, 2)).transpose(1, 2)
+            conv_out = conv_module.conv(Bx.transpose(1, 2)).transpose(1, 2)
             if hasattr(conv_module, 'act') and conv_module.act is not None:
                 conv_out = conv_module.act(conv_out)
             y = C * conv_out
