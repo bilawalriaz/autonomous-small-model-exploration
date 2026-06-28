@@ -92,7 +92,8 @@ models:
     layer_types: ["conv", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv"]
     conv_layers: [0, 1, 3, 5, 7, 9, 11, 13]
     attn_layers: [2, 4, 6, 8, 10, 12]
-    conv_kernel_size: 4
+    conv_kernel_size: 3
+    conv_groups: 1024
     conv_L_cache: 3
     rope_theta: 1000000
     tie_embeddings: true
