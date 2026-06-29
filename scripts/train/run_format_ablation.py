@@ -174,7 +174,7 @@ def main():
             rc = run_cmd([
                 sys.executable, "scripts/eval/run_eval_harness.py",
                 "--config", eval_cfg_path,
-                "--adapter", f"adapters/{run_id}",
+                "--adapter", f"adapters/{run_id}/adapter",
                 "--run-id", run_id,
             ] + (["--force"] if args.force else []), f"eval-{fmt_name}")
             if rc != 0:
