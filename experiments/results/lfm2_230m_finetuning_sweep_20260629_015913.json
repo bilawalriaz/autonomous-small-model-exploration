@@ -1,0 +1,149 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "timestamp": "20260629_015913",
+  "experiments": {
+    "sft": {
+      "error": "'Lfm2ForCausalLM' object has no attribute 'layers'"
+    },
+    "qlora": {
+      "method": "QLoRA",
+      "dataset": "tatsu-lab/alpaca",
+      "n_examples": 500,
+      "trainable_params": 1474560,
+      "final_loss": 5.1151,
+      "kl_shift": 0.5116,
+      "max_steps": 200,
+      "lr": 0.0002,
+      "lora_r": 16,
+      "quantization": "4bit_NF4"
+    },
+    "dpo": {
+      "error": "Failed to import trl.trainer.dpo_trainer because of the following error (look up to see its traceback):\nFailed to import trl.models.utils because of the following error (look up to see its traceback):\ncannot import name 'FSDPModule' from 'torch.distributed.fsdp' (/home/billz/work/autonomous-small-model-exploration/.venv/lib/python3.12/site-packages/torch/distributed/fsdp/__init__.py)"
+    },
+    "grpo": {
+      "error": "Failed to import trl.trainer.grpo_trainer because of the following error (look up to see its traceback):\nFailed to import trl.models.utils because of the following error (look up to see its traceback):\ncannot import name 'FSDPModule' from 'torch.distributed.fsdp' (/home/billz/work/autonomous-small-model-exploration/.venv/lib/python3.12/site-packages/torch/distributed/fsdp/__init__.py)"
+    },
+    "sweep": {
+      "method": "hyperparam_sweep",
+      "results": [
+        {
+          "config": "lr_1e-5",
+          "lr": 1e-05,
+          "r": 8,
+          "steps": 100,
+          "trainable_params": 65536,
+          "loss": 9.5419,
+          "kl_shift": 0.0006
+        },
+        {
+          "config": "lr_5e-5",
+          "lr": 5e-05,
+          "r": 8,
+          "steps": 100,
+          "trainable_params": 65536,
+          "loss": 8.13,
+          "kl_shift": 0.0022
+        },
+        {
+          "config": "lr_2e-4",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 100,
+          "trainable_params": 65536,
+          "loss": 6.7565,
+          "kl_shift": 0.009
+        },
+        {
+          "config": "lr_1e-3",
+          "lr": 0.001,
+          "r": 8,
+          "steps": 100,
+          "trainable_params": 65536,
+          "loss": 5.7836,
+          "kl_shift": 0.0366
+        },
+        {
+          "config": "r_2",
+          "lr": 0.0002,
+          "r": 2,
+          "steps": 100,
+          "trainable_params": 16384,
+          "loss": 7.639,
+          "kl_shift": 0.004
+        },
+        {
+          "config": "r_4",
+          "lr": 0.0002,
+          "r": 4,
+          "steps": 100,
+          "trainable_params": 32768,
+          "loss": 7.1279,
+          "kl_shift": 0.0051
+        },
+        {
+          "config": "r_16",
+          "lr": 0.0002,
+          "r": 16,
+          "steps": 100,
+          "trainable_params": 131072,
+          "loss": 6.4278,
+          "kl_shift": 0.0188
+        },
+        {
+          "config": "r_32",
+          "lr": 0.0002,
+          "r": 32,
+          "steps": 100,
+          "trainable_params": 262144,
+          "loss": 6.068,
+          "kl_shift": 0.0196
+        },
+        {
+          "config": "steps_50",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 50,
+          "trainable_params": 65536,
+          "loss": 7.659,
+          "kl_shift": 0.004
+        },
+        {
+          "config": "steps_200",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 200,
+          "trainable_params": 65536,
+          "loss": 6.0291,
+          "kl_shift": 0.0147
+        },
+        {
+          "config": "steps_500",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 500,
+          "trainable_params": 65536,
+          "loss": 5.3143,
+          "kl_shift": 0.0129
+        },
+        {
+          "config": "bs_1",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 200,
+          "trainable_params": 65536,
+          "loss": 6.0562,
+          "kl_shift": 0.0089
+        },
+        {
+          "config": "bs_4",
+          "lr": 0.0002,
+          "r": 8,
+          "steps": 100,
+          "trainable_params": 65536,
+          "loss": 6.7499,
+          "kl_shift": 0.0095
+        }
+      ]
+    }
+  }
+}
