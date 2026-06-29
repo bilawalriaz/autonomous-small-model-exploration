@@ -216,8 +216,7 @@ def main():
         optim="adafactor",
         eval_strategy="steps",
         load_best_model_at_end=False,
-        max_seq_length=max_seq_length,
-        dataset_text_field=None,
+        max_length=max_seq_length,
     )
 
     # Create trainer
