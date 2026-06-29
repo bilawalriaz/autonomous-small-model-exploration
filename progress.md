@@ -180,10 +180,42 @@ build_phase09_report.py → final report
 - [x] AGENTS.md updated with Phase 9 rules
 - [x] Pipeline dry-run verified: 26 steps across 6 formats
 
+## 2026-06-29 21:30 — Phase 9R: Evaluation Stack Rebuild
+
+### Problem identified
+The original Phase 9 report contained behavioral claims (win-rates, judge scores, hypothesis verdicts) based on mock-judge scoring — deterministic random numbers that look like real scores but carry no behavioral signal. `judge_outputs.py` silently fell back to mock when API was unavailable, using Python's `hash()` (non-deterministic across versions).
+
+### Phase 9R changes (completed)
+- [x] `judge_outputs.py` rewritten: explicit `--mock` flag required, `judge_source` metadata on every score, `hashlib`-based deterministic seeding, `--strict-report-mode`
+- [x] `aggregate_eval_results.py` enhanced: programmatic scorers (JSON validity, schema validity, entity F1, exact-match factual, numeric match, slop rate, output length, constraint-following), `--judge-source` filter
+- [x] `generate_blind_review.py` created: stratified blind review (60+ examples, 9 categories, anonymized labels, unblinding key)
+- [x] `run_phase9r_eval.py` created: one-command pipeline for aero eval + judge + aggregate + blind review
+- [x] `reports/09-data-format-ablation.md` rewritten with honest evidence tiers and mock-judge caveats
+
+### Phase 9R changes (pending — requires aero GPU)
+- [ ] Run eval harness on all 8 adapters + base model
+- [ ] Run real judge (or document mock limitations)
+- [ ] Generate blind review samples (60+ examples)
+- [ ] Compute programmatic metrics
+- [ ] Update report with real data
+
+### Current safe claims (Phase 9)
+1. **Training loss differs by format under content-controlled conditions** (CONFIRMED)
+2. **Multi-turn verbose has lowest training loss** (1.372, 33% better than worst)
+3. **bad_format_control has 2nd-best loss** — loss does NOT measure quality
+4. **Surgical adapter beats quality adapter on loss** (1.27 vs 1.46, 3.8x fewer params)
+5. **Format dominates hyperparameters** (consistent with Phase 8)
+
+### Claims NOT yet supported
+- Multi-turn verbose "wins behaviorally" (no real eval data)
+- Any win-rate or judge score comparison (mock judge only)
+- H1-H7 behavioral verdicts (all based on loss or mock data)
+
 ### Next actions (requires GPU on aero)
-1. Render datasets on aero: python scripts/data/render_dataset_formats.py
-2. Run full ablation: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml
-3. Or run individual format: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml --format multi_turn_concise
+1. Run Phase 9R eval: `python scripts/eval/run_phase9r_eval.py --judge-api-url <url> --judge-api-key <key>`
+2. Or mock pipeline test: `python scripts/eval/run_phase9r_eval.py --mock-judge --dry-run`
+3. After eval: update reports with real data
+4. Design Phase 10 (token-budget-controlled ablation)
 
 ## 2026-06-29 18:28 — Phase 9 Training In Progress (3/6 complete)
 

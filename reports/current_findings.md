@@ -85,6 +85,27 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 | Very High  | 0     |
 | Negative   | 9     |
 
+## Phase 9: Format Ablation Training Loss Findings (2026-06-29)
+
+**IMPORTANT CAVEAT:** The following findings are based on training loss ONLY. No real behavioral evaluation has been completed. Mock-judge data from the original Phase 9 report should be disregarded for behavioral claims.
+
+### Key training loss findings
+- **Format significantly affects training loss under content-controlled conditions.** Same 300 canonical examples rendered into 6 formats → 33% loss range (1.37 to 1.83).
+- **Multi-turn verbose has lowest loss (1.372).** This is surprising — Phase 8 suggested concise was better. But Phase 8 didn't control for content.
+- **bad_format_control has 2nd-best loss (1.402).** Deliberately malformed data is easy to predict. Loss measures predictability, not quality.
+- **Structured terse has worst loss (1.831).** Compact structured format is hardest for 230M model to learn from.
+- **Surgical adapter beats quality adapter on loss (1.27 vs 1.46) with 3.8x fewer params.** Out_proj-only LoRA is more parameter-efficient than hub-all-modules.
+
+### What we can claim
+1. Training loss differs by format (confirmed, reproducible)
+2. Loss does not trivially measure quality (plausible, needs behavioral confirmation)
+3. Format dominates hyperparameters (consistent with Phase 8)
+
+### What we cannot yet claim
+1. Multi-turn verbose produces better outputs (no real eval data)
+2. Any behavioral ranking of formats (mock judge only)
+3. Loss-quality correlation or decoupling (needs real eval)
+
 ## Best next experiments
 1. Multi-seed replication of top 5 findings
 2. Mean/resample ablation (stronger causal claims)
@@ -92,3 +113,5 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 4. SAE training on key layers (L0, L1, L2, L7, L9, L19, L22)
 5. Skill injection at L19 for factual recall
 6. Extend to natural language prompts
+7. **Phase 9R: Run real eval on aero** (highest priority — completes Phase 9)
+8. **Phase 10: Token-budget-controlled data-shape ablation**

@@ -85,3 +85,20 @@
 | Shared HYFL-inspired stylesheet | docs/assets/hyfl-mi.css | New shared responsive design layer for all published pages |
 | Phase 2 page | docs/05-phase2-repeatability.html | Updated to link Phase 3 and note the L26 -> L14 revision |
 | Phase 3 page | docs/06-phase3-gap-closure.html | Restyled to match the site and list remaining work |
+| Phase 7 LFM2 Atlas | docs/07-lfm2-230m-atlas.html | Complete atlas of LFM2.5-230M |
+| Phase 8 SFT Sweep | docs/08-lfm2-230m-sft-sweep.html | 39 SFT experiments, best recipe identified |
+| Phase 9 Format Ablation | docs/09-data-format-ablation.html | **CAVEAT: contains mock-judge data — see NR014** |
+| Phase 9R Report | reports/09-data-format-ablation.md | Honest report with evidence tiers, training loss only |
+
+## Phase 9 Scripts (2026-06-29)
+
+| Script | Path | Purpose | Status |
+|--------|------|---------|--------|
+| judge_outputs.py | scripts/eval/judge_outputs.py | Judge eval outputs (pointwise/pairwise) | Rewritten in Phase 9R — explicit --mock, judge_source metadata |
+| aggregate_eval_results.py | scripts/eval/aggregate_eval_results.py | Aggregate scores + programmatic metrics | Enhanced in Phase 9R — 8 programmatic scorers |
+| generate_blind_review.py | scripts/eval/generate_blind_review.py | Stratified blind review (60+ examples, 9 categories) | New in Phase 9R |
+| run_phase9r_eval.py | scripts/eval/run_phase9r_eval.py | One-command pipeline for aero eval | New in Phase 9R |
+| run_eval_harness.py | scripts/eval/run_eval_harness.py | Generate model responses on eval set | Unchanged |
+| export_manual_review.py | scripts/eval/export_manual_review.py | Export examples for human review | Unchanged |
+| run_format_ablation.py | scripts/train/run_format_ablation.py | Orchestrate format ablation training | Unchanged |
+| render_dataset_formats.py | scripts/data/render_dataset_formats.py | Render 6 format variants from canonical | Unchanged |

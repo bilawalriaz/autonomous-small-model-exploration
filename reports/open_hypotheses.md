@@ -333,3 +333,104 @@ Best next test:
 Replicate at 1.5B. Test whether the separability hierarchy is stable across scales.
 
 Status: NEW — pilot result (single seed, single scale).
+
+---
+
+## Phase 9 Hypotheses (2026-06-29)
+
+**IMPORTANT CAVEAT:** Phase 9 behavioral verdicts were originally based on mock-judge data. The following statuses reflect training-loss evidence only. Behavioral evidence is pending Phase 9R eval runs.
+
+### H-P9-1: Multi-turn concise format is genuinely better for small-model SFT
+
+Claim:
+Multi-turn concise chat format produces better fine-tuned models than other formats when content is held constant.
+
+Current evidence:
+- Training loss: multi_turn_concise (1.516) is 3rd, NOT the best
+- Multi_turn_verbose (1.372) has lowest loss
+- Under content-controlled conditions, verbose beats concise on loss
+
+Status: REJECTED (loss only). The Phase 8 intuition that concise is always better needs revision. Verbose may win because more tokens per example = more learning signal.
+
+---
+
+### H-P9-2: The smol-magpie-ultra advantage is partly format, not merely content
+
+Claim:
+Multi-turn format (not just curated content) contributes to smol-magpie's superior performance.
+
+Current evidence:
+- Multi-turn formats (verbose 1.372, concise 1.516) have lower loss than flat formats (alpaca 1.732, single_turn 1.748)
+- 26% loss gap between best multi-turn and best flat format
+- But content and format interact — can't fully separate with current design
+
+Status: PLAUSIBLE (loss only). Format contributes to loss difference. Behavioral confirmation pending.
+
+---
+
+### H-P9-3: Small models benefit from dense, compact examples more than verbose ones
+
+Claim:
+Compact, dense training examples should outperform verbose ones for small model SFT.
+
+Current evidence:
+- Structured terse (most compact): WORST loss (1.831)
+- Multi-turn verbose (most tokens per example): BEST loss (1.372)
+- Verbose > concise > structured terse on loss
+
+Status: REJECTED (loss only). More context beats less context at 230M scale for training loss. Behavioral confirmation pending.
+
+---
+
+### H-P9-4: Training loss may not correlate perfectly with behavioral quality
+
+Claim:
+Low training loss does not necessarily mean the model produces better outputs.
+
+Current evidence:
+- bad_format_control: loss 1.402 (2nd best)
+- bad_format_control is deliberately malformed data with filler phrases
+- Model learns filler easily → low loss → but outputs should be worse
+
+Status: PLAUSIBLE (from loss ranks). The bad_format_control anomaly strongly suggests loss-quality decoupling. Real eval needed to confirm. If bad_format_control has worst judge scores despite 2nd-best loss, this is confirmed.
+
+---
+
+### H-P9-5: Surgical LoRA can add useful behavior while preserving base model distribution
+
+Claim:
+Hub + o_proj only (65K params) should show lower KL drift and better format discipline than full hub targeting (245K).
+
+Current evidence:
+- Surgical bsmagpie: loss 1.271, Quality bsmagpie: loss 1.464
+- Surgical achieves lower loss with 3.8x fewer params
+- This suggests surgical is more efficient at learning
+
+Status: PLAUSIBLE (loss only). Need KL drift measurement and behavioral eval to confirm preservation of base model distribution.
+
+---
+
+### H-P9-6: Structured terse data may outperform verbose chat on JSON/extraction/code tasks
+
+Claim:
+Compact structured training data may teach format discipline better than conversational data.
+
+Current evidence:
+- Structured terse has WORST overall loss (1.831)
+- No category-level evidence available
+
+Status: UNRESOLVED. Loss suggests otherwise, but category-level eval might show structured terse wins on specific task types.
+
+---
+
+### H-P9-7: There is a distinct "small-model-native" data style
+
+Claim:
+Small models have a fundamentally different optimal data shape than large models.
+
+Current evidence:
+- Multi-turn verbose wins on loss (opposite of Phase 8 intuition)
+- More conversational context helps at 230M scale
+- But this is loss only — need behavioral confirmation
+
+Status: PLAUSIBLE (loss only). The "small-model-native" style may be "more context" not "more compact." Needs real eval.
