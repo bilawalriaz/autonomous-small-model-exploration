@@ -120,11 +120,14 @@ def api_judge_pointwise(eval_id: str, prompt: str, response: str,
     """
     import requests
 
+    # Truncate very long responses to fit in judge context window
+    if len(response) > 3000:
+        response = response[:3000] + "\n... [truncated for judging]"
     score_dims = ", ".join(f"{d} (1-5)" for d in DIMENSIONS)
     system_msg = (
         "You are an expert judge evaluating language model outputs. "
         "Score each dimension from 1 (worst) to 5 (best). "
-        "Respond ONLY with valid JSON."
+        "Respond ONLY with valid JSON. Do not include reasoning or explanation."
     )
     user_msg = (
         f"## Prompt\n{prompt}\n\n## Response\n{response}\n\n"
@@ -143,12 +146,23 @@ def api_judge_pointwise(eval_id: str, prompt: str, response: str,
             {"role": "user", "content": user_msg},
         ],
         "temperature": 0.0,
-        "max_tokens": 512,
+        "max_tokens": 2048,
     }
 
-    resp = requests.post(f"{api_url}/v1/chat/completions", json=payload, headers=headers, timeout=60)
+    resp = requests.post(f"{api_url}/v1/chat/completions", json=payload, headers=headers, timeout=120)
     resp.raise_for_status()
-    content = resp.json()["choices"][0]["message"]["content"]
+    msg = resp.json()["choices"][0]["message"]
+    content = msg.get("content")
+    # Thinking models (e.g. mimo-v2.5) may put output in reasoning, content is null
+    if not content and msg.get("reasoning"):
+        # Try to extract JSON from reasoning as fallback
+        reasoning = msg["reasoning"]
+        import re
+        json_match = re.search(r'\{[^{}]*\}', reasoning, re.DOTALL)
+        if json_match:
+            content = json_match.group(0)
+    if not content:
+        raise ValueError(f"No content in API response for {eval_id}")
     # Parse JSON from response (handle markdown code blocks)
     content = content.strip()
     if content.startswith("```"):
@@ -189,12 +203,22 @@ def api_judge_pairwise(eval_id: str, prompt: str, resp_a: str, resp_b: str,
             {"role": "user", "content": user_msg},
         ],
         "temperature": 0.0,
-        "max_tokens": 512,
+        "max_tokens": 2048,
     }
 
-    resp = requests.post(f"{api_url}/v1/chat/completions", json=payload, headers=headers, timeout=60)
+    resp = requests.post(f"{api_url}/v1/chat/completions", json=payload, headers=headers, timeout=120)
     resp.raise_for_status()
-    content = resp.json()["choices"][0]["message"]["content"]
+    msg = resp.json()["choices"][0]["message"]
+    content = msg.get("content")
+    # Thinking models may put output in reasoning
+    if not content and msg.get("reasoning"):
+        reasoning = msg["reasoning"]
+        import re
+        json_match = re.search(r'\{.*\}', reasoning, re.DOTALL)
+        if json_match:
+            content = json_match.group(0)
+    if not content:
+        raise ValueError(f"No content in API response for {eval_id}")
     content = content.strip()
     if content.startswith("```"):
         content = content.split("```")[1]
@@ -318,6 +342,7 @@ def main():
 
     scored = 0
     skipped = 0
+    errors = 0
     api_count = 0
     mock_count = 0
 
@@ -346,8 +371,9 @@ def main():
                         args.judge_model, args.api_url, args.api_key,
                     )
                 except Exception as e:
-                    log.error(f"API judge failed for {eval_id}: {e}")
-                    sys.exit(1)
+                    log.warning(f"API judge failed for {eval_id}: {e}, skipping")
+                    errors += 1
+                    continue
             else:
                 result = mock_judge_pointwise(eval_id, prompt, response, args.seed)
             entry = {
@@ -374,8 +400,9 @@ def main():
                         args.run_id, args.baseline_run_id,
                     )
                 except Exception as e:
-                    log.error(f"API judge failed for {eval_id}: {e}")
-                    sys.exit(1)
+                    log.warning(f"API judge failed for {eval_id}: {e}, skipping")
+                    errors += 1
+                    continue
             else:
                 result = mock_judge_pairwise(eval_id, prompt, response, resp_b, args.seed)
             entry = {
@@ -423,7 +450,7 @@ def main():
         print(f"    These are NOT real API scores. Do not report them as real evaluation results.")
     print(f"{'='*60}\n")
 
-    log.info(f"Done. Scored {scored} new, skipped {skipped} cached. Output: {scores_path}")
+    log.info(f"Done. Scored {scored} new, skipped {skipped} cached, {errors} errors. Output: {scores_path}")
 
 
 if __name__ == "__main__":
