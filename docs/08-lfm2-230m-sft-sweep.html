@@ -352,7 +352,7 @@
       <div class="swi-callout-icon">🧭</div>
       <div class="swi-callout-body">
         <strong>Executive Summary:</strong> We ran 39 SFT experiments on LFM2.5-230M, sweeping 10 datasets, 4 optimizers, and 6 hyperparameter dimensions (learning rate, rank, target modules, steps, data volume).<br><br>
-        <strong>Key finding:</strong> Dataset format (multi-turn concise) matters <strong>5&times; more</strong> than any hyperparameter choice. The best dataset (smol-magpie-ultra, loss 1.27) outperforms the worst (Alpaca, loss 6.07) by a factor of 4.8&times;. No optimizer or learning rate trick comes close to that gap. <strong>Adafactor</strong> beats AdamW on both loss (1.267 vs 1.272) and KL divergence (0.109 vs 0.142) while using less memory. Hub structure was preserved across all 39 experiments.
+        <strong>Key finding:</strong> Dataset format (multi-turn concise) matters <strong>5&times; more</strong> than any hyperparameter choice. The best dataset (smol-magpie-ultra, loss 1.25) outperforms the worst (Alpaca, loss 6.07) by a factor of 4.8&times;. No optimizer or learning rate trick comes close to that gap. <strong>Adafactor</strong> beats AdamW on both loss (1.267 vs 1.272) and KL divergence (0.109 vs 0.142) while using less memory. Hub structure was preserved across all 39 experiments.
       </div>
     </div>
 
@@ -827,7 +827,7 @@
     <div class="finding-card new">
       <div class="finding-verdict new">FINDING 1</div>
       <h3>Multi-turn concise format = king</h3>
-      <div class="finding-evidence">smol-magpie-ultra (multi-turn concise) achieves loss 1.27 vs Alpaca (flat instruction) at 6.07 &mdash; a 4.8&times; gap. UltraChat (multi-turn) also excels at 1.47. The conversational, concise format is the single most important factor in SFT effectiveness for small models.</div>
+      <div class="finding-evidence">smol-magpie-ultra (multi-turn concise) achieves loss 1.25 vs Alpaca (flat instruction) at 6.07 &mdash; a 4.8&times; gap. UltraChat (multi-turn) also excels at 1.47. The conversational, concise format is the single most important factor in SFT effectiveness for small models.</div>
     </div>
 
     <div class="finding-card new">
@@ -839,7 +839,7 @@
     <div class="finding-card confirmed">
       <div class="finding-verdict confirmed">FINDING 3</div>
       <h3>Adafactor beats AdamW on both loss and memory</h3>
-      <div class="finding-evidence">Adafactor: loss 1.267, KL 0.109. AdamW: loss 1.272, KL 0.142. Adafactor achieves lower loss AND lower KL drift while using less memory. It's strictly better for this use case. Lion has the highest KL (0.193), suggesting overshooting.</div>
+      <div class="finding-evidence">Adafactor: loss 1.267, KL 0.109. AdamW: loss 1.252, KL 0.142. Adafactor achieves lower loss AND lower KL drift while using less memory. It's strictly better for this use case. Lion has the highest KL (0.193), suggesting overshooting.</div>
     </div>
 
     <div class="finding-card confirmed">
