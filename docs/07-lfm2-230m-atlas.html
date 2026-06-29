@@ -355,9 +355,6 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
     <tr><td>Adversarial/noisy input</td><td>Poor</td><td>42.9% robustness — needs clean input</td></tr>
   </table>
 
-</section>
-</body>
-</html>
   <!-- FINETUNING -->
   <h2 class="section-label"><i class="fas fa-sliders-h"></i> Exhaustive Finetuning Sweep</h2>
   <p>Comprehensive testing of finetuning methods with real HuggingFace datasets. Measures loss convergence, KL shift from base model, and hub preservation.</p>
@@ -368,9 +365,9 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
     <tr><td>LoRA (target sweep)</td><td>Arithmetic</td><td>100</td><td class="mono">6.31-8.12</td><td class="mono">0.06-0.86</td><td>6 configs</td></tr>
     <tr><td>QLoRA (4-bit NF4)</td><td>Alpaca (500)</td><td>200</td><td class="mono">5.12</td><td class="mono">0.51</td><td>Strongest learning</td></tr>
     <tr><td>LoRA rank sweep</td><td>Arithmetic</td><td>100</td><td class="mono">9.16→7.70</td><td class="mono">0.008→0.12</td><td>r=2..16</td></tr>
-    <tr><td>SFT (Alpaca)</td><td>Alpaca (500)</td><td>200</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
-    <tr><td>DPO</td><td>UltraFeedback</td><td>100</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
-    <tr><td>GRPO</td><td>Math L5</td><td>50</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
+    <tr><td>SFT (Alpaca)</td><td>Alpaca (500)</td><td>200</td><td class="mono">5.26</td><td class="mono">0.16</td><td>Good task learning</td></tr>
+    <tr><td>DPO (manual)</td><td>Synthetic pairs</td><td>100</td><td class="mono">0.0001</td><td class="mono">0.002</td><td>Most surgical</td></tr>
+    <tr><td>GRPO (manual)</td><td>Math (10 prompts)</td><td>50</td><td class="mono">-0.006</td><td class="mono">0.001</td><td>Reward=1.0, minimal shift</td></tr>
   </table>
 
   <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Hyperparameter Sweep (13 configs, hub layers L0,L2,L4,L5)</h3>
