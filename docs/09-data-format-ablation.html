@@ -120,8 +120,8 @@
         <tr><td>Dataset validator</td><td><span class="tag-status tag-complete">Complete</span></td><td>All 6 formats pass: IDs, schema, no contamination</td></tr>
         <tr><td>Training script</td><td><span class="tag-status tag-complete">Complete</span></td><td>TRL SFTTrainer + Adafactor + LoRA, handles all formats</td></tr>
         <tr><td>Format ablation training</td><td><span class="tag-status tag-complete">Complete</span></td><td>6 quality adapters trained, best: multi-turn verbose (loss 1.37)</td></tr>
-        <tr><td>Surgical adapters</td><td><span class="tag-status tag-planned">Planned</span></td><td>Top 2 formats with surgical LoRA</td></tr>
-        <tr><td>bilawal_smol_magpie_v1</td><td><span class="tag-status tag-planned">Planned</span></td><td>Optimized mixture based on ablation results</td></tr>
+        <tr><td>Surgical adapters</td><td><span class="tag-status tag-complete">Complete</span></td><td>Surgical beats quality on bilawal_smol_magpie_v1 (loss 1.27, judge 3.16)</td></tr>
+        <tr><td>bilawal_smol_magpie_v1</td><td><span class="tag-status tag-complete">Complete</span></td><td>345 examples, surgical adapter wins (loss 1.27, judge 3.16)</td></tr>
         <tr><td>Final report</td><td><span class="tag-status tag-complete">Complete</span></td><td>Results published with hypothesis verdicts</td></tr>
       </tbody>
     </table>
@@ -435,6 +435,36 @@
       <li><strong>Is there a small-model-native data style?</strong> Yes — multi-turn with more context per example, not less.</li>
       <li><strong>What should we train next?</strong> Surgical adapters on multi-turn verbose. bilawal_smol_magpie_v1 with verbose-style training data.</li>
     </ul>
+
+    <!-- bilawal_smol_magpie_v1 -->
+    <div class="section-title">bilawal_smol_magpie_v1: Practical Dataset</div>
+    <p class="section-desc">A curated 345-example mixture optimized for small-model training, rendered in multi-turn verbose (the winning format). Trained with both quality and surgical adapters.</p>
+
+    <div class="overflow-x">
+    <table>
+      <thead>
+        <tr><th>Adapter</th><th>Params</th><th>Loss</th><th>Judge Overall</th><th>JSON Validity</th><th>Avg Tokens</th><th>Slop</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Surgical (out_proj only)</strong></td><td>~65K</td><td style="color: #2e7d32; font-weight: 700;">1.2714</td><td style="color: #2e7d32; font-weight: 700;">3.16</td><td>0.765</td><td>42.8</td><td>0.000</td></tr>
+        <tr><td>Quality (hub all modules)</td><td>245K</td><td>1.4642</td><td>3.01</td><td>0.912</td><td>40.2</td><td>0.000</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">🔬</div>
+      <div class="callout-body">
+        <strong>Surgical LoRA wins.</strong> The surgical adapter (out_proj only, ~65K params) achieves lower loss (1.27 vs 1.46) AND higher judge scores (3.16 vs 3.01) than the quality adapter (245K params, all modules). This validates H5: surgical LoRA can add useful behavior while preserving the base model. The 3.8× parameter reduction comes with better behavioral quality — only JSON validity drops (0.765 vs 0.912), likely because the surgical adapter has less capacity for format-specific learning.
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">📊</div>
+      <div class="callout-body">
+        <strong>Dataset composition:</strong> 345 examples across 9 domains — general (29%), concision (14%), coding (14%), reasoning (11%), JSON (9%), deobfuscation (9%), GameFAQ (7%), multi-turn (7%). All rendered in multi-turn verbose format with domain-appropriate follow-up turns. Every example is concise, natural, and designed for small-model-native training.
+      </div>
+    </div>
 
     <!-- NEXT -->
     <div class="section-title">Next Experiments</div>
