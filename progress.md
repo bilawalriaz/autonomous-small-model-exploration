@@ -115,17 +115,17 @@ See claims.md for full audit. Summary:
 - [x] AGENTS.md updated with Phase 9 rules
 
 #### In progress
-- [ ] Canonical dataset generation (300 examples, 9 domains)
-- [ ] Eval dataset generation (150 prompts, 9 categories)
-- [ ] Data pipeline scripts (compile, render, validate)
-- [ ] Eval pipeline scripts (harness, judge, aggregate, manual review, KL drift)
-- [ ] Training scripts (train_lfm2_sft, run_format_ablation)
-- [ ] Report generator
+- [x] Canonical dataset generation (300 examples, 9 domains)
+- [x] Eval dataset generation (153 prompts, 9 categories)
+- [x] Data pipeline scripts (compile, render, validate)
+- [x] Eval pipeline scripts (harness, judge, aggregate, manual review, KL drift)
+- [x] Training scripts (train_lfm2_sft, run_format_ablation)
+- [x] Report generator
 
 #### Planned
-- [ ] Render 6 format variants
-- [ ] Validate format variants
-- [ ] Train 6 format ablation adapters (quality)
+- [x] Render 6 format variants
+- [x] Validate format variants
+- [x] Train 6 format ablation adapters (quality) — COMPLETE, best loss: multi_turn_verbose (1.372)
 - [ ] Train 2 surgical adapters
 - [ ] Evaluate all adapters + base
 - [ ] Judge all outputs
@@ -211,3 +211,37 @@ This is consistent with Phase 8 finding that dataset format dominates hyperparam
 - Run --update-now to update the report HTML
 - Commit and push
 - Proceed to eval harness
+
+## 2026-06-29 19:01 — Phase 9 Format Ablation Training COMPLETE (6/6)
+
+All 6 format variants trained successfully with quality LoRA (r=8, hub layers + o_proj, Adafactor, lr=2e-4, 300 steps).
+
+### Final results
+
+| Format | Final Loss | Runtime | Rank |
+|--------|-----------|---------|------|
+| multi_turn_verbose | 1.3724 | 569s (~9.5min) | 1 (best) |
+| bad_format_control | 1.4023 | 590s (~10min) | 2 |
+| multi_turn_concise | 1.5156 | 1005s (~17min) | 3 |
+| alpaca_flat | 1.7321 | 895s (~15min) | 4 |
+| single_turn_chat | 1.7475 | 400s (~7min) | 5 |
+| structured_terse | 1.8314 | 440s (~7min) | 6 (worst) |
+
+### Key observations
+- **Best training loss:** multi_turn_verbose (1.372) — 25% lower than worst (structured_terse at 1.831)
+- **Surprise:** bad_format_control (deliberately malformed) has 2nd best loss (1.402) — this challenges the assumption that clean formatting is always better for training
+- **Surprise:** multi_turn_concise (1.516) does NOT beat multi_turn_verbose (1.372) — the Phase 8 intuition that concise is better needs revision
+- structured_terse performs worst — structured-JSON-like format is hardest for this model to learn from
+- Loss gap between best and worst: 0.459 (33% relative difference)
+
+### Caveats
+- These are TRAINING losses only. Behavioral quality (eval harness + blind judging) may differ.
+- Per AGENTS.md H4: "Training loss may not correlate with behavioral quality" — must wait for eval.
+- Single seed (quality track pilot) — no variance estimate yet.
+
+### Next actions
+1. Run eval harness on all 6 adapters + base model
+2. Judge outputs (blind pairwise)
+3. Aggregate and build Phase 9 report
+4. Test surgical LoRA track
+5. Multi-seed replication if pilot results are interesting
