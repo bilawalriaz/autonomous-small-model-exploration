@@ -17,7 +17,7 @@ adapter:
   alpha: 16
   dropout: 0.05
   bias: none
-  target_modules: ["o_proj"]  # hub + o_proj only (o_proj is hub-targeted)
+  target_modules: ["out_proj"]  # hub + o_proj only (o_proj is hub-targeted)
 
 training:
   framework: trl_sft
