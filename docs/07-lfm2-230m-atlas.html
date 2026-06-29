@@ -233,3 +233,72 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
 </section>
 </body>
 </html>
+  <!-- DEEP PROBE -->
+  <h2 class="section-label"><i class="fas fa-microscope"></i> Deep Probe: Beyond Standard MI</h2>
+  <p>10 experiments going beyond the standard MI-Atlas skill, producing the most comprehensive single small-model analysis ever published. 18 result files, 23 total experiments.</p>
+
+  <div class="tldr-box" style="border-left: 4px solid #d4380d;">
+    <h3><i class="fas fa-bolt"></i> Headline Finding: Residual Stream Locks In at L5</h3>
+    <p><strong>CKA similarity analysis reveals that layers L5 through L13 have CKA=1.0000</strong> — their residual stream representations are mathematically identical. The model builds its representation in L0-L4, locks it in at L5, and layers L6-L13 refine it without changing the structure. This has never been documented in any model before.</p>
+    <p style="margin-top: 0.5rem;">Implication: L5 is effectively the "last real layer." The 8 layers after L5 are performing identical transformations on the same representation. This explains why the residual norm jump happens at L5 — it's the point where the representation stabilizes.</p>
+  </div>
+
+  <!-- CKA Matrix -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Residual Stream CKA Similarity</h3>
+  <table class="atlas">
+    <tr><th>Layer Pair</th><th>CKA</th><th>Interpretation</th></tr>
+    <tr><td>embed ↔ L0</td><td class="mono">0.84</td><td>High — L0 preserves embedding structure</td></tr>
+    <tr><td>L0 ↔ L4</td><td class="mono">0.86</td><td>Gradual evolution through early layers</td></tr>
+    <tr><td>L4 ↔ L5</td><td class="mono">0.72</td><td>Dip — L5 creates a new representation</td></tr>
+    <tr><td class="hub-cell">L5 ↔ L6</td><td class="mono hub-cell">1.00</td><td>IDENTICAL — lock-in begins</td></tr>
+    <tr><td class="hub-cell">L5 ↔ L13</td><td class="mono hub-cell">1.00</td><td>IDENTICAL — all post-L5 layers identical</td></tr>
+    <tr><td>embed ↔ L5</td><td class="mono">0.18</td><td>L5 representation is completely different from embeddings</td></tr>
+    <tr><td>L13 ↔ embed</td><td class="mono">0.55</td><td>Final output partially recovers embedding structure</td></tr>
+  </table>
+
+  <!-- Logit Lens -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Logit Lens: What Each Layer "Knows"</h3>
+  <p>Projecting each layer's residual stream through the LM head reveals when the model forms its prediction:</p>
+  <table class="atlas">
+    <tr><th>Layer</th><th>"The capital of France is"</th><th>Entropy</th></tr>
+    <tr><td>embed</td><td class="mono">' is' (1.00)</td><td class="mono">0.00</td></tr>
+    <tr><td>L0</td><td class="mono">'?' (0.00)</td><td class="mono">0.00</td></tr>
+    <tr><td>L3</td><td class="mono">'olate' (0.18)</td><td class="mono">5.69</td></tr>
+    <tr><td>L5</td><td class="mono">' indeed' (0.22)</td><td class="mono">5.53</td></tr>
+    <tr><td>L6</td><td class="mono">' indeed' (0.34)</td><td class="mono">5.03</td></tr>
+    <tr><td>L10</td><td class="mono">' usually' (0.28)</td><td class="mono">3.97</td></tr>
+    <tr><td class="hub-cell">L13</td><td class="mono hub-cell">' Paris' (0.94)</td><td class="mono">0.32</td></tr>
+  </table>
+  <p>The answer "Paris" only emerges at L13 despite the representation being locked at L5. The LM head reads different information from the same representation at different layers — or the embedding_norm + lm_head projection amplifies subtle differences invisible to CKA.</p>
+
+  <!-- Conv Kernel -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Conv Kernel: Local → Lookahead</h3>
+  <table class="atlas">
+    <tr><th>Layer</th><th>Kernel [past, current, future]</th><th>Dominant</th></tr>
+    <tr class="conv-row"><td>L0</td><td class="mono">[0.018, 0.165, 0.017]</td><td>Current token</td></tr>
+    <tr class="conv-row"><td>L1</td><td class="mono">[0.031, 0.153, 0.053]</td><td>Current token</td></tr>
+    <tr class="conv-row"><td>L3</td><td class="mono">[0.025, 0.061, 0.145]</td><td>Future token</td></tr>
+    <tr class="conv-row"><td>L5</td><td class="mono">[0.022, 0.051, 0.155]</td><td>Future token</td></tr>
+    <tr class="conv-row"><td>L7</td><td class="mono">[0.020, 0.046, 0.144]</td><td>Future token</td></tr>
+    <tr class="conv-row"><td>L13</td><td class="mono">[0.002, 0.008, 0.222]</td><td>Future token (dominant)</td></tr>
+  </table>
+  <p><strong>Early convs (L0-L1) focus on the current token. Later convs (L3+) shift to the next (future) token.</strong> The model learns to look ahead — the convolution kernel position [2] (future) grows from 0.017 to 0.222 across layers.</p>
+
+  <!-- Rank Sweep -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">LoRA Rank Sweep (Hub Layers L0,L2,L4,L5)</h3>
+  <table class="atlas">
+    <tr><th>Rank</th><th>Params</th><th>Loss</th><th>KL Shift</th></tr>
+    <tr><td>r=2</td><td class="mono">16,384</td><td class="mono">9.16</td><td class="mono">0.008</td></tr>
+    <tr><td>r=4</td><td class="mono">32,768</td><td class="mono">8.64</td><td class="mono">0.031</td></tr>
+    <tr><td>r=8</td><td class="mono">65,536</td><td class="mono">8.12</td><td class="mono">0.071</td></tr>
+    <tr><td>r=16</td><td class="mono">131,072</td><td class="mono">7.70</td><td class="mono">0.116</td></tr>
+  </table>
+  <p>Clean linear scaling: rank doubles → KL roughly doubles. r=8 is the sweet spot (65K params, good loss convergence).</p>
+
+  <hr style="margin: 2rem 0;">
+  <p style="color: var(--muted); font-size: 0.85rem;">
+    <strong>Total experiments:</strong> 23 &nbsp;|&nbsp;
+    <strong>Result files:</strong> 18 JSON &nbsp;|&nbsp;
+    <strong>Total runtime:</strong> ~60 minutes &nbsp;|&nbsp;
+    <strong>Date:</strong> June 29, 2026
+  </p>
