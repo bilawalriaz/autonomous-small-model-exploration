@@ -214,6 +214,7 @@ def main():
         gradient_checkpointing=training_cfg.get("gradient_checkpointing", True),
         report_to=training_cfg.get("report_to", "none"),
         optim="adafactor",
+        lr_scheduler_type=training_cfg.get("lr_scheduler", "constant"),
         eval_strategy="steps",
         load_best_model_at_end=False,
         max_length=max_seq_length,
