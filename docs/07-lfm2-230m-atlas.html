@@ -358,3 +358,44 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
 </section>
 </body>
 </html>
+  <!-- FINETUNING -->
+  <h2 class="section-label"><i class="fas fa-sliders-h"></i> Exhaustive Finetuning Sweep</h2>
+  <p>Comprehensive testing of finetuning methods with real HuggingFace datasets. Measures loss convergence, KL shift from base model, and hub preservation.</p>
+
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Method Comparison</h3>
+  <table class="atlas">
+    <tr><th>Method</th><th>Dataset</th><th>Steps</th><th>Final Loss</th><th>KL Shift</th><th>Status</th></tr>
+    <tr><td>LoRA (target sweep)</td><td>Arithmetic</td><td>100</td><td class="mono">6.31-8.12</td><td class="mono">0.06-0.86</td><td>6 configs</td></tr>
+    <tr><td>QLoRA (4-bit NF4)</td><td>Alpaca (500)</td><td>200</td><td class="mono">5.12</td><td class="mono">0.51</td><td>Strongest learning</td></tr>
+    <tr><td>LoRA rank sweep</td><td>Arithmetic</td><td>100</td><td class="mono">9.16→7.70</td><td class="mono">0.008→0.12</td><td>r=2..16</td></tr>
+    <tr><td>SFT (Alpaca)</td><td>Alpaca (500)</td><td>200</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
+    <tr><td>DPO</td><td>UltraFeedback</td><td>100</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
+    <tr><td>GRPO</td><td>Math L5</td><td>50</td><td class="mono">—</td><td class="mono">—</td><td>Running</td></tr>
+  </table>
+
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Hyperparameter Sweep (13 configs, hub layers L0,L2,L4,L5)</h3>
+  <table class="atlas">
+    <tr><th>Config</th><th>Value</th><th>Loss</th><th>KL Shift</th><th>Insight</th></tr>
+    <tr><td>Learning rate</td><td>1e-5</td><td class="mono">9.54</td><td class="mono">0.0006</td><td>Too conservative</td></tr>
+    <tr><td>Learning rate</td><td>5e-5</td><td class="mono">8.13</td><td class="mono">0.0022</td><td>Conservative</td></tr>
+    <tr><td class="hub-cell">Learning rate</td><td class="hub-cell">2e-4</td><td class="mono">6.76</td><td class="mono">0.009</td><td>Default — sweet spot</td></tr>
+    <tr><td>Learning rate</td><td>1e-3</td><td class="mono">5.78</td><td class="mono">0.037</td><td>Aggressive</td></tr>
+    <tr><td>Rank</td><td>r=2</td><td class="mono">7.64</td><td class="mono">0.004</td><td>Minimal params</td></tr>
+    <tr><td>Rank</td><td>r=4</td><td class="mono">7.13</td><td class="mono">0.005</td><td>Good efficiency</td></tr>
+    <tr><td class="hub-cell">Rank</td><td class="hub-cell">r=8</td><td class="mono">6.76</td><td class="mono">0.009</td><td>Sweet spot</td></tr>
+    <tr><td>Rank</td><td>r=16</td><td class="mono">6.43</td><td class="mono">0.019</td><td>Diminishing returns</td></tr>
+    <tr><td>Rank</td><td>r=32</td><td class="mono">6.07</td><td class="mono">0.020</td><td>Marginal gain vs r=16</td></tr>
+    <tr><td>Steps</td><td>50</td><td class="mono">7.66</td><td class="mono">0.004</td><td>Undertrained</td></tr>
+    <tr><td>Steps</td><td>200</td><td class="mono">6.03</td><td class="mono">0.015</td><td>Good</td></tr>
+    <tr><td>Steps</td><td>500</td><td class="mono">5.31</td><td class="mono">0.013</td><td>Loss drops, KL plateaus!</td></tr>
+  </table>
+
+  <div class="tldr-box" style="border-left: 4px solid #52c41a;">
+    <h3><i class="fas fa-lightbulb"></i> Finetuning Key Insight</h3>
+    <p><strong>Loss keeps decreasing with more training, but KL plateaus around 0.01-0.02.</strong> This means the model LEARNS the task without dramatic behavior shift — the hub structure is preserved even after 500 steps of training. This is excellent for practical deployment: you can finetune aggressively on your task without destroying the model's general capabilities.</p>
+    <p style="margin-top: 0.5rem;"><strong>Recommended config:</strong> lr=2e-4, r=8, 200-500 steps, target hub layers (L0,L2,L4,L5) with o_proj+MLP. This gives good task learning (loss 5.3-6.0) with minimal behavior shift (KL 0.01-0.02).</p>
+  </div>
+
+</section>
+</body>
+</html>

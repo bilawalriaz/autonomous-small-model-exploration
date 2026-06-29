@@ -59,11 +59,16 @@ def measure_hub_kl(model, tok, prompt="The capital of France is"):
     ids = tok(prompt, return_tensors="pt").input_ids.to(model.device)
     with torch.no_grad():
         baseline = model(ids).logits
+    # Handle both raw and PEFT-wrapped models
+    if hasattr(model, 'base_model'):
+        layers = model.base_model.model.model.layers
+    else:
+        layers = model.model.layers
     hub_kls = {}
     for li in HUB_LAYERS:
         def hook(module, input, output):
             return torch.zeros_like(output) if isinstance(output, torch.Tensor) else (torch.zeros_like(output[0]),) + output[1:]
-        handle = model.model.layers[li].feed_forward.register_forward_hook(hook)
+        handle = layers[li].feed_forward.register_forward_hook(hook)
         with torch.no_grad():
             abl = model(ids).logits
         handle.remove()
