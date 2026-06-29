@@ -22,6 +22,7 @@
       font-family: 'Noto Sans', sans-serif;
       color: #000;
       background: #ffffff;
+      overflow-x: hidden;
     }
     .swi-gradient {
       background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
@@ -76,12 +77,12 @@
       background: #f5f5f5;
       border-radius: 10px;
       margin-bottom: 14px;
-      border-left: 4px solid transparent;
+      border-left: none;
     }
-    .finding-card.confirmed { border-left-color: #52c41a; }
-    .finding-card.new { border-left-color: #d4380d; }
-    .finding-card.rejected { border-left-color: #ff4d4f; }
-    .finding-card.partial { border-left-color: #fa8c16; }
+    .finding-card.confirmed { border-left: none; }
+    .finding-card.new { border-left: none; }
+    .finding-card.rejected { border-left: none; }
+    .finding-card.partial { border-left: none; }
     .finding-card .finding-verdict {
       font-family: 'Google Sans', sans-serif;
       font-size: 0.72rem;
@@ -127,7 +128,7 @@
     .metric-table tr:hover td { background: #fafafa; }
     .metric-table .num { font-family: 'SF Mono', 'Menlo', monospace; font-size: 0.85rem; }
     .metric-table .winner { background: #f6ffed; font-weight: 600; }
-    .metric-table .winner td { border-left: 3px solid #52c41a; }
+    .metric-table .winner td { border-left: none; }
     .scale-bar {
       display: inline-block;
       height: 8px;
@@ -207,7 +208,7 @@
       background: #f5f5f5;
       border-radius: 10px;
       margin-bottom: 14px;
-      border-left: 4px solid #52c41a;
+      border-left: none;
     }
     .config-card h3 {
       margin: 0 0 8px;
@@ -260,6 +261,7 @@
       margin: 0;
     }
 
+    * { box-sizing: border-box; }
     .bar-chart {
       margin: 1rem 0;
     }
@@ -299,7 +301,16 @@
     @media (max-width: 768px) {
       .publication-title { font-size: 1.9rem; }
       .stat-grid { grid-template-columns: repeat(2, 1fr); }
-      .bar-label { min-width: 100px; font-size: 0.78rem; }
+      .bar-label { min-width: 80px; font-size: 0.75rem; }
+      .bar-value { min-width: 50px; font-size: 0.75rem; }
+      .metric-table { font-size: 0.8rem; display: block; overflow-x: auto; }
+      .metric-table th, .metric-table td { padding: 6px 8px; white-space: nowrap; }
+      .mi-nav-inner { flex-wrap: wrap; gap: 8px; }
+      .mi-nav-links { gap: 10px !important; }
+      .config-card { padding: 14px 16px; }
+      .sample-block { padding: 14px 16px; }
+      .swi-callout { padding: 12px 14px; flex-direction: column; gap: 8px; }
+      .config-card .config-spec { font-size: 0.78rem; padding: 8px 10px; overflow-x: auto; }
     }
   </style>
 </head>
@@ -942,7 +953,7 @@ Parameters: ~213K trainable (0.09% of model)</div>
       <div class="config-note">Use this when output quality is the priority and you can afford moderate KL drift. Best loss across the entire sweep.</div>
     </div>
 
-    <div class="config-card" style="border-left-color: #d4380d;">
+    <div class="config-card">
       <h3>&#9889; Best Efficiency</h3>
       <div class="config-spec">Dataset: smol-magpie-ultra
 Optimizer: Adafactor
@@ -956,7 +967,7 @@ Parameters: ~65K trainable (0.03% of model)</div>
       <div class="config-note">Use this when you need surgical fine-tuning with minimal KL drift. Only 65K parameters &mdash; the smallest effective adapter in the sweep. Preserves 96% of the base model's distribution.</div>
     </div>
 
-    <div class="config-card" style="border-left-color: #fa8c16;">
+    <div class="config-card">
       <h3>&#127919; Most Surgical</h3>
       <div class="config-spec">Dataset: GSM8K (domain-specific)
 Optimizer: AdamW
