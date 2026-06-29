@@ -195,8 +195,9 @@ def main():
     model = get_peft_model(model, peft_config)
     model.print_trainable_parameters()
 
-    # Training arguments
-    training_args = TrainingArguments(
+    # Training arguments (use SFTConfig for TRL 1.7+ compatibility)
+    max_seq_length = training_cfg.get("max_seq_length", 1024)
+    training_args = SFTConfig(
         output_dir=str(adapter_dir / "checkpoints"),
         learning_rate=training_cfg.get("learning_rate", 2e-4),
         per_device_train_batch_size=training_cfg.get("batch_size", 4),
@@ -215,30 +216,18 @@ def main():
         optim="adafactor",
         eval_strategy="steps",
         load_best_model_at_end=False,
+        max_seq_length=max_seq_length,
+        dataset_text_field=None,
     )
 
     # Create trainer
-    max_seq_length = training_cfg.get("max_seq_length", 1024)
-
-    if use_chat_format:
-        # Use SFTTrainer with message field handling
-        trainer = SFTTrainer(
-            model=model,
-            args=training_args,
-            train_dataset=train_dataset,
-            eval_dataset=eval_dataset,
-            processing_class=tokenizer,
-            max_seq_length=max_seq_length,
-        )
-    else:
-        trainer = SFTTrainer(
-            model=model,
-            args=training_args,
-            train_dataset=train_dataset,
-            eval_dataset=eval_dataset,
-            processing_class=tokenizer,
-            max_seq_length=max_seq_length,
-        )
+    trainer = SFTTrainer(
+        model=model,
+        args=training_args,
+        train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
+        processing_class=tokenizer,
+    )
 
     # Train
     log.info("Starting training...")
