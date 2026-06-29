@@ -1,0 +1,176 @@
+{
+  "id": "tulu3_300",
+  "dataset": "allenai/tulu-3-sft-mixture",
+  "subset": null,
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 3.9442,
+  "kl_shift": 0.1235,
+  "hub_kls": {
+    "L0": 3.0572,
+    "L2": 0.689,
+    "L4": 3.4019,
+    "L5": 2.291
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 6.2368
+    },
+    {
+      "step": 30,
+      "loss": 5.432
+    },
+    {
+      "step": 45,
+      "loss": 5.0165
+    },
+    {
+      "step": 60,
+      "loss": 4.374
+    },
+    {
+      "step": 75,
+      "loss": 3.7081
+    },
+    {
+      "step": 90,
+      "loss": 3.7076
+    },
+    {
+      "step": 105,
+      "loss": 3.9762
+    },
+    {
+      "step": 120,
+      "loss": 3.5482
+    },
+    {
+      "step": 135,
+      "loss": 3.5906
+    },
+    {
+      "step": 150,
+      "loss": 3.6507
+    },
+    {
+      "step": 165,
+      "loss": 3.3212
+    },
+    {
+      "step": 180,
+      "loss": 3.6923
+    },
+    {
+      "step": 195,
+      "loss": 3.5892
+    },
+    {
+      "step": 210,
+      "loss": 3.4831
+    },
+    {
+      "step": 225,
+      "loss": 3.733
+    },
+    {
+      "step": 240,
+      "loss": 3.8589
+    },
+    {
+      "step": 255,
+      "loss": 3.563
+    },
+    {
+      "step": 270,
+      "loss": 3.6561
+    },
+    {
+      "step": 285,
+      "loss": 3.3727
+    },
+    {
+      "step": 300,
+      "loss": 3.3726
+    }
+  ],
+  "train_time_s": 660.3,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world.\n\nParis is a major cultural, economic, and political center in Europe. It is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. The city is also known for its fashionable streets, art galleries, and historic architecture.\n\nParis is a city that has been thriving for centuries, and it continues to be an important part of the global economy. It is a hub for international trade, finance, and culture, attracting millions of visitors each year. The city's rich history and cultural heritage make it a must-visit destination for anyone interested in exploring the world.",
+      "n_tokens": 152,
+      "time_s": 1.95,
+      "tok_per_s": 78.0
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"male\"}\n\"Alice\" is a 2023 American drama film directed by David L. Smith and written by Alice L. Smith and David L. Smith.\n\n\"Alice\" is a 2023 American drama film directed by David L. Smith and written by Alice L. Smith and David L. Smith. The film stars Alice L. Smith as Alice, a 17-year-old girl who is sent to a remote island in the Pacific Ocean to study at a prestigious university. Alice's life takes a dramatic turn when she discovers that her parents are involved in a criminal enterprise. She is forced to leave her home and start anew on the island, where she must navigate the challenges of survival and self-discovery.\n\nThe film explores themes of identity, belonging, and the struggle for autonomy in a world that often seeks to control and manipulate individuals. It also delves into the complexities of family dynamics and the impact of trauma on personal",
+      "n_tokens": 200,
+      "time_s": 2.71,
+      "tok_per_s": 73.8
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 127,
+      "time_s": 1.76,
+      "tok_per_s": 72.2
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the properties of one particle, you can determine the properties of the other particle, even if they are separated by vast distances.\n\nThis concept was first proposed by Albert Einstein, Boris Podolsky, and Nathan Rosen in 1935 as part of their famous EPR paper. They argued that if two particles were entangled, measuring one particle's properties would immediately affect the other, regardless of the distance between them. This seemed to contradict the principles of special relativity, which states that nothing can travel faster than the speed of light.\n\nHowever, experiments have shown that entangled particles can indeed be measured with high precision, demonstrating the reality of quantum entanglement. These experiments have been conducted over many years and have provided strong evidence for the existence of entanglement.\n\nIn summary, quantum ent",
+      "n_tokens": 200,
+      "time_s": 2.73,
+      "tok_per_s": 73.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.45,
+      "tok_per_s": 71.5
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 58 = 547\n547 - 7 = 540\n540 - 4 = 536\n536 - 1 = 535\n535 - 5 = 530\n530 - 3 = 527",
+      "n_tokens": 52,
+      "time_s": 0.73,
+      "tok_per_s": 71.2
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+      "n_tokens": 29,
+      "time_s": 0.4,
+      "tok_per_s": 71.9
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Reduces the risk of chronic diseases such as diabetes, heart disease, and stroke.",
+      "n_tokens": 38,
+      "time_s": 0.53,
+      "tok_per_s": 72.0
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target and i != 0:\n            return i\n    for j in range(len(arr)):\n        if arr[j] == target and j != 0:\n            return j\n    return -1",
+      "n_tokens": 200,
+      "time_s": 2.71,
+      "tok_per_s": 73.9
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a carbon atom. This polarity allows water to dissolve in many substances, making it essential for life on Earth.\n\nWater plays a crucial role in the planet's climate regulation, as it absorbs heat from the sun and releases it back into space through evaporation. This process helps maintain a stable temperature around the Earth's surface, which is vital for the survival of all living organisms.\n\nIn addition to its role in regulating the planet's climate, water also serves as a solvent for countless biochemical reactions that occur within living organisms. It dissolves nutrients and minerals, facilitating their uptake by cells and enabling them to perform essential functions such as photosynthesis and respiration.\n\nOverall, water is a fundamental component of life on Earth, playing a critical role in maintaining the planet's climate, supporting biochemical processes, and sustaining life itself.",
+      "n_tokens": 189,
+      "time_s": 2.6,
+      "tok_per_s": 72.7
+    }
+  ]
+}

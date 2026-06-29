@@ -1,0 +1,176 @@
+{
+  "id": "smoltalk_full_300",
+  "dataset": "HuggingFaceTB/smoltalk",
+  "subset": "smol-magpie-ultra",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.272,
+  "kl_shift": 0.13,
+  "hub_kls": {
+    "L0": 3.418,
+    "L2": 1.0068,
+    "L4": 3.2721,
+    "L5": 2.366
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 1.4924
+    },
+    {
+      "step": 30,
+      "loss": 1.3949
+    },
+    {
+      "step": 45,
+      "loss": 1.3306
+    },
+    {
+      "step": 60,
+      "loss": 1.2669
+    },
+    {
+      "step": 75,
+      "loss": 1.2694
+    },
+    {
+      "step": 90,
+      "loss": 1.2405
+    },
+    {
+      "step": 105,
+      "loss": 1.2949
+    },
+    {
+      "step": 120,
+      "loss": 1.2891
+    },
+    {
+      "step": 135,
+      "loss": 1.2922
+    },
+    {
+      "step": 150,
+      "loss": 1.1813
+    },
+    {
+      "step": 165,
+      "loss": 1.2583
+    },
+    {
+      "step": 180,
+      "loss": 1.2739
+    },
+    {
+      "step": 195,
+      "loss": 1.2285
+    },
+    {
+      "step": 210,
+      "loss": 1.3345
+    },
+    {
+      "step": 225,
+      "loss": 1.2327
+    },
+    {
+      "step": 240,
+      "loss": 1.1927
+    },
+    {
+      "step": 255,
+      "loss": 1.1462
+    },
+    {
+      "step": 270,
+      "loss": 1.2454
+    },
+    {
+      "step": 285,
+      "loss": 1.2589
+    },
+    {
+      "step": 300,
+      "loss": 1.2171
+    }
+  ],
+  "train_time_s": 664.1,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government.\n\nParis is a major cultural, economic, and historical center in Europe. It is known for its rich history, art, architecture, fashion, cuisine, and music. The city has been the center of European culture for centuries and is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Arc de Triomphe.\n\nParis is also a major tourist destination, attracting millions of visitors each year from around the world. The city offers a wide range of attractions, including museums, historic sites, parks, and shopping centers. The city's vibrant nightlife, food scene, and entertainment options make it an ideal destination for both locals and tourists.\n\nIn addition to its cultural and historical significance, Paris is also a hub for innovation and entrepreneurship. The city hosts numerous startups, tech companies",
+      "n_tokens": 200,
+      "time_s": 2.72,
+      "tok_per_s": 73.6
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"photographer\", \"hobbies\": \"photography\", \"interests\": \"photography\", \"family\": \"no\", \"relationships\": \"friends\", \"counselor\": \"Dr. Emily\"}\n\n\"Alice\" is a 17-year-old male photographer who lives in New York City. She is a photographer and a freelance photographer. Alice has a passion for photography and enjoys capturing the beauty of the city through her lens. She is also a freelance counselor, which she uses to help people navigate their personal challenges and goals.\n\nAlice's family is not involved in her work, but she does have a few close friends who are also photographers. One of her closest friends is a fellow photographer named Sarah, who is also a freelance counselor. They often meet up at local coffee shops or parks to discuss their work and share advice.",
+      "n_tokens": 200,
+      "time_s": 2.71,
+      "tok_per_s": 73.8
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-2])\n        return fib",
+      "n_tokens": 79,
+      "time_s": 1.38,
+      "tok_per_s": 57.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and their properties are correlated, even when they are separated by large distances. This means that the state of one particle instantly influences the state of the other, regardless of the distance between them.\n\nImagine you have two coins that are entangled. If you flip one coin and it lands on heads, the other coin will also land on heads, no matter how far apart they are. This instant connection between the two coins is what we call entanglement.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been experimentally verified numerous times. It's a key feature of quantum entanglement and has important implications for our understanding of the universe at the smallest scales.",
+      "n_tokens": 155,
+      "time_s": 2.04,
+      "tok_per_s": 76.0
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.43,
+      "tok_per_s": 74.1
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 358 = 247\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 =",
+      "n_tokens": 200,
+      "time_s": 2.64,
+      "tok_per_s": 75.7
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning is a common greeting in many cultures, and it's often used as a polite way of saying hello or welcome someone to a meeting or event. In French, it would be \"Bonjour\" (pronounced \"bon-ree-zhoo\"), in Spanish, \"Hola\" (pronounced \"hoh-ree\"), and in German, \"Guten Morgen\" (pronounced \"goh-noh\").",
+      "n_tokens": 90,
+      "time_s": 1.19,
+      "tok_per_s": 75.5
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces the risk of chronic diseases such as diabetes, heart disease, and obesity\n5. Boosts self-esteem and confidence\n6. Helps in weight management\n7. Improves sleep quality\n8. Increases energy levels\n9. Reduces stress and anxiety\n10. Promotes better digestion and nutrient absorption",
+      "n_tokens": 95,
+      "time_s": 1.27,
+      "tok_per_s": 74.8
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n    low = 0",
+      "n_tokens": 200,
+      "time_s": 2.68,
+      "tok_per_s": 74.7
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater (H2O) is a simple inorganic compound consisting of hydrogen (H) and oxygen (O). It is a colorless liquid that is essential for life on Earth. Water is the most abundant element in the universe, with an average atomic mass of about 1 gram per mole.\n\nIn the chemical equation for the formation of water from its constituent elements, the balanced equation is:\n\n2H2 + O2 -> H2O\n\nThis equation shows that one molecule of hydrogen gas (H2) reacts with one molecule of oxygen gas (O2) to produce one molecule of water (H2O). The reaction is exothermic, meaning it releases heat energy.\n\nThe presence of oxygen in water is crucial for life because it provides the necessary reactants for the synthesis of organic molecules, such as amino acids and nucleotides, which are essential building blocks of life. Additionally, water plays a vital role in regulating Earth's climate by absorbing carbon",
+      "n_tokens": 200,
+      "time_s": 2.78,
+      "tok_per_s": 71.9
+    }
+  ]
+}

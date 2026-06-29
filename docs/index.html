@@ -187,6 +187,7 @@
         <a href="05-phase2-repeatability.html">Phase 2</a>
         <a href="06-phase3-gap-closure.html">Phase 3</a>
         <a href="07-lfm2-230m-atlas.html">LFM2.5-230M</a>
+        <a href="08-lfm2-230m-sft-sweep.html">LFM2 SFT</a>
       </div>
     </div>
   </div>
@@ -269,6 +270,12 @@
         <h3>LFM2.5-230M: Hybrid Architecture Atlas</h3>
         <div class="paper-meta">230M params · 14 layers (8 conv + 6 attn) · Liquid AI</div>
         <div class="paper-tagline">First MI atlas of a hybrid conv+attention model. L0 (conv) is the universal hub. Early layers 3.3× more important than late. Conv MLPs 2.12× stronger than attn MLPs. L4_H11 universal attention head. Steering effective at early layers (opposite of Qwen). Atlas-guided LoRA: 65K params, 14× less behavior shift.</div>
+      </a>
+      <a class="paper-card" href="08-lfm2-230m-sft-sweep.html" style="border-left: 4px solid #52c41a;">
+        <div class="paper-num" style="color: #52c41a;">08 &middot; SFT SWEEP</div>
+        <h3>LFM2.5-230M: SFT Experiment Sweep</h3>
+        <div class="paper-meta">39 experiments &middot; 10 datasets &middot; 4 optimizers &middot; 6 hyperparameter dimensions</div>
+        <div class="paper-tagline">What actually matters when fine-tuning a 230M model? Dataset format (multi-turn concise) beats hyperparameters by 5&times;. Best dataset: smol-magpie-ultra (loss 1.27). Best optimizer: Adafactor. Hub structure preserved across all 39 experiments.</div>
       </a>
     </div>
 

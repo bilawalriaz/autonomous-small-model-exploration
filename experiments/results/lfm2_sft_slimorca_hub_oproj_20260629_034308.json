@@ -1,0 +1,183 @@
+{
+  "id": "slimorca_hub_oproj",
+  "dataset": "Open-Orca/SlimOrca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub_oproj",
+  "target_modules": [
+    "out_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 65536,
+  "total_params": 229758720,
+  "final_loss": 4.2435,
+  "kl_shift": 0.2015,
+  "hub_kls": {
+    "L0": 3.883,
+    "L2": 0.8047,
+    "L4": 2.6888,
+    "L5": 1.2494
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 6.5131
+    },
+    {
+      "step": 30,
+      "loss": 5.6895
+    },
+    {
+      "step": 45,
+      "loss": 4.9044
+    },
+    {
+      "step": 60,
+      "loss": 4.6305
+    },
+    {
+      "step": 75,
+      "loss": 4.3147
+    },
+    {
+      "step": 90,
+      "loss": 4.2964
+    },
+    {
+      "step": 105,
+      "loss": 4.1499
+    },
+    {
+      "step": 120,
+      "loss": 4.0715
+    },
+    {
+      "step": 135,
+      "loss": 3.9094
+    },
+    {
+      "step": 150,
+      "loss": 3.9653
+    },
+    {
+      "step": 165,
+      "loss": 3.9665
+    },
+    {
+      "step": 180,
+      "loss": 3.9927
+    },
+    {
+      "step": 195,
+      "loss": 3.7773
+    },
+    {
+      "step": 210,
+      "loss": 3.7615
+    },
+    {
+      "step": 225,
+      "loss": 3.8753
+    },
+    {
+      "step": 240,
+      "loss": 3.9553
+    },
+    {
+      "step": 255,
+      "loss": 3.7607
+    },
+    {
+      "step": 270,
+      "loss": 3.8727
+    },
+    {
+      "step": 285,
+      "loss": 3.7966
+    },
+    {
+      "step": 300,
+      "loss": 3.6666
+    }
+  ],
+  "train_time_s": 650.6,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government.\n\nParis is a major cultural, historical, and economic center in Europe. It is known for its art museums, fashionable streets, and historic landmarks such as Notre-Dame Cathedral, the Louvre Museum, and the Eiffel Tower. The city is also famous for its cuisine, including dishes like croissants, macarons, and cheese.\n\nParis is a major tourist destination, attracting millions of visitors each year. It is home to many museums, galleries, and cultural institutions, as well as numerous restaurants, cafes, and bars. The city's nightlife is also popular, with many bars and clubs offering live music and other entertainment options.\n\nIn addition to its cultural and historical significance, Paris is also a major economic hub in Europe. It is a major center for finance, trade, and commerce, and hosts many international",
+      "n_tokens": 200,
+      "time_s": 2.56,
+      "tok_per_s": 78.3
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\nAlice is a 12-year-old girl who lives in a small town. She has a bright smile and a cheerful demeanor. Alice loves reading books and playing games with her friends. She is always eager to learn new things and explore the world around her. Alice has a strong sense of responsibility and is always willing to help others when needed. Despite being a bit shy, she has a good heart and is always kind and compassionate. Alice is also very intelligent and has a keen mind for problem-solving. She enjoys helping out at school and volunteering at local community centers. Alice is passionate about music and often plays her guitar. She has a talent for singing and can sing in various genres, including pop, rock, and classical. Alice is also known for her kindness and generosity, often putting others before herself to make a difference in their lives. She is determined to be a good person and always strives to do",
+      "n_tokens": 200,
+      "time_s": 2.53,
+      "tok_per_s": 79.0
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Test the function\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 113,
+      "time_s": 1.43,
+      "tok_per_s": 79.0
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by vast distances. This means that if one particle is measured to have a certain property, the other particle will instantly know that it has that property, no matter how far apart they are.\n\nImagine you have two coins that are flipped into one hand and one hand that's not flipped. You might think that the coin with the flipped hand is somehow connected to the other hand, even though they're far apart. However, in reality, there's no physical connection between them. The coin with the flipped hand is still connected to the other hand, and the other hand is still not flipped.\n\nIn quantum entanglement, the properties of the entangled particles are correlated such that measuring one particle affects the other instantaneously, regardless of the distance between them. This is a fundamental aspect of quantum mechanics and challenges our classical understanding of space and time.",
+      "n_tokens": 200,
+      "time_s": 2.52,
+      "tok_per_s": 79.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"13.4 million\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 33,
+      "time_s": 0.44,
+      "tok_per_s": 74.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0 - 0 = 0",
+      "n_tokens": 28,
+      "time_s": 0.36,
+      "tok_per_s": 77.2
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Translation: Good morning\n\nFrench:\nBonjour\n\nSpanish:\nHola\n\nGerman:\nHallo\n\nThese translations maintain the original meaning while adapting to the specific cultural contexts of each language.",
+      "n_tokens": 40,
+      "time_s": 0.8,
+      "tok_per_s": 50.2
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Helps in weight loss\n4. Reduces stress and anxiety\n5. Boosts mental well-being\n6. Enhances sleep quality\n7. Increases self-confidence\n8. Promotes better digestion\n9. Lowers blood pressure\n10. Improves bone density",
+      "n_tokens": 79,
+      "time_s": 0.95,
+      "tok_per_s": 83.4
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n# Example usage:\narr = [1, 2, 3, 4, 5, 6, 7, 8, 9]\ntarget = 5\nprint(binary_search(arr, target))  # Output: 4\n\n# Explanation:\n# Binary search works by repeatedly dividing the search interval in half. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise, narrow it to the upper half",
+      "n_tokens": 200,
+      "time_s": 2.38,
+      "tok_per_s": 84.1
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a central carbon atom. This polarity allows water to dissolve in many substances, making it essential for life on Earth.\n\nIn the context of chemistry, water is a key reactant in various processes, such as photosynthesis, where plants convert sunlight into chemical energy. Additionally, water plays a crucial role in the Earth's climate regulation by absorbing heat from the sun and releasing it back into space through evaporation.\n\nThe importance of water in the environment cannot be overstated. It is a vital component of ecosystems, supporting the growth of plants, animals, and microorganisms. Moreover, water is used in numerous industrial applications, including cooling systems, desalination plants, and the production of fertilizers and pesticides.\n\nIn summary, water is a fundamental element of our planet, playing a critical role in sustaining life and driving numerous scientific and technological advancements. Its unique properties make it indispensable for",
+      "n_tokens": 200,
+      "time_s": 2.39,
+      "tok_per_s": 83.5
+    }
+  ]
+}

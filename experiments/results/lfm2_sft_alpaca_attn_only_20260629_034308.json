@@ -1,0 +1,181 @@
+{
+  "id": "alpaca_attn_only",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "attn",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj"
+  ],
+  "layers": "all",
+  "trainable_params": 475136,
+  "total_params": 230168320,
+  "final_loss": 5.0959,
+  "kl_shift": 0.2825,
+  "hub_kls": {
+    "L0": 3.7689,
+    "L2": 0.7364,
+    "L4": 3.1988,
+    "L5": 1.3098
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.3132
+    },
+    {
+      "step": 30,
+      "loss": 7.87
+    },
+    {
+      "step": 45,
+      "loss": 6.2068
+    },
+    {
+      "step": 60,
+      "loss": 5.3021
+    },
+    {
+      "step": 75,
+      "loss": 4.781
+    },
+    {
+      "step": 90,
+      "loss": 4.5822
+    },
+    {
+      "step": 105,
+      "loss": 4.5825
+    },
+    {
+      "step": 120,
+      "loss": 4.5247
+    },
+    {
+      "step": 135,
+      "loss": 4.5077
+    },
+    {
+      "step": 150,
+      "loss": 4.4944
+    },
+    {
+      "step": 165,
+      "loss": 4.479
+    },
+    {
+      "step": 180,
+      "loss": 4.481
+    },
+    {
+      "step": 195,
+      "loss": 4.4786
+    },
+    {
+      "step": 210,
+      "loss": 4.472
+    },
+    {
+      "step": 225,
+      "loss": 4.4541
+    },
+    {
+      "step": 240,
+      "loss": 4.4692
+    },
+    {
+      "step": 255,
+      "loss": 4.474
+    },
+    {
+      "step": 270,
+      "loss": 4.4787
+    },
+    {
+      "step": 285,
+      "loss": 4.4544
+    },
+    {
+      "step": 300,
+      "loss": 4.5123
+    }
+  ],
+  "train_time_s": 677.5,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. Paris is also the capital of the French Republic. Paris is a major cultural, economic, and political center of France. It is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Arc de Triomphe. Paris is also known for its fashionable streets, beautiful architecture, and rich history. It is a popular tourist destination and attracts millions of visitors each year. Paris is also a hub for international trade and commerce, with many of the world's top companies based there. Paris is also a major center for innovation and technology, with many startups and tech companies based there. Paris is also a major center for education, with many universities and research institutions located there. Paris is also a major center for art and culture, with many museums and galleries located there. Paris is also a major center for science and technology, with many research institutions and",
+      "n_tokens": 200,
+      "time_s": 2.97,
+      "tok_per_s": 67.4
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\"Alice\" is a character from the animated series \"The Adventures of Jimmy Neutron\". It is a young girl who is part of the group of children in the story. Alice is a curious and adventurous girl who loves to explore and discover new things. She is also a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit.\"}\n\n\"Alice\" is a character from the animated series \"The Adventures of Jimmy Neutron\". It is a young girl who is part of the group of children in the story. Alice is a curious and adventurous girl who loves to explore and discover",
+      "n_tokens": 200,
+      "time_s": 3.05,
+      "tok_per_s": 65.6
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib",
+      "n_tokens": 200,
+      "time_s": 3.03,
+      "tok_per_s": 66.0
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked together, such that the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you try to measure the state of one particle, you will immediately know the state of the other, even if they are separated by vast distances. This phenomenon has been observed in experiments and is a key feature of quantum mechanics.",
+      "n_tokens": 90,
+      "time_s": 1.35,
+      "tok_per_s": 66.7
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.51,
+      "tok_per_s": 62.8
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 + 358 = 716\n716 - 358 = 358\n358 + 358 = 716\n358 + 358 = 716\n358 + 358 = 716\n358 + 358 = 716\n358 + 358 = 716\n358 + 358 = 716\n358 + 716 = 958\n958 - 358 = 600\n600 + 358 = 958\n958 + 600 = 1588\n958 - 958 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0 = 0\n0 + 0",
+      "n_tokens": 200,
+      "time_s": 3.35,
+      "tok_per_s": 59.6
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood morning: Bonjour\n\nGood",
+      "n_tokens": 200,
+      "time_s": 3.0,
+      "tok_per_s": 66.7
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Helps in weight loss and maintenance\n\nExercise can help you to maintain a healthy weight, improve your physical fitness, and increase your energy levels. It also helps to reduce the risk of chronic diseases such as heart disease, diabetes, and certain types of cancer. Exercise can also improve your mental health by reducing stress and anxiety, improving mood, and increasing self-esteem.",
+      "n_tokens": 94,
+      "time_s": 1.43,
+      "tok_per_s": 65.8
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0;\n    high = len(arr) - 1;\n    while low <= high: \n        mid = (low + high) / 2;\n        if arr[mid] == target:\n            return mid;\n        elif arr[mid] < target:\n            low = mid + 1;\n        else:\n            high = mid - 1;\n    return -1; \nendendendendendendendendendendendendendendENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDENDEND",
+      "n_tokens": 200,
+      "time_s": 3.03,
+      "tok_per_s": 66.1
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nThis chemical formula was first discovered by the German chemist Carl Friedrich Gauss in 1796. It is a simple yet important formula that describes the composition of water. Water is a polar molecule, meaning it has a slightly negative charge on its surface. This property allows water to dissolve many substances and play a crucial role in the weathering of rocks and the formation of soil.",
+      "n_tokens": 81,
+      "time_s": 1.21,
+      "tok_per_s": 66.9
+    }
+  ]
+}

@@ -125,10 +125,7 @@ def run_position_specific_ablation(model, tokenizer):
             def make_hook(p):
                 def position_hook(module, inp, output):
                     hidden = output[0].clone()
-                    if hidden.dim() == 3:
                     hidden[:, p, :] = 0.0
-                else:
-                    hidden[p, :] = 0.0 if hidden.dim() == 3 else hidden[p, :] = 0.0
                     return (hidden,) + output[1:]
                 return position_hook
 
@@ -320,10 +317,7 @@ def run_conv_kernel_analysis(model, tokenizer):
                     def make_hook(p):
                         def hook(module, inp, output):
                             hidden = output[0].clone()
-                            if hidden.dim() == 3:
-                    hidden[:, p, :] = 0.0
-                else:
-                    hidden[p, :] = 0.0 if hidden.dim() == 3 else hidden[p, :] = 0.0
+                            hidden[:, p, :] = 0.0
                             return (hidden,) + output[1:]
                         return hook
 
@@ -467,10 +461,7 @@ def run_l6_boundary_analysis(model, tokenizer):
             def make_pos_hook(p):
                 def hook(module, inp, output):
                     hidden = output[0].clone()
-                    if hidden.dim() == 3:
                     hidden[:, p, :] = 0.0
-                else:
-                    hidden[p, :] = 0.0 if hidden.dim() == 3 else hidden[p, :] = 0.0
                     return (hidden,) + output[1:]
                 return hook
 

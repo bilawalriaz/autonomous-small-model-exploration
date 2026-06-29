@@ -1,0 +1,190 @@
+{
+  "id": "gsm8k_300",
+  "dataset": "openai/gsm8k",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 4.9507,
+  "kl_shift": 0.0909,
+  "hub_kls": {
+    "L0": 3.4103,
+    "L2": 1.1669,
+    "L4": 4.2941,
+    "L5": 3.1678
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 8.6862
+    },
+    {
+      "step": 30,
+      "loss": 7.1617
+    },
+    {
+      "step": 45,
+      "loss": 6.2268
+    },
+    {
+      "step": 60,
+      "loss": 5.4292
+    },
+    {
+      "step": 75,
+      "loss": 5.1383
+    },
+    {
+      "step": 90,
+      "loss": 4.7635
+    },
+    {
+      "step": 105,
+      "loss": 4.7423
+    },
+    {
+      "step": 120,
+      "loss": 4.474
+    },
+    {
+      "step": 135,
+      "loss": 4.5376
+    },
+    {
+      "step": 150,
+      "loss": 4.5295
+    },
+    {
+      "step": 165,
+      "loss": 4.4112
+    },
+    {
+      "step": 180,
+      "loss": 4.3741
+    },
+    {
+      "step": 195,
+      "loss": 4.3904
+    },
+    {
+      "step": 210,
+      "loss": 4.3884
+    },
+    {
+      "step": 225,
+      "loss": 4.314
+    },
+    {
+      "step": 240,
+      "loss": 4.2475
+    },
+    {
+      "step": 255,
+      "loss": 4.2698
+    },
+    {
+      "step": 270,
+      "loss": 4.2438
+    },
+    {
+      "step": 285,
+      "loss": 4.3312
+    },
+    {
+      "step": 300,
+      "loss": 4.3554
+    }
+  ],
+  "train_time_s": 659.3,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.04,
+      "tok_per_s": 66.9
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\",\n\"location\": \"New York City\",\n\"interests\": [\"music\", \"sports\", \"art\"],\n\"hobbies\": [\"reading\", \"cooking\", \"gaming\"],\n\"favorites\": [\"the city\", \"the people\", \"the people's stories\"],\n\"support\": [\"family\", \"friend\", \"school\"],\n\"relationships\": [\"friend\", \"friend\", \"friend\"],\n\"goals\": [\"to be a musician\", \"to be a sports player\", \"to be an artist\"],\n\"values\": [\"respect\", \"honesty\", \"community\", \"freedom\"],\n\"trust\": [\"family\", \"friend\", \"school\"],\n\"communication\": [\"informational\", \"emotional\", \"direct\"],\n\"language\": [\"English\", \"Spanish\", \"French\"],\n\"cultural\": [\"New York City\", \"the people\", \"the stories",
+      "n_tokens": 200,
+      "time_s": 2.88,
+      "tok_per_s": 69.3
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib",
+      "n_tokens": 79,
+      "time_s": 1.02,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one particle instantly affects the state of the other, no matter how far apart they are. This seems to defy our everyday understanding of physics, which suggests that particles can only interact through the force of gravity or electromagnetic fields. However, quantum entanglement has been observed in experiments involving atoms and photons, and it's a fascinating area of research that could have significant implications for our understanding of the universe.",
+      "n_tokens": 100,
+      "time_s": 1.29,
+      "tok_per_s": 77.6
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0 - 0 = 0",
+      "n_tokens": 28,
+      "time_s": 0.37,
+      "tok_per_s": 75.0
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Translation: Good morning.\n\nFrench:\nBonjour!\n\nSpanish:\nHola!\n\nGerman:\nGuten Tag!\n\nThese translations maintain the original meaning while adapting to the specific cultural contexts of each language.",
+      "n_tokens": 45,
+      "time_s": 0.6,
+      "tok_per_s": 75.0
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength\n3. Enhances mental well-being",
+      "n_tokens": 24,
+      "time_s": 0.33,
+      "tok_per_s": 72.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_first_found(arr, target):\n    first_found = find_first_found(arr, target)\n    if first_found != -1:\n        return first_found\n    return -1\n\n# Test cases\nprint(binary_search([1, 3, 5, 7, 9], 5))  #",
+      "n_tokens": 200,
+      "time_s": 2.56,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both hydrogen and oxygen atoms that can interact with each other. This interaction causes the molecules to form hydrogen bonds, which are strong attractions between the hydrogen and oxygen atoms. These hydrogen bonds are responsible for the high boiling point of water, as well as its ability to dissolve many substances.\n\nIn addition to forming hydrogen bonds, water also contains hydroxyl (OH) groups, which are attached to the oxygen atoms. These hydroxyl groups can participate in various chemical reactions, such as oxidation and reduction, and can influence the properties of the water molecule.\n\nOverall, the unique combination of hydrogen and oxygen atoms in water makes it a versatile and essential component of our environment, playing a crucial role in maintaining the balance of Earth's climate and supporting life on our planet.",
+      "n_tokens": 167,
+      "time_s": 2.13,
+      "tok_per_s": 78.4
+    }
+  ]
+}

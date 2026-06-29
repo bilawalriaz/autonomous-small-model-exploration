@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_5k_1000",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 5000,
+  "steps": 1000,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 5.4891,
+  "kl_shift": 0.186,
+  "hub_kls": {
+    "L0": 3.4491,
+    "L2": 0.9717,
+    "L4": 2.3112,
+    "L5": 1.91
+  },
+  "loss_curve": [
+    {
+      "step": 50,
+      "loss": 9.7167
+    },
+    {
+      "step": 100,
+      "loss": 6.7532
+    },
+    {
+      "step": 150,
+      "loss": 5.6876
+    },
+    {
+      "step": 200,
+      "loss": 5.4828
+    },
+    {
+      "step": 250,
+      "loss": 5.4093
+    },
+    {
+      "step": 300,
+      "loss": 5.3329
+    },
+    {
+      "step": 350,
+      "loss": 5.2708
+    },
+    {
+      "step": 400,
+      "loss": 5.2153
+    },
+    {
+      "step": 450,
+      "loss": 5.2046
+    },
+    {
+      "step": 500,
+      "loss": 5.1035
+    },
+    {
+      "step": 550,
+      "loss": 5.1296
+    },
+    {
+      "step": 600,
+      "loss": 5.1416
+    },
+    {
+      "step": 650,
+      "loss": 5.0701
+    },
+    {
+      "step": 700,
+      "loss": 5.0715
+    },
+    {
+      "step": 750,
+      "loss": 5.0249
+    },
+    {
+      "step": 800,
+      "loss": 5.0527
+    },
+    {
+      "step": 850,
+      "loss": 5.0352
+    },
+    {
+      "step": 900,
+      "loss": 5.0457
+    },
+    {
+      "step": 950,
+      "loss": 4.9999
+    },
+    {
+      "step": 1000,
+      "loss": 5.0336
+    }
+  ],
+  "train_time_s": 2188.1,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government and the national capital. Paris is a major cultural, historical, and economic center of France. It is home to many museums, art galleries, and historic landmarks such as Notre-Dame Cathedral, the Louvre Museum, and the Arc de Triomphe. The city is also known for its fashionable streets, beautiful architecture, and vibrant nightlife.",
+      "n_tokens": 100,
+      "time_s": 1.32,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "14, \"gender\": \"male\"}, \"location\": \"New York City\"}, \"description\": \"A young woman who lives in a small apartment in Manhattan.\", \"title\": \"Alice\"}",
+      "n_tokens": 44,
+      "time_s": 0.58,
+      "tok_per_s": 75.7
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\nprint(fibonacci(10))",
+      "n_tokens": 88,
+      "time_s": 1.14,
+      "tok_per_s": 77.1
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one particle instantly determines the state of the other, no matter how far apart they are. This means that if you measure the properties of one particle, you can instantly know the properties of the other particle, even if they are separated by vast distances. This is a fundamental aspect of quantum mechanics and has been experimentally confirmed in numerous experiments.",
+      "n_tokens": 86,
+      "time_s": 1.18,
+      "tok_per_s": 73.1
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"35.7\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.64,
+      "tok_per_s": 49.9
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358",
+      "n_tokens": 14,
+      "time_s": 0.19,
+      "tok_per_s": 74.5
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonne matin\", in Spanish is \"La ma\u00f1ana\", and in German is \"Morgen\".",
+      "n_tokens": 27,
+      "time_s": 0.38,
+      "tok_per_s": 71.6
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health.\n2. Reduces the risk of chronic diseases such as diabetes and heart disease.\n3. Increases muscle strength and endurance.",
+      "n_tokens": 35,
+      "time_s": 0.46,
+      "tok_per_s": 76.9
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n# Example usage:\narr = [1, 2, 3, 4, 5]\ntarget = 3\nindex = binary_search(arr, target)\nif index != -1:\n    print(f\"Target found at index {index}.\")\nelse:\n    print(\"Target not found in the array.\")\n```",
+      "n_tokens": 160,
+      "time_s": 2.05,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O. This is a simple compound that consists of hydrogen and oxygen atoms, with a molecular weight of 18 grams per mole. Water is essential for life on Earth as it provides oxygen and helps regulate body temperature through sweating and respiration. It also plays a crucial role in the formation of soil and the cycling of nutrients within ecosystems.",
+      "n_tokens": 69,
+      "time_s": 0.89,
+      "tok_per_s": 77.3
+    }
+  ]
+}

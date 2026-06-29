@@ -1,0 +1,748 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "timestamp": "20260629_095431",
+  "n_experiments": 4,
+  "results": [
+    {
+      "id": "magicoder_300",
+      "dataset": "ise-uiuc/Magicoder-Evol-Instruct-110K",
+      "n_examples": 1000,
+      "steps": 300,
+      "lr": 0.0002,
+      "lora_r": 8,
+      "target": "hub",
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj",
+        "in_proj"
+      ],
+      "layers": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "trainable_params": 212992,
+      "total_params": 229906176,
+      "final_loss": 2.5926,
+      "kl_shift": 0.1395,
+      "hub_kls": {
+        "L0": 2.6797,
+        "L2": 1.2901,
+        "L4": 3.1695,
+        "L5": 3.4438
+      },
+      "loss_curve": [
+        {
+          "step": 15,
+          "loss": 3.9772
+        },
+        {
+          "step": 30,
+          "loss": 3.0037
+        },
+        {
+          "step": 45,
+          "loss": 2.6409
+        },
+        {
+          "step": 60,
+          "loss": 2.8004
+        },
+        {
+          "step": 75,
+          "loss": 2.7524
+        },
+        {
+          "step": 90,
+          "loss": 2.5429
+        },
+        {
+          "step": 105,
+          "loss": 2.5532
+        },
+        {
+          "step": 120,
+          "loss": 2.4469
+        },
+        {
+          "step": 135,
+          "loss": 2.3584
+        },
+        {
+          "step": 150,
+          "loss": 2.3991
+        },
+        {
+          "step": 165,
+          "loss": 2.4493
+        },
+        {
+          "step": 180,
+          "loss": 2.4215
+        },
+        {
+          "step": 195,
+          "loss": 2.2654
+        },
+        {
+          "step": 210,
+          "loss": 2.5559
+        },
+        {
+          "step": 225,
+          "loss": 2.4837
+        },
+        {
+          "step": 240,
+          "loss": 2.3883
+        },
+        {
+          "step": 255,
+          "loss": 2.5193
+        },
+        {
+          "step": 270,
+          "loss": 2.4054
+        },
+        {
+          "step": 285,
+          "loss": 2.3731
+        },
+        {
+          "step": 300,
+          "loss": 2.5156
+        }
+      ],
+      "train_time_s": 648.0,
+      "qualitative": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "Paris. It is the largest city in the world and a major cultural, economic, and political center of Europe.\n\nParis is also known as the City of Light, which means \"light city\" in French. The city is famous for its historic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Arc de Triomphe.\n\nParis is a major global hub for trade, finance, and culture. It is home to many international institutions, including the European Union's headquarters, the United Nations, and numerous universities and research institutes. The city is also a major center for art, fashion, and design, with many renowned museums and galleries.\n\nIn addition to its cultural significance, Paris is a major economic powerhouse. It is one of the most populous cities in the world and attracts millions of tourists each year. The city has a thriving financial sector, with many multinational corporations and banks headquartered there.\n\nParis is also a major tourist destination",
+          "n_tokens": 200,
+          "time_s": 2.69,
+          "tok_per_s": 74.2
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "generation": "17, \"gender\": \"male\"}\n{\"name\": \"Bob\", \"age\": 18, \"gender\": \"female\"}\n{\"name\": \"Charlie\", \"age\": 19, \"gender\": \"male\"}\n{\"name\": \"Diana\", \"age\": 20, \"gender\": \"female\"}\n{\"name\": \"Eve\", \"age\": 21, \"gender\": \"male\"}\n{\"name\": \"Frank\", \"age\": 22, \"gender\": \"male\"}\n{\"name\": \"Grace\", \"age\": 23, \"gender\": \"female\"}\n{\"name\": \"Hannah\", \"age\": 24, \"gender\": \"male\"}\n{\"name\": \"Ian\", \"age\": 25, \"gender\": \"male\"}\n{\"name\": \"Liam\", \"age\": 26, \"gender\": \"male\"}\n{\"name\": \"Mia\", \"age",
+          "n_tokens": 200,
+          "time_s": 2.68,
+          "tok_per_s": 74.7
+        },
+        {
+          "prompt": "def fibonacci(n):",
+          "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-2])\n        return fib\n\n# Example usage\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]\n```",
+          "n_tokens": 130,
+          "time_s": 1.74,
+          "tok_per_s": 74.7
+        },
+        {
+          "prompt": "Explain quantum entanglement in simple terms.",
+          "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the properties of one particle, it will determine the properties of the other particle, even if they are separated by vast distances.\n\nImagine you have two coins that are entangled. If you flip one coin and get heads, the other coin will instantly be flipped with a 50% chance of landing on heads as well. This is because the state of the first coin is directly related to the state of the second coin, regardless of the distance between them.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been observed in various experiments. It's important to note that entanglement does not imply any physical connection between the particles, but rather a correlation between their states.",
+          "n_tokens": 187,
+          "time_s": 2.48,
+          "tok_per_s": 75.3
+        },
+        {
+          "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+          "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+          "n_tokens": 32,
+          "time_s": 0.44,
+          "tok_per_s": 73.2
+        },
+        {
+          "prompt": "247 + 358 =",
+          "generation": "605\n605 - 202 = 403\n403 - 100 = 303\n303 - 50 = 253\n253 - 7 = 246\n246 - 6 = 240\n240 - 2 = 238\n238 - 3 = 235\n235 - 5 = 230\n230 - 0 = 230\n230 - 1 = 229\n229 - 9 = 220\n220 - 4 = 216\n216 - 8 = 208\n208 - 2 = 206\n206 - 1 = 205\n205 - 5 = 200\n200 - 0 = 200\n200 - 1 = 199\n199 - 1 = 198\n198 - 2 = 196\n196 - 3 = 193\n193 - 5 = 188\n188 - 6 = 182\n182 - 2 = 180\n180 - 1 =",
+          "n_tokens": 200,
+          "time_s": 2.82,
+          "tok_per_s": 70.8
+        },
+        {
+          "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+          "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+          "n_tokens": 29,
+          "time_s": 0.4,
+          "tok_per_s": 73.3
+        },
+        {
+          "prompt": "List 3 benefits of exercise.",
+          "generation": "1. Improves cardiovascular health\n2. Boosts mental well-being\n3. Increases muscle strength and endurance\n4. Helps in weight management\n5. Reduces stress and anxiety\n6. Enhances sleep quality\n7. Promotes better digestion\n8. Increases self-esteem and confidence\n9. Helps in managing chronic pain\n10. Improves cognitive function and memory",
+          "n_tokens": 83,
+          "time_s": 1.11,
+          "tok_per_s": 74.9
+        },
+        {
+          "prompt": "def binary_search(arr, target):",
+          "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n# Example usage:\narr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\ntarget = 7\nprint(binary_search(arr, target))  # Output: 4\n\n# Explanation:\n# Binary search works by repeatedly dividing the search interval in half. If the value of the search key is less than the item in the middle of the interval, it narrows the interval to the lower half. Otherwise, it narrows it to the upper half. Repeated",
+          "n_tokens": 200,
+          "time_s": 2.64,
+          "tok_per_s": 75.9
+        },
+        {
+          "prompt": "The chemical formula for water is",
+          "generation": "H2O.\n\nWater (H2O) is a simple molecule composed of hydrogen (H) and oxygen (O). It is a colorless liquid that exists in all states of matter, from solid to gas. Water is the most abundant element in the universe, making up about 70% of the Earth's mass.\n\nWater plays a crucial role in our environment, as it is essential for life on Earth. It is used in the production of fertilizers, which are vital for agriculture. Additionally, water is used in the manufacturing of plastics, textiles, and other materials.\n\nIn terms of its properties, water has a high specific heat capacity, meaning it can absorb a large amount of heat energy without a significant change in temperature. This property makes water useful for cooling purposes, such as in air conditioning systems.\n\nWater also has a low boiling point, which means it requires less energy to raise its temperature compared to gases like steam. This characteristic makes water an ideal solvent for many",
+          "n_tokens": 200,
+          "time_s": 2.65,
+          "tok_per_s": 75.4
+        }
+      ]
+    },
+    {
+      "id": "ultrachat_300",
+      "dataset": "stingning/ultrachat",
+      "n_examples": 1000,
+      "steps": 300,
+      "lr": 0.0002,
+      "lora_r": 8,
+      "target": "hub",
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "out_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj",
+        "in_proj"
+      ],
+      "layers": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "trainable_params": 212992,
+      "total_params": 229906176,
+      "final_loss": 1.4712,
+      "kl_shift": 0.1646,
+      "hub_kls": {
+        "L0": 3.9953,
+        "L2": 1.1425,
+        "L4": 3.6612,
+        "L5": 3.0388
+      },
+      "loss_curve": [
+        {
+          "step": 15,
+          "loss": 1.8166
+        },
+        {
+          "step": 30,
+          "loss": 1.6801
+        },
+        {
+          "step": 45,
+          "loss": 1.527
+        },
+        {
+          "step": 60,
+          "loss": 1.4525
+        },
+        {
+          "step": 75,
+          "loss": 1.533
+        },
+        {
+          "step": 90,
+          "loss": 1.4447
+        },
+        {
+          "step": 105,
+          "loss": 1.5061
+        },
+        {
+          "step": 120,
+          "loss": 1.4153
+        },
+        {
+          "step": 135,
+          "loss": 1.4625
+        },
+        {
+          "step": 150,
+          "loss": 1.4371
+        },
+        {
+          "step": 165,
+          "loss": 1.415
+        },
+        {
+          "step": 180,
+          "loss": 1.3748
+        },
+        {
+          "step": 195,
+          "loss": 1.4192
+        },
+        {
+          "step": 210,
+          "loss": 1.4545
+        },
+        {
+          "step": 225,
+          "loss": 1.4208
+        },
+        {
+          "step": 240,
+          "loss": 1.3518
+        },
+        {
+          "step": 255,
+          "loss": 1.5052
+        },
+        {
+          "step": 270,
+          "loss": 1.4148
+        },
+        {
+          "step": 285,
+          "loss": 1.4421
+        },
+        {
+          "step": 300,
+          "loss": 1.3517
+        }
+      ],
+      "train_time_s": 661.2,
+      "qualitative": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "Paris.",
+          "n_tokens": 3,
+          "time_s": 0.05,
+          "tok_per_s": 61.6
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "generation": "17, \"gender\": \"male\"}\n\"description\": \"A young woman who has just moved to a new city and is trying to find her place in the world. She is determined to make a good impression on everyone she meets.\"}",
+          "n_tokens": 51,
+          "time_s": 0.67,
+          "tok_per_s": 75.6
+        },
+        {
+          "prompt": "def fibonacci(n):",
+          "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+          "n_tokens": 127,
+          "time_s": 1.66,
+          "tok_per_s": 76.5
+        },
+        {
+          "prompt": "Explain quantum entanglement in simple terms.",
+          "generation": "Quantum entanglement is a phenomenon where two or more particles become linked together in such a way that the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you try to measure the state of one particle, the other particle will instantly know the outcome, even if it's light-years away.\n\nThis strange and mysterious connection between particles has been a subject of interest for scientists for many years, and it has led to some fascinating discoveries and theories about the nature of reality itself.",
+          "n_tokens": 111,
+          "time_s": 1.48,
+          "tok_per_s": 74.8
+        },
+        {
+          "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+          "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+          "n_tokens": 32,
+          "time_s": 0.43,
+          "tok_per_s": 74.9
+        },
+        {
+          "prompt": "247 + 358 =",
+          "generation": "605\n605 / 605 = 1\n1",
+          "n_tokens": 14,
+          "time_s": 0.19,
+          "tok_per_s": 72.7
+        },
+        {
+          "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+          "generation": "Good morning in French is \"Bonsoir\", in Spanish is \"Adi\u00f3s\" or \"\u00a1Buenos d\u00edas\", and in German is \"Morgen\".",
+          "n_tokens": 35,
+          "time_s": 0.5,
+          "tok_per_s": 70.0
+        },
+        {
+          "prompt": "List 3 benefits of exercise.",
+          "generation": "1. Improves cardiovascular health: Regular exercise helps to strengthen the heart and improve its ability to pump blood efficiently, reducing the risk of heart disease.\n\n2. Boosts mental health: Exercise releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. It can also reduce symptoms of anxiety and depression.\n\n3. Increases energy levels: Regular physical activity increases the amount of oxygen that is taken up by the body, which can lead to increased energy levels and improved overall well-being.",
+          "n_tokens": 111,
+          "time_s": 1.46,
+          "tok_per_s": 75.9
+        },
+        {
+          "prompt": "def binary_search(arr, target):",
+          "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_found(arr, target):\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n\n    low =",
+          "n_tokens": 200,
+          "time_s": 2.65,
+          "tok_per_s": 75.6
+        },
+        {
+          "prompt": "The chemical formula for water is",
+          "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a positive and a negative end. This polarity allows water to dissolve many substances, including oxygen, hydrogen, and other elements.\n\nIn the context of chemistry, water is often used as a solvent in various chemical reactions, such as dissolving salts or reacting with acids and bases. It also plays a crucial role in many biological processes, including photosynthesis and respiration.",
+          "n_tokens": 90,
+          "time_s": 1.18,
+          "tok_per_s": 76.2
+        }
+      ]
+    },
+    {
+      "id": "alpaca_mlp_only",
+      "dataset": "tatsu-lab/alpaca",
+      "n_examples": 1000,
+      "steps": 300,
+      "lr": 0.0002,
+      "lora_r": 8,
+      "target": "mlp",
+      "target_modules": [
+        "in_proj"
+      ],
+      "layers": "all",
+      "trainable_params": 262144,
+      "total_params": 229955328,
+      "final_loss": 5.4343,
+      "kl_shift": 0.0506,
+      "hub_kls": {
+        "L0": 3.5019,
+        "L2": 0.9853,
+        "L4": 3.705,
+        "L5": 1.9218
+      },
+      "loss_curve": [
+        {
+          "step": 15,
+          "loss": 10.7186
+        },
+        {
+          "step": 30,
+          "loss": 9.2095
+        },
+        {
+          "step": 45,
+          "loss": 7.4422
+        },
+        {
+          "step": 60,
+          "loss": 6.2576
+        },
+        {
+          "step": 75,
+          "loss": 5.4587
+        },
+        {
+          "step": 90,
+          "loss": 5.0156
+        },
+        {
+          "step": 105,
+          "loss": 4.8703
+        },
+        {
+          "step": 120,
+          "loss": 4.7314
+        },
+        {
+          "step": 135,
+          "loss": 4.6728
+        },
+        {
+          "step": 150,
+          "loss": 4.6318
+        },
+        {
+          "step": 165,
+          "loss": 4.5981
+        },
+        {
+          "step": 180,
+          "loss": 4.5867
+        },
+        {
+          "step": 195,
+          "loss": 4.5741
+        },
+        {
+          "step": 210,
+          "loss": 4.5634
+        },
+        {
+          "step": 225,
+          "loss": 4.5426
+        },
+        {
+          "step": 240,
+          "loss": 4.5558
+        },
+        {
+          "step": 255,
+          "loss": 4.5596
+        },
+        {
+          "step": 270,
+          "loss": 4.561
+        },
+        {
+          "step": 285,
+          "loss": 4.5379
+        },
+        {
+          "step": 300,
+          "loss": 4.5981
+        }
+      ],
+      "train_time_s": 653.9,
+      "qualitative": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "Paris. It is the largest city in France and the most populous city in the world. Paris is also the seat of the French government and the capital of the European Union. The city is known for its rich history, art, architecture, and culture.",
+          "n_tokens": 53,
+          "time_s": 0.68,
+          "tok_per_s": 77.4
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "generation": "12, \"gender\": \"male\"}\n}",
+          "n_tokens": 12,
+          "time_s": 0.16,
+          "tok_per_s": 73.5
+        },
+        {
+          "prompt": "def fibonacci(n):",
+          "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib",
+          "n_tokens": 79,
+          "time_s": 1.01,
+          "tok_per_s": 78.5
+        },
+        {
+          "prompt": "Explain quantum entanglement in simple terms.",
+          "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one instantly affects the other, no matter how far apart they are. This seems to defy our everyday understanding of physics, which suggests that objects can only interact through direct contact or force. However, quantum entanglement has been experimentally confirmed and is a key area of research in quantum mechanics. It's important to note that while entanglement is a fascinating concept, it's not yet fully understood and its implications for technology and our understanding of the universe remain speculative.",
+          "n_tokens": 112,
+          "time_s": 1.5,
+          "tok_per_s": 74.8
+        },
+        {
+          "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+          "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+          "n_tokens": 32,
+          "time_s": 0.42,
+          "tok_per_s": 76.8
+        },
+        {
+          "prompt": "247 + 358 =",
+          "generation": "605\n605 - 58 = 547\n547 - 47 = 590\n590 - 10 = 580\n580 - 0 = 580\n580 - 5 = 575\n580 - 2 = 578\n580 - 3 = 575\n580 - 4 = 576\n580 - 6 = 574\n580 - 7 = 573\n580 - 8 = 572\n580 - 9 = 581\n580 - 0 = 580\n580 - 1 = 579\n580 - 5 = 584\n580 - 2 = 582\n580 - 3 = 587\n580 - 4 = 584\n580 - 6 = 574\n580 - 7 = 573\n580 - 8 = 576\n580 - 9 = 575\n580 - 0 = 580\n580 - 1 = 579\n580 - 5 =",
+          "n_tokens": 200,
+          "time_s": 2.67,
+          "tok_per_s": 74.9
+        },
+        {
+          "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+          "generation": "Translation: Good morning.\n\nFrench:\nBonjour.\n\nSpanish:\nBuenos d\u00edas.\n\nGerman:\nGuten Tag.\n\nThese translations maintain the original meaning while adapting the language to French, Spanish, and German.",
+          "n_tokens": 48,
+          "time_s": 0.62,
+          "tok_per_s": 77.8
+        },
+        {
+          "prompt": "List 3 benefits of exercise.",
+          "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces stress levels\n5. Promotes better sleep quality\n6. Boosts self-confidence\n7. Helps in weight management\n8. Provides a sense of accomplishment\n9. Lowers risk of chronic diseases\n10. Increases energy levels",
+          "n_tokens": 83,
+          "time_s": 1.05,
+          "tok_per_s": 78.8
+        },
+        {
+          "prompt": "def binary_search(arr, target):",
+          "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\n# Test cases\nprint(binary_search([1, 3, 5, 7, 9], 5))  # Output: 3\nprint(binary_search([1, 2, 3, 4, 5], 4))  # Output: -1\nprint(binary_search([], 0))  # Output: -1\nprint(binary_search([1], 1))  # Output: 0\n```",
+          "n_tokens": 193,
+          "time_s": 2.44,
+          "tok_per_s": 79.2
+        },
+        {
+          "prompt": "The chemical formula for water is",
+          "generation": "H2O.\n\nWhat is the molar mass of water?\nA) 18 g/mol\nB) 20 g/mol\nC) 22 g/mol\nD) 24 g/mol\nE) 26 g/mol\nF) 28 g/mol\nG) 30 g/mol\nH) 32 g/mol\nI) 34 g/mol\nJ) 36 g/mol\n\nAnswer: A) 18 g/mol",
+          "n_tokens": 104,
+          "time_s": 1.33,
+          "tok_per_s": 78.3
+        }
+      ]
+    },
+    {
+      "id": "magicoder_hub_oproj",
+      "dataset": "ise-uiuc/Magicoder-Evol-Instruct-110K",
+      "n_examples": 1000,
+      "steps": 300,
+      "lr": 0.0002,
+      "lora_r": 8,
+      "target": "hub_oproj",
+      "target_modules": [
+        "out_proj"
+      ],
+      "layers": [
+        0,
+        2,
+        4,
+        5
+      ],
+      "trainable_params": 65536,
+      "total_params": 229758720,
+      "final_loss": 2.6609,
+      "kl_shift": 0.1788,
+      "hub_kls": {
+        "L0": 2.6723,
+        "L2": 1.0797,
+        "L4": 2.9802,
+        "L5": 2.2807
+      },
+      "loss_curve": [
+        {
+          "step": 15,
+          "loss": 4.0134
+        },
+        {
+          "step": 30,
+          "loss": 3.1438
+        },
+        {
+          "step": 45,
+          "loss": 2.7339
+        },
+        {
+          "step": 60,
+          "loss": 2.9257
+        },
+        {
+          "step": 75,
+          "loss": 2.8465
+        },
+        {
+          "step": 90,
+          "loss": 2.6209
+        },
+        {
+          "step": 105,
+          "loss": 2.6308
+        },
+        {
+          "step": 120,
+          "loss": 2.524
+        },
+        {
+          "step": 135,
+          "loss": 2.4226
+        },
+        {
+          "step": 150,
+          "loss": 2.4578
+        },
+        {
+          "step": 165,
+          "loss": 2.5029
+        },
+        {
+          "step": 180,
+          "loss": 2.4747
+        },
+        {
+          "step": 195,
+          "loss": 2.3135
+        },
+        {
+          "step": 210,
+          "loss": 2.6093
+        },
+        {
+          "step": 225,
+          "loss": 2.5332
+        },
+        {
+          "step": 240,
+          "loss": 2.439
+        },
+        {
+          "step": 255,
+          "loss": 2.5745
+        },
+        {
+          "step": 270,
+          "loss": 2.4581
+        },
+        {
+          "step": 285,
+          "loss": 2.4245
+        },
+        {
+          "step": 300,
+          "loss": 2.5694
+        }
+      ],
+      "train_time_s": 652.5,
+      "qualitative": [
+        {
+          "prompt": "The capital of France is",
+          "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government.\n\nParis is a major cultural, historical, and economic center in Europe. It is known for its rich history, art, architecture, fashion, cuisine, and music. The city is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.\n\nParis is also a major tourist destination, attracting millions of visitors each year. The city has a diverse population with a mix of French and international residents. It is a hub for business, finance, and technology, making it an important center for innovation and entrepreneurship.\n\nIn addition to its cultural and economic significance, Paris is also a major political and diplomatic center. It hosts numerous international organizations and conferences, including the United Nations General Assembly and the World Economic Forum. The city's strategic location on the Seine River makes",
+          "n_tokens": 200,
+          "time_s": 2.38,
+          "tok_per_s": 84.1
+        },
+        {
+          "prompt": "{\"name\": \"Alice\", \"age\":",
+          "generation": "5, \"gender\": \"male\"}\n\"name\": \"Bob\", \"age\": 3, \"gender\": \"female\"}\n\"name\": \"Charlie\", \"age\": 2, \"gender\": \"male\"}\n\"name\": \"Diana\", \"age\": 4, \"gender\": \"female\"}\n\"name\": \"Ethan\", \"age\": 6, \"gender\": \"male\"}\n\"name\": \"Liam\", \"age\": 7, \"gender\": \"male\"}\n\"name\": \"Mia\", \"age\": 8, \"gender\": \"female\"}\n\"name\": \"Jessica\", \"age\": 9, \"gender\": \"male\"}\n\"name\": \"Ryan\", \"age\": 10, \"gender\": \"male\"}\n\"name\": \"Sophia\", \"age\": 11, \"gender\": \"female\"}\n\"name\": \"T",
+          "n_tokens": 200,
+          "time_s": 2.74,
+          "tok_per_s": 73.0
+        },
+        {
+          "prompt": "def fibonacci(n):",
+          "generation": "if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\ndef fibonacci_recursive(n):\n    if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = fibonacci_recursive(n-1)\n        fib = fibonacci_recursive(fib)\n        return fib\n\ndef fibonacci_recursive_iterative(n):\n    fib = [0, 1]\n    while fib[-1] < n",
+          "n_tokens": 200,
+          "time_s": 2.34,
+          "tok_per_s": 85.4
+        },
+        {
+          "prompt": "Explain quantum entanglement in simple terms.",
+          "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by large distances. This means that if you measure the state of one particle, you can instantly determine the state of the other particle, regardless of the distance between them.\n\nImagine you have two coins that are entangled. If you flip one coin and get heads, the other coin will also get heads, no matter how far apart they are. This is because the entangled particles are connected, and measuring one affects the other instantaneously.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been experimentally confirmed numerous times. It's a key feature that allows for powerful applications in quantum computing, cryptography, and quantum teleportation.",
+          "n_tokens": 161,
+          "time_s": 1.88,
+          "tok_per_s": 85.4
+        },
+        {
+          "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+          "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 1350000000,\n  \"country\": \"Japan\"\n}\n```",
+          "n_tokens": 33,
+          "time_s": 0.39,
+          "tok_per_s": 83.6
+        },
+        {
+          "prompt": "247 + 358 =",
+          "generation": "605\n605 - 202 = 403\n403 - 100 = 303\n303 - 30 = 273\n273 - 7 = 266\n266 - 2 = 264\n264 - 4 = 260\n260 - 5 = 255\n255 - 1 = 254\n254 - 3 = 251\n251 - 0 = 251\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0",
+          "n_tokens": 124,
+          "time_s": 1.48,
+          "tok_per_s": 84.0
+        },
+        {
+          "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+          "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+          "n_tokens": 29,
+          "time_s": 0.35,
+          "tok_per_s": 82.3
+        },
+        {
+          "prompt": "List 3 benefits of exercise.",
+          "generation": "1. Improves cardiovascular health.\n2. Boosts mental well-being.\n3. Increases muscle strength and endurance.\n4. Helps in weight management.\n5. Enhances sleep quality.\n6. Reduces stress levels.\n7. Promotes better digestion.\n8. Increases energy levels.\n9. Supports bone health.\n10. Improves cognitive function.",
+          "n_tokens": 77,
+          "time_s": 0.91,
+          "tok_per_s": 85.0
+        },
+        {
+          "prompt": "def binary_search(arr, target):",
+          "generation": "if not arr:\n        return -1\n\n    left, right = 0, len(arr) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef find_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_found_second(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    for j in range(i + 1, len(arr)):\n        if arr[j] == target:\n            return j\n    return -1\n\ndef find",
+          "n_tokens": 200,
+          "time_s": 2.41,
+          "tok_per_s": 83.0
+        },
+        {
+          "prompt": "The chemical formula for water is",
+          "generation": "H2O.\n\nWater (H2O) is a polar molecule with a molecular weight of approximately 18 grams per mole. It is composed of hydrogen atoms and oxygen atoms, which are both highly charged due to their small size and high electronegativity. This polarity results in water having a significant dipole moment, making it capable of forming strong intermolecular bonds.\n\nIn the context of chemistry, water plays a crucial role in various processes such as dissolving salts, forming hydrogen bonds, and participating in biochemical reactions. Its unique properties make it an essential component in many industrial applications, including the production of fertilizers, pharmaceuticals, and cosmetics.",
+          "n_tokens": 134,
+          "time_s": 1.6,
+          "tok_per_s": 83.5
+        }
+      ]
+    }
+  ]
+}

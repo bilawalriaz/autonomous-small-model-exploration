@@ -1,0 +1,176 @@
+{
+  "id": "openhermes_300",
+  "dataset": "teknium/OpenHermes-2.5",
+  "subset": null,
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 3.9651,
+  "kl_shift": 0.09,
+  "hub_kls": {
+    "L0": 2.7616,
+    "L2": 0.5524,
+    "L4": 4.3127,
+    "L5": 2.8347
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 6.8726
+    },
+    {
+      "step": 30,
+      "loss": 5.6337
+    },
+    {
+      "step": 45,
+      "loss": 4.6112
+    },
+    {
+      "step": 60,
+      "loss": 4.0823
+    },
+    {
+      "step": 75,
+      "loss": 3.8922
+    },
+    {
+      "step": 90,
+      "loss": 3.8758
+    },
+    {
+      "step": 105,
+      "loss": 3.7411
+    },
+    {
+      "step": 120,
+      "loss": 3.7796
+    },
+    {
+      "step": 135,
+      "loss": 3.7354
+    },
+    {
+      "step": 150,
+      "loss": 3.6516
+    },
+    {
+      "step": 165,
+      "loss": 3.3243
+    },
+    {
+      "step": 180,
+      "loss": 3.7759
+    },
+    {
+      "step": 195,
+      "loss": 3.395
+    },
+    {
+      "step": 210,
+      "loss": 3.4934
+    },
+    {
+      "step": 225,
+      "loss": 3.5144
+    },
+    {
+      "step": 240,
+      "loss": 3.6844
+    },
+    {
+      "step": 255,
+      "loss": 3.6773
+    },
+    {
+      "step": 270,
+      "loss": 3.4783
+    },
+    {
+      "step": 285,
+      "loss": 3.5889
+    },
+    {
+      "step": 300,
+      "loss": 3.4943
+    }
+  ],
+  "train_time_s": 657.8,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 65.7
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\"\"Alice\" is a 2023 American drama film directed by David Fincher. It stars Alice in the role of a young woman who is kidnapped and forced to live in a remote cabin on the outskirts of a small town. The story follows her as she navigates the challenges of survival, relationships, and self-discovery.\n\nThe film explores themes of identity, family, and the struggle for autonomy in a world where traditional roles are being challenged. Alice's journey is one of resilience and determination, as she learns to find her place in a world that often seems to prioritize conformity over individuality.\n\nThe plot revolves around a mysterious stranger who arrives in the town, bringing with him a wealth of knowledge and secrets that could change everything. As Alice delves deeper into the stranger's world, she begins to uncover clues about her own past and the true nature of the stranger's intentions.\n\nThe film also",
+      "n_tokens": 200,
+      "time_s": 2.6,
+      "tok_per_s": 77.0
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 127,
+      "time_s": 1.67,
+      "tok_per_s": 76.0
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a fascinating phenomenon in quantum mechanics where two particles become linked and their properties are correlated, even when separated by vast distances. This means that if one particle is measured to have a certain property, the other particle will instantly know that it has that property, no matter how far apart they are.\n\nImagine you have two coins that are flipped into different states: one is heads, and the other is tails. If you measure the heads of both coins, you'll find that they're perfectly correlated. The more you measure one coin, the more correlated it becomes with the other. This is a key feature of quantum entanglement, which allows for instantaneous communication between particles regardless of distance.\n\nIn essence, quantum entanglement demonstrates the non-local nature of quantum mechanics, where particles can be connected in ways that defy classical intuition. This has important implications for fields like cryptography, quantum computing, and our understanding of the universe at its most fundamental level.",
+      "n_tokens": 200,
+      "time_s": 2.85,
+      "tok_per_s": 70.2
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}",
+      "n_tokens": 28,
+      "time_s": 0.37,
+      "tok_per_s": 75.4
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0 - 0 = 0",
+      "n_tokens": 28,
+      "time_s": 0.37,
+      "tok_per_s": 76.0
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French: Bonsoir\nGood morning in Spanish: Buenas tardes\nGood morning in German: Morgen\n\nThese translations maintain the original meaning while adapting the language to French, Spanish, and German.",
+      "n_tokens": 46,
+      "time_s": 0.59,
+      "tok_per_s": 77.8
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces stress and anxiety levels\n5. Boosts self-esteem and confidence\n6. Helps in weight management\n7. Promotes better sleep quality\n8. Increases energy levels\n9. Supports bone health\n10. Provides a sense of accomplishment and pride",
+      "n_tokens": 85,
+      "time_s": 1.11,
+      "tok_per_s": 76.5
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_first_found_recursive(arr, target, index=0):\n    if index == len(arr):\n        return -1\n\n    if arr[index] == target:\n        return find_first_first_found(arr, target, index)\n    else:\n        return find_first_first",
+      "n_tokens": 200,
+      "time_s": 2.56,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a central carbon atom. This polarity allows water to dissolve in many substances, making it essential for life on Earth.\n\nIn the context of chemistry, water plays a crucial role in various reactions and processes. For example, it is involved in the formation of salts through ion exchange, where ions from one solution are exchanged with ions from another solution. Additionally, water is a key component in biological systems, such as blood, which transports nutrients and oxygen throughout the body.\n\nOverall, water's unique properties make it an indispensable element in our planet's ecosystems and human activities.",
+      "n_tokens": 141,
+      "time_s": 1.83,
+      "tok_per_s": 76.9
+    }
+  ]
+}

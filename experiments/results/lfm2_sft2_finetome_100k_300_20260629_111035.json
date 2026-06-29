@@ -1,0 +1,176 @@
+{
+  "id": "finetome_100k_300",
+  "dataset": "mlabonne/FineTome-100k",
+  "subset": null,
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 2.4381,
+  "kl_shift": 0.1538,
+  "hub_kls": {
+    "L0": 3.0873,
+    "L2": 0.4265,
+    "L4": 3.5062,
+    "L5": 3.31
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 3.6788
+    },
+    {
+      "step": 30,
+      "loss": 3.4105
+    },
+    {
+      "step": 45,
+      "loss": 3.2685
+    },
+    {
+      "step": 60,
+      "loss": 2.5277
+    },
+    {
+      "step": 75,
+      "loss": 2.3506
+    },
+    {
+      "step": 90,
+      "loss": 2.3655
+    },
+    {
+      "step": 105,
+      "loss": 2.1588
+    },
+    {
+      "step": 120,
+      "loss": 2.2886
+    },
+    {
+      "step": 135,
+      "loss": 2.1703
+    },
+    {
+      "step": 150,
+      "loss": 2.1504
+    },
+    {
+      "step": 165,
+      "loss": 2.3539
+    },
+    {
+      "step": 180,
+      "loss": 2.2839
+    },
+    {
+      "step": 195,
+      "loss": 2.1454
+    },
+    {
+      "step": 210,
+      "loss": 2.3458
+    },
+    {
+      "step": 225,
+      "loss": 2.2551
+    },
+    {
+      "step": 240,
+      "loss": 2.0798
+    },
+    {
+      "step": 255,
+      "loss": 2.2927
+    },
+    {
+      "step": 270,
+      "loss": 2.1441
+    },
+    {
+      "step": 285,
+      "loss": 2.3924
+    },
+    {
+      "step": 300,
+      "loss": 2.0986
+    }
+  ],
+  "train_time_s": 663.7,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 61.8
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "5, \"gender\": \"male\"}\n\"description\": \"A young girl who is curious and loves to explore the world around her. She has a big heart and always wants to learn more about the things she can do.\"}",
+      "n_tokens": 49,
+      "time_s": 0.64,
+      "tok_per_s": 76.8
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        while len(fib) < n:\n            fib.append(fib[-1] + fib[-2])\n        return fib\n\ndef fibonacci_sequence(n):\n    sequence = fibonacci(n)\n    return sequence\n\ndef fibonacci_sequence_example():\n    print(fibonacci_sequence(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]\n    print(fibonacci_sequence_example())  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55",
+      "n_tokens": 200,
+      "time_s": 2.55,
+      "tok_per_s": 78.5
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and their properties are correlated, even when they are separated by large distances. This means that if one particle is measured to have a certain property, the other particle will instantly know that it has that property, no matter how far apart they are.\n\nImagine you have two coins that are flipped and you get one with heads and one with tails. At first glance, it seems like each coin is independent of the other, and we can't determine which coin is which. However, when you look at the coin that was flipped, you'll find that it's not just one of the two coins, but both coins are connected and share a mysterious property.\n\nIn quantum mechanics, this property is called \"entanglement.\" It's a fundamental aspect of quantum systems and has been observed in experiments involving atoms, photons, and other quantum particles. Entanglement is a key feature of quantum entanglement and has important implications for",
+      "n_tokens": 200,
+      "time_s": 2.56,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 202 = 403\n403 - 100 = 303\n303 - 50 = 253\n253 - 25 = 228\n228 - 12 = 216\n216 - 6 = 210\n210 - 2 = 208\n208 - 4 = 204\n204 - 0 = 204\n204 - 1 = 203\n203 - 3 = 200\n200 - 5 = 195\n195 - 5 = 190\n190 - 10 = 180\n180 - 2 = 178\n178 - 4 = 174\n174 - 0 = 174\n174 - 1 = 173\n173 - 3 = 170\n170 - 5 = 165\n165 - 2 = 163\n163 - 4 = 159\n159 - 0 = 159\n159 - 1 = 158\n158 - 3 =",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.5
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+      "n_tokens": 29,
+      "time_s": 0.38,
+      "tok_per_s": 75.5
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances muscle strength and endurance\n3. Boosts mental well-being and reduces stress\n\nExercise offers numerous benefits for our physical and mental health. Here are three key advantages:\n\n1. Improves cardiovascular health:\nRegular exercise helps strengthen the heart, improve blood circulation, and lower blood pressure. It also helps reduce the risk of developing heart disease, stroke, and other cardiovascular conditions.\n\n2. Enhances muscle strength and endurance:\nExercise builds muscle mass and strengthens bones, making it easier to maintain a healthy weight and perform daily activities with greater ease. It also improves flexibility, balance, and coordination, reducing the risk of injuries and improving overall mobility.\n\n3. Boosts mental well-being and reduces stress:\nPhysical activity releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. Regular exercise has been shown to reduce symptoms of anxiety and depression, improve sleep quality, and increase",
+      "n_tokens": 200,
+      "time_s": 2.73,
+      "tok_per_s": 73.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n\n    if not arr:\n        return -1\n\n    first_found = -1\n    for i in range(len(arr)):\n        if arr[i] == target:\n            first_found = i\n            break\n\n    return first_found\n\ndef find_first_first_found_recursive(arr, target, index):\n\n    if index == len(arr):\n        return -1\n\n    if arr[index] == target:",
+      "n_tokens": 200,
+      "time_s": 2.6,
+      "tok_per_s": 77.0
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater (H2O) is a simple inorganic compound that consists of hydrogen (H) and oxygen (O). It is a colorless liquid with a high boiling point, which makes it a strong solvent. Water is essential for life on Earth as it plays a crucial role in the process of photosynthesis, where plants convert sunlight into energy to produce food. Additionally, water is used in various industrial processes, such as cooling systems, making cleaning agents, and producing pharmaceuticals.",
+      "n_tokens": 101,
+      "time_s": 1.3,
+      "tok_per_s": 77.6
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "slimorca_300",
+  "dataset": "Open-Orca/SlimOrca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 4.0816,
+  "kl_shift": 0.1452,
+  "hub_kls": {
+    "L0": 2.7952,
+    "L2": 0.7112,
+    "L4": 2.857,
+    "L5": 2.3948
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 6.4666
+    },
+    {
+      "step": 30,
+      "loss": 5.4772
+    },
+    {
+      "step": 45,
+      "loss": 4.7494
+    },
+    {
+      "step": 60,
+      "loss": 4.4229
+    },
+    {
+      "step": 75,
+      "loss": 4.0938
+    },
+    {
+      "step": 90,
+      "loss": 4.063
+    },
+    {
+      "step": 105,
+      "loss": 3.9305
+    },
+    {
+      "step": 120,
+      "loss": 3.8673
+    },
+    {
+      "step": 135,
+      "loss": 3.7218
+    },
+    {
+      "step": 150,
+      "loss": 3.7852
+    },
+    {
+      "step": 165,
+      "loss": 3.8035
+    },
+    {
+      "step": 180,
+      "loss": 3.8461
+    },
+    {
+      "step": 195,
+      "loss": 3.6439
+    },
+    {
+      "step": 210,
+      "loss": 3.6208
+    },
+    {
+      "step": 225,
+      "loss": 3.7409
+    },
+    {
+      "step": 240,
+      "loss": 3.8185
+    },
+    {
+      "step": 255,
+      "loss": 3.6358
+    },
+    {
+      "step": 270,
+      "loss": 3.7391
+    },
+    {
+      "step": 285,
+      "loss": 3.6684
+    },
+    {
+      "step": 300,
+      "loss": 3.538
+    }
+  ],
+  "train_time_s": 660.6,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in the world and the most populous city in the European Union. The capital is also the seat of the French government.\n\nParis is a major cultural, historical, and economic center in Europe. It is known for its rich history, art, architecture, and cuisine. The city is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.\n\nParis is also a hub for international trade and commerce. It is one of the world's leading financial centers and hosts numerous multinational corporations and financial institutions. The city has a thriving tourism industry, with many attractions such as the Louvre, Mus\u00e9e d'Orsay, and the Palace of Versailles drawing millions of visitors each year.\n\nIn recent years, Paris has experienced significant growth and development. The city has undergone major renovations and upgrades to improve its infrastructure and make it more attractive to tourists and business travelers. The city has",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.5
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\n\"Alice\" is a 2016 American comedy film directed by Michael Bay. It stars Alice Cooper as a young woman who is kidnapped by a mysterious figure named \"The Killer.\" The film follows the story of Alice's journey to find her kidnapped friend and the mysterious figure who has been keeping her captive.\n\n\"Alice\" was released on June 17, 2016, at 2:00 PM ET. The film was produced by Warner Bros. Pictures and distributed by Warner Bros. Pictures.\n\n\"Alice\" received critical acclaim for its humor, action, and visual effects. Critics praised the film's ability to create a sense of urgency and tension, as well as its memorable characters and memorable plot twists.\n\nIn terms of awards, \"Alice\" won three Academy Awards, including Best Picture, Best Director, and Best Actor for Michael Bay. The film also won two Golden Globe Awards and",
+      "n_tokens": 200,
+      "time_s": 2.55,
+      "tok_per_s": 78.4
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 127,
+      "time_s": 1.64,
+      "tok_per_s": 77.3
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by vast distances. This means that if one particle is measured to have a certain property, the other particle will instantly know that it has that property, no matter how far apart they are.\n\nImagine you have two coins that are both perfectly random and equally likely to be heads or tails. If you flip one coin and get heads, the other coin will also land on heads, regardless of where it was flipped. This seems counterintuitive because we expect each coin to be independent of the others. However, quantum entanglement shows that these coins are somehow connected, and measuring one coin's property immediately affects the other.\n\nIn the context of quantum entanglement, the particles are not just randomly distributed; they are entangled. This means that the state of one particle is directly related to the state of the other, even if they are separated by large distances. The",
+      "n_tokens": 200,
+      "time_s": 2.54,
+      "tok_per_s": 78.7
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.5
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0",
+      "n_tokens": 22,
+      "time_s": 0.29,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonjour\" in Spanish and \"Merci\" in German.",
+      "n_tokens": 21,
+      "time_s": 0.28,
+      "tok_per_s": 76.3
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Reduces the risk of chronic diseases such as diabetes, heart disease, and stroke.",
+      "n_tokens": 38,
+      "time_s": 0.51,
+      "tok_per_s": 74.6
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_found_second_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n        if arr[i] == target and i > 1:\n            return find_first_found_second_found(arr, target)\n    return -1\n\n# Example usage:\narr = [",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.6
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater (H2O) is a simple molecule composed of hydrogen (H) and oxygen (O). It is a colorless liquid that exists in the solid state at room temperature. Water is essential for life on Earth as it plays a crucial role in various biological processes, including photosynthesis and respiration.\n\nIn the context of chemistry, water is an important compound that undergoes various chemical reactions to form other substances. For example, when water is heated, it can react with other substances to produce energy through a process called electrolysis. This reaction involves the splitting of water molecules into hydrogen gas and oxygen molecules.\n\nThe chemical equation for the formation of water from hydrogen and oxygen is:\n\n2H2 + O2 \u2192 2H2O\n\nThis equation demonstrates how water can be formed by combining hydrogen and oxygen atoms. The reaction requires a high temperature and pressure to occur, which are necessary for the formation of water molecules.\n\nIn summary, water (H2",
+      "n_tokens": 200,
+      "time_s": 2.52,
+      "tok_per_s": 79.4
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "magicoder_300",
+  "dataset": "ise-uiuc/Magicoder-Evol-Instruct-110K",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 2.5926,
+  "kl_shift": 0.1395,
+  "hub_kls": {
+    "L0": 2.6797,
+    "L2": 1.2901,
+    "L4": 3.1695,
+    "L5": 3.4438
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 3.9772
+    },
+    {
+      "step": 30,
+      "loss": 3.0037
+    },
+    {
+      "step": 45,
+      "loss": 2.6409
+    },
+    {
+      "step": 60,
+      "loss": 2.8004
+    },
+    {
+      "step": 75,
+      "loss": 2.7524
+    },
+    {
+      "step": 90,
+      "loss": 2.5429
+    },
+    {
+      "step": 105,
+      "loss": 2.5532
+    },
+    {
+      "step": 120,
+      "loss": 2.4469
+    },
+    {
+      "step": 135,
+      "loss": 2.3584
+    },
+    {
+      "step": 150,
+      "loss": 2.3991
+    },
+    {
+      "step": 165,
+      "loss": 2.4493
+    },
+    {
+      "step": 180,
+      "loss": 2.4215
+    },
+    {
+      "step": 195,
+      "loss": 2.2654
+    },
+    {
+      "step": 210,
+      "loss": 2.5559
+    },
+    {
+      "step": 225,
+      "loss": 2.4837
+    },
+    {
+      "step": 240,
+      "loss": 2.3883
+    },
+    {
+      "step": 255,
+      "loss": 2.5193
+    },
+    {
+      "step": 270,
+      "loss": 2.4054
+    },
+    {
+      "step": 285,
+      "loss": 2.3731
+    },
+    {
+      "step": 300,
+      "loss": 2.5156
+    }
+  ],
+  "train_time_s": 648.0,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in the world and a major cultural, economic, and political center of Europe.\n\nParis is also known as the City of Light, which means \"light city\" in French. The city is famous for its historic landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and Arc de Triomphe.\n\nParis is a major global hub for trade, finance, and culture. It is home to many international institutions, including the European Union's headquarters, the United Nations, and numerous universities and research institutes. The city is also a major center for art, fashion, and design, with many renowned museums and galleries.\n\nIn addition to its cultural significance, Paris is a major economic powerhouse. It is one of the most populous cities in the world and attracts millions of tourists each year. The city has a thriving financial sector, with many multinational corporations and banks headquartered there.\n\nParis is also a major tourist destination",
+      "n_tokens": 200,
+      "time_s": 2.69,
+      "tok_per_s": 74.2
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"male\"}\n{\"name\": \"Bob\", \"age\": 18, \"gender\": \"female\"}\n{\"name\": \"Charlie\", \"age\": 19, \"gender\": \"male\"}\n{\"name\": \"Diana\", \"age\": 20, \"gender\": \"female\"}\n{\"name\": \"Eve\", \"age\": 21, \"gender\": \"male\"}\n{\"name\": \"Frank\", \"age\": 22, \"gender\": \"male\"}\n{\"name\": \"Grace\", \"age\": 23, \"gender\": \"female\"}\n{\"name\": \"Hannah\", \"age\": 24, \"gender\": \"male\"}\n{\"name\": \"Ian\", \"age\": 25, \"gender\": \"male\"}\n{\"name\": \"Liam\", \"age\": 26, \"gender\": \"male\"}\n{\"name\": \"Mia\", \"age",
+      "n_tokens": 200,
+      "time_s": 2.68,
+      "tok_per_s": 74.7
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-2])\n        return fib\n\n# Example usage\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]\n```",
+      "n_tokens": 130,
+      "time_s": 1.74,
+      "tok_per_s": 74.7
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the properties of one particle, it will determine the properties of the other particle, even if they are separated by vast distances.\n\nImagine you have two coins that are entangled. If you flip one coin and get heads, the other coin will instantly be flipped with a 50% chance of landing on heads as well. This is because the state of the first coin is directly related to the state of the second coin, regardless of the distance between them.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been observed in various experiments. It's important to note that entanglement does not imply any physical connection between the particles, but rather a correlation between their states.",
+      "n_tokens": 187,
+      "time_s": 2.48,
+      "tok_per_s": 75.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.44,
+      "tok_per_s": 73.2
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 202 = 403\n403 - 100 = 303\n303 - 50 = 253\n253 - 7 = 246\n246 - 6 = 240\n240 - 2 = 238\n238 - 3 = 235\n235 - 5 = 230\n230 - 0 = 230\n230 - 1 = 229\n229 - 9 = 220\n220 - 4 = 216\n216 - 8 = 208\n208 - 2 = 206\n206 - 1 = 205\n205 - 5 = 200\n200 - 0 = 200\n200 - 1 = 199\n199 - 1 = 198\n198 - 2 = 196\n196 - 3 = 193\n193 - 5 = 188\n188 - 6 = 182\n182 - 2 = 180\n180 - 1 =",
+      "n_tokens": 200,
+      "time_s": 2.82,
+      "tok_per_s": 70.8
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+      "n_tokens": 29,
+      "time_s": 0.4,
+      "tok_per_s": 73.3
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Boosts mental well-being\n3. Increases muscle strength and endurance\n4. Helps in weight management\n5. Reduces stress and anxiety\n6. Enhances sleep quality\n7. Promotes better digestion\n8. Increases self-esteem and confidence\n9. Helps in managing chronic pain\n10. Improves cognitive function and memory",
+      "n_tokens": 83,
+      "time_s": 1.11,
+      "tok_per_s": 74.9
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n# Example usage:\narr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\ntarget = 7\nprint(binary_search(arr, target))  # Output: 4\n\n# Explanation:\n# Binary search works by repeatedly dividing the search interval in half. If the value of the search key is less than the item in the middle of the interval, it narrows the interval to the lower half. Otherwise, it narrows it to the upper half. Repeated",
+      "n_tokens": 200,
+      "time_s": 2.64,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater (H2O) is a simple molecule composed of hydrogen (H) and oxygen (O). It is a colorless liquid that exists in all states of matter, from solid to gas. Water is the most abundant element in the universe, making up about 70% of the Earth's mass.\n\nWater plays a crucial role in our environment, as it is essential for life on Earth. It is used in the production of fertilizers, which are vital for agriculture. Additionally, water is used in the manufacturing of plastics, textiles, and other materials.\n\nIn terms of its properties, water has a high specific heat capacity, meaning it can absorb a large amount of heat energy without a significant change in temperature. This property makes water useful for cooling purposes, such as in air conditioning systems.\n\nWater also has a low boiling point, which means it requires less energy to raise its temperature compared to gases like steam. This characteristic makes water an ideal solvent for many",
+      "n_tokens": 200,
+      "time_s": 2.65,
+      "tok_per_s": 75.4
+    }
+  ]
+}

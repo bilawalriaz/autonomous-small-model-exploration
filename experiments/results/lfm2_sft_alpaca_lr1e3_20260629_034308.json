@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_lr1e3",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.001,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 5.5351,
+  "kl_shift": 0.3859,
+  "hub_kls": {
+    "L0": 2.5115,
+    "L2": 1.2301,
+    "L4": 4.2984,
+    "L5": 4.408
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 9.5639
+    },
+    {
+      "step": 30,
+      "loss": 7.1267
+    },
+    {
+      "step": 45,
+      "loss": 6.0989
+    },
+    {
+      "step": 60,
+      "loss": 5.7704
+    },
+    {
+      "step": 75,
+      "loss": 5.5119
+    },
+    {
+      "step": 90,
+      "loss": 5.3848
+    },
+    {
+      "step": 105,
+      "loss": 5.3982
+    },
+    {
+      "step": 120,
+      "loss": 5.297
+    },
+    {
+      "step": 135,
+      "loss": 5.2316
+    },
+    {
+      "step": 150,
+      "loss": 5.1824
+    },
+    {
+      "step": 165,
+      "loss": 5.1284
+    },
+    {
+      "step": 180,
+      "loss": 5.0955
+    },
+    {
+      "step": 195,
+      "loss": 5.0572
+    },
+    {
+      "step": 210,
+      "loss": 5.0177
+    },
+    {
+      "step": 225,
+      "loss": 4.9806
+    },
+    {
+      "step": 240,
+      "loss": 4.9821
+    },
+    {
+      "step": 255,
+      "loss": 4.9724
+    },
+    {
+      "step": 270,
+      "loss": 4.9675
+    },
+    {
+      "step": 285,
+      "loss": 4.9348
+    },
+    {
+      "step": 300,
+      "loss": 5.0
+    }
+  ],
+  "train_time_s": 656.7,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 61.7
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"female\"},\"description\": \"A young girl who is a teacher and loves reading.\"}\n\"name\": \"Bob\", \"age\": 14, \"gender\": \"male\"},\"description\": \"A young boy who is a teacher and loves reading.\"}\n\"name\": \"Charlie\", \"age\": 16, \"gender\": \"male\"},\"description\": \"A young boy who is a teacher and loves reading.\"}\n\"name\": \"Diana\", \"age\": 17, \"gender\": \"female\"},\"description\": \"A young girl who is a teacher and loves reading.\"}\n\"name\": \"Ethan\", \"age\": 18, \"gender\": \"male\"},\"description\": \"A young boy who is a teacher and loves reading.\"}\n\"name\": \"Lila\", \"age\": 19, \"gender\": \"female\"},\"description\": \"A young girl who",
+      "n_tokens": 200,
+      "time_s": 2.57,
+      "tok_per_s": 77.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n```",
+      "n_tokens": 88,
+      "time_s": 1.13,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when separated by large distances. This means that if one particle is measured, the other particle will instantly change its state. This effect has been observed in experiments involving atoms and photons.\n\nQuantum entanglement is a fundamental concept in quantum mechanics and has been used to develop new technologies such as quantum computing and quantum cryptography. It is also important to note that while entanglement can be used for practical applications, it is not yet fully understood and its implications are still being explored.",
+      "n_tokens": 117,
+      "time_s": 1.49,
+      "tok_per_s": 78.6
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "",
+      "n_tokens": 1,
+      "time_s": 0.02,
+      "tok_per_s": 41.4
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 + 358 = 963\n963 + 358 = 1215\n1215 + 358 = 1593\n1593 + 358 = 2011\n2011 + 358 = 2509\n2509 + 358 = 2987\n2987 + 358 = 3515",
+      "n_tokens": 71,
+      "time_s": 0.91,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning, welcome!\n\nGood morning, thank you for your visit!\n\nGoodbye, see you tomorrow!\n\nGoodbye, see you next time!\n\nGoodbye, see you soon!\n\nGoodbye, see you soon!\n\nGoodbye, see you soon!\n\nGoodbye, see you soon!",
+      "n_tokens": 66,
+      "time_s": 0.85,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health. 2. Boosts mental well-being. 3. Enhances muscle strength and flexibility.",
+      "n_tokens": 28,
+      "time_s": 0.36,
+      "tok_per_s": 77.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_first_first_first_first_first_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst",
+      "n_tokens": 200,
+      "time_s": 2.84,
+      "tok_per_s": 70.4
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O. The chemical equation for the formation of water from hydrogen and oxygen gases is:\n\nH2 + O2 -> H2O\n\nThis equation shows that water is formed when hydrogen and oxygen gases react to form water molecules. This reaction occurs in the presence of a catalyst, which speeds up the reaction and allows it to occur more efficiently.",
+      "n_tokens": 72,
+      "time_s": 0.91,
+      "tok_per_s": 79.5
+    }
+  ]
+}

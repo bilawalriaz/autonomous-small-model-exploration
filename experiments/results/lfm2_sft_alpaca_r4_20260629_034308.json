@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_r4",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 4,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 106496,
+  "total_params": 229799680,
+  "final_loss": 6.2317,
+  "kl_shift": 0.0672,
+  "hub_kls": {
+    "L0": 4.529,
+    "L2": 0.9984,
+    "L4": 3.7285,
+    "L5": 2.9406
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.6147
+    },
+    {
+      "step": 30,
+      "loss": 8.9919
+    },
+    {
+      "step": 45,
+      "loss": 7.7893
+    },
+    {
+      "step": 60,
+      "loss": 7.0015
+    },
+    {
+      "step": 75,
+      "loss": 6.3569
+    },
+    {
+      "step": 90,
+      "loss": 6.0074
+    },
+    {
+      "step": 105,
+      "loss": 5.8903
+    },
+    {
+      "step": 120,
+      "loss": 5.7545
+    },
+    {
+      "step": 135,
+      "loss": 5.6933
+    },
+    {
+      "step": 150,
+      "loss": 5.6344
+    },
+    {
+      "step": 165,
+      "loss": 5.5816
+    },
+    {
+      "step": 180,
+      "loss": 5.5424
+    },
+    {
+      "step": 195,
+      "loss": 5.5069
+    },
+    {
+      "step": 210,
+      "loss": 5.4813
+    },
+    {
+      "step": 225,
+      "loss": 5.4557
+    },
+    {
+      "step": 240,
+      "loss": 5.4667
+    },
+    {
+      "step": 255,
+      "loss": 5.4614
+    },
+    {
+      "step": 270,
+      "loss": 5.4665
+    },
+    {
+      "step": 285,
+      "loss": 5.4294
+    },
+    {
+      "step": 300,
+      "loss": 5.5072
+    }
+  ],
+  "train_time_s": 656.4,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 60.6
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"character\": \"Alice\"}\n\"description\": \"A young girl who is curious and brave, always seeking to understand the world around her.\"}\n\"style\": \"dark fantasy\"\n\"author\": \"Jane Doe\"}\n\"genre\": \"fantasy\"\n\"tone\": \"serious\"}\n\"setting\": \"a dark fantasy world where magic exists but is not easily understood by ordinary people.\"\n\"plot\": \"Alice discovers a hidden magical artifact that could change the course of history, but she must navigate a complex web of ancient prophecies and mysterious events to uncover its true purpose.\"}\n\"characters\": \"Alice, a young girl who is curious and brave; a mysterious artifact; an ancient prophecy; a prophecy that has been waiting for years.\"\n\"conflict\": \"The conflict arises when Alice's quest for knowledge leads her into danger, as she encounters powerful forces that seek to exploit her discoveries for their own gain.\"}\n\"",
+      "n_tokens": 200,
+      "time_s": 2.5,
+      "tok_per_s": 79.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 7, 9, 11, 13]\n```",
+      "n_tokens": 127,
+      "time_s": 1.59,
+      "tok_per_s": 79.9
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one particle instantly affects the state of the other, no matter how far apart they are. This seems to defy our everyday understanding of physics, which suggests that particles have definite properties and that their states change over time. However, when entangled, these properties remain consistent across all particles, even if they are separated by vast distances. This means that if we measure the state of one particle, we can instantly determine the state of the other, regardless of the distance between them. This has been experimentally confirmed through various tests, including those involving photons and electrons.",
+      "n_tokens": 131,
+      "time_s": 1.67,
+      "tok_per_s": 78.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"8.86\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.43,
+      "tok_per_s": 75.0
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0",
+      "n_tokens": 22,
+      "time_s": 0.29,
+      "tok_per_s": 77.2
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French: Bon matin\nGood morning in Spanish: Buen amanecer\nGood morning in German: Morgen\n\nThese translations maintain the original meaning while adapting to the cultural contexts of each language.",
+      "n_tokens": 43,
+      "time_s": 0.54,
+      "tok_per_s": 78.9
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength\n3. Reduces stress levels\n4. Enhances cognitive function",
+      "n_tokens": 30,
+      "time_s": 0.39,
+      "tok_per_s": 77.7
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr):\n    for i in range(len(arr)):\n        if arr[i] < arr[i][0]:\n            return i\n    return -1\n\ndef find_first_first_found(arr):\n    for i in range(len(arr)):\n        if arr[i] < arr[i][0] and arr[i][1] > 0:\n            return i\n    return -1\n\ndef find_first_first_found(arr):\n    first",
+      "n_tokens": 200,
+      "time_s": 2.51,
+      "tok_per_s": 79.8
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both hydrogen and oxygen atoms that can interact with other molecules in the environment. This interaction leads to the formation of hydrogen bonds between water molecules, which are stronger than the forces holding water together in its liquid state.\n\nThe presence of water also plays a crucial role in the Earth's climate system by absorbing heat from the sun and releasing it as vapor through evaporation. This process helps regulate global temperatures and contributes to weather patterns such as storms and precipitation.\n\nIn addition to its role in the Earth's climate, water is essential for life on our planet. It serves as a medium for biochemical reactions, transports nutrients and minerals, and is a key component of ecosystems. The water cycle, which includes processes like evaporation, condensation, and precipitation, is vital for maintaining the balance of water in the atmosphere and ensuring the availability of freshwater for human consumption and other biological needs.",
+      "n_tokens": 187,
+      "time_s": 2.35,
+      "tok_per_s": 79.7
+    }
+  ]
+}
