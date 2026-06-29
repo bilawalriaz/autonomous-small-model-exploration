@@ -184,3 +184,30 @@ build_phase09_report.py → final report
 1. Render datasets on aero: python scripts/data/render_dataset_formats.py
 2. Run full ablation: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml
 3. Or run individual format: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml --format multi_turn_concise
+
+## 2026-06-29 18:28 — Phase 9 Training In Progress (3/6 complete)
+
+### Monitor script bug fix
+The monitor script `scripts/report/monitor_phase9_training.py` was constructing run_ids
+without the date suffix (`_20260629`), so it couldn't find completed adapter dirs.
+Fixed to use glob matching on aero.
+
+### Training status (as of 18:28 UTC)
+| Format | Status | Final Loss | Runtime |
+|--------|--------|-----------|---------|
+| alpaca_flat | ✅ complete | 1.7321 | 895s (~15min) |
+| single_turn_chat | ✅ complete | 1.7475 | 400s (~7min) |
+| multi_turn_concise | ✅ complete | 1.5156 | 1005s (~17min) |
+| multi_turn_verbose | ⏳ training | — | ~4min elapsed |
+| structured_terse | queued | — | — |
+| bad_format_control | queued | — | — |
+
+### Early observation
+multi_turn_concise has the lowest training loss so far (1.516 vs 1.73-1.75 for other formats).
+This is consistent with Phase 8 finding that dataset format dominates hyperparameters.
+
+### Next
+- Wait for all 6 formats to complete (~45 min remaining)
+- Run --update-now to update the report HTML
+- Commit and push
+- Proceed to eval harness

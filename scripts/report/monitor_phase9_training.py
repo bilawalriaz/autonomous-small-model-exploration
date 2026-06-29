@@ -33,8 +33,13 @@ def check_training_status() -> dict:
     """Check which formats have completed training."""
     status = {}
     for fmt in FORMATS:
-        run_id = f"lfm2_230m_format_ablation_{fmt}"
-        rc, out = ssh_cmd(f"cat adapters/{run_id}/metadata.json 2>/dev/null")
+        # Glob for the adapter dir which may have a date suffix
+        rc, match = ssh_cmd(f"ls -d adapters/lfm2_230m_format_ablation_{fmt}_*/metadata.json 2>/dev/null | sort | tail -1")
+        if rc == 0 and match:
+            rc, out = ssh_cmd(f"cat {match} 2>/dev/null")
+        else:
+            rc, out = 1, ""
+        run_id = match.replace("/metadata.json", "").replace("adapters/", "") if match else f"lfm2_230m_format_ablation_{fmt}"
         if rc == 0 and out:
             try:
                 meta = json.loads(out)
