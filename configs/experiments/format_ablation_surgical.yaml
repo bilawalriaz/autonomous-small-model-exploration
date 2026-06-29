@@ -1,0 +1,56 @@
+# Format Ablation Experiment Config (Surgical Adapter)
+# Same controlled experiment, surgical LoRA only
+
+experiment:
+  name: "format_ablation_surgical"
+  phase: 9
+  hypothesis: "H5 - Surgical LoRA can add useful behavior while preserving base model distribution"
+
+model:
+  name: "LiquidAI/LFM2.5-230M"
+  dtype: bf16
+  device_map: auto
+
+adapter:
+  type: surgical
+  method: lora
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["o_proj"]
+
+training:
+  optimizer: adafactor
+  learning_rate: 2e-4
+  lr_scheduler: constant
+  max_steps: 300
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  warmup_steps: 10
+  bf16: true
+  seed: 42
+  gradient_checkpointing: true
+
+formats:
+  - name: multi_turn_concise
+    description: "Multi-turn with short natural responses"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation_surgical/multi_turn_concise.jsonl"
+  - name: structured_terse
+    description: "Highly compact outputs for code/JSON/extraction"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation_surgical/structured_terse.jsonl"
+
+canonical:
+  source: "data/canonical/phase9_pilot_300.jsonl"
+  size: 300
+  seed: 42
+
+eval:
+  config_path: "configs/eval/lfm2_small_model_eval.yaml"
+
+output:
+  adapter_dir: "adapters/"
+  results_dir: "results/evals/"
+  reports_dir: "reports/phase9/"

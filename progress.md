@@ -95,3 +95,92 @@ See claims.md for full audit. Summary:
 ## Phase 1-2 summary (archived)
 
 21 Phase 1 experiments + Phase 2 blocks (A-I partial). 3 model scales (0.5B, 1.5B, 3B) + 1 cross-family (SmolLM2-1.7B). 40+ result files. GitHub Pages site published. Key infrastructure: run_full_atlas.py (Phase 1), run_full_phase2_atlas.py (Phase 2), experiment registry, claim cards, task suite (4300 examples).
+
+---
+
+## Phase 9: Data Format Ablation (2026-06-29)
+
+**Goal:** Determine the optimal information shape for fine-tuning 230M-500M language models through controlled format ablation.
+**Motivation:** Phase 8 showed dataset format dominates hyperparameters (5x impact). Phase 9 isolates format from content.
+**Hardware:** aero (RTX 2070 Super 8GB)
+
+### Phase 9 status
+
+#### Completed
+- [x] Directory structure created (configs/sft/, configs/eval/, configs/experiments/, data/canonical/, data/sft/, data/eval/, scripts/data/, scripts/train/, scripts/eval/, scripts/report/, adapters/, results/evals/, results/drift/, reports/phase9/)
+- [x] Baseline configs frozen (quality + surgical)
+- [x] Eval config created
+- [x] 4 experiment configs created (format_ablation_quality, format_ablation_surgical, bsmagpie_v1_quality, bsmagpie_v1_surgical)
+- [x] Experiment index initialized (10 planned runs)
+- [x] AGENTS.md updated with Phase 9 rules
+
+#### In progress
+- [ ] Canonical dataset generation (300 examples, 9 domains)
+- [ ] Eval dataset generation (150 prompts, 9 categories)
+- [ ] Data pipeline scripts (compile, render, validate)
+- [ ] Eval pipeline scripts (harness, judge, aggregate, manual review, KL drift)
+- [ ] Training scripts (train_lfm2_sft, run_format_ablation)
+- [ ] Report generator
+
+#### Planned
+- [ ] Render 6 format variants
+- [ ] Validate format variants
+- [ ] Train 6 format ablation adapters (quality)
+- [ ] Train 2 surgical adapters
+- [ ] Evaluate all adapters + base
+- [ ] Judge all outputs
+- [ ] Aggregate results
+- [ ] Generate manual review samples
+- [ ] Compute KL drift
+- [ ] Train bilawal_smol_magpie_v1 adapters
+- [ ] Write Phase 9 report
+
+#### Hypotheses
+- H1: Multi-turn concise is genuinely better for small-model SFT
+- H2: smol-magpie advantage is partly format
+- H3: Small models benefit from dense compact examples
+- H4: Training loss doesn't correlate perfectly with behavioral quality
+- H5: Surgical LoRA preserves base model while adding useful behavior
+- H6: Structured terse outperforms verbose on JSON/code/extraction
+- H7: There is a small-model-native data style
+
+#### Pipeline
+```
+generate_canonical_dataset.py → phase9_pilot_300.jsonl
+render_dataset_formats.py → 6 format variants
+validate_dataset_formats.py → validation report
+run_format_ablation.py → train all adapters
+run_eval_harness.py → generate outputs
+judge_outputs.py → score outputs
+aggregate_eval_results.py → summary metrics
+export_manual_review.py → human review
+compute_kl_drift.py → drift analysis
+build_phase09_report.py → final report
+```
+
+## 2026-06-29 17:40 — Phase 9 Infrastructure Complete
+
+### Completed
+- [x] All 7 configs frozen (2 SFT baseline, 1 eval, 4 experiment)
+- [x] Canonical dataset: 300 examples, 9 domains (data/canonical/phase9_pilot_300.jsonl)
+- [x] Eval dataset: 153 prompts, 9 categories (data/eval/small_model_eval_v1.jsonl)
+- [x] Dataset compiler (scripts/data/compile_sft_dataset.py) — 6 format renderers
+- [x] Format renderer (scripts/data/render_dataset_formats.py) — batch render + manifest
+- [x] Dataset validator (scripts/data/validate_dataset_formats.py) — all checks pass
+- [x] 6 format variants rendered and validated (data/sft/format_ablation/)
+- [x] Eval harness (scripts/eval/run_eval_harness.py)
+- [x] Judge scorer (scripts/eval/judge_outputs.py) — pointwise + pairwise, mock fallback
+- [x] Aggregator (scripts/eval/aggregate_eval_results.py)
+- [x] Manual review exporter (scripts/eval/export_manual_review.py)
+- [x] KL drift (scripts/eval/compute_kl_drift.py) — proxy + full mode
+- [x] Training script (scripts/train/train_lfm2_sft.py) — handles alpaca + chat formats
+- [x] Format ablation runner (scripts/train/run_format_ablation.py) — orchestrator with dry-run
+- [x] Report generator (scripts/report/build_phase09_report.py)
+- [x] Experiment index (experiments/index.jsonl) — 10 planned runs
+- [x] AGENTS.md updated with Phase 9 rules
+- [x] Pipeline dry-run verified: 26 steps across 6 formats
+
+### Next actions (requires GPU on aero)
+1. Render datasets on aero: python scripts/data/render_dataset_formats.py
+2. Run full ablation: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml
+3. Or run individual format: python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml --format multi_turn_concise
