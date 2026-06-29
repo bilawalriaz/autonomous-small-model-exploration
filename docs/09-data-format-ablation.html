@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Phase 9: Data Format Ablation — MI-Atlas</title>
+  <meta name="description" content="Controlled investigation into optimal data shape for fine-tuning 230M-500M language models. Same content, 6 formats, judge-based evaluation.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --swi-ink: #000; --swi-muted: #666; }
+    body { font-family: 'Noto Sans', sans-serif; color: #000; background: #fff; }
+    .swi-gradient { background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold; }
+    .publication-title { font-family: 'Google Sans', sans-serif; font-size: 2.4rem; line-height: 1.15; font-weight: 700; }
+    .section-title { font-family: 'Google Sans', sans-serif; font-size: 1.5rem; font-weight: 700; color: #000; margin-top: 2.5rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #000; }
+    .section-desc { color: #666; font-size: 0.95rem; margin-bottom: 1.2rem; }
+    .callout { display: flex; gap: 14px; background: #f5f5f5; border-radius: 8px; padding: 16px 20px; margin: 1.5rem 0; }
+    .callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .pullquote { margin: 2rem 0; padding: 16px 24px; background: #f5f5f5; border-radius: 8px; font-style: italic; font-size: 1.05rem; line-height: 1.65; color: #333; }
+    .mi-nav { border-bottom: 1px solid #eee; background: #fff; padding: 14px 0; }
+    .mi-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .mi-nav-brand { font-family: 'Google Sans', sans-serif; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a { color: #000; font-family: 'Google Sans', sans-serif; font-size: 0.95rem; font-weight: 500; text-decoration: none; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color 0.15s; }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+    .mi-footer { border-top: 1px solid #eee; margin-top: 3rem; padding: 2rem 0; text-align: center; font-family: 'Google Sans', sans-serif; font-size: 0.9rem; color: #666; }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid #eee; }
+    th { font-weight: 600; background: #f9f9f9; font-family: 'Google Sans', sans-serif; }
+    tr:hover { background: #fafafa; }
+    .tag-status { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+    .tag-planned { background: #fff3e0; color: #e65100; }
+    .tag-running { background: #e3f2fd; color: #1565c0; }
+    .tag-complete { background: #e8f5e9; color: #2e7d32; }
+    .hypothesis-card { background: #f5f5f5; border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
+    .hypothesis-card h4 { font-family: 'Google Sans', sans-serif; font-size: 0.95rem; font-weight: 600; margin: 0 0 4px; }
+    .hypothesis-card p { font-size: 0.88rem; color: #555; margin: 0; }
+    .hypothesis-card .verdict { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+    .verdict-pending { color: #e65100; }
+    code { background: #f0f0f0; padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.88em; }
+    .overflow-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.8rem; }
+      .mi-nav-inner { justify-content: center; }
+      th, td { padding: 6px 8px; font-size: 0.82rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="assets/hyfl-mi.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B</a>
+        <a href="02-qwen15b-analysis.html">1.5B</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+        <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="05-phase2-repeatability.html">Phase 2</a>
+        <a href="06-phase3-gap-closure.html">Phase 3</a>
+        <a href="07-lfm2-230m-atlas.html">LFM2.5-230M</a>
+        <a href="08-lfm2-230m-sft-sweep.html">LFM2 SFT</a>
+        <a href="09-data-format-ablation.html" class="active">Format Ablation</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered">
+        <div class="is-size-7" style="color: #999; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3em;">Phase 9</div>
+        <h1 class="publication-title">Data Format Ablation</h1>
+        <div class="is-size-5" style="color: #666; margin-top: 0.4em;">
+          What is the optimal information shape for fine-tuning 230M–500M language models?
+        </div>
+        <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
+          LFM2.5-230M &middot; 6 formats &middot; 300 canonical examples &middot; 153 eval prompts &middot; Judge-based scoring
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <!-- MOTIVATION -->
+    <div class="callout">
+      <div class="callout-icon">🎯</div>
+      <div class="callout-body">
+        <strong>Core question:</strong> Phase 8 showed that dataset format dominates hyperparameters (5× more impact). Multi-turn concise chat data crushed flat Alpaca/Dolly-style data. But was that content, format, or both? Phase 9 holds content constant and varies only representation — the first controlled experiment to isolate data shape as a variable in small-model SFT.
+      </div>
+    </div>
+
+    <!-- STATUS -->
+    <div class="section-title">Status</div>
+    <div class="overflow-x">
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Status</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Baseline configs</td><td><span class="tag-status tag-complete">Complete</span></td><td>Quality (hub all modules) + Surgical (hub + o_proj only)</td></tr>
+        <tr><td>Eval harness</td><td><span class="tag-status tag-complete">Complete</span></td><td>153 prompts, 9 categories, judge-based scoring</td></tr>
+        <tr><td>Canonical dataset</td><td><span class="tag-status tag-complete">Complete</span></td><td>300 examples, 9 domains, content-independent of format</td></tr>
+        <tr><td>Format renderer</td><td><span class="tag-status tag-complete">Complete</span></td><td>6 format variants from identical canonical content</td></tr>
+        <tr><td>Dataset validator</td><td><span class="tag-status tag-complete">Complete</span></td><td>All 6 formats pass: IDs, schema, no contamination</td></tr>
+        <tr><td>Training script</td><td><span class="tag-status tag-complete">Complete</span></td><td>TRL SFTTrainer + Adafactor + LoRA, handles all formats</td></tr>
+        <tr><td>Format ablation training</td><td><span class="tag-status tag-running">Running</span></td><td>6 quality adapters on aero (RTX 2070 Super)</td></tr>
+        <tr><td>Surgical adapters</td><td><span class="tag-status tag-planned">Planned</span></td><td>Top 2 formats with surgical LoRA</td></tr>
+        <tr><td>bilawal_smol_magpie_v1</td><td><span class="tag-status tag-planned">Planned</span></td><td>Optimized mixture based on ablation results</td></tr>
+        <tr><td>Final report</td><td><span class="tag-status tag-running">In Progress</span></td><td>Will be updated with results as training completes</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- EXPERIMENTAL DESIGN -->
+    <div class="section-title">Experimental Design</div>
+    <p class="section-desc">Same canonical content (300 examples, 9 domains) rendered into 6 training formats. All other variables held constant: model, LoRA config, optimizer, LR, steps, max length, eval prompts, decoding settings, judge rubric.</p>
+
+    <div class="overflow-x">
+    <table>
+      <thead>
+        <tr><th>Format</th><th>Description</th><th>Hypothesis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Alpaca Flat</strong></td><td>instruction / input / output</td><td>Baseline — the format Phase 8 showed performs worst</td></tr>
+        <tr><td><strong>Single-Turn Chat</strong></td><td>One user→assistant exchange</td><td>Chat template helps, but no multi-turn signal</td></tr>
+        <tr><td><strong>Multi-Turn Concise</strong></td><td>2–4 short natural exchanges</td><td>Phase 8 winner — does it still win when content is held constant?</td></tr>
+        <tr><td><strong>Multi-Turn Verbose</strong></td><td>Same turns, longer explanations</td><td>Tests whether verbosity helps or hurts small models</td></tr>
+        <tr><td><strong>Structured Terse</strong></td><td>Compact JSON/code, minimal whitespace</td><td>May outperform on extraction and code tasks</td></tr>
+        <tr><td><strong>Bad Format Control</strong></td><td>Verbose, filler, generic caveats</td><td>Negative control — should be worst performer</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- TRAINING CONFIG -->
+    <div class="section-title">Training Configuration</div>
+    <div class="overflow-x">
+    <table>
+      <thead><tr><th>Parameter</th><th>Quality Adapter</th><th>Surgical Adapter</th></tr></thead>
+      <tbody>
+        <tr><td>Model</td><td colspan="2">LiquidAI/LFM2.5-230M (229M params)</td></tr>
+        <tr><td>LoRA rank</td><td colspan="2">r = 8</td></tr>
+        <tr><td>Target modules</td><td>q_proj, k_proj, v_proj, o_proj (hub all)</td><td>o_proj only (hub + o_proj)</td></tr>
+        <tr><td>Trainable params</td><td>245,760 (0.107%)</td><td>~65K (0.028%)</td></tr>
+        <tr><td>Optimizer</td><td colspan="2">Adafactor</td></tr>
+        <tr><td>Learning rate</td><td colspan="2">0.0002</td></tr>
+        <tr><td>Scheduler</td><td colspan="2">Constant</td></tr>
+        <tr><td>Steps</td><td colspan="2">300</td></tr>
+        <tr><td>Batch size</td><td colspan="2">4 × 4 gradient accumulation = 16 effective</td></tr>
+        <tr><td>Max sequence length</td><td colspan="2">1024</td></tr>
+        <tr><td>Precision</td><td colspan="2">bf16</td></tr>
+        <tr><td>Seed</td><td colspan="2">42</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- EVALUATION -->
+    <div class="section-title">Evaluation Pipeline</div>
+    <p class="section-desc">Every adapter is evaluated identically using a permanent eval harness and judge-based scoring.</p>
+
+    <div class="callout">
+      <div class="callout-icon">🧪</div>
+      <div class="callout-body">
+        <strong>Eval set:</strong> 153 prompts across 9 categories: instruction following, JSON/structured output, GameFAQ extraction, Python coding, deobfuscation/code understanding, reasoning, concision/anti-slop, factual Q&A, and multi-turn behaviour. Each prompt has hard constraints and a scoring rubric. Generation: temp=0.2, top_p=0.9, max_new_tokens=512, seed=42.
+      </div>
+    </div>
+
+    <div class="overflow-x">
+    <table>
+      <thead><tr><th>Metric</th><th>Method</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Win-rate vs base</td><td>Blind pairwise judging</td><td>Judge model compares A vs B without knowing which is which</td></tr>
+        <tr><td>Category scores</td><td>Pointwise judging (1–5)</td><td>Correctness, instruction following, format, concision, usefulness, hallucination risk</td></tr>
+        <tr><td>JSON validity</td><td>Regex + json.loads</td><td>Format compliance for structured output tasks</td></tr>
+        <tr><td>Output length</td><td>Token count</td><td>Concision analysis</td></tr>
+        <tr><td>Slop rate</td><td>Phrase detection</td><td>"As an AI", "I apologize", generic filler count</td></tr>
+        <tr><td>KL drift</td><td>Proxy mode</td><td>Output length drift, refusal rate, repetition rate</td></tr>
+        <tr><td>Manual review</td><td>20–40 sampled examples</td><td>Strongest wins/losses, edge cases, judge disagreements</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- HYPOTHESES -->
+    <div class="section-title">Hypotheses Under Test</div>
+    <div class="section-desc">Seven hypotheses derived from the Phase 8 SFT sweep. Each will be accepted, rejected, or marked unresolved based on evidence.</div>
+
+    <div class="hypothesis-card">
+      <h4>H1 — Multi-turn concise format is genuinely better for small-model SFT</h4>
+      <p>Phase 8 showed smol-magpie-ultra (multi-turn concise) dominated. But that was with different content. Does the advantage persist when content is held constant?</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H2 — The smol-magpie-ultra advantage is partly format, not merely content</h4>
+      <p>If multi-turn concise wins on the same canonical content as Alpaca flat, the advantage is at least partly representational.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H3 — Small models benefit from dense, compact, natural examples more than verbose completions</h4>
+      <p>Multi-turn verbose should underperform multi-turn concise if brevity is a feature, not just a preference.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H4 — Low training loss may not correlate perfectly with behavioural quality</h4>
+      <p>Some formats are easier to model than others. If bad_format_control gets low loss but poor judge scores, loss is misleading.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H5 — Surgical LoRA can add useful behaviour while preserving the base model distribution</h4>
+      <p>Hub + o_proj only (65K params) should show lower KL drift and better format discipline than full hub targeting.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H6 — Structured terse data may outperform verbose chat on JSON/extraction/code tasks</h4>
+      <p>Compact structured training data may teach format discipline better than conversational data for extraction tasks.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <div class="hypothesis-card">
+      <h4>H7 — There is a distinct "small-model-native" data style</h4>
+      <p>Small models may have a fundamentally different optimal data shape than large models. The winning format defines this shape.</p>
+      <div class="verdict verdict-pending">Verdict: Pending</div>
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="section-title">Pipeline Commands</div>
+    <div class="section-desc">The full experiment is reproducible from config. Every step is a single CLI command.</div>
+
+    <div style="background: #1e1e1e; color: #d4d4d4; padding: 16px 20px; border-radius: 8px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.7; overflow-x: auto;">
+      <div style="color: #6a9955;"># Render format variants from canonical content</div>
+      <div>python scripts/data/render_dataset_formats.py \</div>
+      <div>  --canonical data/canonical/phase9_pilot_300.jsonl \</div>
+      <div>  --output-dir data/sft/format_ablation/</div>
+      <br>
+      <div style="color: #6a9955;"># Validate all formats</div>
+      <div>python scripts/data/validate_dataset_formats.py \</div>
+      <div>  --dataset-dir data/sft/format_ablation/ \</div>
+      <div>  --canonical data/canonical/phase9_pilot_300.jsonl</div>
+      <br>
+      <div style="color: #6a9955;"># Run full format ablation (train + eval + judge + aggregate)</div>
+      <div>python scripts/train/run_format_ablation.py \</div>
+      <div>  --config configs/experiments/format_ablation_quality.yaml</div>
+      <br>
+      <div style="color: #6a9955;"># Generate final report</div>
+      <div>python scripts/report/build_phase09_report.py \</div>
+      <div>  --results-dir results/evals/ \</div>
+      <div>  --output-md reports/09-data-format-ablation.md \</div>
+      <div>  --output-html docs/09-data-format-ablation.html</div>
+    </div>
+
+    <!-- DATASET DOMAINS -->
+    <div class="section-title">Canonical Dataset</div>
+    <p class="section-desc">300 examples across 9 domains, designed for small-model-native training. Every example has a concise ideal answer, natural user phrasing, and explicit constraints.</p>
+
+    <div class="overflow-x">
+    <table>
+      <thead><tr><th>Domain</th><th>Count</th><th>Focus</th></tr></thead>
+      <tbody>
+        <tr><td>Coding</td><td>33</td><td>Functions, bug fixes, code explanation, data structures</td></tr>
+        <tr><td>GameFAQ</td><td>33</td><td>Walkthrough extraction: locations, items, NPCs, bosses, quests → JSON</td></tr>
+        <tr><td>JSON/Structured</td><td>33</td><td>Entity extraction, schema compliance, messy text → structured data</td></tr>
+        <tr><td>Reasoning</td><td>33</td><td>Multi-step logic, arithmetic, constraint solving</td></tr>
+        <tr><td>General</td><td>33</td><td>Concise assistant behaviour, natural Q&A, practical tasks</td></tr>
+        <tr><td>Deobfuscation</td><td>36</td><td>Variable renaming, code simplification, vulnerability identification</td></tr>
+        <tr><td>Factual</td><td>33</td><td>Stable facts, hallucination tendency tests, "I don't know" acceptability</td></tr>
+        <tr><td>Concision</td><td>33</td><td>Anti-slop, under-N-word answers, dense information, no filler</td></tr>
+        <tr><td>Multi-Turn</td><td>33</td><td>2–4 turn conversations, instruction consistency, correction handling</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- RESULTS PLACEHOLDER -->
+    <div class="section-title">Results</div>
+    <div class="callout">
+      <div class="callout-icon">⏳</div>
+      <div class="callout-body">
+        <strong>Training in progress.</strong> Six format ablation adapters are being trained on aero (RTX 2070 Super). Each takes approximately 10–15 minutes (300 steps, 300 examples, LFM2.5-230M). Full pipeline with base eval, training, eval, judging, and aggregation should complete within 2–3 hours. This page will be updated with real results when training finishes.
+      </div>
+    </div>
+
+    <div class="overflow-x">
+    <table>
+      <thead>
+        <tr>
+          <th>Format</th>
+          <th>Final Loss</th>
+          <th>KL Drift</th>
+          <th>Win-rate vs Base</th>
+          <th>JSON Validity</th>
+          <th>Avg Tokens</th>
+          <th>Judge Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Alpaca Flat</td><td colspan="6" style="color: #999; font-style: italic;">Training…</td></tr>
+        <tr><td>Single-Turn Chat</td><td colspan="6" style="color: #999; font-style: italic;">Queued</td></tr>
+        <tr><td>Multi-Turn Concise</td><td colspan="6" style="color: #999; font-style: italic;">Queued</td></tr>
+        <tr><td>Multi-Turn Verbose</td><td colspan="6" style="color: #999; font-style: italic;">Queued</td></tr>
+        <tr><td>Structured Terse</td><td colspan="6" style="color: #999; font-style: italic;">Queued</td></tr>
+        <tr><td>Bad Format Control</td><td colspan="6" style="color: #999; font-style: italic;">Queued</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <!-- WHAT THIS ANSWERS -->
+    <div class="section-title">What This Report Will Answer</div>
+    <ul style="font-size: 0.95rem; line-height: 1.8; color: #333;">
+      <li>Did multi-turn concise still win when content was held constant?</li>
+      <li>Was the smol-magpie-ultra advantage mostly content, mostly format, or both?</li>
+      <li>Which format gives the best behavioural win-rate?</li>
+      <li>Which format gives the best loss? Do loss and quality correlate?</li>
+      <li>Does surgical LoRA preserve the model while still improving target behaviours?</li>
+      <li>Is there a distinct small-model-native data shape?</li>
+      <li>What should we train next?</li>
+    </ul>
+
+    <!-- NEXT -->
+    <div class="section-title">Next Experiments</div>
+    <ul style="font-size: 0.95rem; line-height: 1.8; color: #333;">
+      <li><strong>Surgical adapters</strong> on top 2 formats (hub + o_proj only)</li>
+      <li><strong>bilawal_smol_magpie_v1</strong> — optimized mixture based on ablation findings</li>
+      <li><strong>Cross-format mixture</strong> — weighted blend of multi-turn concise + structured terse</li>
+      <li><strong>Scale test</strong> — repeat best format on LFM2.5-450M or Qwen2.5-0.5B</li>
+      <li><strong>Longer training</strong> — 1000 steps with best format to check for further gains</li>
+    </ul>
+
+    <!-- REPO -->
+    <div class="pullquote">
+      <p>"If you're fine-tuning a small model, spend your time choosing the right data shape, not tuning hyperparameters."</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
+      <p style="font-size: 0.9rem; color: #666; margin: 0;">
+        300 canonical examples &middot; 6 format variants &middot; 153 eval prompts &middot; 9 categories<br>
+        Judge-based scoring &middot; Manual review &middot; KL drift tracking<br>
+        Fully reproducible: <code>python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml</code>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
