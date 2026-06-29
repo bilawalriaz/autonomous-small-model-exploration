@@ -1,0 +1,48 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "timestamp": "20260629_011423",
+  "n_training_examples": 80,
+  "max_steps": 100,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "results": [
+    {
+      "config": "all_linear",
+      "description": "All linear modules, all layers",
+      "status": "success",
+      "trainable_params": 737280,
+      "total_params": 230430464,
+      "trainable_pct": 0.32,
+      "final_loss": 6.3138,
+      "pre_train_kl": 0.0,
+      "post_train_kl": 0.861,
+      "kl_change": 0.861
+    },
+    {
+      "config": "attn_only",
+      "description": "Attention modules on attn layers only",
+      "status": "success",
+      "trainable_params": 344064,
+      "total_params": 230037248,
+      "trainable_pct": 0.15,
+      "final_loss": 6.7553,
+      "pre_train_kl": 0.0,
+      "post_train_kl": 0.3039,
+      "kl_change": 0.3039
+    },
+    {
+      "config": "atlas_guided",
+      "description": "Atlas-guided: o_proj + MLP on hub layers L0,L2,L4,L5",
+      "status": "success",
+      "trainable_params": 65536,
+      "total_params": 229758720,
+      "trainable_pct": 0.029,
+      "final_loss": 8.122,
+      "pre_train_kl": 0.0,
+      "post_train_kl": 0.0595,
+      "kl_change": 0.0595
+    }
+  ]
+}

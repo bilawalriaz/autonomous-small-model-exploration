@@ -91,23 +91,26 @@ def load_training_data(tokenizer, n=80):
     return texts
 
 
-def compute_eval_kl(model, tokenizer, prompts, baseline_logits):
-    """Compute KL divergence between model and baseline on eval prompts."""
+def compute_eval_kl(model, tokenizer, prompts, baseline_dict_dict):
+    """Compute KL divergence between model and baseline on eval prompts.
+    Uses per-prompt baseline logits, comparing only last-token predictions."""
     kls = []
     for prompt in prompts:
         ids = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=256).input_ids.to(model.device)
         with torch.no_grad():
             logits = model(ids).logits
+        bl = baseline_dict_dict[prompt].to(logits.device)
+        # Compare only last token
         kl = torch.nn.functional.kl_div(
-            torch.log_softmax(logits.float(), -1),
-            torch.softmax(baseline_logits.to(logits.device).float(), -1),
+            torch.log_softmax(logits[:, -1, :].float(), -1),
+            torch.softmax(bl[:, -1, :].float(), -1),
             reduction='batchmean'
         ).item()
         kls.append(kl)
     return np.mean(kls)
 
 
-def train_lora_config(config_name, config, model, tokenizer, train_texts, eval_prompts, baseline_logits, seed=42):
+def train_lora_config(config_name, config, model, tokenizer, train_texts, eval_prompts, baseline_dict, seed=42):
     """Train a LoRA adapter with given config and return results."""
     print(f"\n  Training: {config_name} ({config['description']})")
 
@@ -137,7 +140,7 @@ def train_lora_config(config_name, config, model, tokenizer, train_texts, eval_p
     print(f"    Trainable: {trainable:,} / {total:,} ({100*trainable/total:.3f}%)")
 
     # Pre-training KL
-    pre_kl = compute_eval_kl(peft_model, tokenizer, eval_prompts, baseline_logits)
+    pre_kl = compute_eval_kl(peft_model, tokenizer, eval_prompts, baseline_dict)
     print(f"    Pre-train KL: {pre_kl:.4f}")
 
     # Train
@@ -181,7 +184,7 @@ def train_lora_config(config_name, config, model, tokenizer, train_texts, eval_p
         return {"config": config_name, "status": "failed", "error": str(e)}
 
     # Post-training KL
-    post_kl = compute_eval_kl(peft_model, tokenizer, eval_prompts, baseline_logits)
+    post_kl = compute_eval_kl(peft_model, tokenizer, eval_prompts, baseline_dict)
     kl_change = post_kl - pre_kl
     print(f"    Post-train KL: {post_kl:.4f} (change: {kl_change:+.4f})")
 
@@ -243,14 +246,14 @@ def main():
 
     # Compute baseline logits
     print("Computing baseline logits...")
-    baseline_logits = {}
+    baseline_dict = {}
     for prompt in eval_prompts:
         ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
         with torch.no_grad():
-            baseline_logits[prompt] = model(ids).logits.cpu()
+            baseline_dict[prompt] = model(ids).logits.cpu()
 
-    # Use first prompt's logits as reference
-    ref_logits = list(baseline_logits.values())[0]
+    # Use the full dict for per-prompt comparison
+    baseline_dict = baseline_dict
 
     # Run sweeps
     configs_to_run = args.configs or list(CONFIGS.keys())
@@ -266,7 +269,7 @@ def main():
             continue
         result = train_lora_config(
             config_name, CONFIGS[config_name],
-            model, tokenizer, train_texts, eval_prompts, ref_logits, args.seed
+            model, tokenizer, train_texts, eval_prompts, baseline_dict, args.seed
         )
         all_results.append(result)
 
