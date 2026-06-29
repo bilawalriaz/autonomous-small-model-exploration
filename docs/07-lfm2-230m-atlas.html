@@ -302,3 +302,59 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
     <strong>Total runtime:</strong> ~60 minutes &nbsp;|&nbsp;
     <strong>Date:</strong> June 29, 2026
   </p>
+  <!-- CAPABILITY BENCHMARK -->
+  <h2 class="section-label"><i class="fas fa-tasks"></i> Capability Benchmark: Where LFM2.5-230M Excels</h2>
+  <p>82 automated tests across 14 capability categories. Each test has a deterministic pass/fail criterion.</p>
+
+  <div class="tldr-box" style="border-left: 4px solid #52c41a;">
+    <h3><i class="fas fa-star"></i> Deployment Sweet Spots</h3>
+    <p><strong>USE FOR:</strong> Data extraction (70%), structured output generation (83%), entity extraction/NER (83%), code generation and translation (83%), factual Q&A (89%), multilingual tasks (86%), on-device lightweight agentic pipelines.</p>
+    <p style="margin-top: 0.5rem;"><strong>AVOID:</strong> Reasoning-heavy tasks (37%), adversarial/noisy environments (43%), text summarization and reformatting (25%), format-constrained generation with exact requirements (57%).</p>
+    <p style="margin-top: 0.5rem;"><strong>SPEED:</strong> 69-90 tok/s on RTX 2070 Super bf16. ~450MB VRAM. 128K context.</p>
+  </div>
+
+  <table class="atlas">
+    <tr><th>Capability</th><th>Score</th><th>Tests</th><th>Notes</th></tr>
+    <tr><td class="hub-cell">Factual knowledge</td><td class="mono">88.9%</td><td>18</td><td>Strong across geography, science, history, tech. UK-specific weaker.</td></tr>
+    <tr><td class="hub-cell">Multilingual</td><td class="mono">85.7%</td><td>7</td><td>French, Spanish, German, Chinese, Urdu all work. Arabic weaker.</td></tr>
+    <tr><td>Structured output</td><td class="mono">83.3%</td><td>6</td><td>JSON, YAML, CSV, markdown tables. JSON schema draft-07 fails.</td></tr>
+    <tr><td>Code</td><td class="mono">83.3%</td><td>6</td><td>Generation, explanation, Python→JS translation. Bug detection weaker.</td></tr>
+    <tr><td>Entity extraction</td><td class="mono">83.3%</td><td>3</td><td>Names, dates, locations, organizations. Product names weaker.</td></tr>
+    <tr><td>Data extraction</td><td class="mono">70.0%</td><td>5</td><td>Invoice, medical, product fields. Flight booking extraction fails.</td></tr>
+    <tr><td>Math</td><td class="mono">73.3%</td><td>15</td><td>Integer arithmetic solid. Percentages good. Word problems weaker.</td></tr>
+    <tr><td>Classification</td><td class="mono">66.7%</td><td>6</td><td>Sentiment strong. Topic classification (science vs tech) weaker.</td></tr>
+    <tr><td>Agentic patterns</td><td class="mono">66.7%</td><td>3</td><td>API error analysis and action planning. Multi-tool coordination weaker.</td></tr>
+    <tr><td>Instruction following</td><td class="mono">57.1%</td><td>7</td><td>Lists and translations OK. Exact word counts and "ONLY" constraints fail.</td></tr>
+    <tr><td>Robustness</td><td class="mono">42.9%</td><td>7</td><td>Injection resistance OK. Typo tolerance, all-caps, scrambled order fail.</td></tr>
+    <tr><td>Reasoning</td><td class="mono">37.5%</td><td>8</td><td>Logic puzzles weak. Syllogisms, trick questions, pattern completion fail.</td></tr>
+    <tr><td>Text transformation</td><td class="mono">25.0%</td><td>4</td><td>Summarization, style conversion, step extraction mostly fail.</td></tr>
+  </table>
+
+  <!-- Speed -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Inference Speed (RTX 2070 Super, bf16)</h3>
+  <table class="atlas">
+    <tr><th>Prompt Length</th><th>Tokens/sec</th><th>Latency (100 tokens)</th></tr>
+    <tr><td>Short (6 tokens)</td><td class="mono">69.0</td><td>1.45s</td></tr>
+    <tr><td>Medium (23 tokens)</td><td class="mono">90.3</td><td>1.11s</td></tr>
+    <tr><td>Long (51 tokens)</td><td class="mono">90.6</td><td>1.10s</td></tr>
+  </table>
+  <p>Faster at longer prompts due to parallel prefill. Sustained ~90 tok/s decode.</p>
+
+  <!-- Use Case Matrix -->
+  <h3 style="font-family: 'Google Sans', sans-serif; font-size: 1.1rem; margin: 1.5rem 0 0.5rem;">Recommended Use Cases</h3>
+  <table class="atlas">
+    <tr><th>Use Case</th><th>Fit</th><th>Why</th></tr>
+    <tr><td>Invoice/receipt parsing</td><td class="hub-cell">Excellent</td><td>Structured extraction from known formats</td></tr>
+    <tr><td>Entity extraction pipeline</td><td class="hub-cell">Excellent</td><td>NER at 83%, fast enough for real-time</td></tr>
+    <tr><td>JSON API response parsing</td><td class="hub-cell">Excellent</td><td>Structured output at 83%, tiny footprint</td></tr>
+    <tr><td>Code snippet generation</td><td>Good</td><td>Simple functions, translations, explanations</td></tr>
+    <tr><td>Multilingual chatbot (basic)</td><td>Good</td><td>86% across 6 languages</td></tr>
+    <tr><td>Factual Q&A (constrained domain)</td><td>Good</td><td>89% factual accuracy on general knowledge</td></tr>
+    <tr><td>On-device data extraction agent</td><td>Good</td><td>Model card recommendation, verified at 70%</td></tr>
+    <tr><td>Sentiment analysis</td><td>Moderate</td><td>Positive/negative detection works, nuance weaker</td></tr>
+    <tr><td>Math tutoring (basic)</td><td>Moderate</td><td>Arithmetic solid, explanation quality varies</td></tr>
+    <tr><td>Text summarization</td><td>Poor</td><td>Only 25% on transformation tasks</td></tr>
+    <tr><td>Complex reasoning</td><td>Poor</td><td>37.5% on logic puzzles</td></tr>
+    <tr><td>Adversarial/noisy input</td><td>Poor</td><td>42.9% robustness — needs clean input</td></tr>
+  </table>
+
