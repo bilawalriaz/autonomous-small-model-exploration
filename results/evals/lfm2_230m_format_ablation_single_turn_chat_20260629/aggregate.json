@@ -1,0 +1,403 @@
+{
+  "run_id": "lfm2_230m_format_ablation_single_turn_chat_20260629",
+  "pointwise": {
+    "count": 153,
+    "avg_scores": {
+      "correctness": 3.098,
+      "instruction_following": 2.954,
+      "output_format": 3.026,
+      "concision": 3.183,
+      "usefulness": 3.183,
+      "hallucination_risk": 2.935,
+      "overall": 2.719
+    },
+    "category_scores": {
+      "instruction_following": {
+        "avg_scores": {
+          "correctness": 3.706,
+          "instruction_following": 2.765,
+          "output_format": 2.824,
+          "concision": 3.529,
+          "usefulness": 3.235,
+          "hallucination_risk": 2.941,
+          "overall": 2.353
+        },
+        "count": 17
+      },
+      "json_structured": {
+        "avg_scores": {
+          "correctness": 2.353,
+          "instruction_following": 3.353,
+          "output_format": 3.294,
+          "concision": 3.0,
+          "usefulness": 3.765,
+          "hallucination_risk": 3.0,
+          "overall": 3.118
+        },
+        "count": 17
+      },
+      "gamefaq_extraction": {
+        "avg_scores": {
+          "correctness": 3.471,
+          "instruction_following": 2.529,
+          "output_format": 3.529,
+          "concision": 3.471,
+          "usefulness": 2.941,
+          "hallucination_risk": 3.0,
+          "overall": 1.941
+        },
+        "count": 17
+      },
+      "coding": {
+        "avg_scores": {
+          "correctness": 2.941,
+          "instruction_following": 2.588,
+          "output_format": 2.824,
+          "concision": 3.529,
+          "usefulness": 3.176,
+          "hallucination_risk": 2.647,
+          "overall": 2.941
+        },
+        "count": 17
+      },
+      "deobfuscation": {
+        "avg_scores": {
+          "correctness": 3.294,
+          "instruction_following": 2.882,
+          "output_format": 3.0,
+          "concision": 2.588,
+          "usefulness": 3.0,
+          "hallucination_risk": 2.824,
+          "overall": 3.176
+        },
+        "count": 17
+      },
+      "reasoning": {
+        "avg_scores": {
+          "correctness": 3.176,
+          "instruction_following": 3.353,
+          "output_format": 2.706,
+          "concision": 2.941,
+          "usefulness": 3.824,
+          "hallucination_risk": 3.471,
+          "overall": 2.412
+        },
+        "count": 17
+      },
+      "concision_antislip": {
+        "avg_scores": {
+          "correctness": 3.118,
+          "instruction_following": 2.588,
+          "output_format": 3.0,
+          "concision": 3.118,
+          "usefulness": 2.882,
+          "hallucination_risk": 3.765,
+          "overall": 2.412
+        },
+        "count": 17
+      },
+      "factual_qa": {
+        "avg_scores": {
+          "correctness": 3.118,
+          "instruction_following": 3.529,
+          "output_format": 2.765,
+          "concision": 3.294,
+          "usefulness": 2.941,
+          "hallucination_risk": 2.529,
+          "overall": 2.941
+        },
+        "count": 17
+      },
+      "multi_turn": {
+        "avg_scores": {
+          "correctness": 2.706,
+          "instruction_following": 3.0,
+          "output_format": 3.294,
+          "concision": 3.176,
+          "usefulness": 2.882,
+          "hallucination_risk": 2.235,
+          "overall": 3.176
+        },
+        "count": 17
+      }
+    }
+  },
+  "pairwise": {},
+  "format": {
+    "json_format_validity_rate": 1.0,
+    "json_task_count": 34,
+    "avg_output_length": 41.1,
+    "slop_phrase_rate": 0.0,
+    "slop_phrase_total": 0,
+    "total_outputs": 153
+  },
+  "comparisons": {
+    "lfm2_230m_base_20260629": {
+      "win_rate": 0.5,
+      "regression": {
+        "regressions": 0,
+        "improvements": 0,
+        "regression_details": [],
+        "improvement_details": []
+      },
+      "baseline_avg_scores": {
+        "correctness": 3.098,
+        "instruction_following": 2.954,
+        "output_format": 3.026,
+        "concision": 3.183,
+        "usefulness": 3.183,
+        "hallucination_risk": 2.935,
+        "overall": 2.719
+      }
+    }
+  },
+  "programmatic_metrics": {
+    "json_validity": {
+      "total_checked": 153,
+      "valid_count": 46,
+      "valid_rate": 0.3007,
+      "per_category": {
+        "instruction_following": {
+          "total": 17,
+          "valid": 4,
+          "valid_rate": 0.2353
+        },
+        "json_structured": {
+          "total": 17,
+          "valid": 17,
+          "valid_rate": 1.0
+        },
+        "gamefaq_extraction": {
+          "total": 17,
+          "valid": 17,
+          "valid_rate": 1.0
+        },
+        "coding": {
+          "total": 17,
+          "valid": 4,
+          "valid_rate": 0.2353
+        },
+        "deobfuscation": {
+          "total": 17,
+          "valid": 2,
+          "valid_rate": 0.1176
+        },
+        "reasoning": {
+          "total": 17,
+          "valid": 0,
+          "valid_rate": 0.0
+        },
+        "concision_antislip": {
+          "total": 17,
+          "valid": 0,
+          "valid_rate": 0.0
+        },
+        "factual_qa": {
+          "total": 17,
+          "valid": 0,
+          "valid_rate": 0.0
+        },
+        "multi_turn": {
+          "total": 17,
+          "valid": 2,
+          "valid_rate": 0.1176
+        }
+      }
+    },
+    "slop_phrases": {
+      "total_checked": 153,
+      "responses_with_slop": 0,
+      "slop_response_rate": 0.0,
+      "total_slop_phrases": 0,
+      "avg_slop_per_response": 0.0,
+      "per_category": {
+        "instruction_following": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "json_structured": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "gamefaq_extraction": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "coding": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "deobfuscation": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "reasoning": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "concision_antislip": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "factual_qa": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        },
+        "multi_turn": {
+          "total": 17,
+          "responses_with_slop": 0,
+          "total_phrases": 0
+        }
+      }
+    },
+    "output_length": {
+      "total_checked": 153,
+      "token_count": {
+        "mean": 17.31,
+        "median": 16,
+        "min": 1,
+        "max": 61,
+        "p25": 9,
+        "p75": 24,
+        "stdev": 11.78
+      },
+      "char_count": {
+        "mean": 124.06,
+        "median": 101,
+        "min": 3,
+        "max": 490
+      },
+      "line_count": {
+        "mean": 2.14
+      },
+      "per_category": {
+        "instruction_following": {
+          "total": 17,
+          "token_mean": 6.41,
+          "token_median": 5,
+          "token_min": 1,
+          "token_max": 18
+        },
+        "json_structured": {
+          "total": 17,
+          "token_mean": 14.88,
+          "token_median": 15,
+          "token_min": 2,
+          "token_max": 32
+        },
+        "gamefaq_extraction": {
+          "total": 17,
+          "token_mean": 31.53,
+          "token_median": 28,
+          "token_min": 4,
+          "token_max": 61
+        },
+        "coding": {
+          "total": 17,
+          "token_mean": 21.18,
+          "token_median": 17,
+          "token_min": 4,
+          "token_max": 49
+        },
+        "deobfuscation": {
+          "total": 17,
+          "token_mean": 20.18,
+          "token_median": 19,
+          "token_min": 10,
+          "token_max": 38
+        },
+        "reasoning": {
+          "total": 17,
+          "token_mean": 15.76,
+          "token_median": 15,
+          "token_min": 1,
+          "token_max": 38
+        },
+        "concision_antislip": {
+          "total": 17,
+          "token_mean": 21.29,
+          "token_median": 20,
+          "token_min": 10,
+          "token_max": 41
+        },
+        "factual_qa": {
+          "total": 17,
+          "token_mean": 5.76,
+          "token_median": 3,
+          "token_min": 1,
+          "token_max": 31
+        },
+        "multi_turn": {
+          "total": 17,
+          "token_mean": 18.76,
+          "token_median": 17,
+          "token_min": 8,
+          "token_max": 34
+        }
+      }
+    },
+    "constraint_following": {
+      "total_checked": 153,
+      "compliant_count": 0,
+      "compliance_rate": null,
+      "per_category": {
+        "instruction_following": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "json_structured": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "gamefaq_extraction": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "coding": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "deobfuscation": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "reasoning": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "concision_antislip": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "factual_qa": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        },
+        "multi_turn": {
+          "total": 17,
+          "compliant": 0,
+          "compliance_rate": null
+        }
+      }
+    }
+  },
+  "judge_source_summary": {
+    "mock": 153
+  }
+}

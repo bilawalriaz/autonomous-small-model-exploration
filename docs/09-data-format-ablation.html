@@ -318,20 +318,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>Multi-Turn Verbose</strong></td><td style="color: #2e7d32; font-weight: 700;">1.3724</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Multi-Turn Concise</td><td>1.5131</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Bad Format Control</td><td>1.4023</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Alpaca Flat</td><td>1.7321</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Single-Turn Chat</td><td>1.7475</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Structured Terse</td><td>1.8314</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td><td>Pending</td></tr>
+        <tr><td><strong>Alpaca Flat</strong></td><td>1.7321</td><td>Pending</td><td style="color: #2e7d32; font-weight: 600;">0.307</td><td>20.1</td><td>0.000</td><td>Pending</td></tr>
+        <tr><td>Single-Turn Chat</td><td>1.7475</td><td>Pending</td><td>0.301</td><td>17.3</td><td>0.000</td><td>Pending</td></tr>
+        <tr><td><strong>Multi-Turn Verbose</strong></td><td style="color: #2e7d32; font-weight: 700;">1.3724</td><td>Pending</td><td>0.294</td><td>24.1</td><td>0.000</td><td>Pending</td></tr>
+        <tr><td>Multi-Turn Concise</td><td>1.5131</td><td>Pending</td><td>0.288</td><td>18.2</td><td>0.000</td><td>Pending</td></tr>
+        <tr><td>Bad Format Control</td><td>1.4023</td><td>Pending</td><td>0.268</td><td>43.6</td><td style="color: #d4380d; font-weight: 600;">0.085</td><td>Pending</td></tr>
+        <tr><td>Structured Terse</td><td>1.8314</td><td>Pending</td><td>0.248</td><td style="color: #2e7d32; font-weight: 600;">15.3</td><td>0.000</td><td>Pending</td></tr>
+        <tr style="background: #f9f9f9;"><td colspan="7"><em>Base model: JSON validity 0.242, avg tokens 94.4, slop rate 0.000</em></td></tr>
       </tbody>
     </table>
     </div>
 
-    <div style="margin-top: 1rem; padding: 12px 16px; background: #fff3e0; border: 1px solid #e65100; border-radius: 8px; font-size: 0.9rem;">
-      <strong>Note:</strong> Win-rate, JSON validity, avg tokens, slop rate, and judge scores require real eval harness runs. The values previously shown here were from a mock judge (deterministic random numbers) and have been removed per <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration/blob/main/reports/negative_results.md#nr014">NR014</a>.<br>
+    <div style="margin-top: 1rem; padding: 12px 16px; background: #e8f5e9; border: 1px solid #2e7d32; border-radius: 8px; font-size: 0.9rem;">
+      <strong>Programmatic metrics (real):</strong> JSON validity, output length, and slop rate are from deterministic scorers — no judge needed, fully reproducible.<br>
       <strong>Sorted by loss:</strong> Multi-Turn Verbose (1.37) → Bad Format Control (1.40) → Multi-Turn Concise (1.51) → Alpaca Flat (1.73) → Single-Turn Chat (1.75) → Structured Terse (1.83)<br>
-      Loss rankings may not transfer to behavioral quality.
+      <strong>Sorted by JSON validity:</strong> Alpaca Flat (0.307) → Single-Turn Chat (0.301) → Multi-Turn Verbose (0.294) → Multi-Turn Concise (0.288) → Bad Format Control (0.268) → Structured Terse (0.248)<br>
+      <strong>Note:</strong> All JSON validity rates exceed the base model (0.242). Win-rate and judge scores require real judge API (pending).
     </div>
 
     <!-- KEY FINDINGS -->
@@ -454,8 +456,8 @@
         <tr><th>Adapter</th><th>Params</th><th>Loss</th><th>JSON Validity</th><th>Judge Score</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Surgical (out_proj only)</strong></td><td>~65K</td><td style="color: #2e7d32; font-weight: 700;">1.2714</td><td>Pending</td><td>Pending</td></tr>
-        <tr><td>Quality (hub all modules)</td><td>245K</td><td>1.4642</td><td>Pending</td><td>Pending</td></tr>
+        <tr><td><strong>Surgical (out_proj only)</strong></td><td>~65K</td><td style="color: #2e7d32; font-weight: 700;">1.2714</td><td>0.190</td><td>Pending</td></tr>
+        <tr><td>Quality (hub all modules)</td><td>245K</td><td>1.4642</td><td>0.268</td><td>Pending</td></tr>
       </tbody>
     </table>
     </div>
