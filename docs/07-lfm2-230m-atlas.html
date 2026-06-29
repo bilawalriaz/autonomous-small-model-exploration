@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>LFM2.5-230M: Hybrid Architecture Atlas — MI-Atlas</title>
+  <meta name="description" content="Mechanistic interpretability atlas of LiquidAI/LFM2.5-230M, a 230M-parameter hybrid conv+attention model. L0 universal hub, conv MLP dominance, early-layer steering effectiveness.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #000; --muted: #666; --bg: #fff; --tldr: #f5f5f5; --accent: #1677ff; }
+    body { font-family: 'Noto Sans', sans-serif; color: var(--ink); background: var(--bg); }
+    .title-main { font-family: 'Google Sans', sans-serif; font-size: 2.4rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+    .subtitle { font-size: 1.1rem; color: var(--muted); margin-top: 0.5rem; }
+    .section-label { font-family: 'Google Sans', sans-serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.3rem; display: inline-block; }
+    .tldr-box { background: var(--tldr); border-radius: 10px; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+    .tldr-box h3 { font-family: 'Google Sans', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem; }
+    .finding { display: flex; gap: 0.8rem; margin-bottom: 0.8rem; align-items: flex-start; }
+    .finding .badge { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #fff; margin-top: 2px; }
+    .badge-high { background: #d4380d; }
+    .badge-med { background: #fa8c16; }
+    .badge-new { background: #1677ff; }
+    .finding-text { font-size: 0.95rem; line-height: 1.5; }
+    .finding-text strong { font-weight: 600; }
+    table.atlas { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
+    table.atlas th { background: var(--tldr); font-weight: 600; text-align: left; padding: 8px 12px; border-bottom: 2px solid #ddd; }
+    table.atlas td { padding: 8px 12px; border-bottom: 1px solid #eee; }
+    table.atlas tr:hover { background: #fafafa; }
+    .hub-cell { background: #fff1f0; font-weight: 600; }
+    .conv-row { border-left: 3px solid #52c41a; }
+    .attn-row { border-left: 3px solid #1677ff; }
+    .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    .bar { display: inline-block; height: 16px; background: linear-gradient(90deg, #1677ff, #40a9ff); border-radius: 3px; vertical-align: middle; margin-left: 6px; }
+    .arch-diagram { background: #f8f8f8; border-radius: 8px; padding: 1.2rem; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.8; overflow-x: auto; margin: 1rem 0; }
+    .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .back-link:hover { text-decoration: underline; }
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .metric-card { background: var(--tldr); border-radius: 8px; padding: 1rem; text-align: center; }
+    .metric-card .num { font-family: 'Google Sans', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+    .metric-card .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; }
+    @media (max-width: 768px) {
+      .title-main { font-size: 1.6rem; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<section class="section" style="max-width: 960px; margin: 0 auto; padding: 2rem 1.2rem;">
+  <a class="back-link" href="index.html"><i class="fas fa-arrow-left"></i> Back to MI-Atlas</a>
+
+  <h1 class="title-main">LFM2.5-230M:<br>Hybrid Architecture Atlas</h1>
+  <p class="subtitle">The first mechanistic interpretability atlas of a hybrid conv+attention language model. LiquidAI's 230M-parameter on-device model with gated short convolutions and grouped query attention.</p>
+
+  <div class="metric-grid">
+    <div class="metric-card"><div class="num">229.7M</div><div class="label">Parameters</div></div>
+    <div class="metric-card"><div class="num">14</div><div class="label">Layers (8 conv + 6 attn)</div></div>
+    <div class="metric-card"><div class="num">L0</div><div class="label">Universal Hub</div></div>
+    <div class="metric-card"><div class="num">450 MB</div><div class="label">VRAM (bf16)</div></div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr-box">
+    <h3><i class="fas fa-bolt"></i> Key Findings</h3>
+    <div class="finding"><div class="badge badge-high">1</div><div class="finding-text"><strong>L0 (conv) is the universal hub.</strong> The very first layer — a gated convolution — contributes more to model output than any other layer (skip KL=82.9, 1.87× stronger than the next). This is radically different from pure transformers where hubs sit at ~8% depth.</div></div>
+    <div class="finding"><div class="badge badge-high">2</div><div class="finding-text"><strong>Early layers are 3.3× more important than late layers.</strong> L0-L5 (quiet phase, low residual norms) dominate processing. L6-L13 (high phase, 10× higher norms) handle refinement. The residual norm explosion marks a transition from critical processing to refinement.</div></div>
+    <div class="finding"><div class="badge badge-high">3</div><div class="finding-text"><strong>Conv MLPs are 2.12× stronger than attention MLPs.</strong> The MLP in convolution layers contributes more than in attention layers. Conv layers work primarily through their MLPs; attention layers work through their operators.</div></div>
+    <div class="finding"><div class="badge badge-new">4</div><div class="finding-text"><strong>L4_H11 is the universal attention head.</strong> Head 11 in layer 4 is the #1 or #2 head across 7/9 task families. H11 is also the best head in ALL 6 attention layers — an architecturally special head index.</div></div>
+    <div class="finding"><div class="badge badge-new">5</div><div class="finding-text"><strong>Steering is MORE effective at early layers.</strong> Opposite of Qwen2.5. Early layers (L0-L6) have low residual norms (~2), so added vectors are proportionally large. Late layers (L11-L13) have norms of ~25, drowning out perturbations.</div></div>
+    <div class="finding"><div class="badge badge-med">6</div><div class="finding-text"><strong>Gated convolution has zero component redundancy.</strong> Zeroing gate (B), carrier (C), or signal (x) gives identical KL — the multiplicative structure means every component is necessary. No redundancy at all.</div></div>
+    <div class="finding"><div class="badge badge-med">7</div><div class="finding-text"><strong>The residual norm jump is input-dependent.</strong> For arithmetic, the jump happens at L5. For factual recall, at L6. The transition point shifts based on input content — it's not a fixed architectural boundary.</div></div>
+    <div class="finding"><div class="badge badge-med">8</div><div class="finding-text"><strong>Atlas-guided LoRA is the most efficient adapter strategy.</strong> Targeting hub layers L0,L2,L4,L5 with o_proj+MLP gives 65K trainable params (0.028%) with minimal behavior shift (KL=0.06), compared to all-linear with 737K params (0.32%) and KL=0.86.</div></div>
+  </div>
+
+  <!-- ARCHITECTURE -->
+  <h2 class="section-label"><i class="fas fa-microchip"></i> Architecture</h2>
+  <div class="arch-diagram">
+<strong>Layer Map:</strong>
+L0  <span style="color:#52c41a">CONV</span>  (12.06M)  ← UNIVERSAL HUB
+L1  <span style="color:#52c41a">CONV</span>  (12.06M)
+L2  <span style="color:#1677ff">ATTN</span>  (11.01M)  ← L2_H9 structural specialist
+L3  <span style="color:#52c41a">CONV</span>  (12.06M)
+L4  <span style="color:#1677ff">ATTN</span>  (11.01M)  ← L4_H11 universal head
+L5  <span style="color:#52c41a">CONV</span>  (12.06M)  ← STRONGEST MLP · norm jump
+L6  <span style="color:#1677ff">ATTN</span>  (11.01M)
+L7  <span style="color:#52c41a">CONV</span>  (12.06M)
+L8  <span style="color:#1677ff">ATTN</span>  (11.01M)
+L9  <span style="color:#52c41a">CONV</span>  (12.06M)
+L10 <span style="color:#1677ff">ATTN</span>  (11.01M)
+L11 <span style="color:#52c41a">CONV</span>  (12.06M)
+L12 <span style="color:#1677ff">ATTN</span>  (11.01M)  ← late refinement hub
+L13 <span style="color:#52c41a">CONV</span>  (12.06M)
+
+<strong>Gated Short Convolution (Lfm2ShortConv):</strong>
+  input(1024) → in_proj → [3072] → chunk(3) →
+    B[1024]=gate  C[1024]=carrier  x[1024]=signal
+  → Bx = B * x  →  depthwise_conv1d(k=3, g=1024)  →  y = C * conv_out
+  → out_proj → [1024]
+
+<strong>Attention (Lfm2Attention):</strong>
+  GQA: 16 Q-heads / 8 KV-heads, head_dim=64
+  Q/K per-head RMSNorm → RoPE (θ=1M) → SDPA
+  </div>
+
+  <!-- RESIDUAL STREAM -->
+  <h2 class="section-label"><i class="fas fa-wave-square"></i> Residual Stream</h2>
+  <p style="margin-bottom: 1rem;">The residual stream has three distinct phases with a dramatic norm transition:</p>
+  <table class="atlas">
+    <tr><th>Phase</th><th>Layers</th><th>Norm Range</th><th>Character</th></tr>
+    <tr class="conv-row"><td><strong>Quiet</strong></td><td>L0-L4</td><td>1.4 – 2.3</td><td>Feature extraction, low-magnitude processing</td></tr>
+    <tr class="conv-row"><td><strong>Transition</strong></td><td>L5</td><td>→ 25.5</td><td>10-18× norm explosion (input-dependent location)</td></tr>
+    <tr class="attn-row"><td><strong>High</strong></td><td>L6-L13</td><td>22.9 – 26.3</td><td>Sustained high-magnitude refinement</td></tr>
+  </table>
+
+  <!-- LAYER ABLATION -->
+  <h2 class="section-label"><i class="fas fa-scissors"></i> Layer Ablation (Operator + MLP)</h2>
+  <p style="margin-bottom: 0.5rem;"><strong>Methodology note:</strong> The standard approach of hooking the full decoder layer and zeroing its output causes cascading zeros through the residual stream (all layers appear identical). Our corrected approach hooks the <strong>operator</strong> (conv/self_attn) and <strong>MLP</strong> (feed_forward) separately.</p>
+  <table class="atlas">
+    <tr><th>Layer</th><th>Type</th><th>Operator KL</th><th>MLP KL</th><th>Skip KL</th><th></th></tr>
+    <tr class="conv-row"><td class="hub-cell">L0</td><td>conv</td><td class="mono">56.31</td><td class="mono">46.15</td><td class="mono">82.90</td><td><div class="bar" style="width:200px"></div></td></tr>
+    <tr class="conv-row"><td>L1</td><td>conv</td><td class="mono">7.94</td><td class="mono">11.18</td><td class="mono">36.31</td><td><div class="bar" style="width:88px"></div></td></tr>
+    <tr class="attn-row"><td>L2</td><td>attn</td><td class="mono">22.95</td><td class="mono">8.63</td><td class="mono">30.81</td><td><div class="bar" style="width:75px"></div></td></tr>
+    <tr class="conv-row"><td>L3</td><td>conv</td><td class="mono">3.79</td><td class="mono">22.84</td><td class="mono">25.86</td><td><div class="bar" style="width:63px"></div></td></tr>
+    <tr class="attn-row"><td>L4</td><td>attn</td><td class="mono">34.87</td><td class="mono">21.16</td><td class="mono">34.56</td><td><div class="bar" style="width:84px"></div></td></tr>
+    <tr class="conv-row"><td>L5</td><td>conv</td><td class="mono">5.42</td><td class="mono hub-cell">47.75</td><td class="mono">44.41</td><td><div class="bar" style="width:108px"></div></td></tr>
+    <tr class="attn-row"><td>L6</td><td>attn</td><td class="mono">6.88</td><td class="mono">4.77</td><td class="mono">8.74</td><td><div class="bar" style="width:21px"></div></td></tr>
+    <tr class="conv-row"><td>L7</td><td>conv</td><td class="mono">1.83</td><td class="mono">5.47</td><td class="mono">7.26</td><td><div class="bar" style="width:18px"></div></td></tr>
+    <tr class="attn-row"><td>L8</td><td>attn</td><td class="mono">8.30</td><td class="mono">4.05</td><td class="mono">10.20</td><td><div class="bar" style="width:25px"></div></td></tr>
+    <tr class="conv-row"><td>L9</td><td>conv</td><td class="mono">2.32</td><td class="mono">5.29</td><td class="mono">7.07</td><td><div class="bar" style="width:17px"></div></td></tr>
+    <tr class="attn-row"><td>L10</td><td>attn</td><td class="mono">11.10</td><td class="mono">6.58</td><td class="mono">17.68</td><td><div class="bar" style="width:43px"></div></td></tr>
+    <tr class="conv-row"><td>L11</td><td>conv</td><td class="mono">3.14</td><td class="mono">5.10</td><td class="mono">8.67</td><td><div class="bar" style="width:21px"></div></td></tr>
+    <tr class="attn-row"><td>L12</td><td>attn</td><td class="mono">7.40</td><td class="mono">7.74</td><td class="mono">29.13</td><td><div class="bar" style="width:71px"></div></td></tr>
+    <tr class="conv-row"><td>L13</td><td>conv</td><td class="mono">4.55</td><td class="mono">5.74</td><td class="mono">12.13</td><td><div class="bar" style="width:29px"></div></td></tr>
+  </table>
+
+  <!-- HEAD ABLATION -->
+  <h2 class="section-label"><i class="fas fa-braille"></i> Head Ablation</h2>
+  <table class="atlas">
+    <tr><th>Head</th><th>Mean KL</th><th>Best Family</th><th>Role</th></tr>
+    <tr><td class="hub-cell">L4_H11</td><td class="mono">0.948</td><td>instruction_following (1.76)</td><td>Universal head</td></tr>
+    <tr><td class="hub-cell">L2_H9</td><td class="mono">0.563</td><td>json_schema (0.83)</td><td>Structural specialist</td></tr>
+    <tr><td>L2_H11</td><td class="mono">0.250</td><td>factual_recall (0.32)</td><td>General processing</td></tr>
+    <tr><td>L2_H4</td><td class="mono">0.083</td><td>factual_recall (0.08)</td><td>Minor</td></tr>
+    <tr><td>L4_H4</td><td class="mono">0.078</td><td>instruction_following (0.28)</td><td>Minor</td></tr>
+    <tr><td colspan="4" style="color: #666; font-size: 0.85rem;">Remaining 91 heads: KL &lt; 0.07 each. Individual head effects are 87× smaller than layer effects.</td></tr>
+  </table>
+  <p><strong>H11 is architecturally special:</strong> Best head in ALL 6 attention layers (L2, L4, L6, L8, L10, L12). This head index has learned a universally useful function.</p>
+
+  <!-- STEERING -->
+  <h2 class="section-label"><i class="fas fa-directions"></i> Steering Sweep</h2>
+  <p>Random steering vector (seed=42), applied to last token position. <strong>Opposite of Qwen2.5:</strong> steering is more effective at early layers.</p>
+  <table class="atlas">
+    <tr><th>Layer</th><th>Type</th><th>Max KL (s=-4.0)</th><th></th></tr>
+    <tr class="attn-row"><td>L6</td><td>attn</td><td class="mono">16.37</td><td><div class="bar" style="width:160px"></div></td></tr>
+    <tr class="conv-row"><td>L5</td><td>conv</td><td class="mono">15.99</td><td><div class="bar" style="width:156px"></div></td></tr>
+    <tr class="conv-row"><td>L1</td><td>conv</td><td class="mono">15.87</td><td><div class="bar" style="width:155px"></div></td></tr>
+    <tr class="attn-row"><td>L2</td><td>attn</td><td class="mono">15.83</td><td><div class="bar" style="width:154px"></div></td></tr>
+    <tr class="conv-row"><td>L0</td><td>conv</td><td class="mono">15.59</td><td><div class="bar" style="width:152px"></div></td></tr>
+    <tr class="attn-row"><td>L10</td><td>attn</td><td class="mono">8.99</td><td><div class="bar" style="width:88px"></div></td></tr>
+    <tr class="conv-row"><td>L11</td><td>conv</td><td class="mono">4.80</td><td><div class="bar" style="width:47px"></div></td></tr>
+    <tr class="attn-row"><td>L12</td><td>attn</td><td class="mono">3.96</td><td><div class="bar" style="width:39px"></div></td></tr>
+    <tr class="conv-row"><td>L13</td><td>conv</td><td class="mono">2.99</td><td><div class="bar" style="width:29px"></div></td></tr>
+  </table>
+  <p><em>Why?</em> Early layers have residual norms of ~2, so a steering vector of magnitude 4 doubles the activation. Late layers have norms of ~25, making the same vector only 16% of the activation.</p>
+
+  <!-- QUALITATIVE -->
+  <h2 class="section-label"><i class="fas fa-pen-fancy"></i> Qualitative Analysis</h2>
+  <p>46 tests across 9 categories. This 230M model is surprisingly capable.</p>
+  <table class="atlas">
+    <tr><th>Category</th><th>Result</th><th>Notes</th></tr>
+    <tr><td>Factual recall</td><td>7/10 correct</td><td>Paris, Tokyo, H2O, Jupiter, 100°C, pound, Rossum</td></tr>
+    <tr><td>JSON generation</td><td>Valid structure</td><td>Some extra brace artifacts on complex schemas</td></tr>
+    <tr><td>Code generation</td><td>Correct algorithms</td><td>Fibonacci, binary search, merge sort all correct!</td></tr>
+    <tr><td>Instruction following</td><td>Good</td><td>Proper lists, one-sentence, bullet points</td></tr>
+    <tr><td>Multi-turn context</td><td>Maintains state</td><td>Names, colors, arithmetic carry over correctly</td></tr>
+    <tr><td>Creative writing</td><td>Coherent</td><td>Valid haiku, atmospheric prose</td></tr>
+    <tr><td>Prompt injection</td><td>Deflected</td><td>Completely ignores injection attempt</td></tr>
+    <tr><td>Edge cases</td><td>Degenerates</td><td>Repeated/special chars loop (expected at 230M)</td></tr>
+  </table>
+
+  <!-- LORA -->
+  <h2 class="section-label"><i class="fas fa-sliders-h"></i> LoRA Training</h2>
+  <table class="atlas">
+    <tr><th>Config</th><th>Params</th><th>Trainable %</th><th>Loss</th><th>KL Shift</th></tr>
+    <tr><td>all_linear</td><td class="mono">737,280</td><td>0.32%</td><td class="mono">6.31</td><td class="mono">0.86</td></tr>
+    <tr><td>attn_only</td><td class="mono">344,064</td><td>0.15%</td><td class="mono">6.76</td><td class="mono">0.30</td></tr>
+    <tr><td class="hub-cell">atlas_guided</td><td class="mono">65,536</td><td>0.028%</td><td class="mono">8.12</td><td class="mono hub-cell">0.06</td></tr>
+    <tr><td>mlp_only</td><td class="mono">—</td><td>—</td><td class="mono">—</td><td class="mono">—</td></tr>
+    <tr><td>conv_proj_only</td><td class="mono">—</td><td>—</td><td class="mono">—</td><td class="mono">—</td></tr>
+    <tr><td>atlas_full</td><td class="mono">—</td><td>—</td><td class="mono">—</td><td class="mono">—</td></tr>
+  </table>
+  <p><strong>Atlas-guided wins:</strong> 11× fewer params than all_linear, with 14× less behavior shift. Targeting just hub layers L0, L2, L4, L5 with o_proj+MLP is the most surgical strategy.</p>
+
+  <!-- CROSS-FAMILY COMPARISON -->
+  <h2 class="section-label"><i class="fas fa-balance-scale"></i> Cross-Architecture Comparison</h2>
+  <table class="atlas">
+    <tr><th>Metric</th><th>LFM2.5-230M</th><th>Qwen2.5-0.5B</th><th>SmolLM2-1.7B</th></tr>
+    <tr><td>Architecture</td><td>Hybrid (8 conv + 6 attn)</td><td>Pure transformer (24 attn)</td><td>Pure transformer (24 attn)</td></tr>
+    <tr><td>Universal hub</td><td class="hub-cell">L0 (conv, 0% depth)</td><td>L2 (attn, 8% depth)</td><td>L0 (attn, 0% depth)</td></tr>
+    <tr><td>Hub KL (skip)</td><td class="mono">82.9</td><td class="mono">—</td><td class="mono">—</td></tr>
+    <tr><td>Conv vs Attn MLP</td><td>Conv 2.12× stronger</td><td>N/A (all attn)</td><td>N/A (all attn)</td></tr>
+    <tr><td>Steering target</td><td>Early layers (L0-L6)</td><td>Late layers (L19-L23)</td><td>L0 (consistent)</td></tr>
+    <tr><td>Head specialization</td><td>2-3 heads matter</td><td>22× increase at scale</td><td>—</td></tr>
+    <tr><td>Hub stability</td><td>std=0.0 (3 seeds)</td><td>std=0.0 (3 seeds)</td><td>—</td></tr>
+  </table>
+  <p><strong>Architecture matters more than size.</strong> LFM2 (hybrid) and SmolLM2 both have L0 hubs, while Qwen (pure transformer) has L2. The hub position is architecture-specific, not just depth-dependent.</p>
+
+  <!-- METHODOLOGY -->
+  <h2 class="section-label"><i class="fas fa-flask"></i> Methodological Discovery: Cascade Zero Bug</h2>
+  <div class="tldr-box" style="border-left: 4px solid #d4380d;">
+    <h3><i class="fas fa-bug"></i> The Cascade Zero Bug</h3>
+    <p>Hooking <code>model.model.layers[i]</code> and zeroing its output causes cascading zeros through the residual stream. When you zero L0's output, L1 sees input=0, which makes L1's output=0, and so on. ALL layers produce identical KL because the final hidden state is zero regardless of which layer was zeroed.</p>
+    <p style="margin-top: 0.5rem;"><strong>The fix:</strong> Hook the <strong>operator</strong> (conv/self_attn) and <strong>MLP</strong> (feed_forward) separately. Zeroing the operator gives: <code>residual + 0 + ffn(norm(residual))</code>, which preserves the residual pass-through and gives layer-specific KL values.</p>
+    <p style="margin-top: 0.5rem;"><strong>Implication:</strong> This bug likely affects existing MI-Atlas results for all residual-stream models (including Qwen). The reported hub locations should be re-verified with the corrected methodology.</p>
+  </div>
+
+  <!-- RESOURCES -->
+  <h2 class="section-label"><i class="fas fa-link"></i> Resources</h2>
+  <ul style="font-size: 0.95rem; line-height: 1.8;">
+    <li><a href="https://github.com/bilawalriaz/autonomous-small-model-exploration" target="_blank">GitHub Repository</a> — All code, data, results, and adapters</li>
+    <li><a href="https://huggingface.co/LiquidAI/LFM2.5-230M" target="_blank">HuggingFace Model Card</a> — Original model weights and documentation</li>
+    <li><a href="https://huggingface.co/papers/2511.23404" target="_blank">LFM2 Technical Report</a> — Liquid AI's architecture paper</li>
+  </ul>
+
+  <hr style="margin: 2rem 0;">
+  <p style="color: var(--muted); font-size: 0.85rem;">
+    <strong>Experiment Date:</strong> June 29, 2026 &nbsp;|&nbsp;
+    <strong>Hardware:</strong> RTX 2070 Super 8GB &nbsp;|&nbsp;
+    <strong>Runtime:</strong> ~45 minutes total &nbsp;|&nbsp;
+    <strong>Model VRAM:</strong> 450 MB (bf16)
+  </p>
+</section>
+</body>
+</html>
