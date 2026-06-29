@@ -298,19 +298,40 @@
       color: #666;
     }
 
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1rem 0;
+      max-width: 100%;
+    }
+    .metric-table {
+      width: 100%;
+      min-width: 0;
+    }
     @media (max-width: 768px) {
       .publication-title { font-size: 1.9rem; }
       .stat-grid { grid-template-columns: repeat(2, 1fr); }
       .bar-label { min-width: 80px; font-size: 0.75rem; }
       .bar-value { min-width: 50px; font-size: 0.75rem; }
-      .metric-table { font-size: 0.8rem; display: block; overflow-x: auto; }
-      .metric-table th, .metric-table td { padding: 6px 8px; white-space: nowrap; }
+      .metric-table { font-size: 0.78rem; }
+      .metric-table th, .metric-table td { padding: 5px 6px; white-space: nowrap; }
+      .metric-table td:last-child { white-space: normal; max-width: 120px; }
       .mi-nav-inner { flex-wrap: wrap; gap: 8px; }
       .mi-nav-links { gap: 10px !important; }
       .config-card { padding: 14px 16px; }
       .sample-block { padding: 14px 16px; }
       .swi-callout { padding: 12px 14px; flex-direction: column; gap: 8px; }
       .config-card .config-spec { font-size: 0.78rem; padding: 8px 10px; overflow-x: auto; }
+      .finding-card { padding: 14px 16px; }
+      /* Hide Parameters column on mobile (3rd column in rank sweep) */
+      .metric-table th:nth-child(2),
+      .metric-table td:nth-child(2) { display: none; }
+      /* Hide Tier column on mobile (5th column in dataset table) */
+      .metric-table th:nth-child(5),
+      .metric-table td:nth-child(5) { display: none; }
+      /* Hide Notes column on mobile (5th column in other tables) — let them scroll */
+      .sample-block pre { font-size: 0.78rem; padding: 10px 12px; }
+      .publication-subtitle { font-size: 1rem; }
     }
   </style>
 </head>
@@ -395,7 +416,7 @@
     <div class="tier-header">Dataset Comparison</div>
     <div class="tier-desc">10 datasets evaluated with identical training setup (AdamW, r=8, hub LoRA, lr=2e-4, 300 steps). Multi-turn concise format dominates.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Dataset</th>
@@ -477,7 +498,7 @@
           <td style="color: #999;">Baseline</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <!-- Dataset Loss Bar Chart -->
     <div class="tier-header">Dataset Loss Visualization</div>
@@ -540,7 +561,7 @@
     <div class="tier-header">Optimizer Comparison</div>
     <div class="tier-desc">4 optimizers tested on smol-magpie-ultra (r=8, hub LoRA, lr=2e-4, 300 steps). Adafactor wins on both loss and memory.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Optimizer</th>
@@ -580,7 +601,7 @@
           <td>Highest KL drift</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="swi-callout">
       <div class="swi-callout-icon">&#128161;</div>
@@ -593,7 +614,7 @@
     <div class="tier-header">Learning Rate Sweep</div>
     <div class="tier-desc">4 learning rates tested on Alpaca (hub LoRA, r=8, AdamW, 300 steps). lr=5e-4 is the sweet spot.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Learning Rate</th>
@@ -628,7 +649,7 @@
           <td style="color: #d4380d;">Risky &mdash; high KL drift</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="swi-callout">
       <div class="swi-callout-icon">&#9888;&#65039;</div>
@@ -641,7 +662,7 @@
     <div class="tier-header">LoRA Rank Sweep</div>
     <div class="tier-desc">5 ranks tested on Alpaca (hub LoRA, lr=2e-4, AdamW, 300 steps). Rank 8 is the sweet spot.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Rank (r)</th>
@@ -688,7 +709,7 @@
           <td>4&times; params for 0.30 loss</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="swi-callout">
       <div class="swi-callout-icon">&#128200;</div>
@@ -701,7 +722,7 @@
     <div class="tier-header">Target Module Comparison</div>
     <div class="tier-desc">6 LoRA targeting strategies compared. Hub-targeted LoRA is 3.5&times; more parameter-efficient than all-linear.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Target Modules</th>
@@ -755,7 +776,7 @@
           <td>0.14</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="swi-callout">
       <div class="swi-callout-icon">&#127919;</div>
@@ -768,7 +789,7 @@
     <div class="tier-header">Steps &amp; Data Volume Sweep</div>
     <div class="tier-desc">Training duration and data volume compared. More data helps, but the format of that data matters more.</div>
 
-    <table class="metric-table">
+    <div class="table-wrap"><table class="metric-table">
       <thead>
         <tr>
           <th>Configuration</th>
@@ -822,7 +843,7 @@
           <td class="num">0.145</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="swi-callout">
       <div class="swi-callout-icon">&#128202;</div>
