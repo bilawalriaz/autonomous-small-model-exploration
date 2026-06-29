@@ -1,0 +1,176 @@
+{
+  "id": "tulu3_5k_1000",
+  "dataset": "allenai/tulu-3-sft-mixture",
+  "subset": null,
+  "n_examples": 5000,
+  "steps": 1000,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 3.6025,
+  "kl_shift": 0.1646,
+  "hub_kls": {
+    "L0": 3.5046,
+    "L2": 0.7315,
+    "L4": 3.5727,
+    "L5": 1.8896
+  },
+  "loss_curve": [
+    {
+      "step": 50,
+      "loss": 5.908
+    },
+    {
+      "step": 100,
+      "loss": 4.1729
+    },
+    {
+      "step": 150,
+      "loss": 3.7774
+    },
+    {
+      "step": 200,
+      "loss": 3.6103
+    },
+    {
+      "step": 250,
+      "loss": 3.5234
+    },
+    {
+      "step": 300,
+      "loss": 3.5502
+    },
+    {
+      "step": 350,
+      "loss": 3.4162
+    },
+    {
+      "step": 400,
+      "loss": 3.3917
+    },
+    {
+      "step": 450,
+      "loss": 3.6128
+    },
+    {
+      "step": 500,
+      "loss": 3.376
+    },
+    {
+      "step": 550,
+      "loss": 3.3064
+    },
+    {
+      "step": 600,
+      "loss": 3.3437
+    },
+    {
+      "step": 650,
+      "loss": 3.395
+    },
+    {
+      "step": 700,
+      "loss": 3.303
+    },
+    {
+      "step": 750,
+      "loss": 3.3491
+    },
+    {
+      "step": 800,
+      "loss": 3.4017
+    },
+    {
+      "step": 850,
+      "loss": 3.3625
+    },
+    {
+      "step": 900,
+      "loss": 3.3775
+    },
+    {
+      "step": 950,
+      "loss": 3.3932
+    },
+    {
+      "step": 1000,
+      "loss": 3.4799
+    }
+  ],
+  "train_time_s": 2214.4,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world.\n\nParis is a major cultural, economic, and political center in Europe. It is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe. The city is also known for its fashionable streets, art galleries, and historic architecture.\n\nParis has a rich history dating back to ancient times. It was founded by the Romans in 27 BC and became a major center of trade and commerce during the Middle Ages. In the 16th century, it was the capital of the French Republic and the center of the Renaissance. During the 19th century, it became the capital of the Kingdom of Italy and the capital of the French Empire.\n\nIn recent years, Paris has become a global hub for tourism, finance, and culture. It attracts millions of visitors each year from around the world, making it one of",
+      "n_tokens": 200,
+      "time_s": 2.74,
+      "tok_per_s": 73.1
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"female\", \"location\": \"New York City\", \"occupation\": \"writer\", \"family\": \"Miller family\", \"hobbies\": \"writing\", \"interests\": \"music\", \"education\": \"high school diploma\", \"courses\": [\"English\", \"Spanish\", \"French\", \"German\", \"Italian\", \"Russian\", \"Czech\", \"Hungarian\", \"Polish\", \"Ukrainian\", \"Turkish\", \"Greek\", \"Japanese\", \"Chinese\", \"Korean\", \"Arabic\", \"Hindi\", \"Tamil\", \"Bengali\", \"Swedish\", \"Dutch\", \"Portuguese\", \"French\", \"Italian\", \"German\", \"Italian\", \"Spanish\", \"German\", \"Italian\", \"Spanish\", \"German\", \"Italian\", \"Spanish\", \"German\", \"Italian\", \"Spanish\", \"German\", \"Italian\"}\"}",
+      "n_tokens": 196,
+      "time_s": 2.7,
+      "tok_per_s": 72.6
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 127,
+      "time_s": 1.73,
+      "tok_per_s": 73.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the state of one particle, you can instantly determine the state of the other particle, even if they are separated by vast distances.\n\nThis concept has been a subject of interest for many years, and it's still not fully understood. However, researchers have made significant progress in understanding quantum entanglement, and it's an important area of study in physics.\n\nOne way to think about quantum entanglement is to imagine two particles that are connected in such a way that their states are intertwined. If you try to measure one particle, you'll instantly know the state of the other particle, regardless of the distance between them. This is because the measurement of one particle affects the state of the other, even if they're separated by vast distances.\n\nAnother way to think about quantum",
+      "n_tokens": 200,
+      "time_s": 2.73,
+      "tok_per_s": 73.4
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.45,
+      "tok_per_s": 71.4
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 60 = 545\n545 - 5 = 540\n540 - 5 = 535\n535 - 5 = 530\n530 - 5 = 525\n525 - 5 = 520\n520 - 5 = 515\n515 - 5 = 510\n510 - 5 = 505\n505 - 5 = 500\n500 - 5 = 495\n495 - 5 = 490\n490 - 5 = 485\n485 - 5 = 480\n480 - 5 = 475\n475 - 5 = 470\n470 - 5 = 465\n465 - 5 = 460\n460 - 5 = 455\n455 - 5 = 450\n450 - 5 = 445\n445 - 5 = 440\n440 - 5 = 435\n435 - 5 = 430\n430 - 5 =",
+      "n_tokens": 200,
+      "time_s": 2.94,
+      "tok_per_s": 68.1
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonjour\", in Spanish is \"Hola\" and in German is \"Guten Tag\".",
+      "n_tokens": 27,
+      "time_s": 0.36,
+      "tok_per_s": 75.3
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health: Regular exercise strengthens the heart muscle, improves blood circulation, and lowers blood pressure, reducing the risk of heart disease.\n2. Boosts mental health: Exercise releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. It can also reduce symptoms of anxiety and depression, improve self-esteem, and increase overall happiness.\n3. Enhances physical fitness: Exercise helps to build muscle mass, improve flexibility, and increase endurance, making it easier to perform daily activities and maintain a healthy weight.",
+      "n_tokens": 117,
+      "time_s": 1.51,
+      "tok_per_s": 77.3
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target and i > 0:\n            return i\n    for i in range(len(arr) - 1, -1, -1):\n        if arr[i] == target and i < len(",
+      "n_tokens": 200,
+      "time_s": 2.59,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a carbon atom. This polarity allows water to dissolve many substances, including salts and acids.\n\nIn the chemical equation for the formation of water from its constituent elements, the reaction involves the combination of hydrogen (H) and oxygen (O) atoms to form water (H2O). The balanced chemical equation is:\n\nH2 + O2 \u2192 H2O\n\nThis equation shows that one mole of hydrogen gas reacts with one mole of oxygen gas to produce one mole of water molecules.\n\nThe presence of oxygen in water makes it a strong oxidizing agent, which means it can break down other compounds and release energy in the process. This property is why water is often used as a solvent in various industrial processes, such as cooling systems and cleaning agents.",
+      "n_tokens": 179,
+      "time_s": 2.3,
+      "tok_per_s": 77.7
+    }
+  ]
+}
