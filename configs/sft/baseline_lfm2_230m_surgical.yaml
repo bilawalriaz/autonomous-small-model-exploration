@@ -22,7 +22,7 @@ adapter:
 training:
   framework: trl_sft
   optimizer: adafactor
-  learning_rate: 2e-4
+  learning_rate: 0.0002
   lr_scheduler: constant
   max_steps: 300
   batch_size: 4
