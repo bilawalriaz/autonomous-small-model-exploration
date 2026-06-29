@@ -1,0 +1,10 @@
+{
+  "method": "GRPO_manual",
+  "lr": 1e-05,
+  "steps": 50,
+  "n_generations": 4,
+  "beta": 0.04,
+  "trainable_params": 65536,
+  "final_loss": -0.0062,
+  "kl_shift": 0.001
+}
