@@ -1,0 +1,3488 @@
+{
+  "experiment": "13E",
+  "name": "Bad Basin Detection",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 1403.4280135631561,
+  "timestamp": "2026-06-30T18:40:03",
+  "results": {
+    "prompt_0": {
+      "prompt_idx": 0,
+      "baseline_correct": 1.0,
+      "n_clusters": 14,
+      "correct_fraction": 0.94,
+      "cluster_sizes": [
+        36,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 36,
+          "avg_field_recall": 0.8796296296296297,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"name\": \"John Smith\",\n    \"Age\": 35,\n    \"City\": \"London\"\n}\n``` \n```json\n```json\n{\n    \"Name\": \"John Smith\",\n    \"Age\": 35,\n    \"City\": "
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help with that. Here's the extracted information in JSON format:\n\n```json\n{\n    \"name\": \"John smith\",\n    \"age\": 35,\n    \"city\": \"London\"\n"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"name\": \"John Smith\",\n    \"age\": 35,\n    \"city\": \"London\"\n}\n``` \nNote: The extracted information includes the name, age, and city of Joh"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"name\": \"JohnSmith\",\n    \"age\": 35,\n    \"city\": \"London\"\n}\n```\nExplanation:\n- The extracted information includes the name (John Smith), "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"John\",\n  \"age\": \"35\",\n  \"city\": \"London\"\n}\n```\nExplanation:\n- The extracted information is stored in an object with keys \"name\", "
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"name\": \"John\",\n    \"age\": 35,\n    \"city\": \"London\"\n}\n``` \nNote: The provided input does not include all required fields for the extract"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"John\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n``` \nExplanation:\n- The extracted information includes the name \"John\", his age (35), an"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"Age\": 35,\n  \"City\": \"London\"\n}\n``` \nThis extracted Information Is As Followed By JSON Format. The Input Was Used "
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n``` \nThis JSON object contains the extracted information about John Smith. The fie"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n``` \nThis JSON representation extracts the requested information into a single obj"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n```\n\nExplanation:\n- **Name:** John Smith\n- **Age:** 35\n- **City:** London\n```"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"name\": \"John Smith\",\n    \"age\": 35,\n    \"city\": \"London\"\n}\n```\n\nExplanation:\n- The input provided is a string that contains three piece"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n``` \nNote that I've extracted the requested information into a JSON object with ke"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}\n``` \nExplanation:\n- `name`: The name of the person.\n- `age`: The age of the person"
+        }
+      ]
+    },
+    "prompt_1": {
+      "prompt_idx": 1,
+      "baseline_correct": 1.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.68,
+      "cluster_sizes": [
+        30,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 30,
+          "avg_field_recall": 0.7555555555555558,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Maria Garcia\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"name\": \"Maria\",\n    \"age\": 28,\n    \"city\": \"Madrid\"\n}\n}\n``` \nNote that I've used the input to extract the required information. The ext"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"name\": \"Maria\",\n    \"age\": 28,\n    \"city\": \"Madrid\"\n}\n```  \n```python\ndef extract_info(name, age, city):\n    return {\n        \"name\": n"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Maria Garcia\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n``` \nNote that I have replaced the original text with a different scenario to de"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here's the extracted information as JSON:\n\n```json\n{\n  \"name\": \"Maria Garc\u00eda\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n```\n\nThis represents the d"
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"name\": \"Maria\",\n    \"age\": 28,\n    \"city\": \"MadRID\"\n}\n``` \nExplanation:\n- The input is a JSON string containing three pieces of data se"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure, here's the extractedinformationasJSON:\n\n```json\n{\n  \"name\": \"Maria\",\n  \"age\": \"28\",\n  \"city\": \"Madrid\"\n}\n```\n\nExplanation:\n- The input is a JSON"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n``` \nExplanation:\n- Name: Maria\n- Age: 28\n- City: Madrid\n``` \nNote: This is extracted d"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \"Age\": 28,\n  \"City\": \"Madrid\"\n}\n```  \nNote:\n- The extracted information is structured into a JSON object.\n- Each key re"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \"Age\": 28,\n  \"City\": \"Madrid\"\n}\n```\nThis JSON object contains the extracted information about Maria, including her name"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n``` \n\u0418\u043d\u0444\u043e\u0440\u043cation\n- \"name\"\ub294 \uc774\ub984\uc785\ub2c8\ub2e4\u3002\n- \"age\"\ub294\u5e74\ufffd\u3067\u3059\u3002\n- \"city\"\ub294\u4f4f\u3080\u5730\u540d\u3067\u3059\u3002 ("
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"name\": \"Maria\",\n    \"age\": 28,\n    \"city\": \"Madrid\"\n}\n```]\nThis JSON representation extracts the requested information from the input d"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"extracted_name\": \"Maria\",\n  \"age\": 28,\n  \"city\": \"\u9a6c\u5fb7\u91cc\"\n}\n```"
+        },
+        {
+          "cluster_id": 13,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, here is the extracted information as JSON:\n\n```json\n{\n  \"name\": \"Maria Garcia\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n```\n\nThis represents the detai"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n[\n  {\"name\": \"Maria\", \"age\": 28, \"city\": \"\u9a6c\u5fb7\u91cc\u4e9a\"},\n  {\"name\": \"\u739b\u4e3d\", \"age\": 28, \"city\": \"\u9a6c\u5fb7\u91cc\u4e9a\"}\n]\n```"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \"age\": 28,\n  \"city\": \"Madrid\"\n}\n```\n\nExplanation:\n- `name`: The extracted value is `\"Maria\"`.\n- `age`: The extracted va"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\",\n  \" age\": 28,\n  \" city\": \"madrid\"\n}\n``` \nThis is the extracted data based on the input provided. The name is Maria, age i"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "- Name: Maria Garc\u00eda\n- Age: 28\n- City: Madrid\n\nNote: The extracted information is based on the provided text and does not include any additional conte"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Maria\u00b7\u52a0\u897f\u4e9a\",\n  \"age\": 28,\n  \"city\": \"\u9a6c\u5fb7\u91cc\"\n}\n``` \nNote: The extracted information is presented in JSON format. If you need any othe"
+        }
+      ]
+    },
+    "prompt_2": {
+      "prompt_idx": 2,
+      "baseline_correct": 1.0,
+      "n_clusters": 23,
+      "correct_fraction": 0.78,
+      "cluster_sizes": [
+        20,
+        1,
+        2,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 20,
+          "avg_field_recall": 0.7999999999999999,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": \"42\",\n  \"city\": \"Cairo\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nThis is the extracted information:\n- Name: ahmed\n- Age: 42\n- City: Cairo\n```python\n"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nNote: The extracted information is in JSON format. If you need it in another"
+        },
+        {
+          "cluster_id": 3,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"extracted_info\": [\n    {\n      \"name\": \"Ahmed Hassan\",\n      \"age\": 42,\n      \"city\": \"Cairo\"\n    }\n  ]\n}\n```"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help with that! Could you please provide me with the name, age, and city of Ahmed Hassan (42) from Cairo? Here's the data:\n\n```json\n{\n  \"n"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure! Here's the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nThis corresponds to "
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\nThis JSON object contains the extracted information from the input text. The key-val"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\":42,\n  \"city\":\"Cairo\"\n}\n```"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nNote that I have extracted the requested information into JSON format. Please let m"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nExplanation:\n- The input provided is a string that contains the details of a"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nExplanation:\n- `name`: Ahmed\n- ` age`: 42\n- ` city`: Cairo\n```"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here's the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Ahh Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nThis JSON object "
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```  \nNote that this is extracted directly from the input text without any additional pr"
+        },
+        {
+          "cluster_id": 13,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahsan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nNote: The extracted information is based on the provided text snippet and does not "
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Aldhaman Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nExplanation:\n- **Name:** Aldhaman Hassan\n- **Age:** 42\n- **City:** Cairo\n"
+        },
+        {
+          "cluster_id": 15,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n\nThis response contains the requested information in JSON format:\n- Name: Ahm"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Sure, I can help you with that! Please provide me with more details so I can extract the requested information in JSON format. What is the name of the"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```\n```python\nimport json\n\ndata = {\n    \"name\": \"Ahmed Hassan\",\n    \"age\": 42,\n  "
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```  \nNote: The extracted data is in JSON format.\n```json\n```json\n```json\n```json\n```jso"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nExplanation:\n- The input is a string that contains the name, age, and city of Ahmed"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n``` \nExplanation:\n- The input string contains three pieces of information separated by c"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! I can help you extract the requested information into JSON format. Here's how it would look:\n\n```json\n{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": "
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Ahmed\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}\n```  \nNote:\n- `name`: The name of the person.\n- `age`: The age of the person.\n- `city`: "
+        }
+      ]
+    },
+    "prompt_3": {
+      "prompt_idx": 3,
+      "baseline_correct": 1.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.92,
+      "cluster_sizes": [
+        1,
+        1,
+        1,
+        31,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"iPhone 15\",\n    \"price\": \"$999\",\n    \"currency\": \"CNY\"\n}\n```  \n``` \n``` \n\nPlease note that this is an example of how you can"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure! Here is the extracted information in JSON format:\n\n```json\n{\n  \"product\": {\n    \"name\": \"iPhone 15\",\n    \"price\": \"$999.00\",\n    \"currency\": \"US"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "extracted_info into JSON format:\n\n```json\n{\n  \"product\": {\n    \"name\": \"iPhone\",\n    \"price\": \"$999\"\n  },\n  \"currency\": \"USD\"\n}\n``` \nNote: Replace \"$9"
+        },
+        {
+          "cluster_id": 3,
+          "size": 31,
+          "avg_field_recall": 0.956989247311828,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"iPhone 15\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n  }\n}\n```\n```json\n```json\n{\n  \"product\": {\n    \"name\": \"i"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"iPhone 15\",\n        \" price\": \"$999\",\n        \" currency\": \"USD\"\n    }\n}\n```\n\nThis response provides the r"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"The iPhone 15\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n}\n``` \nNote: This response is generated based on the input provid"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n  \"product\": \"iPhone 15\",\n  \"price\": \"$999\",\n  \"currency\": \"USD\"\n}\n```\n\nThis indicates th"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"product\": \"The iPhone\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n}\n``` \nThis JSON object contains the requested information about the"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"iPhone 15\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n}\n```  \nThis JSON object represents the requested information extract"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"iPhone 15\",\n        \" price\": \"$999\",\n        \" currency\":\"USD\"\n    }\n}\n}\n``` \nExplanation:\n- `product`:` "
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"iPhone\",\n  \"price\": \"$999\",\n  \"currency\": \"USD\"\n}\n``` \nThis response provides the requested information in JSON format. The ke"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"The iPhone 15\",\n  \"price\": \"$999.00\",\n  \"currency\": \"USD\"\n}\n```"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"product\": \"iPhone15\",\n    \"price\": \"$999\",\n    \"\u8d27\u5e01\": \"CNY\"\n}\n```"
+        },
+        {
+          "cluster_id": 13,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"iPhone 15\",\n  \"price\": \"$999\",\n  \"currency\": \"USD\"\n}\n``` \nThis response contains the requested information extracted directly "
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"The iPhone 15\",\n    \"price\": \"$999.00\",\n    \"currency\": \"USD\"\n  }\n}\n``` \nNote: This assumes that the price is in"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"iPhone\",\n  \"Price\": \"$999.00,\n  \"Currency\": \"USD\"\n}\n``` \nThis response is generated Based on the Inputed Information. Please L"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"iPhone 15\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n  },\n  \"details\": [\n    {\n      \"item_name\": \"iPhone 15\","
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"iPhone 15\",\n  \"price\": \"$999\",\n  \"currency\": \"USD\"\n}\n``` \nNote: This is extracted directly from the input text provided withou"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"iPhone 15\",\n  \"price\": \"$999\",\n  \"currency\": \"USD\"\n}\n```\nExplanation:\n- \"The iPhone 15\" is extracted directly from the input.\n"
+        }
+      ]
+    },
+    "prompt_4": {
+      "prompt_idx": 4,
+      "baseline_correct": 1.0,
+      "n_clusters": 24,
+      "correct_fraction": 0.98,
+      "cluster_sizes": [
+        23,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 23,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849 GBP\",\n  \"currency\": \"GBP\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"Samsung Galaxy S24\",\n    \"price\": 849,\n    \"currency\": \"GBP\"\n}\n``` \nNote: The price is in British pounds (GBP). \n\nPlease not"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"Samsung GalaxyS24\",\n  \"price\": \"GBP849\",\n  \"currency\": \"GBP\"\n}\n```\n\nExplanation:\n- The product is \"Samsung GalaxyS24\".\n- The p"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": 849,\n  \"currency\": \"GBP\"\n}\n```\n\nExplanation:\n- The product is \"Samsung Galaxy S24\".\n- The pric"
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": 849,\n  \"currency\": \"GBP\"\n}\n``` \nThis response provides the requested information in JSON forma"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"GBP 849\",\n  \"currency\": \"GBP\"\n}\n``` \nExplanation:\n- The product is named \"Samsung Galaxy S24\""
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849 GBP\",\n  \"currency\": \"GBP\"\n}\n}\n``` \nThis JSON response provides the requested information "
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Samsung Galaxy S24\",\n    \"price\": 849,\n    \"currency\": \"GBP\"\n  },\n  \"description\": \"The Samsung Galaxy S24 is a "
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Samsung Galaxy S24\",\n        \" price\": 849,\n        \" currency\": \"GBP\"\n    }\n}\n``` \nExplanation:\n- The inp"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure! Here is the extracted information as a JSON object:\n\n```json\n{\n  \"product\": {\n    \"name\": \"Samsung Galaxy S24\",\n    \"price\": 849,\n    \"currency\""
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Samsung Galaxy S24\",\n    \"price\": 849,\n    \"currency\": \"GBP\"\n  }\n}\n``\n```json\n{\n  \"products\": [\n    {\n      \"nam"
+        },
+        {
+          "cluster_id": 11,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Samsung Galaxy S24\",\n        \"price\": 849,\n        \"currency\": \"GBP\"\n    }\n}\n``` \nThis JSON object contain"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"GBP 849\",\n  \"currency\": \"GBP\"\n}\n```\n\nExplanation:\n- The input is in JSON format.\n- It contain"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": 849,\n  \"currency\": \"GBP\"\n}\n```\n\nThis repres"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \" price\": \"849 GBP\",\n  \" currency\": \"GBP\"\n}\n``` \nThis response provides the requested information in a "
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849 GBP\",\n  \"currency\": \"GBP\"\n}\n``` \nThis extract provides the product name (Samsung Galaxy S"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849 GBP\",\n  \"currency\": \"GBP\"\n}\n``` \nNote: The currency is set to GBP (British Pound) for thi"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Samsung Galaxy S24\",\n        \"Price\": 849,\n        \"Currency\": \"GBP\"\n    }\n}\n``` \nExplanation:\n- The input"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \" price\": 849,\n  \" currency\": \"GBP\"\n}\n```"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849 GBP\",\n  \"currency\": \"GBP\"\n}\n``` \nThis JSON object contains the requested information extr"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Samsung Galaxy S24\",\n        \"price\": \"GBP 849\"\n    }\n}\n```\nExplanation\uff1a\u6839\u636e\u8f93\u5165\u4fe1\u606f\uff0c\u63d0\u53d6\u4e86\u4ea7\u54c1\u540d\u79f0\u548c\u4ef7\u683c\u3002\u5176\u4e2d\uff0c\u201cSamsung Gala"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": \"849\",\n  \"currency\": \"GBP\"\n}\n``` \nNote: The price is in British pounds (GBP). If you need it i"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Samsung Galaxy S24\",\n    \"price\": 849,\n    \"currency\": \"GBP\"\n  }\n}\n```\n\nThis JSON object contains the extracted "
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"Samsung Galaxy S24\",\n    \"\u4ef7\u683c\": \"849 \u82f1\u91cc\",\n    \"\u8d27\u5e01\u5355\u4f4d\": \"GBP\"\n}\n``` \nNote\uff1a\u6b64JSON\u5b57\u7b26\u4e32\u4ec5\u5305\u542b\u60a8\u63d0\u4f9b\u7684\u4fe1\u606f\uff0c\u4e0d\u5305\u62ec\u5176\u4ed6\u989d\u5916\u4fe1\u606f\u3002\u5982\u679c\u60a8\u9700\u8981\u66f4\u591a\u8be6\u7ec6\u4fe1\u606f\uff0c\u8bf7\u544a\u77e5\u3002 ```"
+        }
+      ]
+    },
+    "prompt_5": {
+      "prompt_idx": 5,
+      "baseline_correct": 1.0,
+      "n_clusters": 25,
+      "correct_fraction": 0.88,
+      "cluster_sizes": [
+        20,
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 20,
+          "avg_field_recall": 0.9666666666666666,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Sony WH-1000XM5 headphones\",\n  \"price\": \"$349\",\n  \"currency\": \"EUR\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Whiskey\",\n  \"price\": \"349 EUR\",\n  \"currency\": \"EUR\"\n}\n```"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5\",\n    \"price\": \"EUR 349\",\n    \"currency\": \"EUR\"\n  }\n}\n```"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Sony WH-1000XM5\",\n  \"price\": \"349 EUR\",\n  \"currency\": \"EUR\"\n}\n``` \nThis extracted information is presented in JSON format. The"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"Sony Ericsson WH-1000 XM5\",\n  \"price\": \"\u20ac349\",\n  \"currency\": \"EUR\"\n}\n``` \nExplanation:\n- The product name is extracted directl"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"Whiskey\",\n  \"price\": \"\u20ac349\",\n  \"currency\": \"EUR\"\n}\n``` \nExplanation:\n- The input text is in French (fr) with some Latin charac"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony wh-1000xm5 headphones\nprice:349 euros (EUR)\ncurrency:euro (EUR)  \nproduct description:Sony wh-1000xm5 headphones is a wireless earbuds d"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Here is the extracted information:\n\nProduct: Sony WH-1000XM5\nPrice: 349 EUR\nCurrency: EUR\n\nNote: The price is given in Euros (EUR), but it's worth not"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n[\n    {\n        \"product\": \"Sony WH-1000XM5 Headphones\",\n        \"price\": \"349 EUR\",\n        \"currency\": \"EUR\"\n    }\n]\n``` \nExplanation:\n- The"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Sure, I can help you extract the requested information into JSON format. However, it seems like there is some confusion in your input. Could you pleas"
+        },
+        {
+          "cluster_id": 10,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5 Headphones\",\n    \"price\": \"349 EUR\",\n    \"currency\": \"EUR\"\n  },\n  \"description\": \"The Sony WH-10"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"product\": \"Whisper WH-1000XM5 Headphones\",\n    \"price\": \"349 EUR\",\n    \"currency\": \"EUR\"\n}\n```\n\nThis JSON object contains the extracted"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Sony WH-1000XM5 \u97f3\u97ff\u8033\u673a\",\n        \"price\": \"349 EUR\"\n    },\n    \"details\": [\n        {\n            \"name\": \"S"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Wh-1000XM5\",\n        \"price\": 349,\n        \"currency\": \"EUR\"\n    }\n}\n``` \nThis JSON representation extract"
+        },
+        {
+          "cluster_id": 14,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": \"Sony WH-1000XM5\",\n    \"price\": \"349 EUR\",\n    \"currency\": \"EUR\"\n}\n``` \nThis response provides the requested information in a"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"product\": {\n        \"name\": \"Sony WH-1000XM5\",\n        \" price\": 349,\n        \" currency\": \"EUR\"\n    }\n}\n``` \n``` json\n``` \n``` json\n``"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure! Here is the extracted information in JSON format:\n\n```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5\",\n    \"price\": 349,\n    \"currency\": \"EU"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n    \"Product\": \"Sony WH-1000XM5 Headphones\",\n    \"Price\": \"349 EUR\",\n    \"Currency\": \"EUR"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Sure, I can help you with that! Here is the extracted information in JSON format:\n\n```json\n{\n    \"product\": {\n        \"name\": \"Sony WH-1000XM5\",\n     "
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5 Headphones\",\n    \"price\": 349,\n    \"currency\": \"EUR\"\n  }\n}\n```\n\nThis JSON structure contains the"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Sony WH-1000XM5 Headphones\",\n  \"Price\": \"\u20ac349\",\n  \"Currency\": \"EUR\"\n}\n``` \nThis JSON representation captures the requested inf"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5\",\n    \"brand\": \"Sony\",\n    \"model\": \"WH-1000XM5\",\n    \"price\": 349,\n    \"currency\": \"EUR\"\n  },"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Sony WH-1000XM5 Headphones\",\n  \"price\": \"349 EUR\",\n  \"currency\": \"EUR\"\n}\n```\n\nExplanation:\nThe extracted information is in JSO"
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": {\n    \"name\": \"Sony WH-1000XM5 Headphones\",\n    \"price\": \"349 EUR\",\n    \"currency\": \"EUR\"\n  },\n  \"details\": [\n    {\n      \"item"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"product\": \"Sony WH-1000XM5\",\n  \"price\": \"349 EUR\",\n  \"currency\": \"EUR\"\n}\n```\n\nThis JSON representation extracts the requested information"
+        }
+      ]
+    },
+    "prompt_6": {
+      "prompt_idx": 6,
+      "baseline_correct": 1.0,
+      "n_clusters": 21,
+      "correct_fraction": 0.9,
+      "cluster_sizes": [
+        1,
+        1,
+        1,
+        28,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"director\": \"Christopher \u6c49\u6069\",\n    \"year\": 2010\n}\n``` \n```json\n{\n    \"title\": \"The dark side of being human\",\n "
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": \"2010\"\n}\n```  \nThis response provides the requested information in JSON"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help you extract the required information into JSON format. Here's how it would look:\n\n```json\n{\n    \"title\": \"Inception\",\n    \"director\":"
+        },
+        {
+          "cluster_id": 3,
+          "size": 28,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"Director\": \"Christopher Nolan\",\n    \"Year\": 2010\n}\n```"
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n```\nNote: The movie \"Inception\" was directed by Christopher Nola"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": \"2010\"\n}\n``` \nExplanation for the extracted information:\n- The movie is"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"director\": \"Christopher\u00b7\u30ce\u5170\u68ee\",\n    \"year\": 2010\n}\n```    \n```python\nimport json\n\n# Sample input data\ninput_dat"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"director\": \"Christopher Nolan\",\n    \"year\": \"2010\"\n}\n``` \nNote: The director is Christopher Nolan, not Christ"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "@approach\nSure! Here's the extracted information in JSON format:\n\n```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"Director\": \"Christopher Miller\",\n    \"Year\": 2010\n}\n``` \nThis response extracts the required Information from"
+        },
+        {
+          "cluster_id": 10,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n``` \nThis is the extracted information from the given text. The "
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n``` \nThis JSON object contains the extracted information from th"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n```\nExplanation:\n- The input provides the title \"Inception\", dir"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure! Here is the extracted information as JSON:\n\n```json\n{\n  \"title\": \"Inception\",\n  \"Director\": \"ChristopherS Nolan\",\n  \"YEAR\": \"2010\"\n}\n```\n\nThis r"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n``` \nThis JSON structure contains the extracted information in a"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christophernolan\",\n  \"year\": 2010\n}\n```  \n```json\n{\n  \"title\": \"The Great Gatsby\",\n  \"director\": \"Gle"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n``` \nExplanation:\n- The input specifies that the movie is titled"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n```  \nExplanation:\n- The title is \"Inception\".\n- The director is"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}\n``` \n```python\nimport json\n\ndef extract_info(title, director,yea"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"title\": \"Inception\",\n    \"director\": \"Christopher nolan\",\n    \"year\": 2010,\n    \" actors\": [\n        {\n            \"name\": \"Christopher"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": \"2010\"\n}\n``` \nExplanation:\n- The input text is extracted into a JSON ob"
+        }
+      ]
+    },
+    "prompt_7": {
+      "prompt_idx": 7,
+      "baseline_correct": 1.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.68,
+      "cluster_sizes": [
+        29,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 29,
+          "avg_field_recall": 0.6896551724137933,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n  \"year\": 1999\n}\n```json\n```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n "
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n[\n    {\n        \"title\": \"The Matrix\",\n        \"director\": \"Wachowski\",\n        \"year\": 1999\n    }\n]\n``` \n\nExplanation:\n- TheMatrix is extract"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"Title\": \"The Matrix\",\n    \"Director\": \"Wachowskis\",\n    \"Year\": \"1999\"\n}\n``` \nThis JSON representation provides the extracted informati"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help with that! Here is the extracted information in JSON format:\n\n```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowskis\",\n  \"year\""
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski brothers\",\n  \"year\": 1999\n}\n``` \nThis is the extracted information in JSON format accordin"
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n  \"year\": \"1999\"\n}\n```\n\nThis correspo"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowskis\",\n  \"year\": 1999\n}\n``` \nThis extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n  \"year\": 1999\n}\n``` \nExplanation:\n- The input text is extracted into a JSON object with"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"The Matrix\",\n    \"director\": \"Wachowski\",\n    \"year\": \"1999\"\n}\n```\n\nExplanation:\n- The Matrix is the title of the movie.\n- The"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "To extract the requested information from the provided text, I will follow these steps:\n\n1. Identify the main elements of the information:\n   - Title:"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"the Wachowsky's\",\n  \"year\": 1999\n}\n```\n\nExplanation:\n- The Matrix is extracted as the title.\n- The d"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \" director\": \"Wachowskis\",\n  \" year\": 1999\n}\n```"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n[\n    {\n        \"title\": \"The Matrix\",\n        \"director\": \"the Wachowski family\",\n        \"year\": 1999\n    }\n]\n```\n\nThis response extracts th"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"\u5bfc\u6f14\": \"Wachowski\",\n  \"\u5e74\u4efd\": \"1999\"\n}\n``` \nThis response contains only the extracted information required for the g"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n  \"year\": 1999\n}\n```  \nExplanation:\n- \"The Matrix\" is extracted as the first element in "
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"The Matrix\",\n    \"Director\": \"Wachowski\",\n    \"year\": 1999\n}\n``` \nExplanation of structure:\n- I extracted the required informa"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"\u5bfc\u6f14\": \"Wachowski\",\n  \"\u5e74\": \"1999\"\n}\n```"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"The Matrix\",\n    \"Director\": \"Wachowski\",\n    \"Year\": \"1999\"\n}\n```\n\nThis response provides the extracted information in JSON f"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"The Matrix\",\n  \"director\": \"Wachowski\",\n  \"year\": 1999\n}\n``` \nNote that this is a simplified version of the provided input, with"
+        }
+      ]
+    },
+    "prompt_8": {
+      "prompt_idx": 8,
+      "baseline_correct": 1.0,
+      "n_clusters": 26,
+      "correct_fraction": 0.78,
+      "cluster_sizes": [
+        1,
+        13,
+        1,
+        9,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n[\n    {\n        \"title\": \"Parasite\",\n        \"director\": \"Bong Joonho\",\n        \"year\":2019\n    }\n]\n```\n```json\n[\n    {\n       \"title\": \"Paras"
+        },
+        {
+          "cluster_id": 1,
+          "size": 13,
+          "avg_field_recall": 0.8717948717948717,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite (2019)\",\n  \"director\": \"Bong Joo-ho\",\n  \"year\": 2019\n}\n```\n```"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joohho\",\n  \"year\": \"2019\"\n}\n``` \n```python\nimport json\n\n# Assuming the input is already in JSON f"
+        },
+        {
+          "cluster_id": 3,
+          "size": 9,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite (2019) by Bong Joon-ho\",\n  \"Director\": \"Bong Joon-ho\",\n  \"Year\": \"2019\"\n}\n```"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here is the requested information extracted into JSON format:\n\n```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-Ho\",\n  \"year\": 201"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Parasite (2019) by Bong Joonho\",\n  \"director\": \"Bong Joonho\",\n  \"Year\": \"2019\"\n}\n```\n\n\nThe extracted information is structured i"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Bong Joon-ho\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}\n``` \n\nThis JSON object contains the extracted information for the "
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joo-ho\",\n  \"year\": 2019\n}\n``` \nThis response contains the extracted information in JSON format."
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"Year\": \"2019\"\n}\n``` \nThis information is extracted directly from the provided text. "
+        },
+        {
+          "cluster_id": 9,
+          "size": 3,
+          "avg_field_recall": 0.8888888888888888,
+          "has_exact_match": true,
+          "sample": "Sure! Here is the extracted information in JSON format:\n\n```json\n{\n  \"title\": \"Parasite (2019)\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}\n```\n\nT"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \" year\": \"2019\"\n}\n``` \nThis JSON representation provides the extracted information in"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": \"2019\"\n}\n``` \nExplanation:\n- The input is extracting the title, director, and"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joo-ho\",\n  \"year\": 2019\n}\n``` \nNote: The movie's title is \"Parasite\" in Korean language.\nThe dire"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, here is the extracted information as JSON:\n\n```json\n{\n  \"title\": \"Parasite\",\n  \"Director\": \"Bong Joon-ho\",\n  \"Year\": 2019\n}\n``` \nThis JSON objec"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}\n```\n\nExplanation:\n- **Title**: The input provided is already in Englis"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure! Here is the extracted information as JSON:\n\n```json\n{\n  \"title\": \"Bong Joo-Ho's 'Parasite' (2019)\",\n  \"director\": \"Bong Joo-Ho\",\n  \"year\": 2019\n"
+        },
+        {
+          "cluster_id": 16,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Jooh\",\n  \"year\": \"2019\"\n}\n```"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help you extract the required information from the movie \"Parasite\" (2019) directed by Bong Joon-ho. Here's the extracted data in JSON for"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Bong Jooh\",\n  \" Director\":\"BongJooH\",\n  \"Year\" :2019\n}\n```\n```"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Based on the input provided, here is the extracted information in JSON format:\n\n```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joonho\",\n  \"year\""
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}\n```\nThis JSON object contains the extracted information from the input"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}\n``` \nNote: The input provided does not contain the required informatio"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"\ube44\uc0c1\",\n  \"director\": \"\ubc15\uc218\uc601\",\n  \"year\": 2019\n}\n```"
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"title\": \"Parasite (2019)\",\n  \"director\": \"Bong Joonho\",\n  \"year\": \"2019\"\n}\n```\n\nExplanation:\n- **Title**: The name of the movie.\n- **Dire"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "To extract the requested information from the given text, I will follow these steps:\n\n1. Identify the relevant information within the provided text.\n2"
+        },
+        {
+          "cluster_id": 25,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": \"2019\"\n} \nNote: The extracted information is in JSON format.\nOutput:\n```json\n{\n  \"tit"
+        }
+      ]
+    },
+    "prompt_9": {
+      "prompt_idx": 9,
+      "baseline_correct": 1.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.88,
+      "cluster_sizes": [
+        1,
+        31,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"country\": \"Japan\",\n    \"population\": \"13,960,000\"\n}\n``` \nNote: The extracted information is in JSON format for eas"
+        },
+        {
+          "cluster_id": 1,
+          "size": 31,
+          "avg_field_recall": 0.946236559139785,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"country\": \"Japan\",\n    \"population\": 13960000\n}\n```\n```python\n{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population\": "
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n``` \nNote: The population number is rounded to the nearest whole number "
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"country\": \"Japan\",\n    \"population\": 13960000\n}\n```\n\nThis JSON object contains the extracted information in a stru"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "To extract the requested information into JSON format, I will follow these steps:\n\n1. Identify the key fields in the input:\n   - City: Tokyo\n   - Coun"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"\u56fd\": \" Japen\",\n  \"\u4eba\u53e3\": 13960000\n}\n``` \nNote: \u8fd9\u306b\u306f\u3001\u65e5\u672c\u8a9e\u306e\u8aa4\u89e3\u91c8\u304c\u542b\u307e\u308c\u3066\u3044\u308b\u305f\u3081\u3001\u6b63\u78ba\u306a\u60c5\u5831\u306f\u300c\u6771\u4eac\u300d"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n``` \nNote: The population is given in scientific notation (e.g., 1396000"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n``` \nThis is the extracted information in JSON format. The city is Tokyo"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n``` \nExplanation:\n- The city is Tokyo.\n- The country is Japan.\n- The pop"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n```\n\nThis JSON object contains the extracted information about Tokyo Cit"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": \"13,960,000\"\n}\n```bornt"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \" Japan\",\n  \" Population\": \" 13,960,000\"\n}\n``` \nNote: The extractedinformationisintheformatofJSONandnotasTex"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"Country\": \"Japan\",\n    \"Population\": 13960000\n}\n``` \n\nThis JSON object contains the extracted information about th"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"country\": \"Japan\",\n    \"population\": 13960000\n}\n``` \nExplanation:\n- The input specifies that Tokyo is in Japan.\n- "
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n```  \nExplanation:\n- `city`: The name of the city.\n- `country`: The coun"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \" country\": \" Jap\u00f3n\",\n    \"population\": 13,960,000\n}\n``` \nThis response provides the requested information in JSON "
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n}\n```\n\nThis response provides the extracted information in a structured "
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": 13960000\n}\n```\n```python\nfrom typing import List\n\ndef extract_info(city_name: str, "
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Tokyo\",\n    \"country\": \"Japan\",\n    \"population\": 13960000\n}\n```\nExplanation:\n- The input specifies that we need to extract inf"
+        }
+      ]
+    },
+    "prompt_10": {
+      "prompt_idx": 10,
+      "baseline_correct": 1.0,
+      "n_clusters": 22,
+      "correct_fraction": 0.9,
+      "cluster_sizes": [
+        2,
+        1,
+        27,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n``` \nThis JSON object contains the extracted details for Mumba, India w"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n``` \nThis JSON object represents the extracted information about "
+        },
+        {
+          "cluster_id": 2,
+          "size": 27,
+          "avg_field_recall": 0.9753086419753086,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n``` \nThis JSON object contains the extracted information about th"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n``` \nThis JSON format is suitable for representing the extracted inform"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure, I can help with that! Here's the extracted information as JSON:\n\n```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12,442, 373"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n```\n\nThis JSON object contains the extracted information:\n- City:"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```\n\nExplanation:\n- **City**: Mumbai\n- **Country**: India\n- **Populatio"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n```  \n```python\nfrom typing import Dict\n\ndef extract_info(city: s"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 1244373\n}\n``` \nNote: The population is given in Indian format (12,442,373) which i"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```  \nExplanation:\n- The input is a string containing details about Mum"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure! Here's the extracted information:\n\n```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"\u5370\u5ea6\",\n  \"population\": 12442373\n}\n``` \nThis response provides\u5173\u4e8eMumb"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can extract that information into JSON format. Here it is:\n\n```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n``` \nThis JSON object contains extracted information about the city, co"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```\n\nThis response provides the requested information in a structured J"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n```\n\nThis response contains the requested information extracted directl"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n```\nThis JSON object contains the extracted information about Mum"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "To extract the requested information into JSON format, I'll follow these steps:\n\n1. Identify the key pieces of information to extract:\n   - City\n   - "
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n```\n\nExplanation:\n- The input provided is about the city of Mumba"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"\u5370\u5ea6\",\n  \"population\": 12442373\n}\n``` \nNote: The extracted information is based on the provided input. If yo"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Mumbai\",\n  \"country\": \"India\",\n  \"population\": 12442373\n}\n``` \nPlease note that this is extracted from the provided text and does"
+        },
+        {
+          "cluster_id": 21,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"city\": \"Mumbai\",\n    \"country\": \"India\",\n    \"population\": 12442373\n}\n```\n\nThis information is extracted directly from the provided dat"
+        }
+      ]
+    },
+    "prompt_11": {
+      "prompt_idx": 11,
+      "baseline_correct": 1.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.86,
+      "cluster_sizes": [
+        29,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 29,
+          "avg_field_recall": 0.9080459770114944,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": \"12,325,232\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \nNote:\n- \"Sao Paulo\" is the name of the city.\n- \"Brazil\" is the"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n```\n\nExplanation"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \nThis JSON object contains the extracted information about the "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n```  \nNote: The population number is rounded to two decimal places."
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": \"12,325,232\"\n}\n```\n\nExplanation:\n- \"Sao Paulo\" is extracted from the input.\n- "
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brasil\",\n  \"population\": 12325232\n}\n```\n\nThis JSON structure is appropriate for representing the extrac"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \n\u8bf7\u6ce8\u610f:\n- The extracted data is in JSON format.\n- The city name i"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \nThis JSON object contains the extracted information about Sao "
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brasil\",\n  \"population\": 12325232\n}\n``` \nNote: The population is given in millions for clarity.\n```json"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"city\": \"S\u00e3o Paulo\",\n    \"country\": \"Brazil\",\n    \"population\": \"12325232\"\n}\n```\n```json\n{\n    \"\u57ce\u5e02\": \"S\u00e3o Paulo\",\n    \"\u56fd\u5bb6\": \"\u5df4\u897f\",\n    \"\u4eba"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "To extract the requested information about S\u00e3o Paulo, Brazil, we need to:\n\n1. Identify the city name\n2. Determine its location (country)\n3. Find the p"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n[\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"Population\": \"12,325,232\"\n]\n```  \nNote: The extracted information is based on the provided "
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \nNote: The extracted information is in JSON format for easy rea"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": {\n    \"name\": \"Sao Paulo\",\n    \"country\": \"Brazil\"\n  },\n  \"population\": 12325232\n}\n``` \nThis JSON object represents the extracted "
+        },
+        {
+          "cluster_id": 15,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "Certainly! Here is the extracted information in JSON format:\n\n```json\n{\n    \"city\": \"Sao Paulo\",\n    \"country\": \"Brazil\",\n    \"population\": 12325232\n}"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n``` \nThis JSON object contains extracted information about the city"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"city\": \" Sao Paulo\",\n  \"country\": \"\u5df4\u897f\",\n  \"population\": \"12,325,232\"\n}\n```\n\nThis request extractses the required information in the reque"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"city\": \"Sao Paulo\",\n  \"country\": \"Brazil\",\n  \"population\": 12325232\n}\n```\n\nThis information is extracted directly from the provided text "
+        }
+      ]
+    },
+    "prompt_12": {
+      "prompt_idx": 12,
+      "baseline_correct": 1.0,
+      "n_clusters": 28,
+      "correct_fraction": 0.82,
+      "cluster_sizes": [
+        3,
+        19,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 3,
+          "avg_field_recall": 0.8888888888888888,
+          "has_exact_match": true,
+          "sample": "Sure! Here's the requested information extracted into JSON format:\n\n```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief technology officer\",\n  \"company"
+        },
+        {
+          "cluster_id": 1,
+          "size": 19,
+          "avg_field_recall": 0.8947368421052632,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO) at Stripe\",\n  \"company\": \"Stripe\"\n}\n}\n```"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n```  \nExplanation:\n- The name is extracted directly from the provided text."
+        },
+        {
+          "cluster_id": 3,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n```yre"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO)\",\n  \"company\": \"Stripe\"\n}\n```  \nExplanation: The extracted information inc"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n``` \nExplanation:\n- The input provided contains the name, role, and company"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO)\",\n  \"company\": \"Stripe\"\n}\n```\nThis response contains the extracted informa"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief technology officer (CTO) at Stripe\",\n  \"company\": \"Stripe\"\n}\n``` \nNote: The provided input seems to"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n```\n\nExplanation:\n- The extracted information includes the name \"Sarah Chen"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Sure, I can help you with that. Please provide me with the details of Sarah Chen so I can extract the required information into JSON format."
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help with that! Please provide the details you'd like me to extract. Here's the information you provided:\n\n- **Name:** Sarah Chen\n- **Role"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n``` \nThis JSON object contains the requested information extracted from the"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO of Stripe\",\n  \"company\": \"Stripe\"\n}\n```\nThis JSON object contains the extracted information about Sar"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer\",\n  \"company\": \"Stripe\"\n}\n```\n```json``` (Note: The provided JSON format does no"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Stripe\",\n  \"role\": \"CEO\",\n  \"company\": \"Stripe\"\n}\n``` \nExplanation:\n- `name`: The name of the organization.\n- `role`: The positio"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n[\n    {\n        \"name\": \"Sarah\u00b7\u53f2\u4e39\u5229\",\n        \"role\": \"\u9996\u5e2d\u904b\u982d\",\n        \"company\": \"Stripe\"\n    }\n]\n```\n```json``` \u662f\u7684\uff0c\u8acb\u63d0\u4f9b\u7d66\u5b9a\u4e49\u3002"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"Role\": \"Chief Technology Officer (CTO)\",\n  \"Company\": \"Coyote\"\n}\n```}{\n}"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure, I can help you extract the requested information into a JSON format. However, there's no specific API or tool provided in your question that dir"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO) at Stripe\",\n  \"company\": \"Stripe\"\n}\n``` \nNote that this extracted data is "
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"Role\": \"Chief Executive Officer (CEO)\",\n  \"Company\": \"Stripe\"\n}\n```</code>"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here's the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n```\nThis corre"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO) at Stripe\",\n  \"company\": \"Stripe\"\n}\n``` \nThis JSON object contains the req"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure! Here's the extracted information as JSON:\n\n```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer\",\n  \"company\": \"Stripe\"\n}\n```\n\n"
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO (Chief Technology Officer)\",\n  \"company\": \"Stripe\"\n}\n```  \n```"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO) of Stripe\",\n  \"company\": \"Stripe\"\n}\n```  \nNote that the input provided doe"
+        },
+        {
+          "cluster_id": 25,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"Chief Technology Officer (CTO) at Stripe\",\n  \"company\": \"Stripe\"\n}\n```\n\nIn this JSON format, we have extr"
+        },
+        {
+          "cluster_id": 26,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n``` \nNote that this data has been extracted based on the provided input and"
+        },
+        {
+          "cluster_id": 27,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Sarah\u00b7\u9648\",\n  \"role\": \"\u9996\u5e2d\u6280\u672f\u5b98\",\n  \"company\": \"Stripe\"\n}\n``` ```json\n```json\n``` ```json\n```json\n``` ```json\n``` ```json\n``` ```json\n"
+        }
+      ]
+    },
+    "prompt_13": {
+      "prompt_idx": 13,
+      "baseline_correct": 1.0,
+      "n_clusters": 14,
+      "correct_fraction": 0.96,
+      "cluster_sizes": [
+        34,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 34,
+          "avg_field_recall": 0.9215686274509803,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here is the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Ant"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n``` \nNote that this extracted information is in JSON"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Dr. James Wilson is a Professor in the Department of Mechanical Engineering at the University of California Berkeley. He serves as the Vice President "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Dr. JamesWilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthrophoric\"\n}\n}\n```\n\nExplanation for the extracted data:\n\n- The "
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 0.8333333333333333,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n``` \nExplanation:\n- The extracted information is str"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropics\"\n}\n``` \nThis JSON structure contains the extracted inf"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \" role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n``` \nExplanation: The extractedinformation is prese"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here is the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"Role\": \"VP of Engineering\",\n  \"Company\": \"Ant"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n```  \n```python\ndef extract_info(input):\n    \"\"\"\n   "
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropicis\"\n}\n``` \nThis JSON object extracts the required inform"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}\n```  \nThis is the extracted information in JSON form"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help you extract that information into JSON format. Here's how it would look:\n\n```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of En"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Certainly! Here is the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Ant"
+        }
+      ]
+    },
+    "prompt_14": {
+      "prompt_idx": 14,
+      "baseline_correct": 1.0,
+      "n_clusters": 21,
+      "correct_fraction": 0.86,
+      "cluster_sizes": [
+        28,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 28,
+          "avg_field_recall": 0.9285714285714286,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"Role\": \"Head of Product\",\n  \"Company\": \"Notion\"\n}\n```\n```json``` is used for representing the extracted data in a "
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"LisaPark\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \nExplanation:\n- The name is \"LisaPark\".\n- The role is \"Head o"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n```\n\nExplanation:\n- The extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n[\n  {\n    \"name\": \"Lisa park\",\n    \"role\": \"Head of Product at Notion\",\n    \"company\": \"Notion\"\n  }\n]\n]\n}\n``` \nThis is the extracted informati"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \nThis JSON object contains the extracted information in a st"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Notion\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Lisa Park\"\n}\n``` \nExplanation:\n- The input contains the name \"Lisa Park\" and "
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"LisaAC\",\n  \" role\": \"Head of Product\",\n  \" company\": \"Notion\"\n}\n```"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n```  \nNote: The roles in this example are not specific to any pa"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product at Notionone\",\n  \"company\": \"Notionone\"\n}\n```\n\nThis JSON representation provides the extra"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure! Here is the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n```\n\nTh"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Notion\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n```\nThis extracted information is in JSON format with the requested"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \n\nNote that this data is extracted directly from the provide"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sure, I can help you with that. Here's the extracted information in JSON format:\n\n```json\n{\n  \"name\": \"Lisa Park\",\n  \" role\": \"Head of Product\",\n  \" c"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product at Notion\",\n  \"company\": \"Notion\"\n}\n``` \nThis JSON format extracts the requested informati"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Notion\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \nThis response extracts the requested information into a JSON f"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product at Notion\",\n  \"company\": \"Notion\"\n}\n```\n```json\n```python\nimport json\n\n# Sample data\ndata "
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \nThis is the extracted information in JSON format. The `name"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Notion\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}\n``` \nThis JSON representation provides the extracted information in"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product at Notion\",\n  \"company\": \"Notion\"\n}\n```\n\nExplanation:\n- The input is a list with three ele"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"Lisa\",\n  \"role\": \"Product Manager\",\n  \"company\": \"Notion\"\n}\n```"
+        }
+      ]
+    },
+    "prompt_15": {
+      "prompt_idx": 15,
+      "baseline_correct": 0.0,
+      "n_clusters": 21,
+      "correct_fraction": 0.6,
+      "cluster_sizes": [
+        1,
+        2,
+        28,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json format\n{\n  \"date\": \"2025-03-15\",\n  \" event\": \"GDC Conference\",\n  \" location\": \"San Francisco\"\n}\n``` \nExplanation for the extracted data:\n- The"
+        },
+        {
+          "cluster_id": 1,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n``` \nThis JSON data structure captures the extrac"
+        },
+        {
+          "cluster_id": 2,
+          "size": 28,
+          "avg_field_recall": 0.6666666666666667,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n```"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n```\nExplanation:\n- The extracted data is structured as "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n``` \nThis is extracted information for the given input."
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n``` \nNote that I've extracted only the key pieces"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n``` \nNote: The provided input is already in JSON "
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n``` \nNote: The date is extracted directly from the inpu"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n``` \nNote that this is extracted based on the input pro"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n```\n\nExplanation:\nThe extracted information is st"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "To extract the requested information into JSON format, I will follow these steps:\n\n1. Identify the key elements of the input:\n   - Date: March 15, 202"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \" Event\": \"GDC Conference\",\n  \"Location\":\"San Francisco\"\n}\n``` \nExplanation: The extractedinformation is presented"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n``` \n\nNote that the date is in ISO format (YYYY-M"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"March 15, 2025\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n```  \nThis extracted data is presented as a JSON ob"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n} \nThanking you! I'm ready to help with any other questions"
+        },
+        {
+          "cluster_id": 15,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n```\n\nThis JSON object represents the extracted in"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Francisco\"\n}\n```\nThis response contains the extracted informat"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n```  \n```python\nimport json\n\ninput_text = \"\"\"\nOn March "
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n```\n\nNote that this is extracted into a JSON object whe"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sure! Here's the extracted information formatted as JSON:\n\n```json\n{\n    \"date\": \"2025-03-15\",\n    \"event\": \"GDC Conference\",\n    \"location\": \"San Fra"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2025-03-15\",\n  \"event\": \"GDC Conference\",\n  \"location\": \"San Francisco\"\n}\n``` \nExplanation:\n- The date is extracted directly from"
+        }
+      ]
+    },
+    "prompt_16": {
+      "prompt_idx": 16,
+      "baseline_correct": 0.0,
+      "n_clusters": 18,
+      "correct_fraction": 0.66,
+      "cluster_sizes": [
+        1,
+        1,
+        31,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \" event\": \"WWDC 2025\",\n  \" location\": \" Cupertino\"\n}\n``` \n```json\n```json\n{\n  \" date\": \" June 9\",\n  \" event\": \" WWDC 2"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n```\n```python\nfrom json import dumps\n\n# Example usage\nprint(dumps.lo"
+        },
+        {
+          "cluster_id": 2,
+          "size": 31,
+          "avg_field_recall": 0.666666666666667,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n```"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n``` \nExplanation: The extracted information is presented in JSON for"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n    \"date\": \"June 9, 2025\",\n    \" event\": \"WWDC 2025\",\n    \" location\": \"Cupertino\"\n}\n``` \nExplanation:\n- The date is extracted as `June 9, "
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n```\n\nExplanation:\n- The input text mentions \"WWDC 2025\", which likel"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"June 9\",\n    \"event\": \"WWDC 2025\",\n    \"Location\": \"Cupertino\"\n}\n``` \nNote: The date is extracted directly from the input text "
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"June 9, 2025\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino, California\"\n}\n``` \nThis JSON structure represents the extracted "
+        },
+        {
+          "cluster_id": 8,
+          "size": 3,
+          "avg_field_recall": 0.5555555555555555,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n``` \nExplanation:\n- The date is extracted as \"June 9\".\n- The event n"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"Event\": \"WWDC 2025\",\n  \"Location\": \"Cupertino\"\n}\n``` \nNote: The date is extracted as 'June 9', Event as 'WWDC 2025' a"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n``` \nNote: The extracted information is based on the provided input "
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"June 9\",\n    \"event\": \"World Conference on Digital Economy (WWDC)\",\n    \"location\": \"Cupertino\"\n}\n```  \n```python\nimport json\n\n"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n    \"date\": \"June 9\",\n    \"event\": \"WWDC 2025\",\n    \"location\": \"Cupertino\"\n} \n\"}\" \nPlease select the correct answer from the options below.\nA) Yes\n"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n```\nExplanation: The extracted information is presented as a JSON ob"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \"event\": \"WWDC 2025\",\n  \"location\": \"Cupertino\"\n}\n``` \n```jsonend\n``` \n\nExplanation:\n- The JSON structure is used to r"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"June 9\",\n    \"event\": \"WWDC 2025\",\n    \"location\": \"Cupertino\"\n}\n``` \nExplanation:\n- The extracted information is structured as"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"June 9\",\n    \"event\": \"WWDC 2025\",\n    \"location\": \"Cupertino\"\n}\n``` \nThis JSON object represents the extracted information fro"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"June 9\",\n  \" event\": \"WWDC 2025\",\n  \"location\": \" Cupertino\"\n}\n``` </sect> Extract the date, eventandlocationfrom: WWDC 2025took "
+        }
+      ]
+    },
+    "prompt_17": {
+      "prompt_idx": 17,
+      "baseline_correct": 0.0,
+      "n_clusters": 25,
+      "correct_fraction": 0.58,
+      "cluster_sizes": [
+        11,
+        1,
+        1,
+        1,
+        14,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 11,
+          "avg_field_recall": 0.696969696969697,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"2024-07-26\",\n  \"event\": \"The Olympics Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n```\n```json\n{\n  \"date\": \"2024-07-26\",\n  \"event\":"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"The Olympics opening ceremony\",\n  \"location\": \"Paris\"\n}\n``` \nNote: This is an example of extractingin"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"July 26, 2024\",\n    \"event\": \"Opening Ceremony\",\n    \"location\": \"Paris\"\n}\n}\n``` \nThis JSON object contains the extractedinform"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Opening Ceremony of the 24th Summer Olympics Games\",\n  \"location\": \"Paris, France\"\n}\n``` \n```json\n```"
+        },
+        {
+          "cluster_id": 4,
+          "size": 14,
+          "avg_field_recall": 0.857142857142857,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Olympics Opening Ceremony\",\n  \"location\": \"Paris, France\"\n}\n```\n```json\n```"
+        },
+        {
+          "cluster_id": 5,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \" event\": \"Opening Ceremony of the Olympian\",\n  \"location\": \"Paris, France\"\n}\n``` \n``` json\n```json\n```json\n```"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2024-07-26\",\n    \"event\": \"Olymp\u5723\u706b\u5e86\u5178\",\n    \"location\": \"\u5df4\u9ece\"\n}\n```"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Olympic Games Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n```\n\nThis extracted information is presented"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "\u597d\u7684, I can help you extract that information into JSON format. However, I need to know what kind of data you want to extract. Could you please specify "
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Olympics Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n``` \nNote that this is a simplified version of th"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July_26_2024\",\n  \"event\": \"olympics_opening_nation\",\n  \"location\": \"paris\"\n}\n``` \nExplanation:\n- **Date**: July_26_2024 - This is"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"TheOlympics Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n``` \nExplanation:\n- `date`: is extracted as \"J"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "To extract the requested information into JSON format, I will follow these steps:\n\n1. Identify the relevant data points:\n   - Date: July 26, 2024\n   -"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Here is the extracted information as JSON:\n\n```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Olympic Opening Ceremony\",\n  \"location\": \"Paris, France\"\n"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Sure\uff0c\u6211\u53ef\u4ee5\u5e6b\u4f60\u63d0\u53d6\u9019\u6bb5\u6587\u5b57\u4e2d\u7684\u65e5\u671f\u3001\u4e8b\u4ef6\u548c\u5730\u9ede\u3002\u4ee5\u4e0b\u662f\u4f60\u7684\u7b54\u6848\uff1a\n\n\u65e5\u671f\uff1aJuly 26\uff0c2024\n\n\u4e8b\u4ef6\uff1a\u5967\u904b\u958b\u5e55\u5178\u79ae\n\n\u5730\u9ede\uff1a\u5df4\u9ece\uff08\u5df4\u9ece\u5965\u904b\u5834\u9928\uff09"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Sure, I can help with that! Here is the extracted information as JSON:\n\n```json\n{\n    \"date\": \"2024-07-26\",\n    \"event\": \"The Olympic Games Opening Ce"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"The Olympics Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n``` \n```python\nfrom datetime import datetime\n"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Opening Ceremony of the Olympic Games\",\n  \"location\": \"Paris, France\"\n}\n```\n\nThis JSON object contain"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"July 26, 2024\",\n    \"event\": \"OlympIC Opening Ceremony\",\n    \"Location\": \"Paris\"\n}\n```\n``` \nThis response provides the extracte"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"2024-07-26\",\n  \"event\": \"The Olympic Games Opening Ceremony in Beijing, China (Paris)\",\n  \"location\": \"Beijing, China\"\n}\n```"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"opening ceremony of the Olympic Games\",\n  \"location\": \"paris\"\n}\n```"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"date\": \"2024-07-26\",\n    \" event\": \"The Olympics Opening Ceremony\",\n    \" location\": \"Paris, France\"\n}\n``` \n``` json\n``` python\nfrom da"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Olympic Games opening ceremony\",\n  \"location\": \"Paris\"\n}\n}\n``` \nThis JSON object contains the extract"
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"The Olympics OpeningCeremony\",\n  \"location\": \"Paris\"\n}\n```"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"OlympIS Opening Ceremony\",\n  \"location\": \"Paris\"\n}\n``` \nExplanation:\n- **Date**: July 26, 2024\n- **Ev"
+        }
+      ]
+    },
+    "prompt_18": {
+      "prompt_idx": 18,
+      "baseline_correct": 0.0,
+      "n_clusters": 18,
+      "correct_fraction": 0.64,
+      "cluster_sizes": [
+        26,
+        1,
+        1,
+        2,
+        1,
+        3,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 26,
+          "avg_field_recall": 0.8173076923076923,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": 2024,\n  \"price\": 38990\n}\n``` \n```json\n```json\n```json\n```json\n```json\n```json\n```json"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "To extract the requested information into JSON format, I need more context or specific data points about the \"2024 Tesla Model 3\". However, based on c"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n``` \nThis JSON structure captures all the required informa"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n``` \nNote: The price is given in Chinese yuan (\u00a5). If you "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \" Model\": \"Model 3\",\n  \" Year\": \"2024\",\n  \" Price\": \"$38,990\"\n}\n``` \n```json\n``` \nExplanation:\n- The extracted informat"
+        },
+        {
+          "cluster_id": 5,
+          "size": 3,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Here is the extracted information in JSON format:\n\n```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n```\n\nTh"
+        },
+        {
+          "cluster_id": 6,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": 2024,\n  \"price\": 38990\n}\n```\nExplanation:\n- The input is a string that contains the detai"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n```\n\nThis JSON object contains the requested information e"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 0.875,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": 2024,\n  \"price\": 38990\n}\n``` \nExplanation:\n- The make is extracted as \"Tesla\".\n- The mode"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Tesla\",\n    \"model\": \"Model 3\",\n    \"year\": 2024,\n    \"price\": \"$38,990\"\n}\n``` \nNote: The extracted information is based on the"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n``` \n\nThis extracted information is directly from the give"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": 2024,\n  \"price\": 38990\n}\n``` \nNote that I've used the input to extract specific details a"
+        },
+        {
+          "cluster_id": 12,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"\",\n  \"model\": \"\",\n  \"year\": \"\",\n  \"price\": \"$38,990\"\n}\n``` \n```"
+        },
+        {
+          "cluster_id": 13,
+          "size": 2,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```{\n    \"make\": \"Tesla\",\n    \"model\": \"Model 3\",\n    \"year\": \"2024\",\n    \"price\": \"$38,990\"\n}\n}"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": 2024,\n  \"price\": 38990\n}\n``` \nThis extracted information is in JSON format suitable for f"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "\u041a\u043e\u043d\u0435\u0447\u043d\u043e, \u044f \u043c\u043e\u0433\u0443 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c API Google Drive \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445\ub97c \uc0ac\uc6a9\ud558\uc5ec \uc815\ubcf4\ub97c \ucd94\ucd9c\ud560 \uc218\uace0 \uc788\uc2b5\ub2c8\ub2e4. \ud558\uc9c0\ub9cc \ud604\uc7ac\ub294Google Drive\ub97c \uc0ac\uc6a9\ud558\uc9c0 \ubabb\u3057\u3066\u3044\u308b\u305f\u3081,API\uc744\uc0ac\uc6a9\ud558\uc9c0 \uc54a\uace0,\ufffd\ubca0\uc774\ub4dc\uc5d0\uc11c\uc0ad\uc81c\ub41c\uc815\ubcf4\ub97c \uac00"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Here is the extracted information:\n\n```json\n{\n  \"make\": \"Tesla\",\n  \"model\": \"Model 3\",\n  \"year\": \"2024\",\n  \"price\": \"$38,990\"\n}\n```\n\nPlease note that "
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Tesla\",\n    \"model\": \"Model 3\",\n    \"year\": \"2024\",\n    \"price\": \"$38,990\"\n}\n```\n\nThis JSON representation captures the extract"
+        }
+      ]
+    },
+    "prompt_19": {
+      "prompt_idx": 19,
+      "baseline_correct": 0.0,
+      "n_clusters": 14,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        33,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 33,
+          "avg_field_recall": 0.553030303030303,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2023,\n  \"price\": \"$26,420\"\n}\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2023,\n    \"price\": 26420\n}\n```  \nNote: The price is in USD format.\n```"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "Sure! Here's the extracted information in JSON format:\n\n```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": \"2023\",\n  \"price\": \"$26,420\"\n}\n```"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": \"2023\",\n  \"price\": \"$26,420\"\n}\n```\n\nThis response provides the requested information in a "
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"Model\": \" Camry\",\n    \"Year\": \"2023\",\n    \"Price\": \"$26,420\"\n}\n```  \nNote: The price is given in Canadian dollars"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": \"2023\",\n    \"price\": \"$26,420\"\n}\n```  \n``` \nNote:\n- The input is a list of details a"
+        },
+        {
+          "cluster_id": 6,
+          "size": 2,
+          "avg_field_recall": 0.625,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": \"2023\",\n  \"price\": \"$26,420\"\n}\n``` \nExplanation:\n- The make is extracted directly from the"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": 2023,\n  \"price\": 26420\n}\n```  \nNote: The extracted information is based on the provided in"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2023,\n    \"price\": 26420\n}\n``` \nThis JSON object contains all the requested informat"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": \"2023\",\n    \"price\": \"$26,420\"\n}\n``` \nExplanation for human understanding:\n- The inp"
+        },
+        {
+          "cluster_id": 10,
+          "size": 3,
+          "avg_field_recall": 0.5833333333333334,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \"model\": \"Camry\",\n  \"year\": \"2023\",\n  \"price\": \"$26,420\"\n}\n``` \nNote: The price is given in Chinese currency. If you n"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"year\": 2023,\n    \"price\": \"$26,420\"\n}\n```\n\nThis JSON object contains the following inform"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"make\": \"Toyota\",\n  \" model\": \"Camry\",\n  \" year\": \"2023\",\n  \"price\": \"$26,420\"\n}\n```"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"make\": \"Toyota\",\n    \"model\": \"Camry\",\n    \"year\": 2023,\n    \"price\": 26420\n}\n}\n``` \nExplanation:\n- **Make:** Toyota\n- **Model:** Camry"
+        }
+      ]
+    },
+    "_summary": {
+      "n_wrong_baseline": 5,
+      "avg_clusters": 19.2,
+      "avg_correct_fraction": 0.496
+    }
+  }
+}

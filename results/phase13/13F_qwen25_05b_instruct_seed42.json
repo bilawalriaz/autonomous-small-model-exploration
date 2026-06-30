@@ -1,0 +1,100 @@
+{
+  "experiment": "13F",
+  "name": "Head-to-Head Comparison",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 2730.252913951874,
+  "timestamp": "2026-06-30T19:25:34",
+  "results": {
+    "no_noise": {
+      "condition": "no_noise",
+      "accuracy": 0.85,
+      "avg_field_recall": 0.94375,
+      "layers": [],
+      "sigma": 0,
+      "K": 1
+    },
+    "uniform_all": {
+      "condition": "uniform_all",
+      "accuracy": 0.925,
+      "avg_field_recall": 0.9791666666666666,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "sigma": 0.01,
+      "K": 10
+    },
+    "hub_only_L0": {
+      "condition": "hub_only_L0",
+      "accuracy": 0.925,
+      "avg_field_recall": 0.9791666666666666,
+      "layers": [
+        0
+      ],
+      "sigma": 0.01,
+      "K": 10
+    },
+    "random_layer_L7": {
+      "condition": "random_layer_L7",
+      "accuracy": 0.925,
+      "avg_field_recall": 0.9791666666666666,
+      "layers": [
+        7
+      ],
+      "sigma": 0.01,
+      "K": 10
+    },
+    "early_phase_L0_L5": {
+      "condition": "early_phase_L0_L5",
+      "accuracy": 0.925,
+      "avg_field_recall": 0.9791666666666666,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sigma": 0.01,
+      "K": 10
+    },
+    "atlas_scaled": {
+      "condition": "atlas_scaled",
+      "accuracy": 0.875,
+      "avg_field_recall": 0.9625,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "sigma": 0.01,
+      "K": 10
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "experiment": "13A",
+  "name": "Noise Localization",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 2936.93789935112,
+  "timestamp": "2026-06-30T16:21:47",
+  "results": {
+    "layer_0": {
+      "layer": 0,
+      "type": "conv",
+      "skip_kl": 82.9,
+      "best_of_K_accuracy": 0.9333333333333333,
+      "avg_field_recall": 0.9777777777777777,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_1": {
+      "layer": 1,
+      "type": "conv",
+      "skip_kl": 36.3,
+      "best_of_K_accuracy": 0.9,
+      "avg_field_recall": 0.9694444444444446,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_4": {
+      "layer": 4,
+      "type": "attn",
+      "skip_kl": 34.6,
+      "best_of_K_accuracy": 0.9333333333333333,
+      "avg_field_recall": 0.9805555555555556,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_5": {
+      "layer": 5,
+      "type": "conv",
+      "skip_kl": 44.4,
+      "best_of_K_accuracy": 0.9333333333333333,
+      "avg_field_recall": 0.975,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_7": {
+      "layer": 7,
+      "type": "conv",
+      "skip_kl": 7.3,
+      "best_of_K_accuracy": 0.9,
+      "avg_field_recall": 0.9722222222222222,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_12": {
+      "layer": 12,
+      "type": "attn",
+      "skip_kl": 29.1,
+      "best_of_K_accuracy": 0.9,
+      "avg_field_recall": 0.9694444444444446,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "layer_13": {
+      "layer": 13,
+      "type": "conv",
+      "skip_kl": 12.1,
+      "best_of_K_accuracy": 0.9333333333333333,
+      "avg_field_recall": 0.9805555555555555,
+      "K": 10,
+      "sigma": 0.01
+    },
+    "baseline": {
+      "best_of_K_accuracy": 0.8,
+      "avg_field_recall": 0.9333333333333333,
+      "K": 1,
+      "sigma": 0
+    }
+  }
+}

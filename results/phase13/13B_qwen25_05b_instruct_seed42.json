@@ -1,0 +1,41 @@
+{
+  "experiment": "13B",
+  "name": "Width Scaling",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 3586.8841927051544,
+  "timestamp": "2026-06-30T17:21:34",
+  "results": {
+    "K_1": {
+      "K": 1,
+      "best_of_K_accuracy": 0.7,
+      "avg_field_recall": 0.8916666666666667
+    },
+    "K_2": {
+      "K": 2,
+      "best_of_K_accuracy": 0.7333333333333333,
+      "avg_field_recall": 0.9166666666666666
+    },
+    "K_5": {
+      "K": 5,
+      "best_of_K_accuracy": 0.9,
+      "avg_field_recall": 0.9638888888888888
+    },
+    "K_10": {
+      "K": 10,
+      "best_of_K_accuracy": 0.9666666666666667,
+      "avg_field_recall": 0.9916666666666667
+    },
+    "K_20": {
+      "K": 20,
+      "best_of_K_accuracy": 0.9333333333333333,
+      "avg_field_recall": 0.9805555555555556
+    },
+    "K_50": {
+      "K": 50,
+      "best_of_K_accuracy": 1.0,
+      "avg_field_recall": 1.0
+    }
+  }
+}

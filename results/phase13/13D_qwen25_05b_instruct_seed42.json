@@ -1,0 +1,40 @@
+{
+  "experiment": "13D",
+  "name": "Selection Strategy",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 606.7287554740906,
+  "timestamp": "2026-06-30T18:16:40",
+  "results": {
+    "random": {
+      "strategy": "random",
+      "accuracy": 0.575,
+      "avg_field_recall": 0.8437500000000003
+    },
+    "lowest_nll": {
+      "strategy": "lowest_nll",
+      "accuracy": 0.55,
+      "avg_field_recall": 0.8166666666666668
+    },
+    "highest_conf": {
+      "strategy": "highest_conf",
+      "accuracy": 0.55,
+      "avg_field_recall": 0.8166666666666668
+    },
+    "majority_vote": {
+      "strategy": "majority_vote",
+      "accuracy": 0.55,
+      "avg_field_recall": 0.8166666666666668
+    },
+    "oracle": {
+      "strategy": "oracle",
+      "accuracy": 0.925,
+      "avg_field_recall": 0.9791666666666666
+    },
+    "baseline": {
+      "accuracy": 0.85,
+      "avg_field_recall": 0.9479166666666667
+    }
+  }
+}

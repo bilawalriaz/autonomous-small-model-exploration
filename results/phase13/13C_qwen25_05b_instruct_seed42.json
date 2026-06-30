@@ -1,0 +1,47 @@
+{
+  "experiment": "13C",
+  "name": "Sigma Sweep",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 2699.6655836105347,
+  "timestamp": "2026-06-30T18:06:33",
+  "results": {
+    "sigma_0.005": {
+      "sigma": 0.005,
+      "best_of_K_accuracy": 0.9,
+      "avg_field_recall": 0.9722222222222222,
+      "relative_perturbation": 0.0024752475247524753
+    },
+    "sigma_0.01": {
+      "sigma": 0.01,
+      "best_of_K_accuracy": 0.8666666666666667,
+      "avg_field_recall": 0.961111111111111,
+      "relative_perturbation": 0.0049504950495049506
+    },
+    "sigma_0.015": {
+      "sigma": 0.015,
+      "best_of_K_accuracy": 0.7666666666666667,
+      "avg_field_recall": 0.9277777777777777,
+      "relative_perturbation": 0.007425742574257425
+    },
+    "sigma_0.02": {
+      "sigma": 0.02,
+      "best_of_K_accuracy": 0.0,
+      "avg_field_recall": 0.26666666666666666,
+      "relative_perturbation": 0.009900990099009901
+    },
+    "sigma_0.03": {
+      "sigma": 0.03,
+      "best_of_K_accuracy": 0.0,
+      "avg_field_recall": 0.0,
+      "relative_perturbation": 0.01485148514851485
+    },
+    "sigma_0.05": {
+      "sigma": 0.05,
+      "best_of_K_accuracy": 0.0,
+      "avg_field_recall": 0.0,
+      "relative_perturbation": 0.024752475247524754
+    }
+  }
+}
