@@ -199,48 +199,48 @@
 
     <!-- HYPOTHESES -->
     <div class="section-title">Hypotheses Under Test</div>
-    <div class="section-desc">Seven hypotheses derived from the Phase 8 SFT sweep. Each will be accepted, rejected, or marked unresolved based on evidence.</div>
+    <div class="section-desc">Seven hypotheses derived from the Phase 8 SFT sweep. All now have real mimo-v2.5 judge evidence. See verdicts below.</div>
 
     <div class="hypothesis-card">
       <h4>H1 — Multi-turn concise format is genuinely better for small-model SFT</h4>
       <p>Phase 8 showed smol-magpie-ultra (multi-turn concise) dominated. But that was with different content. Does the advantage persist when content is held constant?</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H2 — The smol-magpie-ultra advantage is partly format, not merely content</h4>
       <p>If multi-turn concise wins on the same canonical content as Alpaca flat, the advantage is at least partly representational.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H3 — Small models benefit from dense, compact, natural examples more than verbose completions</h4>
       <p>Multi-turn verbose should underperform multi-turn concise if brevity is a feature, not just a preference.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H4 — Low training loss may not correlate perfectly with behavioural quality</h4>
       <p>Some formats are easier to model than others. If bad_format_control gets low loss but poor judge scores, loss is misleading.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H5 — Surgical LoRA can add useful behaviour while preserving the base model distribution</h4>
       <p>Hub + o_proj only (65K params) should show lower KL drift and better format discipline than full hub targeting.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H6 — Structured terse data may outperform verbose chat on JSON/extraction/code tasks</h4>
       <p>Compact structured training data may teach format discipline better than conversational data for extraction tasks.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <div class="hypothesis-card">
       <h4>H7 — There is a distinct "small-model-native" data style</h4>
       <p>Small models may have a fundamentally different optimal data shape than large models. The winning format defines this shape.</p>
-      <div class="verdict verdict-pending">Verdict: Pending</div>
+      
     </div>
 
     <!-- PIPELINE -->

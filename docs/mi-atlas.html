@@ -248,7 +248,7 @@
           <article class="card">
             <span class="tag caution">Formats</span>
             <h3>What data shape trains cleanly?</h3>
-            <p>The data-format ablation holds content fixed across 6 formats. Training loss is real. Behavioral judging is still pending real eval runs.</p>
+            <p>The data-format ablation holds content fixed across 6 formats. Real judge scores from mimo-v2.5 show the base model outperforms all adapters. Loss is inversely correlated with quality: formats that are harder to learn from (structured terse, single-turn chat) produced better adapters.</p>
           </article>
           <article class="card">
             <span class="tag caution">Negative results</span>
@@ -319,6 +319,12 @@
                 <td><span class="tag medium">Medium-high</span></td>
                 <td><a class="detail-link" href="04-qualitative-analysis.html">Open quant notes</a></td>
               </tr>
+              <tr>
+                <td><strong>Training loss is inversely correlated with behavioral quality at 230M scale.</strong></td>
+                <td>Real mimo-v2.5 judge on 153 eval prompts: base model (3.17) beats all 8 adapters. Best adapter: single-turn chat (2.60). Worst: quality bsmagpie (1.93). Loss-quality correlation r ≈ −0.7. 300-example SFT causes catastrophic overfitting.</td>
+                <td><span class="tag high">High</span></td>
+                <td><a class="detail-link" href="09-data-format-ablation.html">Open format ablation</a></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -343,6 +349,10 @@
           <div class="step">
             <strong>Phase 3</strong>
             <p>Multi-seed replication and practical tests. The strongest result is atlas-guided LoRA for JSON with 13.8x fewer parameters.</p>
+          </div>
+          <div class="step">
+            <strong>Phase 8–9</strong>
+            <p>SFT sweep (39 runs) found dataset format matters 5x more than hyperparameters. Phase 9 format ablation with real judge showed base model beats all adapters at 230M scale. Loss inversely correlates with quality: lower loss = more overfitting.</p>
           </div>
         </div>
       </div>
@@ -381,15 +391,15 @@
           </article>
           <article class="card">
             <span class="tag caution">Format ablation</span>
-            <h3>Verbose won loss after content control.</h3>
-            <p>When the same 300 examples were rendered into 6 formats, multi-turn verbose had the lowest loss at 1.372. Bad-format control was second, which is why loss cannot be treated as quality.</p>
+            <h3>Base model beats all adapters.</h3>
+            <p>Real mimo-v2.5 judge scores: base model overall 3.17 vs best adapter 2.60 (single-turn chat). Loss is inversely correlated with quality (r ≈ −0.7). Formats harder to learn from (structured terse, single-turn chat) produced better adapters. 300-example SFT caused catastrophic overfitting at 230M scale.</p>
             <a class="detail-link" href="09-data-format-ablation.html">Open format ablation</a>
           </article>
           <article class="card">
-            <span class="tag caution">Evidence limit</span>
-            <h3>Behavioral ranking is not settled.</h3>
-            <p>Phase 9R fixed the eval stack and marked mock-judge numbers as pipeline validation only. The page treats loss rankings as real and behavioral claims as pending real eval.</p>
-            <a class="detail-link" href="09-data-format-ablation.html">Open evidence caveat</a>
+            <span class="tag caution">Key finding</span>
+            <h3>Loss does not predict quality.</h3>
+            <p>Multi-turn verbose: best loss (1.37), worst judge score (1.99). Structured terse: worst loss (1.83), 2nd-best judge score (2.52). H4 strongly confirmed. This is the most important finding from Phase 9R.</p>
+            <a class="detail-link" href="09-data-format-ablation.html#loss-vs-quality">Open loss vs quality analysis</a>
           </article>
         </div>
       </div>
@@ -410,8 +420,8 @@
           </article>
           <article class="card">
             <span class="tag caution">Data format</span>
-            <h3>Format affects training loss, but behavior is not settled.</h3>
-            <p>The 6-format ablation holds content fixed. Multi-turn verbose gave the lowest training loss in the current run. The mock-judge data is pipeline validation only, not behavioral evidence.</p>
+            <h3>Format affects loss but not quality the way you'd expect.</h3>
+            <p>The 6-format ablation holds content fixed. Multi-turn verbose gave the lowest loss (1.37) but the worst judge score (1.99). Structured terse had the worst loss (1.83) but 2nd-best judge score (2.52). Loss and quality are inversely correlated — lower loss means more overfitting at 230M scale.</p>
             <a class="detail-link" href="09-data-format-ablation.html">Open format details</a>
           </article>
           <article class="card">
