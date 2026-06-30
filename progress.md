@@ -299,3 +299,74 @@ Presentation maintenance completed. No research claims, metrics, confidence leve
 - Mobile overflow: 0px on all tested pages at 390px width.
 - Share page detail links: 18 total, including 7 in the audited claims table.
 - LFM2 colored row border: removed (`border-left: 0px`).
+
+## Phase 13: Atlas-Guided Stochastic Inference (PTRM-Inspired) — 2026-06-30
+
+**Status:** DESIGN (not yet implemented)
+**Paper:** PTRM (arXiv:2605.19943) — Gaussian noise injection at test time for tiny recursive models
+**Design doc:** docs/phase13-ptrm-noise-injection-design.md
+
+### Core idea
+PTRM injects Gaussian noise into latent states during inference to escape "bad basins" and uses K parallel rollouts + Q-head selection to pick the best trajectory. Their models (5-7M params) beat frontier LLMs at 1/3000th the cost.
+
+Our atlas tells us *where* noise matters (L0 hub, skip KL=82.9) and where it's wasted (L5-L13, CKA=1.0, residual norm 25.5). We can do PTRM-style inference amplification but targeted, not uniform.
+
+### Hypotheses
+- H13-1: Hub-only noise (L0) matches uniform noise across all 14 layers
+- H13-2: Hub noise outperforms random-layer noise
+- H13-3: Loss-based selection improves over random selection
+- H13-4: Width scaling (K rollouts) beats depth scaling
+- H13-5: Noise creates measurably distinct completion clusters (bad basin detection)
+
+### Experiments
+- 13A: Noise localization (which layer?) — 14 layers × 50 prompts × K=10 × 3 seeds
+- 13B: Width scaling curve (K=1,2,5,10,20,50)
+- 13C: Sigma sweep (σ=0.05 to 2.0)
+- 13D: Selection strategy comparison (loss, logit-conf, voting, oracle)
+- 13E: Bad basin detection (K=100, clustering analysis)
+- 13F: Atlas-guided vs uniform vs random noise head-to-head
+
+### Estimated compute
+~8 hours total on aero. LFM2.5-230M (450MB bf16), peak VRAM ~2GB.
+
+### Expected outcome
+Hub-only noise + loss-based selection should boost structured extraction from ~83% to ~93%+ with no retraining — just 10x inference compute at the right layer.
+
+### What this enables
+1. Free inference-time capability amplification (no retraining)
+2. Operational validation of atlas-guided interventions
+3. Alternative to SFT for 230M models (where 300 examples = catastrophic overfitting)
+4. Generalization of PTRM from recursive to autoregressive architectures
+
+
+## Phase 13: Atlas-Guided Stochastic Inference (PTRM-Inspired) — 2026-06-30
+
+**Status:** DESIGN (not yet implemented)
+**Paper:** PTRM (arXiv:2605.19943) — Gaussian noise injection at test time for tiny recursive models
+**Design doc:** docs/phase13-ptrm-noise-injection-design.md
+
+### Core idea
+PTRM injects Gaussian noise into latent states during inference to escape bad basins and uses K parallel rollouts + Q-head selection to pick the best trajectory. Their models (5-7M params) beat frontier LLMs at 1/3000th the cost.
+
+Our atlas tells us where noise matters (L0 hub, skip KL=82.9) and where it is wasted (L5-L13, CKA=1.0, residual norm 25.5). We can do PTRM-style inference amplification but targeted, not uniform.
+
+### Hypotheses
+- H13-1: Hub-only noise (L0) matches uniform noise across all 14 layers
+- H13-2: Hub noise outperforms random-layer noise
+- H13-3: Loss-based selection improves over random selection
+- H13-4: Width scaling (K rollouts) beats depth scaling
+- H13-5: Noise creates measurably distinct completion clusters (bad basin detection)
+
+### Experiments
+- 13A: Noise localization (which layer?)
+- 13B: Width scaling curve (K=1,2,5,10,20,50)
+- 13C: Sigma sweep
+- 13D: Selection strategy comparison
+- 13E: Bad basin detection (K=100, clustering)
+- 13F: Atlas-guided vs uniform vs random head-to-head
+
+### Estimated compute
+~8 hours total on aero. LFM2.5-230M (450MB bf16), peak VRAM ~2GB.
+
+### Expected outcome
+Hub-only noise + loss-based selection should boost structured extraction from ~83% to ~93%+ with no retraining.
