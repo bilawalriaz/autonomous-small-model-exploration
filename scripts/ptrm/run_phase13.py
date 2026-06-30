@@ -479,7 +479,7 @@ def run_13A(model, tokenizer, args):
     """13A: Noise localization — which layer gives the biggest best-of-K boost?"""
     print("\n=== Experiment 13A: Noise Localization ===")
     K = 10
-    sigma = 0.05  # Reduced from 0.2 — prompt-only noise at hub is still potent
+    sigma = 0.01  # Reduced from 0.2 — prompt-only noise at hub is still potent
     prompts = EVAL_PROMPTS[:30]
     # Test key layers only: hub, secondary hubs, weak control layers
     KEY_LAYERS = [0, 1, 4, 5, 7, 12, 13]  # L0=hub, L4=secondary, L5=strongest MLP, L7/L13=weak controls
@@ -557,7 +557,7 @@ def run_13B(model, tokenizer, args):
     """13B: Width scaling — how does accuracy scale with K?"""
     print("\n=== Experiment 13B: Width Scaling ===")
     hub_layer = 0  # L0 is the hub
-    sigma = 0.05
+    sigma = 0.01
     K_values = [1, 2, 5, 10, 20, 50]
     prompts = EVAL_PROMPTS[:30]  # Fewer prompts for speed
     results = {}
@@ -606,7 +606,7 @@ def run_13C(model, tokenizer, args):
     print("\n=== Experiment 13C: Sigma Sweep ===")
     hub_layer = 0
     K = 10
-    sigma_values = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
+    sigma_values = [0.005, 0.01, 0.015, 0.02, 0.03, 0.05]
     prompts = EVAL_PROMPTS[:30]
     results = {}
 
@@ -654,7 +654,7 @@ def run_13D(model, tokenizer, args):
     """13D: Selection strategy — which selection method is best?"""
     print("\n=== Experiment 13D: Selection Strategy ===")
     hub_layer = 0
-    sigma = 0.05
+    sigma = 0.01
     K = 10
     prompts = EVAL_PROMPTS[:40]
     results = {}
@@ -733,7 +733,7 @@ def run_13E(model, tokenizer, args):
     """13E: Bad basin detection — do distinct completion clusters exist?"""
     print("\n=== Experiment 13E: Bad Basin Detection ===")
     hub_layer = 0
-    sigma = 0.05
+    sigma = 0.01
     K = 50  # More rollouts for clustering
     prompts = EVAL_PROMPTS[:20]
     results = {}
@@ -815,7 +815,7 @@ def run_13F(model, tokenizer, args):
     """13F: Atlas-guided vs uniform vs random noise — head-to-head."""
     print("\n=== Experiment 13F: Head-to-Head Comparison ===")
     K = 10
-    sigma = 0.05
+    sigma = 0.01
     prompts = EVAL_PROMPTS[:40]
     results = {}
 
