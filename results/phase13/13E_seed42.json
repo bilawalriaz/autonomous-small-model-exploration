@@ -1,0 +1,3216 @@
+{
+  "experiment": "13E",
+  "name": "Bad Basin Detection",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 327.0851752758026,
+  "timestamp": "2026-06-30T14:33:09",
+  "results": {
+    "prompt_0": {
+      "prompt_idx": 0,
+      "baseline_correct": 0.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.74,
+      "cluster_sizes": [
+        24,
+        2,
+        2,
+        3,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 24,
+          "avg_field_recall": 0.9583333333333334,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"John Smith\", \"age\": 35, \"city\": \"London\"}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"name\": \"John\", \"age\": \"35\", \"city\": \"London\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name: John Smith, Age: 35, City: London"
+        },
+        {
+          "cluster_id": 3,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Age, City"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The name, age, and city are extracted from the input data."
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{name, age, city} = {John Smith, 35, London}"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: {name, age, city}"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"name\":\"John Smith\",\"age\":35,\"city\":\"London\"}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Extract the name, age, and city from: John Smith is 35 years old and lives in London."
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "35, 35, London\n```"
+        },
+        {
+          "cluster_id": 10,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"name\": \"John Smith\",\n  \"age\": 35,\n  \"city\": \"London\"\n}"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "JSON data containing the extracted information."
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Name, Age, City = John Smith, Age, City = London"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Age, and City: John Smith, 35 years old, Lives in London."
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{ \"name\", \"age\", \"city\"\" }"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output the output for the given input.\n\n```json\n{\n  \"output\": {\n    \"name\": \"John\",\n    \"age\": 35,\n    \"city\": \"London\"\n  }\n}\n```"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The extracted name, age, and city are John Smith, 35, London."
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: {\"output\": \"{\"}}"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[{\"name\": \"John Smith\", \"age\": \"35 years\", \"city\": \"London\"}]"
+        }
+      ]
+    },
+    "prompt_1": {
+      "prompt_idx": 1,
+      "baseline_correct": 0.0,
+      "n_clusters": 13,
+      "correct_fraction": 0.72,
+      "cluster_sizes": [
+        29,
+        2,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        4,
+        2,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 29,
+          "avg_field_recall": 0.9885057471264368,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Maria Garcia\", \"age\": 28, \"city\": \"Madrid\"}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Age, City\n\n```"
+        },
+        {
+          "cluster_id": 2,
+          "size": 4,
+          "avg_field_recall": 0.5833333333333334,
+          "has_exact_match": false,
+          "sample": "Name, Age, City = Maria Garcia, Age, City = Madrid"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[{\"name\", \"age\", \"city\"}]"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "What is the answer?\n\n```json:\n\n```\n  The answer is Maria Garcia, aged 28, resides in Madrid.\n```"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, age, city."
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name: Maria Garcia, Age: 28, City: Madrid"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: Name, Age, City = {\"Name\": \"Maria Garcia\", \"Age\": 28, \"City\": \"Madrid\"}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is as follows."
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Age, City\nMaria Garcia, 28, resides in Madrid."
+        },
+        {
+          "cluster_id": 10,
+          "size": 4,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Name, Age, City = \"Madrid\""
+        },
+        {
+          "cluster_id": 11,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: Maria Garcia, aged 28, resides in Madrid."
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"name\": \"Maria\", \"age\": \"28\", \"city\": \"Madrid\"}"
+        }
+      ]
+    },
+    "prompt_2": {
+      "prompt_idx": 2,
+      "baseline_correct": 0.0,
+      "n_clusters": 15,
+      "correct_fraction": 0.9,
+      "cluster_sizes": [
+        6,
+        24,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 6,
+          "avg_field_recall": 0.5555555555555555,
+          "has_exact_match": true,
+          "sample": "Name, Age, City = Cairo"
+        },
+        {
+          "cluster_id": 1,
+          "size": 24,
+          "avg_field_recall": 0.9444444444444443,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Ahmed\", \"age\": 42, \"city\": \"Cairo\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Age, City\nName: Ahmed Hassan\nAge: 42\nCity: Cairo"
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Ahmed Hassan, 42, Cairo."
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Age, City = Ahmed Hassan, Age = 42, City = Cairo"
+        },
+        {
+          "cluster_id": 6,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Age, City\n\nOutput: Name, Age, City"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Ahmed Hassan\", \"age\": 42, \"city\": \"Cairo\"}}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 3,
+          "avg_field_recall": 0.8888888888888888,
+          "has_exact_match": true,
+          "sample": "{\n  \"name\": \"Ahmed Hassan\",\n  \"age\": 42,\n  \"city\": \"Cairo\"\n}"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Ahmed Hassan\", \"age\": \"42\", \"city\": \"Cairo\"}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"name\":{\"\"\",\"age\":{\"\",\"city\":{\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"name\":{\"\",\",\",\",\",\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"\",\"\",\"\",\"\",\"\"\",\"\",\"\",\"\"\",\"\"\",\"\""
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"extracted_info\":{\"name\":\"Ahmed Hassan\",\"age\":42,\"city\":\"Cairo\"}}"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Ahmed Hassan (42) from Cairo."
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name: Ahmed Hassan, Age: 42, City: Cairo"
+        }
+      ]
+    },
+    "prompt_3": {
+      "prompt_idx": 3,
+      "baseline_correct": 1.0,
+      "n_clusters": 26,
+      "correct_fraction": 0.52,
+      "cluster_sizes": [
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        9,
+        2,
+        5,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\n  \"summary\": \"The iPhone 15 is a popular product that features a touch of technology with a touch of technology with a touch of technology with a to"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency = {\"iPhone 15\": \"$999\", \"Price\": \"$999\", \"Currency\": \"USD\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"product\": \"iPhone 15\", \"price\": \"$999\", \"currency\": \"USD\"}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Output: Output: {\"product\": \"iPhone\", \"price\": 999, \"currency\": \"USD\"}"
+        },
+        {
+          "cluster_id": 4,
+          "size": 6,
+          "avg_field_recall": 0.9444444444444443,
+          "has_exact_match": true,
+          "sample": "Product: iPhone, Price: $999, Currency: USD"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency, and Additional Details.\n\nOutput: Product, Price, Currency, and Additional Details.\n\nOutput: Product, Price, Currency, and Ad"
+        },
+        {
+          "cluster_id": 6,
+          "size": 9,
+          "avg_field_recall": 0.07407407407407407,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: Output: Output: Product: iPhone 15, Price: $999, Currency: USD"
+        },
+        {
+          "cluster_id": 8,
+          "size": 5,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: iPhone 15, Price: $999. Currency: USD."
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "The product, price, and currency are $999."
+        },
+        {
+          "cluster_id": 10,
+          "size": 5,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The iPhone 15 costs $999."
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency: iPhone 15, iPhone 15 Price, iPhone 15 Currency: iPhone 15, iPhone 15 Price, iPhone 15 Currency: iPhone 15, iPhone 15 Price, "
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The product is an iPhone 15 with a price of $999."
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The product is The iPhone 15, costs $999, and is in USD."
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output the product, price, and currency."
+        },
+        {
+          "cluster_id": 15,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Product, Price, Currency]"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[Product, Price, Currency] = [iPhone 15, $999]"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency."
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"output\": {\n    \"product\": \"The iPhone 15 costs $999\",\n    \"price\": \"$999\",\n    \"currency\": \"USD\"\n  },\n  \"details\": {\n    \"product\": \"The "
+        },
+        {
+          "cluster_id": 19,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The product, price, and currency are extracted from the provided input."
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"product\": \"iPhone 15\",\n  \"price\": 999,\n  \"currency\": \"USD\"\n}\n```"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency: $999."
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product = iPhone 15, Price = $999.currency, Currency = USD."
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Extract the extracted information]"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: iPhone 15, Price: $999.currency: USD"
+        },
+        {
+          "cluster_id": 25,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output: Output: Output: Output: Output: Output: Output: Output: Output:"
+        }
+      ]
+    },
+    "prompt_4": {
+      "prompt_idx": 4,
+      "baseline_correct": 0.0,
+      "n_clusters": 16,
+      "correct_fraction": 0.72,
+      "cluster_sizes": [
+        2,
+        13,
+        1,
+        8,
+        1,
+        10,
+        1,
+        1,
+        1,
+        2,
+        4,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency\n\nExplanation: The product is Samsung Galaxy S24, priced at 849 GBP."
+        },
+        {
+          "cluster_id": 1,
+          "size": 13,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"product\": \"Samsung Galaxy S24\", \"price\": \"849 GBP\", \"currency\": \"GBP\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency\n{\"Product\": \"Samsung Galaxy S24\", \"Price\": 849, \"Currency\": \"GBP\"}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 8,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Samsung Galaxy S24, Price: 849 GBP, Currency: USD."
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency = \"849 GBP\""
+        },
+        {
+          "cluster_id": 5,
+          "size": 10,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency, Currency\nProduct, Price, Currency, Currency\nProduct, Price, Currency, Currency"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency = 849 GBP."
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency = \"Samsung Galaxy S24\", 849 GBP, 1."
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Samsung Galaxy S24, Price: \u00a3849, Currency: GBP"
+        },
+        {
+          "cluster_id": 10,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Samsung Galaxy S24 priced at 849 GBP."
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency, Country\n```json\n{\"name\": \"Samsung Galaxy S24\", \"arguments\":{\"product\": \"Galaxy S24\", \"price\": 849, \"currency\": \"GBP\"}}\n```"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Product name, price in GBP, and currency."
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, and Currency = Samsung Galaxy S24 priced at 849 GBP."
+        },
+        {
+          "cluster_id": 14,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency\n\n```json\n{\n  \"product\": \"Samsung Galaxy S24\",\n  \"price\": 849,\n  \"currency\": \"GBP\"\n}\n```"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Samsung Galaxy S24 priced at 849 GBP, priced in British Pounds."
+        }
+      ]
+    },
+    "prompt_5": {
+      "prompt_idx": 5,
+      "baseline_correct": 0.0,
+      "n_clusters": 30,
+      "correct_fraction": 0.7,
+      "cluster_sizes": [
+        1,
+        2,
+        7,
+        4,
+        1,
+        1,
+        1,
+        2,
+        4,
+        2,
+        1,
+        3,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"product\":{\"name\":{\"value\":{\"description\":\"name\":\"Sony WH-1000XM5 headphones\"}},\"price\":{\"value\":{\"description\":\"price\":\"349\"}}},\"currency\":{\"value\":"
+        },
+        {
+          "cluster_id": 1,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5 headphones retail for 349 EUR. Price: \u20ac349. Currency: EUR."
+        },
+        {
+          "cluster_id": 2,
+          "size": 7,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5, Price: 349 EUR, Currency: EUR"
+        },
+        {
+          "cluster_id": 3,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sony WH-1000XM5 headphones at 349 EUR"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5 headphones; Price: 349 EUR; Currency: EUR"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "product=Sony WH-1000XM5=349EUR,price=349EUR,currency=EUR"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: Sony WH-1000XM5 headphones priced at 349 EUR with currency in EUR."
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"product\": \"Sony WH-1000XM5\", \"price\": 349, \"currency\": \"EUR\"}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency, Details"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency."
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The extracted information in JSON format.\n\n```json\n{\n \"product\": \"Sony WH-1000XM5\",\n \"price\": 349,\n \"currency\": \"EUR\"\n}\n```"
+        },
+        {
+          "cluster_id": 11,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency\n\nOutput: Product, Price, Currency"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sony WH-1000XM5 headphones are priced at \u20ac349, with a unit of 1 headphone."
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: {\"product\": \"Sony WH-1000XM5\", \"price\":349, \"currency\":\"EUR\"}"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, and Currency\nProduct: Sony WH-1000XM5 Headphones\nPrice: 349 EUR\nCurrency: Euro (EUR)"
+        },
+        {
+          "cluster_id": 15,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5 headphones, Price: \u20ac349. Currency: EUR."
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Sony WH-1000XM5 headphones product, price, and currency are extracted from the given input."
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "349 EUR from Sony WH-1000XM5 headphones."
+        },
+        {
+          "cluster_id": 18,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, and Currency from: Sony WH-1000XM5 headphones retail for 349 EUR."
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sony WH-1000XM5 headphones, price is 349 EUR, currency is EUR."
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product, Price, Currency, Details\nProduct: Sony WH-1000XM5 headphones, Retail Price: 349 EUR, Currency: EUR, Details: Product, Price, Currency, Detail"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5 Headphones Retail Price: \u20ac349 EUR Currency: EUR"
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sony WH-1000XM5 headphones are priced at 349 EUR with a retail price of 349."
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The product is a Sony WH-1000XM5 headphones with a price of 349 EUR and a currency of the same as the product."
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sony WH-1000XM5 headphones are priced at 349 EUR."
+        },
+        {
+          "cluster_id": 25,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Output\": \"Out"
+        },
+        {
+          "cluster_id": 26,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency, Currency of Currency."
+        },
+        {
+          "cluster_id": 27,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Product: Sony WH-1000XM5 headphones, Price: 349 EUR, Currency: Euro (EUR)"
+        },
+        {
+          "cluster_id": 28,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sony WH-1000XM5 product price currency: EUR."
+        },
+        {
+          "cluster_id": 29,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Product, Price, Currency, and Additional Details."
+        }
+      ]
+    },
+    "prompt_6": {
+      "prompt_idx": 6,
+      "baseline_correct": 0.0,
+      "n_clusters": 22,
+      "correct_fraction": 0.56,
+      "cluster_sizes": [
+        9,
+        1,
+        14,
+        5,
+        3,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 9,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is a JSON object containing the title, director, and year."
+        },
+        {
+          "cluster_id": 2,
+          "size": 14,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"title\": \"Inception\", \"director\": \"Christopher Nolan\", \"year\": 2010}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 5,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Inception directed by Christopher Nolan in 2010."
+        },
+        {
+          "cluster_id": 4,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"year\": 2010\n}"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{...}"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[title,director,year]]"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n{\n    \"title\": \"Extracted Information\",\n    \"director\": \"Christopher Nolan\",\n    \"year\": 2010\n}\n\n```\n\n**Corrected and Complete Response:****\n\n"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[{\"title\": \"Title\", \"director\": \"Director\", \"year\": \"Year\"}"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[title,director,year]"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"title\":{\",\"\"\"\":{\"\",\"\"\":{\"\",\"\":{\"\"\":\"\",\"\":\"\":\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "\"Title: Inception\", Director: Christopher Nolan, Year: 2010"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is returned as a JSON object."
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "[{\"title\": \"Inception\",\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"]]"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"title\":{\"extract\":{\"title\":\"Inception\",\"director\":{\"extract\":\"Christopher Nolan\"\"\"year\":\"2010\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Inception is a science fiction thriller film directed by Christopher Nolan in 2010."
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[{\"title\": \"Inception\", \"director\": \"Christopher Nolan\", \"year\": 2010}]]"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, and Year extracted from the input.\n\n```json\nthe_title, director, and_year\ntitle, director, and_year\n```"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The extracted information is as follows: Title: Inception, Director: Christopher Nolan, Year: 2010."
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: {\"title\": \"The Hitcher\", \"director\": \"Christopher Nolan\", \"year\": \"2010\"}"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Title: Inception, Director: Christopher Nolan, Year: 2010"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[1, 2, 3]\n\nThe output is 1, 2, 3."
+        }
+      ]
+    },
+    "prompt_7": {
+      "prompt_idx": 7,
+      "baseline_correct": 1.0,
+      "n_clusters": 22,
+      "correct_fraction": 0.74,
+      "cluster_sizes": [
+        9,
+        4,
+        1,
+        1,
+        9,
+        8,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 9,
+          "avg_field_recall": 0.9259259259259258,
+          "has_exact_match": true,
+          "sample": "{\"title\": \"The Matrix\", \"director\": \"Wayne\", \"year\": 1999}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output should be a JSON list of dictionaries.\n\n{\n \"json_output\": {\n \"json_output\": {\n \"json_output\": {\n \"json_output\": {\n \"json_output\": {\n \"json_outp"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The title is \"The Matrix\", the director is \"Wachowskis\", and the year is \"1999\"."
+        },
+        {
+          "cluster_id": 4,
+          "size": 9,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output: The Matrix, directed by the Wachowskis, released 1999."
+        },
+        {
+          "cluster_id": 5,
+          "size": 8,
+          "avg_field_recall": 0.9166666666666666,
+          "has_exact_match": true,
+          "sample": "{\"title\": \"The Matrix\", \"director\": \"Wachowskis\", \"year\": \"1999\"}"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Title, Director, Year\n\nThe Matrix, directed by the Wachowskis, released in 1999."
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The Matrix is a science fiction film directed by the Wachowskis, released in 1999."
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[title,director,year]"
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Title: The Matrix, Director: Wachowskis, Year: 1999"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"title\": \"The Matrix\",\"director\": \"Wachowskis\",\"year\": 1999}"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[{'title': 'The Matrix', 'director': 'Wachowskis', 'year': 1999}]"
+        },
+        {
+          "cluster_id": 12,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"Title\": \"The Matrix\",\n  \"Director\": \"Wachowskis\",\n  \"Year\": 1999\n}"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"title\":{\",\",\"\"Director\":{\"Name\":{\"Year\":{\"}},\"}\n}"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "JSON object containing the extracted title, director, and year."
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "[{\"title\": \"The Matrix\", \"director\": \"Wachowski\", \"year\": 1999}]"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"title\":{\"\",\"director\":{\"\",\"year\":\"}\",}\"}"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year, Output\nOutput: Title, Director, Year, Output\nOutput: Title, Director, Year, Output"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "[{\"title\": \"Title\", \"director\": \"director\"}, {\"title\": \"Director\", \"director\": \"wachowskis\"}]]"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[{\"title\"\": \"The Matrix\", \"director\"\": \"Wachowskis\", \"year\"\": 1999}]"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The Matrix, Wachowskis, 1999."
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Title, Director, Year]"
+        }
+      ]
+    },
+    "prompt_8": {
+      "prompt_idx": 8,
+      "baseline_correct": 0.0,
+      "n_clusters": 19,
+      "correct_fraction": 0.66,
+      "cluster_sizes": [
+        20,
+        1,
+        2,
+        3,
+        3,
+        4,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 20,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"title\": \"Parasite\", \"director\": \"Bong Joon-ho\", \"year\": \"2019\"}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year\n{\"Title\", \"Director\", \"Year\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[{\"title\": \"Parasite\", \"director\": \"Bong Joon-ho\", \"year\": 2019}]"
+        },
+        {
+          "cluster_id": 3,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[title, director, year]"
+        },
+        {
+          "cluster_id": 4,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Title: Parasite, Director: Bong Joon-ho, Year: 2019"
+        },
+        {
+          "cluster_id": 5,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Parasite (2019) by Bong Joon-ho."
+        },
+        {
+          "cluster_id": 6,
+          "size": 5,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\"title\":{\"name\":\"Parasite\",\"author\":{\"name\":\"BongJoonho\"}},\"director\":{\"name\":\"Parasite\"}}"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The extracted title, director, and year are displayed in JSON format.\n\n```json\n{\n  \"title\": \"Parasite\",\n  \"director\": \"Bong Joon-ho\",\n  \"year\": 2019\n}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"title\":{\"},{\"director\":{\"},{\"year\":{\"}}},{\"title\":{\"}}}."
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The requested information is\nA new study suggests that a single dose of a specific type of vitamin D3 may be more effective than a combination of two "
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"title\":\"Parasite\", \"director\":\"Bong Joon-ho\", \"year\":\"2019\"}"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "[Parasite (2019) by Bong Joon-ho]"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Title: Parasite (2019) by Bong Joon-ho\nDirector: Bong Joon-ho\nYear: 2019"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "JSON"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Title, Director, Year, Extracted Information"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[{\"title\", \"director\", \"year\"}]"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[{\"title\":\", \"director\":\", \"year\":\"}].\n\n[{\"title\":\", \"director\":\", \"year\":\"\",]\"."
+        }
+      ]
+    },
+    "prompt_9": {
+      "prompt_idx": 9,
+      "baseline_correct": 0.0,
+      "n_clusters": 12,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        2,
+        13,
+        19,
+        4,
+        2,
+        3,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 1,
+          "size": 13,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Tokyo, Japan has a population of 13,960,000."
+        },
+        {
+          "cluster_id": 2,
+          "size": 19,
+          "avg_field_recall": 0.6666666666666665,
+          "has_exact_match": false,
+          "sample": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population\": \"13,960,000\"}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output:"
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Tokyo is a city in Japan with a population of 13,960,000."
+        },
+        {
+          "cluster_id": 5,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: Tokyo, Japan, 13,960,000"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Tokyo, Japan; 13,960,000"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "City, Country, Population\n```"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "The extracted information is: City: Tokyo, Country: Japan, Population: 13,960,000."
+        },
+        {
+          "cluster_id": 9,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population\": \"13,960,000\"\n}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Tokyo, Japan, is a city with a population of 13,960,000."
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Tokyo, Japan; 13,960,000;"
+        }
+      ]
+    },
+    "prompt_10": {
+      "prompt_idx": 10,
+      "baseline_correct": 0.0,
+      "n_clusters": 15,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        2,
+        11,
+        7,
+        1,
+        1,
+        11,
+        1,
+        2,
+        1,
+        7,
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Mumbai in India has 12,442,373 people."
+        },
+        {
+          "cluster_id": 1,
+          "size": 11,
+          "avg_field_recall": 0.5454545454545454,
+          "has_exact_match": false,
+          "sample": "Mumbai is a city in India with a population of 12,442,373 people."
+        },
+        {
+          "cluster_id": 2,
+          "size": 7,
+          "avg_field_recall": 0.619047619047619,
+          "has_exact_match": false,
+          "sample": "Mumbai, 12,442,373 people."
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "City, Country, Population"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 5,
+          "size": 11,
+          "avg_field_recall": 0.6666666666666667,
+          "has_exact_match": false,
+          "sample": "{\"city\": \"Mumbai\", \"country\": \"India\", \"population\": \"12,442,373\"}}."
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Mumbai,India,12,442,373people"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Mumbai in India: 12,442,373 people"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output: Extract the city, country, and population from: Mumbai in India: 12,442,373 people."
+        },
+        {
+          "cluster_id": 9,
+          "size": 7,
+          "avg_field_recall": 0.619047619047619,
+          "has_exact_match": false,
+          "sample": "Mumbai, India, 12,442,373 people"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "[Mumbai] 12,442,373 people"
+        },
+        {
+          "cluster_id": 11,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n\"city\": \"Mumbai\",\n\"country\": \"India\",\n\"population\": 37200000\n}"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "[{\"city\": \"Mumbai\", \"country\": \"India\", \"population\": \"12,442,373\"}]"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: City: Mumbai, Country: India, Population: 12,442,"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"city\":\"Mumbai\", \"country\":\"India\", \"population\":\"12,442,373\"}"
+        }
+      ]
+    },
+    "prompt_11": {
+      "prompt_idx": 11,
+      "baseline_correct": 0.0,
+      "n_clusters": 21,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        1,
+        1,
+        18,
+        6,
+        4,
+        1,
+        1,
+        4,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output should be a JSON object.\n```"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sao Paulo is a major city in Brazil, known for its economic growth and cultural diversity."
+        },
+        {
+          "cluster_id": 2,
+          "size": 18,
+          "avg_field_recall": 0.6666666666666665,
+          "has_exact_match": false,
+          "sample": "{\"city\": \"Sao Paulo\", \"country\": \"Brazil\", \"population\": 12,325}}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 6,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sao Paulo, Brazil \u2014 population 12,325,232"
+        },
+        {
+          "cluster_id": 4,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output: Output: Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[1, 2, 3]"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Sao Paulo, Brazil"
+        },
+        {
+          "cluster_id": 7,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "City, Country, Population"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output the city, country, and population from: Sao Paulo, Brazil \u2014 city, country, and population from: Sao Paulo, Brazil \u2014 city, country, and populati"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"city\":\"Sao Paulo\", \"country\":\"Brazil\", \"population\":\"12,325,232\"}\"}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: [{\"city\": \"Sao Paulo\", \"country\": \"Brazil\", \"population\": 12340}, {\"city\": \"Pra\u00e7a\", \"country\": \"Brazil\", \"population\": 3250}]"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "The city, country, and population are Sao Paulo, Brazil."
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "JSON output is: {\"city\": \"Sao Paulo\", \"country\": \"Brazil\", \"population\": \"12,325,232\"}"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"city\": \"Sao Paulo\",\"{\"country\": \"Brazil\",\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sao Paulo, Brazil, 12,325,232"
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "The city is S\u00e3o Paulo, Brazil, and the population is 12,325,232."
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\"city\": \"Sao\", \"country\": \"Brazil\", \"population\": \"12,325,232\"}"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Sao Paulo, Brazil \u2014 city, country, and population."
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "The city, country, and population is sao Paulo, brazil, 12,325,232."
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: \"City: Sao Paulo, Country: Brazil, Population: 12,325,232\""
+        }
+      ]
+    },
+    "prompt_12": {
+      "prompt_idx": 12,
+      "baseline_correct": 0.0,
+      "n_clusters": 17,
+      "correct_fraction": 0.68,
+      "cluster_sizes": [
+        3,
+        23,
+        6,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name: Sarah Chen, Role: CTO, Company: Stripe"
+        },
+        {
+          "cluster_id": 1,
+          "size": 23,
+          "avg_field_recall": 0.753623188405797,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Sarah Chen\", \"role\": \"CTO\", \"company\": \"Stripe\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 6,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company"
+        },
+        {
+          "cluster_id": 3,
+          "size": 2,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"name\": \"Sarah Chen\",\n  \"role\": \"CTO\",\n  \"company\": \"Stripe\"\n}\n```"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"name\":{\"role\": \"CTO\", \"company\": \"Stripe\"}}"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"extracted_info\":{\"name\":{\"type\":\"string\",\"role\":\"string\",\"company\":\"string\"},\"extracted_value\":{\"value\":{\"value\":{\"value\":{\"value\":{\"value\":{\"value\""
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "CTO, Role, Company"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\"name\": \"\", \"role\": \"\", \"company\": \"Stripe\"}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "CTO, Roles, Company"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: [{\"name\", \"role\", \"company\"}]"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "The extracted information is as follows.\n\n```json\n{\n  \"name\": \"extract\",\n  \"arguments\": {\n    \"name\": \"extract\",\n    \"arguments\": {\n      \"name\": \"nam"
+        },
+        {
+          "cluster_id": 11,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sarah Chen is the CTO at Stripe."
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"name\":\"Sarah\", \"role\":\"CTO\", \"company\":\"Stripe\"}"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Sarah Chen, CTO, Stripe"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"name\":{\"role\": \"\",\"\"\",\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n  name: \"Sarah\",\n  role: \"CTO\",\n  company: \"Stripe\"\n}"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Role, Company\nName, Role, Company\nSarah Chen, CTO, Stripe"
+        }
+      ]
+    },
+    "prompt_13": {
+      "prompt_idx": 13,
+      "baseline_correct": 0.0,
+      "n_clusters": 13,
+      "correct_fraction": 0.78,
+      "cluster_sizes": [
+        4,
+        30,
+        1,
+        3,
+        1,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 4,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company"
+        },
+        {
+          "cluster_id": 1,
+          "size": 30,
+          "avg_field_recall": 0.9888888888888888,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Dr. James Wilson\", \"role\": \"VP of Engineering\", \"company\": \"Anthropic\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company, and Additional Information\n- Name: Dr. James Wilson\n- Role: VP\n- Company: Anthropic\n- Additional Information: Works at Anthropic"
+        },
+        {
+          "cluster_id": 3,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company\nName: Dr. James Wilson, Role, Company\nName: Dr. James Wilson, Role, Company\nName: Dr. James Wilson, Role, Company"
+        },
+        {
+          "cluster_id": 5,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Dr. James Wilson, VP of Engineering, works at Anthropic."
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company, Position"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"data\": {\"name\": \"Anthropic\", \"role\": \"VP of Engineering\", \"company\": \"Anthropic\"}}, {\"status\": \"pending\"}}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name, Role, Company = \"Dr. James Wilson\", \"VP of Engineering\", \"Anthropic\""
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company, Position, Salary, Education, Certifications, Industry, Experience, Skills, References, Awards, Awards, Awards, Awards, Awards, Aw"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Information]"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name = Dr. James Wilson, Role = VP of Engineering, Company = Anthropic"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is: Name, Role, Company."
+        }
+      ]
+    },
+    "prompt_14": {
+      "prompt_idx": 14,
+      "baseline_correct": 0.0,
+      "n_clusters": 11,
+      "correct_fraction": 0.76,
+      "cluster_sizes": [
+        3,
+        21,
+        8,
+        7,
+        2,
+        1,
+        1,
+        4,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 21,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Lisa Park\", \"role\": \"Head of Product\", \"company\": \"Notion\"}"
+        },
+        {
+          "cluster_id": 2,
+          "size": 8,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Lisa Park \u2014 Head of Product at Notion."
+        },
+        {
+          "cluster_id": 3,
+          "size": 7,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company"
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"name\": \"LisaPark\", \"role\": \"Head of Product\", \"company\": \"Notion\"}}."
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{name: \"Lisa Park\", role: \"Head of Product\", company: \"Notion\"}"
+        },
+        {
+          "cluster_id": 7,
+          "size": 4,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Name: Lisa Park  \nRole: Head of Product  \nCompany: Notion"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "\"{\"Name\", \"Role\", \"Company\"}\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Name, Role, Company."
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"name\": \"Lisa Park\",\"role\": \"Head of Product\",\"company\": \"Notion\"}"
+        }
+      ]
+    },
+    "prompt_15": {
+      "prompt_idx": 15,
+      "baseline_correct": 0.0,
+      "n_clusters": 25,
+      "correct_fraction": 0.3,
+      "cluster_sizes": [
+        1,
+        2,
+        1,
+        1,
+        1,
+        3,
+        3,
+        2,
+        1,
+        3,
+        8,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        7,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is in JSON format."
+        },
+        {
+          "cluster_id": 1,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is: Date, Event, Location."
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "The result of the extract is a list of dates, events, and locations for the GDC conference."
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n  extract_date: \"2025-03-15\",\n  extract_event\": \"GDC conference\",\n  extract_location\": \"San Francisco\"\n}"
+        },
+        {
+          "cluster_id": 5,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Date: March 15, 2025; Event: GDC conference; Location: San Francisco."
+        },
+        {
+          "cluster_id": 6,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Extract the date, event, and location as JSON objects."
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location."
+        },
+        {
+          "cluster_id": 9,
+          "size": 3,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\n  \"date\": \"March 15, 2025\",\n  \"event\": \"GDC conference\",\n  \"location\": \"San Francisco\"\n}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 8,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Output: {\"date\": \"2025-03-15\", \"event\": \"GDC conference\", \"location\": \"San Francisco\"}"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "[{\"date\": \"2025-03-15\", \"event\": \"GDC conference\", \"location\": \"San Francisco\"}]"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Date,Event,Location]"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "```json\n{\"intents\": [{\"extract_date\", \"value\"], \"extract_event\", \"extract_location\"}\n\nOutput:\n{\"intents\": [{\"extract_date\", \"value\"}, \"extract_event\","
+        },
+        {
+          "cluster_id": 14,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "The GDC conference was held in San Francisco."
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"extracted_info\":{\"extracted_date\":\"2025-03-15\",\"extracted_event\":{\"event\":{\"event\":{\"event\":{\"event\":{\"event\":{\"event\":{\"event\":{\"event\":{\"event\":{\""
+        },
+        {
+          "cluster_id": 16,
+          "size": 2,
+          "avg_field_recall": 0.16666666666666666,
+          "has_exact_match": false,
+          "sample": "The date, event, and location of the GDC conference were extracted from the input data."
+        },
+        {
+          "cluster_id": 17,
+          "size": 7,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "{\"date\": \"March 15, 2025\", \"event\": \"GDC conference\", \"location\": \"San Francisco\"}"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\": {\"result\":"
+        },
+        {
+          "cluster_id": 19,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The date, event, and location are extracted from the input."
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[Date], [Event], [Location]"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Date: March 15, 2025, Event: GDC conference, Location: San Francisco"
+        },
+        {
+          "cluster_id": 22,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "JSON string containing the extracted data."
+        },
+        {
+          "cluster_id": 23,
+          "size": 1,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "Output:\n{\n  \"message\": \"The extracted information is for informational purposes only.\",\n  \"date\": \"March 15, 2025\",\n  \"event\": \"GDC conference\",\n  \"lo"
+        },
+        {
+          "cluster_id": 24,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"date\": \"2025-03-15\", \"event\": \"GDC conference\", \"location\": \"San Francisco\"}\n\nExplanation: The provided input is a JSON object containing data about"
+        }
+      ]
+    },
+    "prompt_16": {
+      "prompt_idx": 16,
+      "baseline_correct": 0.0,
+      "n_clusters": 22,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        2,
+        3,
+        3,
+        6,
+        1,
+        1,
+        2,
+        1,
+        1,
+        8,
+        2,
+        1,
+        4,
+        1,
+        5,
+        1,
+        1,
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 2,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extracted information is a JSON object containing the date, event, and location."
+        },
+        {
+          "cluster_id": 1,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The date, event, and location are extracted from the input."
+        },
+        {
+          "cluster_id": 2,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"date\": \"WWDC 2025\", \"event\": \"WWDC 2025\", \"location\": \"Cupertino\"}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 6,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Output: {\"date\": \"June 2025\", \"event\": \"took place\", \"location\": \"Cupertino\"}"
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Output: Date, Event, Location\nDate: WWDC 2025, Event, Location"
+        },
+        {
+          "cluster_id": 5,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "The extracted date, event, and location are represented by the following JSON structure:\n\n{\n  \"extracted_date\": \"June 9\",\n  \"extracted_event\": \"Cupert"
+        },
+        {
+          "cluster_id": 6,
+          "size": 2,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\"date\": \"June 9\", \"event\": \"Cupertino\", \"location\": \"Cupertino\"}"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Output: \"Date: June 9, Event: Cupertino\""
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"result\":{\"{\"}"
+        },
+        {
+          "cluster_id": 9,
+          "size": 8,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location"
+        },
+        {
+          "cluster_id": 10,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"event\": \"WWDC 2025\", \"date\": \"June 9\", \"location\": \"Cupertino\"}}"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The extract is complete."
+        },
+        {
+          "cluster_id": 12,
+          "size": 4,
+          "avg_field_recall": 0.41666666666666663,
+          "has_exact_match": false,
+          "sample": "Date: June 9, Event: WWDC 2025, Location: Cupertino."
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"extract\": \"{\"extract\": \"{\"extract\": \"{\"extract\": \"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+        },
+        {
+          "cluster_id": 14,
+          "size": 5,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "WWDC 2025 took place June 9 in Cupertino."
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location."
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Extract the extracted information as JSON."
+        },
+        {
+          "cluster_id": 17,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "```json\n\"Extract the date, event, and location from: WWDC 2025 took place June 9 in Cupertino.\"\n```"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "The date is June 9, the event is the Cupertino event, and the location is Cupertino."
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"extracted\":{\"keywords\":[\"date\",\"event\",\"location\"],\"source\": \"WWDC2025\"}}"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Date: 2025-06-09, Event: Take a ride, Location: Cupertino"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Extract the date, event, and location from WWDC 2025 that took place June 9 in Cupertino."
+        }
+      ]
+    },
+    "prompt_17": {
+      "prompt_idx": 17,
+      "baseline_correct": 0.0,
+      "n_clusters": 17,
+      "correct_fraction": 0.12,
+      "cluster_sizes": [
+        3,
+        6,
+        21,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 3,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location"
+        },
+        {
+          "cluster_id": 1,
+          "size": 6,
+          "avg_field_recall": 1.0,
+          "has_exact_match": true,
+          "sample": "The extracted date, event, and location from: The Olympics opening ceremony on July 26, 2024 in Paris."
+        },
+        {
+          "cluster_id": 2,
+          "size": 21,
+          "avg_field_recall": 0.5079365079365079,
+          "has_exact_match": false,
+          "sample": "{\"date\": \"2024-07-26\", \"event\": \"Opening ceremony\", \"location\": \"Paris\"}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\n\"Output\": {\n \\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\""
+        },
+        {
+          "cluster_id": 4,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[date,event,location]"
+        },
+        {
+          "cluster_id": 5,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"event\": \"The Olympics opening ceremony\", \"location\": \"Paris\"}"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "Date: 2024-07-26, Event: Opening ceremony, Location: Paris"
+        },
+        {
+          "cluster_id": 7,
+          "size": 2,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "[{\"date\": \"July 26\", \"event\": \"Opening ceremony\", \"location\": \"Paris\"}]"
+        },
+        {
+          "cluster_id": 8,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\"date\": \"July 26, 2024\", \"event\": \"Olympic opening ceremony\", \"location\": \"Paris\"}"
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\n  date: \"2024-07-26\",\n  event: \"Olympic Olympic Olympic Olympic Olympic Olympic Olympic Olympic Olympic Olympic\",\n  location: \"Paris\"\n}"
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "{\"event\": \"Opening ceremony\", \"location\": \"Paris\"}}"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "[{\"date\": \"July 26, 2024\", \"event\": \"Opening ceremony\", \"location\": \"Paris\"}]}"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location."
+        },
+        {
+          "cluster_id": 13,
+          "size": 2,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "Date, Event, Location\nDate, Event, Location\nJuly 26, 2024, Paris"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.3333333333333333,
+          "has_exact_match": false,
+          "sample": "2024-07-26-2024-Paris"
+        },
+        {
+          "cluster_id": 15,
+          "size": 3,
+          "avg_field_recall": 0.6666666666666666,
+          "has_exact_match": false,
+          "sample": "{\n  \"date\": \"July 26, 2024\",\n  \"event\": \"Opening ceremony\",\n  \"location\": \"Paris\"\n}"
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"result\": \"{\\\"result\\\":\\\"{\\\"result\\\":\\\"{\\\"result\\\":\\\"{\\\"result\\\":\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\"\\\""
+        }
+      ]
+    },
+    "prompt_18": {
+      "prompt_idx": 18,
+      "baseline_correct": 0.0,
+      "n_clusters": 23,
+      "correct_fraction": 0.04,
+      "cluster_sizes": [
+        14,
+        5,
+        1,
+        1,
+        2,
+        4,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 14,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "{\"make\": \"Tesla\", \"model\": \"Model 3\", \"year\": \"2024\", \"price\": \"$38,990\"}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 5,
+          "avg_field_recall": 0.7,
+          "has_exact_match": false,
+          "sample": "2024 Tesla Model 3 \u2014 $38,990"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Make the extract."
+        },
+        {
+          "cluster_id": 3,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Make, model, year, and price."
+        },
+        {
+          "cluster_id": 4,
+          "size": 2,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Make: Tesla, Model 3 \u2014 Year: 2024 \u2014 Price: $38,990"
+        },
+        {
+          "cluster_id": 5,
+          "size": 4,
+          "avg_field_recall": 0.6875,
+          "has_exact_match": false,
+          "sample": "{\n  make: \"Tesla\",\n  model: \"Model 3\",\n  year: 2024,\n  price: \"$38,990\"\n}"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Extract the make, model, year, and price from: 2024 Tesla Model 3 \u2014 $38,990"
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "JSON representation of the extracted data."
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "[{\"make\", \"model\", \"year\", \"price\"}]."
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Output: {\"make\": \"Tesla\", \"model\": \"Model 3\", \"year\": 2024, \"price\": 3900}}."
+        },
+        {
+          "cluster_id": 10,
+          "size": 2,
+          "avg_field_recall": 0.875,
+          "has_exact_match": true,
+          "sample": "```json\n{\n  \"output\": {\n    \"make\": \"Tesla\",\n    \"model\": \"Model 3\",\n    \"year\": 2024,\n    \"price\": \"$38,990\"\n  }\n}\n```"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "What is the price of the 2024 Tesla Model 3?"
+        },
+        {
+          "cluster_id": 12,
+          "size": 2,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "Make: Tesla, Model: 3, Year: 2024, Price: $38,990"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "{\"make\":\"Tesla\",\"model\":\"Model 3\",\"year\":2024,\"price\":\"$38,990\"}}"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Extracted data for the given input.\n\n```json\n{\n  \"name\": \"extract_data\",\n  \"arguments\": {\n    \"input\": {\n      \"make\": \"Tesla\",\n      \"model\": \"Model "
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.25,
+          "has_exact_match": false,
+          "sample": "make=Model,Tool=Model,Year=2024,Price=$38,990"
+        },
+        {
+          "cluster_id": 16,
+          "size": 5,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Make, Model, Year, Price"
+        },
+        {
+          "cluster_id": 17,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"name\": \"extract\",\n  \"arguments\": [\n    {\n      \"type\": \"object\",\n      \"properties\": {\n        \"make\": \"Tesla\",\n        \"model\": \"Model 3"
+        },
+        {
+          "cluster_id": 18,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "make = \"Tesla\", model = \"Model 3\", year = 2024, price = $38,990"
+        },
+        {
+          "cluster_id": 19,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "[{\"make\": \"Tesla\", \"model\": \"Model 3\", \"year\": 2024, \"price\": 3890.0}]]"
+        },
+        {
+          "cluster_id": 20,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: Output: Output: Output:"
+        },
+        {
+          "cluster_id": 21,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "A JSON object containing the extract of the make, model, year, and price."
+        },
+        {
+          "cluster_id": 22,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "{\"extracted_info\":{\"make\":\"Tesla\",\"model\":\"Model 3\",\"year\":2024,\"price\":\"$38,990\"}}"
+        }
+      ]
+    },
+    "prompt_19": {
+      "prompt_idx": 19,
+      "baseline_correct": 0.0,
+      "n_clusters": 17,
+      "correct_fraction": 0,
+      "cluster_sizes": [
+        23,
+        1,
+        1,
+        4,
+        5,
+        5,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "size": 23,
+          "avg_field_recall": 0.41304347826086957,
+          "has_exact_match": false,
+          "sample": "{\"make\": \"Toyota\", \"model\": \"Camry\", \"year\": 2023, \"price\": \"$26,420\"}"
+        },
+        {
+          "cluster_id": 1,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output: [{\" nations | country | city | city | city | output | output | output]"
+        },
+        {
+          "cluster_id": 2,
+          "size": 1,
+          "avg_field_recall": 0.25,
+          "has_exact_match": false,
+          "sample": "{\n  make: 2023\n  model: Le\n  year: 2023\n  price: 26,420\n}"
+        },
+        {
+          "cluster_id": 3,
+          "size": 4,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "extract the make, model, year, and price from: A 2023 Toyota Camry LE costs $26,420."
+        },
+        {
+          "cluster_id": 4,
+          "size": 5,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Make: Toyota Camry LE, Model: Le, Year: 2023, Price: $26,420"
+        },
+        {
+          "cluster_id": 5,
+          "size": 5,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "Make: Toyota, Model: Camry, Year: 2023, Price: $26,420"
+        },
+        {
+          "cluster_id": 6,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "The make, model, year, and price are as follows: Toyota Camry LE, 2023, 26,420."
+        },
+        {
+          "cluster_id": 7,
+          "size": 1,
+          "avg_field_recall": 0.25,
+          "has_exact_match": false,
+          "sample": "{\"make\": \"T\", \"model\": \"LE\", \"year\": \"2023\", \"price\": \"26,420\"}"
+        },
+        {
+          "cluster_id": 8,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "The make, model, year, and price are: Make: Toyota, Model: Camry, Year: 2023, Price: $26,420."
+        },
+        {
+          "cluster_id": 9,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "The output should be:\nThe output should be:\nThe output should be the extracted information."
+        },
+        {
+          "cluster_id": 10,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "```json\n{\n  \"type\": \"array\",\n  \"items\": [\n    {\n      \"name\": \"make\",\n      \"value\": \"A\",\n      \"operator\": \"and\"\n    },\n    {\n      \"name\": \"model\",\n"
+        },
+        {
+          "cluster_id": 11,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "{\"make\":\",\"model\":\",\"year\":\",\"price\":\"}}"
+        },
+        {
+          "cluster_id": 12,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Make: Toyota Camry LE: Model: Camry LE: Year: 2023: Cost: $26,420"
+        },
+        {
+          "cluster_id": 13,
+          "size": 1,
+          "avg_field_recall": 0.5,
+          "has_exact_match": false,
+          "sample": "{\"make\":\"Toyota\",\"model\":\"Camry\",\"year\":\"2023\",\"price\":\"26,420\"}"
+        },
+        {
+          "cluster_id": 14,
+          "size": 1,
+          "avg_field_recall": 0.75,
+          "has_exact_match": false,
+          "sample": "Output: Output: \"A 2023 Toyota Camry LE costs $26,420.0\"\""
+        },
+        {
+          "cluster_id": 15,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Output should be a JSON object containing the extracted information."
+        },
+        {
+          "cluster_id": 16,
+          "size": 1,
+          "avg_field_recall": 0.0,
+          "has_exact_match": false,
+          "sample": "Make, model, year, price."
+        }
+      ]
+    },
+    "_summary": {
+      "n_wrong_baseline": 18,
+      "avg_clusters": 18.166666666666668,
+      "avg_correct_fraction": 0.4266666666666667
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "experiment": "13D",
+  "name": "Selection Strategy",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 134.82190346717834,
+  "timestamp": "2026-06-30T14:27:42",
+  "results": {
+    "random": {
+      "strategy": "random",
+      "accuracy": 0.475,
+      "avg_field_recall": 0.6083333333333334
+    },
+    "lowest_nll": {
+      "strategy": "lowest_nll",
+      "accuracy": 0.575,
+      "avg_field_recall": 0.75625
+    },
+    "highest_conf": {
+      "strategy": "highest_conf",
+      "accuracy": 0.575,
+      "avg_field_recall": 0.75625
+    },
+    "majority_vote": {
+      "strategy": "majority_vote",
+      "accuracy": 0.55,
+      "avg_field_recall": 0.7020833333333334
+    },
+    "oracle": {
+      "strategy": "oracle",
+      "accuracy": 0.8,
+      "avg_field_recall": 0.9395833333333332
+    },
+    "baseline": {
+      "accuracy": 0.175,
+      "avg_field_recall": 0.21666666666666665
+    }
+  }
+}

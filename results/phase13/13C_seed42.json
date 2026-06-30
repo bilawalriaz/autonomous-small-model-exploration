@@ -1,0 +1,47 @@
+{
+  "experiment": "13C",
+  "name": "Sigma Sweep",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 557.0217213630676,
+  "timestamp": "2026-06-30T14:25:27",
+  "results": {
+    "sigma_0.005": {
+      "sigma": 0.005,
+      "best_of_K_accuracy": 0.7666666666666667,
+      "avg_field_recall": 0.9166666666666665,
+      "relative_perturbation": 0.0024752475247524753
+    },
+    "sigma_0.01": {
+      "sigma": 0.01,
+      "best_of_K_accuracy": 0.7666666666666667,
+      "avg_field_recall": 0.9305555555555555,
+      "relative_perturbation": 0.0049504950495049506
+    },
+    "sigma_0.015": {
+      "sigma": 0.015,
+      "best_of_K_accuracy": 0.7333333333333333,
+      "avg_field_recall": 0.9083333333333333,
+      "relative_perturbation": 0.007425742574257425
+    },
+    "sigma_0.02": {
+      "sigma": 0.02,
+      "best_of_K_accuracy": 0.06666666666666667,
+      "avg_field_recall": 0.32222222222222213,
+      "relative_perturbation": 0.009900990099009901
+    },
+    "sigma_0.03": {
+      "sigma": 0.03,
+      "best_of_K_accuracy": 0.0,
+      "avg_field_recall": 0.0,
+      "relative_perturbation": 0.01485148514851485
+    },
+    "sigma_0.05": {
+      "sigma": 0.05,
+      "best_of_K_accuracy": 0.0,
+      "avg_field_recall": 0.0,
+      "relative_perturbation": 0.024752475247524754
+    }
+  }
+}
