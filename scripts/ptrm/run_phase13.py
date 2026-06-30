@@ -171,45 +171,83 @@ def load_model(device="cuda:0"):
 # ---------------------------------------------------------------------------
 
 def generate_noisy_rollout(model, tokenizer, prompt, layer_indices, sigma,
-                           max_new_tokens=64, rollout_seed=None, temp=0.2, top_p=0.9):
+                           max_new_tokens=64, rollout_seed=None, temp=0.2, top_p=0.9,
+                           noise_mode="prompt_only"):
     """Generate one rollout with noise injected at specified layers.
+    
+    noise_mode:
+      - "prompt_only": noise only during prompt forward pass (analogous to PTRM)
+      - "every_step": noise at every generation step (original, too destructive)
+    
     Optimized: 2 forward passes total (generation + metrics)."""
     device = next(model.parameters()).device
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs["input_ids"].shape[1]
 
-    # Register hooks
-    hooks = []
-    for idx in layer_indices:
-        hook = make_noise_hook(sigma, noise_seed=(rollout_seed + idx) if rollout_seed else None)
-        h = model.model.layers[idx].register_forward_hook(hook)
-        hooks.append(h)
+    if noise_mode == "prompt_only":
+        # Run prompt through model with noise hooks, then generate from perturbed KV cache
+        hooks = []
+        for idx in layer_indices:
+            hook = make_noise_hook(sigma, noise_seed=(rollout_seed + idx) if rollout_seed else None)
+            h = model.model.layers[idx].register_forward_hook(hook)
+            hooks.append(h)
 
-    if rollout_seed is not None:
-        set_seed(rollout_seed)
-    with torch.no_grad():
-        output = model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            do_sample=True,
-            temperature=temp,
-            top_p=top_p,
-            pad_token_id=tokenizer.pad_token_id,
-        )
+        if rollout_seed is not None:
+            set_seed(rollout_seed)
+        
+        with torch.no_grad():
+            # Forward prompt with noise to get perturbed model state
+            prompt_out = model(**inputs, use_cache=True)
+            past_key_values = prompt_out.past_key_values
+            
+            # Remove hooks before clean generation
+            for h in hooks:
+                h.remove()
+            hooks = []
+            
+            # Generate from perturbed state without further noise
+            bos_token = inputs["input_ids"][:, -1:]  # Last prompt token as start
+            output = model.generate(
+                input_ids=bos_token,
+                past_key_values=past_key_values,
+                max_new_tokens=max_new_tokens,
+                do_sample=True,
+                temperature=temp,
+                top_p=top_p,
+                pad_token_id=tokenizer.pad_token_id,
+            )
+            # Prepend prompt tokens for full sequence
+            full_output = torch.cat([inputs["input_ids"], output], dim=1)
+    else:
+        # "every_step" mode: noise at every step (original PTRM-style, too destructive)
+        hooks = []
+        for idx in layer_indices:
+            hook = make_noise_hook(sigma, noise_seed=(rollout_seed + idx) if rollout_seed else None)
+            h = model.model.layers[idx].register_forward_hook(hook)
+            hooks.append(h)
 
-    for h in hooks:
-        h.remove()
+        if rollout_seed is not None:
+            set_seed(rollout_seed)
+        with torch.no_grad():
+            full_output = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                do_sample=True,
+                temperature=temp,
+                top_p=top_p,
+                pad_token_id=tokenizer.pad_token_id,
+            )
+        for h in hooks:
+            h.remove()
 
-    text = tokenizer.decode(output[0][prompt_len:], skip_special_tokens=True).strip()
+    text = tokenizer.decode(full_output[0][prompt_len:], skip_special_tokens=True).strip()
 
     # Single forward pass for both NLL and confidence
     with torch.no_grad():
-        logits = model(output).logits[0]  # (seq_len, vocab)
-        # Prompt NLL
+        logits = model(full_output).logits[0]
         prompt_logits = logits[:prompt_len - 1].float()
-        prompt_labels = output[0, 1:prompt_len]
+        prompt_labels = full_output[0, 1:prompt_len]
         prompt_nll = F.cross_entropy(prompt_logits, prompt_labels).item()
-        # Confidence: max prob of first generated token
         first_gen_logit = logits[prompt_len - 1].float()
         max_conf = F.softmax(first_gen_logit / temp, dim=-1).max().item()
 
@@ -418,7 +456,7 @@ def run_13A(model, tokenizer, args):
     """13A: Noise localization — which layer gives the biggest best-of-K boost?"""
     print("\n=== Experiment 13A: Noise Localization ===")
     K = 10
-    sigma = 0.2
+    sigma = 0.05  # Reduced from 0.2 — prompt-only noise at hub is still potent
     prompts = EVAL_PROMPTS[:30]
     # Test key layers only: hub, secondary hubs, weak control layers
     KEY_LAYERS = [0, 1, 4, 5, 7, 12, 13]  # L0=hub, L4=secondary, L5=strongest MLP, L7/L13=weak controls
@@ -496,7 +534,7 @@ def run_13B(model, tokenizer, args):
     """13B: Width scaling — how does accuracy scale with K?"""
     print("\n=== Experiment 13B: Width Scaling ===")
     hub_layer = 0  # L0 is the hub
-    sigma = 0.2
+    sigma = 0.05
     K_values = [1, 2, 5, 10, 20, 50]
     prompts = EVAL_PROMPTS[:30]  # Fewer prompts for speed
     results = {}
@@ -545,7 +583,7 @@ def run_13C(model, tokenizer, args):
     print("\n=== Experiment 13C: Sigma Sweep ===")
     hub_layer = 0
     K = 10
-    sigma_values = [0.05, 0.1, 0.2, 0.5, 1.0, 2.0]
+    sigma_values = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5]
     prompts = EVAL_PROMPTS[:30]
     results = {}
 
@@ -593,7 +631,7 @@ def run_13D(model, tokenizer, args):
     """13D: Selection strategy — which selection method is best?"""
     print("\n=== Experiment 13D: Selection Strategy ===")
     hub_layer = 0
-    sigma = 0.2
+    sigma = 0.05
     K = 10
     prompts = EVAL_PROMPTS[:40]
     results = {}
@@ -672,7 +710,7 @@ def run_13E(model, tokenizer, args):
     """13E: Bad basin detection — do distinct completion clusters exist?"""
     print("\n=== Experiment 13E: Bad Basin Detection ===")
     hub_layer = 0
-    sigma = 0.2
+    sigma = 0.05
     K = 50  # More rollouts for clustering
     prompts = EVAL_PROMPTS[:20]
     results = {}
@@ -754,7 +792,7 @@ def run_13F(model, tokenizer, args):
     """13F: Atlas-guided vs uniform vs random noise — head-to-head."""
     print("\n=== Experiment 13F: Head-to-Head Comparison ===")
     K = 10
-    sigma = 0.2
+    sigma = 0.05
     prompts = EVAL_PROMPTS[:40]
     results = {}
 
