@@ -1,0 +1,176 @@
+{
+  "id": "smol_5k_1000",
+  "dataset": "HuggingFaceTB/smoltalk",
+  "subset": "smol-magpie-ultra",
+  "n_examples": 5000,
+  "steps": 1000,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adamw_torch",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.2481,
+  "kl_shift": 0.1699,
+  "hub_kls": {
+    "L0": 3.7703,
+    "L2": 1.4861,
+    "L4": 2.844,
+    "L5": 3.0149
+  },
+  "loss_curve": [
+    {
+      "step": 50,
+      "loss": 1.507
+    },
+    {
+      "step": 100,
+      "loss": 1.3206
+    },
+    {
+      "step": 150,
+      "loss": 1.24
+    },
+    {
+      "step": 200,
+      "loss": 1.2601
+    },
+    {
+      "step": 250,
+      "loss": 1.2228
+    },
+    {
+      "step": 300,
+      "loss": 1.2508
+    },
+    {
+      "step": 350,
+      "loss": 1.2335
+    },
+    {
+      "step": 400,
+      "loss": 1.2301
+    },
+    {
+      "step": 450,
+      "loss": 1.224
+    },
+    {
+      "step": 500,
+      "loss": 1.2544
+    },
+    {
+      "step": 550,
+      "loss": 1.1987
+    },
+    {
+      "step": 600,
+      "loss": 1.2443
+    },
+    {
+      "step": 650,
+      "loss": 1.21
+    },
+    {
+      "step": 700,
+      "loss": 1.2028
+    },
+    {
+      "step": 750,
+      "loss": 1.2007
+    },
+    {
+      "step": 800,
+      "loss": 1.2621
+    },
+    {
+      "step": 850,
+      "loss": 1.2165
+    },
+    {
+      "step": 900,
+      "loss": 1.209
+    },
+    {
+      "step": 950,
+      "loss": 1.2456
+    },
+    {
+      "step": 1000,
+      "loss": 1.2289
+    }
+  ],
+  "train_time_s": 2229.3,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. Paris is a major cultural, economic, and historical center of France.\n\nParis is known for its rich history, art, fashion, and cuisine. The city is home to many famous landmarks such as the Eiffel Tower, Notre-Dame Cathedral, the Louvre Museum, and the Arc de Triomphe. The city also has a vibrant nightlife scene with many bars, clubs, and restaurants.\n\nParis is also a major tourist destination, attracting millions of visitors each year from around the world. The city offers a wide range of attractions, including museums, historic sites, and cultural events. Visitors can explore the city's many museums, such as the Mus\u00e9e d'Orsay, the Mus\u00e9e Carnavalet, and the Mus\u00e9e Rodin, among others.\n\nIn addition to its cultural and historical significance, Paris is also a hub for innovation and entrepreneurship. The city is home to many start",
+      "n_tokens": 200,
+      "time_s": 2.56,
+      "tok_per_s": 78.0
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "25, \"gender\": \"female\", \"occupation\": \"writer\", \"location\": \"New York City\", \"family\": \"Mother\", \"children\": [\"Mom\", \"Dad\"], \"hobbies\": [\"writing\", \"reading\", \"music\", \"photography\"]}\n\"Alice\" is a 25-year-old female writer living in New York City. She is a writer and a writer's daughter. Alice is married to her father, who is a writer himself. She has two children: Mom and Dad. Alice is known for her writing and her passion for reading and music. She is also a photographer and has a keen eye for capturing the beauty of life.",
+      "n_tokens": 143,
+      "time_s": 1.85,
+      "tok_per_s": 77.5
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib",
+      "n_tokens": 79,
+      "time_s": 1.03,
+      "tok_per_s": 76.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and their properties are correlated, even when they are separated by large distances. This means that the state of one particle instantly influences the state of the other, no matter how far apart they are.\n\nImagine you have two coins that are flipped and then put into a box. If you look at the coins and see one as heads and the other as tails, you might think that the coins are somehow connected, but this doesn't really happen. In reality, the coins are so entangled that measuring one coin will instantly determine the state of the other, no matter how far apart they are.\n\nThis strange connection between entangled particles has been a subject of interest for scientists for many years, and it's still not fully understood. However, it's an important aspect of quantum mechanics that has the potential to revolutionize our understanding of the universe.",
+      "n_tokens": 187,
+      "time_s": 2.39,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.43,
+      "tok_per_s": 74.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n607 - 605 = 2",
+      "n_tokens": 12,
+      "time_s": 0.16,
+      "tok_per_s": 73.1
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning is a common greeting in many cultures, and it's often used as a polite way of saying hello or goodbye. In French, it's translated as \"Bonjour\" or \"Merci.\" In Spanish, it's translated as \"Buenos d\u00edas\" or \"Hola.\" In German, it's translated as \"Guten Morgen\" or \"Guten Tag.\" These greetings are widely used in everyday conversations and can help establish a friendly and welcoming atmosphere.",
+      "n_tokens": 101,
+      "time_s": 1.29,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and flexibility",
+      "n_tokens": 25,
+      "time_s": 0.32,
+      "tok_per_s": 77.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1",
+      "n_tokens": 92,
+      "time_s": 1.17,
+      "tok_per_s": 78.4
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWhat is the molecular weight of water?\n\nA) 18 g/mol\nB) 20 g/mol\nC) 22 g/mol\nD) 24 g/mol\nE) 25 g/mol\n\nAnswer: B) 20 g/mol",
+      "n_tokens": 64,
+      "time_s": 0.82,
+      "tok_per_s": 77.8
+    }
+  ]
+}

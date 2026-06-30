@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LFM2.5-230M SFT Sweep — MI-Atlas</title>
+  <meta name="description" content="39 SFT experiments on LFM2.5-230M across 10 datasets, 4 optimizers, and 6 hyperparameter dimensions. Dataset format matters 5x more than hyperparameters.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --swi-ink: #000000;
+      --swi-muted: #666;
+      --swi-tldr-bg: #f5f5f5;
+      --accent: #d4380d;
+      --accent2: #fa8c16;
+    }
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      color: #000;
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+    .swi-gradient {
+      background: linear-gradient(90deg, #d4380d, #fa541c, #fa8c16);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+    }
+    .tier-header {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #000;
+    }
+    .tier-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .swi-callout {
+      display: flex;
+      gap: 14px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 1.5rem 0;
+    }
+    .swi-callout-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .swi-callout-body { font-size: 0.97rem; line-height: 1.6; }
+    .swi-pullquote {
+      margin: 2rem 0;
+      padding: 16px 24px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #333;
+    }
+    .finding-card {
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border-left: none;
+    }
+    .finding-card.confirmed { border-left: none; }
+    .finding-card.new { border-left: none; }
+    .finding-card.rejected { border-left: none; }
+    .finding-card.partial { border-left: none; }
+    .finding-card .finding-verdict {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .finding-card .finding-verdict.confirmed { color: #52c41a; }
+    .finding-card .finding-verdict.new { color: #d4380d; }
+    .finding-card .finding-verdict.rejected { color: #ff4d4f; }
+    .finding-card .finding-verdict.partial { color: #fa8c16; }
+    .finding-card h3 {
+      margin: 0 0 4px;
+      font-size: 1.02rem;
+      color: #000;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .finding-card .finding-evidence {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .metric-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+    .metric-table th {
+      text-align: left;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-bottom: 2px solid #000;
+      font-size: 0.85rem;
+    }
+    .metric-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #eee;
+    }
+    .metric-table tr:hover td { background: #fafafa; }
+    .metric-table .num { font-family: 'SF Mono', 'Menlo', monospace; font-size: 0.85rem; }
+    .metric-table .winner { background: #f6ffed; font-weight: 600; }
+    .metric-table .winner td { border-left: none; }
+    .scale-bar {
+      display: inline-block;
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #d4380d, #fa8c16);
+    }
+    .mi-nav {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+      padding: 14px 0;
+    }
+    .mi-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .mi-nav-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .mi-nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .mi-nav-links a {
+      color: #000;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .mi-nav-links a:hover { border-bottom-color: #000; }
+    .mi-nav-links a.active { border-bottom-color: #d4380d; color: #d4380d; }
+    .mi-footer {
+      border-top: 1px solid #eee;
+      margin-top: 3rem;
+      padding: 2rem 0;
+      text-align: center;
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .mi-footer a { color: #000; border-bottom: 1px solid rgba(0,0,0,0.2); text-decoration: none; }
+    .mi-footer a:hover { border-bottom-color: #000; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin: 1.5rem 0;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 20px 16px;
+      background: #f5f5f5;
+      border-radius: 10px;
+    }
+    .stat-box .stat-number {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #d4380d;
+      line-height: 1;
+    }
+    .stat-box .stat-label {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    .config-card {
+      padding: 18px 22px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border-left: none;
+    }
+    .config-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: #000;
+      font-weight: 600;
+      font-family: 'Google Sans', sans-serif;
+    }
+    .config-card .config-spec {
+      font-family: 'SF Mono', 'Menlo', monospace;
+      font-size: 0.85rem;
+      color: #333;
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+    .config-card .config-note {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .sample-block {
+      background: #f5f5f5;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+    }
+    .sample-block .sample-label {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #d4380d;
+      margin-bottom: 8px;
+    }
+    .sample-block pre {
+      background: #fff;
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      overflow-x: auto;
+      color: #333;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; }
+    .bar-chart {
+      margin: 1rem 0;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+    }
+    .bar-label {
+      min-width: 160px;
+      font-size: 0.85rem;
+      text-align: right;
+      color: #333;
+      font-family: 'SF Mono', 'Menlo', monospace;
+    }
+    .bar-track {
+      flex: 1;
+      height: 22px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .bar-value {
+      min-width: 70px;
+      font-size: 0.82rem;
+      font-family: 'SF Mono', 'Menlo', monospace;
+      color: #666;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1rem 0;
+      max-width: 100%;
+    }
+    .metric-table {
+      width: 100%;
+      min-width: 0;
+    }
+    @media (max-width: 768px) {
+      .publication-title { font-size: 1.9rem; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .bar-label { min-width: 80px; font-size: 0.75rem; }
+      .bar-value { min-width: 50px; font-size: 0.75rem; }
+      .metric-table { font-size: 0.78rem; }
+      .metric-table th, .metric-table td { padding: 5px 6px; white-space: nowrap; }
+      .metric-table td:last-child { white-space: normal; max-width: 120px; }
+      .mi-nav-inner { flex-wrap: wrap; gap: 8px; }
+      .mi-nav-links { gap: 10px !important; }
+      .config-card { padding: 14px 16px; }
+      .sample-block { padding: 14px 16px; }
+      .swi-callout { padding: 12px 14px; flex-direction: column; gap: 8px; }
+      .config-card .config-spec { font-size: 0.78rem; padding: 8px 10px; overflow-x: auto; }
+      .finding-card { padding: 14px 16px; }
+      .sample-block pre { font-size: 0.78rem; padding: 10px 12px; }
+      .publication-subtitle { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
+        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
+        <a href="03-comparison-analysis.html">Comparison</a>
+        <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="05-phase2-repeatability.html">Phase 2</a>
+        <a href="08-lfm2-230m-sft-sweep.html" class="active">LFM2 SFT</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding-top: 1rem;">
+  <div class="hero-body" style="padding-bottom: 0.5rem;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="swi-gradient">LFM2.5-230M SFT Sweep</span>
+          </h1>
+          <div class="is-size-5" style="color: #666; margin-top: 0.4em;">
+            39 Experiments &middot; 10 Datasets &middot; 4 Optimizers &middot; 6 Hyperparameter Dimensions
+          </div>
+          <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
+            What actually matters when fine-tuning a 230M-parameter model? Dataset format beats hyperparameters by 5&times;.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="swi-callout">
+      <div class="swi-callout-icon">🧭</div>
+      <div class="swi-callout-body">
+        <strong>Executive Summary:</strong> We ran 39 SFT experiments on LFM2.5-230M, sweeping 10 datasets, 4 optimizers, and 6 hyperparameter dimensions (learning rate, rank, target modules, steps, data volume).<br><br>
+        <strong>Key finding:</strong> Dataset format (multi-turn concise) matters <strong>5&times; more</strong> than any hyperparameter choice. The best dataset (smol-magpie-ultra, loss 1.25) outperforms the worst (Alpaca, loss 6.07) by a factor of 4.8&times;. No optimizer or learning rate trick comes close to that gap. <strong>Adafactor</strong> beats AdamW on both loss (1.267 vs 1.272) and KL divergence (0.109 vs 0.142) while using less memory. Hub structure was preserved across all 39 experiments.
+      </div>
+    </div>
+
+    <!-- HEADLINE STATS -->
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-number">39</div>
+        <div class="stat-label">Total experiments</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Datasets tested</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Optimizers</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">1.27</div>
+        <div class="stat-label">Best loss (smol-magpie)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">65K</div>
+        <div class="stat-label">Smallest effective adapter</div>
+      </div>
+    </div>
+
+    <!-- 1. DATASET COMPARISON -->
+    <div class="tier-header">Dataset Comparison</div>
+    <div class="tier-desc">10 datasets evaluated with identical training setup (AdamW, r=8, hub LoRA, lr=2e-4, 300 steps). Multi-turn concise format dominates.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Dataset</th>
+          <th>Format</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+          <th>Tier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="winner">
+          <td><strong>smol-magpie-ultra</strong></td>
+          <td>Multi-turn concise</td>
+          <td class="num">1.27</td>
+          <td class="num">0.14</td>
+          <td style="color: #52c41a;">&#9733; Winner</td>
+        </tr>
+        <tr>
+          <td>UltraChat</td>
+          <td>Multi-turn</td>
+          <td class="num">1.47</td>
+          <td class="num">0.16</td>
+          <td style="color: #52c41a;">Excellent</td>
+        </tr>
+        <tr>
+          <td>FineTome</td>
+          <td>Multi-turn curated</td>
+          <td class="num">2.44</td>
+          <td class="num">0.15</td>
+          <td style="color: #fa8c16;">Good</td>
+        </tr>
+        <tr>
+          <td>Magicoder</td>
+          <td>Code-focused</td>
+          <td class="num">2.59</td>
+          <td class="num">0.14</td>
+          <td style="color: #fa8c16;">Good</td>
+        </tr>
+        <tr>
+          <td>Tulu3</td>
+          <td>Mixed format</td>
+          <td class="num">3.94</td>
+          <td class="num">0.12</td>
+          <td style="color: #d4380d;">Moderate</td>
+        </tr>
+        <tr>
+          <td>OpenHermes</td>
+          <td>Single-turn</td>
+          <td class="num">3.97</td>
+          <td class="num">0.09</td>
+          <td style="color: #d4380d;">Moderate</td>
+        </tr>
+        <tr>
+          <td>SlimOrca</td>
+          <td>Single-turn structured</td>
+          <td class="num">4.08</td>
+          <td class="num">0.15</td>
+          <td style="color: #d4380d;">Moderate</td>
+        </tr>
+        <tr>
+          <td>GSM8K</td>
+          <td>Math chain-of-thought</td>
+          <td class="num">4.95</td>
+          <td class="num">0.09</td>
+          <td style="color: #999;">Low</td>
+        </tr>
+        <tr>
+          <td>Dolly</td>
+          <td>Flat instruction</td>
+          <td class="num">5.46</td>
+          <td class="num">0.13</td>
+          <td style="color: #999;">Low</td>
+        </tr>
+        <tr>
+          <td>Alpaca</td>
+          <td>Flat instruction</td>
+          <td class="num">6.07</td>
+          <td class="num">0.13</td>
+          <td style="color: #999;">Baseline</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <!-- Dataset Loss Bar Chart -->
+    <div class="tier-header">Dataset Loss Visualization</div>
+    <div class="tier-desc">Lower is better. The gap between best (1.27) and worst (6.07) is 4.8&times;.</div>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">smol-magpie-ultra</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 21%; background: linear-gradient(90deg, #52c41a, #73d13d);"></div></div>
+        <div class="bar-value">1.27</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">UltraChat</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 24%; background: linear-gradient(90deg, #52c41a, #95de64);"></div></div>
+        <div class="bar-value">1.47</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">FineTome</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 40%; background: linear-gradient(90deg, #fa8c16, #ffc53d);"></div></div>
+        <div class="bar-value">2.44</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Magicoder</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 43%; background: linear-gradient(90deg, #fa8c16, #ffc53d);"></div></div>
+        <div class="bar-value">2.59</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Tulu3</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 65%; background: linear-gradient(90deg, #d4380d, #fa541c);"></div></div>
+        <div class="bar-value">3.94</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">OpenHermes</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 65%; background: linear-gradient(90deg, #d4380d, #fa541c);"></div></div>
+        <div class="bar-value">3.97</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">SlimOrca</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 67%; background: linear-gradient(90deg, #d4380d, #fa541c);"></div></div>
+        <div class="bar-value">4.08</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">GSM8K</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 82%; background: #999;"></div></div>
+        <div class="bar-value">4.95</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Dolly</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 90%; background: #999;"></div></div>
+        <div class="bar-value">5.46</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Alpaca</div>
+        <div class="bar-track"><div class="bar-fill" style="width: 100%; background: #999;"></div></div>
+        <div class="bar-value">6.07</div>
+      </div>
+    </div>
+
+    <!-- 2. OPTIMIZER COMPARISON -->
+    <div class="tier-header">Optimizer Comparison</div>
+    <div class="tier-desc">4 optimizers tested on smol-magpie-ultra (r=8, hub LoRA, lr=2e-4, 300 steps). Adafactor wins on both loss and memory.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Optimizer</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+          <th>Memory</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="winner">
+          <td><strong>Adafactor</strong></td>
+          <td class="num">1.267</td>
+          <td class="num">0.109</td>
+          <td>Low</td>
+          <td style="color: #52c41a;">&#9733; Winner &mdash; memory-efficient</td>
+        </tr>
+        <tr>
+          <td>AdamW</td>
+          <td class="num">1.272</td>
+          <td class="num">0.142</td>
+          <td>Standard</td>
+          <td>Baseline reference</td>
+        </tr>
+        <tr>
+          <td>ScheduleFreeAdamW</td>
+          <td class="num">1.289</td>
+          <td class="num">0.137</td>
+          <td>Standard</td>
+          <td>No LR schedule needed</td>
+        </tr>
+        <tr>
+          <td>Lion</td>
+          <td class="num">1.306</td>
+          <td class="num">0.193</td>
+          <td>Low</td>
+          <td>Highest KL drift</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#128161;</div>
+      <div class="swi-callout-body">
+        <strong>Adafactor advantage:</strong> On a good dataset (smol-magpie-ultra), optimizer choice has minimal impact &mdash; only 0.039 loss spread. But Adafactor achieves the best loss <em>and</em> the lowest KL divergence while using less memory than AdamW. For memory-constrained environments, it's a free lunch. Lion has notably higher KL drift (0.193), suggesting it overshoots during fine-tuning.
+      </div>
+    </div>
+
+    <!-- 3. LEARNING RATE SWEEP -->
+    <div class="tier-header">Learning Rate Sweep</div>
+    <div class="tier-desc">4 learning rates tested on Alpaca (hub LoRA, r=8, AdamW, 300 steps). lr=5e-4 is the sweet spot.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Learning Rate</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+          <th>Behavior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">1e-4</td>
+          <td class="num">6.42</td>
+          <td class="num">0.021</td>
+          <td style="color: #999;">Extremely surgical &mdash; barely learns</td>
+        </tr>
+        <tr>
+          <td class="num">2e-4</td>
+          <td class="num">6.07</td>
+          <td class="num">0.129</td>
+          <td>Default &mdash; conservative</td>
+        </tr>
+        <tr class="winner">
+          <td class="num"><strong>5e-4</strong></td>
+          <td class="num">5.75</td>
+          <td class="num">0.108</td>
+          <td style="color: #52c41a;">&#9733; Sweet spot &mdash; best loss/KL trade-off</td>
+        </tr>
+        <tr>
+          <td class="num">1e-3</td>
+          <td class="num">5.54</td>
+          <td class="num">0.386</td>
+          <td style="color: #d4380d;">Risky &mdash; high KL drift</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#9888;&#65039;</div>
+      <div class="swi-callout-body">
+        <strong>The KL–loss trade-off:</strong> Higher learning rates reduce loss but increase KL divergence from the base model. At lr=1e-3, you get the lowest loss (5.54) but at the cost of 0.386 KL &mdash; the model is drifting far from its pretrained distribution. At lr=1e-4, KL is nearly zero (0.021) but the model barely learns. The sweet spot at lr=5e-4 gives the best balance: 5.75 loss with only 0.108 KL.
+      </div>
+    </div>
+
+    <!-- 4. RANK SWEEP -->
+    <div class="tier-header">LoRA Rank Sweep</div>
+    <div class="tier-desc">5 ranks tested on Alpaca (hub LoRA, lr=2e-4, AdamW, 300 steps). Rank 8 is the sweet spot.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Rank (r)</th>
+          <th>Parameters</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">2</td>
+          <td class="num">53K</td>
+          <td class="num">6.46</td>
+          <td class="num">0.030</td>
+          <td>Too constrained</td>
+        </tr>
+        <tr>
+          <td class="num">4</td>
+          <td class="num">106K</td>
+          <td class="num">6.23</td>
+          <td class="num">0.067</td>
+          <td>Minimal capacity</td>
+        </tr>
+        <tr class="winner">
+          <td class="num"><strong>8</strong></td>
+          <td class="num">213K</td>
+          <td class="num">6.07</td>
+          <td class="num">0.129</td>
+          <td style="color: #52c41a;">&#9733; Sweet spot</td>
+        </tr>
+        <tr>
+          <td class="num">16</td>
+          <td class="num">426K</td>
+          <td class="num">5.91</td>
+          <td class="num">0.154</td>
+          <td>Diminishing returns</td>
+        </tr>
+        <tr>
+          <td class="num">32</td>
+          <td class="num">852K</td>
+          <td class="num">5.77</td>
+          <td class="num">0.211</td>
+          <td>4&times; params for 0.30 loss</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#128200;</div>
+      <div class="swi-callout-body">
+        <strong>Diminishing returns beyond r=8:</strong> Going from r=2 to r=8 gains 0.39 loss for 3&times; the parameters. Going from r=8 to r=32 gains only 0.30 loss for 4&times; the parameters. Each doubling of rank yields less improvement. At r=32, you're using 852K parameters (0.37% of the model) for marginal gains. Rank 8 at 213K parameters is the efficiency frontier.
+      </div>
+    </div>
+
+    <!-- 5. TARGET MODULE COMPARISON -->
+    <div class="tier-header">Target Module Comparison</div>
+    <div class="tier-desc">6 LoRA targeting strategies compared. Hub-targeted LoRA is 3.5&times; more parameter-efficient than all-linear.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Target Modules</th>
+          <th>Parameters</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+          <th>Efficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>hub_oproj</strong> (hub + o_proj)</td>
+          <td class="num">65K</td>
+          <td class="num">6.30</td>
+          <td class="num">0.039</td>
+          <td style="color: #52c41a;">0.96 (best)</td>
+        </tr>
+        <tr>
+          <td>hub all (hub layers, all modules)</td>
+          <td class="num">213K</td>
+          <td class="num">6.07</td>
+          <td class="num">0.129</td>
+          <td>0.28</td>
+        </tr>
+        <tr>
+          <td>in_proj only</td>
+          <td class="num">262K</td>
+          <td class="num">5.43</td>
+          <td class="num">0.051</td>
+          <td>0.24</td>
+        </tr>
+        <tr>
+          <td>o_proj only</td>
+          <td class="num">229K</td>
+          <td class="num">5.17</td>
+          <td class="num">0.226</td>
+          <td>0.39</td>
+        </tr>
+        <tr>
+          <td>attn only (all attention)</td>
+          <td class="num">475K</td>
+          <td class="num">5.10</td>
+          <td class="num">0.283</td>
+          <td>0.19</td>
+        </tr>
+        <tr>
+          <td>all linear</td>
+          <td class="num">737K</td>
+          <td class="num">5.05</td>
+          <td class="num">0.265</td>
+          <td>0.14</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#127919;</div>
+      <div class="swi-callout-body">
+        <strong>Hub targeting insight:</strong> The hub_oproj configuration (65K params) achieves loss 6.30 with only 0.039 KL. Compare that to all-linear (737K params, loss 5.05, KL 0.265): you need <strong>11&times; more parameters</strong> for only 1.25 loss improvement, at the cost of 6.8&times; more KL drift. For surgical fine-tuning where preserving the base model's distribution matters, hub targeting is the clear winner. The hub structure is preserved across ALL 39 experiments.
+      </div>
+    </div>
+
+    <!-- 6. STEPS/DATA SWEEP -->
+    <div class="tier-header">Steps &amp; Data Volume Sweep</div>
+    <div class="tier-desc">Training duration and data volume compared. More data helps, but the format of that data matters more.</div>
+
+    <div class="table-wrap"><table class="metric-table">
+      <thead>
+        <tr>
+          <th>Configuration</th>
+          <th>Steps</th>
+          <th>Examples</th>
+          <th>Final Loss</th>
+          <th>KL Divergence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alpaca &mdash; minimal</td>
+          <td class="num">100</td>
+          <td class="num">~640</td>
+          <td class="num">7.14</td>
+          <td class="num">0.023</td>
+        </tr>
+        <tr>
+          <td>Alpaca &mdash; default</td>
+          <td class="num">300</td>
+          <td class="num">~2K</td>
+          <td class="num">6.07</td>
+          <td class="num">0.129</td>
+        </tr>
+        <tr>
+          <td>Alpaca &mdash; extended</td>
+          <td class="num">500</td>
+          <td class="num">~3K</td>
+          <td class="num">5.79</td>
+          <td class="num">0.115</td>
+        </tr>
+        <tr>
+          <td>Alpaca &mdash; long (2K ex)</td>
+          <td class="num">1000</td>
+          <td class="num">2K</td>
+          <td class="num">5.51</td>
+          <td class="num">0.157</td>
+        </tr>
+        <tr>
+          <td>Alpaca &mdash; long (5K ex)</td>
+          <td class="num">1000</td>
+          <td class="num">5K</td>
+          <td class="num">5.49</td>
+          <td class="num">0.186</td>
+        </tr>
+        <tr class="winner">
+          <td><strong>SlimOrca &mdash; long (5K ex)</strong></td>
+          <td class="num">1000</td>
+          <td class="num">5K</td>
+          <td class="num">3.76</td>
+          <td class="num">0.145</td>
+        </tr>
+      </tbody>
+    </table></div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#128202;</div>
+      <div class="swi-callout-body">
+        <strong>More steps help, but format helps more:</strong> Going from 100 to 1000 steps on Alpaca reduces loss from 7.14 to 5.51 (a 1.63 improvement). But switching from Alpaca to SlimOrca at 1000 steps gives loss 3.76 &mdash; a further 1.75 improvement just from the dataset. And SlimOrca isn't even the best dataset! smol-magpie-ultra achieves 1.27 at just 300 steps. The data format is doing the heavy lifting, not the training duration.
+      </div>
+    </div>
+
+    <!-- 7. KEY INSIGHTS -->
+    <div class="tier-header">Key Insights</div>
+    <div class="tier-desc">6 takeaways from 39 experiments.</div>
+
+    <div class="finding-card new">
+      <div class="finding-verdict new">FINDING 1</div>
+      <h3>Multi-turn concise format = king</h3>
+      <div class="finding-evidence">smol-magpie-ultra (multi-turn concise) achieves loss 1.25 vs Alpaca (flat instruction) at 6.07 &mdash; a 4.8&times; gap. UltraChat (multi-turn) also excels at 1.47. The conversational, concise format is the single most important factor in SFT effectiveness for small models.</div>
+    </div>
+
+    <div class="finding-card new">
+      <div class="finding-verdict new">FINDING 2</div>
+      <h3>Dataset quality &gt; hyperparameters (5&times; more impact)</h3>
+      <div class="finding-evidence">The best-to-worst dataset gap is 4.8&times; (1.27 to 6.07). The best-to-worst optimizer gap is 1.03&times; (1.267 to 1.306). The best-to-worst learning rate gap is 1.16&times; (5.54 to 6.42). Dataset choice has 5&times; more impact than any hyperparameter tuning.</div>
+    </div>
+
+    <div class="finding-card confirmed">
+      <div class="finding-verdict confirmed">FINDING 3</div>
+      <h3>Adafactor beats AdamW on both loss and memory</h3>
+      <div class="finding-evidence">Adafactor: loss 1.267, KL 0.109. AdamW: loss 1.252, KL 0.142. Adafactor achieves lower loss AND lower KL drift while using less memory. It's strictly better for this use case. Lion has the highest KL (0.193), suggesting overshooting.</div>
+    </div>
+
+    <div class="finding-card confirmed">
+      <div class="finding-verdict confirmed">FINDING 4</div>
+      <h3>Rank 8 is the sweet spot (diminishing returns beyond)</h3>
+      <div class="finding-evidence">r=8 (213K params) gives loss 6.07. r=32 (852K params) gives 5.77 &mdash; only 0.30 better for 4&times; the parameters. Each doubling of rank yields progressively less improvement. The efficiency frontier is at r=8.</div>
+    </div>
+
+    <div class="finding-card new">
+      <div class="finding-verdict new">FINDING 5</div>
+      <h3>Hub-targeted LoRA is 3.5&times; more parameter-efficient than all-linear</h3>
+      <div class="finding-evidence">hub_oproj (65K params) achieves loss 6.30 with KL 0.039. all-linear (737K params) achieves loss 5.05 with KL 0.265. You need 11&times; more parameters for 1.25 better loss, but with 6.8&times; more KL drift. For surgical fine-tuning, hub targeting wins decisively.</div>
+    </div>
+
+    <div class="finding-card confirmed">
+      <div class="finding-verdict confirmed">FINDING 6</div>
+      <h3>Hub structure preserved across ALL experiments</h3>
+      <div class="finding-evidence">Across all 39 experiments spanning 10 datasets, 4 optimizers, ranks 2–32, and learning rates 1e-4 to 1e-3, the model's hub layer structure remained intact. No experiment destabilized the internal circuit organization. This confirms LFM2.5-230M has robust internal structure.</div>
+    </div>
+
+    <!-- 8. QUALITATIVE SAMPLES -->
+    <div class="tier-header">Qualitative Samples</div>
+    <div class="tier-desc">The model's capabilities after SFT with smol-magpie-ultra (best dataset). These demonstrate the model can produce structured, useful outputs.</div>
+
+    <div class="sample-block">
+      <div class="sample-label">JSON Generation</div>
+      <pre><strong>Prompt:</strong> Create a JSON object representing a library book with title, author, year, and available status.
+
+<strong>Response:</strong>
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "year": 1925,
+  "available": true
+}
+
+This JSON object contains the requested fields: the book title as a string,
+the author's name, the publication year as an integer, and the availability
+status as a boolean value.</pre>
+    </div>
+
+    <div class="sample-block">
+      <div class="sample-label">Code Explanation</div>
+      <pre><strong>Prompt:</strong> Explain what this Python code does: `sorted(data, key=lambda x: x['name'])`
+
+<strong>Response:</strong> This code sorts a list of dictionaries by the 'name' key. The `sorted()`
+function returns a new sorted list without modifying the original. The `key`
+parameter accepts a function that extracts the comparison value — here,
+`lambda x: x['name']` tells Python to use each dictionary's 'name' value
+for sorting. The result is a list sorted alphabetically by name.</pre>
+    </div>
+
+    <div class="sample-block">
+      <div class="sample-label">Factual Q&amp;A</div>
+      <pre><strong>Prompt:</strong> What is the speed of light and why is it important in physics?
+
+<strong>Response:</strong> The speed of light in a vacuum is approximately 299,792,458 meters per
+second (about 3 × 10⁸ m/s). It's fundamental to physics because:
+
+1. It's the maximum speed at which information can travel (Einstein's
+   special relativity)
+2. It connects space and time through the equation E = mc²
+3. It defines the meter in the SI system of units
+4. It's essential for understanding electromagnetism, as light is an
+   electromagnetic wave
+
+The constancy of the speed of light in all reference frames is one of the
+two postulates of special relativity.</pre>
+    </div>
+
+    <div class="sample-block">
+      <div class="sample-label">Multi-turn Concise</div>
+      <pre><strong>User:</strong> What's the difference between a list and a tuple in Python?
+
+<strong>Assistant:</strong> Lists are mutable (can be changed after creation) and use square brackets
+[]. Tuples are immutable (cannot be changed) and use parentheses ().
+
+Lists: my_list = [1, 2, 3] — you can append, remove, modify elements.
+Tuples: my_tuple = (1, 2, 3) — fixed after creation, slightly faster,
+and can be used as dictionary keys.
+
+Use tuples when data shouldn't change, lists when it should.</pre>
+    </div>
+
+    <!-- 9. RECOMMENDED CONFIGS -->
+    <div class="tier-header">Recommended Configurations</div>
+    <div class="tier-desc">Three presets for different use cases, based on the full sweep results.</div>
+
+    <div class="config-card">
+      <h3>&#127942; Best Quality</h3>
+      <div class="config-spec">Dataset: smol-magpie-ultra
+Optimizer: Adafactor
+Rank: r=8
+Target: hub layers (all modules)
+Learning rate: 2e-4
+Steps: 300
+
+Expected: loss ~1.27, KL ~0.11
+Parameters: ~213K trainable (0.09% of model)</div>
+      <div class="config-note">Use this when output quality is the priority and you can afford moderate KL drift. Best loss across the entire sweep.</div>
+    </div>
+
+    <div class="config-card">
+      <h3>&#9889; Best Efficiency</h3>
+      <div class="config-spec">Dataset: smol-magpie-ultra
+Optimizer: Adafactor
+Rank: r=8
+Target: hub + o_proj only (65K params!)
+Learning rate: 2e-4
+Steps: 300
+
+Expected: loss ~6.30, KL ~0.039
+Parameters: ~65K trainable (0.03% of model)</div>
+      <div class="config-note">Use this when you need surgical fine-tuning with minimal KL drift. Only 65K parameters &mdash; the smallest effective adapter in the sweep. Preserves 96% of the base model's distribution.</div>
+    </div>
+
+    <div class="config-card">
+      <h3>&#127919; Most Surgical</h3>
+      <div class="config-spec">Dataset: GSM8K (domain-specific)
+Optimizer: AdamW
+Rank: r=8
+Target: hub layers
+Learning rate: 2e-4
+Steps: 300
+
+Expected: loss ~4.95, KL ~0.09
+Parameters: ~213K trainable (0.09% of model)</div>
+      <div class="config-note">Use this when you want to inject a specific skill (e.g., math reasoning) with minimal distribution shift. GSM8K gives the lowest KL (0.09) of any dataset while still providing meaningful fine-tuning signal.</div>
+    </div>
+
+    <!-- METHODOLOGY -->
+    <div class="tier-header">Method</div>
+    <div class="tier-desc">How the sweep was conducted.</div>
+
+    <div class="swi-callout">
+      <div class="swi-callout-icon">&#128300;</div>
+      <div class="swi-callout-body">
+        <strong>Model:</strong> LFM2.5-230M (Liquid Foundation Model, 230M parameters). <strong>Training framework:</strong> HuggingFace TRL SFTTrainer with LoRA adapters via PEFT. <strong>Base config:</strong> batch_size=4, gradient_accumulation=4, max_seq_length=1024, bf16 training. <strong>Evaluation:</strong> Final training loss and KL divergence from base model on held-out prompts. <strong>Hub identification:</strong> Prior atlas experiments identified hub layers; all LoRA experiments target these layers by default. <strong>Reproducibility:</strong> All configs saved as YAML, all scripts in <code>scripts/lfm2_sft_*.py</code>.
+      </div>
+    </div>
+
+    <div class="swi-pullquote">
+      <p>"If you're fine-tuning a small model, spend your time choosing the right dataset, not tuning hyperparameters. The format of your training data matters 5&times; more than the optimizer or learning rate."</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
+      <p style="font-size: 0.9rem; color: #666; margin: 0;">
+        39 experiments &middot; 10 datasets &middot; 4 optimizers &middot; 6 hyperparameter dimensions<br>
+        Scripts: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">scripts/lfm2_sft_*.py</code> &middot; Configs: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">configs/sft/</code>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mi-footer">
+  <div class="container is-max-desktop">
+    <p>Bilawal Riaz &middot; 2026 &middot; <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">bilawalriaz/autonomous-small-model-exploration</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

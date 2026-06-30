@@ -1,0 +1,183 @@
+{
+  "id": "magicoder_hub_oproj",
+  "dataset": "ise-uiuc/Magicoder-Evol-Instruct-110K",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub_oproj",
+  "target_modules": [
+    "out_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 65536,
+  "total_params": 229758720,
+  "final_loss": 2.6609,
+  "kl_shift": 0.1788,
+  "hub_kls": {
+    "L0": 2.6723,
+    "L2": 1.0797,
+    "L4": 2.9802,
+    "L5": 2.2807
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 4.0134
+    },
+    {
+      "step": 30,
+      "loss": 3.1438
+    },
+    {
+      "step": 45,
+      "loss": 2.7339
+    },
+    {
+      "step": 60,
+      "loss": 2.9257
+    },
+    {
+      "step": 75,
+      "loss": 2.8465
+    },
+    {
+      "step": 90,
+      "loss": 2.6209
+    },
+    {
+      "step": 105,
+      "loss": 2.6308
+    },
+    {
+      "step": 120,
+      "loss": 2.524
+    },
+    {
+      "step": 135,
+      "loss": 2.4226
+    },
+    {
+      "step": 150,
+      "loss": 2.4578
+    },
+    {
+      "step": 165,
+      "loss": 2.5029
+    },
+    {
+      "step": 180,
+      "loss": 2.4747
+    },
+    {
+      "step": 195,
+      "loss": 2.3135
+    },
+    {
+      "step": 210,
+      "loss": 2.6093
+    },
+    {
+      "step": 225,
+      "loss": 2.5332
+    },
+    {
+      "step": 240,
+      "loss": 2.439
+    },
+    {
+      "step": 255,
+      "loss": 2.5745
+    },
+    {
+      "step": 270,
+      "loss": 2.4581
+    },
+    {
+      "step": 285,
+      "loss": 2.4245
+    },
+    {
+      "step": 300,
+      "loss": 2.5694
+    }
+  ],
+  "train_time_s": 652.5,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government.\n\nParis is a major cultural, historical, and economic center in Europe. It is known for its rich history, art, architecture, fashion, cuisine, and music. The city is home to many famous landmarks such as the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.\n\nParis is also a major tourist destination, attracting millions of visitors each year. The city has a diverse population with a mix of French and international residents. It is a hub for business, finance, and technology, making it an important center for innovation and entrepreneurship.\n\nIn addition to its cultural and economic significance, Paris is also a major political and diplomatic center. It hosts numerous international organizations and conferences, including the United Nations General Assembly and the World Economic Forum. The city's strategic location on the Seine River makes",
+      "n_tokens": 200,
+      "time_s": 2.38,
+      "tok_per_s": 84.1
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "5, \"gender\": \"male\"}\n\"name\": \"Bob\", \"age\": 3, \"gender\": \"female\"}\n\"name\": \"Charlie\", \"age\": 2, \"gender\": \"male\"}\n\"name\": \"Diana\", \"age\": 4, \"gender\": \"female\"}\n\"name\": \"Ethan\", \"age\": 6, \"gender\": \"male\"}\n\"name\": \"Liam\", \"age\": 7, \"gender\": \"male\"}\n\"name\": \"Mia\", \"age\": 8, \"gender\": \"female\"}\n\"name\": \"Jessica\", \"age\": 9, \"gender\": \"male\"}\n\"name\": \"Ryan\", \"age\": 10, \"gender\": \"male\"}\n\"name\": \"Sophia\", \"age\": 11, \"gender\": \"female\"}\n\"name\": \"T",
+      "n_tokens": 200,
+      "time_s": 2.74,
+      "tok_per_s": 73.0
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\ndef fibonacci_recursive(n):\n    if n <= 0:\n        return \"Input should be a positive integer.\"\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = fibonacci_recursive(n-1)\n        fib = fibonacci_recursive(fib)\n        return fib\n\ndef fibonacci_recursive_iterative(n):\n    fib = [0, 1]\n    while fib[-1] < n",
+      "n_tokens": 200,
+      "time_s": 2.34,
+      "tok_per_s": 85.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by large distances. This means that if you measure the state of one particle, you can instantly determine the state of the other particle, regardless of the distance between them.\n\nImagine you have two coins that are entangled. If you flip one coin and get heads, the other coin will also get heads, no matter how far apart they are. This is because the entangled particles are connected, and measuring one affects the other instantaneously.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been experimentally confirmed numerous times. It's a key feature that allows for powerful applications in quantum computing, cryptography, and quantum teleportation.",
+      "n_tokens": 161,
+      "time_s": 1.88,
+      "tok_per_s": 85.4
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 1350000000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 33,
+      "time_s": 0.39,
+      "tok_per_s": 83.6
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 202 = 403\n403 - 100 = 303\n303 - 30 = 273\n273 - 7 = 266\n266 - 2 = 264\n264 - 4 = 260\n260 - 5 = 255\n255 - 1 = 254\n254 - 3 = 251\n251 - 0 = 251\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0\n0 - 0 = 0",
+      "n_tokens": 124,
+      "time_s": 1.48,
+      "tok_per_s": 84.0
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+      "n_tokens": 29,
+      "time_s": 0.35,
+      "tok_per_s": 82.3
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health.\n2. Boosts mental well-being.\n3. Increases muscle strength and endurance.\n4. Helps in weight management.\n5. Enhances sleep quality.\n6. Reduces stress levels.\n7. Promotes better digestion.\n8. Increases energy levels.\n9. Supports bone health.\n10. Improves cognitive function.",
+      "n_tokens": 77,
+      "time_s": 0.91,
+      "tok_per_s": 85.0
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    left, right = 0, len(arr) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef find_first_found(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\ndef find_first_found_second(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    for j in range(i + 1, len(arr)):\n        if arr[j] == target:\n            return j\n    return -1\n\ndef find",
+      "n_tokens": 200,
+      "time_s": 2.41,
+      "tok_per_s": 83.0
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater (H2O) is a polar molecule with a molecular weight of approximately 18 grams per mole. It is composed of hydrogen atoms and oxygen atoms, which are both highly charged due to their small size and high electronegativity. This polarity results in water having a significant dipole moment, making it capable of forming strong intermolecular bonds.\n\nIn the context of chemistry, water plays a crucial role in various processes such as dissolving salts, forming hydrogen bonds, and participating in biochemical reactions. Its unique properties make it an essential component in many industrial applications, including the production of fertilizers, pharmaceuticals, and cosmetics.",
+      "n_tokens": 134,
+      "time_s": 1.6,
+      "tok_per_s": 83.5
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_1000",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 2000,
+  "steps": 1000,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 5.5075,
+  "kl_shift": 0.1569,
+  "hub_kls": {
+    "L0": 2.5126,
+    "L2": 0.995,
+    "L4": 3.2975,
+    "L5": 1.723
+  },
+  "loss_curve": [
+    {
+      "step": 50,
+      "loss": 9.6594
+    },
+    {
+      "step": 100,
+      "loss": 6.681
+    },
+    {
+      "step": 150,
+      "loss": 5.7972
+    },
+    {
+      "step": 200,
+      "loss": 5.5239
+    },
+    {
+      "step": 250,
+      "loss": 5.4096
+    },
+    {
+      "step": 300,
+      "loss": 5.3505
+    },
+    {
+      "step": 350,
+      "loss": 5.2849
+    },
+    {
+      "step": 400,
+      "loss": 5.2433
+    },
+    {
+      "step": 450,
+      "loss": 5.1654
+    },
+    {
+      "step": 500,
+      "loss": 5.1723
+    },
+    {
+      "step": 550,
+      "loss": 5.1733
+    },
+    {
+      "step": 600,
+      "loss": 5.1252
+    },
+    {
+      "step": 650,
+      "loss": 5.1225
+    },
+    {
+      "step": 700,
+      "loss": 5.0685
+    },
+    {
+      "step": 750,
+      "loss": 5.0586
+    },
+    {
+      "step": 800,
+      "loss": 5.1035
+    },
+    {
+      "step": 850,
+      "loss": 5.023
+    },
+    {
+      "step": 900,
+      "loss": 5.0576
+    },
+    {
+      "step": 950,
+      "loss": 5.0587
+    },
+    {
+      "step": 1000,
+      "loss": 5.0719
+    }
+  ],
+  "train_time_s": 2194.5,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 66.3
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\"description\": \"A young girl who is curious and loves to explore the world around her. She has a strong sense of justice and is determined to make a difference in the world.\"}",
+      "n_tokens": 49,
+      "time_s": 0.64,
+      "tok_per_s": 76.3
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\ndef fibonacci_rec(n: int) -> list[int]:\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for _ in range(2, n):\n            fib.append(fib[-1] + fib[-1])\n        return fib\n\ndef fibonacci_rec_rec(n: int) -> list[int]:\n    if n <= 0:\n        return []",
+      "n_tokens": 200,
+      "time_s": 2.85,
+      "tok_per_s": 70.1
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the properties of one particle, you can determine the properties of the other particle without any delay. However, this doesn't mean that you can send the information back to the other particle, as it's still in a superposition of states until measured.",
+      "n_tokens": 93,
+      "time_s": 1.23,
+      "tok_per_s": 75.7
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"35 million\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 31,
+      "time_s": 0.4,
+      "tok_per_s": 77.1
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 58 = 547\n547 - 7 = 540\n540 - 1 = 539",
+      "n_tokens": 28,
+      "time_s": 0.36,
+      "tok_per_s": 76.9
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French: Bon matin\nGood morning in Spanish: Buen d\u00eda\nGood morning in German: Morgen\n\nThese translations maintain the original meaning while adapting to the cultural contexts of each language.",
+      "n_tokens": 41,
+      "time_s": 0.53,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Reduces the risk of chronic diseases such as diabetes, heart disease, and obesity",
+      "n_tokens": 37,
+      "time_s": 0.48,
+      "tok_per_s": 77.1
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\nbinary_search(binary_search(arr, target), target)",
+      "n_tokens": 108,
+      "time_s": 1.37,
+      "tok_per_s": 78.7
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.",
+      "n_tokens": 5,
+      "time_s": 0.07,
+      "tok_per_s": 67.1
+    }
+  ]
+}

@@ -202,3 +202,79 @@ Phase 2 adds a new tier above "Very strong":
 - Claim card with variance table
 
 This tier is the minimum for publication-ready claims.
+
+---
+
+## Phase 9 Rules (2026-06-29)
+
+Phase 9 is a data-format ablation study. The core question: "What is the optimal information shape for fine-tuning 230M-500M language models?"
+
+### What changed
+
+Phase 8 showed dataset format dominates hyperparameters (5x impact). Phase 9 isolates format from content by holding canonical content constant and rendering into 6 training formats.
+
+### Scientific controls
+
+1. Same canonical content across format variants.
+2. Same train/eval split.
+3. Same model (LiquidAI/LFM2.5-230M).
+4. Same LoRA config within adapter track (quality or surgical).
+5. Same optimizer (Adafactor).
+6. Same LR (2e-4).
+7. Same steps (300).
+8. Same max sequence length (1024).
+9. Same eval prompts (data/eval/small_model_eval_v1.jsonl).
+10. Same decoding settings (temp=0.2, top_p=0.9).
+11. Same judge rubric.
+12. Blind pairwise judging.
+13. Cached judge outputs.
+14. Manual review sample mandatory.
+15. Config snapshots for every run.
+
+### Hypotheses under test
+
+- H1: Multi-turn concise format is genuinely better for small-model SFT
+- H2: smol-magpie-ultra advantage is partly format, not merely content
+- H3: Small models benefit from dense, compact examples more than verbose ones
+- H4: Low training loss may not correlate with behavioral quality
+- H5: Surgical LoRA can add useful behavior while preserving base model distribution
+- H6: Structured terse data may outperform verbose chat on JSON/extraction/code
+- H7: There is a distinct "small-model-native" data style
+
+### Adapter tracks
+
+Quality: hub layers, all modules, r=8, Adafactor, lr=2e-4, 300 steps
+Surgical: hub + o_proj only, r=8, Adafactor, lr=2e-4, 300 steps
+
+### Pipeline commands
+
+```bash
+# Render format variants
+python scripts/data/render_dataset_formats.py --config configs/experiments/format_ablation_quality.yaml
+# Validate
+python scripts/data/validate_dataset_formats.py --dataset-dir data/sft/format_ablation/ --canonical data/canonical/phase9_pilot_300.jsonl
+# Train
+python scripts/train/run_format_ablation.py --config configs/experiments/format_ablation_quality.yaml
+# Evaluate
+python scripts/eval/run_eval_harness.py --config configs/eval/lfm2_small_model_eval.yaml --run-id <run_id>
+# Judge
+python scripts/eval/judge_outputs.py --run-id <run_id>
+# Aggregate
+python scripts/eval/aggregate_eval_results.py --run-id <run_id>
+# Report
+python scripts/report/build_phase09_report.py
+```
+
+### Report must answer
+
+- Did multi-turn concise still win when content was held constant?
+- Was smol-magpie advantage mostly content, mostly format, or both?
+- Which format gives best behavioral win-rate?
+- Which format gives best loss?
+- Do loss and behavioral quality correlate?
+- Does surgical LoRA preserve the model while improving target behaviors?
+- Is there a small-model-native data shape?
+
+### run_id format
+
+`lfm2_230m_{adapter_type}_{format_name}_{date_or_hash}`

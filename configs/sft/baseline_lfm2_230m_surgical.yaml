@@ -1,0 +1,56 @@
+# Phase 9 Baseline: LFM2.5-230M Surgical Adapter
+# Low KL drift, minimal base-model disruption
+# hub + o_proj only — preserves distribution
+
+phase: 9
+run_id_prefix: "lfm2_230m_surgical_ablation"
+
+model:
+  name: "LiquidAI/LFM2.5-230M"
+  dtype: bf16
+  device_map: auto
+
+adapter:
+  type: surgical
+  method: lora
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  bias: none
+  target_modules: ["out_proj"]  # hub + o_proj only (o_proj is hub-targeted)
+
+training:
+  framework: trl_sft
+  optimizer: adafactor
+  learning_rate: 0.0002
+  lr_scheduler: constant
+  max_steps: 300
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  warmup_steps: 10
+  weight_decay: 0.01
+  bf16: true
+  fp16: false
+  gradient_checkpointing: true
+  seed: 42
+  report_to: none
+  logging_steps: 10
+  save_steps: 150
+  eval_steps: 50
+
+data:
+  default_dataset: "smol-magpie-ultra"
+  canonical_path: "data/canonical/"
+  sft_path: "data/sft/"
+  train_split: 0.9
+  eval_split: 0.1
+
+eval:
+  config_path: "configs/eval/lfm2_small_model_eval.yaml"
+  output_dir: "results/evals/"
+
+output:
+  adapter_dir: "adapters/"
+  results_dir: "results/"
+  reports_dir: "reports/phase9/"

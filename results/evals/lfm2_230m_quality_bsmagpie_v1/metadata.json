@@ -1,0 +1,88 @@
+{
+  "run_id": "lfm2_230m_quality_bsmagpie_v1",
+  "model": "LiquidAI/LFM2.5-230M",
+  "adapter_path": "/home/billz/work/autonomous-small-model-exploration/adapters/lfm2_230m_quality_bsmagpie_v1/adapter",
+  "base_only": false,
+  "config": {
+    "model": {
+      "name": "LiquidAI/LFM2.5-230M",
+      "dtype": "bf16",
+      "device_map": "auto"
+    },
+    "eval_set": {
+      "path": "data/eval/small_model_eval_v1.jsonl",
+      "categories": [
+        "instruction_following",
+        "json_structured",
+        "gamefaq_extraction",
+        "coding",
+        "deobfuscation",
+        "reasoning",
+        "concision_antislip",
+        "factual_qa",
+        "multi_turn"
+      ]
+    },
+    "generation": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_new_tokens": 512,
+      "repetition_penalty": 1.1,
+      "do_sample": true,
+      "seed": 42
+    },
+    "judge": {
+      "model": "mimo-v2.5",
+      "mode": [
+        "pointwise",
+        "pairwise"
+      ],
+      "cache_dir": "results/evals/judge_cache/",
+      "dimensions": {
+        "correctness": {
+          "min": 1,
+          "max": 5
+        },
+        "instruction_following": {
+          "min": 1,
+          "max": 5
+        },
+        "output_format": {
+          "min": 1,
+          "max": 5
+        },
+        "concision": {
+          "min": 1,
+          "max": 5
+        },
+        "usefulness": {
+          "min": 1,
+          "max": 5
+        },
+        "hallucination_risk": {
+          "min": 1,
+          "max": 5,
+          "direction": "lower_is_better"
+        },
+        "overall": {
+          "min": 1,
+          "max": 5
+        }
+      }
+    },
+    "output": {
+      "eval_dir": "results/evals/",
+      "manual_review_dir": "results/evals/",
+      "drift_dir": "results/drift/"
+    },
+    "kl_drift": {
+      "enabled": true,
+      "heldout_prompt_count": 50,
+      "max_tokens": 256,
+      "proxy": "output_length_drift"
+    }
+  },
+  "timestamp": "2026-06-29T20:56:32.496693+00:00",
+  "eval_count": 153,
+  "seed": 42
+}

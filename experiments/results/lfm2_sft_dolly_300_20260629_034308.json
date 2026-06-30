@@ -1,0 +1,190 @@
+{
+  "id": "dolly_300",
+  "dataset": "databricks/databricks-dolly-15k",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 5.461,
+  "kl_shift": 0.1283,
+  "hub_kls": {
+    "L0": 2.3221,
+    "L2": 0.9021,
+    "L4": 3.1465,
+    "L5": 1.6581
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 9.2808
+    },
+    {
+      "step": 30,
+      "loss": 7.1674
+    },
+    {
+      "step": 45,
+      "loss": 6.8866
+    },
+    {
+      "step": 60,
+      "loss": 5.9724
+    },
+    {
+      "step": 75,
+      "loss": 5.7251
+    },
+    {
+      "step": 90,
+      "loss": 5.3527
+    },
+    {
+      "step": 105,
+      "loss": 5.2439
+    },
+    {
+      "step": 120,
+      "loss": 4.9168
+    },
+    {
+      "step": 135,
+      "loss": 4.999
+    },
+    {
+      "step": 150,
+      "loss": 4.96
+    },
+    {
+      "step": 165,
+      "loss": 4.8346
+    },
+    {
+      "step": 180,
+      "loss": 4.9918
+    },
+    {
+      "step": 195,
+      "loss": 4.8183
+    },
+    {
+      "step": 210,
+      "loss": 4.9313
+    },
+    {
+      "step": 225,
+      "loss": 4.9731
+    },
+    {
+      "step": 240,
+      "loss": 4.7879
+    },
+    {
+      "step": 255,
+      "loss": 4.852
+    },
+    {
+      "step": 270,
+      "loss": 4.9068
+    },
+    {
+      "step": 285,
+      "loss": 4.9262
+    },
+    {
+      "step": 300,
+      "loss": 4.6926
+    }
+  ],
+  "train_time_s": 658.9,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in the world and the most populous city in the European Union.\n\nParis is a major cultural, historical, and economic center in Europe. The city is home to the Louvre Museum, which houses the Mona Lisa, and the Mus\u00e9e d'Orsay, which houses an extensive collection of Impressionist and Post-Impressionist art. The city is also known for its fashionable streets, such as the Champs-\u00c9lys\u00e9es, and its historic landmarks like Notre-Dame Cathedral and the Arc de Triomphe.\n\nParis is also a major hub for international trade and commerce, with the Port of Paris being one of the busiest ports in the world. The city's economy is driven by a variety of industries, including finance, technology, and manufacturing.\n\nIn recent years, Paris has been recognized as a global center for innovation and entrepreneurship, with many startups and tech companies based in the city. The city's vibrant arts scene",
+      "n_tokens": 200,
+      "time_s": 2.55,
+      "tok_per_s": 78.5
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"sex\": \"female\", \"birthdate\": \"2010-07-15\", \"gender\": \"female\", \"parent\": \"John\", \"children\": \"1\"}\n\nAlice is a 12-year-old girl who was born on July 15, 2010. She is a female child and has been raised by John, who is a father. Alice's parents are John and Alice's mother.",
+      "n_tokens": 92,
+      "time_s": 1.2,
+      "tok_per_s": 76.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib",
+      "n_tokens": 79,
+      "time_s": 1.02,
+      "tok_per_s": 77.6
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by vast distances. This means that if one particle is measured to have a certain property, the other particle will instantly have that property, regardless of the distance between them.\n\nThis concept was first proposed by Albert Einstein, Boris Podolsky, and Nathan Rosen in 1935 as part of their famous \"EPR paradox\" which aimed to test the completeness of quantum mechanics. They argued that if quantum mechanics were correct, it would imply that there is a hidden connection between the particles, which could be used to send information faster than light.\n\nHowever, this idea has been widely rejected by the scientific community due to its lack of empirical evidence and the difficulty in proving its existence. Despite these challenges, quantum entanglement remains an important area of research in physics, with potential applications in quantum computing and cryptography.",
+      "n_tokens": 189,
+      "time_s": 2.69,
+      "tok_per_s": 70.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 358 = 247\n247 - 247 = 0\n0 - 0 = 0",
+      "n_tokens": 28,
+      "time_s": 0.37,
+      "tok_per_s": 76.6
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonjour\", in Spanish is \"Hola\", and in German is \"Guten Morgen\".",
+      "n_tokens": 27,
+      "time_s": 0.37,
+      "tok_per_s": 72.4
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Reduces the risk of chronic diseases such as diabetes, heart disease, and obesity.",
+      "n_tokens": 38,
+      "time_s": 0.52,
+      "tok_per_s": 73.5
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst_ffirst",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a central carbon atom. The presence of the oxygen atom makes water highly soluble in water, which is why it is often referred to as \"the world's liquid.\"\n\nWater is also a key component in many biological processes, such as photosynthesis, where plants use water to convert carbon dioxide into glucose and oxygen. It is also essential for life on Earth, as it provides the necessary energy for cellular functions and maintains the planet's temperature through heat exchange with the atmosphere.\n\nIn addition to its role in biology, water plays a crucial role in various industrial applications, including cooling systems, desalination, and the production of chemicals like ammonia and methanol. Its unique properties make it a valuable resource for scientific research and technological advancements.",
+      "n_tokens": 172,
+      "time_s": 2.21,
+      "tok_per_s": 77.9
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_lr5e4",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0005,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 5.7513,
+  "kl_shift": 0.1083,
+  "hub_kls": {
+    "L0": 2.7068,
+    "L2": 1.1802,
+    "L4": 2.6197,
+    "L5": 3.5008
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.0059
+    },
+    {
+      "step": 30,
+      "loss": 7.7865
+    },
+    {
+      "step": 45,
+      "loss": 6.4784
+    },
+    {
+      "step": 60,
+      "loss": 6.0039
+    },
+    {
+      "step": 75,
+      "loss": 5.7068
+    },
+    {
+      "step": 90,
+      "loss": 5.5347
+    },
+    {
+      "step": 105,
+      "loss": 5.5323
+    },
+    {
+      "step": 120,
+      "loss": 5.4191
+    },
+    {
+      "step": 135,
+      "loss": 5.3628
+    },
+    {
+      "step": 150,
+      "loss": 5.3097
+    },
+    {
+      "step": 165,
+      "loss": 5.2744
+    },
+    {
+      "step": 180,
+      "loss": 5.2404
+    },
+    {
+      "step": 195,
+      "loss": 5.2136
+    },
+    {
+      "step": 210,
+      "loss": 5.1854
+    },
+    {
+      "step": 225,
+      "loss": 5.1601
+    },
+    {
+      "step": 240,
+      "loss": 5.169
+    },
+    {
+      "step": 255,
+      "loss": 5.1617
+    },
+    {
+      "step": 270,
+      "loss": 5.1591
+    },
+    {
+      "step": 285,
+      "loss": 5.1256
+    },
+    {
+      "step": 300,
+      "loss": 5.197
+    }
+  ],
+  "train_time_s": 656.6,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. The capital is also the seat of the French government and the national capital of France. Paris is a major cultural, historical, and economic center of France. It is known for its art, architecture, fashion, cuisine, and history.",
+      "n_tokens": 67,
+      "time_s": 0.86,
+      "tok_per_s": 78.3
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "14, \"gender\": \"female\"},\"location\": \"New York City\"}, {\"name\": \"Bob\", \"age\": 16, \"gender\": \"male\"}, {\"name\": \"Charlie\", \"age\": 17, \"gender\": \"male\"}, {\"name\": \"Diana\", \"age\": 19, \"gender\": \"female\"}, {\"name\": \"Ethan\", \"age\": 20, \"gender\": \"male\"}, {\"name\": \"Frank\", \"age\": 21, \"gender\": \"male\"}, {\"name\": \"Grace\", \"age\": 22, \"gender\": \"female\"}, {\"name\": \"Hannah\", \"age\": 23, \"gender\": \"male\"}, {\"name\": \"Jess\", \"age\": 24, \"gender\": \"male\"}, {\"name\": \"Liam\", \"age\": 25, \"gender\": \"male\"},",
+      "n_tokens": 200,
+      "time_s": 2.6,
+      "tok_per_s": 77.0
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n```",
+      "n_tokens": 81,
+      "time_s": 1.08,
+      "tok_per_s": 74.8
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by large distances. This means that if one particle is measured, the other will instantly be found to be in the same state. The effect of this correlation is so strong that it seems as though the particles are communicating with each other instantaneously.\n\nIn simple terms, quantum entanglement is a mysterious connection between particles that can't be explained by classical physics. It's like having two particles that are connected in such a way that their properties are linked, no matter how far apart they are. This connection is so strong that it seems as though the particles are communicating with each other instantly.",
+      "n_tokens": 143,
+      "time_s": 1.87,
+      "tok_per_s": 76.4
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"35 million\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 31,
+      "time_s": 0.42,
+      "tok_per_s": 73.2
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\nAnswer: 605",
+      "n_tokens": 9,
+      "time_s": 0.13,
+      "tok_per_s": 68.8
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning!\n\nGood morning!\n\nGood morning!\n\nGood morning!\n\nGood morning!",
+      "n_tokens": 21,
+      "time_s": 0.28,
+      "tok_per_s": 74.8
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Reduces stress and anxiety levels",
+      "n_tokens": 27,
+      "time_s": 0.36,
+      "tok_per_s": 75.0
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_first_first_first_first_first_first_first_ffirst_ffirstffirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirstfirst",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.6
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom. It is also a liquid at room temperature, which means it can be easily heated or cooled. Water is a key component in many biological processes, such as photosynthesis and respiration, and is essential for life on Earth.",
+      "n_tokens": 67,
+      "time_s": 1.01,
+      "tok_per_s": 66.1
+    }
+  ]
+}

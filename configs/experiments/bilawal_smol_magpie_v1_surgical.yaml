@@ -1,0 +1,49 @@
+# bilawal_smol_magpie_v1 — Surgical Adapter
+
+experiment:
+  name: "bilawal_smol_magpie_v1_surgical"
+  phase: 9
+  description: "Surgical adapter on best format from ablation"
+
+model:
+  name: "LiquidAI/LFM2.5-230M"
+  dtype: bf16
+  device_map: auto
+
+mixture:
+  name: "bilawal_smol_magpie_v1"
+  canonical_path: "data/canonical/bilawal_smol_magpie_v1_canonical.jsonl"
+  target_size: 1000
+
+adapter:
+  type: surgical
+  method: lora
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["out_proj"]
+
+training:
+  optimizer: adafactor
+  learning_rate: 0.0002
+  lr_scheduler: constant
+  max_steps: 300
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  warmup_steps: 10
+  bf16: true
+  seed: 42
+  gradient_checkpointing: true
+
+rendered_formats:
+  - path: "data/sft/bilawal_smol_magpie_v1_multi_turn_concise.jsonl"
+    format: multi_turn_concise
+
+eval:
+  config_path: "configs/eval/lfm2_small_model_eval.yaml"
+
+output:
+  adapter_dir: "adapters/"
+  results_dir: "results/evals/"
+  reports_dir: "reports/phase9/"

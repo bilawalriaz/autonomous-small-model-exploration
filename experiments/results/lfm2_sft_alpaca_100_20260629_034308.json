@@ -1,0 +1,190 @@
+{
+  "id": "alpaca_100",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 100,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 7.1393,
+  "kl_shift": 0.0233,
+  "hub_kls": {
+    "L0": 4.9873,
+    "L2": 1.0426,
+    "L4": 3.6036,
+    "L5": 3.1642
+  },
+  "loss_curve": [
+    {
+      "step": 5,
+      "loss": 10.9222
+    },
+    {
+      "step": 10,
+      "loss": 9.7838
+    },
+    {
+      "step": 15,
+      "loss": 8.9782
+    },
+    {
+      "step": 20,
+      "loss": 8.2083
+    },
+    {
+      "step": 25,
+      "loss": 7.8303
+    },
+    {
+      "step": 30,
+      "loss": 7.6371
+    },
+    {
+      "step": 35,
+      "loss": 7.2927
+    },
+    {
+      "step": 40,
+      "loss": 6.9692
+    },
+    {
+      "step": 45,
+      "loss": 6.6877
+    },
+    {
+      "step": 50,
+      "loss": 6.6829
+    },
+    {
+      "step": 55,
+      "loss": 6.4329
+    },
+    {
+      "step": 60,
+      "loss": 6.3078
+    },
+    {
+      "step": 65,
+      "loss": 6.3307
+    },
+    {
+      "step": 70,
+      "loss": 6.1993
+    },
+    {
+      "step": 75,
+      "loss": 6.0662
+    },
+    {
+      "step": 80,
+      "loss": 6.2134
+    },
+    {
+      "step": 85,
+      "loss": 6.077
+    },
+    {
+      "step": 90,
+      "loss": 5.9328
+    },
+    {
+      "step": 95,
+      "loss": 6.1559
+    },
+    {
+      "step": 100,
+      "loss": 6.0787
+    }
+  ],
+  "train_time_s": 218.0,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 65.8
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"",
+      "n_tokens": 200,
+      "time_s": 2.61,
+      "tok_per_s": 76.6
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0] + [fibonacci(n-1)] + [fibonacci(n-2)]\n        return fib\n\ndef fibonacci_recursive(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0] + [fibonacci(n-1)] + [fibonacci(n-2)]\n        return fib\n\ndef fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n# Test cases\nprint(fibonacci(10))  # Output: [0, 1, 2, 3, 4,",
+      "n_tokens": 200,
+      "time_s": 2.6,
+      "tok_per_s": 76.8
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a fascinating phenomenon where two particles become linked so that the state of one instantly affects the other, no matter how far apart they are. This seems to defy our everyday understanding of physics, which suggests that particles have definite properties and that their states are independent. However, when we try to measure one particle's state, we find that its partner instantly knows what it has, even if they're separated by vast distances. This seems to challenge our classical notions of reality and locality.\n\nIn simple terms, quantum entanglement is like a mysterious connection between particles that creates an instantaneous influence on each other, regardless of distance. This phenomenon has been observed in experiments involving atoms and photons, and it has led to new insights into the nature of reality and the limits of our understanding.",
+      "n_tokens": 163,
+      "time_s": 2.3,
+      "tok_per_s": 70.8
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"8.86\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.43,
+      "tok_per_s": 75.2
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358",
+      "n_tokens": 14,
+      "time_s": 0.19,
+      "tok_per_s": 72.0
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Translation: Good morning.\n\nFrench:\nBonjour.\n\nSpanish:\nHola.\n\nGerman:\nHallo.\n\nThese translations maintain the original meaning while adapting to the specific languages and cultural contexts of French, Spanish, and German.",
+      "n_tokens": 50,
+      "time_s": 0.68,
+      "tok_per_s": 73.6
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength\n4. Reduces stress levels\n5. Promotes better sleep quality",
+      "n_tokens": 40,
+      "time_s": 0.53,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    left = 0\n    right = len(arr) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef find_first_binary():\n    arr = [0, 1, 2, 3, 4, 5]\n    first_binary = binary_search(arr, 2)\n    if first_binary != -1:\n        print(f\"First binary: {first_binary}\")\n    else:\n        print(\"No first binary found.\")\n    find_first_binary()\n    return first_binary\n\nif __name__ == \"__main__\":\n    find_first_binary()\n```",
+      "n_tokens": 199,
+      "time_s": 2.55,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nThis chemical formula can be used to identify the composition of water in various substances, such as ice, liquid, and vapor. The presence of oxygen in water contributes to its unique properties, making it a vital component in many biological processes and industrial applications.",
+      "n_tokens": 56,
+      "time_s": 0.72,
+      "tok_per_s": 77.4
+    }
+  ]
+}

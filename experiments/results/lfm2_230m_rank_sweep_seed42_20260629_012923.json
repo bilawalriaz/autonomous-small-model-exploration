@@ -1,0 +1,61 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "timestamp": "20260629_012923",
+  "hub_layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "results": [
+    {
+      "rank": 2,
+      "trainable_params": 16384,
+      "final_loss": 9.1621,
+      "kl_shift": 0.0078,
+      "per_prompt_kl": [
+        0.0007,
+        0.0204,
+        0.003,
+        0.0072
+      ]
+    },
+    {
+      "rank": 4,
+      "trainable_params": 32768,
+      "final_loss": 8.6428,
+      "kl_shift": 0.0314,
+      "per_prompt_kl": [
+        0.0017,
+        0.0514,
+        0.0202,
+        0.0524
+      ]
+    },
+    {
+      "rank": 8,
+      "trainable_params": 65536,
+      "final_loss": 8.122,
+      "kl_shift": 0.0709,
+      "per_prompt_kl": [
+        0.0024,
+        0.1588,
+        0.0234,
+        0.0988
+      ]
+    },
+    {
+      "rank": 16,
+      "trainable_params": 131072,
+      "final_loss": 7.7025,
+      "kl_shift": 0.1161,
+      "per_prompt_kl": [
+        0.0189,
+        0.2982,
+        0.0305,
+        0.1167
+      ]
+    }
+  ]
+}

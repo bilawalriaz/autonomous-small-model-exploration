@@ -1,0 +1,132 @@
+{
+  "prompt": "The capital of France is Paris and it is beautiful",
+  "tokens": [
+    "<|startoftext|>",
+    "The",
+    " capital",
+    " of",
+    " France",
+    " is",
+    " Paris",
+    " and",
+    " it",
+    " is",
+    " beautiful"
+  ],
+  "data": {
+    "L12": {
+      "H0": {
+        "entropy": 0.8595,
+        "self_attn": 0.1522,
+        "bos_attn": 0.4884,
+        "last_attn": 0.0007,
+        "max_attn": 1.0
+      },
+      "H1": {
+        "entropy": 0.868,
+        "self_attn": 0.1226,
+        "bos_attn": 0.7464,
+        "last_attn": 0.0071,
+        "max_attn": 1.0
+      },
+      "H2": {
+        "entropy": 0.9499,
+        "self_attn": 0.1715,
+        "bos_attn": 0.672,
+        "last_attn": 0.002,
+        "max_attn": 1.0
+      },
+      "H3": {
+        "entropy": 1.1885,
+        "self_attn": 0.1825,
+        "bos_attn": 0.4052,
+        "last_attn": 0.0036,
+        "max_attn": 1.0
+      },
+      "H4": {
+        "entropy": 0.393,
+        "self_attn": 0.1107,
+        "bos_attn": 0.9094,
+        "last_attn": 0.0023,
+        "max_attn": 1.0
+      },
+      "H5": {
+        "entropy": 0.3109,
+        "self_attn": 0.1142,
+        "bos_attn": 0.9251,
+        "last_attn": 0.001,
+        "max_attn": 1.0
+      },
+      "H6": {
+        "entropy": 0.4763,
+        "self_attn": 0.1091,
+        "bos_attn": 0.8771,
+        "last_attn": 0.0018,
+        "max_attn": 1.0
+      },
+      "H7": {
+        "entropy": 0.4623,
+        "self_attn": 0.1157,
+        "bos_attn": 0.8668,
+        "last_attn": 0.0009,
+        "max_attn": 1.0
+      },
+      "H8": {
+        "entropy": 1.2615,
+        "self_attn": 0.2863,
+        "bos_attn": 0.4336,
+        "last_attn": 0.0229,
+        "max_attn": 1.0
+      },
+      "H9": {
+        "entropy": 1.1891,
+        "self_attn": 0.4241,
+        "bos_attn": 0.3527,
+        "last_attn": 0.0579,
+        "max_attn": 1.0
+      },
+      "H10": {
+        "entropy": 1.1989,
+        "self_attn": 0.1865,
+        "bos_attn": 0.5168,
+        "last_attn": 0.0066,
+        "max_attn": 1.0
+      },
+      "H11": {
+        "entropy": 1.247,
+        "self_attn": 0.1929,
+        "bos_attn": 0.5063,
+        "last_attn": 0.0194,
+        "max_attn": 1.0
+      },
+      "H12": {
+        "entropy": 0.2566,
+        "self_attn": 0.105,
+        "bos_attn": 0.9474,
+        "last_attn": 0.0014,
+        "max_attn": 1.0
+      },
+      "H13": {
+        "entropy": 0.2621,
+        "self_attn": 0.1028,
+        "bos_attn": 0.9435,
+        "last_attn": 0.0009,
+        "max_attn": 1.0
+      },
+      "H14": {
+        "entropy": 1.1765,
+        "self_attn": 0.442,
+        "bos_attn": 0.2516,
+        "last_attn": 0.0536,
+        "max_attn": 1.0
+      },
+      "H15": {
+        "entropy": 1.2518,
+        "self_attn": 0.2392,
+        "bos_attn": 0.4251,
+        "last_attn": 0.0045,
+        "max_attn": 1.0
+      }
+    }
+  }
+}

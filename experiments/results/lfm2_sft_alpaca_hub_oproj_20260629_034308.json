@@ -1,0 +1,183 @@
+{
+  "id": "alpaca_hub_oproj",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub_oproj",
+  "target_modules": [
+    "out_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 65536,
+  "total_params": 229758720,
+  "final_loss": 6.2977,
+  "kl_shift": 0.0392,
+  "hub_kls": {
+    "L0": 5.5846,
+    "L2": 0.7745,
+    "L4": 4.0557,
+    "L5": 2.952
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.6126
+    },
+    {
+      "step": 30,
+      "loss": 9.0175
+    },
+    {
+      "step": 45,
+      "loss": 7.7358
+    },
+    {
+      "step": 60,
+      "loss": 6.9615
+    },
+    {
+      "step": 75,
+      "loss": 6.4304
+    },
+    {
+      "step": 90,
+      "loss": 6.1357
+    },
+    {
+      "step": 105,
+      "loss": 6.0547
+    },
+    {
+      "step": 120,
+      "loss": 5.8997
+    },
+    {
+      "step": 135,
+      "loss": 5.8163
+    },
+    {
+      "step": 150,
+      "loss": 5.7383
+    },
+    {
+      "step": 165,
+      "loss": 5.6696
+    },
+    {
+      "step": 180,
+      "loss": 5.6289
+    },
+    {
+      "step": 195,
+      "loss": 5.5899
+    },
+    {
+      "step": 210,
+      "loss": 5.5551
+    },
+    {
+      "step": 225,
+      "loss": 5.5196
+    },
+    {
+      "step": 240,
+      "loss": 5.5227
+    },
+    {
+      "step": 255,
+      "loss": 5.5135
+    },
+    {
+      "step": 270,
+      "loss": 5.5171
+    },
+    {
+      "step": 285,
+      "loss": 5.4789
+    },
+    {
+      "step": 300,
+      "loss": 5.5572
+    }
+  ],
+  "train_time_s": 644.9,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 62.3
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\", \"location\": \"New York City\"}\n}",
+      "n_tokens": 20,
+      "time_s": 0.25,
+      "tok_per_s": 79.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\nprint(fibonacci(10))",
+      "n_tokens": 88,
+      "time_s": 1.04,
+      "tok_per_s": 84.5
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are correlated, even when they are separated by vast distances. This means that if one particle changes its state, the other instantly knows what it has, regardless of the distance between them. It's like having two friends who always talk to each other, no matter how far apart they are!\n\nHowever, this connection doesn't allow for faster-than-light communication because measuring the entangled particles would reveal their states, which would be too complex to transmit over long distances.",
+      "n_tokens": 110,
+      "time_s": 1.32,
+      "tok_per_s": 83.5
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"10,000,000\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 34,
+      "time_s": 0.42,
+      "tok_per_s": 81.4
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 + 358 = 716\n716 - 605 = 111",
+      "n_tokens": 28,
+      "time_s": 0.34,
+      "tok_per_s": 81.5
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Translation: Good morning\n\nFrench:\nBonjour\n\nSpanish:\nHola\n\nGerman:\nHallo\n\nThese translations maintain the original meaning while adapting them to the French, Spanish, and German languages.",
+      "n_tokens": 42,
+      "time_s": 0.64,
+      "tok_per_s": 65.9
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength\n3. Reduces stress levels\n4. Enhances cognitive function\n5. Lowers risk of chronic diseases",
+      "n_tokens": 40,
+      "time_s": 0.51,
+      "tok_per_s": 78.5
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if len(arr) == 0:\n        return -1\n\n    left = 0\n    right = len(arr) - 1\n\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\ndef find_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_first_f",
+      "n_tokens": 200,
+      "time_s": 2.36,
+      "tok_per_s": 84.8
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.",
+      "n_tokens": 6,
+      "time_s": 0.08,
+      "tok_per_s": 71.1
+    }
+  ]
+}

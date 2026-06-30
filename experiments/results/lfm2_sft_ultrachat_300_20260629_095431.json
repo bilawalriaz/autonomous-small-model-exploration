@@ -1,0 +1,190 @@
+{
+  "id": "ultrachat_300",
+  "dataset": "stingning/ultrachat",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.4712,
+  "kl_shift": 0.1646,
+  "hub_kls": {
+    "L0": 3.9953,
+    "L2": 1.1425,
+    "L4": 3.6612,
+    "L5": 3.0388
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 1.8166
+    },
+    {
+      "step": 30,
+      "loss": 1.6801
+    },
+    {
+      "step": 45,
+      "loss": 1.527
+    },
+    {
+      "step": 60,
+      "loss": 1.4525
+    },
+    {
+      "step": 75,
+      "loss": 1.533
+    },
+    {
+      "step": 90,
+      "loss": 1.4447
+    },
+    {
+      "step": 105,
+      "loss": 1.5061
+    },
+    {
+      "step": 120,
+      "loss": 1.4153
+    },
+    {
+      "step": 135,
+      "loss": 1.4625
+    },
+    {
+      "step": 150,
+      "loss": 1.4371
+    },
+    {
+      "step": 165,
+      "loss": 1.415
+    },
+    {
+      "step": 180,
+      "loss": 1.3748
+    },
+    {
+      "step": 195,
+      "loss": 1.4192
+    },
+    {
+      "step": 210,
+      "loss": 1.4545
+    },
+    {
+      "step": 225,
+      "loss": 1.4208
+    },
+    {
+      "step": 240,
+      "loss": 1.3518
+    },
+    {
+      "step": 255,
+      "loss": 1.5052
+    },
+    {
+      "step": 270,
+      "loss": 1.4148
+    },
+    {
+      "step": 285,
+      "loss": 1.4421
+    },
+    {
+      "step": 300,
+      "loss": 1.3517
+    }
+  ],
+  "train_time_s": 661.2,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 61.6
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"male\"}\n\"description\": \"A young woman who has just moved to a new city and is trying to find her place in the world. She is determined to make a good impression on everyone she meets.\"}",
+      "n_tokens": 51,
+      "time_s": 0.67,
+      "tok_per_s": 75.6
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 127,
+      "time_s": 1.66,
+      "tok_per_s": 76.5
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked together in such a way that the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you try to measure the state of one particle, the other particle will instantly know the outcome, even if it's light-years away.\n\nThis strange and mysterious connection between particles has been a subject of interest for scientists for many years, and it has led to some fascinating discoveries and theories about the nature of reality itself.",
+      "n_tokens": 111,
+      "time_s": 1.48,
+      "tok_per_s": 74.8
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.43,
+      "tok_per_s": 74.9
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 / 605 = 1\n1",
+      "n_tokens": 14,
+      "time_s": 0.19,
+      "tok_per_s": 72.7
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonsoir\", in Spanish is \"Adi\u00f3s\" or \"\u00a1Buenos d\u00edas\", and in German is \"Morgen\".",
+      "n_tokens": 35,
+      "time_s": 0.5,
+      "tok_per_s": 70.0
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health: Regular exercise helps to strengthen the heart and improve its ability to pump blood efficiently, reducing the risk of heart disease.\n\n2. Boosts mental health: Exercise releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. It can also reduce symptoms of anxiety and depression.\n\n3. Increases energy levels: Regular physical activity increases the amount of oxygen that is taken up by the body, which can lead to increased energy levels and improved overall well-being.",
+      "n_tokens": 111,
+      "time_s": 1.46,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_found(arr, target):\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n\n    low =",
+      "n_tokens": 200,
+      "time_s": 2.65,
+      "tok_per_s": 75.6
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a positive and a negative end. This polarity allows water to dissolve many substances, including oxygen, hydrogen, and other elements.\n\nIn the context of chemistry, water is often used as a solvent in various chemical reactions, such as dissolving salts or reacting with acids and bases. It also plays a crucial role in many biological processes, including photosynthesis and respiration.",
+      "n_tokens": 90,
+      "time_s": 1.18,
+      "tok_per_s": 76.2
+    }
+  ]
+}

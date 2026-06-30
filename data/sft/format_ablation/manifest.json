@@ -1,0 +1,44 @@
+{
+  "canonical_source": "data/canonical/phase9_pilot_300.jsonl",
+  "canonical_count": 300,
+  "formats": {
+    "alpaca_flat": {
+      "format": "alpaca_flat",
+      "path": "data/sft/format_ablation/alpaca_flat.jsonl",
+      "count": 300,
+      "seed": 42
+    },
+    "single_turn_chat": {
+      "format": "single_turn_chat",
+      "path": "data/sft/format_ablation/single_turn_chat.jsonl",
+      "count": 300,
+      "seed": 42
+    },
+    "multi_turn_concise": {
+      "format": "multi_turn_concise",
+      "path": "data/sft/format_ablation/multi_turn_concise.jsonl",
+      "count": 300,
+      "seed": 42
+    },
+    "multi_turn_verbose": {
+      "format": "multi_turn_verbose",
+      "path": "data/sft/format_ablation/multi_turn_verbose.jsonl",
+      "count": 300,
+      "seed": 42
+    },
+    "structured_terse": {
+      "format": "structured_terse",
+      "path": "data/sft/format_ablation/structured_terse.jsonl",
+      "count": 300,
+      "seed": 42
+    },
+    "bad_format_control": {
+      "format": "bad_format_control",
+      "path": "data/sft/format_ablation/bad_format_control.jsonl",
+      "count": 300,
+      "seed": 42
+    }
+  },
+  "seed": 42,
+  "timestamp": "2026-06-29T16:37:46.607736+00:00"
+}

@@ -1,0 +1,176 @@
+{
+  "id": "smol_lion_300",
+  "dataset": "HuggingFaceTB/smoltalk",
+  "subset": "smol-magpie-ultra",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 7e-05,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "lion",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.3057,
+  "kl_shift": 0.193,
+  "hub_kls": {
+    "L0": 4.7364,
+    "L2": 1.0143,
+    "L4": 2.9819,
+    "L5": 2.2846
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 1.5048
+    },
+    {
+      "step": 30,
+      "loss": 1.4567
+    },
+    {
+      "step": 45,
+      "loss": 1.3973
+    },
+    {
+      "step": 60,
+      "loss": 1.3428
+    },
+    {
+      "step": 75,
+      "loss": 1.3334
+    },
+    {
+      "step": 90,
+      "loss": 1.2884
+    },
+    {
+      "step": 105,
+      "loss": 1.3371
+    },
+    {
+      "step": 120,
+      "loss": 1.3276
+    },
+    {
+      "step": 135,
+      "loss": 1.3232
+    },
+    {
+      "step": 150,
+      "loss": 1.2077
+    },
+    {
+      "step": 165,
+      "loss": 1.281
+    },
+    {
+      "step": 180,
+      "loss": 1.2982
+    },
+    {
+      "step": 195,
+      "loss": 1.2519
+    },
+    {
+      "step": 210,
+      "loss": 1.3582
+    },
+    {
+      "step": 225,
+      "loss": 1.2525
+    },
+    {
+      "step": 240,
+      "loss": 1.2092
+    },
+    {
+      "step": 255,
+      "loss": 1.1637
+    },
+    {
+      "step": 270,
+      "loss": 1.2669
+    },
+    {
+      "step": 285,
+      "loss": 1.2767
+    },
+    {
+      "step": 300,
+      "loss": 1.2374
+    }
+  ],
+  "train_time_s": 668.6,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and a major cultural, economic, and political center.\n\nParis is known for its rich history, art, architecture, and cuisine. The city has been a hub of culture and intellectualism since ancient times, with many influential figures and artists contributing to its development.\n\nParis is also famous for its iconic landmarks such as the Eiffel Tower, Notre-Dame Cathedral, and the Louvre Museum. The city's skyline is dominated by the Eiffel Tower, which was built for the 1889 World's Fair and remains one of the most recognizable symbols of Paris.\n\nIn addition to its historical significance, Paris is a vibrant city with a diverse population and a thriving arts scene. The city hosts numerous festivals and events throughout the year, including the F\u00eate de la Musique, the Bastille Day celebrations, and the Cannes Film Festival.\n\nOverall, Paris is a city that embodies the best of French culture and history, making it a",
+      "n_tokens": 200,
+      "time_s": 2.5,
+      "tok_per_s": 80.1
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "28, \"gender\": \"male\"}\n\"title\": \"Alice\", \"description\": \"A young woman in her mid-20s, she's a successful businesswoman with a passion for entrepreneurship. She runs a small business that specializes in sustainable fashion and eco-friendly products.\", \"bio\": \"Alice is a passionate advocate for environmental sustainability and has dedicated her life to creating a better world through her business. She's known for her innovative approach to sustainable fashion and her commitment to reducing waste and promoting eco-friendly practices.\"}",
+      "n_tokens": 110,
+      "time_s": 1.55,
+      "tok_per_s": 71.1
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\ndef fibonacci_recursive(n: int) -> list:\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = fibonacci_recursive(n-1)\n        fib.append(fib[-1] + fib[-2])\n        return fib\n\ndef fibonacci_iterative(n: int) -> list:\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib",
+      "n_tokens": 200,
+      "time_s": 2.77,
+      "tok_per_s": 72.1
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and their properties are correlated, even when they are separated by large distances. This means that the state of one particle instantly influences the state of the other, regardless of the distance between them.\n\nImagine you have two coins that are entangled. If you flip one coin and it lands on heads, the other coin will also land on heads, no matter how far apart they are. This instant connection between the coins is what we call entanglement.\n\nIn quantum mechanics, entanglement is a fundamental aspect of quantum systems, and it has been experimentally verified numerous times. It's a key feature of quantum entanglement and plays a crucial role in many areas of physics, including quantum computing and cryptography.\n\nTo illustrate this concept, consider a pair of entangled particles, such as electrons or photons. When one particle is measured to be in a certain state, the other particle will instantaneously be found in a corresponding state",
+      "n_tokens": 200,
+      "time_s": 2.53,
+      "tok_per_s": 79.0
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.41,
+      "tok_per_s": 77.5
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 358 = 247\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 = 494\n247 + 247 =",
+      "n_tokens": 200,
+      "time_s": 2.5,
+      "tok_per_s": 80.0
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is 'Bonjour', in Spanish is 'Buenos d\u00edas', and in German is 'Guten Morgen'.",
+      "n_tokens": 29,
+      "time_s": 0.37,
+      "tok_per_s": 77.5
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health: Regular exercise strengthens the heart muscle, improves blood circulation, and lowers blood pressure, reducing the risk of heart disease.\n2. Boosts mental well-being: Exercise releases endorphins, which are chemicals in the brain that act as natural painkillers and mood elevators. It can also reduce symptoms of anxiety and depression, improve self-esteem, and increase overall happiness.\n3. Enhances physical fitness: Exercise helps to build muscle mass, increase bone density, and improve flexibility and balance. It can also help to reduce the risk of chronic diseases such as diabetes, obesity, and certain types of cancer.",
+      "n_tokens": 131,
+      "time_s": 1.64,
+      "tok_per_s": 80.0
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\ndef find_first_first_found(arr, target):\n    if not arr:\n        return -1\n\n    first_found = False\n    for i in range(len(arr)):\n        if arr[i] == target:\n            first_found = True\n            break\n\n    return first_found\n\ndef find_first_first_found_second_found(arr, target):\n    if not arr:\n        return -1\n\n    first_found = False\n    second_found = False\n    for",
+      "n_tokens": 200,
+      "time_s": 2.52,
+      "tok_per_s": 79.4
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWhat is the molecular weight of water?\n\nH2O has a molecular weight of 18 grams per mole.",
+      "n_tokens": 29,
+      "time_s": 0.38,
+      "tok_per_s": 76.7
+    }
+  ]
+}

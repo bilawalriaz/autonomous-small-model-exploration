@@ -1,0 +1,575 @@
+{
+  "blind_review_seed": 42,
+  "run_ids": [
+    "lfm2_230m_base_20260629",
+    "lfm2_230m_format_ablation_alpaca_flat_20260629",
+    "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+    "lfm2_230m_format_ablation_structured_terse_20260629",
+    "lfm2_230m_quality_bsmagpie_v1",
+    "lfm2_230m_surgical_bsmagpie_v1"
+  ],
+  "primary_model": "lfm2_230m_base_20260629",
+  "example_count": 80,
+  "unblinding_key": {
+    "example_1": {
+      "eval_id": "eval_013",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_2": {
+      "eval_id": "eval_010",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_3": {
+      "eval_id": "eval_015",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_4": {
+      "eval_id": "eval_006",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_5": {
+      "eval_id": "eval_007",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_quality_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_6": {
+      "eval_id": "eval_008",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_7": {
+      "eval_id": "eval_012",
+      "category": "instruction_following",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_8": {
+      "eval_id": "eval_027",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_9": {
+      "eval_id": "eval_033",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_10": {
+      "eval_id": "eval_030",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_11": {
+      "eval_id": "eval_018",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_12": {
+      "eval_id": "eval_023",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_13": {
+      "eval_id": "eval_034",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_14": {
+      "eval_id": "eval_026",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_15": {
+      "eval_id": "eval_042",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_16": {
+      "eval_id": "eval_035",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_17": {
+      "eval_id": "eval_049",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_18": {
+      "eval_id": "eval_043",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_19": {
+      "eval_id": "eval_038",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_20": {
+      "eval_id": "eval_045",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_21": {
+      "eval_id": "eval_051",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_22": {
+      "eval_id": "eval_056",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_23": {
+      "eval_id": "eval_054",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_24": {
+      "eval_id": "eval_062",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_25": {
+      "eval_id": "eval_068",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_26": {
+      "eval_id": "eval_066",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_27": {
+      "eval_id": "eval_059",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_28": {
+      "eval_id": "eval_067",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_29": {
+      "eval_id": "eval_073",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_quality_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_30": {
+      "eval_id": "eval_079",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_31": {
+      "eval_id": "eval_077",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_32": {
+      "eval_id": "eval_069",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_quality_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_33": {
+      "eval_id": "eval_070",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_34": {
+      "eval_id": "eval_072",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_35": {
+      "eval_id": "eval_084",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_quality_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_36": {
+      "eval_id": "eval_098",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_37": {
+      "eval_id": "eval_088",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_38": {
+      "eval_id": "eval_090",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_39": {
+      "eval_id": "eval_101",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_40": {
+      "eval_id": "eval_099",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_41": {
+      "eval_id": "eval_096",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_42": {
+      "eval_id": "eval_091",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_43": {
+      "eval_id": "eval_107",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_44": {
+      "eval_id": "eval_113",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_45": {
+      "eval_id": "eval_108",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_46": {
+      "eval_id": "eval_110",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_47": {
+      "eval_id": "eval_118",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_48": {
+      "eval_id": "eval_119",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_49": {
+      "eval_id": "eval_116",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_50": {
+      "eval_id": "eval_125",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_51": {
+      "eval_id": "eval_123",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_52": {
+      "eval_id": "eval_132",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_53": {
+      "eval_id": "eval_133",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_54": {
+      "eval_id": "eval_131",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_55": {
+      "eval_id": "eval_120",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_56": {
+      "eval_id": "eval_136",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_57": {
+      "eval_id": "eval_137",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_58": {
+      "eval_id": "eval_148",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_59": {
+      "eval_id": "eval_144",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_60": {
+      "eval_id": "eval_143",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_61": {
+      "eval_id": "eval_145",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_62": {
+      "eval_id": "eval_141",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_63": {
+      "eval_id": "eval_139",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_64": {
+      "eval_id": "eval_117",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_65": {
+      "eval_id": "eval_146",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_66": {
+      "eval_id": "eval_071",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_67": {
+      "eval_id": "eval_112",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_68": {
+      "eval_id": "eval_152",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_69": {
+      "eval_id": "eval_115",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_70": {
+      "eval_id": "eval_064",
+      "category": "coding",
+      "model_x_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_71": {
+      "eval_id": "eval_075",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_72": {
+      "eval_id": "eval_039",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_73": {
+      "eval_id": "eval_138",
+      "category": "multi_turn",
+      "model_x_is": "lfm2_230m_quality_bsmagpie_v1",
+      "model_y_is": "lfm2_230m_base_20260629",
+      "flipped_from_primary": true
+    },
+    "example_74": {
+      "eval_id": "eval_081",
+      "category": "deobfuscation",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_75": {
+      "eval_id": "eval_094",
+      "category": "reasoning",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_surgical_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_76": {
+      "eval_id": "eval_127",
+      "category": "factual_qa",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_quality_bsmagpie_v1",
+      "flipped_from_primary": false
+    },
+    "example_77": {
+      "eval_id": "eval_104",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_alpaca_flat_20260629",
+      "flipped_from_primary": false
+    },
+    "example_78": {
+      "eval_id": "eval_025",
+      "category": "json_structured",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_structured_terse_20260629",
+      "flipped_from_primary": false
+    },
+    "example_79": {
+      "eval_id": "eval_050",
+      "category": "gamefaq_extraction",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    },
+    "example_80": {
+      "eval_id": "eval_111",
+      "category": "concision_antislip",
+      "model_x_is": "lfm2_230m_base_20260629",
+      "model_y_is": "lfm2_230m_format_ablation_multi_turn_verbose_20260629",
+      "flipped_from_primary": false
+    }
+  }
+}

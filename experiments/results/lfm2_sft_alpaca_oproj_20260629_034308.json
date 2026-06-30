@@ -1,0 +1,178 @@
+{
+  "id": "alpaca_oproj",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "o_proj",
+  "target_modules": [
+    "out_proj"
+  ],
+  "layers": "all",
+  "trainable_params": 229376,
+  "total_params": 229922560,
+  "final_loss": 5.1735,
+  "kl_shift": 0.2256,
+  "hub_kls": {
+    "L0": 3.389,
+    "L2": 0.7103,
+    "L4": 4.1157,
+    "L5": 1.6224
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.4465
+    },
+    {
+      "step": 30,
+      "loss": 8.2745
+    },
+    {
+      "step": 45,
+      "loss": 6.5973
+    },
+    {
+      "step": 60,
+      "loss": 5.581
+    },
+    {
+      "step": 75,
+      "loss": 4.9254
+    },
+    {
+      "step": 90,
+      "loss": 4.6391
+    },
+    {
+      "step": 105,
+      "loss": 4.6041
+    },
+    {
+      "step": 120,
+      "loss": 4.5385
+    },
+    {
+      "step": 135,
+      "loss": 4.521
+    },
+    {
+      "step": 150,
+      "loss": 4.5063
+    },
+    {
+      "step": 165,
+      "loss": 4.4899
+    },
+    {
+      "step": 180,
+      "loss": 4.4893
+    },
+    {
+      "step": 195,
+      "loss": 4.485
+    },
+    {
+      "step": 210,
+      "loss": 4.4792
+    },
+    {
+      "step": 225,
+      "loss": 4.4627
+    },
+    {
+      "step": 240,
+      "loss": 4.4765
+    },
+    {
+      "step": 255,
+      "loss": 4.4811
+    },
+    {
+      "step": 270,
+      "loss": 4.4877
+    },
+    {
+      "step": 285,
+      "loss": 4.4643
+    },
+    {
+      "step": 300,
+      "loss": 4.5204
+    }
+  ],
+  "train_time_s": 655.1,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 66.2
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}\",\n{\"name\": \"Bob\", \"age\": 14, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}}}\n{\"name\": \"Charlie\", \"age\": 16, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}}}}\n{\"name\": \"Diana\", \"age\": 13, \"gender\": \"female\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}}}}\n{\"name\": \"Ethan\", \"age\": 15, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}}}}",
+      "n_tokens": 200,
+      "time_s": 2.63,
+      "tok_per_s": 76.1
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "fib = [0, 1]\n    for i in range(2, n):\n        fib.append(fib[i-1] + fib[i-1])\n    return fib[n]\n\ndef fibonacci_recursive(n):\n    if n <= 1:\n        return n\n    else:\n        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)\n\ndef fibonacci_iterative(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-1])\n    return fib[:n]\n\ndef main():\n    n = int(input(\"Enter a number: \"))\n    fib = fibonacci(n)\n    print(\"Fibonacci sequence up to\", n, \":\", fib)\n\nif __name__ == \"__main__\":\n    main()",
+      "n_tokens": 191,
+      "time_s": 2.52,
+      "tok_per_s": 75.7
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked and their properties are connected, even when they are separated by large distances. This means that if one particle changes its state, the other instantly knows what it's doing, no matter how far apart they are. It's like having two friends who always know each other's secrets, no matter how far apart they are! However, this connection doesn't mean that the particles can travel through space or time.",
+      "n_tokens": 95,
+      "time_s": 1.25,
+      "tok_per_s": 75.7
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}",
+      "n_tokens": 28,
+      "time_s": 0.38,
+      "tok_per_s": 74.1
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 + 358 = 716\n716 - 358 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 = 458\n458 + 0 =",
+      "n_tokens": 200,
+      "time_s": 2.85,
+      "tok_per_s": 70.2
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning: \"Bonjour\" in French is \"Bonjour\", in Spanish is \"Buenos d\u00edas\", and in German is \"Guten Morgen\".\n\nBonjour : \"Bienvenue\" in French is \"Bienvenue\", in espagnol es \"Bienvenido\", y en alem\u00e1n es \"Ankunft\".\n\nBienvenue : \"Ankunft\" en fran\u00e7ais est \"\u00c0kunft\", en espagnol es \"PaspaspaspaspaspaspaspasBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUBUaumeaumeaumeaumeBUBUaumeaumeaumeBUaumeaumeaumeBUaumeaumeaumeBUaumeaumeaumeBUaumeaumeaumeBUaumeaumeaumeBUaumeaumeaumeaumeBUaumeaumeaumeaumeBUaumeaumeaumeaumeaumeBUaumeaumeaumeaumeaumeaumeBUaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaumeaume",
+      "n_tokens": 200,
+      "time_s": 2.72,
+      "tok_per_s": 73.5
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "List 3 benefits of exercise:\n\n1. Improved cardiovascular health.\n2. Increased muscle strength and endurance.\n3. Better mental health and reduced stress levels.",
+      "n_tokens": 35,
+      "time_s": 0.47,
+      "tok_per_s": 74.3
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n\ndef find_first_first_found(arr, target):\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\n\ndef find_first_first_found_second_found(arr, target):\n    low = 0",
+      "n_tokens": 200,
+      "time_s": 2.6,
+      "tok_per_s": 76.9
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has a dipole moment due to the presence of an electronegative atom such as oxygen or fluorine. This makes water a good solvent for many substances and plays a crucial role in the Earth's climate system.\n\nWater is also highly soluble in both polar and nonpolar solvents, making it a versatile compound for various applications. It is used in the production of fertilizers, pharmaceuticals, and other industrial products. Additionally, water is essential for life on Earth, providing hydration and regulating body temperature. Its unique properties make it a fundamental element in our planet's chemistry and biology.",
+      "n_tokens": 133,
+      "time_s": 1.73,
+      "tok_per_s": 76.9
+    }
+  ]
+}

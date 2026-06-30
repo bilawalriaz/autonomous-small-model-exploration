@@ -1,0 +1,176 @@
+{
+  "id": "smol_schedulefree_300",
+  "dataset": "HuggingFaceTB/smoltalk",
+  "subset": "smol-magpie-ultra",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "schedulefree",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.2888,
+  "kl_shift": 0.1373,
+  "hub_kls": {
+    "L0": 3.1143,
+    "L2": 0.7928,
+    "L4": 2.788,
+    "L5": 2.1249
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 1.508
+    },
+    {
+      "step": 30,
+      "loss": 1.4695
+    },
+    {
+      "step": 45,
+      "loss": 1.3749
+    },
+    {
+      "step": 60,
+      "loss": 1.2882
+    },
+    {
+      "step": 75,
+      "loss": 1.2849
+    },
+    {
+      "step": 90,
+      "loss": 1.2533
+    },
+    {
+      "step": 105,
+      "loss": 1.3056
+    },
+    {
+      "step": 120,
+      "loss": 1.3009
+    },
+    {
+      "step": 135,
+      "loss": 1.3051
+    },
+    {
+      "step": 150,
+      "loss": 1.1934
+    },
+    {
+      "step": 165,
+      "loss": 1.2698
+    },
+    {
+      "step": 180,
+      "loss": 1.2856
+    },
+    {
+      "step": 195,
+      "loss": 1.2401
+    },
+    {
+      "step": 210,
+      "loss": 1.3447
+    },
+    {
+      "step": 225,
+      "loss": 1.243
+    },
+    {
+      "step": 240,
+      "loss": 1.2
+    },
+    {
+      "step": 255,
+      "loss": 1.1558
+    },
+    {
+      "step": 270,
+      "loss": 1.2569
+    },
+    {
+      "step": 285,
+      "loss": 1.2689
+    },
+    {
+      "step": 300,
+      "loss": 1.2268
+    }
+  ],
+  "train_time_s": 667.8,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 64.9
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"male\", \"location\": \"New York City\", \"occupation\": \"teacher\", \"family\": \"parents\"}\n}",
+      "n_tokens": 33,
+      "time_s": 0.42,
+      "tok_per_s": 78.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-2])\n        return fib",
+      "n_tokens": 64,
+      "time_s": 0.83,
+      "tok_per_s": 77.1
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Imagine two particles that are connected in a way that they can't be separated by any means. When you try to measure one of them, the other particle instantly changes its state, even if they're far apart. This is what we call \"quantum entanglement.\"\n\nThink of it like a pair of dice that are linked together. If you roll one die and get a 1, the other die will automatically roll a 1, no matter where you put them. This is similar to how entangled particles behave.\n\nIn quantum mechanics, entangled particles are connected in such a way that their properties are correlated, regardless of the distance between them. This means that measuring one particle affects the other, even if they're light-years apart.\n\nQuantum entanglement has been a subject of interest for many years, and it's still an active area of research in physics. It has implications for our understanding of the universe and could potentially lead to new technologies, such as quantum computers",
+      "n_tokens": 200,
+      "time_s": 2.53,
+      "tok_per_s": 79.2
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.8
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 + 358 = 716\n716 - 358 = 358",
+      "n_tokens": 28,
+      "time_s": 0.36,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonjour\", in Spanish is \"Buenos d\u00edas\", and in German is \"Guten Morgen\".",
+      "n_tokens": 29,
+      "time_s": 0.37,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces the risk of chronic diseases such as diabetes, heart disease, and obesity\n5. Boosts self-esteem and confidence\n6. Helps in weight management\n7. Improves sleep quality\n8. Increases energy levels\n9. Reduces stress and anxiety\n10. Promotes better digestion and nutrient absorption",
+      "n_tokens": 95,
+      "time_s": 1.19,
+      "tok_per_s": 79.5
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\n# Example usage:\narr = [1, 2, 3, 4, 5, 6, 7, 8, 9]\ntarget = 5\nprint(binary_search(arr, target))  # Output: 4\n\n# Example usage with invalid input:\n# print(binary_search([1, 2, 3], 3))  # Output: -1\n```",
+      "n_tokens": 182,
+      "time_s": 2.3,
+      "tok_per_s": 79.2
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a positive and a negative end. This property allows water to dissolve many substances, including oxygen and hydrogen. The presence of oxygen in water makes it capable of forming hydrogen bonds with other molecules, which helps to hold the water together.\n\nIn addition to its ability to form hydrogen bonds, water also exhibits unique properties that make it useful in various applications. For example, water can be used as a solvent for many chemicals and industrial processes, as it is highly soluble in water and can dissolve a wide range of substances. It is also used in the production of soap, detergents, and other personal care products due to its ability to break down oils and fats.\n\nOverall, the chemical formula for water (H2O) highlights the importance of water's unique properties in chemistry and its widespread use in various fields.",
+      "n_tokens": 180,
+      "time_s": 2.3,
+      "tok_per_s": 78.4
+    }
+  ]
+}

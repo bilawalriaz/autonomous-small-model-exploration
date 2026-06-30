@@ -1,0 +1,190 @@
+{
+  "id": "slimorca_5k_1000",
+  "dataset": "Open-Orca/SlimOrca",
+  "n_examples": 5000,
+  "steps": 1000,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": [
+    0,
+    2,
+    4,
+    5
+  ],
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 3.7598,
+  "kl_shift": 0.1452,
+  "hub_kls": {
+    "L0": 2.3538,
+    "L2": 1.0717,
+    "L4": 2.5171,
+    "L5": 1.2317
+  },
+  "loss_curve": [
+    {
+      "step": 50,
+      "loss": 5.8064
+    },
+    {
+      "step": 100,
+      "loss": 4.5202
+    },
+    {
+      "step": 150,
+      "loss": 3.9592
+    },
+    {
+      "step": 200,
+      "loss": 3.8148
+    },
+    {
+      "step": 250,
+      "loss": 3.7294
+    },
+    {
+      "step": 300,
+      "loss": 3.6676
+    },
+    {
+      "step": 350,
+      "loss": 3.5729
+    },
+    {
+      "step": 400,
+      "loss": 3.5778
+    },
+    {
+      "step": 450,
+      "loss": 3.5791
+    },
+    {
+      "step": 500,
+      "loss": 3.5653
+    },
+    {
+      "step": 550,
+      "loss": 3.6261
+    },
+    {
+      "step": 600,
+      "loss": 3.5033
+    },
+    {
+      "step": 650,
+      "loss": 3.5337
+    },
+    {
+      "step": 700,
+      "loss": 3.517
+    },
+    {
+      "step": 750,
+      "loss": 3.593
+    },
+    {
+      "step": 800,
+      "loss": 3.4954
+    },
+    {
+      "step": 850,
+      "loss": 3.5466
+    },
+    {
+      "step": 900,
+      "loss": 3.529
+    },
+    {
+      "step": 950,
+      "loss": 3.5419
+    },
+    {
+      "step": 1000,
+      "loss": 3.5167
+    }
+  ],
+  "train_time_s": 2204.7,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in the world and the most populous city in the European Union.\n\nParis is a major cultural, historical, and economic center in Europe. It is known for its art, fashion, architecture, cuisine, and history. The city has a rich and diverse population, with over 2 million inhabitants.\n\nParis is also a major transportation hub, with an extensive network of metro lines, buses, and trains connecting it to other parts of the country and the world. The city's skyline is dominated by the Eiffel Tower, which was built for the 1889 World's Fair. Other notable landmarks include the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.\n\nIn recent years, Paris has experienced significant growth and development, driven by tourism, finance, and technology. The city has become a global center for innovation and entrepreneurship, attracting many startups and tech companies from around the world.\n\nDespite its many achievements",
+      "n_tokens": 200,
+      "time_s": 2.54,
+      "tok_per_s": 78.8
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "17, \"gender\": \"female\"}\n\nAlice is a 17-year-old girl who lives in a small town. She has a bright smile and a kind heart. Alice loves reading and playing with her friends. She is always excited to explore new places and try new things. She has a strong sense of responsibility and is always willing to help others. Alice is also very organized and has a good memory. She enjoys going on walks and exploring the local parks. She is passionate about music and often plays guitar. Alice is also a bit shy but has a great sense of humor. She loves to share stories and laugh with her friends. Alice is determined to be a good person and always strives to make the best of her life.",
+      "n_tokens": 153,
+      "time_s": 1.96,
+      "tok_per_s": 78.0
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\ndef fibonacci_recursive(n):\n\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = fibonacci_recursive(n-1)\n        fib.append(fib[-1] + fib[-1])\n        return fib\n\ndef fibonacci_recursive_iterative(n):\n\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-1])\n    return fib\n\n# Test cases\nprint(fibonacci(10))  # Output: [0, 1,",
+      "n_tokens": 200,
+      "time_s": 2.58,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a fascinating phenomenon in quantum physics where two particles become linked and their properties are correlated, even when they're separated by vast distances. This means that if you measure the state of one particle, you'll instantly know the state of the other, no matter how far apart they are.\n\nImagine you have two coins that are randomly flipped. One coin lands on heads, and the other on tails. Now, imagine you have a pair of magic dice that are both fair and have been rolled many times. If you roll the dice together, you might get a combination like 6 and 7. But if you roll them separately, you might get 1 and 2. The outcome of the dice rolls is completely random, but the correlation between the two outcomes is strong.\n\nIn quantum entanglement, the two coins are connected in such a way that measuring one coin's state immediately determines the state of the other coin, regardless of the distance between them. This",
+      "n_tokens": 200,
+      "time_s": 2.59,
+      "tok_per_s": 77.3
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.63,
+      "tok_per_s": 50.5
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358\n358",
+      "n_tokens": 16,
+      "time_s": 0.28,
+      "tok_per_s": 56.5
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning:\n\nTranslation:\n\nGood morning in French is \"Bonjour\" or \"Salut\". In Spanish, it's \"Hola\" or \"Buenos d\u00edas\". In German, it's \"Guten Morgen\" or \"Morgenaufw\u00f6hle\".\n\nThese translations maintain the original meaning while adapting to the specific languages and cultural contexts of each language.",
+      "n_tokens": 79,
+      "time_s": 1.01,
+      "tok_per_s": 78.2
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces the risk of chronic diseases such as diabetes, heart disease, and stroke\n5. Boosts self-esteem and confidence\n6. Helps in weight management\n7. Promotes better sleep quality\n8. Increases energy levels and motivation\n9. Improves cognitive function\n10. Reduces stress and anxiety\n11. Increases flexibility and balance\n12. Supports healthy weight loss\n13. Improves immune system function\n14. Enhances social interaction and relationships\n15. Provides a sense of accomplishment and achievement",
+      "n_tokens": 139,
+      "time_s": 1.8,
+      "tok_per_s": 77.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n\n        mid = (low + high) // 2\n\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\n# Test cases\nprint(binary_search([1, 2, 3, 4, 5], 3)) # Output: 2\nprint(binary_search([1, 2, 3, 4, 5], 6)) # Output: -1\nprint(binary_search([1, 2, 3, 4, 5], 7)) # Output: -1\n```",
+      "n_tokens": 176,
+      "time_s": 2.25,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWhat is the molar mass of water?\nH2O\n= 2(1) + 16(1) = 18 g/mol\nSo, the molar mass of water is 18 grams per mole.",
+      "n_tokens": 53,
+      "time_s": 0.69,
+      "tok_per_s": 77.1
+    }
+  ]
+}

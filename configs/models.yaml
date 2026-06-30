@@ -74,6 +74,31 @@ models:
     vram_bf16_mb: ~3500
     notes: "Cross-family target 2. SmolLM2 family. Similar scale to 1.5B."
 
+  lfm2_230m:
+    id: "LiquidAI/LFM2.5-230M"
+    slug: "lfm2_230m"
+    n_layers: 14
+    n_heads: 16  # Q heads (GQA)
+    n_kv_heads: 8  # KV heads
+    d_model: 1024
+    d_head: 64
+    d_mlp: 2560
+    vocab_size: 65536
+    context_length: 128000
+    activation_function: "swiglu"
+    dtype: "bfloat16"
+    vram_bf16_mb: 450
+    architecture_type: "hybrid"
+    layer_types: ["conv", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv", "full_attention", "conv"]
+    conv_layers: [0, 1, 3, 5, 7, 9, 11, 13]
+    attn_layers: [2, 4, 6, 8, 10, 12]
+    conv_kernel_size: 3
+    conv_groups: 1024
+    conv_L_cache: 3
+    rope_theta: 1000000
+    tie_embeddings: true
+    notes: "LFM2 hybrid architecture. 8 conv + 6 attn alternating. 10x residual norm jump at L6. Gated short convolution (B,C,x decomposition). GQA 2:1. First hybrid model in MI-Atlas."
+
 defaults:
   device: "auto"
   trust_remote_code: true

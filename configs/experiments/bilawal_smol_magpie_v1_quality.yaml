@@ -1,0 +1,61 @@
+# bilawal_smol_magpie_v1 — Practical Dataset Mixture
+# Small-model-native SFT mixture based on Phase 9 findings
+
+experiment:
+  name: "bilawal_smol_magpie_v1"
+  phase: 9
+  description: "Optimized SFT mixture for 230M-500M models"
+
+model:
+  name: "LiquidAI/LFM2.5-230M"
+  dtype: bf16
+  device_map: auto
+
+mixture:
+  name: "bilawal_smol_magpie_v1"
+  canonical_path: "data/canonical/bilawal_smol_magpie_v1_canonical.jsonl"
+  target_size: 1000
+  composition:
+    general_concise_assistant: 0.375
+    coding_debugging: 0.20
+    structured_extraction: 0.15
+    reasoning_compact: 0.10
+    domain_specific: 0.125
+    anti_slop_concision: 0.05
+
+adapter:
+  type: quality
+  method: lora
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "out_proj"]
+
+training:
+  optimizer: adafactor
+  learning_rate: 0.0002
+  lr_scheduler: constant
+  max_steps: 300
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  warmup_steps: 10
+  bf16: true
+  seed: 42
+  gradient_checkpointing: true
+
+rendered_formats:
+  - path: "data/sft/bilawal_smol_magpie_v1_chatml.jsonl"
+    format: single_turn_chat
+  - path: "data/sft/bilawal_smol_magpie_v1_multi_turn_concise.jsonl"
+    format: multi_turn_concise
+  - path: "data/sft/bilawal_smol_magpie_v1_structured_terse.jsonl"
+    format: structured_terse
+
+eval:
+  config_path: "configs/eval/lfm2_small_model_eval.yaml"
+
+output:
+  adapter_dir: "adapters/"
+  results_dir: "results/evals/"
+  reports_dir: "reports/phase9/"

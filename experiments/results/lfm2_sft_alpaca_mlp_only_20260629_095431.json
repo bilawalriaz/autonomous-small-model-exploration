@@ -1,0 +1,178 @@
+{
+  "id": "alpaca_mlp_only",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "mlp",
+  "target_modules": [
+    "in_proj"
+  ],
+  "layers": "all",
+  "trainable_params": 262144,
+  "total_params": 229955328,
+  "final_loss": 5.4343,
+  "kl_shift": 0.0506,
+  "hub_kls": {
+    "L0": 3.5019,
+    "L2": 0.9853,
+    "L4": 3.705,
+    "L5": 1.9218
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.7186
+    },
+    {
+      "step": 30,
+      "loss": 9.2095
+    },
+    {
+      "step": 45,
+      "loss": 7.4422
+    },
+    {
+      "step": 60,
+      "loss": 6.2576
+    },
+    {
+      "step": 75,
+      "loss": 5.4587
+    },
+    {
+      "step": 90,
+      "loss": 5.0156
+    },
+    {
+      "step": 105,
+      "loss": 4.8703
+    },
+    {
+      "step": 120,
+      "loss": 4.7314
+    },
+    {
+      "step": 135,
+      "loss": 4.6728
+    },
+    {
+      "step": 150,
+      "loss": 4.6318
+    },
+    {
+      "step": 165,
+      "loss": 4.5981
+    },
+    {
+      "step": 180,
+      "loss": 4.5867
+    },
+    {
+      "step": 195,
+      "loss": 4.5741
+    },
+    {
+      "step": 210,
+      "loss": 4.5634
+    },
+    {
+      "step": 225,
+      "loss": 4.5426
+    },
+    {
+      "step": 240,
+      "loss": 4.5558
+    },
+    {
+      "step": 255,
+      "loss": 4.5596
+    },
+    {
+      "step": 270,
+      "loss": 4.561
+    },
+    {
+      "step": 285,
+      "loss": 4.5379
+    },
+    {
+      "step": 300,
+      "loss": 4.5981
+    }
+  ],
+  "train_time_s": 653.9,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in the world. Paris is also the seat of the French government and the capital of the European Union. The city is known for its rich history, art, architecture, and culture.",
+      "n_tokens": 53,
+      "time_s": 0.68,
+      "tok_per_s": 77.4
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n}",
+      "n_tokens": 12,
+      "time_s": 0.16,
+      "tok_per_s": 73.5
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib",
+      "n_tokens": 79,
+      "time_s": 1.01,
+      "tok_per_s": 78.5
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two particles become linked so that the state of one instantly affects the other, no matter how far apart they are. This seems to defy our everyday understanding of physics, which suggests that objects can only interact through direct contact or force. However, quantum entanglement has been experimentally confirmed and is a key area of research in quantum mechanics. It's important to note that while entanglement is a fascinating concept, it's not yet fully understood and its implications for technology and our understanding of the universe remain speculative.",
+      "n_tokens": 112,
+      "time_s": 1.5,
+      "tok_per_s": 74.8
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": 13500000,\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 32,
+      "time_s": 0.42,
+      "tok_per_s": 76.8
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 58 = 547\n547 - 47 = 590\n590 - 10 = 580\n580 - 0 = 580\n580 - 5 = 575\n580 - 2 = 578\n580 - 3 = 575\n580 - 4 = 576\n580 - 6 = 574\n580 - 7 = 573\n580 - 8 = 572\n580 - 9 = 581\n580 - 0 = 580\n580 - 1 = 579\n580 - 5 = 584\n580 - 2 = 582\n580 - 3 = 587\n580 - 4 = 584\n580 - 6 = 574\n580 - 7 = 573\n580 - 8 = 576\n580 - 9 = 575\n580 - 0 = 580\n580 - 1 = 579\n580 - 5 =",
+      "n_tokens": 200,
+      "time_s": 2.67,
+      "tok_per_s": 74.9
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Translation: Good morning.\n\nFrench:\nBonjour.\n\nSpanish:\nBuenos d\u00edas.\n\nGerman:\nGuten Tag.\n\nThese translations maintain the original meaning while adapting the language to French, Spanish, and German.",
+      "n_tokens": 48,
+      "time_s": 0.62,
+      "tok_per_s": 77.8
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Enhances mental well-being\n3. Increases muscle strength and endurance\n4. Reduces stress levels\n5. Promotes better sleep quality\n6. Boosts self-confidence\n7. Helps in weight management\n8. Provides a sense of accomplishment\n9. Lowers risk of chronic diseases\n10. Increases energy levels",
+      "n_tokens": 83,
+      "time_s": 1.05,
+      "tok_per_s": 78.8
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "if not arr:\n        return -1\n\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n\n    return -1\n\n# Test cases\nprint(binary_search([1, 3, 5, 7, 9], 5))  # Output: 3\nprint(binary_search([1, 2, 3, 4, 5], 4))  # Output: -1\nprint(binary_search([], 0))  # Output: -1\nprint(binary_search([1], 1))  # Output: 0\n```",
+      "n_tokens": 193,
+      "time_s": 2.44,
+      "tok_per_s": 79.2
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWhat is the molar mass of water?\nA) 18 g/mol\nB) 20 g/mol\nC) 22 g/mol\nD) 24 g/mol\nE) 26 g/mol\nF) 28 g/mol\nG) 30 g/mol\nH) 32 g/mol\nI) 34 g/mol\nJ) 36 g/mol\n\nAnswer: A) 18 g/mol",
+      "n_tokens": 104,
+      "time_s": 1.33,
+      "tok_per_s": 78.3
+    }
+  ]
+}

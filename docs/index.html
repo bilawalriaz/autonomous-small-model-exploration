@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
   <title>MI-Atlas — Mechanistic Interpretability of Small Language Models</title>
-  <meta name="description" content="A reproducible causal atlas of Qwen2.5 small language models. Phase 1-3 experiments across 3 scales mapping components to behaviours via ablation, patching, steering, and LoRA training perturbation. Phase 3: atlas-guided LoRA validated at 13.8x parameter efficiency.">
+  <meta name="description" content="A reproducible causal atlas of small language models. Phase 1-3 experiments across Qwen2.5 scales + LFM2.5-230M hybrid architecture. Mapping components to behaviours via ablation, patching, steering, and LoRA training. Atlas-guided LoRA validated at 13.8x parameter efficiency.">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -186,6 +186,9 @@
         <a href="04-qualitative-analysis.html">Qualitative</a>
         <a href="05-phase2-repeatability.html">Phase 2</a>
         <a href="06-phase3-gap-closure.html">Phase 3</a>
+        <a href="07-lfm2-230m-atlas.html">LFM2.5-230M</a>
+        <a href="08-lfm2-230m-sft-sweep.html">LFM2 SFT</a>
+        <a href="09-data-format-ablation.html">Format Ablation</a>
       </div>
     </div>
   </div>
@@ -204,7 +207,7 @@
             Mechanistic Interpretability of Small Language Models
           </div>
           <div class="is-size-6" style="color: #999; margin-top: 0.3em;">
-            Phase 1-3 &middot; Qwen2.5 &middot; 3 scales (0.5B, 1.5B, 3B) &middot; 2 architectures &middot; Causal interventions
+            Phase 1–3 &middot; Qwen2.5 &middot; LFM2.5-230M &middot; 4 scales &middot; 2 architectures &middot; SFT &middot; Data format ablation
           </div>
         </div>
       </div>
@@ -263,6 +266,24 @@
         <div class="paper-meta">18 blocks &middot; 9 seeds &middot; 36 result files &middot; 5 models</div>
         <div class="paper-tagline">Atlas-guided LoRA validated: 13.8&times; fewer params, equal accuracy. Hub migration replicated across 9 seeds (all std=0.0). Hub revised from L26 to L14 at 1.5B (narrow suite artifact). Coder hub flip: L2&rarr;L22 at same scale. Quantization amplifies steering 476&times;.</div>
       </a>
+      <a class="paper-card" href="07-lfm2-230m-atlas.html" style="border-left: 4px solid #1677ff;">
+        <div class="paper-num" style="color: #1677ff;">07 · NEW ARCHITECTURE</div>
+        <h3>LFM2.5-230M: Hybrid Architecture Atlas</h3>
+        <div class="paper-meta">230M params · 14 layers (8 conv + 6 attn) · Liquid AI</div>
+        <div class="paper-tagline">First MI atlas of a hybrid conv+attention model. L0 (conv) is the universal hub. Early layers 3.3× more important than late. Conv MLPs 2.12× stronger than attn MLPs. L4_H11 universal attention head. Steering effective at early layers (opposite of Qwen). Atlas-guided LoRA: 65K params, 14× less behavior shift.</div>
+      </a>
+      <a class="paper-card" href="08-lfm2-230m-sft-sweep.html" style="border-left: 4px solid #52c41a;">
+        <div class="paper-num" style="color: #52c41a;">08 · SFT SWEEP</div>
+        <h3>LFM2.5-230M: SFT Experiment Sweep</h3>
+        <div class="paper-meta">39 experiments · 10 datasets · 4 optimizers · 6 hyperparameter dimensions</div>
+        <div class="paper-tagline">What actually matters when fine-tuning a 230M model? Dataset format (multi-turn concise) beats hyperparameters by 5×. Best dataset: smol-magpie-ultra (loss 1.27). Best optimizer: Adafactor. Hub structure preserved across all 39 experiments.</div>
+      </a>
+      <a class="paper-card" href="09-data-format-ablation.html" style="border-left: 4px solid #722ed1;">
+        <div class="paper-num" style="color: #722ed1;">09 · FORMAT ABLATION</div>
+        <h3>Phase 9: Data Format Ablation</h3>
+        <div class="paper-meta">300 canonical examples · 6 formats · 153 eval prompts · Judge-based scoring</div>
+        <div class="paper-tagline">Isolating data shape as a variable. Same content, 6 representations — from flat Alpaca to multi-turn concise to structured terse. Controlled experiment to answer: what is the optimal information shape for small-model SFT?</div>
+      </a>
     </div>
 
     <!-- METHOD -->
@@ -282,7 +303,7 @@
 
     <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: #f5f5f5; border-radius: 10px;">
       <p style="font-size: 0.9rem; color: #666; margin: 0;">
-        Phase 1-3 atlas &middot; 16 task families &middot; 10 LoRA adapters &middot; 3 model scales &middot; 2 architectures<br>
+        Phase 1–3 atlas &middot; 39 SFT experiments &middot; 6 format ablations &middot; 3 model scales &middot; 2 architectures<br>
         Fully reproducible: <code style="background:#fff;padding:0.1em 0.4em;border-radius:4px;">python scripts/run_*.py</code>
       </p>
     </div>

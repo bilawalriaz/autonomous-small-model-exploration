@@ -1,0 +1,122 @@
+{
+  "L0": {
+    "pos_magnitude": [
+      0.0179,
+      0.165,
+      0.0166
+    ],
+    "pos_variance": [
+      0.000953,
+      0.030807,
+      0.000883
+    ],
+    "dominant_position": 1,
+    "filter_norm_mean": 0.175,
+    "filter_norm_std": 0.0446
+  },
+  "L1": {
+    "pos_magnitude": [
+      0.0312,
+      0.153,
+      0.0529
+    ],
+    "pos_variance": [
+      0.00138,
+      0.027047,
+      0.007254
+    ],
+    "dominant_position": 1,
+    "filter_norm_mean": 0.1832,
+    "filter_norm_std": 0.0455
+  },
+  "L3": {
+    "pos_magnitude": [
+      0.0245,
+      0.0613,
+      0.1452
+    ],
+    "pos_variance": [
+      0.001093,
+      0.005277,
+      0.02682
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.1755,
+    "filter_norm_std": 0.0487
+  },
+  "L5": {
+    "pos_magnitude": [
+      0.0219,
+      0.0514,
+      0.1551
+    ],
+    "pos_variance": [
+      0.000808,
+      0.003792,
+      0.029403
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.1756,
+    "filter_norm_std": 0.0572
+  },
+  "L7": {
+    "pos_magnitude": [
+      0.0197,
+      0.0464,
+      0.1438
+    ],
+    "pos_variance": [
+      0.000673,
+      0.00309,
+      0.023931
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.1609,
+    "filter_norm_std": 0.0424
+  },
+  "L9": {
+    "pos_magnitude": [
+      0.015,
+      0.0417,
+      0.145
+    ],
+    "pos_variance": [
+      0.000389,
+      0.002492,
+      0.024187
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.1598,
+    "filter_norm_std": 0.0388
+  },
+  "L11": {
+    "pos_magnitude": [
+      0.0059,
+      0.0246,
+      0.1549
+    ],
+    "pos_variance": [
+      8.3e-05,
+      0.001351,
+      0.026217
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.1634,
+    "filter_norm_std": 0.0306
+  },
+  "L13": {
+    "pos_magnitude": [
+      0.0019,
+      0.0075,
+      0.2219
+    ],
+    "pos_variance": [
+      1.1e-05,
+      0.000384,
+      0.051586
+    ],
+    "dominant_position": 2,
+    "filter_norm_mean": 0.2237,
+    "filter_norm_std": 0.0441
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "vocab_size": 65536,
+  "embed_dim": 1024,
+  "categories": [
+    "numbers",
+    "capitals",
+    "code",
+    "json",
+    "common",
+    "special"
+  ],
+  "inter_category_similarity": {
+    "numbers<->capitals": 0.0199,
+    "numbers<->code": 0.1527,
+    "numbers<->json": 0.3457,
+    "numbers<->common": 0.1862,
+    "numbers<->special": 0.1791,
+    "capitals<->code": 0.2332,
+    "capitals<->json": 0.0292,
+    "capitals<->common": 0.1371,
+    "capitals<->special": -0.0657,
+    "code<->json": 0.3197,
+    "code<->common": 0.401,
+    "code<->special": 0.0685,
+    "json<->common": 0.2662,
+    "json<->special": 0.311,
+    "common<->special": 0.1165
+  },
+  "norm_stats": {
+    "mean": 0.9,
+    "std": 0.13,
+    "min": 0.32,
+    "max": 1.31
+  }
+}

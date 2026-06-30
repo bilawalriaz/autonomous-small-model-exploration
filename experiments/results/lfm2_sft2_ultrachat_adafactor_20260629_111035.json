@@ -1,0 +1,176 @@
+{
+  "id": "ultrachat_adafactor",
+  "dataset": "stingning/ultrachat",
+  "subset": null,
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "hub",
+  "optimizer": "adafactor",
+  "trainable_params": 212992,
+  "total_params": 229906176,
+  "final_loss": 1.4643,
+  "kl_shift": 0.1295,
+  "hub_kls": {
+    "L0": 3.5771,
+    "L2": 1.0295,
+    "L4": 3.2535,
+    "L5": 2.7515
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 1.8133
+    },
+    {
+      "step": 30,
+      "loss": 1.6593
+    },
+    {
+      "step": 45,
+      "loss": 1.4943
+    },
+    {
+      "step": 60,
+      "loss": 1.4355
+    },
+    {
+      "step": 75,
+      "loss": 1.5211
+    },
+    {
+      "step": 90,
+      "loss": 1.4375
+    },
+    {
+      "step": 105,
+      "loss": 1.501
+    },
+    {
+      "step": 120,
+      "loss": 1.4127
+    },
+    {
+      "step": 135,
+      "loss": 1.4591
+    },
+    {
+      "step": 150,
+      "loss": 1.4337
+    },
+    {
+      "step": 165,
+      "loss": 1.411
+    },
+    {
+      "step": 180,
+      "loss": 1.3715
+    },
+    {
+      "step": 195,
+      "loss": 1.4169
+    },
+    {
+      "step": 210,
+      "loss": 1.4512
+    },
+    {
+      "step": 225,
+      "loss": 1.417
+    },
+    {
+      "step": 240,
+      "loss": 1.349
+    },
+    {
+      "step": 255,
+      "loss": 1.5015
+    },
+    {
+      "step": 270,
+      "loss": 1.4119
+    },
+    {
+      "step": 285,
+      "loss": 1.4392
+    },
+    {
+      "step": 300,
+      "loss": 1.3491
+    }
+  ],
+  "train_time_s": 669.2,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris.",
+      "n_tokens": 3,
+      "time_s": 0.05,
+      "tok_per_s": 58.4
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\", \"location\": \"New York City\"}\n}",
+      "n_tokens": 20,
+      "time_s": 0.27,
+      "tok_per_s": 75.2
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    else:\n        fib = [0, 1]\n        for i in range(2, n):\n            fib.append(fib[i-1] + fib[i-1])\n        return fib\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]\n```",
+      "n_tokens": 112,
+      "time_s": 1.43,
+      "tok_per_s": 78.5
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked together in such a way that the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you measure the state of one particle, you can instantly determine the state of the other particle, even if they are separated by vast distances.\n\nThis strange connection between particles has been a subject of interest for scientists and physicists for many years. It's a fundamental aspect of quantum mechanics, which describes the behavior of particles at the smallest scales. However, it's not just a theoretical concept; experiments have shown that entangled particles can be used to transmit information faster than light, which has led to some interesting questions about the nature of reality and the limits of our understanding.",
+      "n_tokens": 161,
+      "time_s": 2.06,
+      "tok_per_s": 78.1
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"35 million\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 31,
+      "time_s": 0.41,
+      "tok_per_s": 76.5
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 247 = 358\n358 - 358 = 0\n0",
+      "n_tokens": 22,
+      "time_s": 0.29,
+      "tok_per_s": 75.9
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "Good morning in French is \"Bonjour\", in Spanish is \"Buenos d\u00edas\", and in German is \"Guten Morgen\".",
+      "n_tokens": 29,
+      "time_s": 0.41,
+      "tok_per_s": 70.9
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health\n2. Increases muscle strength and endurance\n3. Enhances mental well-being and reduces stress",
+      "n_tokens": 29,
+      "time_s": 0.38,
+      "tok_per_s": 76.5
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    first_found = False\n    for i in range(len(arr)):\n        if arr[i] == target:\n            first_found = True\n            break\n    return first_found\n\ndef find_first_first_found_second_found(arr, target):\n    first_found = False\n    for i in range(len(arr)):\n        if arr[i] == target:\n            first_found = True\n            break\n    if first_found:\n        return first_f",
+      "n_tokens": 200,
+      "time_s": 2.54,
+      "tok_per_s": 78.8
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a hydrogen atom and an oxygen atom bonded to a carbon atom. This polarity allows water to dissolve many substances, including salts and minerals, due to its ability to form hydrogen bonds with other molecules.\n\nIn the context of chemistry, water plays a crucial role in various reactions and processes, such as:\n\n1. Photosynthesis: Water is essential for plants to convert sunlight into energy through photosynthesis.\n2. Cellular respiration: Water is used in the process of cellular respiration to break down glucose and release energy.\n3. Combustion: Water is involved in the combustion of fuels, releasing heat and light.\n4. Chemical reactions: Water can participate in a wide range of chemical reactions, including acid-base reactions, redox reactions, and polymerization reactions.\n\nOverall, water is a fundamental component of life on Earth and is essential for maintaining the balance of our planet's ecosystems.",
+      "n_tokens": 196,
+      "time_s": 2.49,
+      "tok_per_s": 78.6
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "timestamp": "20260629_024734",
+  "experiments": {
+    "sft": {
+      "method": "SFT",
+      "dataset": "tatsu-lab/alpaca",
+      "n_examples": 500,
+      "trainable_params": 737280,
+      "final_loss": 5.2646,
+      "kl_shift": 0.1605,
+      "hub_kls": {
+        "L0": 3.0439,
+        "L2": 0.4875,
+        "L4": 2.846,
+        "L5": 1.5618
+      },
+      "max_steps": 200,
+      "lr": 0.0002,
+      "lora_r": 8
+    },
+    "dpo": {
+      "error": "Failed to import trl.trainer.dpo_trainer because of the following error (look up to see its traceback):\nFailed to import trl.models.utils because of the following error (look up to see its traceback):\ncannot import name 'FSDPModule' from 'torch.distributed.fsdp' (/home/billz/work/autonomous-small-model-exploration/.venv/lib/python3.12/site-packages/torch/distributed/fsdp/__init__.py)"
+    },
+    "grpo": {
+      "error": "Failed to import trl.trainer.grpo_trainer because of the following error (look up to see its traceback):\nFailed to import trl.models.utils because of the following error (look up to see its traceback):\ncannot import name 'FSDPModule' from 'torch.distributed.fsdp' (/home/billz/work/autonomous-small-model-exploration/.venv/lib/python3.12/site-packages/torch/distributed/fsdp/__init__.py)"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+# Format Ablation Experiment Config (Quality Adapter)
+# Controlled: content held constant, only format changes
+
+experiment:
+  name: "format_ablation_quality"
+  phase: 9
+  hypothesis: "H1 - Multi-turn concise format is genuinely better for small-model SFT"
+
+model:
+  name: "LiquidAI/LFM2.5-230M"
+  dtype: bf16
+  device_map: auto
+
+adapter:
+  type: quality
+  method: lora
+  r: 8
+  alpha: 16
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "out_proj"]
+
+training:
+  optimizer: adafactor
+  learning_rate: 0.0002
+  lr_scheduler: constant
+  max_steps: 300
+  batch_size: 4
+  gradient_accumulation: 4
+  max_seq_length: 1024
+  warmup_steps: 10
+  bf16: true
+  seed: 42
+  gradient_checkpointing: true
+
+formats:
+  - name: alpaca_flat
+    description: "Flat instruction/input/output format"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/alpaca_flat.jsonl"
+  - name: single_turn_chat
+    description: "Single-turn ChatML-style messages"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/single_turn_chat.jsonl"
+  - name: multi_turn_concise
+    description: "Multi-turn with short natural responses"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/multi_turn_concise.jsonl"
+  - name: multi_turn_verbose
+    description: "Multi-turn with longer explanatory responses"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/multi_turn_verbose.jsonl"
+  - name: structured_terse
+    description: "Highly compact outputs for code/JSON/extraction"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/structured_terse.jsonl"
+  - name: bad_format_control
+    description: "Negative control: flat, verbose, generic old-school style"
+    canonical_source: "data/canonical/phase9_pilot_300.jsonl"
+    output_path: "data/sft/format_ablation/bad_format_control.jsonl"
+
+canonical:
+  source: "data/canonical/phase9_pilot_300.jsonl"
+  size: 300
+  seed: 42
+
+eval:
+  config_path: "configs/eval/lfm2_small_model_eval.yaml"
+
+output:
+  adapter_dir: "adapters/"
+  results_dir: "results/evals/"
+  reports_dir: "reports/phase9/"

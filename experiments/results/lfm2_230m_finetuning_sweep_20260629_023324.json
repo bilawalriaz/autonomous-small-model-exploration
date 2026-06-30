@@ -1,0 +1,9 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "timestamp": "20260629_023324",
+  "experiments": {
+    "sft": {
+      "error": "'Lfm2ForCausalLM' object has no attribute 'layers'"
+    }
+  }
+}

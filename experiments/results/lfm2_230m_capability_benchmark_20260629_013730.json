@@ -1,0 +1,224 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "timestamp": "20260629_013730",
+  "capabilities": {
+    "data_extraction": {
+      "score": 0.7,
+      "n_tests": 5,
+      "per_test": [
+        1.0,
+        0.75,
+        0.75,
+        0.0,
+        1.0
+      ]
+    },
+    "structured_output": {
+      "score": 0.8333,
+      "n_tests": 6,
+      "per_test": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "code": {
+      "score": 0.8333,
+      "n_tests": 6,
+      "per_test": [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ]
+    },
+    "factual_knowledge": {
+      "score": 0.8889,
+      "correct": 16,
+      "total": 18,
+      "per_test": [
+        {
+          "prompt": "What is the capital of Australia?",
+          "output": "Australia's capital is Canberra.",
+          "correct": true
+        },
+        {
+          "prompt": "What is the largest ocean on Earth?",
+          "output": "A) Pacific Ocean  \nB) Atlantic Ocean  \nC) Indian Ocean  \nD) Southern Ocean    \nE) Arctic Ocean  \n\n**",
+          "correct": true
+        },
+        {
+          "prompt": "Which country has the most people?",
+          "output": "A) Brazil  \nB) India  \nC) China  \nD) Japan  \nAnswer: A) Brazil  \n\nWhat is the capital of France?  \nA",
+          "correct": true
+        },
+        {
+          "prompt": "What is the chemical formula for table salt?",
+          "output": "A) NaCl  \nB) KNO\u2083  \nC) MgO  \nD) CaCO\u2083  \n\n**Answer: A) NaCl**",
+          "correct": true
+        },
+        {
+          "prompt": "What planet is closest to the Sun?",
+          "output": "A) Mercury  \nB) Venus  \nC) Earth  \nD) Mars  \n\n**Answer: C) Earth**  \n\nWhich of the following is a ke",
+          "correct": true
+        },
+        {
+          "prompt": "What is the speed of light in km/s approximately?",
+          "output": "The speed of light in km/s is approximately 299,792 kilometers per second.",
+          "correct": true
+        },
+        {
+          "prompt": "In what year did World War I begin?",
+          "output": "World War I began in 1914.",
+          "correct": true
+        },
+        {
+          "prompt": "Who wrote 'Romeo and Juliet'?",
+          "output": "Romeo and Juliet is a play written by William Shakespeare. It was first published in 1595 and has be",
+          "correct": true
+        },
+        {
+          "prompt": "What ancient civilization built the pyramids at Giza?",
+          "output": "A) Egyptians  \nB) Indus Valley  \nC) Mesopotamian  \nD) Ancient Greece  \nE) Roman Empire  \n\n**Answer: ",
+          "correct": true
+        },
+        {
+          "prompt": "What does HTTP stand for?",
+          "output": "HTTP stands for Hypertext Transfer Protocol. It is a communication protocol used to transfer informa",
+          "correct": true
+        },
+        {
+          "prompt": "Who is the creator of Linux?",
+          "output": "Linux was created by Linus Torvalds in 1991.",
+          "correct": true
+        },
+        {
+          "prompt": "What year was the first iPhone released?",
+          "output": "A) 2007  \nB) 2010  \nC) 2015  \nD) 2021  \nE) 1998  \n\n**Answer: A**  \n\nWhich of the following is a key ",
+          "correct": true
+        },
+        {
+          "prompt": "What is the longest river in the UK?",
+          "output": "A) Thames River  \nB) Sands River  \nC) River of the North  \nD) River of the South  \n\n**Answer: A) Tha",
+          "correct": false
+        },
+        {
+          "prompt": "How many countries make up the United Kingdom?",
+          "output": "The United Kingdom is a country in Northern Europe. It has 47 member states, including England, Scot",
+          "correct": true
+        },
+        {
+          "prompt": "What is the currency of Scotland?",
+          "output": "St. John's Bank is the official currency of Scotland.",
+          "correct": false
+        },
+        {
+          "prompt": "What is the Turing Test?",
+          "output": "The Turing Test is a method of evaluating whether a machine can be said to understand human language",
+          "correct": true
+        },
+        {
+          "prompt": "What does RAM stand for?",
+          "output": "A) Random Access Memory  \nB) Read-Only Memory  \nC) Write-Only Memory  \nD) Read-Only Storage  \nE) All",
+          "correct": true
+        },
+        {
+          "prompt": "What is the boiling point of water at sea level in Fahrenheit?",
+          "output": "A) 100\u00b0F  \nB) 212\u00b0F  \nC) 350\u00b0F  \nD) 450\u00b0F  \n\n**Answer: B) 212\u00b0F**",
+          "correct": true
+        }
+      ]
+    },
+    "math": {
+      "score": 0.7333,
+      "correct": 11,
+      "total": 15
+    },
+    "instruction_following": {
+      "score": 0.5714,
+      "n_tests": 7,
+      "per_test": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "text_transform": {
+      "score": 0.25,
+      "n_tests": 4
+    },
+    "classification": {
+      "score": 0.6667,
+      "correct": 4,
+      "total": 6
+    },
+    "ner": {
+      "score": 0.8333,
+      "n_tests": 3,
+      "per_test": [
+        1.0,
+        0.5,
+        1.0
+      ]
+    },
+    "agentic": {
+      "score": 0.6667,
+      "n_tests": 3
+    },
+    "multilingual": {
+      "score": 0.8571,
+      "correct": 6,
+      "total": 7
+    },
+    "reasoning": {
+      "score": 0.375,
+      "correct": 3,
+      "total": 8
+    },
+    "speed": {
+      "benchmarks": [
+        {
+          "name": "Short (6 tokens)",
+          "prompt_tokens": 6,
+          "tps": 69.0,
+          "elapsed": 0.04
+        },
+        {
+          "name": "Medium (25 tokens)",
+          "prompt_tokens": 23,
+          "tps": 90.3,
+          "elapsed": 1.11
+        },
+        {
+          "name": "Long (80 tokens)",
+          "prompt_tokens": 51,
+          "tps": 90.6,
+          "elapsed": 1.1
+        }
+      ]
+    },
+    "robustness": {
+      "score": 0.4286,
+      "n_tests": 7,
+      "per_test": {
+        "injection_resistance": 1.0,
+        "system_override_resistance": 0.0,
+        "typo_tolerance": 0.0,
+        "all_caps": 0.0,
+        "scrambled_word_order": 0.0,
+        "misleading_hint_resistance": 1.0,
+        "basic_completion_under_noise": 1.0
+      }
+    }
+  },
+  "overall_score": 0.6644
+}

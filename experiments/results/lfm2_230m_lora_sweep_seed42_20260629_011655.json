@@ -1,0 +1,41 @@
+{
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "timestamp": "20260629_011655",
+  "n_training_examples": 80,
+  "max_steps": 100,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "results": [
+    {
+      "config": "mlp_only",
+      "status": "failed",
+      "error": "Target modules {'gate_proj', 'down_proj', 'up_proj'} not found in the base model. Please check the target modules and try again."
+    },
+    {
+      "config": "conv_proj_only",
+      "description": "Conv projections on conv layers only",
+      "status": "success",
+      "trainable_params": 393216,
+      "total_params": 230086400,
+      "trainable_pct": 0.171,
+      "final_loss": 6.9026,
+      "pre_train_kl": 0.0,
+      "post_train_kl": 0.1981,
+      "kl_change": 0.1981
+    },
+    {
+      "config": "atlas_full",
+      "description": "Atlas-guided: all linear on hub layers L0,L2,L4,L5",
+      "status": "success",
+      "trainable_params": 212992,
+      "total_params": 229906176,
+      "trainable_pct": 0.093,
+      "final_loss": 7.7488,
+      "pre_train_kl": 0.0,
+      "post_train_kl": 0.2884,
+      "kl_change": 0.2884
+    }
+  ]
+}

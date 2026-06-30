@@ -1,0 +1,185 @@
+{
+  "id": "alpaca_alllinear",
+  "dataset": "tatsu-lab/alpaca",
+  "n_examples": 1000,
+  "steps": 300,
+  "lr": 0.0002,
+  "lora_r": 8,
+  "target": "all",
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "out_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj",
+    "in_proj"
+  ],
+  "layers": "all",
+  "trainable_params": 737280,
+  "total_params": 230430464,
+  "final_loss": 5.0458,
+  "kl_shift": 0.265,
+  "hub_kls": {
+    "L0": 2.8713,
+    "L2": 0.6282,
+    "L4": 2.9923,
+    "L5": 1.7724
+  },
+  "loss_curve": [
+    {
+      "step": 15,
+      "loss": 10.243
+    },
+    {
+      "step": 30,
+      "loss": 7.7246
+    },
+    {
+      "step": 45,
+      "loss": 6.026
+    },
+    {
+      "step": 60,
+      "loss": 5.1021
+    },
+    {
+      "step": 75,
+      "loss": 4.6369
+    },
+    {
+      "step": 90,
+      "loss": 4.5086
+    },
+    {
+      "step": 105,
+      "loss": 4.5439
+    },
+    {
+      "step": 120,
+      "loss": 4.5003
+    },
+    {
+      "step": 135,
+      "loss": 4.4904
+    },
+    {
+      "step": 150,
+      "loss": 4.4792
+    },
+    {
+      "step": 165,
+      "loss": 4.4666
+    },
+    {
+      "step": 180,
+      "loss": 4.4694
+    },
+    {
+      "step": 195,
+      "loss": 4.4682
+    },
+    {
+      "step": 210,
+      "loss": 4.4597
+    },
+    {
+      "step": 225,
+      "loss": 4.4469
+    },
+    {
+      "step": 240,
+      "loss": 4.4611
+    },
+    {
+      "step": 255,
+      "loss": 4.4686
+    },
+    {
+      "step": 270,
+      "loss": 4.4705
+    },
+    {
+      "step": 285,
+      "loss": 4.446
+    },
+    {
+      "step": 300,
+      "loss": 4.5051
+    }
+  ],
+  "train_time_s": 692.7,
+  "qualitative": [
+    {
+      "prompt": "The capital of France is",
+      "generation": "Paris. It is the largest city in France and the most populous city in Europe. Paris is also the capital of the European Union. It is the capital of the European Union, the European Council, and the European Parliament. Paris is also the capital of the United States of America. Paris is a major cultural and historical center of France. It is home to many museums, art galleries, and historic landmarks such as Notre-Dame Cathedral, Louvre Museum, and Arc de Triomphe. Paris is also known for its fashion, food, and entertainment. It is a popular tourist destination and a hub for international business and diplomacy.",
+      "n_tokens": 129,
+      "time_s": 2.06,
+      "tok_per_s": 62.6
+    },
+    {
+      "prompt": "{\"name\": \"Alice\", \"age\":",
+      "generation": "12, \"gender\": \"male\"}\n}\n\nAlice is a 12-year-old girl who lives in a small town. She has a bright smile and a cheerful demeanor. Alice loves reading and playing with her friends. She is always looking forward to the day ahead. She is very curious and loves to learn new things. She is also very kind and compassionate. Alice is always ready to help others. She is always willing to lend a helping hand. She is always eager to share her knowledge and skills with others. Alice is very intelligent and has a strong work ethic. She is always willing to try new things and take risks. She is always willing to learn from her mistakes. Alice is very determined and always strives for success. She is always willing to put in the effort to achieve her goals. Alice is always patient and understanding. She is always willing to listen to others and offer advice. Alice is always open-minded and willing to change her mind",
+      "n_tokens": 200,
+      "time_s": 3.18,
+      "tok_per_s": 62.9
+    },
+    {
+      "prompt": "def fibonacci(n):",
+      "generation": "fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci_sequence(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    return fib[:n]\n\ndef fibonacci_sequence_example(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    print(\"Fibonacci sequence up to\", n, \":\", fib[:n]\")\n    return fib[:n]\n\ndef fibonacci_sequence_example_example(n):\n    fib = [0, 1]\n    while fib[-1] < n:\n        fib.append(fib[-1] + fib[-2])\n    print(\"",
+      "n_tokens": 200,
+      "time_s": 3.25,
+      "tok_per_s": 61.6
+    },
+    {
+      "prompt": "Explain quantum entanglement in simple terms.",
+      "generation": "Quantum entanglement is a phenomenon where two or more particles become linked and the state of one particle instantly affects the state of the other, no matter how far apart they are. This means that if you try to measure one particle, it will instantly determine the state of the other particle, even if they are separated by vast distances. This phenomenon has been observed in experiments involving atoms and photons, and it has been used to develop new technologies such as quantum computing and secure communication.",
+      "n_tokens": 98,
+      "time_s": 1.56,
+      "tok_per_s": 62.7
+    },
+    {
+      "prompt": "Write a JSON object with keys: city, population, country for Tokyo.",
+      "generation": "```json\n{\n  \"city\": \"Tokyo\",\n  \"population\": \"135 million\",\n  \"country\": \"Japan\"\n}\n```",
+      "n_tokens": 31,
+      "time_s": 0.51,
+      "tok_per_s": 60.3
+    },
+    {
+      "prompt": "247 + 358 =",
+      "generation": "605\n605 - 358 = 247\n247 + 247 = 494\n247 + 247 = 494\n247 + 494 = 741\n247 + 494 = 741\n247 + 494 = 741\n247 + 741 = 988\n247 + 988 = 1225\n247 + 1225 = 1482\n247 + 1482 = 1919\n247 + 1919 = 3490\n247 + 3490 = 4947\n247 + 4947 = 6414\n247 + 6414 = 6891\n247 + 6891 = 7448\n247 + 7448 = 7936\n247 + 7936 = 9413\n247 + 9413 = 9870\n247 + 9870 = 12487\n247 + 12487 = 12744\n247 + 12744 = 13491\n247 +",
+      "n_tokens": 200,
+      "time_s": 3.17,
+      "tok_per_s": 63.2
+    },
+    {
+      "prompt": "Translate 'Good morning' to French, Spanish, and German.",
+      "generation": "French: Bonjour\n\nSpanish: Buenas tardes\n\nGerman: Guten Tag\n\nThese translations are intended to be used in a context where the speaker is greeting someone or someone they have met.",
+      "n_tokens": 43,
+      "time_s": 0.7,
+      "tok_per_s": 61.2
+    },
+    {
+      "prompt": "List 3 benefits of exercise.",
+      "generation": "1. Improves cardiovascular health.\n2. Increases muscle strength and endurance.\n3. Reduces the risk of chronic diseases such as diabetes, heart disease, and stroke.",
+      "n_tokens": 38,
+      "time_s": 0.61,
+      "tok_per_s": 62.2
+    },
+    {
+      "prompt": "def binary_search(arr, target):",
+      "generation": "low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found(arr, target):\n    low = 0\n    high = len(arr) - 1\n\n    while low <= high:\n        mid = (low + high) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            low = mid + 1\n        else:\n            high = mid - 1\n    return -1\n\ndef find_first_first_found_second_found(arr, target):\n    low = 0",
+      "n_tokens": 200,
+      "time_s": 3.19,
+      "tok_per_s": 62.7
+    },
+    {
+      "prompt": "The chemical formula for water is",
+      "generation": "H2O.\n\nWater is a polar molecule, meaning it has both a positive and negative end. It is a liquid at room temperature and can be found in many different forms, such as ice, snow, and liquid rain. Water is also a gas at room temperature and can be found in the air. It is essential for life on Earth and plays a vital role in the weather and climate of our planet.",
+      "n_tokens": 85,
+      "time_s": 1.36,
+      "tok_per_s": 62.7
+    }
+  ]
+}
