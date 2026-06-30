@@ -1,0 +1,728 @@
+{
+  "experiment": "phase13_qualitative_judge",
+  "judge_model": "mimo-v2.5",
+  "timestamp": "2026-06-30T15:15:37",
+  "n_prompts": 15,
+  "results": [
+    {
+      "prompt_idx": 0,
+      "task_prompt": "Extract the name, age, and city from: John Smith is 35 years old and lives in London.",
+      "expected": {
+        "name": "John Smith",
+        "age": 35,
+        "city": "London"
+      },
+      "baseline_text": "Name, Age, City = \"John Smith\", 35, London",
+      "noisy_text": "Name: John Smith, Age: 35, City: London",
+      "baseline_correct": false,
+      "n_clusters": 19,
+      "correct_fraction": 0.74,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 4,
+          "output_format": 3,
+          "conision": 5,
+          "usefulness": 5,
+          "overall": 4
+        },
+        "reasoning": "The response correctly extracts all fields with high concision and usefulness, but the output format is not a standard structured data representation."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted the requested fields in a clear and concise format, fully adhering to the task instructions."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B uses explicit key-value pairs, improving clarity and structure for data extraction.",
+        "scores_a": {
+          "correctness": 10,
+          "overall": 8
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 9
+        }
+      }
+    },
+    {
+      "prompt_idx": 1,
+      "task_prompt": "Extract the name, age, and city from: Maria Garcia, aged 28, resides in Madrid.",
+      "expected": {
+        "name": "Maria Garcia",
+        "age": 28,
+        "city": "Madrid"
+      },
+      "baseline_text": "Name, Age, City",
+      "noisy_text": "What is the answer?\n\n```json:\n\n```\n  The answer is Maria Garcia, aged 28, resides in Madrid.\n```",
+      "baseline_correct": false,
+      "n_clusters": 13,
+      "correct_fraction": 0.72,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 2,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model output only labels instead of extracting the actual data, failing to provide structured information as requested."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 3,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 2,
+          "overall": 2
+        },
+        "reasoning": "The model correctly identifies the data but fails to output it in the required JSON format."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B contains the extracted information in natural language, whereas Response A only lists field names without providing any data.",
+        "scores_a": {
+          "correctness": 1,
+          "overall": 1
+        },
+        "scores_b": {
+          "correctness": 7,
+          "overall": 6
+        }
+      }
+    },
+    {
+      "prompt_idx": 2,
+      "task_prompt": "Extract the name, age, and city from: Ahmed Hassan (42) from Cairo.",
+      "expected": {
+        "name": "Ahmed Hassan",
+        "age": 42,
+        "city": "Cairo"
+      },
+      "baseline_text": "Name, Age, City",
+      "noisy_text": "Name, Age, City\nName: Ahmed Hassan\nAge: 42\nCity: Cairo",
+      "baseline_correct": false,
+      "n_clusters": 15,
+      "correct_fraction": 0.9,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model only listed the field names instead of extracting the specified data, failing to provide any useful information."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 4,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all fields in a clear, structured format, though not in JSON."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts the name, age, and city, while Response A only lists the field names without providing the data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 8
+        }
+      }
+    },
+    {
+      "prompt_idx": 4,
+      "task_prompt": "Extract the product, price, and currency from: Samsung Galaxy S24 priced at 849 GBP.",
+      "expected": {
+        "product": "Samsung Galaxy S24",
+        "price": 849,
+        "currency": "GBP"
+      },
+      "baseline_text": "Product, Price, Currency.",
+      "noisy_text": "Product, Price, Currency\n\nExplanation: The product is Samsung Galaxy S24, priced at 849 GBP.",
+      "baseline_correct": false,
+      "n_clusters": 16,
+      "correct_fraction": 0.72,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model response only lists the field names without extracting the actual values, rendering it incorrect and not useful."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 4,
+          "output_format": 3,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 4
+        },
+        "reasoning": "The response correctly extracts all fields with high concision and usefulness, but the narrative format slightly deviates from ideal structured output."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B extracts the product, price, and currency in its explanation, while Response A only lists field names without any data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 9,
+          "overall": 8
+        }
+      }
+    },
+    {
+      "prompt_idx": 5,
+      "task_prompt": "Extract the product, price, and currency from: Sony WH-1000XM5 headphones retail for 349 EUR.",
+      "expected": {
+        "product": "Sony WH-1000XM5",
+        "price": 349,
+        "currency": "EUR"
+      },
+      "baseline_text": "Product, Price, Currency",
+      "noisy_text": "{\"product\":{\"name\":{\"value\":{\"description\":\"name\":\"Sony WH-1000XM5 headphones\"}},\"price\":{\"value\":{\"description\":\"price\":\"349\"}}},\"currency\":{\"value\":",
+      "baseline_correct": false,
+      "n_clusters": 30,
+      "correct_fraction": 0.7,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 2,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The response lists field names without extracting the actual product, price, and currency from the text."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 2,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model response is incomplete and malformed JSON that does not correctly extract or present the requested fields in a usable format."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B partially extracts the product and price values, while Response A provides no extracted data at all.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 3,
+          "overall": 2
+        }
+      }
+    },
+    {
+      "prompt_idx": 6,
+      "task_prompt": "Extract the title, director, and year from: Inception directed by Christopher Nolan in 2010.",
+      "expected": {
+        "title": "Inception",
+        "director": "Christopher Nolan",
+        "year": 2010
+      },
+      "baseline_text": "Title, Director, Year",
+      "noisy_text": "{\"title\": \"Inception\", \"director\": \"Christopher Nolan\", \"year\": 2010}",
+      "baseline_correct": false,
+      "n_clusters": 22,
+      "correct_fraction": 0.56,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 2,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model only listed field names without extracting the actual data, resulting in incorrect and non-compliant output."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The response perfectly extracts and formats the required fields as valid JSON with no errors or extraneous content."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts the title, director, and year into a structured JSON format, while Response A only lists field names without any data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 8,
+      "task_prompt": "Extract the title, director, and year from: Parasite (2019) by Bong Joon-ho.",
+      "expected": {
+        "title": "Parasite",
+        "director": "Bong Joon-ho",
+        "year": 2019
+      },
+      "baseline_text": "Title, Director, Year",
+      "noisy_text": "{\"title\": \"Parasite\", \"director\": \"Bong Joon-ho\", \"year\": \"2019\"}",
+      "baseline_correct": false,
+      "n_clusters": 19,
+      "correct_fraction": 0.66,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model output only lists the field names without extracting the actual data, making it incorrect and unhelpful."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all requested fields in a concise and correctly formatted JSON response without any extraneous information."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B accurately extracts the title, director, and year into a structured JSON format, while Response A only lists the field names without any actual data.",
+        "scores_a": {
+          "correctness": 1,
+          "overall": 1
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 9,
+      "task_prompt": "Extract the city, country, and population from: Tokyo, Japan has a population of 13,960,000.",
+      "expected": {
+        "city": "Tokyo",
+        "country": "Japan",
+        "population": 13960000
+      },
+      "baseline_text": "City, Country, Population\nTokyo, Japan, 13,960,000",
+      "noisy_text": "Tokyo, Japan has a population of 13,960,000.",
+      "baseline_correct": false,
+      "n_clusters": 12,
+      "correct_fraction": 0,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 4,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all fields in a clear, concise structured format that meets the task requirements."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model failed to extract the fields and merely repeated the input without providing structured data."
+      },
+      "pairwise": {
+        "winner": "A",
+        "reason": "Response A properly extracts and structures the requested fields, whereas Response B merely repeats the input without extraction.",
+        "scores_a": {
+          "correctness": 10,
+          "overall": 10
+        },
+        "scores_b": {
+          "correctness": 0,
+          "overall": 0
+        }
+      }
+    },
+    {
+      "prompt_idx": 10,
+      "task_prompt": "Extract the city, country, and population from: Mumbai in India: 12,442,373 people.",
+      "expected": {
+        "city": "Mumbai",
+        "country": "India",
+        "population": 12442373
+      },
+      "baseline_text": "Mumbai, 12,442,373 people.",
+      "noisy_text": "{\"city\": \"Mumbai\", \"country\": \"India\", \"population\": \"12,442,373\"}}.",
+      "baseline_correct": false,
+      "n_clusters": 15,
+      "correct_fraction": 0,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 2,
+          "instruction_following": 1,
+          "output_format": 2,
+          "concision": 3,
+          "usefulness": 2,
+          "overall": 2
+        },
+        "reasoning": "The model response omitted the country field, failed to structure the output properly, and did not fully adhere to the extraction instructions."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all requested fields in the correct structured format with no errors."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts all requested fields (city, country, population) in structured JSON format, while Response A omits the country and is not structured.",
+        "scores_a": {
+          "correctness": 6,
+          "overall": 4
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 11,
+      "task_prompt": "Extract the city, country, and population from: Sao Paulo, Brazil \u2014 population 12,325,232.",
+      "expected": {
+        "city": "Sao Paulo",
+        "country": "Brazil",
+        "population": 12325232
+      },
+      "baseline_text": "{\"city\": \"Sao Paulo\", \"country\": \"Brazil\", \"population\": \"12,325,232\"}",
+      "noisy_text": "Sao Paulo is a major city in Brazil, known for its economic growth and cultural diversity.",
+      "baseline_correct": false,
+      "n_clusters": 21,
+      "correct_fraction": 0,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracts all requested fields in a correctly formatted and concise JSON output."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model does not extract the city, country, or population as instructed and offers unrelated details."
+      },
+      "pairwise": {
+        "winner": "A",
+        "reason": "Response A correctly extracts the requested fields in structured format, while Response B does not provide structured data or all fields.",
+        "scores_a": {
+          "correctness": 10,
+          "overall": 10
+        },
+        "scores_b": {
+          "correctness": 2,
+          "overall": 1
+        }
+      }
+    },
+    {
+      "prompt_idx": 12,
+      "task_prompt": "Extract the name, role, and company from: Sarah Chen is the CTO at Stripe.",
+      "expected": {
+        "name": "Sarah Chen",
+        "role": "CTO",
+        "company": "Stripe"
+      },
+      "baseline_text": "Name, Role, Company",
+      "noisy_text": "Name: Sarah Chen, Role: CTO, Company: Stripe",
+      "baseline_correct": false,
+      "n_clusters": 17,
+      "correct_fraction": 0.68,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model only listed field names without extracting the actual data from the input."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all requested fields in a clear, concise, and structured format without any errors."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts and formats all requested information, while Response A only lists field names without any data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 13,
+      "task_prompt": "Extract the name, role, and company from: Dr. James Wilson, VP of Engineering, works at Anthropic.",
+      "expected": {
+        "name": "Dr. James Wilson",
+        "role": "VP of Engineering",
+        "company": "Anthropic"
+      },
+      "baseline_text": "Name, Role, Company",
+      "noisy_text": "{\n  \"name\": \"Dr. James Wilson\",\n  \"role\": \"VP of Engineering\",\n  \"company\": \"Anthropic\"\n}",
+      "baseline_correct": false,
+      "n_clusters": 13,
+      "correct_fraction": 0.78,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model response lists field names without extracting any data, failing to meet task requirements."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all fields in the correct format with no errors."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts and structures the requested information, while Response A provides only field names without any extracted data.",
+        "scores_a": {
+          "correctness": 1,
+          "overall": 2
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 14,
+      "task_prompt": "Extract the name, role, and company from: Lisa Park \u2014 Head of Product at Notion.",
+      "expected": {
+        "name": "Lisa Park",
+        "role": "Head of Product",
+        "company": "Notion"
+      },
+      "baseline_text": "Name, Role, Company",
+      "noisy_text": "{\n  \"name\": \"Lisa Park\",\n  \"role\": \"Head of Product\",\n  \"company\": \"Notion\"\n}",
+      "baseline_correct": false,
+      "n_clusters": 11,
+      "correct_fraction": 0.76,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model response fails to extract any data from the input, listing only field labels without values."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 5,
+          "instruction_following": 5,
+          "output_format": 5,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 5
+        },
+        "reasoning": "The model accurately extracted all requested fields in a correct, concise, and well-formatted JSON output."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B correctly extracts and structures all requested information, while Response A only lists the fields without providing any data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 2
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 10
+        }
+      }
+    },
+    {
+      "prompt_idx": 3,
+      "task_prompt": "Extract the product, price, and currency from: The iPhone 15 costs $999.",
+      "expected": {
+        "product": "iPhone 15",
+        "price": 999,
+        "currency": "$"
+      },
+      "baseline_text": "Product, Price, Currency",
+      "noisy_text": "Product, Price, Currency = {\"iPhone 15\": \"$999\", \"Price\": \"$999\", \"Currency\": \"USD\"}",
+      "baseline_correct": true,
+      "n_clusters": 26,
+      "correct_fraction": 0.52,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 1,
+          "instruction_following": 1,
+          "output_format": 1,
+          "concision": 1,
+          "usefulness": 1,
+          "overall": 1
+        },
+        "reasoning": "The model response only lists the field names without extracting the actual values from the input."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 2,
+          "instruction_following": 2,
+          "output_format": 1,
+          "concision": 3,
+          "usefulness": 2,
+          "overall": 2
+        },
+        "reasoning": "The output misplaces keys and includes extraneous labels, making it incorrect and poorly formatted."
+      },
+      "pairwise": {
+        "winner": "B",
+        "reason": "Response B extracts the product, price, and currency from the input, while Response A only lists the field names without any extracted data.",
+        "scores_a": {
+          "correctness": 0,
+          "overall": 0
+        },
+        "scores_b": {
+          "correctness": 6,
+          "overall": 6
+        }
+      }
+    },
+    {
+      "prompt_idx": 7,
+      "task_prompt": "Extract the title, director, and year from: The Matrix, directed by the Wachowskis, released 1999.",
+      "expected": {
+        "title": "The Matrix",
+        "director": "Wachowskis",
+        "year": 1999
+      },
+      "baseline_text": "Title, Director, Year\nTitle: The Matrix, Director: Wachowskis, Year: 1999",
+      "noisy_text": "The title is \"The Matrix\", the director is \"Wachowskis\", and the year is \"1999\".",
+      "baseline_correct": true,
+      "n_clusters": 22,
+      "correct_fraction": 0.74,
+      "baseline_scores": {
+        "scores": {
+          "correctness": 4,
+          "instruction_following": 4,
+          "output_format": 3,
+          "concision": 4,
+          "usefulness": 4,
+          "overall": 4
+        },
+        "reasoning": "The extraction is accurate with a minor omission in the director's name and uses a clear but non-standard format, remaining concise and useful."
+      },
+      "noisy_scores": {
+        "scores": {
+          "correctness": 4,
+          "instruction_following": 5,
+          "output_format": 4,
+          "concision": 5,
+          "usefulness": 5,
+          "overall": 4
+        },
+        "reasoning": "The response accurately extracts the title and year but slightly misrepresents the director and uses a narrative format instead of structured data."
+      },
+      "pairwise": {
+        "winner": "A",
+        "reason": "Response A uses a clear, labeled format that directly aligns with structured data extraction requirements.",
+        "scores_a": {
+          "correctness": 10,
+          "overall": 10
+        },
+        "scores_b": {
+          "correctness": 10,
+          "overall": 8
+        }
+      }
+    }
+  ]
+}
