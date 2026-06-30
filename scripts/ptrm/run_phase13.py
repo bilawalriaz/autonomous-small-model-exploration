@@ -35,7 +35,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 RESULTS_DIR = REPO_ROOT / "results" / "phase13"
 CONFIGS_DIR = REPO_ROOT / "configs"
 
-MODEL_NAME = "LiquidAI/LFM2.5-230M"
+MODEL_NAME = "LiquidAI/LFM2.5-230M"  # Overridden by --model CLI arg
+
+# Chat template support: if tokenizer has apply_chat_template, use it
+USE_CHAT_TEMPLATE = False
 
 # Structured extraction prompts for evaluation
 EVAL_PROMPTS = [
@@ -148,16 +151,24 @@ def make_scaled_noise_hook(base_sigma, layer_idx):
 # Model loading
 # ---------------------------------------------------------------------------
 
-def load_model(device="cuda:0"):
+def load_model(model_name=None, device="cuda:0"):
     """Load model and tokenizer."""
+    global MODEL_NAME, USE_CHAT_TEMPLATE
+    if model_name:
+        MODEL_NAME = model_name
     print(f"Loading {MODEL_NAME}...")
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
+    
+    # Detect chat template support
+    USE_CHAT_TEMPLATE = hasattr(tokenizer, 'apply_chat_template')
+    if USE_CHAT_TEMPLATE:
+        print("Using chat template for prompt formatting")
 
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_NAME,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         device_map=device,
         trust_remote_code=True,
     )
@@ -417,13 +428,22 @@ def evaluate_extraction(text, expected):
     }
 
 
-def format_extraction_prompt(item):
-    """Format an eval item into an instruction prompt."""
-    return (
-        f"Extract the requested information as JSON.\n\n"
-        f"Input: {item['prompt']}\n\n"
-        f"Output:"
-    )
+def format_extraction_prompt(item, tokenizer=None):
+    """Format an eval item into an instruction prompt.
+    Uses chat template if available, otherwise plain text."""
+    instruction = f"Extract the requested information as JSON.\n\nInput: {item['prompt']}"
+    
+    if USE_CHAT_TEMPLATE and tokenizer is not None:
+        try:
+            return tokenizer.apply_chat_template(
+                [{"role": "user", "content": instruction}],
+                tokenize=False,
+                add_generation_prompt=True,
+            )
+        except Exception:
+            pass
+    
+    return f"{instruction}\n\nOutput:"
 
 
 # ---------------------------------------------------------------------------
@@ -495,7 +515,7 @@ def run_13A(model, tokenizer, args):
         n = 0
 
         for item in prompts:
-            prompt_text = format_extraction_prompt(item)
+            prompt_text = format_extraction_prompt(item, tokenizer)
             best_field_recall = 0.0
             best_exact = 0.0
 
@@ -533,7 +553,7 @@ def run_13A(model, tokenizer, args):
     exact_hits = 0
     field_recall_sum = 0.0
     for item in prompts:
-        prompt_text = format_extraction_prompt(item)
+        prompt_text = format_extraction_prompt(item, tokenizer)
         rollout = generate_baseline(model, tokenizer, prompt_text)
         eval_result = evaluate_extraction(rollout["text"], item["expected"])
         exact_hits += eval_result["exact_match"]
@@ -569,7 +589,7 @@ def run_13B(model, tokenizer, args):
         n = 0
 
         for item in prompts:
-            prompt_text = format_extraction_prompt(item)
+            prompt_text = format_extraction_prompt(item, tokenizer)
             best_field_recall = 0.0
             best_exact = 0.0
 
@@ -617,7 +637,7 @@ def run_13C(model, tokenizer, args):
         n = 0
 
         for item in prompts:
-            prompt_text = format_extraction_prompt(item)
+            prompt_text = format_extraction_prompt(item, tokenizer)
             best_field_recall = 0.0
             best_exact = 0.0
 
@@ -672,7 +692,7 @@ def run_13D(model, tokenizer, args):
     print("Generating rollouts...")
     all_rollouts = {}
     for i, item in enumerate(prompts):
-        prompt_text = format_extraction_prompt(item)
+        prompt_text = format_extraction_prompt(item, tokenizer)
         rollouts = []
         for k in range(K):
             rollout = generate_noisy_rollout(
@@ -715,7 +735,7 @@ def run_13D(model, tokenizer, args):
     exact_hits = 0
     field_recall_sum = 0.0
     for item in prompts:
-        prompt_text = format_extraction_prompt(item)
+        prompt_text = format_extraction_prompt(item, tokenizer)
         rollout = generate_baseline(model, tokenizer, prompt_text)
         eval_result = evaluate_extraction(rollout["text"], item["expected"])
         exact_hits += eval_result["exact_match"]
@@ -739,7 +759,7 @@ def run_13E(model, tokenizer, args):
     results = {}
 
     for i, item in enumerate(prompts):
-        prompt_text = format_extraction_prompt(item)
+        prompt_text = format_extraction_prompt(item, tokenizer)
 
         # First check baseline
         baseline = generate_baseline(model, tokenizer, prompt_text)
@@ -835,7 +855,7 @@ def run_13F(model, tokenizer, args):
         n = 0
 
         for i, item in enumerate(prompts):
-            prompt_text = format_extraction_prompt(item)
+            prompt_text = format_extraction_prompt(item, tokenizer)
 
             if not cond["layers"]:
                 # Baseline: no noise
@@ -911,6 +931,8 @@ def main():
     parser = argparse.ArgumentParser(description="Phase 13: PTRM-Inspired Experiments")
     parser.add_argument("--experiment", "-e", choices=list(EXPERIMENT_MAP.keys()),
                         default=None, help="Which experiment to run")
+    parser.add_argument("--model", "-m", default=None,
+                        help="Model name (e.g. Qwen/Qwen2.5-0.5B-Instruct). Default: LiquidAI/LFM2.5-230M")
     parser.add_argument("--device", default="cuda:0", help="CUDA device")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--all", action="store_true", help="Run all experiments sequentially")
@@ -922,7 +944,7 @@ def main():
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
 
-    model, tokenizer = load_model(args.device)
+    model, tokenizer = load_model(model_name=args.model, device=args.device)
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -953,7 +975,9 @@ def main():
             "results": results,
         }
 
-        result_path = RESULTS_DIR / f"{exp_id}_seed{args.seed}.json"
+        # Model slug for filename (e.g. qwen05b, lfm2_230m)
+        model_slug = MODEL_NAME.split("/")[-1].lower().replace("-", "_").replace(".", "")[:20]
+        result_path = RESULTS_DIR / f"{exp_id}_{model_slug}_seed{args.seed}.json"
         with open(result_path, "w") as f:
             json.dump(output, f, indent=2)
         print(f"\nResults saved to {result_path}")
