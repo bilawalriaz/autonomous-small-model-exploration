@@ -171,8 +171,9 @@ def load_model(device="cuda:0"):
 # ---------------------------------------------------------------------------
 
 def generate_noisy_rollout(model, tokenizer, prompt, layer_indices, sigma,
-                           max_new_tokens=128, rollout_seed=None, temp=0.2, top_p=0.9):
-    """Generate one rollout with noise injected at specified layers."""
+                           max_new_tokens=64, rollout_seed=None, temp=0.2, top_p=0.9):
+    """Generate one rollout with noise injected at specified layers.
+    Optimized: 2 forward passes total (generation + metrics)."""
     device = next(model.parameters()).device
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs["input_ids"].shape[1]
@@ -184,9 +185,9 @@ def generate_noisy_rollout(model, tokenizer, prompt, layer_indices, sigma,
         h = model.model.layers[idx].register_forward_hook(hook)
         hooks.append(h)
 
+    if rollout_seed is not None:
+        set_seed(rollout_seed)
     with torch.no_grad():
-        if rollout_seed is not None:
-            set_seed(rollout_seed)
         output = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
@@ -196,53 +197,42 @@ def generate_noisy_rollout(model, tokenizer, prompt, layer_indices, sigma,
             pad_token_id=tokenizer.pad_token_id,
         )
 
-    # Remove hooks
     for h in hooks:
         h.remove()
 
-    new_tokens = output[0][prompt_len:]
-    text = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    text = tokenizer.decode(output[0][prompt_len:], skip_special_tokens=True).strip()
 
-    # Compute prompt NLL (loss proxy for selection)
+    # Single forward pass for both NLL and confidence
     with torch.no_grad():
-        full_logits = model(output).logits
-        shift_logits = full_logits[0, :-1, :].float()
-        shift_labels = output[0, 1:]
-        loss = F.cross_entropy(shift_logits, shift_labels)
-        prompt_nll = loss.item()
+        logits = model(output).logits[0]  # (seq_len, vocab)
+        # Prompt NLL
+        prompt_logits = logits[:prompt_len - 1].float()
+        prompt_labels = output[0, 1:prompt_len]
+        prompt_nll = F.cross_entropy(prompt_logits, prompt_labels).item()
+        # Confidence: max prob of first generated token
+        first_gen_logit = logits[prompt_len - 1].float()
+        max_conf = F.softmax(first_gen_logit / temp, dim=-1).max().item()
 
-    # Confidence proxy: max softmax prob of first generated token
-    with torch.no_grad():
-        first_logits = full_logits[0, prompt_len - 1, :].float()
-        first_probs = F.softmax(first_logits / temp, dim=-1)
-        max_conf = first_probs.max().item()
-
-    return {
-        "text": text,
-        "prompt_nll": prompt_nll,
-        "max_conf": max_conf,
-        "raw_output": text,
-    }
+    return {"text": text, "prompt_nll": prompt_nll, "max_conf": max_conf}
 
 
 def generate_scaled_noisy_rollout(model, tokenizer, prompt, layer_indices, base_sigma,
-                                   max_new_tokens=128, rollout_seed=None, temp=0.2, top_p=0.9):
-    """Generate one rollout with atlas-scaled noise (sigma proportional to layer importance)."""
+                                   max_new_tokens=64, rollout_seed=None, temp=0.2, top_p=0.9):
+    """Generate one rollout with atlas-scaled noise. Optimized: 2 forward passes."""
     device = next(model.parameters()).device
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs["input_ids"].shape[1]
 
-    # Register hooks with per-layer scaled sigma
     hooks = []
     for idx in layer_indices:
-        layer_sigma = base_sigma * LAYER_WEIGHTS.get(idx, 0.01) * 14  # Scale so avg = base_sigma
+        layer_sigma = base_sigma * LAYER_WEIGHTS.get(idx, 0.01) * 14
         hook = make_noise_hook(layer_sigma, noise_seed=(rollout_seed + idx) if rollout_seed else None)
         h = model.model.layers[idx].register_forward_hook(hook)
         hooks.append(h)
 
+    if rollout_seed is not None:
+        set_seed(rollout_seed)
     with torch.no_grad():
-        if rollout_seed is not None:
-            set_seed(rollout_seed)
         output = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
@@ -255,30 +245,21 @@ def generate_scaled_noisy_rollout(model, tokenizer, prompt, layer_indices, base_
     for h in hooks:
         h.remove()
 
-    new_tokens = output[0][prompt_len:]
-    text = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    text = tokenizer.decode(output[0][prompt_len:], skip_special_tokens=True).strip()
 
     with torch.no_grad():
-        full_logits = model(output).logits
-        shift_logits = full_logits[0, :-1, :].float()
-        shift_labels = output[0, 1:]
-        loss = F.cross_entropy(shift_logits, shift_labels)
-        prompt_nll = loss.item()
+        logits = model(output).logits[0]
+        prompt_logits = logits[:prompt_len - 1].float()
+        prompt_labels = output[0, 1:prompt_len]
+        prompt_nll = F.cross_entropy(prompt_logits, prompt_labels).item()
+        first_gen_logit = logits[prompt_len - 1].float()
+        max_conf = F.softmax(first_gen_logit / temp, dim=-1).max().item()
 
-        first_logits = full_logits[0, prompt_len - 1, :].float()
-        first_probs = F.softmax(first_logits / temp, dim=-1)
-        max_conf = first_probs.max().item()
-
-    return {
-        "text": text,
-        "prompt_nll": prompt_nll,
-        "max_conf": max_conf,
-        "raw_output": text,
-    }
+    return {"text": text, "prompt_nll": prompt_nll, "max_conf": max_conf}
 
 
-def generate_baseline(model, tokenizer, prompt, max_new_tokens=128, temp=0.2, top_p=0.9):
-    """Generate without noise (baseline)."""
+def generate_baseline(model, tokenizer, prompt, max_new_tokens=64, temp=0.2, top_p=0.9):
+    """Generate without noise (baseline). Optimized: 2 forward passes."""
     device = next(model.parameters()).device
     inputs = tokenizer(prompt, return_tensors="pt").to(device)
     prompt_len = inputs["input_ids"].shape[1]
@@ -293,25 +274,17 @@ def generate_baseline(model, tokenizer, prompt, max_new_tokens=128, temp=0.2, to
             pad_token_id=tokenizer.pad_token_id,
         )
 
-    new_tokens = output[0][prompt_len:]
-    text = tokenizer.decode(new_tokens, skip_special_tokens=True).strip()
+    text = tokenizer.decode(output[0][prompt_len:], skip_special_tokens=True).strip()
 
     with torch.no_grad():
-        full_logits = model(output).logits
-        shift_logits = full_logits[0, :-1, :].float()
-        shift_labels = output[0, 1:]
-        loss = F.cross_entropy(shift_logits, shift_labels)
-        prompt_nll = loss.item()
+        logits = model(output).logits[0]
+        prompt_logits = logits[:prompt_len - 1].float()
+        prompt_labels = output[0, 1:prompt_len]
+        prompt_nll = F.cross_entropy(prompt_logits, prompt_labels).item()
+        first_gen_logit = logits[prompt_len - 1].float()
+        max_conf = F.softmax(first_gen_logit / temp, dim=-1).max().item()
 
-        first_logits = full_logits[0, prompt_len - 1, :].float()
-        first_probs = F.softmax(first_logits / temp, dim=-1)
-        max_conf = first_probs.max().item()
-
-    return {
-        "text": text,
-        "prompt_nll": prompt_nll,
-        "max_conf": max_conf,
-    }
+    return {"text": text, "prompt_nll": prompt_nll, "max_conf": max_conf}
 
 
 # ---------------------------------------------------------------------------
@@ -446,13 +419,15 @@ def run_13A(model, tokenizer, args):
     print("\n=== Experiment 13A: Noise Localization ===")
     K = 10
     sigma = 0.2
-    prompts = EVAL_PROMPTS[:50]
+    prompts = EVAL_PROMPTS[:30]
+    # Test key layers only: hub, secondary hubs, weak control layers
+    KEY_LAYERS = [0, 1, 4, 5, 7, 12, 13]  # L0=hub, L4=secondary, L5=strongest MLP, L7/L13=weak controls
     results = {}
 
-    for layer_idx in range(14):
+    for layer_idx in KEY_LAYERS:
         layer_type = LAYER_TYPES[layer_idx]
         kl = SKIP_KL[layer_idx]
-        print(f"\n--- Layer {layer_idx} ({type}), skip KL={kl:.1f} ---")
+        print(f"\n--- Layer {layer_idx} ({layer_type}), skip KL={kl:.1f} ---")
 
         exact_hits = 0
         field_recall_sum = 0.0
