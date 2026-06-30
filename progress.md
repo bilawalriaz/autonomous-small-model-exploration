@@ -28,6 +28,8 @@
 - [x] C1-C3: Better causal tests — COMPLETE (position ablation, module ablation, method comparison)
 - [x] P1-P3: Prompt robustness — COMPLETE (NL hubs validated, coder hub at L22!)
 - [x] Q1: Quantization steering — COMPLETE (476x amplification at 4-bit)
+- [x] Git sync repaired — created safety branch/stash, merged origin/main with explicit `--no-rebase`, and preserved local work before deploy
+- [x] One-page MI-Atlas share page — added `docs/mi-atlas.html`, made it the first index entry, added it to the published docs nav, mirrored the page into `pretty-blog-python/pages/mi-atlas.html`, and verified desktop/mobile layout with Playwright
 - [x] GitHub Pages navigation/design pass — all pages share a HYFL-inspired responsive style, Phase 2 links Phase 3, and mobile overflow checks pass at 390px
 - [ ] C4: Steering controls — needs HF-native steering rewrite
 - [ ] G1: Steering direction transfer — needs memory optimization

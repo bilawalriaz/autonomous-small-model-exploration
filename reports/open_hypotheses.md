@@ -434,3 +434,9 @@ Current evidence:
 - But this is loss only — need behavioral confirmation
 
 Status: PLAUSIBLE (loss only). The "small-model-native" style may be "more context" not "more compact." Needs real eval.
+
+---
+
+## Documentation Note (2026-06-30)
+
+The one-page MI-Atlas share page and deploy/sync repair did not add, confirm, reject, or modify any research hypothesis. It presents the current audited claim set and keeps Phase 9 behavioral claims marked as unresolved.

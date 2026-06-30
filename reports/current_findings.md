@@ -115,3 +115,7 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 6. Extend to natural language prompts
 7. **Phase 9R: Run real eval on aero** (highest priority — completes Phase 9)
 8. **Phase 10: Token-budget-controlled data-shape ablation**
+
+## Documentation update
+
+2026-06-30: Added and deployed a single shareable MI-Atlas page at `docs/mi-atlas.html`, linked it from the docs index/navbar, and mirrored it to `pretty-blog-python/pages/mi-atlas.html`. This is a presentation artifact only. It uses the audited claim set and Phase 9 caveats already recorded here; no research claim, metric, confidence level, or negative result changed.

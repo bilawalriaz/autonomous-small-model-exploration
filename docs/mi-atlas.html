@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>MI-Atlas: A Causal Map of Small Language Models</title>
+  <meta name="description" content="A one-page summary of MI-Atlas: causal mapping, LoRA targeting, steering, ablation, negative results, and practical rules for small language models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --ink: #171412;
+      --muted: #665f59;
+      --line: #ded6cc;
+      --panel: #fffdfa;
+      --panel-2: #f1ebe2;
+      --accent: #e24a1a;
+      --accent-dark: #a83112;
+      --green: #2d6a3e;
+      --blue: #245d82;
+      --warn: #8a5b00;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--bg); color: var(--ink); scroll-behavior: smooth; }
+    body { margin: 0; font-family: var(--sans); font-size: 16px; line-height: 1.6; letter-spacing: 0; }
+    a { color: inherit; text-decoration-color: rgba(226, 74, 26, 0.45); text-underline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 244, 239, 0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; text-decoration: none; }
+    .brand-mark { width: 30px; height: 30px; border-radius: 7px; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 0.9rem; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .nav-links a {
+      padding: 7px 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      color: #332f2b;
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav-links a:hover { border-color: var(--line); background: rgba(255,255,255,0.55); }
+
+    .hero { padding: 72px 0 34px; }
+    .kicker { color: var(--accent-dark); font-family: var(--mono); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    h1 {
+      max-width: 980px;
+      margin: 14px 0 20px;
+      font-size: clamp(3.2rem, 9vw, 7.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      font-weight: 900;
+    }
+    .lede { max-width: 760px; color: #302b27; font-size: clamp(1.08rem, 2vw, 1.32rem); line-height: 1.55; }
+    .hero-actions { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .button.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 30px 0 10px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      min-height: 118px;
+      box-shadow: 0 18px 50px rgba(40, 30, 20, 0.05);
+    }
+    .metric strong { display: block; color: var(--accent); font-size: 2rem; line-height: 1; letter-spacing: -0.03em; }
+    .metric span { display: block; margin-top: 10px; color: var(--muted); font-size: 0.88rem; font-weight: 700; }
+
+    section { padding: 44px 0; }
+    .section-head { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 34px; align-items: end; margin-bottom: 22px; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1; letter-spacing: -0.035em; }
+    .section-note { margin: 0; color: var(--muted); max-width: 680px; }
+    .grid { display: grid; gap: 14px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 18px 50px rgba(40, 30, 20, 0.045);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.08rem; line-height: 1.25; }
+    .card p { margin: 0; color: #3a342f; }
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel-2);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag.high { color: var(--green); background: #edf6ee; border-color: #c9dfcb; }
+    .tag.medium { color: var(--blue); background: #edf5fa; border-color: #c7dceb; }
+    .tag.caution { color: var(--warn); background: #fff7df; border-color: #ead39a; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+    table { width: 100%; min-width: 760px; border-collapse: collapse; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    td { color: #302b27; }
+    tr:last-child td { border-bottom: 0; }
+    .mono { font-family: var(--mono); font-size: 0.9em; }
+
+    .claim-list { display: grid; gap: 10px; }
+    .claim {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 16px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.55);
+    }
+    .claim .level { font-family: var(--mono); color: var(--accent-dark); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; }
+    .claim p { margin: 0; color: #302b27; }
+
+    .timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .step { border-top: 3px solid var(--accent); padding-top: 14px; }
+    .step strong { display: block; font-size: 1.6rem; letter-spacing: -0.03em; }
+    .step p { margin: 6px 0 0; color: var(--muted); }
+
+    .footer { padding: 44px 0 64px; border-top: 1px solid var(--line); color: var(--muted); }
+    .footer strong { color: var(--ink); }
+
+    @media (max-width: 840px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .nav-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; }
+      .nav-links { justify-content: flex-start; }
+      .hero { padding-top: 46px; }
+      .metric-strip, .grid.two, .grid.three, .section-head, .timeline { grid-template-columns: 1fr; }
+      .metric { min-height: auto; }
+      .claim { grid-template-columns: 1fr; gap: 4px; }
+      table { min-width: 680px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">M</span><span>MI-Atlas</span></a>
+      <div class="nav-links">
+        <a href="#map">Map</a>
+        <a href="#claims">Claims</a>
+        <a href="#caveats">Caveats</a>
+        <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="wrap">
+        <div class="kicker">Mechanistic interpretability plus training perturbation</div>
+        <h1>A causal atlas for small language models.</h1>
+        <p class="lede">I tested where behavior moves inside small models, then used that map to target LoRA, steering, ablation, patching, and negative controls. The result is not a universal theory of language models. It is a practical rule: map the model you plan to edit before you edit it.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#claims">Read the claims</a>
+          <a class="button" href="https://github.com/bilawalriaz/autonomous-small-model-exploration">Open the repo</a>
+          <a class="button" href="06-phase3-gap-closure.html">Detailed Phase 3 notes</a>
+        </div>
+
+        <div class="metric-strip" aria-label="Project metrics">
+          <div class="metric"><strong>5</strong><span>models or model families mapped</span></div>
+          <div class="metric"><strong>12</strong><span>default task families in the main suite</span></div>
+          <div class="metric"><strong>0.0</strong><span>hub-location std across 3 Qwen seeds</span></div>
+          <div class="metric"><strong>13.8x</strong><span>fewer LoRA params on the JSON result</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="map">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What got mapped</h2>
+          <p class="section-note">The atlas links behavior to components, training changes, activations, and interventions. The core measurements are causal: remove, patch, steer, train, compare.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <span class="tag high">Ablation</span>
+            <h3>Which layers matter?</h3>
+            <p>Residual, MLP, head, module, and position-specific ablations measure how much output distributions move when a component is removed.</p>
+          </article>
+          <article class="card">
+            <span class="tag high">Patching</span>
+            <h3>Can clean activations recover behavior?</h3>
+            <p>Activation patching tests whether a component carries behavior by transferring clean or trained activations into a different run.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">Training</span>
+            <h3>Where does LoRA write?</h3>
+            <p>Adapters are trained on controlled task families, then compared against the base model by layer, module, norm, and downstream behavior.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">Steering</span>
+            <h3>Can directions move behavior?</h3>
+            <p>Activation additions test whether a direction can increase, suppress, or damage a behavior. Steering claims remain control-sensitive.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Formats</span>
+            <h3>What data shape trains cleanly?</h3>
+            <p>The data-format ablation holds content fixed across 6 formats. Training loss is real. Behavioral judging is still pending real eval runs.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Negative results</span>
+            <h3>What failed?</h3>
+            <p>Full SFT OOMed on 8GB VRAM, naive layer skipping broke outputs, and some early patching and scoring setups were not useful.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="claims">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>The claims I would share</h2>
+          <p class="section-note">These are the claims that survive the current audit. Confidence is intentionally conservative.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Claim</th>
+                <th>Evidence</th>
+                <th>Confidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Qwen2.5-0.5B has a stable L2 causal hub under the main suite.</strong></td>
+                <td>L2 is top under ablation across 12 families. Phase 3 replicated hub=L2 across seeds 42, 137, and 2026 with std=0.0. Position-specific ablation shows first-token and last-token effects, not a uniform layer.</td>
+                <td><span class="tag high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Qwen hub location changes with scale and task suite breadth.</strong></td>
+                <td>Full-suite hubs: Qwen2.5-0.5B L2, Qwen2.5-1.5B L14, Qwen2.5-3B L34. Each replicated across 3 seeds with std=0.0. The 1.5B hub was revised from L26 to L14 after widening the suite.</td>
+                <td><span class="tag high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Atlas-guided LoRA is parameter-efficient on JSON schema following.</strong></td>
+                <td>On Qwen2.5-0.5B JSON, atlas-guided LoRA used 319K trainable params and reached exact_match=1.000. All-linear also reached 1.000 but used 4.4M params. That is 13.8x more parameters.</td>
+                <td><span class="tag high">High for JSON</span></td>
+              </tr>
+              <tr>
+                <td><strong>Generic conclusions do not transfer cleanly across tasks.</strong></td>
+                <td>Factual and code tasks did not match the clean JSON story. For code semantics, all-linear won exact match; atlas-guided had lower loss than random-matched but did not reach exact-match parity.</td>
+                <td><span class="tag medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Adapter effects are late-layer effects, not upstream propagation.</strong></td>
+                <td>Adapter-only ablation on the JSON adapter gives norm-effect correlation around 0.85, with effects concentrated around L19-L23. The older "norm-effect separation" story is refuted.</td>
+                <td><span class="tag medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Naive layer skipping is not a free speedup.</strong></td>
+                <td>Layer skipping produced 0% top-5 token overlap across tested skip configs in the audited claim. Recovery fine-tuning is still open work.</td>
+                <td><span class="tag high">High negative result</span></td>
+              </tr>
+              <tr>
+                <td><strong>4-bit NF4 is the practical inference choice in the tested 1.5B setup.</strong></td>
+                <td>Qwen2.5-1.5B bf16 ran at 18.8 tok/s, 4-bit NF4 at 17.1 tok/s, and 8-bit at 9.0 tok/s. Quality stayed close in the qualitative checks. Causal-surface drift is still under test.</td>
+                <td><span class="tag medium">Medium-high</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How the story changed</h2>
+          <p class="section-note">The useful part of the project is not that every early guess held up. Several did not. That is the point of the atlas.</p>
+        </div>
+        <div class="timeline">
+          <div class="step">
+            <strong>Phase 1</strong>
+            <p>Initial Qwen2.5-0.5B atlas. Found L2, LoRA rewiring, late-layer trained activations, and a suspiciously strong factual knockout result.</p>
+          </div>
+          <div class="step">
+            <strong>Phase 2</strong>
+            <p>Scale and controls. Some claims held; some shifted. SmolLM2 did not support a simple universal hub rule.</p>
+          </div>
+          <div class="step">
+            <strong>Phase 3</strong>
+            <p>Multi-seed replication and practical tests. The strongest result is atlas-guided LoRA for JSON with 13.8x fewer parameters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Side results worth keeping</h2>
+          <p class="section-note">These are useful, but I would not sell them as final laws.</p>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <span class="tag medium">Hybrid model</span>
+            <h3>LFM2.5-230M behaves differently from Qwen.</h3>
+            <p>In the LFM2.5-230M pass, L0 had the largest measured effect and early-layer steering moved outputs more. This used a corrected operator/MLP hook because full-layer zeroing caused cascade-zero artifacts.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Data format</span>
+            <h3>Format affects training loss, but behavior is not settled.</h3>
+            <p>The 6-format ablation holds content fixed. Multi-turn verbose gave the lowest training loss in the current run. The mock-judge data is pipeline validation only, not behavioral evidence.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">Steering</span>
+            <h3>Steering can work, but controls matter.</h3>
+            <p>Steering looked stronger when tested at the right layers in larger Qwen models. Random-vector and shuffled-label controls are still required before treating this as a clean task-specific intervention.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Prompt length</span>
+            <h3>Short prompts are not the whole story.</h3>
+            <p>Long-task checks suggest some hub locations and steering effects change with prompt length. This limits how far short synthetic prompts can be stretched.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="caveats">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What I do not claim</h2>
+          <p class="section-note">This is the part that keeps the page honest.</p>
+        </div>
+        <div class="claim-list">
+          <div class="claim">
+            <div class="level">No universal law</div>
+            <p>The hub locations are model-specific. Even within Qwen, scale and training change the answer. Across architectures, the story changes again.</p>
+          </div>
+          <div class="claim">
+            <div class="level">No probe-only claims</div>
+            <p>The page does not rely on attention maps, probes, or SAE labels alone. Claims need an intervention, a metric, and a control path.</p>
+          </div>
+          <div class="claim">
+            <div class="level">No hidden nulls</div>
+            <p>Full SFT did not fit on 8GB VRAM. Full-residual patching was trivial. Early clean/corrupt pairs had tokenization problems. JSON knockout had limited room to suppress targets.</p>
+          </div>
+          <div class="claim">
+            <div class="level">No publication claim yet</div>
+            <p>This is a reproducible research project, not a finished paper. The strongest results are ready to build on; several controls are still open.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Practical rules</h2>
+          <p class="section-note">What I would actually do if I had to edit a small model tomorrow.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>1. Map first.</h3>
+            <p>Run ablation and patching on the exact model, task family, prompt style, and quantization you plan to use.</p>
+          </article>
+          <article class="card">
+            <h3>2. Use a broad task suite.</h3>
+            <p>The 1.5B hub moved from L26 to L14 when the suite widened. Narrow suites can give confident wrong answers.</p>
+          </article>
+          <article class="card">
+            <h3>3. Target adapters by evidence.</h3>
+            <p>Atlas-guided LoRA was clearly parameter-efficient for JSON. Do not assume the same recipe wins every task.</p>
+          </article>
+          <article class="card">
+            <h3>4. Treat steering as fragile.</h3>
+            <p>Layer, strength, prompt length, and quantization all matter. Add random-vector and shuffled-label controls.</p>
+          </article>
+          <article class="card">
+            <h3>5. Do not skip layers blindly.</h3>
+            <p>The naive skip experiments failed hard. If you want speed, test recovery fine-tuning rather than deleting layers and hoping.</p>
+          </article>
+          <article class="card">
+            <h3>6. Log the misses.</h3>
+            <p>The negative results were not cleanup. They changed the method and killed bad claims.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>MI-Atlas</strong> by Bilawal Riaz. Built from the public experiment registry, claims audit, and Phase 3 notes.</p>
+      <p><a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">Repository</a> | <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration/blob/main/claims.md">Claims audit</a> | <a href="06-phase3-gap-closure.html">Detailed Phase 3 page</a></p>
+    </div>
+  </footer>
+</body>
+</html>
