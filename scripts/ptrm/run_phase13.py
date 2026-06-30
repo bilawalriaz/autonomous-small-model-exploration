@@ -910,11 +910,14 @@ EXPERIMENT_MAP = {
 def main():
     parser = argparse.ArgumentParser(description="Phase 13: PTRM-Inspired Experiments")
     parser.add_argument("--experiment", "-e", choices=list(EXPERIMENT_MAP.keys()),
-                        required=True, help="Which experiment to run")
+                        default=None, help="Which experiment to run")
     parser.add_argument("--device", default="cuda:0", help="CUDA device")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
     parser.add_argument("--all", action="store_true", help="Run all experiments sequentially")
     args = parser.parse_args()
+
+    if not args.experiment and not args.all:
+        parser.error("Must specify --experiment or --all")
 
     np.random.seed(args.seed)
     torch.manual_seed(args.seed)
