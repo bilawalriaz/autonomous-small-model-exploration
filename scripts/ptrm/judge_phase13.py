@@ -45,9 +45,15 @@ PAIRWISE_SYSTEM = (
 
 def call_judge(api_url: str, api_key: str, model: str, system: str, user: str, max_tokens: int = 2048) -> dict:
     """Call the judge API."""
+    import requests
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["Authorization"] = f"Bearer {api_key}"
+
+    # Strip trailing /v1 since we append /v1/chat/completions
+    base = api_url.rstrip("/")
+    if base.endswith("/v1"):
+        base = base[:-3]
 
     payload = {
         "model": model,
@@ -59,7 +65,7 @@ def call_judge(api_url: str, api_key: str, model: str, system: str, user: str, m
         "max_tokens": max_tokens,
     }
 
-    resp = requests.post(f"{api_url}/v1/chat/completions", json=payload, headers=headers, timeout=120)
+    resp = requests.post(f"{base}/v1/chat/completions", json=payload, headers=headers, timeout=120)
     resp.raise_for_status()
     msg = resp.json()["choices"][0]["message"]
     content = msg.get("content")
