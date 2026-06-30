@@ -1,124 +1,124 @@
 {
   "run_id": "lfm2_230m_surgical_bsmagpie_v1",
   "pointwise": {
-    "count": 153,
+    "count": 139,
     "avg_scores": {
-      "correctness": 3.098,
-      "instruction_following": 2.954,
-      "output_format": 3.026,
-      "concision": 3.183,
-      "usefulness": 3.183,
-      "hallucination_risk": 2.935,
-      "overall": 2.719
+      "correctness": 2.239,
+      "instruction_following": 2.0,
+      "output_format": 2.536,
+      "concision": 2.174,
+      "usefulness": 2.065,
+      "hallucination_risk": 2.804,
+      "overall": 2.007
     },
     "category_scores": {
       "instruction_following": {
         "avg_scores": {
-          "correctness": 3.706,
-          "instruction_following": 2.765,
-          "output_format": 2.824,
-          "concision": 3.529,
-          "usefulness": 3.235,
-          "hallucination_risk": 2.941,
-          "overall": 2.353
+          "correctness": 1.765,
+          "instruction_following": 1.118,
+          "output_format": 1.059,
+          "concision": 1.118,
+          "usefulness": 1.412,
+          "hallucination_risk": 2.588,
+          "overall": 1.294
         },
         "count": 17
       },
       "json_structured": {
         "avg_scores": {
-          "correctness": 2.353,
-          "instruction_following": 3.353,
-          "output_format": 3.294,
-          "concision": 3.0,
-          "usefulness": 3.765,
-          "hallucination_risk": 3.0,
-          "overall": 3.118
+          "correctness": 2.533,
+          "instruction_following": 1.933,
+          "output_format": 1.733,
+          "concision": 1.533,
+          "usefulness": 2.467,
+          "hallucination_risk": 3.4,
+          "overall": 2.133
         },
-        "count": 17
+        "count": 15
       },
       "gamefaq_extraction": {
         "avg_scores": {
-          "correctness": 3.471,
-          "instruction_following": 2.529,
-          "output_format": 3.529,
-          "concision": 3.471,
-          "usefulness": 2.941,
-          "hallucination_risk": 3.0,
-          "overall": 1.941
+          "correctness": 1.25,
+          "instruction_following": 1.312,
+          "output_format": 1.5,
+          "concision": 1.562,
+          "usefulness": 1.312,
+          "hallucination_risk": 2.0,
+          "overall": 1.312
         },
-        "count": 17
+        "count": 16
       },
       "coding": {
         "avg_scores": {
-          "correctness": 2.941,
-          "instruction_following": 2.588,
-          "output_format": 2.824,
-          "concision": 3.529,
-          "usefulness": 3.176,
-          "hallucination_risk": 2.647,
-          "overall": 2.941
+          "correctness": 2.077,
+          "instruction_following": 1.923,
+          "output_format": 2.231,
+          "concision": 2.0,
+          "usefulness": 1.923,
+          "hallucination_risk": 2.846,
+          "overall": 1.923
         },
-        "count": 17
+        "count": 13
       },
       "deobfuscation": {
         "avg_scores": {
-          "correctness": 3.294,
-          "instruction_following": 2.882,
-          "output_format": 3.0,
-          "concision": 2.588,
-          "usefulness": 3.0,
-          "hallucination_risk": 2.824,
-          "overall": 3.176
+          "correctness": 2.438,
+          "instruction_following": 2.375,
+          "output_format": 3.438,
+          "concision": 3.188,
+          "usefulness": 2.375,
+          "hallucination_risk": 3.062,
+          "overall": 2.312
         },
         "count": 17
       },
       "reasoning": {
         "avg_scores": {
-          "correctness": 3.176,
-          "instruction_following": 3.353,
-          "output_format": 2.706,
-          "concision": 2.941,
-          "usefulness": 3.824,
-          "hallucination_risk": 3.471,
-          "overall": 2.412
+          "correctness": 1.267,
+          "instruction_following": 2.067,
+          "output_format": 3.133,
+          "concision": 2.333,
+          "usefulness": 1.2,
+          "hallucination_risk": 2.0,
+          "overall": 1.533
         },
-        "count": 17
+        "count": 15
       },
       "concision_antislip": {
         "avg_scores": {
-          "correctness": 3.118,
-          "instruction_following": 2.588,
-          "output_format": 3.0,
-          "concision": 3.118,
-          "usefulness": 2.882,
-          "hallucination_risk": 3.765,
-          "overall": 2.412
+          "correctness": 3.714,
+          "instruction_following": 2.429,
+          "output_format": 3.571,
+          "concision": 2.714,
+          "usefulness": 3.429,
+          "hallucination_risk": 4.286,
+          "overall": 3.071
         },
-        "count": 17
+        "count": 14
       },
       "factual_qa": {
         "avg_scores": {
-          "correctness": 3.118,
-          "instruction_following": 3.529,
-          "output_format": 2.765,
-          "concision": 3.294,
+          "correctness": 3.353,
+          "instruction_following": 3.176,
+          "output_format": 3.824,
+          "concision": 2.176,
           "usefulness": 2.941,
-          "hallucination_risk": 2.529,
-          "overall": 2.941
+          "hallucination_risk": 3.235,
+          "overall": 2.882
         },
         "count": 17
       },
       "multi_turn": {
         "avg_scores": {
-          "correctness": 2.706,
-          "instruction_following": 3.0,
-          "output_format": 3.294,
-          "concision": 3.176,
-          "usefulness": 2.882,
-          "hallucination_risk": 2.235,
-          "overall": 3.176
+          "correctness": 1.8,
+          "instruction_following": 1.667,
+          "output_format": 2.4,
+          "concision": 3.067,
+          "usefulness": 1.6,
+          "hallucination_risk": 1.933,
+          "overall": 1.667
         },
-        "count": 17
+        "count": 15
       }
     }
   },
@@ -133,21 +133,76 @@
   },
   "comparisons": {
     "lfm2_230m_base_20260629": {
-      "win_rate": 0.5,
+      "win_rate": 0.388,
       "regression": {
-        "regressions": 0,
+        "regressions": 9,
         "improvements": 0,
-        "regression_details": [],
+        "regression_details": [
+          {
+            "category": "coding",
+            "current_overall": 1.923,
+            "baseline_overall": 3.133,
+            "delta": -1.21
+          },
+          {
+            "category": "gamefaq_extraction",
+            "current_overall": 1.312,
+            "baseline_overall": 2.4,
+            "delta": -1.088
+          },
+          {
+            "category": "multi_turn",
+            "current_overall": 1.667,
+            "baseline_overall": 3.235,
+            "delta": -1.568
+          },
+          {
+            "category": "json_structured",
+            "current_overall": 2.133,
+            "baseline_overall": 3.824,
+            "delta": -1.691
+          },
+          {
+            "category": "deobfuscation",
+            "current_overall": 2.312,
+            "baseline_overall": 2.867,
+            "delta": -0.555
+          },
+          {
+            "category": "concision_antislip",
+            "current_overall": 3.071,
+            "baseline_overall": 4.706,
+            "delta": -1.635
+          },
+          {
+            "category": "reasoning",
+            "current_overall": 1.533,
+            "baseline_overall": 2.176,
+            "delta": -0.643
+          },
+          {
+            "category": "factual_qa",
+            "current_overall": 2.882,
+            "baseline_overall": 3.75,
+            "delta": -0.868
+          },
+          {
+            "category": "instruction_following",
+            "current_overall": 1.294,
+            "baseline_overall": 2.25,
+            "delta": -0.956
+          }
+        ],
         "improvement_details": []
       },
       "baseline_avg_scores": {
-        "correctness": 3.098,
-        "instruction_following": 2.954,
-        "output_format": 3.026,
-        "concision": 3.183,
-        "usefulness": 3.183,
-        "hallucination_risk": 2.935,
-        "overall": 2.719
+        "correctness": 3.138,
+        "instruction_following": 3.448,
+        "output_format": 4.138,
+        "concision": 3.628,
+        "usefulness": 3.2,
+        "hallucination_risk": 3.476,
+        "overall": 3.166
       }
     }
   },
@@ -398,6 +453,6 @@
     }
   },
   "judge_source_summary": {
-    "mock": 153
+    "api": 139
   }
 }
