@@ -440,3 +440,5 @@ Status: PLAUSIBLE (loss only). The "small-model-native" style may be "more conte
 ## Documentation Note (2026-06-30)
 
 The one-page MI-Atlas share page and deploy/sync repair did not add, confirm, reject, or modify any research hypothesis. It presents the current audited claim set and keeps Phase 9 behavioral claims marked as unresolved.
+
+The later LFM2 SFT expansion on the same page also leaves hypothesis status unchanged. It restates existing Phase 8/9 loss evidence and keeps H-P9 behavioral questions unresolved.

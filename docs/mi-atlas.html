@@ -181,6 +181,7 @@
       <div class="nav-links">
         <a href="#map">Map</a>
         <a href="#claims">Claims</a>
+        <a href="#sft">SFT</a>
         <a href="#caveats">Caveats</a>
         <a href="https://github.com/bilawalriaz/autonomous-small-model-exploration">GitHub</a>
       </div>
@@ -202,7 +203,7 @@
         <div class="metric-strip" aria-label="Project metrics">
           <div class="metric"><strong>5</strong><span>models or model families mapped</span></div>
           <div class="metric"><strong>12</strong><span>default task families in the main suite</span></div>
-          <div class="metric"><strong>0.0</strong><span>hub-location std across 3 Qwen seeds</span></div>
+          <div class="metric"><strong>39</strong><span>LFM2.5-230M SFT runs in the sweep</span></div>
           <div class="metric"><strong>13.8x</strong><span>fewer LoRA params on the JSON result</span></div>
         </div>
       </div>
@@ -330,6 +331,47 @@
       </div>
     </section>
 
+    <section id="sft">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>LFM2 SFT sweep</h2>
+          <p class="section-note">This is the applied training branch of the atlas: 39 supervised fine-tuning runs on LFM2.5-230M across datasets, optimizers, LoRA rank, target modules, learning rate, steps, and data volume.</p>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <span class="tag high">Training loss</span>
+            <h3>Dataset choice moved the result most.</h3>
+            <p>In the Phase 8 sweep, smol-magpie-ultra reached loss 1.25 while Alpaca sat around 6.07. The dataset gap was much larger than optimizer or learning-rate gaps.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">Optimizer</span>
+            <h3>Adafactor was the practical default.</h3>
+            <p>On smol-magpie-ultra, Adafactor gave loss 1.267 and KL 0.109 while using less memory than AdamW. Lion drifted more in this setup.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">LoRA rank</span>
+            <h3>Rank 8 was the efficiency point.</h3>
+            <p>Higher rank helped less with each step up. Rank 8 used 213K trainable params in the sweep; rank 32 used 852K for a smaller additional loss gain.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">Target modules</span>
+            <h3>Hub-targeted LoRA kept drift low.</h3>
+            <p>The hub plus o_proj setup used about 65K params and KL 0.039. All-linear used far more params and moved the model more, while reaching lower loss.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Format ablation</span>
+            <h3>Verbose won loss after content control.</h3>
+            <p>When the same 300 examples were rendered into 6 formats, multi-turn verbose had the lowest loss at 1.372. Bad-format control was second, which is why loss cannot be treated as quality.</p>
+          </article>
+          <article class="card">
+            <span class="tag caution">Evidence limit</span>
+            <h3>Behavioral ranking is not settled.</h3>
+            <p>Phase 9R fixed the eval stack and marked mock-judge numbers as pipeline validation only. The page treats loss rankings as real and behavioral claims as pending real eval.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="wrap">
         <div class="section-head">
@@ -346,6 +388,11 @@
             <span class="tag caution">Data format</span>
             <h3>Format affects training loss, but behavior is not settled.</h3>
             <p>The 6-format ablation holds content fixed. Multi-turn verbose gave the lowest training loss in the current run. The mock-judge data is pipeline validation only, not behavioral evidence.</p>
+          </article>
+          <article class="card">
+            <span class="tag medium">SFT recipe</span>
+            <h3>The useful LFM2 recipe is narrow.</h3>
+            <p>For memory-constrained LFM2 SFT, the best current default is good multi-turn data, Adafactor, rank 8, and hub-targeted modules when low drift matters.</p>
           </article>
           <article class="card">
             <span class="tag medium">Steering</span>

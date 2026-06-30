@@ -119,3 +119,5 @@ Qwen2.5-0.5B has a clear hierarchical component structure with L2 as a universal
 ## Documentation update
 
 2026-06-30: Added and deployed a single shareable MI-Atlas page at `docs/mi-atlas.html`, linked it from the docs index/navbar, and mirrored it to `pretty-blog-python/pages/mi-atlas.html`. This is a presentation artifact only. It uses the audited claim set and Phase 9 caveats already recorded here; no research claim, metric, confidence level, or negative result changed.
+
+2026-06-30: Expanded the share page with a dedicated LFM2.5-230M SFT sweep section. The added copy summarizes existing Phase 8/9 evidence only: 39 SFT runs, dataset choice dominating loss, Adafactor as the practical optimizer, rank 8 as the efficiency point, hub-targeted LoRA as the low-drift option, and the explicit caveat that behavioral format ranking remains unsettled.

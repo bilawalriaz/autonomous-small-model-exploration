@@ -82,7 +82,7 @@
 | Artifact | Path | Status |
 |----------|------|--------|
 | Published site index | docs/index.html | Updated with Phase 3 link and Phase 1-3 summary |
-| One-page MI-Atlas share page | docs/mi-atlas.html | Shareable public summary of the atlas, audited claims, caveats, negative results, and practical rules. No RAG benchmark content included |
+| One-page MI-Atlas share page | docs/mi-atlas.html | Shareable public summary of the atlas, audited claims, LFM2 SFT sweep, caveats, negative results, and practical rules. No RAG benchmark content included |
 | Shared HYFL-inspired stylesheet | docs/assets/hyfl-mi.css | New shared responsive design layer for all published pages |
 | Phase 2 page | docs/05-phase2-repeatability.html | Updated to link Phase 3 and note the L26 -> L14 revision |
 | Phase 3 page | docs/06-phase3-gap-closure.html | Restyled to match the site and list remaining work |
