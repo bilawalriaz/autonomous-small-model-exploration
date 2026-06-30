@@ -498,6 +498,46 @@
   </div>
 </section>
 
+<!-- CROSS-MODEL COMPARISON -->
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Cross-Model Comparison: LFM2.5 vs Qwen2.5</h2>
+    <p class="section-desc">Same experiments, same eval prompts, same noise parameters. The technique's impact depends heavily on baseline model capability.</p>
+
+    <div class="overflow-x">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>LFM2.5-230M</th><th>Qwen2.5-0.5B-Instruct</th><th>Interpretation</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Baseline accuracy</td><td style="color: #c62828; font-weight: 700;">3.3%</td><td style="color: #2e7d32; font-weight: 700;">80.0%</td><td>Qwen is 24× better at baseline</td></tr>
+          <tr><td>Noise + K=2</td><td>70.0%</td><td>73.3%</td><td>Similar at low K</td></tr>
+          <tr><td>Noise + K=5</td><td>76.7%</td><td>90.0%</td><td>Qwen benefits more from diversity</td></tr>
+          <tr><td>Noise + K=10</td><td>80.0%</td><td>96.7%</td><td>Qwen near ceiling</td></tr>
+          <tr><td>Noise + K=50</td><td>83.3%</td><td style="color: #2e7d32; font-weight: 700;">100%</td><td>Qwen hits perfect</td></tr>
+          <tr><td>Improvement from noise</td><td style="color: #2e7d32; font-weight: 700;">+76.7pp (24×)</td><td style="color: #e65100;">+16.7pp (1.2×)</td><td>Biggest gains on weakest model</td></tr>
+          <tr><td>Optimal σ</td><td>0.005–0.015</td><td>0.005</td><td>Qwen more sensitive to noise</td></tr>
+          <tr><td>Sigma cliff</td><td>0.02</td><td>0.02</td><td>Same cliff point</td></tr>
+          <tr><td>Baseline correct prompts</td><td>2/20</td><td>15/20</td><td>Qwen already good at extraction</td></tr>
+          <tr><td>Noise benefit on wrong prompts</td><td>42.7% correct</td><td>49.6% correct</td><td>Similar basin escape rate</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-icon">🔑</div>
+      <div class="callout-body">
+        <strong>Key insight:</strong> Stochastic inference amplification is most valuable for models near the decision boundary. 
+        LFM2.5 (3.3% baseline) gets a 24× boost. Qwen (80% baseline) gets a modest 1.2× boost. 
+        Both models show the same basin escape mechanism — the difference is how often they start in a bad basin.
+        <br><br>
+        <strong>For production:</strong> If your model already works well (>80%), noise adds marginal value. 
+        If your model struggles (<50%), noise + selection is transformative. K=2 at 2× compute is the sweet spot for cost-sensitive deployments.
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- IMPLICATIONS -->
 <section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
