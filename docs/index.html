@@ -181,15 +181,16 @@
       <div class="mi-nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="mi-atlas.html">Start</a>
-        <a href="01-qwen05b-analysis.html">0.5B Analysis</a>
-        <a href="02-qwen15b-analysis.html">1.5B Analysis</a>
-        <a href="03-comparison-analysis.html">Comparison</a>
-        <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="01-qwen05b-analysis.html">0.5B</a>
+        <a href="02-qwen15b-analysis.html">1.5B</a>
+        <a href="03-comparison-analysis.html">Compare</a>
+        <a href="04-qualitative-analysis.html">Qual</a>
         <a href="05-phase2-repeatability.html">Phase 2</a>
         <a href="06-phase3-gap-closure.html">Phase 3</a>
-        <a href="07-lfm2-230m-atlas.html">LFM2.5-230M</a>
-        <a href="08-lfm2-230m-sft-sweep.html">LFM2 SFT</a>
-        <a href="09-data-format-ablation.html">Format Ablation</a>
+        <a href="07-lfm2-230m-atlas.html">LFM2</a>
+        <a href="08-lfm2-230m-sft-sweep.html">SFT</a>
+        <a href="09-data-format-ablation.html">Format</a>
+        <a href="rag-benchmark.html">RAG</a>
       </div>
     </div>
   </div>
@@ -277,7 +278,7 @@
         <div class="paper-num" style="color: #1677ff;">07 · NEW ARCHITECTURE</div>
         <h3>LFM2.5-230M: Hybrid Architecture Atlas</h3>
         <div class="paper-meta">230M params · 14 layers (8 conv + 6 attn) · Liquid AI</div>
-        <div class="paper-tagline">First MI atlas of a hybrid conv+attention model. L0 (conv) is the universal hub. Early layers 3.3× more important than late. Conv MLPs 2.12× stronger than attn MLPs. L4_H11 universal attention head. Steering effective at early layers (opposite of Qwen). Atlas-guided LoRA: 65K params, 14× less behavior shift.</div>
+        <div class="paper-tagline">Hybrid conv+attention atlas for LFM2.5-230M. L0 (conv) is the strongest measured hub. Early layers are 3.3× more important than late in this run. Conv MLPs are 2.12× stronger than attention MLPs. L4_H11 is the strongest recurring head. Atlas-guided LoRA: 65K params, 14× less behavior shift.</div>
       </a>
       <a class="paper-card" href="08-lfm2-230m-sft-sweep.html" style="border-left: 4px solid #52c41a;">
         <div class="paper-num" style="color: #52c41a;">08 · SFT SWEEP</div>

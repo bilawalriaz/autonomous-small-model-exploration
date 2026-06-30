@@ -45,13 +45,37 @@
       .metric-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+  <link rel="stylesheet" href="assets/hyfl-mi.css">
 </head>
 <body>
+
+<!-- NAV -->
+<nav class="mi-nav">
+  <div class="container is-max-desktop">
+    <div class="mi-nav-inner">
+      <a href="index.html" class="mi-nav-brand"><span class="swi-gradient">MI-Atlas</span></a>
+      <div class="mi-nav-links">
+        <a href="index.html">Home</a>
+        <a href="mi-atlas.html">Start</a>
+        <a href="01-qwen05b-analysis.html">0.5B</a>
+        <a href="02-qwen15b-analysis.html">1.5B</a>
+        <a href="03-comparison-analysis.html">Compare</a>
+        <a href="04-qualitative-analysis.html">Qual</a>
+        <a href="05-phase2-repeatability.html">Phase 2</a>
+        <a href="06-phase3-gap-closure.html">Phase 3</a>
+        <a href="07-lfm2-230m-atlas.html" class="active">LFM2</a>
+        <a href="08-lfm2-230m-sft-sweep.html">SFT</a>
+        <a href="09-data-format-ablation.html">Format</a>
+        <a href="rag-benchmark.html">RAG</a>
+      </div>
+    </div>
+  </div>
+</nav>
 <section class="section" style="max-width: 960px; margin: 0 auto; padding: 2rem 1.2rem;">
   <a class="back-link" href="index.html"><i class="fas fa-arrow-left"></i> Back to MI-Atlas</a>
 
   <h1 class="title-main">LFM2.5-230M:<br>Hybrid Architecture Atlas</h1>
-  <p class="subtitle">The first mechanistic interpretability atlas of a hybrid conv+attention language model. LiquidAI's 230M-parameter on-device model with gated short convolutions and grouped query attention.</p>
+  <p class="subtitle">A causal atlas of LiquidAI's 230M-parameter hybrid conv+attention language model, with gated short convolutions and grouped query attention.</p>
 
   <div class="metric-grid">
     <div class="metric-card"><div class="num">229.7M</div><div class="label">Parameters</div></div>
@@ -63,7 +87,7 @@
   <!-- TL;DR -->
   <div class="tldr-box">
     <h3><i class="fas fa-bolt"></i> Key Findings</h3>
-    <div class="finding"><div class="badge badge-high">1</div><div class="finding-text"><strong>L0 (conv) is the universal hub.</strong> The very first layer — a gated convolution — contributes more to model output than any other layer (skip KL=82.9, 1.87× stronger than the next). This is radically different from pure transformers where hubs sit at ~8% depth.</div></div>
+    <div class="finding"><div class="badge badge-high">1</div><div class="finding-text"><strong>L0 (conv) is the universal hub.</strong> The first layer, a gated convolution, contributes more to model output than any other layer in this run (skip KL=82.9, 1.87× stronger than the next). That differs from the Qwen2.5-0.5B hub at ~8% depth.</div></div>
     <div class="finding"><div class="badge badge-high">2</div><div class="finding-text"><strong>Early layers are 3.3× more important than late layers.</strong> L0-L5 (quiet phase, low residual norms) dominate processing. L6-L13 (high phase, 10× higher norms) handle refinement. The residual norm explosion marks a transition from critical processing to refinement.</div></div>
     <div class="finding"><div class="badge badge-high">3</div><div class="finding-text"><strong>Conv MLPs are 2.12× stronger than attention MLPs.</strong> The MLP in convolution layers contributes more than in attention layers. Conv layers work primarily through their MLPs; attention layers work through their operators.</div></div>
     <div class="finding"><div class="badge badge-new">4</div><div class="finding-text"><strong>L4_H11 is the universal attention head.</strong> Head 11 in layer 4 is the #1 or #2 head across 7/9 task families. H11 is also the best head in ALL 6 attention layers — an architecturally special head index.</div></div>
@@ -232,12 +256,12 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
   </p>
   <!-- DEEP PROBE -->
   <h2 class="section-label"><i class="fas fa-microscope"></i> Deep Probe: Beyond Standard MI</h2>
-  <p>10 experiments going beyond the standard MI-Atlas skill, producing the most comprehensive single small-model analysis ever published. 18 result files, 23 total experiments.</p>
+  <p>10 follow-up probes beyond the standard MI-Atlas pass, with 18 result files and 23 total experiments.</p>
 
   <div class="tldr-box" style="border-left: 4px solid #d4380d;">
     <h3><i class="fas fa-bolt"></i> Headline Finding: Residual Stream Locks In at L5</h3>
-    <p><strong>CKA similarity analysis reveals that layers L5 through L13 have CKA=1.0000</strong> — their residual stream representations are mathematically identical. The model builds its representation in L0-L4, locks it in at L5, and layers L6-L13 refine it without changing the structure. This has never been documented in any model before.</p>
-    <p style="margin-top: 0.5rem;">Implication: L5 is effectively the "last real layer." The 8 layers after L5 are performing identical transformations on the same representation. This explains why the residual norm jump happens at L5 — it's the point where the representation stabilizes.</p>
+    <p><strong>CKA similarity analysis gives rounded CKA=1.0000 from L5 through L13.</strong> In this run, the residual stream representation appears to stabilize after L5. Layers L6-L13 still affect logits, but CKA does not separate their representations at the reported precision.</p>
+    <p style="margin-top: 0.5rem;">Implication: L5 looks like a representation transition point in this setup. The later layers may be refining a stable representation rather than building a new one from scratch.</p>
   </div>
 
   <!-- CKA Matrix -->
@@ -389,7 +413,7 @@ L13 <span style="color:#52c41a">CONV</span>  (12.06M)
 
   <div class="tldr-box" style="border-left: 4px solid #52c41a;">
     <h3><i class="fas fa-lightbulb"></i> Finetuning Key Insight</h3>
-    <p><strong>Loss keeps decreasing with more training, but KL plateaus around 0.01-0.02.</strong> This means the model LEARNS the task without dramatic behavior shift — the hub structure is preserved even after 500 steps of training. This is excellent for practical deployment: you can finetune aggressively on your task without destroying the model's general capabilities.</p>
+    <p><strong>Loss keeps decreasing with more training, but KL plateaus around 0.01-0.02.</strong> In this setup, the model improves on the training objective without a large measured distribution shift. That is a useful signal for controlled fine-tuning, but it still needs task-level eval before becoming a deployment rule.</p>
     <p style="margin-top: 0.5rem;"><strong>Recommended config:</strong> lr=2e-4, r=8, 200-500 steps, target hub layers (L0,L2,L4,L5) with o_proj+MLP. This gives good task learning (loss 5.3-6.0) with minimal behavior shift (KL 0.01-0.02).</p>
   </div>
 

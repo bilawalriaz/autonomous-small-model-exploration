@@ -82,15 +82,15 @@
 | Artifact | Path | Status |
 |----------|------|--------|
 | Published site index | docs/index.html | Updated with Phase 3 link and Phase 1-3 summary |
-| One-page MI-Atlas share page | docs/mi-atlas.html | Shareable public summary of the atlas, audited claims, LFM2 SFT sweep, caveats, negative results, and practical rules. No RAG benchmark content included |
-| Shared HYFL-inspired stylesheet | docs/assets/hyfl-mi.css | New shared responsive design layer for all published pages |
+| One-page MI-Atlas share page | docs/mi-atlas.html | Shareable public summary of the atlas, audited claims, LFM2 SFT sweep, caveats, negative results, and practical rules. Every audited claim links to full details. No RAG benchmark content included |
+| Shared HYFL-inspired stylesheet | docs/assets/hyfl-mi.css | Shared responsive design layer for all published pages, including unified nav styling, mobile table/code wrapping, neutral cards, and removal of LFM2 colored row borders |
 | Phase 2 page | docs/05-phase2-repeatability.html | Updated to link Phase 3 and note the L26 -> L14 revision |
 | Phase 3 page | docs/06-phase3-gap-closure.html | Restyled to match the site and list remaining work |
-| Phase 7 LFM2 Atlas | docs/07-lfm2-230m-atlas.html | Complete atlas of LFM2.5-230M |
+| Phase 7 LFM2 Atlas | docs/07-lfm2-230m-atlas.html | Complete atlas of LFM2.5-230M, now using shared nav/style and conservative visible summary wording |
 | Phase 8 SFT Sweep | docs/08-lfm2-230m-sft-sweep.html | 39 SFT experiments, best recipe identified |
 | Phase 9 Format Ablation | docs/09-data-format-ablation.html | **CAVEAT: contains mock-judge data — see NR014** |
 | Phase 9R Report | reports/09-data-format-ablation.md | Honest report with evidence tiers, training loss only |
-| Bilawal.net mirror source | ../pretty-blog-python/pages/mi-atlas.html | Standalone bilawal.net copy with Swetrix analytics and absolute links back to the research repo/pages |
+| Bilawal.net mirror source | ../pretty-blog-python/pages/mi-atlas.html | Standalone bilawal.net copy with Swetrix analytics and absolute links back to the research repo/pages, including full-detail links for each audited claim |
 | Pre-sync safety branch | backup/pre-sync-20260630-010555 | Local branch preserving the pre-sync MI repo HEAD before merging origin/main |
 | Pre-sync safety stash | stash@{0}: pre-sync-safety-20260630-010555 | Local stash preserving the dirty working tree before the sync/deploy repair |
 

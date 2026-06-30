@@ -114,6 +114,15 @@
     }
     .card h3 { margin: 0 0 8px; font-size: 1.08rem; line-height: 1.25; }
     .card p { margin: 0; color: #3a342f; }
+    .detail-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 10px;
+      color: var(--accent-dark);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration-thickness: 1px;
+    }
     .tag {
       display: inline-flex;
       width: fit-content;
@@ -264,6 +273,7 @@
                 <th>Claim</th>
                 <th>Evidence</th>
                 <th>Confidence</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>
@@ -271,36 +281,43 @@
                 <td><strong>Qwen2.5-0.5B has a stable L2 causal hub under the main suite.</strong></td>
                 <td>L2 is top under ablation across 12 families. Phase 3 replicated hub=L2 across seeds 42, 137, and 2026 with std=0.0. Position-specific ablation shows first-token and last-token effects, not a uniform layer.</td>
                 <td><span class="tag high">High</span></td>
+                <td><a class="detail-link" href="01-qwen05b-analysis.html">Open 0.5B atlas</a></td>
               </tr>
               <tr>
                 <td><strong>Qwen hub location changes with scale and task suite breadth.</strong></td>
                 <td>Full-suite hubs: Qwen2.5-0.5B L2, Qwen2.5-1.5B L14, Qwen2.5-3B L34. Each replicated across 3 seeds with std=0.0. The 1.5B hub was revised from L26 to L14 after widening the suite.</td>
                 <td><span class="tag high">High</span></td>
+                <td><a class="detail-link" href="06-phase3-gap-closure.html">Open Phase 3</a></td>
               </tr>
               <tr>
                 <td><strong>Atlas-guided LoRA is parameter-efficient on JSON schema following.</strong></td>
                 <td>On Qwen2.5-0.5B JSON, atlas-guided LoRA used 319K trainable params and reached exact_match=1.000. All-linear also reached 1.000 but used 4.4M params. That is 13.8x more parameters.</td>
                 <td><span class="tag high">High for JSON</span></td>
+                <td><a class="detail-link" href="06-phase3-gap-closure.html">Open LoRA evidence</a></td>
               </tr>
               <tr>
                 <td><strong>Generic conclusions do not transfer cleanly across tasks.</strong></td>
                 <td>Factual and code tasks did not match the clean JSON story. For code semantics, all-linear won exact match; atlas-guided had lower loss than random-matched but did not reach exact-match parity.</td>
                 <td><span class="tag medium">Medium</span></td>
+                <td><a class="detail-link" href="06-phase3-gap-closure.html">Open task split</a></td>
               </tr>
               <tr>
                 <td><strong>Adapter effects are late-layer effects, not upstream propagation.</strong></td>
                 <td>Adapter-only ablation on the JSON adapter gives norm-effect correlation around 0.85, with effects concentrated around L19-L23. The older "norm-effect separation" story is refuted.</td>
                 <td><span class="tag medium">Medium</span></td>
+                <td><a class="detail-link" href="06-phase3-gap-closure.html">Open adapter notes</a></td>
               </tr>
               <tr>
                 <td><strong>Naive layer skipping is not a free speedup.</strong></td>
                 <td>Layer skipping produced 0% top-5 token overlap across tested skip configs in the audited claim. Recovery fine-tuning is still open work.</td>
                 <td><span class="tag high">High negative result</span></td>
+                <td><a class="detail-link" href="01-qwen05b-analysis.html">Open skip result</a></td>
               </tr>
               <tr>
                 <td><strong>4-bit NF4 is the practical inference choice in the tested 1.5B setup.</strong></td>
                 <td>Qwen2.5-1.5B bf16 ran at 18.8 tok/s, 4-bit NF4 at 17.1 tok/s, and 8-bit at 9.0 tok/s. Quality stayed close in the qualitative checks. Causal-surface drift is still under test.</td>
                 <td><span class="tag medium">Medium-high</span></td>
+                <td><a class="detail-link" href="04-qualitative-analysis.html">Open quant notes</a></td>
               </tr>
             </tbody>
           </table>
@@ -342,31 +359,37 @@
             <span class="tag high">Training loss</span>
             <h3>Dataset choice moved the result most.</h3>
             <p>In the Phase 8 sweep, smol-magpie-ultra reached loss 1.25 while Alpaca sat around 6.07. The dataset gap was much larger than optimizer or learning-rate gaps.</p>
+            <a class="detail-link" href="08-lfm2-230m-sft-sweep.html">Open SFT sweep</a>
           </article>
           <article class="card">
             <span class="tag medium">Optimizer</span>
             <h3>Adafactor was the practical default.</h3>
             <p>On smol-magpie-ultra, Adafactor gave loss 1.267 and KL 0.109 while using less memory than AdamW. Lion drifted more in this setup.</p>
+            <a class="detail-link" href="08-lfm2-230m-sft-sweep.html">Open optimizer table</a>
           </article>
           <article class="card">
             <span class="tag medium">LoRA rank</span>
             <h3>Rank 8 was the efficiency point.</h3>
             <p>Higher rank helped less with each step up. Rank 8 used 213K trainable params in the sweep; rank 32 used 852K for a smaller additional loss gain.</p>
+            <a class="detail-link" href="08-lfm2-230m-sft-sweep.html">Open rank sweep</a>
           </article>
           <article class="card">
             <span class="tag medium">Target modules</span>
             <h3>Hub-targeted LoRA kept drift low.</h3>
             <p>The hub plus o_proj setup used about 65K params and KL 0.039. All-linear used far more params and moved the model more, while reaching lower loss.</p>
+            <a class="detail-link" href="08-lfm2-230m-sft-sweep.html">Open target sweep</a>
           </article>
           <article class="card">
             <span class="tag caution">Format ablation</span>
             <h3>Verbose won loss after content control.</h3>
             <p>When the same 300 examples were rendered into 6 formats, multi-turn verbose had the lowest loss at 1.372. Bad-format control was second, which is why loss cannot be treated as quality.</p>
+            <a class="detail-link" href="09-data-format-ablation.html">Open format ablation</a>
           </article>
           <article class="card">
             <span class="tag caution">Evidence limit</span>
             <h3>Behavioral ranking is not settled.</h3>
             <p>Phase 9R fixed the eval stack and marked mock-judge numbers as pipeline validation only. The page treats loss rankings as real and behavioral claims as pending real eval.</p>
+            <a class="detail-link" href="09-data-format-ablation.html">Open evidence caveat</a>
           </article>
         </div>
       </div>
@@ -383,26 +406,31 @@
             <span class="tag medium">Hybrid model</span>
             <h3>LFM2.5-230M behaves differently from Qwen.</h3>
             <p>In the LFM2.5-230M pass, L0 had the largest measured effect and early-layer steering moved outputs more. This used a corrected operator/MLP hook because full-layer zeroing caused cascade-zero artifacts.</p>
+            <a class="detail-link" href="07-lfm2-230m-atlas.html">Open LFM2 atlas</a>
           </article>
           <article class="card">
             <span class="tag caution">Data format</span>
             <h3>Format affects training loss, but behavior is not settled.</h3>
             <p>The 6-format ablation holds content fixed. Multi-turn verbose gave the lowest training loss in the current run. The mock-judge data is pipeline validation only, not behavioral evidence.</p>
+            <a class="detail-link" href="09-data-format-ablation.html">Open format details</a>
           </article>
           <article class="card">
             <span class="tag medium">SFT recipe</span>
             <h3>The useful LFM2 recipe is narrow.</h3>
             <p>For memory-constrained LFM2 SFT, the best current default is good multi-turn data, Adafactor, rank 8, and hub-targeted modules when low drift matters.</p>
+            <a class="detail-link" href="08-lfm2-230m-sft-sweep.html">Open recipe evidence</a>
           </article>
           <article class="card">
             <span class="tag medium">Steering</span>
             <h3>Steering can work, but controls matter.</h3>
             <p>Steering looked stronger when tested at the right layers in larger Qwen models. Random-vector and shuffled-label controls are still required before treating this as a clean task-specific intervention.</p>
+            <a class="detail-link" href="05-phase2-repeatability.html">Open steering notes</a>
           </article>
           <article class="card">
             <span class="tag caution">Prompt length</span>
             <h3>Short prompts are not the whole story.</h3>
             <p>Long-task checks suggest some hub locations and steering effects change with prompt length. This limits how far short synthetic prompts can be stretched.</p>
+            <a class="detail-link" href="05-phase2-repeatability.html">Open robustness notes</a>
           </article>
         </div>
       </div>

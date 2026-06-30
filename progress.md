@@ -280,3 +280,22 @@ All 6 format variants trained successfully with quality LoRA (r=8, hub layers + 
 3. Aggregate and build Phase 9 report
 4. Test surgical LoRA track
 5. Multi-seed replication if pilot results are interesting
+
+## 2026-06-30 01:34 — GitHub Pages Design Unification and Claim Detail Links
+
+Presentation maintenance completed. No research claims, metrics, confidence levels, or negative results changed.
+
+### Changes made
+- Added explicit full-detail links to every claim row on `docs/mi-atlas.html`.
+- Mirrored the same claim-detail links to `pretty-blog-python/pages/mi-atlas.html` using absolute GitHub Pages URLs.
+- Standardized detailed GitHub Pages nav labels across `docs/*.html`: Home, Start, 0.5B, 1.5B, Compare, Qual, Phase 2, Phase 3, LFM2, SFT, Format, RAG.
+- Added the shared MI-Atlas stylesheet to the LFM2 and SFT pages where missing.
+- Removed the colored left-border treatment from the LFM2 conv/attention rows.
+- Tightened mobile table/code/bar behavior in `docs/assets/hyfl-mi.css`.
+- Reworded the most visible LFM2 and format-page overclaims to match the evidence more closely.
+
+### Verification
+- Playwright desktop and mobile pass across index, share page, LFM2 atlas, SFT sweep, format ablation, RAG page, and the bilawal.net source page.
+- Mobile overflow: 0px on all tested pages at 390px width.
+- Share page detail links: 18 total, including 7 in the audited claims table.
+- LFM2 colored row border: removed (`border-left: 0px`).

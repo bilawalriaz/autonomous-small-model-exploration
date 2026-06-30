@@ -65,13 +65,14 @@
         <a href="mi-atlas.html">Start</a>
         <a href="01-qwen05b-analysis.html">0.5B</a>
         <a href="02-qwen15b-analysis.html">1.5B</a>
-        <a href="03-comparison-analysis.html">Comparison</a>
-        <a href="04-qualitative-analysis.html">Qualitative</a>
+        <a href="03-comparison-analysis.html">Compare</a>
+        <a href="04-qualitative-analysis.html">Qual</a>
         <a href="05-phase2-repeatability.html">Phase 2</a>
         <a href="06-phase3-gap-closure.html">Phase 3</a>
-        <a href="07-lfm2-230m-atlas.html">LFM2.5-230M</a>
-        <a href="08-lfm2-230m-sft-sweep.html">LFM2 SFT</a>
-        <a href="09-data-format-ablation.html" class="active">Format Ablation</a>
+        <a href="07-lfm2-230m-atlas.html">LFM2</a>
+        <a href="08-lfm2-230m-sft-sweep.html">SFT</a>
+        <a href="09-data-format-ablation.html" class="active">Format</a>
+        <a href="rag-benchmark.html">RAG</a>
       </div>
     </div>
   </div>
@@ -102,7 +103,7 @@
     <div class="callout">
       <div class="callout-icon">🎯</div>
       <div class="callout-body">
-        <strong>Core question:</strong> Phase 8 showed that dataset format dominates hyperparameters (5× more impact). Multi-turn concise chat data crushed flat Alpaca/Dolly-style data. But was that content, format, or both? Phase 9 holds content constant and varies only representation — the first controlled experiment to isolate data shape as a variable in small-model SFT.
+        <strong>Core question:</strong> Phase 8 showed that dataset format moved loss more than hyperparameters in this setup (5× more impact). Multi-turn concise chat data beat flat Alpaca/Dolly-style data. But was that content, format, or both? Phase 9 holds content constant and varies only representation to isolate data shape as a variable in small-model SFT.
       </div>
     </div>
 

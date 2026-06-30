@@ -146,6 +146,12 @@ h1.title {
 .swi-pullquote,
 .swi-tldr,
 .card,
+.tldr-box,
+.metric-card,
+.arch-diagram,
+.result-card,
+.config-card,
+.hypothesis-card,
 .hub-model,
 .prose-panel,
 div[style*="background: #f5f5f5"],
@@ -162,7 +168,9 @@ div[style*="background: #fff7e6"] {
 .swi-callout,
 .swi-pullquote,
 .swi-tldr,
-.card {
+.card,
+.tldr-box,
+.metric-card {
   padding: 18px 20px !important;
 }
 
@@ -176,11 +184,13 @@ div[style*="background: #fff7e6"] {
 .finding-card.new,
 .finding-card.rejected,
 .finding-card.partial,
+.conv-row,
+.attn-row,
 .card.highlight,
 .card.success,
 .card.warning,
 .card.info {
-  border-left: 1px solid var(--mi-border) !important;
+  border-left: 0 !important;
 }
 
 .paper-card,
@@ -261,7 +271,8 @@ div[style*="background: #fff7e6"] {
 }
 
 .tier-header,
-h2 {
+h2,
+.section-label {
   color: var(--mi-ink) !important;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
   font-size: 1.45rem !important;
@@ -311,6 +322,29 @@ th {
 
 td {
   border-bottom: 1px solid var(--mi-border) !important;
+}
+
+.hub-cell {
+  background: var(--mi-accent-soft) !important;
+  color: var(--mi-accent-dark) !important;
+}
+
+.badge-high,
+.badge-med,
+.badge-new,
+.finding .badge {
+  border-radius: 6px !important;
+  background: var(--mi-accent) !important;
+  color: #ffffff !important;
+}
+
+.bar {
+  background: var(--mi-accent) !important;
+}
+
+.detail-link {
+  color: var(--mi-accent-dark) !important;
+  font-weight: 800 !important;
 }
 
 code,
@@ -437,10 +471,38 @@ code,
   table,
   .metric-table,
   .swi-table {
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
+    display: table;
+    max-width: 100%;
+    min-width: 0 !important;
+    table-layout: fixed;
+    white-space: normal;
+  }
+
+  th,
+  td {
+    padding: 10px 8px !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  code,
+  pre,
+  .mono {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+  }
+
+  .overflow-x {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+  }
+
+  .bar {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
   }
 
   .columns {
