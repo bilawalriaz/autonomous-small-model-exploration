@@ -277,7 +277,8 @@ def run_noise_eval(model, tokenizer, prompts, sigma=0.01, K=5):
                 if isinstance(output, tuple):
                     return (hidden,) + output[1:]
                 return hidden
-            h = model.model.embed_tokens.register_forward_hook(embed_noise_hook)
+            embed_module = model.get_input_embeddings()
+            h = embed_module.register_forward_hook(embed_noise_hook)
             with torch.no_grad():
                 output = model.generate(
                     **inputs, max_new_tokens=64,
