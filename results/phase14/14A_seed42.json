@@ -1,0 +1,424 @@
+{
+  "experiment": "14A",
+  "name": "Dataset Size Sweep",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "elapsed_seconds": 4131.83461689949,
+  "timestamp": "2026-07-01T13:28:51",
+  "results": {
+    "n25": {
+      "n_examples": 25,
+      "steps": 300,
+      "training": {
+        "final_loss": 0.9731,
+        "train_time_s": 523.9,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.3959
+          },
+          {
+            "step": 60,
+            "loss": 1.2595
+          },
+          {
+            "step": 90,
+            "loss": 1.0967
+          },
+          {
+            "step": 120,
+            "loss": 1.0685
+          },
+          {
+            "step": 150,
+            "loss": 0.9219
+          },
+          {
+            "step": 180,
+            "loss": 0.8843
+          },
+          {
+            "step": 210,
+            "loss": 0.8183
+          },
+          {
+            "step": 240,
+            "loss": 0.7763
+          },
+          {
+            "step": 270,
+            "loss": 0.7251
+          },
+          {
+            "step": 300,
+            "loss": 0.7849
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.6,
+        "field_recall": 0.8277777777777776,
+        "n_correct": 9,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.2,
+        "field_recall": 0.6055555555555556,
+        "n_correct": 3,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 0.8,
+        "field_recall": 0.9333333333333332,
+        "n_correct": 12,
+        "n_total": 15
+      }
+    },
+    "n50": {
+      "n_examples": 50,
+      "steps": 300,
+      "training": {
+        "final_loss": 1.1034,
+        "train_time_s": 603.9,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.4416
+          },
+          {
+            "step": 60,
+            "loss": 1.257
+          },
+          {
+            "step": 90,
+            "loss": 1.1892
+          },
+          {
+            "step": 120,
+            "loss": 1.1493
+          },
+          {
+            "step": 150,
+            "loss": 1.0647
+          },
+          {
+            "step": 180,
+            "loss": 1.0463
+          },
+          {
+            "step": 210,
+            "loss": 0.9941
+          },
+          {
+            "step": 240,
+            "loss": 0.9637
+          },
+          {
+            "step": 270,
+            "loss": 0.9873
+          },
+          {
+            "step": 300,
+            "loss": 0.9406
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.6666666666666666,
+        "field_recall": 0.8666666666666666,
+        "n_correct": 10,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.26666666666666666,
+        "field_recall": 0.6666666666666666,
+        "n_correct": 4,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 0.8,
+        "field_recall": 0.9388888888888888,
+        "n_correct": 12,
+        "n_total": 15
+      }
+    },
+    "n100": {
+      "n_examples": 100,
+      "steps": 300,
+      "training": {
+        "final_loss": 1.252,
+        "train_time_s": 651.8,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.5028
+          },
+          {
+            "step": 60,
+            "loss": 1.3475
+          },
+          {
+            "step": 90,
+            "loss": 1.3013
+          },
+          {
+            "step": 120,
+            "loss": 1.2568
+          },
+          {
+            "step": 150,
+            "loss": 1.222
+          },
+          {
+            "step": 180,
+            "loss": 1.2046
+          },
+          {
+            "step": 210,
+            "loss": 1.1898
+          },
+          {
+            "step": 240,
+            "loss": 1.1791
+          },
+          {
+            "step": 270,
+            "loss": 1.1448
+          },
+          {
+            "step": 300,
+            "loss": 1.1717
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.5333333333333333,
+        "field_recall": 0.8222222222222222,
+        "n_correct": 8,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.2,
+        "field_recall": 0.6222222222222221,
+        "n_correct": 3,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 1.0,
+        "field_recall": 1.0,
+        "n_correct": 15,
+        "n_total": 15
+      }
+    },
+    "n200": {
+      "n_examples": 200,
+      "steps": 300,
+      "training": {
+        "final_loss": 1.2716,
+        "train_time_s": 675.5,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.4872
+          },
+          {
+            "step": 60,
+            "loss": 1.3268
+          },
+          {
+            "step": 90,
+            "loss": 1.2761
+          },
+          {
+            "step": 120,
+            "loss": 1.2546
+          },
+          {
+            "step": 150,
+            "loss": 1.2604
+          },
+          {
+            "step": 180,
+            "loss": 1.2423
+          },
+          {
+            "step": 210,
+            "loss": 1.2191
+          },
+          {
+            "step": 240,
+            "loss": 1.2292
+          },
+          {
+            "step": 270,
+            "loss": 1.2233
+          },
+          {
+            "step": 300,
+            "loss": 1.1968
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.6666666666666666,
+        "field_recall": 0.8666666666666667,
+        "n_correct": 10,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.13333333333333333,
+        "field_recall": 0.5611111111111112,
+        "n_correct": 2,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 0.8666666666666667,
+        "field_recall": 0.961111111111111,
+        "n_correct": 13,
+        "n_total": 15
+      }
+    },
+    "n345": {
+      "n_examples": 345,
+      "steps": 300,
+      "training": {
+        "final_loss": 1.2588,
+        "train_time_s": 664.8,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.4513
+          },
+          {
+            "step": 60,
+            "loss": 1.2613
+          },
+          {
+            "step": 90,
+            "loss": 1.2975
+          },
+          {
+            "step": 120,
+            "loss": 1.2364
+          },
+          {
+            "step": 150,
+            "loss": 1.2587
+          },
+          {
+            "step": 180,
+            "loss": 1.2102
+          },
+          {
+            "step": 210,
+            "loss": 1.2118
+          },
+          {
+            "step": 240,
+            "loss": 1.2568
+          },
+          {
+            "step": 270,
+            "loss": 1.2057
+          },
+          {
+            "step": 300,
+            "loss": 1.1979
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.6666666666666666,
+        "field_recall": 0.8888888888888888,
+        "n_correct": 10,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.26666666666666666,
+        "field_recall": 0.6222222222222222,
+        "n_correct": 4,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 1.0,
+        "field_recall": 1.0,
+        "n_correct": 15,
+        "n_total": 15
+      }
+    },
+    "n500": {
+      "n_examples": 500,
+      "steps": 300,
+      "training": {
+        "final_loss": 1.2579,
+        "train_time_s": 673.6,
+        "trainable_params": 212992,
+        "loss_curve": [
+          {
+            "step": 30,
+            "loss": 1.4441
+          },
+          {
+            "step": 60,
+            "loss": 1.2829
+          },
+          {
+            "step": 90,
+            "loss": 1.2826
+          },
+          {
+            "step": 120,
+            "loss": 1.2353
+          },
+          {
+            "step": 150,
+            "loss": 1.2238
+          },
+          {
+            "step": 180,
+            "loss": 1.2422
+          },
+          {
+            "step": 210,
+            "loss": 1.221
+          },
+          {
+            "step": 240,
+            "loss": 1.1823
+          },
+          {
+            "step": 270,
+            "loss": 1.2634
+          },
+          {
+            "step": 300,
+            "loss": 1.2016
+          }
+        ]
+      },
+      "clean_eval": {
+        "accuracy": 0.8,
+        "field_recall": 0.9333333333333332,
+        "n_correct": 12,
+        "n_total": 15
+      },
+      "messy_eval": {
+        "accuracy": 0.26666666666666666,
+        "field_recall": 0.6000000000000001,
+        "n_correct": 4,
+        "n_total": 15
+      },
+      "noisy_eval": {
+        "accuracy": 1.0,
+        "field_recall": 1.0,
+        "n_correct": 15,
+        "n_total": 15
+      }
+    }
+  }
+}
