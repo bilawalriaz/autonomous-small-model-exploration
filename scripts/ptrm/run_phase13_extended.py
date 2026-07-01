@@ -244,7 +244,7 @@ def generate_noisy_rollout(model, tokenizer, prompt, sigma,
             return (hidden,) + output[1:]
         return hidden
 
-    h = model.model.embed_tokens.register_forward_hook(embed_noise_hook)
+    h = model.get_input_embeddings().register_forward_hook(embed_noise_hook)
     with torch.no_grad():
         full_output = model.generate(
             **inputs,
