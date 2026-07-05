@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inside LFM2.5-8B-A1B: A Code-Level Walkthrough</title>
+<style>
+:root{--bg:#0a0a0f;--surface:#12121a;--surface2:#1a1a25;--border:#2a2a3a;--text:#e0e0e8;--muted:#8888a0;--accent:#6c8cff;--accent2:#ff6c8c;--green:#4ade80;--yellow:#fbbf24;--orange:#fb923c;--code-bg:#0d1117;--mono:'JetBrains Mono','Fira Code',monospace;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Inter','Segoe UI',system-ui,sans-serif;line-height:1.7;padding:0;}
+.container{max-width:960px;margin:0 auto;padding:40px 24px;}
+h1{font-size:2.4em;font-weight:800;letter-spacing:-0.03em;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.subtitle{color:var(--muted);font-size:1.05em;margin-bottom:40px;}
+h2{font-size:1.5em;font-weight:700;color:var(--accent);margin:48px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+h3{font-size:1.15em;font-weight:600;color:var(--text);margin:24px 0 12px;}
+p{margin-bottom:16px;}
+code,pre{font-family:var(--mono);}
+code{background:var(--code-bg);padding:2px 6px;border-radius:4px;font-size:0.9em;color:var(--green);}
+pre{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:20px;overflow-x:auto;font-size:0.85em;line-height:1.5;margin:16px 0;}
+pre code{background:none;padding:0;color:var(--text);}
+.table-wrap{overflow-x:auto;margin:16px 0;}
+table{width:100%;border-collapse:collapse;font-size:0.9em;}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);}
+th{color:var(--accent);font-weight:600;background:var(--surface);}
+td{color:var(--text);}
+tr:hover td{background:var(--surface);}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.8em;font-weight:600;margin:2px;}
+.tag-conv{background:#1a3a2a;color:#4ade80;}
+.tag-attn{background:#3a1a3a;color:#c084fc;}
+.tag-moe{background:#3a2a1a;color:#fbbf24;}
+.tag-dense{background:#1a2a3a;color:#60a5fa;}
+.callout{background:var(--surface);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:20px 0;font-size:0.95em;}
+.callout-warn{border-left-color:var(--yellow);}
+.callout-key{border-left-color:var(--green);}
+.diagram{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:24px;font-family:var(--mono);font-size:0.8em;line-height:1.6;overflow-x:auto;white-space:pre;margin:20px 0;color:var(--muted);}
+.diagram .hl{color:var(--accent);font-weight:700;}
+.diagram .hl2{color:var(--accent2);font-weight:700;}
+.diagram .hl3{color:var(--yellow);font-weight:700;}
+.diagram .hl4{color:var(--green);font-weight:700;}
+details{margin:16px 0;}
+summary{cursor:pointer;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-weight:600;color:var(--accent);list-style:none;}
+summary::before{content:'▸ ';font-family:var(--mono);}
+details[open] summary::before{content:'▾ ';}
+details[open] summary{border-radius:8px 8px 0 0;border-bottom:none;}
+details .inner{background:var(--surface);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:20px;}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;}
+.stat-card .val{font-size:1.8em;font-weight:800;color:var(--accent);}
+.stat-card .label{color:var(--muted);font-size:0.85em;margin-top:4px;}
+.layer-row{display:flex;align-items:center;gap:8px;margin:3px 0;font-family:var(--mono);font-size:0.82em;}
+.layer-block{width:28px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.75em;flex-shrink:0;}
+.lb-dense{background:#1a3a5a;color:#60a5fa;}
+.lb-conv{background:#1a3a2a;color:#4ade80;}
+.lb-attn{background:#3a1a3a;color:#c084fc;}
+hr{border:none;border-top:1px solid var(--border);margin:40px 0;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Inside LFM2.5-8B-A1B</h1>
+<p class="subtitle">A code-level walkthrough of a hybrid conv+attention Mixture-of-Experts model</p>
+
+<div class="stat-grid">
+<div class="stat-card"><div class="val">8.3B</div><div class="label">Total Parameters</div></div>
+<div class="stat-card"><div class="val">1.5B</div><div class="label">Active Per Token</div></div>
+<div class="stat-card"><div class="val">24</div><div class="label">Layers</div></div>
+<div class="stat-card"><div class="val">32</div><div class="label">Experts / Layer</div></div>
+<div class="stat-card"><div class="val">4</div><div class="label">Active Experts</div></div>
+<div class="stat-card"><div class="val">128K</div><div class="label">Context Window</div></div>
+</div>
+
+<!-- ============================================================ -->
+<h2>1. What Is LFM2.5-8B-A1B?</h2>
+
+<p>LFM2.5-8B-A1B is Liquid AI's on-device Mixture-of-Experts model. It combines three architectural innovations that are usually seen separately:</p>
+
+<ul style="margin-left:20px;margin-bottom:16px;">
+<li><strong>Short convolutions</strong> — input-aware gated convolutions that replace some attention layers, giving O(1) per-token compute instead of O(n)</li>
+<li><strong>Grouped-Query Attention (GQA)</strong> — 32 query heads sharing 8 KV heads, cutting KV cache by 4×</li>
+<li><strong>Sparse MoE feed-forward</strong> — 32 experts per layer, only 4 active per token (12.5% sparsity)</li>
+</ul>
+
+<p>The result: <strong>8B-class quality at ~1.5B decode cost</strong>. Per-token FLOPs track a 1.5B dense model, while the 8.3B total capacity lets experts specialize across reasoning, code, multilingual, and long-tail knowledge.</p>
+
+<div class="callout callout-key">
+<strong>Key insight:</strong> The model activates only 1.5B of its 8.3B parameters per forward pass. Weight storage scales with total parameters, but compute and state caches scale with the active path.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Architecture Overview</h2>
+
+<h3>Config (from config.json)</h3>
+<pre><code>{
+  "architectures": ["Lfm2MoeForCausalLM"],
+  "model_type": "lfm2_moe",
+  "hidden_size": 2048,
+  "intermediate_size": 7168,        // dense FFN
+  "moe_intermediate_size": 1792,    // per-expert FFN
+  "num_hidden_layers": 24,
+  "num_attention_heads": 32,
+  "num_key_value_heads": 8,         // GQA 4:1
+  "num_experts": 32,
+  "num_experts_per_tok": 4,
+  "num_dense_layers": 2,            // first 2 layers: no MoE
+  "vocab_size": 128000,
+  "max_position_embeddings": 128000,
+  "conv_L_cache": 3,                // shortconv kernel size
+  "tie_word_embeddings": true,
+  "dtype": "bfloat16"
+}</code></pre>
+
+<h3>Layer Types (verified from GGUF tensor names)</h3>
+
+<div style="margin:16px 0;">
+<div class="layer-row"><div class="layer-block lb-dense">0</div><span style="color:#60a5fa;">Dense FFN + Conv</span> — 38M params</div>
+<div class="layer-row"><div class="layer-block lb-dense">1</div><span style="color:#60a5fa;">Dense FFN + Conv</span> — 38M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">2</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 234M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">3</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">4</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">5</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">6</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 204M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">7</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">8</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">9</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">10</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 204M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">11</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">12</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">13</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">14</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 234M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">15</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">16</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">17</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">18</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 204M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">19</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 208M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">20</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-attn">21</div><span style="color:#c084fc;">MoE FFN + Full Attention</span> — 235M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">22</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+<div class="layer-row"><div class="layer-block lb-conv">23</div><span style="color:#4ade80;">MoE FFN + Conv</span> — 238M params</div>
+</div>
+
+<div class="callout callout-warn">
+<strong>Dense-first design:</strong> The first 2 layers (0-1) use dense FFN (7168 intermediate) with no MoE routing. The model processes initial token representations densely before switching to sparse MoE for all subsequent layers. This avoids routing overhead on raw embeddings.
+</div>
+
+<p><strong>Pattern:</strong> Every 4th layer starting at 2 is attention (2, 6, 10, 14, 18, 21). All others are conv. That's <span class="tag tag-conv">18 conv</span> + <span class="tag tag-attn">6 attention</span> layers.</p>
+
+<!-- ============================================================ -->
+<h2>3. Core Data Structures</h2>
+
+<h3>Embedding</h3>
+<pre><code>token_embd.weight:       (128000, 1680)  — token embeddings, 1680-dim
+token_embd_norm.weight:  (2048,)         — RMSNorm to project to hidden_size</code></pre>
+
+<p>The embedding dimension is <strong>1680</strong>, not 2048. The 368-dim gap is bridged by the shortconv in_proj layer at the first block, which expands 1152→6144 and maps from the projection space to the hidden space.</p>
+
+<h3>ShortConv Block (conv layers)</h3>
+<pre><code>shortconv.conv.weight:     (2048, 3)       — depthwise conv, kernel=3
+shortconv.in_proj.weight:  (6144, 1152)    — input projection: 1152→6144 (3× expansion)
+shortconv.out_proj.weight: (2048, 1152)    — output projection: 1152→2048</code></pre>
+
+<p>The shortconv is the signature LFM2 component. It replaces standard self-attention in 18 of 24 layers:</p>
+<ul style="margin-left:20px;margin-bottom:16px;">
+<li><strong>Depthwise conv (k=3)</strong>: each channel independently convolved with a 3-element kernel — O(n) not O(n²)</li>
+<li><strong>In-projection</strong>: expands from 1152 to 6144 (3× hidden), creating gate/conv/shift branches</li>
+<li><strong>Gated activation</strong>: silu(branch1) × branch2</li>
+<li><strong>Out-projection</strong>: maps back to hidden space</li>
+</ul>
+
+<h3>GQA Attention (6 layers)</h3>
+<pre><code>attn_q.weight:          (2048, 1152)  — Q projection: 32 heads × 64 dim
+attn_k.weight:          (512, 1152)   — K projection: 8 heads × 64 dim
+attn_v.weight:          (512, 1152)   — V projection: 8 heads × 64 dim
+attn_output.weight:     (2048, 1152)  — output projection
+attn_q_norm.weight:     (64,)         — QK norm per head (64 = head_dim)
+attn_k_norm.weight:     (64,)</code></pre>
+
+<p>32 query heads, 8 KV heads → 4:1 GQA ratio. Each head is 64 dimensions. QK-norm is applied per-head before attention scoring.</p>
+
+<h3>MoE Feed-Forward (22 layers)</h3>
+<pre><code>ffn_gate_inp.weight:    (32, 2048)           — router: [expert_scores] = hidden @ W_gate.T
+exp_probs_b.bias:       (32,)                 — router bias (per-expert)
+ffn_gate_exps.weight:   (32, 1792, 1152)     — expert gate: 32 experts, each 1152→1792
+ffn_up_exps.weight:     (32, 1792, 1152)     — expert up: 32 experts, each 1152→1792
+ffn_down_exps.weight:   (32, 2048, 1008|1470)— expert down: varies by layer type
+ffn_norm.weight:        (2048,)               — RMSNorm before FFN</code></pre>
+
+<div class="callout">
+<strong>Anomaly:</strong> The down-projection dimension varies: <code>(32, 2048, 1008)</code> for conv layers vs <code>(32, 2048, 1470)</code> for attention layers. This suggests the MoE output dimension adapts based on the sub-layer type, possibly to match residual stream dimensions after attention vs conv processing.
+</div>
+
+<h3>Dense Feed-Forward (2 layers)</h3>
+<pre><code>ffn_gate.weight:   (7168, 1152)  — gate projection: 1152→7168
+ffn_up.weight:     (7168, 1152)  — up projection: 1152→7168
+ffn_down.weight:   (2048, 5880)  — down projection: 5880→2048</code></pre>
+
+<!-- ============================================================ -->
+<h2>4. Data Flow: Token to Output</h2>
+
+<p>Here's exactly what happens to a token as it flows through the model:</p>
+
+<pre><code><span class="hl">INPUT</span>: token_ids = [token_id]  (single token during decode)
+
+<span class="hl">STEP 1: Embedding</span>
+  hidden = token_embd[token_id]           → shape: (1680,)
+  hidden = rmsnorm(hidden)                → shape: (2048,)  [norm bridges dim gap]
+
+<span class="hl">STEP 2: Layer 0 (Dense Conv)</span>
+  // ShortConv block
+  conv_out = depthwise_conv(hidden, k=3)  → shape: (2048,)  [local context: ±1 token]
+  projected = in_proj @ hidden            → shape: (6144,)  [3× expansion]
+  gated = silu(projected[:2048]) * projected[2048:]  → shape: (2048,)
+  conv_out = out_proj @ gated             → shape: (2048,)
+  hidden = hidden + conv_out              → residual connection
+
+  // Dense FFN (no MoE)
+  hidden = rmsnorm(hidden)
+  gate = silu(ffn_gate @ hidden)          → shape: (7168,)
+  up = ffn_up @ hidden                    → shape: (7168,)
+  ffn_out = ffn_down @ (gate * up)        → shape: (2048,)
+  hidden = hidden + ffn_out               → residual connection
+
+<span class="hl">STEP 3: Layer 1 (Dense Conv)</span>
+  // Same as Layer 0 — dense processing, no routing
+
+<span class="hl">STEP 4: Layer 2 (MoE + Full Attention)</span>
+  // GQA Attention
+  hidden = rmsnorm(hidden)
+  Q = attn_q @ hidden                     → shape: (2048,) = 32 heads × 64
+  K = attn_k @ hidden                     → shape: (512,)  = 8 heads × 64
+  V = attn_v @ hidden                     → shape: (512,)
+  // Apply RoPE, compute attention, reshape to (2048,)
+  attn_out = attn_output @ attention(Q,K,V)
+  hidden = hidden + attn_out              → residual
+
+  // MoE FFN — THE KEY STEP
+  hidden = rmsnorm(hidden)
+
+  // Router: which 4 of 32 experts?
+  router_logits = ffn_gate_inp @ hidden   → shape: (32,)  [one score per expert]
+  router_logits = router_logits + exp_probs_b  → add bias
+  router_probs = softmax(router_logits)   → shape: (32,)  [probability per expert]
+  top4_indices = topk(router_probs, k=4)  → [expert_a, expert_b, expert_c, expert_d]
+  top4_weights = renormalize(router_probs[top4_indices])
+
+  // Expert computation (4 experts only)
+  expert_out = 0
+  for expert_idx in top4_indices:
+      gate_i = silu(ffn_gate_exps[expert_idx] @ hidden)  → (1792,)
+      up_i = ffn_up_exps[expert_idx] @ hidden             → (1792,)
+      down_i = ffn_down_exps[expert_idx] @ (gate_i * up_i) → (2048,)
+      expert_out += top4_weights[expert_idx] * down_i
+
+  hidden = hidden + expert_out            → residual
+
+<span class="hl">STEP 5: Layers 3-23</span>
+  // Repeat: each layer is either Conv+MoE or Attention+MoE
+  // Conv layers: shortconv → MoE FFN
+  // Attn layers: GQA attention → MoE FFN
+
+<span class="hl">STEP 6: Output</span>
+  hidden = rmsnorm(hidden)                → (2048,)
+  logits = lm_head @ hidden               → (128000,)  [vocab scores]
+  next_token = sample(logits, temp=0.2, top_k=80)</code></pre>
+
+<!-- ============================================================ -->
+<h2>5. The ShortConv Module</h2>
+
+<p>The short convolution is what makes LFM2 different from every other transformer. Instead of computing full self-attention (O(n²)), it uses a depthwise convolution with kernel size 3:</p>
+
+<pre><code><span class="hl">Standard Attention:</span>  O(n² · d)  — must attend to ALL previous tokens
+<span class="hl">ShortConv:</span>           O(n · d)   — only looks at ±1 neighboring tokens</code></pre>
+
+<h3>How it works internally</h3>
+
+<pre><code>Input: hidden state x ∈ ℝ^(seq_len × 1152)
+
+1. Depthwise Conv: y = conv(x, kernel_size=3, groups=hidden)
+   // Each channel independently: y[i] = w[0]*x[i-1] + w[1]*x[i] + w[2]*x[i+1]
+   // Only looks at 3 consecutive positions
+
+2. In-Projection: z = W_in @ x   // (6144, 1152) × (1152,) → (6144,)
+   // Splits into 3 branches of size 2048:
+   //   gate_branch = z[:2048]     — controls what passes through
+   //   conv_branch = z[2048:4096] — the convolved features
+   //   shift_branch = z[4096:]    — positional shift
+
+3. Gated Activation: out = silu(gate_branch) * conv_branch
+
+4. Out-Projection: result = W_out @ out   // (2048, 1152) × (1152,) → (2048,)
+
+5. Residual: output = x + result</code></pre>
+
+<div class="callout callout-key">
+<strong>Why this matters:</strong> In a 128K context window, full attention requires 128K × 128K attention scores. ShortConv processes each token in O(1) time regardless of sequence length. The model only uses full attention in 6 of 24 layers — the rest are O(1) per token.
+</div>
+
+<!-- ============================================================ -->
+<h2>6. MoE Routing Mechanics</h2>
+
+<p>The router is a simple linear layer that scores each expert for the current token:</p>
+
+<pre><code><span class="hl">Router:</span>
+  W_gate ∈ ℝ^(32 × 2048)    — one row per expert
+  b ∈ ℝ^(32,)                — expert bias (exp_probs_b)
+
+  logits = hidden @ W_gate.T + b   → (32,) scores
+  probs = softmax(logits)           → (32,) probabilities
+
+<span class="hl">Top-k Selection:</span>
+  // norm_topk_prob = true: normalize AFTER top-k
+  top4 = argsort(probs)[-4:]        → indices of 4 highest-scoring experts
+  weights = softmax(probs[top4])    → renormalize to sum to 1
+
+<span class="hl">Expert Computation:</span>
+  // Each expert is a gated FFN:
+  output = Σ(weights[i] * expert_i(hidden))  for i in top4
+  // Each expert_i:
+  //   gate_i = silu(W_gate_i @ hidden)   → (1792,)
+  //   up_i = W_up_i @ hidden              → (1792,)
+  //   down_i = W_down_i @ (gate_i * up_i) → (2048,)
+  //   result_i = down_i</code></pre>
+
+<h3>Sparsity Economics</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Component</th><th>Shape</th><th>Params</th><th>Active / Token</th></tr>
+<tr><td>Router</td><td>(32, 2048)</td><td>65K</td><td>65K (always)</td></tr>
+<tr><td>Expert gate</td><td>(32, 1792, 1152)</td><td>66M</td><td>8.3M (4/32)</td></tr>
+<tr><td>Expert up</td><td>(32, 1792, 1152)</td><td>66M</td><td>8.3M (4/32)</td></tr>
+<tr><td>Expert down</td><td>(32, 2048, 1008)</td><td>66M</td><td>8.3M (4/32)</td></tr>
+<tr><td><strong>Total MoE FFN</strong></td><td></td><td><strong>198M</strong></td><td><strong>25M</strong></td></tr>
+<tr><td>Dense FFN (for comparison)</td><td>(7168, 1152) × 2</td><td>16.5M</td><td>16.5M (all active)</td></tr>
+</table>
+</div>
+
+<p>Each MoE layer stores ~198M params but only activates ~25M per token. A dense FFN of equivalent capacity would need 198M active params. <strong>The MoE gives 8× capacity at ⅛ compute.</strong></p>
+
+<!-- ============================================================ -->
+<h2>7. Dense vs MoE: The First Two Layers</h2>
+
+<p>Why are layers 0-1 dense? This is a deliberate design choice:</p>
+
+<details>
+<summary>Why dense-first matters</summary>
+<div class="inner">
+<p><strong>The problem with MoE on raw embeddings:</strong></p>
+<ul style="margin-left:20px;">
+<li>Raw token embeddings are high-entropy, under-determined representations</li>
+<li>The router needs a reasonable hidden state to make expert selection decisions</li>
+<li>If routing happens on raw embeddings, all experts see noisy input → poor specialization</li>
+</ul>
+
+<p><strong>The solution:</strong> Use 2 dense layers to "settle" the representation first. By layer 2, the hidden state has been processed through convolutions (local context) and dense FFNs (non-linear mixing), giving the router a meaningful signal to route on.</p>
+
+<p>This pattern (dense → sparse) is also seen in DeepSeek-V3 and Mixtral-8x22B.</p>
+</div>
+</details>
+
+<h3>Dense vs MoE FFN comparison</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Property</th><th>Dense FFN (Layers 0-1)</th><th>MoE FFN (Layers 2-23)</th></tr>
+<tr><td>Intermediate size</td><td>7168</td><td>1792 per expert</td></tr>
+<tr><td>Active params</td><td>16.5M</td><td>~25M (4 of 32 experts)</td></tr>
+<tr><td>Total params</td><td>16.5M</td><td>~198M</td></tr>
+<tr><td>Routing overhead</td><td>None</td><td>65K (router linear)</td></tr>
+<tr><td>Expert specialization</td><td>N/A</td><td>Each expert sees different tokens</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2>8. Memory Layout</h2>
+
+<p>The Q4_K_M quantized GGUF is <strong>4.9 GB</strong>. Here's how it breaks down:</p>
+
+<pre><code><span class="hl">Component                          Params      Bytes (Q4)</span>
+─────────────────────────────────────────────────────────
+Embedding (128K × 1680)            215M         215M
+Layers 0-1 (Dense + Conv ×2)       76M          76M
+Layers 2-23 (MoE + Attn/Conv ×22)  4.85G        4.85G
+─────────────────────────────────────────────────────────
+Total                              5.14B        4.9GB</code></pre>
+
+<div class="callout callout-warn">
+<strong>Note:</strong> The GGUF Q4_K_M stores quantized weights as uint8 in the file. The conv weights remain in float32 (6.1KB each — negligible). Total model memory is dominated by the MoE expert weights across 22 layers.
+</div>
+
+<h3>Active vs Stored</h3>
+<pre><code><span class="hl">Stored (weight memory):</span>  4.9 GB  — all experts, all layers
+<span class="hl">Active (compute):</span>        ~1.5B params per token ≈ ~750MB at bf16
+<span class="hl">KV Cache:</span>                q4_0 quantized, scales with context length
+<span class="hl">Activation memory:</span>       ~2048 × seq_len per layer (transient)</code></pre>
+
+<!-- ============================================================ -->
+<h2>9. Why This Architecture Works</h2>
+
+<h3>The three-way synergy</h3>
+
+<p><strong>ShortConv replaces attention where possible.</strong> In a 128K context, full attention is prohibitively expensive. ShortConv gives local context in O(1) per token. The 6 attention layers provide global context at strategic points (every 4th layer).</p>
+
+<p><strong>MoE replaces dense FFN where possible.</strong> Instead of one large FFN (7168 intermediate), the model uses 32 small experts (1792 each). The router learns to send different tokens to different experts, enabling specialization without increasing per-token compute.</p>
+
+<p><strong>GQA reduces KV cache.</strong> 32 query heads with 8 KV heads means 4× less KV cache than MHA, enabling 128K context on consumer hardware.</p>
+
+<h3>Scaling properties</h3>
+<div class="table-wrap">
+<table>
+<tr><th>Dimension</th><th>230M Dense</th><th>8B MoE</th><th>Ratio</th></tr>
+<tr><td>Total params</td><td>230M</td><td>8.3B</td><td>36×</td></tr>
+<tr><td>Active params</td><td>230M</td><td>1.5B</td><td>6.5×</td></tr>
+<tr><td>Layers</td><td>12</td><td>24</td><td>2×</td></tr>
+<tr><td>Hidden dim</td><td>1024</td><td>2048</td><td>2×</td></tr>
+<tr><td>FFN capacity (active)</td><td>4096</td><td>7168 (dense) + 4×1792 (MoE)</td><td>~5×</td></tr>
+<tr><td>Context</td><td>8192</td><td>128000</td><td>15.6×</td></tr>
+<tr><td>Vocab</td><td>49152</td><td>128000</td><td>2.6×</td></tr>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<h2>10. Anomalies & Open Questions</h2>
+
+<details>
+<summary>1. Embedding dim ≠ hidden dim</summary>
+<div class="inner">
+<p>token_embd is (128000, 1680) but hidden_size is 2048. The 368-dim gap is bridged by the shortconv block's in_proj layer, which operates on a 1152-dim projection space. This is unusual — most models have embedding_dim = hidden_dim.</p>
+<p>Possible reason: the 1680-dim embeddings are more memory-efficient (saves 18% vs 2048), and the projection happens in the first conv block which would exist anyway.</p>
+</div>
+</details>
+
+<details>
+<summary>2. Variable MoE down-projection dimensions</summary>
+<div class="inner">
+<p>Conv MoE layers have <code>ffn_down_exps: (32, 2048, 1008)</code> while attention MoE layers have <code>(32, 2048, 1470)</code>. The difference: 1470 vs 1008 = 462.</p>
+<p>This might relate to the attention output needing a different residual stream dimension, or the down-projection compensating for information lost/gained in the attention vs conv sub-layer.</p>
+</div>
+</details>
+
+<details>
+<summary>3. Variable attn_v dimensions</summary>
+<div class="inner">
+<p>Most attention layers: <code>attn_v: (512, 1152)</code>. But layers 10 and 21: <code>attn_v: (512, 1680)</code>. The 1680 matches the embedding dimension exactly. This might be an architectural quirk where certain layers operate in the embedding space rather than the projection space.</p>
+</div>
+</details>
+
+<!-- ============================================================ -->
+<h2>Appendix: File Location</h2>
+<pre><code>GGUF: /home/billz/LFM2.5-8B-A1B-Uncensored-Gaston-Q4_K_M.gguf (4.9GB)
+Config: huggingface.co/LiquidAI/LFM2.5-8B-A1B (config.json)
+Source: github.com/LiquidAI/lfm2 (architecture code)
+Atlas: bilawalriaz.github.io/autonomous-small-model-exploration/</code></pre>
+
+<hr>
+<p style="color:var(--muted);font-size:0.85em;">MI-Atlas Phase 1: Architecture Walkthrough — LFM2.5-8B-A1B. Generated 2026-07-06.</p>
+
+</div>
+</body>
+</html>
