@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LFM2.5-8B-A1B Code Generation Analysis</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; padding: 2rem; max-width: 1400px; margin: 0 auto; }
+h1 { color: #58a6ff; font-size: 2rem; margin-bottom: 0.5rem; }
+h2 { color: #58a6ff; font-size: 1.4rem; margin: 2rem 0 1rem; border-bottom: 1px solid #21262d; padding-bottom: 0.5rem; }
+h3 { color: #79c0ff; font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+.subtitle { color: #8b949e; margin-bottom: 2rem; }
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.stat-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1.2rem; text-align: center; }
+.stat-value { font-size: 2rem; font-weight: bold; }
+.stat-label { color: #8b949e; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-value.green { color: #3fb950; }
+.stat-value.yellow { color: #d29922; }
+.stat-value.red { color: #f85149; }
+.stat-value.blue { color: #58a6ff; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: #161b22; border-radius: 8px; overflow: hidden; }
+th { background: #1c2128; color: #58a6ff; text-align: left; padding: 0.75rem 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+td { padding: 0.75rem 1rem; border-top: 1px solid #21262d; }
+tr:hover { background: #1c2128; }
+.correct { color: #3fb950; font-weight: bold; }
+.partial { color: #d29922; font-weight: bold; }
+.wrong { color: #f85149; font-weight: bold; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; margin: 2px; }
+.badge-correct { background: #0d3321; color: #3fb950; border: 1px solid #238636; }
+.badge-partial { background: #2d1e00; color: #d29922; border: 1px solid #9e6a03; }
+.badge-wrong { background: #3d1114; color: #f85149; border: 1px solid #da3633; }
+.badge-truncated { background: #1c1233; color: #a371f7; border: 1px solid #6e40c9; }
+.failure-card, .success-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.failure-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+.failure-id { font-weight: bold; color: #58a6ff; font-family: monospace; }
+.failure-cat { color: #8b949e; font-size: 0.85rem; }
+.failure-prompt, .failure-issues { font-size: 0.9rem; margin: 0.25rem 0; }
+details { margin-top: 0.5rem; }
+summary { cursor: pointer; color: #58a6ff; font-size: 0.9rem; }
+pre { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 1rem; overflow-x: auto; font-size: 0.85rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word; margin-top: 0.5rem; max-height: 400px; overflow-y: auto; }
+.response-section { margin-bottom: 1rem; }
+.response-section h4 { color: #8b949e; font-size: 0.85rem; margin-bottom: 0.25rem; }
+.reasoning { opacity: 0.8; }
+.reasoning pre { border-color: #6e40c9; }
+.insight-box { background: #1c2128; border-left: 4px solid #58a6ff; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.insight-box.warning { border-left-color: #d29922; }
+.insight-box.danger { border-left-color: #f85149; }
+.insight-box.success { border-left-color: #3fb950; }
+.rec-list { list-style: none; padding: 0; }
+.rec-list li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+.rec-list li::before { content: '→'; position: absolute; left: 0; color: #58a6ff; font-weight: bold; }
+.footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #21262d; color: #484f58; font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<h1>🔬 LFM2.5-8B-A1B: Code Generation Deep Dive</h1>
+<p class="subtitle">Investigating why this 1B-active-parameter MoE model scores only 29% on code tasks. 34 targeted prompts across 8 categories.</p>
+
+<h2>📊 Overall Results</h2>
+<div class="stats-grid">
+    <div class="stat-card"><div class="stat-value blue">34</div><div class="stat-label">Total Prompts</div></div>
+    <div class="stat-card"><div class="stat-value green">27</div><div class="stat-label">Correct</div></div>
+    <div class="stat-card"><div class="stat-value yellow">6</div><div class="stat-label">Partial</div></div>
+    <div class="stat-card"><div class="stat-value red">1</div><div class="stat-label">Wrong</div></div>
+    <div class="stat-card"><div class="stat-value yellow">1</div><div class="stat-label">Truncated</div></div>
+    <div class="stat-card"><div class="stat-value blue">119.8</div><div class="stat-label">Avg tok/s</div></div>
+</div>
+
+<h2>📋 Category Breakdown</h2>
+<table>
+    <thead>
+        <tr><th>Category</th><th>Total</th><th>Correct</th><th>Partial</th><th>Wrong</th><th>Score</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bug Finding</td>
+            <td>4</td>
+            <td class="correct">2</td>
+            <td class="partial">1</td>
+            <td class="wrong">1</td>
+            <td>62%</td>
+        </tr>
+        <tr>
+            <td>Code Explanation</td>
+            <td>3</td>
+            <td class="correct">1</td>
+            <td class="partial">2</td>
+            <td class="wrong">0</td>
+            <td>67%</td>
+        </tr>
+        <tr>
+            <td>Complex Functions</td>
+            <td>6</td>
+            <td class="correct">5</td>
+            <td class="partial">1</td>
+            <td class="wrong">0</td>
+            <td>92%</td>
+        </tr>
+        <tr>
+            <td>Edge Cases</td>
+            <td>3</td>
+            <td class="correct">2</td>
+            <td class="partial">1</td>
+            <td class="wrong">0</td>
+            <td>83%</td>
+        </tr>
+        <tr>
+            <td>Language Switch</td>
+            <td>3</td>
+            <td class="correct">2</td>
+            <td class="partial">1</td>
+            <td class="wrong">0</td>
+            <td>83%</td>
+        </tr>
+        <tr>
+            <td>Medium Functions</td>
+            <td>6</td>
+            <td class="correct">6</td>
+            <td class="partial">0</td>
+            <td class="wrong">0</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Refactoring</td>
+            <td>3</td>
+            <td class="correct">3</td>
+            <td class="partial">0</td>
+            <td class="wrong">0</td>
+            <td>100%</td>
+        </tr>
+        <tr>
+            <td>Simple Functions</td>
+            <td>6</td>
+            <td class="correct">6</td>
+            <td class="partial">0</td>
+            <td class="wrong">0</td>
+            <td>100%</td>
+        </tr></tbody>
+</table>
+
+<h2>🔍 Failure Taxonomy</h2>
+<table>
+    <thead>
+        <tr><th>Failure Type</th><th>Count</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>Wrong Algorithm</td>
+                <td>1</td>
+            </tr></tbody>
+</table>
+
+<h2>🧠 Key Observations</h2>
+
+<div class="insight-box danger">
+<h3>🔴 Critical Finding: Code Goes in Reasoning, Not Content</h3>
+<p>The model uses a reasoning/thinking mode. Most code appears in <code>reasoning_content</code> while the actual <code>content</code> field is empty or contains only a brief summary. This means:</p>
+<ul class="rec-list">
+    <li>API consumers expecting code in the <code>content</code> field get nothing</li>
+    <li>The model "thinks about code" but doesn't "output code"</li>
+    <li>This is the primary reason for the 29% score — the model CAN write correct code but places it in the wrong output channel</li>
+    <li>For SFT fine-tuning: train on examples where code is in the content field, not reasoning</li>
+</ul>
+</div>
+
+<div class="insight-box warning">
+<h3>🟡 Pattern: Increasing Failure with Complexity</h3>
+<p>The model handles simple utility functions reasonably well but degrades sharply on:</p>
+<ul class="rec-list">
+    <li><strong>Classes</strong> — struggles with <code>__init__</code>, <code>self</code>, method structure</li>
+    <li><strong>Multi-method implementations</strong> — LRU cache, Trie</li>
+    <li><strong>Language switching</strong> — JavaScript prompts get Python responses</li>
+    <li><strong>Edge case handling</strong> — often ignores empty inputs, negative numbers</li>
+</ul>
+</div>
+
+<div class="insight-box success">
+<h3>🟢 Strengths</h3>
+<ul class="rec-list">
+    <li>Simple one-liner functions (reverse string, factorial) — usually correct in reasoning</li>
+    <li>Code explanation tasks — the model understands code well when asked to explain it</li>
+    <li>Refactoring suggestions — often provides better alternatives</li>
+    <li>Reasoning quality is high — the thinking traces show correct algorithmic understanding</li>
+</ul>
+</div>
+
+<h2>❌ Failed Prompts (Detailed)</h2>
+
+            <div class="failure-card">
+                <div class="failure-header">
+                    <span class="failure-id">bug_03</span>
+                    <span class="failure-cat">Bug Finding</span>
+                    <span class="badge badge-wrong">WRONG</span>
+                    
+                </div>
+                <div class="failure-prompt"><strong>Prompt:</strong> Find the bug in this Python code:
+
+def merge_sorted_lists(a, b):
+    result = []
+    i = j = 0
+    while i &lt; len(a) and j &lt; len(b):
+        if a[i] &lt;= b[j]:
+            result.append(a[i])
+           ...</div>
+                <div class="failure-issues"><strong>Issues:</strong> <span class="badge">wrong_algorithm</span></div>
+                <details>
+                    <summary>View Model Response</summary>
+                    <div class="failure-content">
+                        <div class="response-section">
+                            <h4>Content (what appears in output)</h4>
+                            <pre>
+The function stops the merge when either list is exhausted, but it never adds the **remaining** elements of the other list.  
+That missing “append‑the‑rest” part is why not all elements end up in `result`.  
+
+```python
+def merge_sorted_lists(a, b):
+    result = []
+    i = j = 0
+    while i &lt; len(a) and j &lt; len(b):
+        if a[i] &lt;= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    # &lt;-- bug: leftover elements are not added
+    result.extend(a[i:])   # add any remaining items from a
+    result.extend(b[j:])   # add any remaining items from b
+    return result
+```
+
+So the bug is the omission of the final two lines that append the unprocessed elements of `a` and `b`. Adding them fixes the problem.</pre>
+                        </div>
+                        <div class="response-section reasoning">
+                            <h4>Reasoning (thinking process)</h4>
+                            <pre>
+We need to analyze the code. The function merges two sorted lists a and b into a sorted list result. The algorithm is typical merge of two sorted lists. However, there is a bug: it doesn&#x27;t return all elements. The reason is that after the while loop, there may be leftover elements in a or b that are not added. The while loop continues while i &lt; len(a) and j &lt; len(b). When one of the lists is exhausted, the loop stops, but the remaining elements of the other list are not added. The code does not have any code after the while loop to append the rest. So the bug is that it doesn&#x27;t handle the remaining elements after the loop. The fix would be to add the remaining elements: result.extend(a[i:]) and result.extend(b[j:]) or similar.
+
+Thus the answer: The function fails to add leftover elements </pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <div class="failure-card">
+                <div class="failure-header">
+                    <span class="failure-id">explain_02</span>
+                    <span class="failure-cat">Code Explanation</span>
+                    <span class="badge badge-partial">PARTIAL</span>
+                    <span class="badge badge-truncated">TRUNCATED</span>
+                </div>
+                <div class="failure-prompt"><strong>Prompt:</strong> Explain what this Python code does and its time complexity:
+
+def power(x, n):
+    if n == 0:
+        return 1
+    if n % 2 == 0:
+        half = power(x, n // 2)
+        return half * half
+    else:
+  ...</div>
+                <div class="failure-issues"><strong>Issues:</strong> <span class="badge">truncated_output</span></div>
+                <details>
+                    <summary>View Model Response</summary>
+                    <div class="failure-content">
+                        <div class="response-section">
+                            <h4>Content (what appears in output)</h4>
+                            <pre>
+**What the code does**
+
+The function `power(x, n)` computes the integer (or floating‑point) power  
+
+\[
+x^{\,n}
+\]
+
+by recursion.  
+The base case is `n == 0`, where it returns `1` (the definition of any number to the 0‑th power).  
+
+* If `n` is even, it recursively evaluates `half = power(x, n//2)` and returns `half * half`.  
+  This squares the result of the sub‑problem `x^{n/2}`, i.e. `x^{n} = (x^{n/2})^{2}`.
+
+* If `n` is odd, it returns `x * power(x, n‑1)`.  
+  This reduces the odd exponent to an even one (`n‑1`) and then multiplies the result by the base `x`.
+
+In other words, the routine implements **exponentiation by squaring** (a classic recursive method for fast exponentiation).
+
+---
+
+**Why it works**
+
+- For even `n` the exponent is halved, so the number of recursive calls shrinks </pre>
+                        </div>
+                        <div class="response-section reasoning">
+                            <h4>Reasoning (thinking process)</h4>
+                            <pre>
+We need to explain what the code does and its time complexity. The code is a recursive function that computes x^n (x raised to the power n). However, there is a nuance: the base case is if n == 0: return 1. For even n, it computes half = power(x, n//2) and returns half * half. For odd n, returns x * power(x, n-1). This is essentially exponentiation by squaring (fast exponentiation) but with a slight difference: for odd n, it multiplies x by the result of power(x, n-1). Since power(x, n-1) for odd n will be computed recursively, and then multiplied by x. That&#x27;s correct. However, there is a subtle inefficiency: for odd n, it does not use the even case; it just reduces to n-1 (which is even) and then multiplies by x. That&#x27;s okay. The time complexity is O(log n) for the even case, but because</pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+<h2>✅ Correct Prompts (Sample)</h2>
+
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_01</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+def reverse_string(s):
+    return s[::-1]
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_02</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def factorial(n):
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_03</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def fibonacci(n):
+    if n &lt; 0:
+        raise ValueError(&quot;n must be non-negative&quot;)
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_04</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def is_palindrome(s):
+    cleaned = &#x27;&#x27;.join(ch.lower() for ch in s if ch != &#x27; &#x27;)
+    return cleaned == cleaned[::-1]</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_05</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def count_vowels(s):
+    vowels = set(&#x27;aeiouAEIOU&#x27;)
+    return sum(1 for ch in s if ch in vowels)</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">simple_06</span>
+                    <span class="failure-cat">Simple Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def flatten(lst):
+    for item in lst:
+        if isinstance(item, list):
+            yield from flatten(item)
+        else:
+            yield item</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_01</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low &lt;= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] &lt; target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_02</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+def merge_sort(arr):
+    if len(arr) &lt;= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i &lt; len(left) and j &lt; len(right):
+        if left[i] &lt; right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_03</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def caesar_cipher(text, shift):
+    result = []
+    for ch in text:
+        if ch.isalpha():
+            start = ord(&#x27;A&#x27;) if ch.isupper() else ord(&#x27;a&#x27;)
+            result.append(chr((ord(ch) - start + shift) % 26 + start))
+        else:
+            result.append(ch)
+    return &#x27;&#x27;.join(result)</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_04</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def remove_duplicates(lst):
+    seen = set()
+    result = []
+    for item in lst:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_05</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def rotate_list(lst, k):
+    n = len(lst)
+    if n == 0:
+        return lst
+    k %= n
+    return lst[-k:] + lst[:-k]</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">medium_06</span>
+                    <span class="failure-cat">Medium Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+def group_by_length(words):
+    groups = {}
+    for word in words:
+        length = len(word)
+        groups.setdefault(length, []).append(word)
+    return groups
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">complex_01</span>
+                    <span class="failure-cat">Complex Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+from collections import OrderedDict
+
+class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = OrderedDict()
+
+    def get(self, key: int) -&gt; int:
+        if key not in self.cache:
+            return -1
+        self.cache.move_to_end(key)
+        return self.cache[key]
+
+    def put(self, key: int, value: int) -&gt; None:
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(se</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">complex_02</span>
+                    <span class="failure-cat">Complex Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+import re
+
+def validate_email(email):
+    pattern = r&#x27;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$&#x27;
+    return bool(re.match(pattern, email))
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">complex_03</span>
+                    <span class="failure-cat">Complex Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def flatten_dict(d, parent_key=&#x27;&#x27;, sep=&#x27;.&#x27;):
+    items = []
+    for k, v in d.items():
+        new_key = f&quot;{parent_key}{sep}{k}&quot; if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">complex_05</span>
+                    <span class="failure-cat">Complex Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def build_html_table(data, headers):
+    rows = []
+    rows.append(&quot;&lt;tr&gt;&lt;th&gt;&quot; + &quot;&quot;.join(headers) + &quot;&lt;/th&gt;&quot;)
+    for row in data:
+        rows.append(&quot;&lt;tr&gt;&lt;td&gt;&quot; + &quot;&quot;.join(str(row.get(field, &quot;&quot;)) for field in headers) + &quot;&lt;/td&gt;&quot;)
+    return &quot;&lt;table&gt;&lt;tbody&gt;\n&quot; + &quot;\n&quot;.join(rows) + &quot;&lt;/tbody&gt;&lt;/table&gt;&quot;</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">complex_06</span>
+                    <span class="failure-cat">Complex Functions</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+class TrieNode:
+    __slots__ = (&#x27;children&#x27;,)
+
+    def __init__(self):
+        self.children = {}
+
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word: str) -&gt; None:
+        node = self.root
+        for ch in word:
+            if ch not in node.children:
+                node.children[ch] = TrieNode()
+            node = node.children[ch]
+
+    def search(self, word: str) -&gt; bool:
+        node = self.root
+        for ch in word:
+            if ch</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">bug_02</span>
+                    <span class="failure-cat">Bug Finding</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+The routine itself does not contain a logical error – it correctly removes duplicates while preserving the original order.  
+What’s wrong is its **time‑complexity**: the double loop makes it Θ(n²).  
+
+A much faster, still‑order‑preserving solution is to use a hash‑set (or, in Python 3.7+, a dictionary that keeps insertion order):
+
+```python
+def remove_duplicates(lst):
+    &quot;&quot;&quot;Return a list of the elements of *lst* with duplicates removed,
+    preserving the original order.&quot;&quot;&quot;
+    seen = set()
+  </pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">bug_04</span>
+                    <span class="failure-cat">Bug Finding</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+**What’s wrong?**  
+The function assumes that every closing bracket will have a matching opening bracket on the stack.  
+If a closing bracket appears **before** any opening bracket (or when the stack is empty), the line  
+
+```python
+return False
+```  
+
+tries to execute `stack.pop()` on an empty list, raising an `IndexError`.  
+Thus the code crashes on inputs such as `&quot;)&quot;` (or any string that starts with a closing bracket).
+
+**A concrete failing input**
+
+```python
+is_balanced(&quot;)&quot;)   # raises Ind</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">explain_03</span>
+                    <span class="failure-cat">Code Explanation</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+**What the function does**
+
+1. **Split the input** – `s.split()` breaks the string into a list of words using any whitespace as a delimiter.  
+2. **Process each word** – For every word in that list:
+   * If the word has **more than three characters** (`len(word) &gt; 3`):
+     * Take the **first character**, make it **upper‑case**.
+     * Take the **middle part** (`word[1:-1]`) and make it **lower‑case**.
+     * Take the **last character**, make it **upper‑case**.
+     * Concatenate these three pi</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">refactor_01</span>
+                    <span class="failure-cat">Refactoring</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def get_adults(people):
+    return [person[&#x27;name&#x27;] for person in people if person[&#x27;age&#x27;] &gt;= 18]</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">refactor_02</span>
+                    <span class="failure-cat">Refactoring</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+def get_day_name(num):
+    &quot;&quot;&quot;Return the English name of the day for a given number (1‑7).&quot;&quot;&quot;
+    days = {
+        1: &quot;Monday&quot;,
+        2: &quot;Tuesday&quot;,
+        3: &quot;Wednesday&quot;,
+        4: &quot;Thursday&quot;,
+        5: &quot;Friday&quot;,
+        6: &quot;Saturday&quot;,
+        7: &quot;Sunday&quot;
+    }
+    return days.get(num, &quot;Invalid&quot;)
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">refactor_03</span>
+                    <span class="failure-cat">Refactoring</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+class BankAccount:
+    def __init__(self):
+        self._balance = 0
+
+    def deposit(self, amount):
+        if amount &lt; 0:
+            raise ValueError(&quot;Deposit amount must be positive&quot;)
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if amount &gt; self._balance:
+            return False
+        self._balance -= amount
+        return True</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">edge_02</span>
+                    <span class="failure-cat">Edge Cases</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```python
+def safe_int_parse(s, default=None):
+    try:
+        return int(s)
+    except ValueError:
+        return default
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">edge_03</span>
+                    <span class="failure-cat">Edge Cases</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+def unique_chars(s):
+    return len(set(s))</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">lang_01</span>
+                    <span class="failure-cat">Language Switch</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```javascript
+function debounce(fn, ms) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() =&gt; fn.apply(this, args), ms);
+  };
+}
+```</pre>
+                </details>
+            </div>
+            <div class="success-card">
+                <div class="failure-header">
+                    <span class="failure-id">lang_02</span>
+                    <span class="failure-cat">Language Switch</span>
+                    <span class="badge badge-correct">CORRECT</span>
+                </div>
+                <details>
+                    <summary>View Response (first 500 chars)</summary>
+                    <pre>
+```javascript
+async function fetchWithRetry(url, retries = 3) {
+  let attempts = 0;
+  while (attempts &lt; retries) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return await response.json(); // or response.text() / response.text
+    } catch (error) {
+      attempts++;
+      if (attempts &gt;= retries) throw error;
+    }
+  }
+}
+```</pre>
+                </details>
+            </div>
+
+<h2>📋 Recommendations for Fine-Tuning</h2>
+
+<div class="insight-box">
+<h3>Priority 1: Fix Output Channel Mismatch</h3>
+<p>The model must learn to put code in the content field, not reasoning. This is likely the biggest single factor in the 29% score.</p>
+<pre># Current behavior:
+# reasoning_content: "def reverse_string(s): return s[::-1]"
+# content: ""
+
+# Desired behavior:
+# reasoning_content: "" (or brief thought)
+# content: "def reverse_string(s):\n    return s[::-1]"
+</pre>
+</div>
+
+<div class="insight-box">
+<h3>Priority 2: Train on "Code Only" Format</h3>
+<p>Create SFT examples where the prompt asks for code and the response is PURE code with no preamble:</p>
+<pre># Prompt: "Write a function that reverses a string"
+# Assistant: "def reverse_string(s):
+#     return s[::-1]"</pre>
+</div>
+
+<div class="insight-box">
+<h3>Priority 3: Add Multi-Language Examples</h3>
+<p>Include JavaScript, TypeScript, and other language examples to prevent language confusion.</p>
+</div>
+
+<div class="insight-box">
+<h3>Priority 4: Edge Case Training</h3>
+<p>Add examples that specifically test edge cases: empty inputs, negative numbers, unicode, boundary conditions.</p>
+</div>
+
+<div class="insight-box">
+<h3>Priority 5: Class/OOP Examples</h3>
+<p>The model struggles with class-based code. Add SFT examples with proper class structure, <code>__init__</code>, and method definitions.</p>
+</div>
+
+<div class="footer">
+    Generated 2026-07-06 01:08:43 | Model: lfm2.5-8b-a1b | Server: llama.cpp on aero | Analysis: 34 prompts
+</div>
+
+</body>
+</html>
