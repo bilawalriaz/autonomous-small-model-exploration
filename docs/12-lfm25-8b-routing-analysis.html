@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LFM2.5-8B-A1B Routing Heatmap Analysis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e8;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { color: #888; font-size: 0.9rem; margin-bottom: 2rem; }
+  h2 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: #a78bfa;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.4rem;
+  }
+
+  /* Heatmap Grid */
+  .heatmap-container {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+  .heatmap { border-collapse: collapse; width: 100%; min-width: 700px; }
+  .heatmap th {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #ccc;
+    font-size: 0.85rem;
+    border-bottom: 2px solid #333;
+  }
+  .heatmap td {
+    padding: 0.7rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #1a1a2e;
+  }
+  .heatmap td:first-child {
+    text-align: left;
+    font-weight: 500;
+    min-width: 160px;
+    color: #d4d4e8;
+  }
+  .heatmap td:not(:first-child) {
+    border-radius: 4px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .heatmap tr:hover td:not(:first-child) {
+    filter: brightness(1.15);
+  }
+
+  /* Metric interpretation legend */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: #aaa;
+  }
+  .legend-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+  }
+
+  /* Bar charts */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .chart-card {
+    background: #12121e;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  .chart-card h3 {
+    font-size: 0.9rem;
+    color: #a78bfa;
+    margin-bottom: 0.7rem;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+  }
+  .bar-label {
+    width: 24px;
+    text-align: right;
+    color: #888;
+    font-size: 0.72rem;
+  }
+  .bar-track {
+    flex: 1;
+    height: 18px;
+    background: #1a1a2e;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+  .bar-value {
+    width: 55px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: #aaa;
+    font-size: 0.72rem;
+  }
+
+  /* Response preview table */
+  .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+  .detail-table th {
+    padding: 0.5rem;
+    text-align: left;
+    color: #888;
+    border-bottom: 1px solid #333;
+    font-weight: 500;
+  }
+  .detail-table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #1a1a2e;
+    vertical-align: top;
+  }
+  .detail-table td:first-child { color: #a78bfa; white-space: nowrap; }
+  .detail-table td:nth-child(2) { color: #ccc; max-width: 300px; }
+  .detail-table td:nth-child(3) { color: #aaa; font-size: 0.75rem; max-width: 450px; }
+
+  .hypothesis-box {
+    background: #12121e;
+    border-left: 3px solid #7c3aed;
+    padding: 1rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+    font-size: 0.88rem;
+    color: #ccc;
+  }
+  .hypothesis-box strong { color: #a78bfa; }
+</style>
+</head>
+<body>
+
+<h1>🔍 LFM2.5-8B-A1B Routing Heatmap</h1>
+<p class="subtitle">Behavioral expert activation analysis · 2026-07-06 01:15 · 40 prompts · 8 categories</p>
+
+<div class="hypothesis-box">
+  <strong>Hypothesis:</strong> Categories with <em>high</em> output diversity (high Levenshtein, high timing CV)
+  indicate that different expert subsets fire across variations. Categories with <em>low</em> diversity
+  suggest the same experts always activate for that task type — stable routing.
+</div>
+
+<h2>📊 Heatmap — Routing Signature per Category</h2>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch" style="background:#22c55e"></div> Stable (low value) = consistent expert routing</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#eab308"></div> Moderate variation</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#ef4444"></div> Diverse (high value) = varied expert activation</div>
+</div>
+
+<div class="heatmap-container">
+<table class="heatmap" id="heatmapTable">
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Normalized Diversity<br><span style="font-weight:400;font-size:0.72rem;color:#666">Levenshtein / mean length</span></th>
+  <th>Timing CV<br><span style="font-weight:400;font-size:0.72rem;color:#666">std / mean response time</span></th>
+  <th>Token Count CV<br><span style="font-weight:400;font-size:0.72rem;color:#666">std / mean output length</span></th>
+  <th>Mean Levenshtein<br><span style="font-weight:400;font-size:0.72rem;color:#666">raw edit distance</span></th>
+  <th>Mean Time (s)<br><span style="font-weight:400;font-size:0.72rem;color:#666">wall clock</span></th>
+</tr>
+</thead>
+<tbody id="heatmapBody">
+</tbody>
+</table>
+</div>
+
+<h2>⏱ Response Time per Variation</h2>
+<div class="chart-grid" id="timingCharts"></div>
+
+<h2>📝 Sample Responses</h2>
+<table class="detail-table">
+<thead><tr><th>Category</th><th>Prompt</th><th>Response (truncated)</th><th>Time</th><th>Tokens</th></tr></thead>
+<tbody id="responseBody"></tbody>
+</table>
+
+<h2>📐 Methodology Notes</h2>
+<div class="hypothesis-box">
+  <strong>Approach:</strong> We cannot directly observe which experts fire (that requires modifying llama.cpp internals).
+  Instead, we use <em>behavioral routing analysis</em>: send the same base prompt type with 5 variations and measure
+  output divergence. Different prompt variations may activate different expert subsets in the MoE layers
+  (8 total experts, 1 active per layer in this architecture). High Levenshtein distance between responses
+  to semantically similar prompts suggests that the router sends different variations to different experts.
+  <br><br>
+  <strong>Limitations:</strong> Output diversity is also affected by temperature, token sampling, and prompt ambiguity.
+  Timing variance includes network overhead. This is a proxy signal, not a direct expert activation measurement.
+  <br><br>
+  <strong>Temperature:</strong> 0.7 · <strong>Max tokens:</strong> 256 · <strong>Model:</strong> LFM2.5-8B-A1B (Q4_K_M GGUF)
+</div>
+
+<script>
+// ── Data ──
+const heatmapData = [{"category": "English Prose", "normalized_diversity": 0.8665, "timing_cv": 0.1171, "token_cv": 0.1313, "mean_levenshtein": 427.17, "timing_mean_s": 1.92, "token_mean": 241.8}, {"category": "Python Code", "normalized_diversity": 0, "timing_cv": 0.0055, "token_cv": 0.0, "mean_levenshtein": 0, "timing_mean_s": 2.061, "token_mean": 256}, {"category": "Math Reasoning", "normalized_diversity": 1.5, "timing_cv": 0.1074, "token_cv": 0.0966, "mean_levenshtein": 166, "timing_mean_s": 2.019, "token_mean": 245.4}, {"category": "French Text", "normalized_diversity": 1.3537, "timing_cv": 0.0065, "token_cv": 0.0053, "mean_levenshtein": 199, "timing_mean_s": 2.068, "token_mean": 255.4}, {"category": "JSON Extraction", "normalized_diversity": 0.9451, "timing_cv": 0.3048, "token_cv": 0.2925, "mean_levenshtein": 64.5, "timing_mean_s": 1.779, "token_mean": 210}, {"category": "Medical Domain", "normalized_diversity": 0, "timing_cv": 0.0136, "token_cv": 0.0, "mean_levenshtein": 0, "timing_mean_s": 2.119, "token_mean": 256}, {"category": "Creative Writing", "normalized_diversity": 0, "timing_cv": 0.074, "token_cv": 0.061, "mean_levenshtein": 0, "timing_mean_s": 2.122, "token_mean": 249.2}, {"category": "Step-by-Step Instructions", "normalized_diversity": 0, "timing_cv": 0.0203, "token_cv": 0.0, "mean_levenshtein": 0, "timing_mean_s": 2.137, "token_mean": 256}];
+const timingData = {"English Prose": [1.5184986591339111, 2.009371042251587, 2.015194892883301, 2.016758441925049, 2.0416855812072754], "Python Code": [2.0511722564697266, 2.0471620559692383, 2.0698928833007812, 2.0626397132873535, 2.0733699798583984], "Math Reasoning": [2.2018444538116455, 2.087852716445923, 2.0601413249969482, 2.1020195484161377, 1.6428806781768799], "French Text": [2.045189619064331, 2.072256565093994, 2.075653314590454, 2.0700995922088623, 2.0787317752838135], "JSON Extraction": [0.8774032592773438, 2.2828168869018555, 2.102553129196167, 1.7826430797576904, 1.849586009979248], "Medical Domain": [2.087771415710449, 2.1091136932373047, 2.0997846126556396, 2.155548572540283, 2.1426467895507812], "Creative Writing": [2.3022377490997314, 2.146024465560913, 1.868577003479004, 2.1472268104553223, 2.1462061405181885], "Step-by-Step Instructions": [2.1469080448150635, 2.2080464363098145, 2.10939884185791, 2.1008453369140625, 2.1189188957214355]};
+const responsePreviews = [{"category": "English Prose", "prompt": "Write a short paragraph about the ocean at sunset.", "preview": "\nThe sun drapes the horizon in molten gold, spilling amber and rose across the restless sea as waves catch the last light and shimmer like scattered glass. A gentle breeze carries the salty scent of t...", "wall_time": 1.5184986591339111, "tokens": 185}, {"category": "English Prose", "prompt": "Describe the feeling of walking through a quiet forest.", "preview": "\nThe air is cool and scented with pine and damp earth, a gentle breath that carries the faint perfume of moss and fallen leaves. Each step muffles beneath a carpet of soft, spongy needles, as if the f...", "wall_time": 2.009371042251587, "tokens": 256}, {"category": "English Prose", "prompt": "Write a few sentences about an old lighthouse on a cliff.", "preview": "\nThe weathered lighthouse stood like a sentinel on the craggy cliff, its white stone walls softened by decades of salt spray. A single lantern still flickered in its tower, casting a golden glow acros...", "wall_time": 2.015194892883301, "tokens": 256}, {"category": "English Prose", "prompt": "Describe a busy market in a small European town.", "preview": "\nThe town square hums with the clatter of wooden carts on worn cobblestones, each step echoing against the stone walls that have witnessed generations. Stalls tumble together like a patchwork quilt: a...", "wall_time": 2.016758441925049, "tokens": 256}, {"category": "English Prose", "prompt": "Write a paragraph about the first snow of winter.", "preview": "", "wall_time": 2.0416855812072754, "tokens": 256}, {"category": "Python Code", "prompt": "Write a Python function that checks if a number is prime.", "preview": "", "wall_time": 2.0511722564697266, "tokens": 256}, {"category": "Python Code", "prompt": "Write a Python function to reverse a linked list.", "preview": "", "wall_time": 2.0471620559692383, "tokens": 256}, {"category": "Python Code", "prompt": "Write a Python function that finds the longest palindrome in a string.", "preview": "", "wall_time": 2.0698928833007812, "tokens": 256}, {"category": "Python Code", "prompt": "Write a Python function to merge two sorted arrays.", "preview": "", "wall_time": 2.0626397132873535, "tokens": 256}, {"category": "Python Code", "prompt": "Write a Python function that converts decimal to binary.", "preview": "", "wall_time": 2.0733699798583984, "tokens": 256}, {"category": "Math Reasoning", "prompt": "What is the derivative of x^3 + 2x^2 - 5x + 7?", "preview": "\n\\boxed{3x^2 + 4x - ", "wall_time": 2.2018444538116455, "tokens": 256}, {"category": "Math Reasoning", "prompt": "Solve for x: 3x + 7 = 22.", "preview": "", "wall_time": 2.087852716445923, "tokens": 256}, {"category": "Math Reasoning", "prompt": "What is the integral of sin(x)cos(x) dx?", "preview": "", "wall_time": 2.0601413249969482, "tokens": 256}, {"category": "Math Reasoning", "prompt": "If f(x) = 2x^2 - 3x + 1, find f'(2).", "preview": "\nTo find \\(f'(2)\\) for \\(f(x)=2x^{2}-3x+1\\), we first differentiate \\(", "wall_time": 2.1020195484161377, "tokens": 256}, {"category": "Math Reasoning", "prompt": "What is the sum of the first 20 positive integers?", "preview": "\nThe sum of the first\u202f20\u202fpositive integers is calculated using the formula for an arithmetic series:\n\n\\[\n\\text{Sum} = \\frac{n\\,(n+1)}{2}\n\\]\n\nwhere \\(n = 20\\).\n\n\\[\n\\text{Sum} = \\frac{20 \\times 21}{2} =...", "wall_time": 1.6428806781768799, "tokens": 203}, {"category": "French Text", "prompt": "\u00c9crivez une courte phrase sur la beaut\u00e9 de Paris.", "preview": "\nParis, une beaut\u00e9 intemporelle qui illumine chaque recoin.", "wall_time": 2.045189619064331, "tokens": 253}, {"category": "French Text", "prompt": "D\u00e9crivez une journ\u00e9e typique \u00e0 la campagne fran\u00e7aise.", "preview": "\nThe sun climbs over the rolling hills of the \u00cele-de-France, casting a pale gold across the fields where the Grande Arm\u00e9e has just taken position. A distant horn blares, signaling the start of the day...", "wall_time": 2.072256565093994, "tokens": 256}, {"category": "French Text", "prompt": "\u00c9crivez quelques mots sur la cuisine fran\u00e7aise.", "preview": "", "wall_time": 2.075653314590454, "tokens": 256}, {"category": "French Text", "prompt": "D\u00e9crivez le march\u00e9 de No\u00ebl \u00e0 Strasbourg.", "preview": "", "wall_time": 2.0700995922088623, "tokens": 256}, {"category": "French Text", "prompt": "\u00c9crivez un paragraphe sur les saisons en France.", "preview": "", "wall_time": 2.0787317752838135, "tokens": 256}, {"category": "JSON Extraction", "prompt": "Extract the name and age from: \"John is 30 years old and lives in NYC.\" Return J", "preview": "\n{\"name\":\"John\",\"age\":30}", "wall_time": 0.8774032592773438, "tokens": 104}, {"category": "JSON Extraction", "prompt": "Parse: \"Apple Inc was founded by Steve Jobs in 1976.\" Return JSON with company, ", "preview": "\n{\n  \"company\": \"Apple Inc\",\n  \"founder\": \"Steve Jobs\",\n  \"year\": 1976\n}", "wall_time": 2.2828168869018555, "tokens": 248}, {"category": "JSON Extraction", "prompt": "From \"The book has 350 pages and costs $24.99\", extract book details as JSON.", "preview": "", "wall_time": 2.102553129196167, "tokens": 256}, {"category": "JSON Extraction", "prompt": "Parse: \"Tokyo has 14 million people and is the capital of Japan.\" Return JSON.", "preview": "\n{\n  \"city\": \"Tokyo\",\n  \"population\": 14000000,\n  \"is_capital\": true\n}", "wall_time": 1.7826430797576904, "tokens": 216}, {"category": "JSON Extraction", "prompt": "From \"Dr. Smith treated 5 patients today at General Hospital\", extract structure", "preview": "\n{\n  \"doctor\": \"Dr. Smith\",\n  \"patients_treated\": 5,\n  \"date\": \"today\",\n  \"location\": \"General Hospital\"\n}", "wall_time": 1.849586009979248, "tokens": 226}, {"category": "Medical Domain", "prompt": "What are the main symptoms of Type 2 diabetes?", "preview": "", "wall_time": 2.087771415710449, "tokens": 256}, {"category": "Medical Domain", "prompt": "Explain how mRNA vaccines work in simple terms.", "preview": "\nmRNA vaccines work like a tiny instruction manual for your cells.  \n\n1. The vaccine contains a piece of genetic material called messenger RNA (mRNA). This mRNA holds the instructions for making a har...", "wall_time": 2.1091136932373047, "tokens": 256}, {"category": "Medical Domain", "prompt": "What is the difference between bacterial and viral infections?", "preview": "", "wall_time": 2.0997846126556396, "tokens": 256}, {"category": "Medical Domain", "prompt": "Describe the role of white blood cells in the immune system.", "preview": "", "wall_time": 2.155548572540283, "tokens": 256}, {"category": "Medical Domain", "prompt": "What are the common treatments for hypertension?", "preview": "", "wall_time": 2.1426467895507812, "tokens": 256}, {"category": "Creative Writing", "prompt": "Write the opening line of a mystery novel.", "preview": "", "wall_time": 2.3022377490997314, "tokens": 256}, {"category": "Creative Writing", "prompt": "Write a haiku about artificial intelligence.", "preview": "", "wall_time": 2.146024465560913, "tokens": 256}, {"category": "Creative Writing", "prompt": "Write a short dialogue between two old friends meeting after years.", "preview": "\nTom: \"I couldn't believe it when I saw you at the caf\u00e9.\"  \nMia: \"Me neither \u2014 life sure did take a turn.\"  \nTom: \"Remember that summer we promised to write letters every month?\"  \nMia: \"And we never ...", "wall_time": 1.868577003479004, "tokens": 222}, {"category": "Creative Writing", "prompt": "Write a poem about the passage of time.", "preview": "", "wall_time": 2.1472268104553223, "tokens": 256}, {"category": "Creative Writing", "prompt": "Write a dark fairy tale opening about a cursed forest.", "preview": "", "wall_time": 2.1462061405181885, "tokens": 256}, {"category": "Step-by-Step Instructions", "prompt": "Explain how to make a cup of coffee step by step.", "preview": "", "wall_time": 2.1469080448150635, "tokens": 256}, {"category": "Step-by-Step Instructions", "prompt": "Give step-by-step instructions to tie a bowline knot.", "preview": "", "wall_time": 2.2080464363098145, "tokens": 256}, {"category": "Step-by-Step Instructions", "prompt": "Explain how to change a flat tire step by step.", "preview": "", "wall_time": 2.10939884185791, "tokens": 256}, {"category": "Step-by-Step Instructions", "prompt": "Describe the steps to bake chocolate chip cookies.", "preview": "", "wall_time": 2.1008453369140625, "tokens": 256}, {"category": "Step-by-Step Instructions", "prompt": "Explain how to set up a basic home network step by step.", "preview": "\n1. Gather your equipment  \n   - Modem (provided by your ISP)  \n   - Router (often included with the modem)  \n   - Ethernet cables (usually included)  \n   - Devices you will connect (computers, phones...", "wall_time": 2.1189188957214355, "tokens": 256}];
+
+// ── Color interpolation: green (0) → yellow (0.5) → red (1) ──
+function diversityColor(value, maxVal) {
+  const t = Math.min(value / (maxVal || 1), 1);
+  let r, g, b;
+  if (t < 0.5) {
+    // green → yellow
+    const p = t / 0.5;
+    r = Math.round(34 + p * 200);
+    g = Math.round(197 + p * (-14));
+    b = Math.round(94 + p * (-68));
+  } else {
+    // yellow → red
+    const p = (t - 0.5) / 0.5;
+    r = Math.round(234 + p * 1);
+    g = Math.round(183 + p * (-147));
+    b = Math.round(26 + p * (-10));
+  }
+  return `rgb(${r},${g},${b})`;
+}
+
+function timingColor(value, maxVal) {
+  // Lower is more stable → green. Higher → red.
+  return diversityColor(value, maxVal);
+}
+
+// ── Heatmap ──
+const maxDiv = Math.max(...heatmapData.map(d => d.normalized_diversity)) || 1;
+const maxTcv = Math.max(...heatmapData.map(d => d.timing_cv)) || 1;
+const maxTocv = Math.max(...heatmapData.map(d => d.token_cv)) || 1;
+
+const tbody = document.getElementById('heatmapBody');
+heatmapData.forEach(d => {
+  const row = document.createElement('tr');
+  row.innerHTML = `
+    <td>${d.category}</td>
+    <td style="background:${diversityColor(d.normalized_diversity, maxDiv)};color:#000">
+      ${d.normalized_diversity.toFixed(4)}
+    </td>
+    <td style="background:${timingColor(d.timing_cv, maxTcv)};color:#000">
+      ${d.timing_cv.toFixed(4)}
+    </td>
+    <td style="background:${timingColor(d.token_cv, maxTocv)};color:#000">
+      ${d.token_cv.toFixed(4)}
+    </td>
+    <td style="color:#999">${d.mean_levenshtein.toFixed(1)}</td>
+    <td style="color:#999">${d.timing_mean_s.toFixed(3)}s</td>
+  `;
+  tbody.appendChild(row);
+});
+
+// ── Timing bar charts ──
+const chartsDiv = document.getElementById('timingCharts');
+const chartColors = ['#7c3aed','#06b6d4','#f59e0b','#10b981','#ef4444','#ec4899','#3b82f6','#f97316'];
+Object.entries(timingData).forEach(([cat, times], ci) => {
+  const maxT = Math.max(...times);
+  const card = document.createElement('div');
+  card.className = 'chart-card';
+  card.innerHTML = `<h3>${cat}</h3>`;
+  times.forEach((t, i) => {
+    const pct = (t / maxT * 100).toFixed(1);
+    card.innerHTML += `
+      <div class="bar-row">
+        <span class="bar-label">v${i+1}</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${pct}%;background:${chartColors[ci % chartColors.length]}"></div>
+        </div>
+        <span class="bar-value">${t.toFixed(3)}s</span>
+      </div>`;
+  });
+  chartsDiv.appendChild(card);
+});
+
+// ── Response previews ──
+const rbody = document.getElementById('responseBody');
+responsePreviews.forEach(r => {
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>${r.category}</td>
+    <td>${r.prompt}</td>
+    <td>${r.preview}</td>
+    <td>${r.wall_time.toFixed(2)}s</td>
+    <td>${r.tokens}</td>
+  `;
+  rbody.appendChild(tr);
+});
+</script>
+
+</body>
+</html>
