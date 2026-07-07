@@ -28,7 +28,7 @@ TEACHER_URL = os.environ.get("TEACHER_URL", "http://100.100.61.28:8080")
 TEACHER_MODEL = os.environ.get("TEACHER_MODEL", "gemma4")  # llama.cpp ignores model name, uses whatever is loaded
 INPUT_DIR = os.environ.get("INPUT_DIR", "/Users/bilawalriaz/rollouts")
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/Users/bilawalriaz/scored")
-TIMEOUT = int(os.environ.get("TIMEOUT", "180"))
+TIMEOUT = int(os.environ.get("TIMEOUT", "600"))
 MAX_RETRIES = 3
 RETRY_DELAY = 3
 
@@ -220,18 +220,24 @@ def score_prompt(ph, group):
     dataset = meta.get("_dataset") or meta.get("category") or "unknown"
 
     # Build the ranking prompt
+    print(f"    building prompt...", end="", flush=True)
     gen_block = format_generations(gens)
+    print(f" {len(gen_block):,}ch gen block", end="", flush=True)
     full_prompt = RANKING_PROMPT.format(
         n_gens=len(gens),
         prompt=prompt,
         gold_answer=gold_answer,
         generations_block=gen_block,
     )
+    print(f" → {len(full_prompt):,}ch total", end="", flush=True)
 
     # Single teacher call: rank + condense in one shot
+    est_tokens = len(full_prompt) // 4
+    print(f" (~{est_tokens:,} tok) → calling {TEACHER_URL}...", flush=True)
     t0 = time.monotonic()
     response_text = call_teacher(full_prompt)
     elapsed = time.monotonic() - t0
+    print(f"    ✅ {elapsed:.1f}s, {len(response_text):,} chars back", flush=True)
 
     # Parse
     result = parse_teacher_response(response_text)
