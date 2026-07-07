@@ -328,6 +328,12 @@ def main():
 
     cmd = sys.argv[1] if len(sys.argv) > 1 else "full"
 
+    # If first arg looks like a directory/file, treat it as input for full run
+    input_override = None
+    if cmd not in ("stats", "score-one", "dry-run", "full") and os.path.isdir(os.path.expanduser(cmd)):
+        input_override = os.path.expanduser(cmd)
+        cmd = "full"
+
     if cmd == "stats":
         scored_file = Path(OUTPUT_DIR) / "scored.jsonl"
         if not scored_file.exists():
@@ -379,11 +385,15 @@ def main():
         return
 
     # Full scoring
+    if input_override:
+        INPUT_DIR_VAL = input_override
+    else:
+        INPUT_DIR_VAL = INPUT_DIR
     print(f"{'='*60}")
     print(f"TEACHER SCORING & REASONING CONDENSATION")
     print(f"{'='*60}")
     print(f"  Teacher:  {TEACHER_URL} ({TEACHER_MODEL})")
-    print(f"  Input:    {INPUT_DIR}")
+    print(f"  Input:    {INPUT_DIR_VAL}")
     print(f"  Output:   {OUTPUT_DIR}")
     print(f"  Limits:   reasoning={MAX_REASONING_CHARS}ch, response={MAX_RESPONSE_CHARS}ch, prompt={MAX_PROMPT_CHARS}ch")
     print()
@@ -399,7 +409,7 @@ def main():
 
     # Load rollouts
     print("\nLoading rollouts...", flush=True)
-    groups = load_rollouts(INPUT_DIR)
+    groups = load_rollouts(INPUT_DIR_VAL)
     print(f"  Unique prompts: {len(groups)}")
 
     # Load already scored
