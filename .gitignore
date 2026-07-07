@@ -1,4 +1,5 @@
-# Rollout data (large, stored on machines)
+# Rollout outputs (large, on machines)
+rollouts*/
 results/distill_*/
 results/distill_ifstruct/
 

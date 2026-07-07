@@ -1,0 +1,126 @@
+{
+  "experiment": "13G",
+  "name": "Q-Head Training",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 306.3027172088623,
+  "timestamp": "2026-07-01T10:37:15",
+  "results": {
+    "config": {
+      "K": 20,
+      "sigma": 0.01,
+      "n_train_prompts": 30,
+      "n_features": 7
+    },
+    "cross_validation": [
+      {
+        "fold": 0,
+        "train_size": 480,
+        "test_size": 120,
+        "binary_accuracy": 0.40833333134651184,
+        "prompt_selection_accuracy": 0.3333333333333333,
+        "positive_rate": 0.4416666626930237
+      },
+      {
+        "fold": 1,
+        "train_size": 480,
+        "test_size": 120,
+        "binary_accuracy": 0.6916666626930237,
+        "prompt_selection_accuracy": 0.3333333333333333,
+        "positive_rate": 0.7333333492279053
+      },
+      {
+        "fold": 2,
+        "train_size": 480,
+        "test_size": 120,
+        "binary_accuracy": 0.7166666388511658,
+        "prompt_selection_accuracy": 0.6666666666666666,
+        "positive_rate": 0.6666666865348816
+      },
+      {
+        "fold": 3,
+        "train_size": 480,
+        "test_size": 120,
+        "binary_accuracy": 0.6833333373069763,
+        "prompt_selection_accuracy": 0.8333333333333334,
+        "positive_rate": 0.75
+      },
+      {
+        "fold": 4,
+        "train_size": 480,
+        "test_size": 120,
+        "binary_accuracy": 0.7833333611488342,
+        "prompt_selection_accuracy": 0.8333333333333334,
+        "positive_rate": 0.699999988079071
+      }
+    ],
+    "cv_summary": {
+      "mean_prompt_accuracy": 0.6,
+      "mean_binary_accuracy": 0.6566666662693024,
+      "std_prompt_accuracy": 0.22607766610417562
+    },
+    "heldout_comparison": {
+      "random": {
+        "accuracy": 0.8,
+        "n_correct": 4,
+        "n_total": 5
+      },
+      "lowest_nll": {
+        "accuracy": 0.8,
+        "n_correct": 4,
+        "n_total": 5
+      },
+      "highest_conf": {
+        "accuracy": 0.8,
+        "n_correct": 4,
+        "n_total": 5
+      },
+      "q_head": {
+        "accuracy": 0.8,
+        "n_correct": 4,
+        "n_total": 5
+      },
+      "oracle": {
+        "accuracy": 1.0,
+        "n_correct": 5,
+        "n_total": 5
+      },
+      "baseline": {
+        "accuracy": 1.0,
+        "n_correct": 5,
+        "n_total": 5
+      }
+    },
+    "feature_names": [
+      "prompt_nll",
+      "max_conf",
+      "text_length",
+      "digit_count",
+      "has_json",
+      "word_count",
+      "upper_count"
+    ],
+    "feature_stats": {
+      "mean": [
+        5.802460193634033,
+        0.9996821284294128,
+        89.36499786376953,
+        4.651666641235352,
+        0.8700000047683716,
+        12.043333053588867,
+        4.211666584014893
+      ],
+      "std": [
+        0.3948327600955963,
+        0.0007296382682397962,
+        41.52132034301758,
+        3.834536552429199,
+        0.3363027274608612,
+        6.628579139709473,
+        2.967078685760498
+      ]
+    },
+    "positive_rate": 0.6583333611488342
+  }
+}

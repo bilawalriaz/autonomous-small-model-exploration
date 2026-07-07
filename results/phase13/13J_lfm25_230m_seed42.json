@@ -1,0 +1,36 @@
+{
+  "experiment": "13J",
+  "name": "Real-World Extraction",
+  "model": "LiquidAI/LFM2.5-230M",
+  "seed": 42,
+  "device": "cuda:0",
+  "elapsed_seconds": 175.62344765663147,
+  "timestamp": "2026-07-01T11:13:04",
+  "results": {
+    "model": "LiquidAI/LFM2.5-230M",
+    "results": {
+      "clean": {
+        "n_prompts": 30,
+        "K": 5,
+        "sigma": 0.01,
+        "baseline_accuracy": 0.8333333333333334,
+        "baseline_correct": 25.0,
+        "noisy_accuracy": 0.9,
+        "noisy_correct": 27.0,
+        "improvement_pp": 0.06666666666666665,
+        "relative_boost": 1.08
+      },
+      "messy": {
+        "n_prompts": 30,
+        "K": 5,
+        "sigma": 0.01,
+        "baseline_accuracy": 0.26666666666666666,
+        "baseline_correct": 8.0,
+        "noisy_accuracy": 0.5333333333333333,
+        "noisy_correct": 16.0,
+        "improvement_pp": 0.26666666666666666,
+        "relative_boost": 2.0
+      }
+    }
+  }
+}
