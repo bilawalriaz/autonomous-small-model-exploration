@@ -24,9 +24,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 # ─── Config ───────────────────────────────────────────────────────────────────
-TEACHER_URL = os.environ.get("TEACHER_URL", "http://100.100.61.28:1234")
-TEACHER_MODEL = os.environ.get("TEACHER_MODEL",
-    "gemma4-26b-a4b-qat-uncensored-hauhaucs-balanced-mtp@q4_k_m")
+TEACHER_URL = os.environ.get("TEACHER_URL", "http://100.100.61.28:8080")
+TEACHER_MODEL = os.environ.get("TEACHER_MODEL", "gemma4")  # llama.cpp ignores model name, uses whatever is loaded
 INPUT_DIR = os.environ.get("INPUT_DIR", "/Users/bilawalriaz/rollouts")
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/Users/bilawalriaz/scored")
 TIMEOUT = int(os.environ.get("TIMEOUT", "180"))
@@ -384,7 +383,7 @@ def main():
 
     # Health check
     try:
-        r = requests.get(f"{TEACHER_URL}/v1/models", timeout=10)
+        r = requests.get(f"{TEACHER_URL}/health", timeout=10)
         r.raise_for_status()
         print("  Teacher: reachable ✅")
     except Exception as e:
