@@ -67,20 +67,20 @@ Your job is to:
   "correctness": <"correct"|"incorrect"|"partial"|"na">,
   "format_valid": <true|false>,
   "winner_reason": "<one sentence why this generation won>",
-  "condensed_reasoning": "<rewrite the winner's thinking chain to be concise — keep the planning steps, remove verbose drafting, repeated attempts, 'oh wait', dead ends. Same voice, just tighter. If the original reasoning was already short, keep it as-is.>"
+  "condensed_reasoning": "<edit the winner's thinking chain to be shorter — DELETE dead ends, 'oh wait' moments, repeated attempts, verbose restating. Do NOT rephrase or rewrite. Keep the model's exact words, just remove the fat. If already concise, keep as-is.>"
 }}
 """)
 
 CONDENSE_ONLY_PROMPT = textwrap.dedent("""\
-You are a reasoning chain editor. Given a thinking trace from a language model,
-rewrite it to be concise and direct.
+You are editing a thinking chain from a language model to make it shorter.
 
-Rules:
-- Keep all logical steps and planning
-- Remove: verbose drafting, repeated attempts, "oh wait let me reconsider", dead ends, self-corrections that went nowhere
-- Keep the model's original voice and reasoning style
-- If the chain is already concise, return it unchanged
-- Output ONLY the condensed reasoning, nothing else
+RULES:
+- Edit the EXISTING text — do not rewrite it. Keep the model's exact words and phrasing.
+- ONLY delete lines/blocks that are: dead ends, "oh wait" moments, repeated attempts at the same thing, self-corrections that went nowhere, or verbose restating of the same step.
+- Do NOT rephrase, summarize, or restructure. The goal is the same thinking, just shorter.
+- Do NOT add explanations or connective tissue that wasn't there.
+- If it's already concise, return it unchanged.
+- Output ONLY the edited reasoning, nothing else.
 
 Original reasoning ({n_chars} chars):
 {reasoning}
