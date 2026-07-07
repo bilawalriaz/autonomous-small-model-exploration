@@ -34,7 +34,7 @@
   .reasoning-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
   @media (max-width: 768px) { .reasoning-compare { grid-template-columns: 1fr; } }
   .reasoning-box { border-radius: 6px; padding: 1rem; font-size: 0.85rem; font-family: monospace;
-                   white-space: pre-wrap; overflow-x: auto; max-height: 300px; overflow-y: auto; }
+                   white-space: pre-wrap; overflow-x: auto; max-height: 400px; overflow-y: auto; }
   .reasoning-original { background: #1a1a2e; border: 1px solid #3a3a5e; }
   .reasoning-condensed { background: #1a2e1a; border: 1px solid #3a5e3a; }
   .box-label { font-family: -apple-system, sans-serif; font-size: 0.75rem; font-weight: 600;
@@ -68,12 +68,18 @@
   .pipeline-text { flex: 1; }
   .pipeline-text strong { color: var(--text); }
   .pipeline-text span { color: var(--muted); font-size: 0.85rem; }
+  .highlight-change { background: #1a2a1a; border-left: 3px solid var(--yellow); padding: 0.75rem 1rem;
+                      margin: 1rem 0; border-radius: 0 6px 6px 0; font-size: 0.85rem; }
 </style>
 </head>
 <body>
 
 <h1>🎓 Teacher Scoring Report</h1>
-<p class="subtitle">Gemma4-26B-A4B (Q4_K_M) evaluating LFM2.5-8B-A1B rollouts — July 7, 2026</p>
+<p class="subtitle">Gemma4-26B-A4B (Q4_K_M) evaluating LFM2.5-8B-A1B rollouts — July 7, 2026 (v2)</p>
+
+<div class="highlight-change">
+  <strong>v2 change:</strong> Condensation now <em>edits</em> the original reasoning instead of rewriting it. The model's exact words and phrasing are preserved — only dead ends, "oh wait" moments, and verbose repetition are removed. This keeps the thinking voice close to what the student model would naturally produce, matching token activations.
+</div>
 
 <h2>Pipeline Overview</h2>
 <div class="pipeline-box">
@@ -82,23 +88,23 @@
     <div class="pipeline-text">
       <strong>Rollout Generation</strong><br>
       <span>LFM2.5-8B-A1B generates 6 responses per prompt at temperatures [0.3, 0.5, 0.7, 0.8, 0.9, 1.0]</span><br>
-      <span>23,220 total rollouts from 5,191 prompts across GSM8K, ARC-Challenge, MMLU, ifstruct-v1.0</span>
+      <span>23,220 total rollouts from ~3,850 unique prompts across GSM8K, ARC-Challenge, MMLU, ifstruct-v1.0</span>
     </div>
   </div>
   <div class="pipeline-step">
     <div class="pipeline-num">2</div>
     <div class="pipeline-text">
       <strong>Teacher Ranking</strong><br>
-      <span>Gemma4 sees all 6 generations per prompt, ranks by quality (correctness, format, reasoning clarity)</span><br>
+      <span>Gemma4 sees all 6 generations per prompt, ranks by quality (correctness, format adherence, reasoning clarity)</span><br>
       <span>Picks single best generation as training target</span>
     </div>
   </div>
   <div class="pipeline-step">
     <div class="pipeline-num">3</div>
     <div class="pipeline-text">
-      <strong>Reasoning Condensation</strong><br>
-      <span>Gemma4 rewrites the winner's thinking chain — keeps planning steps, removes dead ends and verbose drafting</span><br>
-      <span>Same voice, just tighter. Average 83% compression.</span>
+      <strong>Reasoning Condensation (edit, not rewrite)</strong><br>
+      <span>Gemma4 removes dead ends and verbose repetition from the winner's thinking chain</span><br>
+      <span>Same voice, same words, just shorter. ~53% avg compression.</span>
     </div>
   </div>
   <div class="pipeline-step">
@@ -122,7 +128,7 @@
     <div class="label">Avg Quality (out of 10)</div>
   </div>
   <div class="stat-card">
-    <div class="value">83%</div>
+    <div class="value">53%</div>
     <div class="label">Avg Reasoning Compression</div>
   </div>
   <div class="stat-card">
@@ -130,7 +136,7 @@
     <div class="label">Correct Answers</div>
   </div>
   <div class="stat-card">
-    <div class="value">16.4s</div>
+    <div class="value">56s</div>
     <div class="label">Avg Scoring Time</div>
   </div>
   <div class="stat-card">
@@ -152,7 +158,7 @@
     <span>🌡️ Winner temp: 0.5</span>
     <span>🔄 6 generations ranked</span>
     <span>✅ Format valid</span>
-    <span>⏱️ 11.4s</span>
+    <span>⏱️ 52.7s</span>
   </div>
 
   <h3>Prompt</h3>
@@ -196,7 +202,7 @@ Just the JSON, no commentary or preamble.</div>
   </div>
 
   <div class="winner-reason">
-    <strong>Gemma4's rationale:</strong> "Generation 1 followed all schema constraints (including the requirement for exactly 3 samples per set) and produced realistic, high-quality log fragments."
+    <strong>Gemma4's rationale:</strong> "Generation 1 correctly follows all constraints, including the specific number of samples per set (3), valid JSON format without code fences, and realistic multiline log fragments."
   </div>
 
   <h3>Reasoning: Original vs Condensed</h3>
@@ -217,21 +223,74 @@ Now sample_text: need to be realistic multiline log fragment with timestamps, de
 
 We need to ensure JSON is valid, no extra fields. Provide top-level array.
 
-Let's craft 2 items. Each with 3 parser_s...</div>
+Let's craft 2 items. Each with 3 parser_samples.
+
+Item 1: label "Dead Letter Parser Debug Set 1". parse_failure_seen: true. multiline_handling_needed: true. Then three samples...
+
+Sample 1: mode "strict", recoverable_parse false, timestamp_present true. Text: "2023-09-28T12:00:00Z|ERROR|dead|queue:payments|failed_transaction|retry_count=0". Might be strict and fails.
+
+Sample 2: mode "lenient", recoverable_parse true, timestamp_present true. Text: "2023-09-28T12:01:22Z|WARN|dead|queue:inventory|item=SKU12345|reason=out_of_stock|attempt=3". Lenient allows extra fields.
+
+Sample 3: mode "hybrid", recoverable_parse true, timestamp_present true. Text: multiline: first line "2023-09-28T12:02:10Z", second line "\"[queue]\" dead|\"name\":\"support\",\"status\":\"blocked\"". Something like that.
+
+Item 2: label "Dead Letter Parser Debug Set 2". parse_failure_seen: true. multiline_handling_needed: false. Samples: mode "regex", recoverable_parse false, timestamp_present true. Text: "2023-09-28 13:45:07|ERROR|queue:transactions|msg=payment_failed|code=500". Or maybe "2023-09-28T13:45:07Z|ERROR|dead|queue:transactions|msg=payment_failed|code=500|attempt=1". But need multiline? Not needed.
+
+But we need to ensure sample_text looks like genuine parser input. Use delimiters, maybe pipe or colon. Provide varied.
+
+Let's craft JSON.
+
+Structure:
+
+[
+  {
+    "parser_review_label": "Dead Letter Parser Debug Set 1",
+    "parse_failure_seen": true,
+    "multiline_handling_needed": true,
+    "parser_samples": [
+      {
+        "parser_mode": "strict",
+        "recoverable_parse": false,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:00:00Z|ERROR|dead|queue:payments|failed_transaction|retry_count=0"
+      },
+      {
+        "parser_mode": "lenient",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:01:22Z|WARN|dead|queue:inventory|item=SKU12345|reason=out_of_stock|attempt=3"
+      },
+      {
+        "parser_mode": "hybrid",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:02:10Z | [queue] dead|name='support'|status='blocked'|msg='payment_failed'|code=500"
+      }
+    ]
+  },
+  ...
+]
+
+That would be a list of 2 items. Ensure no extra commentary. Output raw JSON. No markdown. Provide as plain text.
+
+Check fields: parser_review_label is string, parse_failure_seen boolean, multiline_handling_needed boolean, parser_samples array of objects with those keys. All good.
+
+We need to ensure that sample_text strings are realistic. They are.
+
+Thus final answer.</div>
     </div>
     <div>
-      <div class="box-label box-label-conn">CONDENSED (662 chars — 88% compression)</div>
-      <div class="reasoning-box reasoning-condensed">1. Determine output format: A bare JSON list of 2-3 objects.
-2. Define object structure: Each item needs `parser_review_label`, `parse_failure_seen`, `multiline_handling_needed`, and a `parser_samples` array containing exactly 3 items.
-3. Design samples for message queue dead-letter records:
-   - Sample 1 (Strict): Pipe-delimited, single line, potential parse failure.
-   - Sample 2 (Lenient): Key-value pairs with extra fields.
-   - Sample 3 (Hybrid): Multiline format combining timestamp and key-value/JSON data.
-4. Ensure `sample_text` contains realistic log elements: timestamps, delimiters, and quoted fields.
-5. Validate JSON syntax and schema adherence.</div>
+      <div class="box-label box-label-conn">CONDENSED (1,926 chars — 65% compression)</div>
+      <div class="reasoning-box reasoning-condensed">We need to produce a JSON list at top level, containing 2-3 items. Each item is an object with fields: parser_review_label, parse_failure_seen, multiline_handling_needed, parser_samples (array of 3 items). Each sample includes: parser_mode (string), recoverable_parse (boolean), timestamp_present (boolean), and sample_text (string) that looks like genuine parser input. We need to generate 2-3 log parser example sets for message queue dead-letter records. Provide field values that fit a parser tuning memo rewritten as prose. Each sample text should be realistic log fragment with timestamps, delimiters, quoted fields. Also include metadata fields plausible for ingest debugging and parser tuning contexts. Output raw JSON, no code fences. The top-level is a list of items. For each item, we need to decide parse_failure_seen: likely true if sample has parse failures? Or maybe false if it's fine. Since we are generating example sets for dead-letter records, perhaps there are parse failures. We'll set parse_failure_seen: true for each sample. multiline_handling_needed: maybe true for some. parser_mode: we can vary across samples. For example: first sample strict, second lenient, third hybrid. Provide recoverable_parse: true for all? Or maybe some false. Let's assume all are recoverable but some have parse failures. timestamp_present: likely true for logs, so true. Now sample_text: need to be realistic multiline log fragment with timestamps, delimiters, quoted fields. For example, using a custom format like "2023-09-28T12:34:56Z|DEAD|queue_name|message|reason". Or maybe "2023-09-28 12:34:56 INFO [queue] dead letter ...". We'll include quoted fields like "queue_name": "orders". Use pipe delimiter. Provide multiline: maybe first line timestamp, second line message, third line fields. We need to ensure JSON is valid, no extra fields. Provide top-level array. Let's craft 2 items. Each with 3 parser_samples.</div>
     </div>
   </div>
-  <div class="savings-bar"><div class="savings-fill" style="width:88%"></div></div>
+  <div class="savings-bar"><div class="savings-fill" style="width:65%"></div></div>
+
+  <h3>What was removed</h3>
+  <ul style="margin:0.5rem 0 0 1.5rem; font-size:0.85rem; color:var(--muted);">
+    <li>Removed the step-by-step JSON construction where the model drafted each item field-by-field — the schema requirements were already clear from the first paragraph</li>
+    <li>Removed "We need to ensure JSON is valid, no extra fields" and other meta-commentary about output format — already stated in the prompt</li>
+    <li>Removed the verbose "Thus final answer" closing</li>
+  </ul>
 
   <h3>Winner Response</h3>
   <div class="winner-response">[
@@ -303,7 +362,7 @@ Let's craft 2 items. Each with 3 parser_s...</div>
     <span>🌡️ Winner temp: 0.3</span>
     <span>🔄 6 generations ranked</span>
     <span>✅ Format valid</span>
-    <span>⏱️ 28.1s</span>
+    <span>⏱️ 89.6s</span>
   </div>
 
   <h3>Prompt</h3>
@@ -338,7 +397,7 @@ Limit the response to the fields defined here.</div>
   </div>
 
   <div class="winner-reason">
-    <strong>Gemma4's rationale:</strong> "Generation 0 correctly follows the YAML requirement (though it outputs JSON-formatted YAML), adheres to all schema constraints including enum values and array lengths, and provides highly realistic terminal excerpts."
+    <strong>Gemma4's rationale:</strong> "Generation 0 correctly follows the schema and provides high-quality, realistic terminal excerpts that match the requested tone."
   </div>
 
   <h3>Reasoning: Original vs Condensed</h3>
@@ -360,22 +419,94 @@ Let's design:
 notes: "Feature rollout verification for v2.1.0 on production cluster"
 
 path: true (they used a remote host)
+
 privileged_access_used: true (they used sudo)
+
 session_fragments: array of 5 objects.
 
 Fragment 1: command_goal: "diagnostics", terminal_excerpt: something like:
+
+```
 root@cluster01:/opt/feature/root@
-# systemd-analyz...</div>
+# systemd-analyze verify
+# Checking integrity of deployed binaries
+$ systemd-analyze verify
+# ... output ...
+```
+
+But need realistic output lines. Let's craft each.
+
+We need to ensure each fragment includes command_goal and terminal_excerpt. The terminal_excerpt should be a string that includes the prompt and output lines.
+
+We'll produce something like:
+
+Fragment 1:
+command_goal: "diagnostics"
+terminal_excerpt: "root@host:/opt/feature/root# systemd-analyze verify\n# Checking integrity of deployed binaries\n# Output: OK (0 errors)\n"
+
+Fragment 2: goal: "deploy", excerpt: maybe "apt-get install -y feature-v2.1.0". Provide output.
+
+Fragment 3: goal: "build", excerpt: "make clean && make -j4". Provide output.
+
+Fragment 4: goal: "migration", excerpt: "aws ec2 run-instances ..."
+
+Fragment 5: goal: "cleanup", excerpt: "rm -rf /var/log/old"
+
+Make sure each excerpt includes typical command prompts and output.
+
+Now produce YAML:
+
+{
+  "terminal_session_notes": [
+    {
+      "notes": "Feature rollout verification for v2.1.0 on production cluster",
+      "path": true,
+      "privileged_access_used": true,
+      "session_fragments": [
+        {
+          "command_goal": "diagnostics",
+          "terminal_excerpt": "root@host:/opt/feature/root# systemd-analyze verify\n# Checking integrity of deployed binaries\n# Output: OK (0 errors)\n"
+        },
+        {
+          "command_goal": "deploy",
+          "terminal_excerpt": "root@host:/opt/feature/root# apt-get update && apt-get install -y feature-v2.1.0\n# Verifying package installation\n# Output: [2/10] Installed: 1/1 [100%]\n"
+        },
+        ...
+      ]
+    }
+  ]
+}
+
+We need to ensure the YAML is valid. No extra fields. That seems correct.
+
+We need to ensure we have 1-3 session note sets. We have one. That satisfies.
+
+Thus final answer: raw YAML.</div>
     </div>
     <div>
-      <div class="box-label box-label-conn">CONDENSED (503 chars — 89% compression)</div>
-      <div class="reasoning-box reasoning-condensed">1. Determine output structure: A single object with key `terminal_session_notes` containing an array of session objects.
-2. Define session metadata: Set `session_summary`, `remote_host_used`, and `privileged_access_used` to plausible values for a rollout verification.
-3. Construct 5 session fragments: For each, select a valid `command_goal` (diagnostics, deploy, build, migration, cleanup) and craft a realistic `terminal_excerpt` containing prompts, commands, and output lines.
-4. Format as raw YAML.</div>
+      <div class="box-label box-label-conn">CONDENSED (1,920 chars — 57% compression)</div>
+      <div class="reasoning-box reasoning-condensed">We need to produce a YAML object with key "terminal_session_notes" containing an array of session notes. The description: "Generate 1-3 terminal session note sets for a feature rollout verification session." So we can provide one set (or maybe multiple). The fields: notes (short label for the terminal troubleshooting session), path (boolean), privileged_access_used (boolean), and session_fragments (array of objects with command_goal and terminal_excerpt). Each fragment includes command_goal (one of the listed) and terminal_excerpt (string). The excerpt should be realistic, like a shell session. We need to include plausible incident response metadata: remote_host_used maybe true (if they used a remote host for verification), privileged_access_used maybe true (if they used sudo). Provide path boolean: maybe true if they used a remote path. Let's design:
+
+notes: "Feature rollout verification for v2.1.0 on production cluster"
+path: true
+privileged_access_used: true
+session_fragments: array of 5 objects.
+Fragment 1: command_goal: "diagnostics", terminal_excerpt: "root@host:/opt/feature/root# systemd-analyze verify\n# Checking integrity of deployed binaries\n# Output: OK (0 errors)\n"
+Fragment 2: goal: "deploy", excerpt: "root@host:/opt/feature/root# apt-get update && apt-get install -y feature-v2.1.0\n# Verifying package installation\n# Output: [2/10] Installed: 1/1 [100%]\n"
+Fragment 3: goal: "build", excerpt: "root@host:/opt/feature/root# make -j4 2>&amp;1\n# Compiling feature module...\n# Output: Building module... 100% (0/1000 files)\n"
+Fragment 4: goal: "migration", excerpt: "root@host:/opt/feature/root# terraform apply -auto-approve\n# Applying changes to staging environment\n# Output: Applying configuration... 0/0 resources\n"
+Fragment 5: goal: "cleanup", excerpt: "root@host:/opt/feature/root# find /var/log -type f -name '*.old' -delete\n# Removing stale logs\n# Output: 12 files deleted\n"</div>
     </div>
   </div>
-  <div class="savings-bar"><div class="savings-fill" style="width:89%"></div></div>
+  <div class="savings-bar"><div class="savings-fill" style="width:57%"></div></div>
+
+  <h3>What was removed</h3>
+  <ul style="margin:0.5rem 0 0 1.5rem; font-size:0.85rem; color:var(--muted);">
+    <li>Removed the repeated "We need to produce..." / "We need to ensure..." meta-statements</li>
+    <li>Removed the exploration of different format options (YAML vs JSON, single vs multiple sets) — the model already decided on one set early on</li>
+    <li>Removed the separate code block drafting where fragments were drafted in a ```block before being written as YAML</li>
+    <li>Kept the actual fragment specifications with the terminal_excerpt content — these contain the useful planning</li>
+  </ul>
 
   <h3>Winner Response</h3>
   <div class="winner-response">{
@@ -395,7 +526,7 @@ root@cluster01:/opt/feature/root@
         },
         {
           "command_goal": "build",
-          "terminal_excerpt": "root@host:/opt/feature/root# make -j4 2>&1\n# Compiling feature module...\n# Output: Building module... 100% (0/1000 files)\n"
+          "terminal_excerpt": "root@host:/opt/feature/root# make -j4 2>&amp;1\n# Compiling feature module...\n# Output: Building module... 100% (0/1000 files)\n"
         },
         {
           "command_goal": "migration",
@@ -426,7 +557,7 @@ root@cluster01:/opt/feature/root@
     <span>🌡️ Winner temp: 0.3</span>
     <span>🔄 1 generation (only available)</span>
     <span>✅ Gold answer match</span>
-    <span>⏱️ 9.7s</span>
+    <span>⏱️ 25.8s</span>
   </div>
 
   <h3>Prompt</h3>
@@ -443,7 +574,7 @@ Then add the number of students' and teachers' windows smashed: 64 + 48 = 112 wi
 #### 112</div>
 
   <div class="winner-reason">
-    <strong>Gemma4's rationale:</strong> "The generation correctly solved the math problem and followed all formatting instructions, including the specific '#### ' requirement."
+    <strong>Gemma4's rationale:</strong> "The generation correctly solves the math problem and adheres strictly to the requested output format."
   </div>
 
   <h3>Reasoning: Original vs Condensed</h3>
@@ -473,15 +604,25 @@ But we need to show step by step. Provide final answer line starting with "#### 
 Probably that's fine. Provide step-by-step reasoning. No extra formatting. Let's produce.</div>
     </div>
     <div>
-      <div class="box-label box-label-conn">CONDENSED (316 chars — 72% compression)</div>
-      <div class="reasoning-box reasoning-condensed">1. Calculate total student windows: 64 cars * 4 windows/car = 256 windows.
-2. Calculate smashed student windows: 1/4 of 256 = 64 windows.
-3. Calculate total teacher windows: 32 cars * 2 windows/car = 64 windows.
-4. Calculate smashed teacher windows: 3/4 of 64 = 48 windows.
-5. Sum the results: 64 + 48 = 112 windows.</div>
+      <div class="box-label box-label-conn">CONDENSED (720 chars — 37% compression)</div>
+      <div class="reasoning-box reasoning-condensed">We need to parse the problem: Hannah smashes a quarter of the students' cars' windows and 3/4ths of the teachers' cars' windows. There are 64 students' cars with four windows each, and 32 teachers' cars with two windows each. How many windows does Hannah smash? So we need to compute total windows smashed.
+
+Students: 64 cars, each with 4 windows. So total student windows = 64 * 4 = 256 windows.
+She smashes a quarter of the students' cars' windows: quarter of 256 = 256 / 4 = 64 windows.
+
+Teachers: 32 cars, each with 2 windows. Total teacher windows = 32 * 2 = 64 windows.
+She smashes 3/4 of the teachers' cars' windows: 3/4 of 64 = (3 * 64) / 4 = 192 / 4 = 48 windows.
+
+Total windows smashed = 64 + 48 = 112 windows.</div>
     </div>
   </div>
-  <div class="savings-bar"><div class="savings-fill" style="width:72%"></div></div>
+  <div class="savings-bar"><div class="savings-fill" style="width:37%"></div></div>
+
+  <h3>What was removed</h3>
+  <ul style="margin:0.5rem 0 0 1.5rem; font-size:0.85rem; color:var(--muted);">
+    <li>Removed the "Thus answer: \boxed{112}" → then re-discussion of formatting → "But we need to show step by step" → "\boxed{112}" again → "Probably that's fine" — this whole block was the model second-guessing its output format</li>
+    <li>The core math reasoning (256 → 64 → 64 → 48 → 112) is completely untouched — same words, same structure</li>
+  </ul>
 
   <h3>Winner Response</h3>
   <div class="winner-response">Hannah smashes windows in two groups:
@@ -514,17 +655,17 @@ She smashes three‑quarters of these:
 <div class="example">
   <h3>What's Working</h3>
   <ul style="margin:0.5rem 0 1rem 1.5rem;">
-    <li><strong>Reasoning condensation is dramatically better than regex stripping.</strong> The teacher removes "oh wait", self-corrections, and dead-end planning while preserving the actual reasoning structure. The 88% compression on the 5,479-char example is much more useful than the brute-force 63% that <code>compress_aggressive.py</code> achieved — and the condensed version is actually <em>better reasoning</em>, not just shorter.</li>
-    <li><strong>Best-of-N selection catches real quality differences.</strong> In Example 1, temp=0.5 beat temp=0.3 — the mid-temperature generation had better schema compliance despite the low-temperature one being "more careful". The teacher noticed.</li>
-    <li><strong>The condensed reasoning reads like a clean thinking trace.</strong> Numbered steps, no fluff, same technical voice. This is exactly what we'd want the student to learn.</li>
+    <li><strong>Condensed reasoning preserves the original voice.</strong> Unlike v1 (which produced a clean numbered list that read like a different model), v2 keeps the exact phrasing — "We need to produce...", "Let's craft 2 items", "She smashes a quarter of...". The student model will see thinking patterns close to what it would naturally produce.</li>
+    <li><strong>Compression targets the right things.</strong> The model removes meta-commentary ("We need to ensure JSON is valid"), format second-guessing ("But we need to show step by step... Probably that's fine"), and repeated restatements of the same requirement — while keeping the actual planning and computation.</li>
+    <li><strong>Best-of-N selection catches real quality differences.</strong> In Example 1, temp=0.5 beat temp=0.3 — the mid-temperature generation had better schema compliance despite the low-temperature one being "more careful".</li>
     <li><strong>Math correctness is verifiable.</strong> The gold answer matching works — Gemma4 confirmed the student's 112 was correct.</li>
   </ul>
 
-  <h3>Concerns to Watch</h3>
+  <h3>Trade-offs vs v1</h3>
   <ul style="margin:0.5rem 0 1rem 1.5rem;">
-    <li><strong>YAML output actually came back as JSON.</strong> Gen 0 won even though it output JSON instead of YAML. Gemma4 noted this but still ranked it highest. For strict format training, we may need format validation in the scoring loop.</li>
-    <li><strong>Only 1 generation available for the GSM8K prompt.</strong> The deck's remaining prompts had fewer gens. Best-of-1 is just "take whatever we have" — no ranking value.</li>
-    <li><strong>~16s average scoring time.</strong> With thinking on, each prompt takes 10-28s. For 3,900 prompts: ~17 hours. Consider whether turning thinking off for ranking (not condensation) would speed things up without losing quality.</li>
+    <li><strong>Less compression (53% vs 83%).</strong> Keeping the original voice means more tokens survive. This is the right trade-off — activation matching matters more than token savings.</li>
+    <li><strong>Longer scoring time (56s avg vs 16s).</strong> More tokens in the condensed output means the teacher generates more per prompt. For ~3,900 prompts: ~61 hours (vs ~17h for v1). Consider turning thinking off for ranking (not condensation) to cut this.</li>
+    <li><strong>YAML output issue persists.</strong> Gen 0 won even though it output JSON instead of YAML. Gemma4 noted this but still ranked it highest. For strict format training, we may need format validation in the scoring loop.</li>
   </ul>
 </div>
 
@@ -533,7 +674,7 @@ She smashes three‑quarters of these:
 <h2>Next Steps</h2>
 <div class="example">
   <ol style="margin:0.5rem 0 0 1.5rem;">
-    <li>Consolidate all 23,220 rollouts to Mac (aero's deck remnants + both main shards)</li>
+    <li>Consolidate all rollouts to Mac (aero's deck remnants + both main shards)</li>
     <li>Run full scoring (~3,900 unique prompts × Gemma4)</li>
     <li>Export scored results to repo for review</li>
     <li>Train on aero with Unsloth LoRA (best generation + condensed reasoning as target)</li>
