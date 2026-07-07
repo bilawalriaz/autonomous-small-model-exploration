@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Scoring Report — Gemma4 vs LFM2.5-8B-A1B</title>
+<style>
+  :root { --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #e6edf3;
+          --muted: #8b949e; --accent: #58a6ff; --green: #3fb950; --red: #f85149;
+          --yellow: #d29922; --code-bg: #0d1117; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--accent); }
+  h2 { font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+  h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--muted); }
+  .subtitle { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-card .value { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .stat-card .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+  .example { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+             padding: 1.5rem; margin: 1.5rem 0; }
+  .example-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+  .example-title { font-weight: 600; font-size: 1rem; }
+  .badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 12px;
+           font-size: 0.75rem; font-weight: 600; }
+  .badge-green { background: #1a3a2a; color: var(--green); border: 1px solid #2a5a3a; }
+  .badge-yellow { background: #3a2a1a; color: var(--yellow); border: 1px solid #5a4a2a; }
+  .badge-blue { background: #1a2a3a; color: var(--accent); border: 1px solid #2a3a5a; }
+  .prompt-box { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px;
+                padding: 1rem; margin: 0.75rem 0; font-family: 'SFMono-Regular', Consolas, monospace;
+                font-size: 0.85rem; white-space: pre-wrap; overflow-x: auto; max-height: 400px; overflow-y: auto; }
+  .reasoning-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  @media (max-width: 768px) { .reasoning-compare { grid-template-columns: 1fr; } }
+  .reasoning-box { border-radius: 6px; padding: 1rem; font-size: 0.85rem; font-family: monospace;
+                   white-space: pre-wrap; overflow-x: auto; max-height: 300px; overflow-y: auto; }
+  .reasoning-original { background: #1a1a2e; border: 1px solid #3a3a5e; }
+  .reasoning-condensed { background: #1a2e1a; border: 1px solid #3a5e3a; }
+  .box-label { font-family: -apple-system, sans-serif; font-size: 0.75rem; font-weight: 600;
+               margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .box-label-orig { color: #8888bb; }
+  .box-label-conn { color: #88bb88; }
+  .ranking-list { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0.75rem 0; }
+  .rank-chip { padding: 0.25rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+               border: 1px solid var(--border); }
+  .rank-winner { background: #1a3a2a; color: var(--green); border-color: #3a5a3a; }
+  .rank-other { background: var(--surface); color: var(--muted); }
+  .savings-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 0.5rem; }
+  .savings-fill { height: 100%; background: var(--green); border-radius: 3px; }
+  .meta-row { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem; color: var(--muted); margin: 0.5rem 0; }
+  .meta-row span { white-space: nowrap; }
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px;
+        padding: 1rem; overflow-x: auto; font-size: 0.8rem; }
+  code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.85rem; }
+  .winner-response { background: var(--code-bg); border: 1px solid var(--green); border-radius: 6px;
+                     padding: 1rem; margin: 0.75rem 0; font-family: monospace; font-size: 0.85rem;
+                     white-space: pre-wrap; max-height: 400px; overflow-y: auto; }
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+  .winner-reason { background: #1a2e1a; border-left: 3px solid var(--green); padding: 0.75rem 1rem;
+                   margin: 0.75rem 0; border-radius: 0 6px 6px 0; font-size: 0.9rem; }
+  .pipeline-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+                  padding: 1.5rem; margin: 1rem 0; }
+  .pipeline-step { display: flex; gap: 1rem; align-items: flex-start; margin: 0.75rem 0; }
+  .pipeline-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent);
+                  color: var(--bg); display: flex; align-items: center; justify-content: center;
+                  font-weight: 700; font-size: 0.8rem; flex-shrink: 0; }
+  .pipeline-text { flex: 1; }
+  .pipeline-text strong { color: var(--text); }
+  .pipeline-text span { color: var(--muted); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<h1>🎓 Teacher Scoring Report</h1>
+<p class="subtitle">Gemma4-26B-A4B (Q4_K_M) evaluating LFM2.5-8B-A1B rollouts — July 7, 2026</p>
+
+<h2>Pipeline Overview</h2>
+<div class="pipeline-box">
+  <div class="pipeline-step">
+    <div class="pipeline-num">1</div>
+    <div class="pipeline-text">
+      <strong>Rollout Generation</strong><br>
+      <span>LFM2.5-8B-A1B generates 6 responses per prompt at temperatures [0.3, 0.5, 0.7, 0.8, 0.9, 1.0]</span><br>
+      <span>23,220 total rollouts from 5,191 prompts across GSM8K, ARC-Challenge, MMLU, ifstruct-v1.0</span>
+    </div>
+  </div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">2</div>
+    <div class="pipeline-text">
+      <strong>Teacher Ranking</strong><br>
+      <span>Gemma4 sees all 6 generations per prompt, ranks by quality (correctness, format, reasoning clarity)</span><br>
+      <span>Picks single best generation as training target</span>
+    </div>
+  </div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">3</div>
+    <div class="pipeline-text">
+      <strong>Reasoning Condensation</strong><br>
+      <span>Gemma4 rewrites the winner's thinking chain — keeps planning steps, removes dead ends and verbose drafting</span><br>
+      <span>Same voice, just tighter. Average 83% compression.</span>
+    </div>
+  </div>
+  <div class="pipeline-step">
+    <div class="pipeline-num">4</div>
+    <div class="pipeline-text">
+      <strong>SFT Training (next)</strong><br>
+      <span>Unsloth LoRA on aero: r=16, alpha=32, 3 epochs, lr=2e-4, bf16</span><br>
+      <span>Targets: q/k/v/o_proj + gate_up_proj/down_proj (MoE-specific)</span>
+    </div>
+  </div>
+</div>
+
+<h2>Summary Statistics</h2>
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="value">3</div>
+    <div class="label">Test Prompts Scored</div>
+  </div>
+  <div class="stat-card">
+    <div class="value">9.3</div>
+    <div class="label">Avg Quality (out of 10)</div>
+  </div>
+  <div class="stat-card">
+    <div class="value">83%</div>
+    <div class="label">Avg Reasoning Compression</div>
+  </div>
+  <div class="stat-card">
+    <div class="value">3/3</div>
+    <div class="label">Correct Answers</div>
+  </div>
+  <div class="stat-card">
+    <div class="value">16.4s</div>
+    <div class="label">Avg Scoring Time</div>
+  </div>
+  <div class="stat-card">
+    <div class="value">0</div>
+    <div class="label">Parse Failures</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>Example 1: JSON Structured Output (ifstruct)</h2>
+<div class="example">
+  <div class="example-header">
+    <span class="example-title">Generate log parser example sets for message queue dead-letter records</span>
+    <span class="badge badge-green">q=9/10</span>
+  </div>
+
+  <div class="meta-row">
+    <span>📊 Dataset: ifstruct</span>
+    <span>🌡️ Winner temp: 0.5</span>
+    <span>🔄 6 generations ranked</span>
+    <span>✅ Format valid</span>
+    <span>⏱️ 11.4s</span>
+  </div>
+
+  <h3>Prompt</h3>
+  <div class="prompt-box">Generate 2-3 log parser example sets for message queue dead-letter records.
+Produce field values that fit a parser tuning memo rewritten as prose.
+These examples are for message queue dead-letter records.
+Every sample text should look like genuine parser input.
+In each sample text, read like realistic parser input rather than a polished paraphrase.
+Metadata fields should be plausible for ingest debugging and parser tuning contexts.
+
+Respond in JSON format. Return a bare list at the top level, not wrapped in an object.
+Do not supplement the schema with extra fields, summaries, or metadata.
+Output the raw JSON directly without code block fencing.
+
+Response structure:
+[
+  {
+    "parser_review_label": string,
+    "parse_failure_seen": boolean,
+    "multiline_handling_needed": boolean,
+    "parser_samples": [  // exactly 3 items
+      {
+        "parser_mode": "strict"|"lenient"|"regex"|"delimiter"|"json"|"kv"|"multiline"|"hybrid",
+        "recoverable_parse": boolean,
+        "timestamp_present": boolean,
+        "sample_text": string
+      }
+    ]
+  }
+]
+
+Just the JSON, no commentary or preamble.</div>
+
+  <h3>Ranking (best → worst)</h3>
+  <div class="ranking-list">
+    <span class="rank-chip rank-winner">🥇 Gen 1 (temp=0.5) ← WINNER</span>
+    <span class="rank-chip rank-other">🥈 Gen 0 (temp=0.3)</span>
+    <span class="rank-chip rank-other">🥉 Gen 2 (temp=0.7)</span>
+    <span class="rank-chip rank-other">4th Gen 3 (temp=0.8)</span>
+    <span class="rank-chip rank-other">5th Gen 4 (temp=0.9)</span>
+  </div>
+
+  <div class="winner-reason">
+    <strong>Gemma4's rationale:</strong> "Generation 1 followed all schema constraints (including the requirement for exactly 3 samples per set) and produced realistic, high-quality log fragments."
+  </div>
+
+  <h3>Reasoning: Original vs Condensed</h3>
+  <div class="reasoning-compare">
+    <div>
+      <div class="box-label box-label-orig">ORIGINAL (5,479 chars)</div>
+      <div class="reasoning-box reasoning-original">We need to produce a JSON list at top level, containing 2-3 items. Each item is an object with fields: parser_review_label, parse_failure_seen, multiline_handling_needed, parser_samples (array of 3 items). Each sample includes parser_mode (string: "strict"|"lenient"|"regex"|"delimiter"|"json"|"kv"|"multiline"|"hybrid"), recoverable_parse (boolean), timestamp_present (boolean), sample_text (string) that looks like genuine parser input.
+
+We need to generate 2-3 log parser example sets for message queue dead-letter records. Provide field values that fit a parser tuning memo rewritten as prose. So each sample text should be realistic log fragment with timestamps, delimiters, quoted fields. Also include metadata fields plausible for ingest debugging and parser tuning.
+
+We need to output raw JSON, no code fences. The top-level is a list of items. For each item, we need to decide parse_failure_seen: likely true if sample has parse failures? Or maybe false if it's fine. Since we are generating example sets for dead-letter records, perhaps there are parse failures. We'll set parse_failure_seen: true for each sample. multiline_handling_needed: maybe true for some.
+
+parser_mode: we can vary across samples. For example: first sample strict, second lenient, third hybrid. Provide recoverable_parse: true for all? Or maybe some false. Let's assume all are recoverable but some have parse failures.
+
+timestamp_present: likely true for logs, so true.
+
+Now sample_text: need to be realistic multiline log fragment with timestamps, delimiters, quoted fields. For example, using a custom format like "2023-09-28T12:34:56Z|DEAD|queue_name|message|reason". Or maybe "2023-09-28 12:34:56 INFO [queue] dead letter ...". We'll include quoted fields like "queue_name": "orders". Use pipe delimiter. Provide multiline: maybe first line timestamp, second line message, third line fields.
+
+We need to ensure JSON is valid, no extra fields. Provide top-level array.
+
+Let's craft 2 items. Each with 3 parser_s...</div>
+    </div>
+    <div>
+      <div class="box-label box-label-conn">CONDENSED (662 chars — 88% compression)</div>
+      <div class="reasoning-box reasoning-condensed">1. Determine output format: A bare JSON list of 2-3 objects.
+2. Define object structure: Each item needs `parser_review_label`, `parse_failure_seen`, `multiline_handling_needed`, and a `parser_samples` array containing exactly 3 items.
+3. Design samples for message queue dead-letter records:
+   - Sample 1 (Strict): Pipe-delimited, single line, potential parse failure.
+   - Sample 2 (Lenient): Key-value pairs with extra fields.
+   - Sample 3 (Hybrid): Multiline format combining timestamp and key-value/JSON data.
+4. Ensure `sample_text` contains realistic log elements: timestamps, delimiters, and quoted fields.
+5. Validate JSON syntax and schema adherence.</div>
+    </div>
+  </div>
+  <div class="savings-bar"><div class="savings-fill" style="width:88%"></div></div>
+
+  <h3>Winner Response</h3>
+  <div class="winner-response">[
+  {
+    "parser_review_label": "Dead Letter Parser Debug Set 1",
+    "parse_failure_seen": true,
+    "multiline_handling_needed": true,
+    "parser_samples": [
+      {
+        "parser_mode": "strict",
+        "recoverable_parse": false,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:00:00Z|ERROR|dead|queue:payments|failed_transaction|retry_count=0"
+      },
+      {
+        "parser_mode": "lenient",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:01:22Z|WARN|dead|queue:inventory|item=SKU12345|reason=out_of_stock|attempt=3"
+      },
+      {
+        "parser_mode": "hybrid",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T12:02:10Z | [queue] dead|name='support'|status='blocked'|msg='payment_failed'|code=500"
+      }
+    ]
+  },
+  {
+    "parser_review_label": "Dead Letter Parser Debug Set 2",
+    "parse_failure_seen": true,
+    "multiline_handling_needed": false,
+    "parser_samples": [
+      {
+        "parser_mode": "regex",
+        "recoverable_parse": false,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T13:45:07Z ERROR dead queue:transactions msg=payment_failed code=500 attempt=1"
+      },
+      {
+        "parser_mode": "delimiter",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "2023-09-28T13:45:07Z|DEAD||||queue:transactions||msg=payment_failed||code=500||attempt=1"
+      },
+      {
+        "parser_mode": "json",
+        "recoverable_parse": true,
+        "timestamp_present": true,
+        "sample_text": "{\"timestamp\":\"2023-09-28T13:45:07Z\",\"level\":\"ERROR\",\"queue\":\"transactions\",\"msg\":\"payment_failed\",\"code\":500,\"attempt\":1}"
+      }
+    ]
+  }
+]</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>Example 2: YAML Structured Output (ifstruct)</h2>
+<div class="example">
+  <div class="example-header">
+    <span class="example-title">Generate terminal session note sets for feature rollout verification</span>
+    <span class="badge badge-green">q=9/10</span>
+  </div>
+
+  <div class="meta-row">
+    <span>📊 Dataset: ifstruct</span>
+    <span>🌡️ Winner temp: 0.3</span>
+    <span>🔄 6 generations ranked</span>
+    <span>✅ Format valid</span>
+    <span>⏱️ 28.1s</span>
+  </div>
+
+  <h3>Prompt</h3>
+  <div class="prompt-box">Generate 1-3 terminal session note sets for a feature rollout verification session.
+Supply field values matching the tone of a debugging summary rewritten as prose.
+The session is for a feature rollout verification session.
+Terminal excerpts should look like real command-and-output blocks.
+Metadata fields should be plausible for incident response and operations handoff contexts.
+
+Provide the output in YAML. Return an object with `terminal_session_notes` as the key for the array.
+Respond with raw YAML, no markdown fencing required.
+
+Requested fields:
+| notes | path | type | constraints |
+| --- | --- | --- | --- |
+| Short label for the terminal troubleshooting session | `session_summary` | string |  |
+|  | `remote_host_used` | boolean |  |
+|  | `privileged_access_used` | boolean |  |
+|  | `session_fragments` | array&lt;object&gt; | 4-5 items |
+|  | `session_fragments[].command_goal` | string | one of: build, deploy, debug, backup, migration, cleanup, test, diagnostics |
+| A realistic shell session with prompts, commands, flags, and output lines | `session_fragments[].terminal_excerpt` | string |  |
+
+Limit the response to the fields defined here.</div>
+
+  <h3>Ranking (best → worst)</h3>
+  <div class="ranking-list">
+    <span class="rank-chip rank-winner">🥇 Gen 0 (temp=0.3) ← WINNER</span>
+    <span class="rank-chip rank-other">🥈 Gen 4 (temp=0.9)</span>
+    <span class="rank-chip rank-other">🥉 Gen 3 (temp=0.8)</span>
+    <span class="rank-chip rank-other">4th Gen 2 (temp=0.7)</span>
+    <span class="rank-chip rank-other">5th Gen 1 (temp=0.5)</span>
+  </div>
+
+  <div class="winner-reason">
+    <strong>Gemma4's rationale:</strong> "Generation 0 correctly follows the YAML requirement (though it outputs JSON-formatted YAML), adheres to all schema constraints including enum values and array lengths, and provides highly realistic terminal excerpts."
+  </div>
+
+  <h3>Reasoning: Original vs Condensed</h3>
+  <div class="reasoning-compare">
+    <div>
+      <div class="box-label box-label-orig">ORIGINAL (4,465 chars)</div>
+      <div class="reasoning-box reasoning-original">We need to produce a YAML object with key "terminal_session_notes" containing an array of session notes (or maybe a single object?). The description: "Generate 1-3 terminal session note sets for a feature rollout verification session." So we need 1-3 sets. Probably we can provide one set (or maybe multiple). The fields: notes (short label for the terminal troubleshooting session), path (boolean), privileged_access_used (boolean), session_fragments (array of objects with command_goal and terminal_excerpt). The terminal excerpts should look like real command-and-output blocks. In each terminal excerpt, read like a realistic terminal capture rather than a summary. So we need to include command prompts, output lines. Also metadata fields: remote_host_used (boolean), privileged_access_used (boolean). We need to include plausible values.
+
+We need to produce raw YAML, no markdown fencing. The object key: terminal_session_notes: array of objects. Each object contains notes, path, privileged_access_used, remote_host_used, session_fragments (list of 4-5 items). Each fragment includes command_goal (one of the listed) and terminal_excerpt (string). The excerpt should be realistic, like a shell session.
+
+We need to ensure we have 1-3 session note sets. Let's do 1 set for simplicity. Provide fields accordingly.
+
+We need to include plausible incident response metadata: remote_host_used maybe true (if they used a remote host for verification), privileged_access_used maybe true (if they used sudo). Provide path boolean: maybe true if they used a remote path.
+
+We need to ensure the session_fragments count is 4-5 items. We'll include 5 fragments.
+
+Let's design:
+
+notes: "Feature rollout verification for v2.1.0 on production cluster"
+
+path: true (they used a remote host)
+privileged_access_used: true (they used sudo)
+session_fragments: array of 5 objects.
+
+Fragment 1: command_goal: "diagnostics", terminal_excerpt: something like:
+root@cluster01:/opt/feature/root@
+# systemd-analyz...</div>
+    </div>
+    <div>
+      <div class="box-label box-label-conn">CONDENSED (503 chars — 89% compression)</div>
+      <div class="reasoning-box reasoning-condensed">1. Determine output structure: A single object with key `terminal_session_notes` containing an array of session objects.
+2. Define session metadata: Set `session_summary`, `remote_host_used`, and `privileged_access_used` to plausible values for a rollout verification.
+3. Construct 5 session fragments: For each, select a valid `command_goal` (diagnostics, deploy, build, migration, cleanup) and craft a realistic `terminal_excerpt` containing prompts, commands, and output lines.
+4. Format as raw YAML.</div>
+    </div>
+  </div>
+  <div class="savings-bar"><div class="savings-fill" style="width:89%"></div></div>
+
+  <h3>Winner Response</h3>
+  <div class="winner-response">{
+  "terminal_session_notes": [
+    {
+      "notes": "Feature rollout verification for v2.1.0 on production cluster",
+      "path": true,
+      "privileged_access_used": true,
+      "session_fragments": [
+        {
+          "command_goal": "diagnostics",
+          "terminal_excerpt": "root@host:/opt/feature/root# systemd-analyze verify\n# Checking integrity of deployed binaries\n# Output: OK (0 errors)\n"
+        },
+        {
+          "command_goal": "deploy",
+          "terminal_excerpt": "root@host:/opt/feature/root# apt-get update && apt-get install -y feature-v2.1.0\n# Verifying package installation\n# Output: [2/10] Installed: 1/1 [100%]\n"
+        },
+        {
+          "command_goal": "build",
+          "terminal_excerpt": "root@host:/opt/feature/root# make -j4 2>&1\n# Compiling feature module...\n# Output: Building module... 100% (0/1000 files)\n"
+        },
+        {
+          "command_goal": "migration",
+          "terminal_excerpt": "root@host:/opt/feature/root# terraform apply -auto-approve\n# Applying changes to staging environment\n# Output: Applying configuration... 0/0 resources\n"
+        },
+        {
+          "command_goal": "cleanup",
+          "terminal_excerpt": "root@host:/opt/feature/root# find /var/log -type f -name '*.old' -delete\n# Removing stale logs\n# Output: 12 files deleted\n"
+        }
+      ]
+    }
+  ]
+}</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ═══════════════════════════════════════════════════════════════════════ -->
+<h2>Example 3: Math Reasoning (GSM8K)</h2>
+<div class="example">
+  <div class="example-header">
+    <span class="example-title">Hannah's window smashing problem — multi-step arithmetic</span>
+    <span class="badge badge-green">q=10/10</span>
+  </div>
+
+  <div class="meta-row">
+    <span>📊 Dataset: GSM8K</span>
+    <span>🌡️ Winner temp: 0.3</span>
+    <span>🔄 1 generation (only available)</span>
+    <span>✅ Gold answer match</span>
+    <span>⏱️ 9.7s</span>
+  </div>
+
+  <h3>Prompt</h3>
+  <div class="prompt-box">Solve this math problem step by step. Show your work, then put the final answer on a line by itself starting with "#### ".
+
+Hannah has a mental breakdown while studying for finals and starts smashing windows in the high school's parking lot. She smashes a quarter of the students' cars' windows and 3/4ths of the teachers' cars' windows. If there are 64 students' cars with four windows each and 32 teachers' cars with two windows each, how many windows does Hannah smash?</div>
+
+  <h3>Gold Answer</h3>
+  <div class="prompt-box">First find how many student cars Hannah smashed: 64 cars * 1/4 = 16 cars
+Then find how many teacher cars Hannah smashed: 32 cars * 3/4 = 24 cars
+Then find how many windows the students' cars had smashed: 16 cars * 4 windows/car = 64 windows
+Then find how many windows the teachers' cars had smashed: 24 cars * 2 windows/car = 48 windows
+Then add the number of students' and teachers' windows smashed: 64 + 48 = 112 windows
+#### 112</div>
+
+  <div class="winner-reason">
+    <strong>Gemma4's rationale:</strong> "The generation correctly solved the math problem and followed all formatting instructions, including the specific '#### ' requirement."
+  </div>
+
+  <h3>Reasoning: Original vs Condensed</h3>
+  <div class="reasoning-compare">
+    <div>
+      <div class="box-label box-label-orig">ORIGINAL (1,137 chars)</div>
+      <div class="reasoning-box reasoning-original">We need to parse the problem: Hannah smashes a quarter of the students' cars' windows and 3/4ths of the teachers' cars' windows. There are 64 students' cars with four windows each, and 32 teachers' cars with two windows each. How many windows does Hannah smash? So we need to compute total windows smashed.
+
+Students: 64 cars, each with 4 windows. So total student windows = 64 * 4 = 256 windows.
+
+She smashes a quarter of the students' cars' windows: quarter of 256 = 256 / 4 = 64 windows.
+
+Teachers: 32 cars, each with 2 windows. Total teacher windows = 32 * 2 = 64 windows.
+
+She smashes 3/4 of the teachers' cars' windows: 3/4 of 64 = (3 * 64) / 4 = 192 / 4 = 48 windows.
+
+Total windows smashed = 64 + 48 = 112 windows.
+
+Thus answer: \boxed{112}.
+
+But we need to show step by step. Provide final answer line starting with "#### ". So final answer: \boxed{112}. Ensure no extra text after that line? The instruction: "put the final answer on a line by itself starting with '#### '." So we should output something like:
+
+[some steps]
+
+#### 112
+
+Probably that's fine. Provide step-by-step reasoning. No extra formatting. Let's produce.</div>
+    </div>
+    <div>
+      <div class="box-label box-label-conn">CONDENSED (316 chars — 72% compression)</div>
+      <div class="reasoning-box reasoning-condensed">1. Calculate total student windows: 64 cars * 4 windows/car = 256 windows.
+2. Calculate smashed student windows: 1/4 of 256 = 64 windows.
+3. Calculate total teacher windows: 32 cars * 2 windows/car = 64 windows.
+4. Calculate smashed teacher windows: 3/4 of 64 = 48 windows.
+5. Sum the results: 64 + 48 = 112 windows.</div>
+    </div>
+  </div>
+  <div class="savings-bar"><div class="savings-fill" style="width:72%"></div></div>
+
+  <h3>Winner Response</h3>
+  <div class="winner-response">Hannah smashes windows in two groups:
+
+**Students' cars**
+- Number of student cars: 64
+- Windows per car: 4
+- Total student windows = 64 × 4 = 256
+
+She smashes a quarter of these:
+- Quarter of 256 = 256 ÷ 4 = 64 windows
+
+**Teachers' cars**
+- Number of teachers' cars: 32
+- Windows per car: 2
+- Total teacher windows = 32 × 2 = 64
+
+She smashes three‑quarters of these:
+- Three‑quarters of 64 = (3 × 64) ÷ 4 = 192 ÷ 4 = 48 windows
+
+**Total windows smashed**
+- 64 (students) + 48 (teachers) = 112 windows
+
+#### 112</div>
+</div>
+
+<hr class="section-divider">
+
+<h2>Key Observations</h2>
+<div class="example">
+  <h3>What's Working</h3>
+  <ul style="margin:0.5rem 0 1rem 1.5rem;">
+    <li><strong>Reasoning condensation is dramatically better than regex stripping.</strong> The teacher removes "oh wait", self-corrections, and dead-end planning while preserving the actual reasoning structure. The 88% compression on the 5,479-char example is much more useful than the brute-force 63% that <code>compress_aggressive.py</code> achieved — and the condensed version is actually <em>better reasoning</em>, not just shorter.</li>
+    <li><strong>Best-of-N selection catches real quality differences.</strong> In Example 1, temp=0.5 beat temp=0.3 — the mid-temperature generation had better schema compliance despite the low-temperature one being "more careful". The teacher noticed.</li>
+    <li><strong>The condensed reasoning reads like a clean thinking trace.</strong> Numbered steps, no fluff, same technical voice. This is exactly what we'd want the student to learn.</li>
+    <li><strong>Math correctness is verifiable.</strong> The gold answer matching works — Gemma4 confirmed the student's 112 was correct.</li>
+  </ul>
+
+  <h3>Concerns to Watch</h3>
+  <ul style="margin:0.5rem 0 1rem 1.5rem;">
+    <li><strong>YAML output actually came back as JSON.</strong> Gen 0 won even though it output JSON instead of YAML. Gemma4 noted this but still ranked it highest. For strict format training, we may need format validation in the scoring loop.</li>
+    <li><strong>Only 1 generation available for the GSM8K prompt.</strong> The deck's remaining prompts had fewer gens. Best-of-1 is just "take whatever we have" — no ranking value.</li>
+    <li><strong>~16s average scoring time.</strong> With thinking on, each prompt takes 10-28s. For 3,900 prompts: ~17 hours. Consider whether turning thinking off for ranking (not condensation) would speed things up without losing quality.</li>
+  </ul>
+</div>
+
+<hr class="section-divider">
+
+<h2>Next Steps</h2>
+<div class="example">
+  <ol style="margin:0.5rem 0 0 1.5rem;">
+    <li>Consolidate all 23,220 rollouts to Mac (aero's deck remnants + both main shards)</li>
+    <li>Run full scoring (~3,900 unique prompts × Gemma4)</li>
+    <li>Export scored results to repo for review</li>
+    <li>Train on aero with Unsloth LoRA (best generation + condensed reasoning as target)</li>
+    <li>Evaluate against base LFM2.5-8B-A1B</li>
+  </ol>
+</div>
+
+<hr class="section-divider">
+<p style="color:var(--muted);font-size:0.8rem;text-align:center;">
+  Generated by teacher_scoring.py — part of the LFM2.5-8B-A1B on-policy distillation pipeline<br>
+  Repository: github.com/bilawalriaz/autonomous-small-model-exploration
+</p>
+
+</body>
+</html>

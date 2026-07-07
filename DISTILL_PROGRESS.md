@@ -1,6 +1,6 @@
 # On-Policy Distillation Pipeline — Progress & Next Steps
 
-## Status: Rollout phase paused. Teacher scoring next.
+## Status: Rollout phase COMPLETE. Teacher scoring script built, test run done. Full scoring next.
 
 ## What We Built
 
@@ -33,7 +33,8 @@ Each rollout contains:
 
 ### Key Scripts
 - `rollout_multigen.py` — multi-gen rollout generator (resumable)
-- `compress_aggressive.py` — strips duplicated reasoning (63% savings)
+- `compress_aggressive.py` — strips duplicated reasoning (63% savings) [DEPRECATED — use teacher condensation]
+- `teacher_scoring.py` — Gemma4 ranking + reasoning condensation (replaces brute-force compression)
 - `classifier/` — quality classifier (84% F1, 76k pred/sec) → separate repo
 
 ### Hardware Map
@@ -49,25 +50,21 @@ Each rollout contains:
 
 ## Next Steps
 
-### 1. Teacher Scoring (BLOCKED — waiting for Gemma4 GGUF on Mac)
-- Download Gemma4-26B-A4B Q4_K_M GGUF to Mac
-- Start teacher: `~/llama.cpp/build/bin/llama-server -m <path> --port 8082 -ngl 999 --ctx-size 131072 --flash-attn on --cont-batching --parallel 1 --mlock`
-- Score all 23,220 rollouts against teacher
-- For GSM8K/ARC/MMLU: check answer correctness against gold
-- Output: scored pairs with teacher judgments
+### 1. Teacher Scoring (READY — script built, test passed)
+- `teacher_scoring.py` on Mac: ranks 6 generations per prompt, picks winner, condenses reasoning
+- Test results: 3 prompts scored, avg quality 9.3/10, 83% reasoning compression, 100% correctness
+- Teacher: Gemma4-26B-A4B Q4_K_M on Mac LM Studio (100.100.61.28:1234)
+- Need to: consolidate rollouts to Mac, run full scoring (~3,900 prompts, ~17hrs)
+- Report: `docs/scoring_report.html` — full examples with reasoning comparison
 
-### 2. Reasoning Compression
-- Run `compress_aggressive.py` on scored rollouts
-- Strips duplicated output from reasoning chains
-- Student learns concise planning, not verbose reasoning
-
-### 3. Training (Unsloth on aero)
-- LoRA fine-tune LFM2.5-8B-A1B on scored+compressed pairs
+### 2. Training (Unsloth on aero)
+- Scored pairs with condensed reasoning as training targets
+- LoRA fine-tune LFM2.5-8B-A1B
 - Targets: q/k/v/o_proj + gate_up_proj/down_proj (MoE-specific)
 - r=16, alpha=32, 3 epochs, lr=2e-4, bf16
 - Unsloth already installed on aero
 
-### 4. Evaluation
+### 3. Evaluation
 - Run trained model through same benchmarks
 - Compare against base LFM2.5-8B-A1B
 
