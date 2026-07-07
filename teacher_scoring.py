@@ -49,13 +49,19 @@ Your job is to:
 2. Pick the single best one
 3. Edit its thinking chain to be shorter
 
-### Scoring criteria:
+### Scoring criteria (applied strictly):
 - **Correctness**: Does the answer match the gold answer (if provided)?
-- **Format adherence**: Does the output match the requested format (JSON/YAML schema, etc)?
+- **Format adherence (STRICT)**: The prompt specifies an exact output format. Check:
+  - If the prompt says "Respond in JSON" → output MUST be valid JSON, not YAML or prose
+  - If the prompt says "Provide the output in YAML" → output MUST be valid YAML, not JSON
+  - If the prompt says "Output the raw JSON directly without code block fencing" → no ```json fences allowed
+  - If the prompt specifies a schema → the output MUST match that schema's structure
+  - If the prompt says "Just the JSON, no commentary" → no preamble or explanation before the output
+  - A response with the RIGHT content but WRONG format gets penalized. Format violations are a disqualifying flaw.
 - **Reasoning clarity**: Is the thinking chain clear and logical, not full of dead ends?
 - **Completeness**: Does it fully address the prompt?
 
-### Prompt:
+### What the prompt asked for:
 {prompt}
 
 ### Gold answer:
@@ -71,8 +77,9 @@ Your job is to:
   "winner_index": <0-indexed best generation>,
   "quality_score": <1-10>,
   "correctness": <"correct"|"incorrect"|"partial"|"na">,
-  "format_valid": <true|false>,
+  "format_valid": <true|false — DID THE OUTPUT MATCH THE REQUESTED FORMAT EXACTLY?>,
   "winner_reason": "<one sentence why this generation won>",
+  "format_violations": "<list any format issues across all generations, e.g. 'Gen 0 output JSON when YAML was requested'>",
   "condensed_reasoning": "<edit the winner's thinking chain to be shorter — DELETE dead ends, 'oh wait' moments, repeated attempts, verbose restating. Do NOT rephrase or rewrite. Keep the model's exact words, just remove the fat. If already concise, keep as-is.>"
 }}
 """)
