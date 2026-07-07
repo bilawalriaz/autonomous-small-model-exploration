@@ -3,19 +3,25 @@
 Teacher Scoring & Reasoning Condensation via Gemma4.
 
 For each unique prompt (with N generations at different temperatures):
-1. Show all generations to Gemma4
+1. Show all generations to Gemma4 in a SINGLE call
 2. Rank them by quality (correctness, format adherence, reasoning clarity)
 3. Pick the winner
-4. Condense the winner's reasoning into a concise thinking chain
+4. Condense the winner's reasoning in the same call (delete dead ends, keep voice)
 
 Resumable via scored.jsonl (tracks prompt_hash).
-
 Output: scored_rollouts.jsonl — one entry per prompt with best generation + condensed reasoning.
+
+Token budget per call (Gemma4 Q4_K_M, 128k context):
+- System prompt: ~300 tokens
+- Prompt + gold + schema: ~200-2000 tokens
+- Per generation: reasoning (capped 3000 chars ≈ 750 tok) + response (capped 2000 chars ≈ 500 tok)
+- 6 gens: ~7,500 tokens
+- Output: ~2,000 tokens
+- Total median: ~5,000 tokens | p95: ~20,000 tokens | max safe: ~100,000 tokens
 """
 import json, time, sys, os, hashlib, requests, random, textwrap
 from pathlib import Path
 from datetime import datetime, timezone
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 TEACHER_URL = os.environ.get("TEACHER_URL", "http://100.100.61.28:1234")
@@ -23,10 +29,14 @@ TEACHER_MODEL = os.environ.get("TEACHER_MODEL",
     "gemma4-26b-a4b-qat-uncensored-hauhaucs-balanced-mtp@q4_k_m")
 INPUT_DIR = os.environ.get("INPUT_DIR", "/Users/bilawalriaz/rollouts")
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "/Users/bilawalriaz/scored")
-MAX_WORKERS = int(os.environ.get("MAX_WORKERS", "4"))
-TIMEOUT = int(os.environ.get("TIMEOUT", "120"))
+TIMEOUT = int(os.environ.get("TIMEOUT", "180"))
 MAX_RETRIES = 3
-RETRY_DELAY = 2  # seconds, doubles each retry
+RETRY_DELAY = 3
+
+# Truncation limits — keep per-gen token count manageable
+MAX_REASONING_CHARS = int(os.environ.get("MAX_REASONING_CHARS", "3000"))  # ~750 tokens
+MAX_RESPONSE_CHARS = int(os.environ.get("MAX_RESPONSE_CHARS", "2000"))   # ~500 tokens
+MAX_PROMPT_CHARS = int(os.environ.get("MAX_PROMPT_CHARS", "4000"))       # ~1000 tokens
 
 
 # ─── Prompts ──────────────────────────────────────────────────────────────────
@@ -38,11 +48,11 @@ A small model generated {n_gens} responses to the same prompt at different tempe
 Your job is to:
 1. Rank all generations by quality
 2. Pick the single best one
-3. Rewrite its thinking chain to be concise and direct
+3. Edit its thinking chain to be shorter
 
 ### Scoring criteria:
 - **Correctness**: Does the answer match the gold answer (if provided)?
-- **Format adherence**: Does the output match the requested format (JSON schema, etc)?
+- **Format adherence**: Does the output match the requested format (JSON/YAML schema, etc)?
 - **Reasoning clarity**: Is the thinking chain clear and logical, not full of dead ends?
 - **Completeness**: Does it fully address the prompt?
 
@@ -52,14 +62,11 @@ Your job is to:
 ### Gold answer:
 {gold_answer}
 
-### Schema:
-{json_schema}
-
 ### Generations:
 
 {generations_block}
 
-### Output format (strict JSON):
+### Output format (strict JSON — no markdown fences):
 {{
   "ranking": [<indices ranked best to worst, 0-indexed>],
   "winner_index": <0-indexed best generation>,
@@ -71,30 +78,32 @@ Your job is to:
 }}
 """)
 
-CONDENSE_ONLY_PROMPT = textwrap.dedent("""\
-You are editing a thinking chain from a language model to make it shorter.
-
-RULES:
-- Edit the EXISTING text — do not rewrite it. Keep the model's exact words and phrasing.
-- ONLY delete lines/blocks that are: dead ends, "oh wait" moments, repeated attempts at the same thing, self-corrections that went nowhere, or verbose restating of the same step.
-- Do NOT rephrase, summarize, or restructure. The goal is the same thinking, just shorter.
-- Do NOT add explanations or connective tissue that wasn't there.
-- If it's already concise, return it unchanged.
-- Output ONLY the edited reasoning, nothing else.
-
-Original reasoning ({n_chars} chars):
-{reasoning}
-""")
-
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
+
+def truncate(text, max_chars):
+    """Truncate text to max_chars, cutting at last newline if possible."""
+    if not text or len(text) <= max_chars:
+        return text
+    cut = text[:max_chars].rfind('\n')
+    if cut < max_chars // 2:
+        cut = max_chars
+    return text[:cut] + f"\n[...truncated from {len(text)} chars]"
+
 
 def load_rollouts(input_dir):
     """Load all rollouts and group by prompt_hash."""
     groups = {}
-    for f in Path(input_dir).glob("*.jsonl"):
-        if f.name.startswith("completed"):
-            continue
+    input_path = Path(input_dir)
+
+    # If input_dir is a file, use it directly
+    if input_path.is_file() and input_path.suffix == '.jsonl':
+        files = [input_path]
+    else:
+        files = list(input_path.glob("*.jsonl"))
+        files = [f for f in files if f.name != "completed.jsonl"]
+
+    for f in files:
         print(f"  Loading {f.name}...", flush=True)
         with open(f) as fh:
             for line in fh:
@@ -126,7 +135,7 @@ def load_scored(output_dir):
 
 
 def call_teacher(prompt_text, max_retries=MAX_RETRIES):
-    """Call Gemma4 with retry logic."""
+    """Call Gemma4 with retry logic. Returns content string."""
     for attempt in range(max_retries):
         try:
             r = requests.post(
@@ -142,10 +151,9 @@ def call_teacher(prompt_text, max_retries=MAX_RETRIES):
             r.raise_for_status()
             choice = r.json()["choices"][0]
             msg = choice["message"]
-            # LM Studio returns reasoning_content separately when thinking is on
             content = msg.get("content", "") or ""
             reasoning = msg.get("reasoning_content", "") or ""
-            # If content is empty but reasoning exists, the model hit token limit while thinking
+            # If content is empty but reasoning exists, model hit token limit while thinking
             if not content.strip() and reasoning:
                 return f"[THINKING ONLY — model hit token limit]\n{reasoning}"
             return content
@@ -160,10 +168,8 @@ def call_teacher(prompt_text, max_retries=MAX_RETRIES):
 
 def parse_teacher_response(text):
     """Extract JSON from teacher response, handling markdown code blocks."""
-    # Strip markdown code fences
     cleaned = text.strip()
     if cleaned.startswith("```"):
-        # Remove first and last lines
         lines = cleaned.split("\n")
         if lines[0].startswith("```"):
             lines = lines[1:]
@@ -173,7 +179,6 @@ def parse_teacher_response(text):
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
-        # Try to find JSON object in the text
         start = cleaned.find("{")
         end = cleaned.rfind("}") + 1
         if start >= 0 and end > start:
@@ -185,45 +190,27 @@ def parse_teacher_response(text):
 
 
 def format_generations(gens):
-    """Format generations block for the ranking prompt."""
+    """Format generations block for the ranking prompt, with truncation."""
     parts = []
     for i, g in enumerate(gens):
-        resp = g.get("response", "")[:2000]  # truncate long responses
-        reasoning = g.get("reasoning", "")[:3000]  # truncate reasoning too
+        reasoning = truncate(g.get("reasoning", ""), MAX_REASONING_CHARS)
+        response = truncate(g.get("response", ""), MAX_RESPONSE_CHARS)
         temp = g.get("temperature", "?")
         parts.append(
             f"--- Generation {i} (temp={temp}) ---\n"
             f"Reasoning:\n{reasoning}\n\n"
-            f"Response:\n{resp}\n"
+            f"Response:\n{response}\n"
         )
     return "\n".join(parts)
 
 
-def check_correctness(gold_answer, response):
-    """Quick heuristic correctness check for math/science answers."""
-    if not gold_answer:
-        return "na"
-    import re
-    gold_nums = set(re.findall(r'-?\d+\.?\d*', str(gold_answer)))
-    resp_nums = set(re.findall(r'-?\d+\.?\d*', response))
-    if not gold_nums:
-        return "na"
-    overlap = gold_nums & resp_nums
-    if len(overlap) == len(gold_nums):
-        return "correct"
-    if len(overlap) > 0:
-        return "partial"
-    return "incorrect"
-
-
 def score_prompt(ph, group):
-    """Score a single prompt: rank generations + condense reasoning."""
+    """Score a single prompt: rank generations + condense reasoning, all in one call."""
     meta = group["prompt_meta"]
-    prompt = group["prompt"]
+    prompt = truncate(group["prompt"], MAX_PROMPT_CHARS)
     gens = group["generations"]
 
     gold_answer = meta.get("gold_answer") or "N/A"
-    json_schema = meta.get("json_schema") or "N/A"
     dataset = meta.get("_dataset") or meta.get("category") or "unknown"
 
     # Build the ranking prompt
@@ -232,11 +219,10 @@ def score_prompt(ph, group):
         n_gens=len(gens),
         prompt=prompt,
         gold_answer=gold_answer,
-        json_schema=json_schema,
         generations_block=gen_block,
     )
 
-    # Call teacher
+    # Single teacher call: rank + condense in one shot
     t0 = time.monotonic()
     response_text = call_teacher(full_prompt)
     elapsed = time.monotonic() - t0
@@ -244,43 +230,44 @@ def score_prompt(ph, group):
     # Parse
     result = parse_teacher_response(response_text)
     if result is None:
-        # Fallback: use first generation
         print(f"    ⚠ Parse failed, using generation 0 as fallback", flush=True)
         result = {
             "ranking": list(range(len(gens))),
             "winner_index": 0,
             "quality_score": 3,
-            "correctness": check_correctness(str(gold_answer), gens[0]["response"]),
+            "correctness": "na",
             "format_valid": False,
             "winner_reason": "parse_failed_fallback",
-            "condensed_reasoning": gens[0].get("reasoning", "")[:2000],
+            "condensed_reasoning": gens[0].get("reasoning", "")[:MAX_REASONING_CHARS],
         }
 
     winner_idx = result.get("winner_index", 0)
     if winner_idx >= len(gens):
         winner_idx = 0
-
     winner = gens[winner_idx]
 
     # Build scored record
+    orig_reasoning = winner.get("reasoning", "")
+    cond_reasoning = result.get("condensed_reasoning", "")
+
     scored = {
         "prompt_hash": ph,
-        "prompt": prompt,
+        "prompt": group["prompt"],
         "prompt_meta": meta,
         "dataset": dataset,
         "n_generations": len(gens),
         "winner_index": winner_idx,
         "winner_temperature": winner.get("temperature"),
         "winner_response": winner.get("response", ""),
-        "condensed_reasoning": result.get("condensed_reasoning", ""),
-        "original_reasoning_len": len(winner.get("reasoning", "")),
-        "condensed_reasoning_len": len(result.get("condensed_reasoning", "")),
+        "condensed_reasoning": cond_reasoning,
+        "original_reasoning_len": len(orig_reasoning),
+        "condensed_reasoning_len": len(cond_reasoning),
         "quality_score": result.get("quality_score", 0),
         "correctness": result.get("correctness", "na"),
         "format_valid": result.get("format_valid", False),
         "ranking": result.get("ranking", []),
         "winner_reason": result.get("winner_reason", ""),
-        "gold_answer": gold_answer,
+        "gold_answer": str(gold_answer)[:500],
         "scoring_time_seconds": round(elapsed, 2),
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
@@ -315,6 +302,8 @@ def print_stats(scored_list):
     if savings_count:
         avg_savings /= savings_count
 
+    avg_time = sum(s["scoring_time_seconds"] for s in scored_list) / total
+
     print(f"\n{'='*60}")
     print(f"SCORING SUMMARY")
     print(f"{'='*60}")
@@ -322,6 +311,7 @@ def print_stats(scored_list):
     print(f"  Avg quality:   {avg_quality:.1f}/10")
     print(f"  Correctness:   {correct} correct, {partial} partial, {incorrect} incorrect, {na} N/A")
     print(f"  Avg reasoning compression: {avg_savings*100:.0f}%")
+    print(f"  Avg time per prompt: {avg_time:.1f}s")
     print(f"{'='*60}")
 
 
@@ -333,7 +323,6 @@ def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "full"
 
     if cmd == "stats":
-        # Just print stats from existing scored file
         scored_file = Path(OUTPUT_DIR) / "scored.jsonl"
         if not scored_file.exists():
             print("No scored file found.")
@@ -347,7 +336,6 @@ def main():
         return
 
     if cmd == "score-one":
-        # Score a single prompt for testing
         test_input = sys.argv[2] if len(sys.argv) > 2 else INPUT_DIR
         groups = load_rollouts(test_input)
         if not groups:
@@ -359,6 +347,31 @@ def main():
         print(json.dumps(scored, indent=2, default=str))
         return
 
+    if cmd == "dry-run":
+        # Score 5 prompts without saving — for validation
+        test_input = sys.argv[2] if len(sys.argv) > 2 else INPUT_DIR
+        groups = load_rollouts(test_input)
+        if not groups:
+            print("No rollouts found.")
+            return
+        scored_list = []
+        for i, (ph, group) in enumerate(groups.items()):
+            if i >= 5:
+                break
+            ds = group["prompt_meta"].get("_dataset", "?")
+            n = len(group["generations"])
+            print(f"\n[{i+1}/5] [{ds}] {n} gens — {group['prompt'][:60]}...", flush=True)
+            scored = score_prompt(ph, group)
+            scored_list.append(scored)
+            q = scored["quality_score"]
+            c = scored["correctness"]
+            cr = scored["condensed_reasoning_len"]
+            orr = scored["original_reasoning_len"]
+            savings = f"{(1-cr/max(orr,1))*100:.0f}%" if orr > 0 else "N/A"
+            print(f"  ✅ q={q}/10, {c}, reasoning {savings} compressed, {scored['scoring_time_seconds']:.1f}s", flush=True)
+        print_stats(scored_list)
+        return
+
     # Full scoring
     print(f"{'='*60}")
     print(f"TEACHER SCORING & REASONING CONDENSATION")
@@ -366,7 +379,7 @@ def main():
     print(f"  Teacher:  {TEACHER_URL} ({TEACHER_MODEL})")
     print(f"  Input:    {INPUT_DIR}")
     print(f"  Output:   {OUTPUT_DIR}")
-    print(f"  Workers:  {MAX_WORKERS}")
+    print(f"  Limits:   reasoning={MAX_REASONING_CHARS}ch, response={MAX_RESPONSE_CHARS}ch, prompt={MAX_PROMPT_CHARS}ch")
     print()
 
     # Health check
@@ -394,7 +407,7 @@ def main():
         print_stats([])
         return
 
-    # Score in order (for reproducibility), but with progress tracking
+    # Estimate time
     scored_list = []
     total = len(remaining)
 
@@ -418,10 +431,14 @@ def main():
             # Progress every 50
             if (i + 1) % 50 == 0:
                 print_stats(scored_list)
+                elapsed = sum(s["scoring_time_seconds"] for s in scored_list)
+                remaining_count = total - i - 1
+                avg_time = elapsed / len(scored_list)
+                eta_hours = (remaining_count * avg_time) / 3600
+                print(f"  ⏱️ ETA: {eta_hours:.1f}h remaining ({remaining_count} prompts)", flush=True)
 
         except Exception as e:
             print(f"  ❌ {e}", flush=True)
-            # Save with error so we don't retry forever
             error_rec = {
                 "prompt_hash": ph,
                 "error": str(e),
@@ -430,7 +447,7 @@ def main():
             with open(Path(OUTPUT_DIR) / "errors.jsonl", "a") as f:
                 f.write(json.dumps(error_rec, default=str) + "\n")
 
-        # Rate limiting: small delay between calls
+        # Small delay between calls to avoid overwhelming the teacher
         time.sleep(0.2)
 
     print_stats(scored_list)
