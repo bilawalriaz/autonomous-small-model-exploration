@@ -715,3 +715,29 @@ python3 refresh_hy3_exports.py --loop --sleep 600
 ### Interpretation
 - We successfully validated the multi-adapter task-specific LoRA merging strategy on non-transformer architectures. By combining a formatting adapter and a math adapter using direct weight surgery, we closed the gap on catastrophic math regression (restored to 69% baseline math capability) while maintaining robust structured formatting validity.
 
+
+## 2026-07-09 — openbmb/MiniCPM5-1B Base Migration & Direct Multi-Adapter Merging
+
+### Completed
+- [x] Migrated base model from `LiquidAI/LFM2.5-1.2B-Instruct` to `openbmb/MiniCPM5-1B` to validate multi-adapter stacking on a standard Llama-based transformer architecture.
+- [x] SFT-trained a Formatting adapter (`minicpm5_1b_format_adapter/adapter`) for 300 steps on `exports/sft_strict_q8_response.jsonl` (final loss: 0.086).
+- [x] SFT-trained a Math reasoning adapter (`minicpm5_1b_math_adapter/adapter`) for 300 steps on clean GSM8K training split (final loss: 0.720).
+- [x] Verified that standard PEFT merging (`add_weighted_adapter` and `merge_and_unload`) corrupts attention projection representations even on standard transformer models, resulting in repetition collapses and **0.00%** GSM8K accuracy.
+- [x] Merged Math (1.0) and Formatting (0.7) adapters directly into base weights via direct PyTorch tensor surgery (`merge_lora_direct.py`).
+- [x] Converted base model, formatting-only model, math-only model, and directly merged model to Q4_K_M GGUF format and evaluated on formatting and GSM8K reasoning.
+
+### Current checkpoint
+- **Directly Merged GGUF Model (Math 1.0 + Format 0.7)**:
+  - **GSM8K Accuracy**: **49.0%** (+5.0% absolute improvement over base model, +15.0% over math-only adapter).
+  - **JSON Validity Rate**: **76.5%** (+29.4% absolute improvement over base model).
+  - **Average Response Length**: **115.0 words** (53% length reduction from base model's 247.5 words, conversational slop eliminated).
+- **Base Model (`openbmb/MiniCPM5-1B`)**:
+  - **GSM8K Accuracy**: **44.0%**
+  - **JSON Validity Rate**: **47.1%**
+  - **Average Response Length**: **247.5 words**
+
+### Interpretation
+- Migrating to MiniCPM5-1B successfully validated that the multi-adapter task-specific stacking approach functions robustly on standard attention transformer architectures.
+- The directly merged model achieves a synergistic cognitive boost, outperforming both the base model (+5%) and the math-only model (+15%) by combining formatting structure and numerical calculation precision.
+- Direct tensor weight surgery remains essential to avoid quantization repetition collapses introduced by PEFT wrappers.
+

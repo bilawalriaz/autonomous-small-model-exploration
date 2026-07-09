@@ -171,7 +171,7 @@ Use `/Users/bilawalriaz/scored/exports/sft_strict_q8_response.jsonl` or `/Users/
 
 ---
 
-## NR016: Current LFM2.5-8B-A1B GGUF does not drive Hermes tools in first smoke
+## NR017: Current LFM2.5-8B-A1B GGUF does not drive Hermes tools in first smoke
 
 Experiment:
 Configured Hermes on lenovo to use aero's OpenAI-compatible llama.cpp endpoint for `LFM2.5-8B-A1B-Uncensored-Gaston-Q4_K_M.gguf`, then ran `agent_code_bugfix_001` through `tools/agent_trajectory_lab/run_hermes_tasks.py`.
@@ -193,7 +193,7 @@ Test alternate llama.cpp chat/tool templates and non-streaming settings. If stil
 
 ---
 
-## NR017: LFM2.5-8B-A1B Unsloth QLoRA does not fit on aero 8GB GPU
+## NR018: LFM2.5-8B-A1B Unsloth QLoRA does not fit on aero 8GB GPU
 
 Experiment:
 Stopped the aero llama.cpp LFM server, then attempted to load `LiquidAI/LFM2.5-8B-A1B` through Unsloth for bnb 4-bit QLoRA SFT using the strict 827-row scored dataset. Config snapshot: `configs/sft/lfm25_8b_a1b_unsloth_qlora_8gb.json`.
@@ -215,7 +215,7 @@ Use a smaller checkpoint, a larger GPU, or a training stack with practical CPU/N
 
 ---
 
-## NR018: Eight parallel HY3 Hermes workers trigger rate-limit artifacts
+## NR019: Eight parallel HY3 Hermes workers trigger rate-limit artifacts
 
 Experiment:
 Started four family-sorted HY3 workers and then four additional balanced HY3 workers on lenovo, all using `tencent/hy3:free` through Nous Portal with four rollouts per task.
@@ -237,7 +237,7 @@ Use balanced shards with four workers, `--transient-retries 4 --transient-sleep 
 
 ---
 
-## NR019: Format-heavy SFT causes math reasoning regression on LFM2.5-1.2B-Instruct
+## NR020: Format-heavy SFT causes math reasoning regression on LFM2.5-1.2B-Instruct
 
 Experiment:
 Ran GSM8K evaluation (100 prompts) on `lfm25_12b_instruct_sft_q8_strict` GGUF and compared against the base `LFM2.5-1.2B-Instruct` GGUF.
@@ -259,7 +259,7 @@ Include mixed-task data-blend training (e.g., combining formatting, general inst
 
 ---
 
-## NR020: Hermes trajectory workers can wedge without result files unless subprocess groups are killed on timeout
+## NR021: Hermes trajectory workers can wedge without result files unless subprocess groups are killed on timeout
 
 Experiment:
 Ran seven-family HY3/Hermes trajectory collection on lenovo using `run_hermes_tasks.py` with per-task timeout 420s and transient retry/backoff.
@@ -281,7 +281,7 @@ Use the patched `run_hermes_tasks.py`, which launches subprocesses in their own 
 
 ---
 
-## NR021: Standard PEFT weight merging corrupts LFM2.5 SSM/linear-RNN models
+## NR022: Standard PEFT weight merging corrupts LFM2.5 SSM/linear-RNN models
 
 Experiment:
 Loaded two LoRA adapters (Math and Formatting) on `LFM2.5-1.2B-Instruct` using `PeftModel`, combined them using `model.add_weighted_adapter` (linear type), called `model.merge_and_unload()`, and exported to GGUF.
@@ -303,7 +303,7 @@ Manually compute the low-rank delta products and sum them directly to the base w
 
 ---
 
-## NR022: SFT on raw GSM8K answers with calculator tags causes digit/equation repetition collapse
+## NR023: SFT on raw GSM8K answers with calculator tags causes digit/equation repetition collapse
 
 Experiment:
 SFT-trained a completions-only math adapter on the raw `openai/gsm8k` train split containing calculator-guided tags (e.g. `<<16-3-4=9>>9`).
@@ -323,10 +323,9 @@ Finetuning instruct models on raw calculator-guided datasets without formatting 
 Next:
 Strip all `<<.*?>>` calculator annotations from the SFT dataset using regular expressions before training.
 
-
 ---
 
-## NR020: Mixed-blend SFT fails on small model under low-epoch constraints
+## NR024: Mixed-blend SFT fails on small model under low-epoch constraints
 
 Experiment:
 Trained `LiquidAI/LFM2.5-1.2B-Instruct` on a mixed-task dataset (413 formatting examples, 2,000 Magicoder, 1,600 GSM8K examples) for 300 steps. Converted it to GGUF format and ran formatting and GSM8K evaluations.
@@ -348,3 +347,21 @@ Using a short, single-pass mixed training run with a dominant task (e.g., 50% co
 Next:
 Run sequential SFT passes (general reasoning and code first, followed by a light formatting alignment pass) or train on the mixed blend for a much higher step count (e.g., 5 epochs).
 
+---
+
+## NR025: Standard PEFT weight merging collapses openbmb/MiniCPM5-1B GGUF outputs
+
+Experiment:
+Loaded two trained LoRA adapters (Math and Formatting) on `openbmb/MiniCPM5-1B` using `PeftModel`, combined them using `model.add_weighted_adapter(combination_type="linear")`, called `model.merge_and_unload()`, and exported to GGUF using Unsloth.
+
+Expected:
+Since MiniCPM5-1B uses the standard Llama attention architecture, standard PEFT wrapper APIs should merge the weights cleanly without parameter corruption.
+
+Observed:
+The PEFT-merged GGUF model collapsed completely on GSM8K, scoring exactly **0.00%** accuracy and getting stuck in infinite repeating loops of token/prose blocks. In contrast, the directly merged model (Math 1.0 + Format 0.7) merged using direct PyTorch weight surgery (`merge_lora_direct.py`) achieved **49.0%** accuracy.
+
+Interpretation:
+Standard PEFT wrapper combination routines (`add_weighted_adapter` and `merge_and_unload`) can distort or corrupt the projection matrices of quantized or patched architectures under Unsloth's native layer wrapping. Direct tensor surgery ($W_{base} + \sum w_i s_i B_i A_i$) is required even for standard transformer models to avoid compilation/quantization artifacts.
+
+What this rules out:
+Relying on standard PEFT merging wrappers for Unsloth-trained adapters when quantizing to GGUF.

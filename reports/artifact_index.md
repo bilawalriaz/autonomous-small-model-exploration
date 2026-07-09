@@ -246,3 +246,21 @@
 | direct-merge comparison report | results/evals/gguf_direct_merge_comparison_report.md | Comparative evaluation report for directly merged model vs base model | Complete |
 | direct-merge JSON outputs | results/evals/lfm25_12b_direct_merge_m1.0_f0.7_gguf/outputs.jsonl | Inference outputs on 153 formatting prompts | Complete |
 | direct-merge GSM8K outputs | results/evals/gsm8k_direct_merge_m1.0_f0.7_results.jsonl | GSM8K evaluation responses for directly merged model | Complete |
+
+## MiniCPM5-1B Migration and Multi-Adapter Stacking (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| MiniCPM5-1B formatting adapter | /home/billz/results/minicpm5_1b_format_adapter/adapter | LoRA formatting adapter trained on strict 827-row scored dataset | Complete; loss 0.086 |
+| MiniCPM5-1B math adapter | /home/billz/results/minicpm5_1b_math_adapter/adapter | LoRA math adapter trained on cleaned GSM8K split | Complete; loss 0.720 |
+| Directly-merged GGUF model | /home/billz/results/minicpm5_1b_direct_merge_m1.0_f0.7_gguf/minicpm5_1b_direct_merge_m1.0_f0.7.Q4_K_M.gguf | Quantized directly merged Math (1.0) and Format (0.7) GGUF file | Created on aero |
+| Formatting eval outputs (Base) | results/evals/minicpm5_1b_base_gguf/outputs.jsonl | Formatting outputs of base model | Complete |
+| Formatting eval outputs (Format) | results/evals/minicpm5_1b_format_gguf/outputs.jsonl | Formatting outputs of format-only model | Complete |
+| Formatting eval outputs (Math) | results/evals/minicpm5_1b_math_gguf/outputs.jsonl | Formatting outputs of math-only model | Complete |
+| Formatting eval outputs (Merge) | results/evals/minicpm5_1b_direct_merge_m1.0_f0.7_gguf/outputs.jsonl | Formatting outputs of directly merged model | Complete |
+| GSM8K evaluation responses (Base) | results/evals/gsm8k_minicpm5_1b_base_results.jsonl | GSM8K responses of base model | Complete |
+| GSM8K evaluation responses (Math) | results/evals/gsm8k_minicpm5_1b_math_results.jsonl | GSM8K responses of math-only model | Complete |
+| GSM8K evaluation responses (Merge) | results/evals/gsm8k_minicpm5_1b_direct_merge_m1.0_f0.7_results.jsonl | GSM8K responses of directly merged model | Complete |
+| GSM8K accuracy summary (Base) | results/evals/gsm8k_minicpm5_1b_base_results_summary.json | GSM8K accuracy summary for base model | Complete |
+| GSM8K accuracy summary (Math) | results/evals/gsm8k_minicpm5_1b_math_results_summary.json | GSM8K accuracy summary for math model | Complete |
+| GSM8K accuracy summary (Merge) | results/evals/gsm8k_minicpm5_1b_direct_merge_m1.0_f0.7_results_summary.json | GSM8K accuracy summary for directly merged model | Complete |
