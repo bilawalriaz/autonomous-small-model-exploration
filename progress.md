@@ -10,6 +10,8 @@
   controls; its 12-example controls are underpowered for a strict preservation
   certificate. The durable next step is Stage 0 in
   `reports/minicpm5_single_shot_master_plan.md`.
+- [x] Added `projects/minicpm5/` as the durable control center, including a
+  status handoff and copy-ready overnight autonomy prompt.
 
 ## Current phase: Phase 3 — Gap Closure and Gem Discovery
 

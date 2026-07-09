@@ -13,6 +13,8 @@ Systematically discover what controls what inside a 0.5B-class causal LM through
 See `docs/RESEARCH_PROMPT.md` for the full research specification.
 See `AGENTS.md` for agent operating procedures.
 See `progress.md` for current status.
+See `PROJECTS.md` for active project control centers; the active MiniCPM5-1B
+single-shot work is organized at `projects/minicpm5/`.
 
 ## Setup
 

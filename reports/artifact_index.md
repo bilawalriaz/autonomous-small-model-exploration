@@ -72,6 +72,7 @@
 | Report | Path | Status |
 |---|---|---|
 | MiniCPM single-shot master plan | reports/minicpm5_single_shot_master_plan.md | Active roadmap; Stage 0 next |
+| MiniCPM control center | projects/minicpm5/ | Navigation, current status, and overnight handoff prompt |
 
 | Report | Path | Status |
 |--------|------|--------|
