@@ -1,0 +1,136 @@
+[
+  {
+    "id": "agt_tool_format_001_v01",
+    "family": "tool_format",
+    "template_id": "agt_tool_format_001",
+    "variant_id": 1,
+    "prompt": "Read `request.txt` and produce `tool_call.json`. The JSON must contain exactly these top-level keys in this order: action, target, priority. Use only facts present in the request. Do not wrap the JSON in markdown.",
+    "files": {
+      "request.txt": "Please inspect service-1 and restart it only if health is degraded. Priority P1.\n",
+      "verify_task.py": "import json\nfrom pathlib import Path\npath = Path('tool_call.json')\nassert path.exists(), 'missing tool_call.json'\ndata = json.loads(path.read_text())\nassert list(data.keys()) == ['action', 'target', 'priority'], list(data.keys())\nassert 'service-1' in json.dumps(data)\nassert 'markdown' not in path.read_text().lower()\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_file_ops_001_v01",
+    "family": "file_operations",
+    "template_id": "agt_file_ops_001",
+    "variant_id": 1,
+    "prompt": "Update this small config repository. Rename the service from the old name to the new name everywhere, add a README changelog entry, and preserve valid JSON/YAML. New service name: `svc_001_01`.",
+    "files": {
+      "config/service.json": "{\n  \"name\": \"old-service\",\n  \"port\": 7001,\n  \"enabled\": true\n}\n",
+      "deploy.yaml": "service: old-service\nreplicas: 2\n",
+      "README.md": "# Service\n\nExisting deployment notes.\n",
+      "verify_task.py": "import json\nfrom pathlib import Path\ncfg = json.loads(Path('config/service.json').read_text())\nassert cfg['name'] == 'svc_001_01'\nassert 'svc_001_01' in Path('deploy.yaml').read_text()\nreadme = Path('README.md').read_text().lower()\nassert 'changelog' in readme and 'svc_001_01' in readme\nfor path in Path('.').rglob('*'):\n    if path.is_file() and path.name != 'verify_task.py':\n        assert 'old-service' not in path.read_text(errors='ignore'), path\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_repo_inspect_001_v01",
+    "family": "shell_repo_inspection",
+    "template_id": "agt_repo_inspect_001",
+    "variant_id": 1,
+    "prompt": "Inspect this repository using shell commands. Write `repo_report.json` with file_count, python_files, has_tests, hardcoded_secret_found, and commands_run. Do not edit application files.",
+    "files": {
+      "app/main.py": "def main():\n    print('hello')\n",
+      "app/utils.py": "def add(a,b): return a+b\n",
+      "tests/test_utils.py": "from app.utils import add\n\ndef test_add():\n    assert add(1,2)==3\n",
+      "requirements.txt": "flask==3.0.0\npytest==8.0.0\n",
+      "verify_task.py": "import json\nfrom pathlib import Path\ndata = json.loads(Path('repo_report.json').read_text())\nassert data['file_count'] >= 4\nassert 'python_files' in data and data['python_files'] >= 2\nassert data['has_tests'] is True\nassert data['hardcoded_secret_found'] is False\nassert 'commands_run' in data and len(data['commands_run']) >= 2\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_failure_recovery_001_v01",
+    "family": "failure_recovery",
+    "template_id": "agt_failure_recovery_001",
+    "variant_id": 1,
+    "prompt": "Fix the failing behavior in `buggy.py`. Run the local tests, diagnose any failure, and keep the implementation small. Do not edit `test_buggy.py`.",
+    "files": {
+      "buggy.py": "def average(nums):\n    return sum(nums) / len(nums)\n",
+      "test_buggy.py": "from buggy import average\n\n\ndef test_behavior():\n    assert average([]) == 0\n    assert average([2,4]) == 3\n",
+      "verify_task.py": "import subprocess, sys\nsubprocess.check_call([sys.executable, 'pytest.py'])\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_state_compact_001_v01",
+    "family": "summarisation_state_compaction",
+    "template_id": "agt_state_compact_001",
+    "variant_id": 1,
+    "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Do not claim resolution.",
+    "files": {
+      "session_notes.md": "INC-001-01 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-001-01', 'current state', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_tool_routing_001_v01",
+    "family": "tool_routing",
+    "template_id": "agt_tool_routing_001",
+    "variant_id": 1,
+    "prompt": "Read `routing_request.txt` and write `route_decision.json` with chosen_tool, why, and unsafe_alternatives. Do not perform the routed action; this task is only about choosing the right tool.",
+    "files": {
+      "routing_request.txt": "Need action for variant 1: choose the safest tool. Expected route: terminal.\n",
+      "verify_task.py": "import json\nfrom pathlib import Path\ndata = json.loads(Path('route_decision.json').read_text())\nassert data['chosen_tool'] == 'terminal', data\nassert data['why'] and len(data['why']) > 20\nassert data['unsafe_alternatives']\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  },
+  {
+    "id": "agt_mini_agent_001_v01",
+    "family": "multi_step_mini_agent",
+    "template_id": "agt_mini_agent_001",
+    "variant_id": 1,
+    "prompt": "Act as a mini deployment agent. Inspect the files, disable debug mode consistently, add an `ops_checklist.md`, and update the README with runbook, verify, and rollback notes. Run verification before finishing.",
+    "files": {
+      "service.py": "PORT=8801\nDEBUG=True\n\ndef status():\n    return 'ok'\n",
+      "deploy.toml": "name='mini-001'\nport=8801\ndebug=true\n",
+      "README.md": "# Mini Service\n",
+      "verify_task.py": "from pathlib import Path\nsvc = Path('service.py').read_text()\ndep = Path('deploy.toml').read_text().lower()\nreadme = Path('README.md').read_text().lower()\nassert 'DEBUG=False' in svc\nassert 'debug=false' in dep\nassert 'runbook' in readme and 'rollback' in readme and 'verify' in readme\nassert Path('ops_checklist.md').exists()\nassert 'health' in Path('ops_checklist.md').read_text().lower()\n"
+    },
+    "verifiers": [
+      {
+        "name": "task verifier",
+        "cmd": "python3 verify_task.py",
+        "timeout": 120
+      }
+    ]
+  }
+]

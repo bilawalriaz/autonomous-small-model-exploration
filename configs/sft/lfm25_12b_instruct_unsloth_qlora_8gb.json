@@ -1,0 +1,78 @@
+{
+  "run_id": "lfm25_12b_instruct_q8_strict_20260709",
+  "model_name_or_path": "LiquidAI/LFM2.5-1.2B-Instruct",
+  "dataset": "/home/billz/scored/exports/sft_strict_q8_response.jsonl",
+  "output_dir": "/home/billz/results/lfm25_12b_instruct_sft_q8_strict",
+  "trainer": "unsloth",
+  "quantization": {
+    "load_in_4bit": true,
+    "device_map": "cuda",
+    "gpu_memory_utilization": 0.9
+  },
+  "training": {
+    "max_seq_length": 1024,
+    "max_steps": 300,
+    "per_device_train_batch_size": 16,
+    "gradient_accumulation_steps": 1,
+    "effective_batch_size": 16,
+    "learning_rate": 0.0002,
+    "optimizer": "adamw_8bit",
+    "lr_scheduler_type": "cosine",
+    "warmup_steps": 10,
+    "precision": "fp16",
+    "bf16_supported": false,
+    "packing": false,
+    "padding_free": false,
+    "dataset_num_proc": 1,
+    "dataloader_num_workers": 0,
+    "eval_split": 0
+  },
+  "lora_config": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": "auto",
+    "use_rslora": true
+  },
+  "hardware": {
+    "host": "aero",
+    "gpu": "NVIDIA GeForce RTX 2070 Super / Max-Q class",
+    "usable_vram_gib": 7.604,
+    "system_ram_gib": 38
+  },
+  "smoke_tests": [
+    {
+      "name": "batch1_seq512",
+      "max_steps": 1,
+      "result": "success",
+      "train_runtime_seconds": 15.77,
+      "train_loss": 3.082
+    },
+    {
+      "name": "batch4_seq1024",
+      "max_steps": 1,
+      "result": "success",
+      "train_runtime_seconds": 18.95,
+      "train_loss": 2.757
+    },
+    {
+      "name": "batch8_seq1024",
+      "max_steps": 1,
+      "result": "success",
+      "train_runtime_seconds": 17.44,
+      "train_loss": 3.113
+    },
+    {
+      "name": "batch16_seq1024",
+      "max_steps": 1,
+      "result": "success",
+      "train_runtime_seconds": 22.66,
+      "train_loss": 3.383
+    }
+  ],
+  "notes": [
+    "Initial dropout=0.05 run stalled at step 0 after tokenization.",
+    "Initial dropout=0 run with padding_free auto-enabled also stalled at step 0.",
+    "The successful recipe explicitly sets padding_free=false, dataset_num_proc=1, dataloader_num_workers=0, and lora_dropout=0."
+  ]
+}

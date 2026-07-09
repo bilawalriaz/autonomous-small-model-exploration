@@ -1,0 +1,451 @@
+[
+  {
+    "id": "sys_compose_harden_002",
+    "family": "docker_compose_deployment",
+    "prompt": "Harden this Docker Compose deployment for a small internal service. Add a healthcheck, sensible restart policy, read-only container filesystem where feasible, and basic security options. Validate statically with `docker compose config`; do not run `docker compose up`, `build`, `pull`, or start containers for this task.",
+    "files": {
+      "app.py": "from http.server import BaseHTTPRequestHandler, HTTPServer\nimport os\nclass H(BaseHTTPRequestHandler):\n    def do_GET(self):\n        body=f\"ok {os.getenv('APP_NAME','app')}\".encode()\n        self.send_response(200); self.end_headers(); self.wfile.write(body)\nHTTPServer(('0.0.0.0', int(os.getenv('PORT','8080'))), H).serve_forever()\n",
+      "Dockerfile": "FROM python:3.14-slim\nWORKDIR /app\nCOPY app.py .\nCMD [\"python\", \"app.py\"]\n",
+      "compose.yaml": "services:\n  web:\n    build: .\n    ports:\n      - \"8102:8080\"\n    environment:\n      APP_NAME: demo2\n",
+      "check_compose.py": "import subprocess, yaml, pathlib\nsubprocess.check_call(['docker','compose','config'], stdout=subprocess.DEVNULL)\nd=yaml.safe_load(pathlib.Path('compose.yaml').read_text())\nsvc=d['services']['web']\nassert 'healthcheck' in svc\nassert svc.get('restart') in ('unless-stopped','always')\nassert 'read_only' in svc and svc['read_only'] is True\nassert 'security_opt' in svc\n"
+    },
+    "verifiers": [
+      {
+        "name": "compose hardening",
+        "cmd": "python3 check_compose.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_compose_harden_006",
+    "family": "docker_compose_deployment",
+    "prompt": "Harden this Docker Compose deployment for a small internal service. Add a healthcheck, sensible restart policy, read-only container filesystem where feasible, and basic security options. Validate statically with `docker compose config`; do not run `docker compose up`, `build`, `pull`, or start containers for this task.",
+    "files": {
+      "app.py": "from http.server import BaseHTTPRequestHandler, HTTPServer\nimport os\nclass H(BaseHTTPRequestHandler):\n    def do_GET(self):\n        body=f\"ok {os.getenv('APP_NAME','app')}\".encode()\n        self.send_response(200); self.end_headers(); self.wfile.write(body)\nHTTPServer(('0.0.0.0', int(os.getenv('PORT','8080'))), H).serve_forever()\n",
+      "Dockerfile": "FROM python:3.14-slim\nWORKDIR /app\nCOPY app.py .\nCMD [\"python\", \"app.py\"]\n",
+      "compose.yaml": "services:\n  web:\n    build: .\n    ports:\n      - \"8106:8080\"\n    environment:\n      APP_NAME: demo6\n",
+      "check_compose.py": "import subprocess, yaml, pathlib\nsubprocess.check_call(['docker','compose','config'], stdout=subprocess.DEVNULL)\nd=yaml.safe_load(pathlib.Path('compose.yaml').read_text())\nsvc=d['services']['web']\nassert 'healthcheck' in svc\nassert svc.get('restart') in ('unless-stopped','always')\nassert 'read_only' in svc and svc['read_only'] is True\nassert 'security_opt' in svc\n"
+    },
+    "verifiers": [
+      {
+        "name": "compose hardening",
+        "cmd": "python3 check_compose.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_compose_harden_010",
+    "family": "docker_compose_deployment",
+    "prompt": "Harden this Docker Compose deployment for a small internal service. Add a healthcheck, sensible restart policy, read-only container filesystem where feasible, and basic security options. Validate statically with `docker compose config`; do not run `docker compose up`, `build`, `pull`, or start containers for this task.",
+    "files": {
+      "app.py": "from http.server import BaseHTTPRequestHandler, HTTPServer\nimport os\nclass H(BaseHTTPRequestHandler):\n    def do_GET(self):\n        body=f\"ok {os.getenv('APP_NAME','app')}\".encode()\n        self.send_response(200); self.end_headers(); self.wfile.write(body)\nHTTPServer(('0.0.0.0', int(os.getenv('PORT','8080'))), H).serve_forever()\n",
+      "Dockerfile": "FROM python:3.14-slim\nWORKDIR /app\nCOPY app.py .\nCMD [\"python\", \"app.py\"]\n",
+      "compose.yaml": "services:\n  web:\n    build: .\n    ports:\n      - \"8110:8080\"\n    environment:\n      APP_NAME: demo10\n",
+      "check_compose.py": "import subprocess, yaml, pathlib\nsubprocess.check_call(['docker','compose','config'], stdout=subprocess.DEVNULL)\nd=yaml.safe_load(pathlib.Path('compose.yaml').read_text())\nsvc=d['services']['web']\nassert 'healthcheck' in svc\nassert svc.get('restart') in ('unless-stopped','always')\nassert 'read_only' in svc and svc['read_only'] is True\nassert 'security_opt' in svc\n"
+    },
+    "verifiers": [
+      {
+        "name": "compose hardening",
+        "cmd": "python3 check_compose.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_compose_harden_014",
+    "family": "docker_compose_deployment",
+    "prompt": "Harden this Docker Compose deployment for a small internal service. Add a healthcheck, sensible restart policy, read-only container filesystem where feasible, and basic security options. Validate statically with `docker compose config`; do not run `docker compose up`, `build`, `pull`, or start containers for this task.",
+    "files": {
+      "app.py": "from http.server import BaseHTTPRequestHandler, HTTPServer\nimport os\nclass H(BaseHTTPRequestHandler):\n    def do_GET(self):\n        body=f\"ok {os.getenv('APP_NAME','app')}\".encode()\n        self.send_response(200); self.end_headers(); self.wfile.write(body)\nHTTPServer(('0.0.0.0', int(os.getenv('PORT','8080'))), H).serve_forever()\n",
+      "Dockerfile": "FROM python:3.14-slim\nWORKDIR /app\nCOPY app.py .\nCMD [\"python\", \"app.py\"]\n",
+      "compose.yaml": "services:\n  web:\n    build: .\n    ports:\n      - \"8114:8080\"\n    environment:\n      APP_NAME: demo14\n",
+      "check_compose.py": "import subprocess, yaml, pathlib\nsubprocess.check_call(['docker','compose','config'], stdout=subprocess.DEVNULL)\nd=yaml.safe_load(pathlib.Path('compose.yaml').read_text())\nsvc=d['services']['web']\nassert 'healthcheck' in svc\nassert svc.get('restart') in ('unless-stopped','always')\nassert 'read_only' in svc and svc['read_only'] is True\nassert 'security_opt' in svc\n"
+    },
+    "verifiers": [
+      {
+        "name": "compose hardening",
+        "cmd": "python3 check_compose.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_compose_harden_018",
+    "family": "docker_compose_deployment",
+    "prompt": "Harden this Docker Compose deployment for a small internal service. Add a healthcheck, sensible restart policy, read-only container filesystem where feasible, and basic security options. Validate statically with `docker compose config`; do not run `docker compose up`, `build`, `pull`, or start containers for this task.",
+    "files": {
+      "app.py": "from http.server import BaseHTTPRequestHandler, HTTPServer\nimport os\nclass H(BaseHTTPRequestHandler):\n    def do_GET(self):\n        body=f\"ok {os.getenv('APP_NAME','app')}\".encode()\n        self.send_response(200); self.end_headers(); self.wfile.write(body)\nHTTPServer(('0.0.0.0', int(os.getenv('PORT','8080'))), H).serve_forever()\n",
+      "Dockerfile": "FROM python:3.14-slim\nWORKDIR /app\nCOPY app.py .\nCMD [\"python\", \"app.py\"]\n",
+      "compose.yaml": "services:\n  web:\n    build: .\n    ports:\n      - \"8118:8080\"\n    environment:\n      APP_NAME: demo18\n",
+      "check_compose.py": "import subprocess, yaml, pathlib\nsubprocess.check_call(['docker','compose','config'], stdout=subprocess.DEVNULL)\nd=yaml.safe_load(pathlib.Path('compose.yaml').read_text())\nsvc=d['services']['web']\nassert 'healthcheck' in svc\nassert svc.get('restart') in ('unless-stopped','always')\nassert 'read_only' in svc and svc['read_only'] is True\nassert 'security_opt' in svc\n"
+    },
+    "verifiers": [
+      {
+        "name": "compose hardening",
+        "cmd": "python3 check_compose.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_backup_restore_002",
+    "family": "backup_restore",
+    "prompt": "Create a robust `backup.sh` for the `important/` directory. It should create timestamped compressed archives under `backups/`, refuse to continue on errors, and print what it wrote. Avoid absolute machine-specific paths.",
+    "files": {
+      "important/app.conf": "port=9002\nmode=prod\n",
+      "important/data.txt": "alpha\nbeta\ngamma\n",
+      "check_backup.py": "import os, subprocess, tarfile, pathlib, tempfile\nsubprocess.check_call(['bash','backup.sh'])\narchives=list(pathlib.Path('backups').glob('backup-*.tar.gz'))\nassert archives, 'no archive'\nwith tarfile.open(archives[-1]) as t:\n    names=set(t.getnames())\nassert any(n.endswith('important/app.conf') for n in names), names\nassert any(n.endswith('important/data.txt') for n in names), names\n"
+    },
+    "verifiers": [
+      {
+        "name": "backup check",
+        "cmd": "python3 check_backup.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_backup_restore_006",
+    "family": "backup_restore",
+    "prompt": "Create a robust `backup.sh` for the `important/` directory. It should create timestamped compressed archives under `backups/`, refuse to continue on errors, and print what it wrote. Avoid absolute machine-specific paths.",
+    "files": {
+      "important/app.conf": "port=9006\nmode=prod\n",
+      "important/data.txt": "alpha\nbeta\ngamma\n",
+      "check_backup.py": "import os, subprocess, tarfile, pathlib, tempfile\nsubprocess.check_call(['bash','backup.sh'])\narchives=list(pathlib.Path('backups').glob('backup-*.tar.gz'))\nassert archives, 'no archive'\nwith tarfile.open(archives[-1]) as t:\n    names=set(t.getnames())\nassert any(n.endswith('important/app.conf') for n in names), names\nassert any(n.endswith('important/data.txt') for n in names), names\n"
+    },
+    "verifiers": [
+      {
+        "name": "backup check",
+        "cmd": "python3 check_backup.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_backup_restore_010",
+    "family": "backup_restore",
+    "prompt": "Create a robust `backup.sh` for the `important/` directory. It should create timestamped compressed archives under `backups/`, refuse to continue on errors, and print what it wrote. Avoid absolute machine-specific paths.",
+    "files": {
+      "important/app.conf": "port=9010\nmode=prod\n",
+      "important/data.txt": "alpha\nbeta\ngamma\n",
+      "check_backup.py": "import os, subprocess, tarfile, pathlib, tempfile\nsubprocess.check_call(['bash','backup.sh'])\narchives=list(pathlib.Path('backups').glob('backup-*.tar.gz'))\nassert archives, 'no archive'\nwith tarfile.open(archives[-1]) as t:\n    names=set(t.getnames())\nassert any(n.endswith('important/app.conf') for n in names), names\nassert any(n.endswith('important/data.txt') for n in names), names\n"
+    },
+    "verifiers": [
+      {
+        "name": "backup check",
+        "cmd": "python3 check_backup.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_backup_restore_014",
+    "family": "backup_restore",
+    "prompt": "Create a robust `backup.sh` for the `important/` directory. It should create timestamped compressed archives under `backups/`, refuse to continue on errors, and print what it wrote. Avoid absolute machine-specific paths.",
+    "files": {
+      "important/app.conf": "port=9014\nmode=prod\n",
+      "important/data.txt": "alpha\nbeta\ngamma\n",
+      "check_backup.py": "import os, subprocess, tarfile, pathlib, tempfile\nsubprocess.check_call(['bash','backup.sh'])\narchives=list(pathlib.Path('backups').glob('backup-*.tar.gz'))\nassert archives, 'no archive'\nwith tarfile.open(archives[-1]) as t:\n    names=set(t.getnames())\nassert any(n.endswith('important/app.conf') for n in names), names\nassert any(n.endswith('important/data.txt') for n in names), names\n"
+    },
+    "verifiers": [
+      {
+        "name": "backup check",
+        "cmd": "python3 check_backup.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_incident_triage_003",
+    "family": "incident_triage",
+    "prompt": "Triage `incident.log` for a likely nginx 5xx incident. Write `incident_report.md` with summary, evidence, impact, immediate containment, and follow-up prevention. Do not invent facts not present in the log.",
+    "files": {
+      "incident.log": "nginx: 10.0.0.4 - - \"GET /api HTTP/1.1\" 502 173\napp: normal heartbeat ok\nnginx: 10.0.0.4 - - \"GET /api HTTP/1.1\" 502 173\n",
+      "check_incident.py": "from pathlib import Path\np=Path('incident_report.md')\nassert p.exists()\ns=p.read_text().lower()\nfor term in ['summary','evidence','impact','next actions']:\n    assert term in s, term\nassert len(s) > 300\n"
+    },
+    "verifiers": [
+      {
+        "name": "incident report",
+        "cmd": "python3 check_incident.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_incident_triage_007",
+    "family": "incident_triage",
+    "prompt": "Triage `incident.log` for a likely oom kill incident. Write `incident_report.md` with summary, evidence, impact, immediate containment, and follow-up prevention. Do not invent facts not present in the log.",
+    "files": {
+      "incident.log": "kernel: Out of memory: Killed process 4444 (python3) total-vm:123456kB\napp: normal heartbeat ok\nkernel: Out of memory: Killed process 4444 (python3) total-vm:123456kB\n",
+      "check_incident.py": "from pathlib import Path\np=Path('incident_report.md')\nassert p.exists()\ns=p.read_text().lower()\nfor term in ['summary','evidence','impact','next actions']:\n    assert term in s, term\nassert len(s) > 300\n"
+    },
+    "verifiers": [
+      {
+        "name": "incident report",
+        "cmd": "python3 check_incident.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_incident_triage_011",
+    "family": "incident_triage",
+    "prompt": "Triage `incident.log` for a likely ssh brute force incident. Write `incident_report.md` with summary, evidence, impact, immediate containment, and follow-up prevention. Do not invent facts not present in the log.",
+    "files": {
+      "incident.log": "sshd[100]: Failed password for invalid user admin from 203.0.113.4 port 51234 ssh2\napp: normal heartbeat ok\nsshd[100]: Failed password for invalid user admin from 198.51.100.9 port 51234 ssh2\n",
+      "check_incident.py": "from pathlib import Path\np=Path('incident_report.md')\nassert p.exists()\ns=p.read_text().lower()\nfor term in ['summary','evidence','impact','next actions']:\n    assert term in s, term\nassert len(s) > 300\n"
+    },
+    "verifiers": [
+      {
+        "name": "incident report",
+        "cmd": "python3 check_incident.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_incident_triage_015",
+    "family": "incident_triage",
+    "prompt": "Triage `incident.log` for a likely permission denied incident. Write `incident_report.md` with summary, evidence, impact, immediate containment, and follow-up prevention. Do not invent facts not present in the log.",
+    "files": {
+      "incident.log": "backup: cannot open /srv/data: Permission denied\napp: normal heartbeat ok\nbackup: cannot open /srv/data: Permission denied\n",
+      "check_incident.py": "from pathlib import Path\np=Path('incident_report.md')\nassert p.exists()\ns=p.read_text().lower()\nfor term in ['summary','evidence','impact','next actions']:\n    assert term in s, term\nassert len(s) > 300\n"
+    },
+    "verifiers": [
+      {
+        "name": "incident report",
+        "cmd": "python3 check_incident.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_incident_triage_019",
+    "family": "incident_triage",
+    "prompt": "Triage `incident.log` for a likely disk full incident. Write `incident_report.md` with summary, evidence, impact, immediate containment, and follow-up prevention. Do not invent facts not present in the log.",
+    "files": {
+      "incident.log": "app: write failed: No space left on device\napp: normal heartbeat ok\napp: write failed: No space left on device\n",
+      "check_incident.py": "from pathlib import Path\np=Path('incident_report.md')\nassert p.exists()\ns=p.read_text().lower()\nfor term in ['summary','evidence','impact','next actions']:\n    assert term in s, term\nassert len(s) > 300\n"
+    },
+    "verifiers": [
+      {
+        "name": "incident report",
+        "cmd": "python3 check_incident.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_systemd_harden_003",
+    "family": "systemd_hardening",
+    "prompt": "Harden `myapp.service` for a long-running Python service. Avoid root, add restart behavior and practical sandboxing directives without breaking ExecStart. Keep the unit file syntactically plausible.",
+    "files": {
+      "myapp.service": "[Unit]\nDescription=Example app\n[Service]\nExecStart=/usr/bin/python3 /opt/myapp/app.py\nUser=root\n[Install]\nWantedBy=multi-user.target\n",
+      "check_unit.py": "from pathlib import Path\ns=Path('myapp.service').read_text()\nfor term in ['NoNewPrivileges=true','PrivateTmp=true','ProtectSystem=strict','Restart=on-failure']:\n    assert term in s, term\nassert 'User=root' not in s\n"
+    },
+    "verifiers": [
+      {
+        "name": "unit hardening",
+        "cmd": "python3 check_unit.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_systemd_harden_007",
+    "family": "systemd_hardening",
+    "prompt": "Harden `myapp.service` for a long-running Python service. Avoid root, add restart behavior and practical sandboxing directives without breaking ExecStart. Keep the unit file syntactically plausible.",
+    "files": {
+      "myapp.service": "[Unit]\nDescription=Example app\n[Service]\nExecStart=/usr/bin/python3 /opt/myapp/app.py\nUser=root\n[Install]\nWantedBy=multi-user.target\n",
+      "check_unit.py": "from pathlib import Path\ns=Path('myapp.service').read_text()\nfor term in ['NoNewPrivileges=true','PrivateTmp=true','ProtectSystem=strict','Restart=on-failure']:\n    assert term in s, term\nassert 'User=root' not in s\n"
+    },
+    "verifiers": [
+      {
+        "name": "unit hardening",
+        "cmd": "python3 check_unit.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_systemd_harden_011",
+    "family": "systemd_hardening",
+    "prompt": "Harden `myapp.service` for a long-running Python service. Avoid root, add restart behavior and practical sandboxing directives without breaking ExecStart. Keep the unit file syntactically plausible.",
+    "files": {
+      "myapp.service": "[Unit]\nDescription=Example app\n[Service]\nExecStart=/usr/bin/python3 /opt/myapp/app.py\nUser=root\n[Install]\nWantedBy=multi-user.target\n",
+      "check_unit.py": "from pathlib import Path\ns=Path('myapp.service').read_text()\nfor term in ['NoNewPrivileges=true','PrivateTmp=true','ProtectSystem=strict','Restart=on-failure']:\n    assert term in s, term\nassert 'User=root' not in s\n"
+    },
+    "verifiers": [
+      {
+        "name": "unit hardening",
+        "cmd": "python3 check_unit.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_systemd_harden_015",
+    "family": "systemd_hardening",
+    "prompt": "Harden `myapp.service` for a long-running Python service. Avoid root, add restart behavior and practical sandboxing directives without breaking ExecStart. Keep the unit file syntactically plausible.",
+    "files": {
+      "myapp.service": "[Unit]\nDescription=Example app\n[Service]\nExecStart=/usr/bin/python3 /opt/myapp/app.py\nUser=root\n[Install]\nWantedBy=multi-user.target\n",
+      "check_unit.py": "from pathlib import Path\ns=Path('myapp.service').read_text()\nfor term in ['NoNewPrivileges=true','PrivateTmp=true','ProtectSystem=strict','Restart=on-failure']:\n    assert term in s, term\nassert 'User=root' not in s\n"
+    },
+    "verifiers": [
+      {
+        "name": "unit hardening",
+        "cmd": "python3 check_unit.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_reverse_proxy_004",
+    "family": "reverse_proxy_config",
+    "prompt": "Improve this nginx reverse-proxy config for a small internal app. Preserve the upstream, add standard proxy headers, a lightweight `/health` response, and a reasonable request body limit.",
+    "files": {
+      "nginx.conf": "server {\n    listen 80;\n    server_name example.local;\n    location / { proxy_pass http://127.0.0.1:9000; }\n}\n",
+      "check_nginx.py": "from pathlib import Path\ns=Path('nginx.conf').read_text().lower()\nfor term in ['proxy_set_header host','x-forwarded-for','client_max_body_size','location /health']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "nginx config check",
+        "cmd": "python3 check_nginx.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_reverse_proxy_008",
+    "family": "reverse_proxy_config",
+    "prompt": "Improve this nginx reverse-proxy config for a small internal app. Preserve the upstream, add standard proxy headers, a lightweight `/health` response, and a reasonable request body limit.",
+    "files": {
+      "nginx.conf": "server {\n    listen 80;\n    server_name example.local;\n    location / { proxy_pass http://127.0.0.1:9000; }\n}\n",
+      "check_nginx.py": "from pathlib import Path\ns=Path('nginx.conf').read_text().lower()\nfor term in ['proxy_set_header host','x-forwarded-for','client_max_body_size','location /health']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "nginx config check",
+        "cmd": "python3 check_nginx.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_reverse_proxy_012",
+    "family": "reverse_proxy_config",
+    "prompt": "Improve this nginx reverse-proxy config for a small internal app. Preserve the upstream, add standard proxy headers, a lightweight `/health` response, and a reasonable request body limit.",
+    "files": {
+      "nginx.conf": "server {\n    listen 80;\n    server_name example.local;\n    location / { proxy_pass http://127.0.0.1:9000; }\n}\n",
+      "check_nginx.py": "from pathlib import Path\ns=Path('nginx.conf').read_text().lower()\nfor term in ['proxy_set_header host','x-forwarded-for','client_max_body_size','location /health']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "nginx config check",
+        "cmd": "python3 check_nginx.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_deploy_script_001",
+    "family": "deployment_automation",
+    "prompt": "Make `deploy.sh` safer for Docker Compose deployment. Add validation, logging, error trapping, and a simple rollback path. Keep it understandable and avoid requiring external services.",
+    "files": {
+      "deploy.sh": "#!/usr/bin/env bash\nset -e\ncd /srv/example\ndocker compose pull\ndocker compose up -d\n",
+      "check_deploy.py": "from pathlib import Path\ns=Path('deploy.sh').read_text()\nfor term in ['set -euo pipefail','docker compose config','trap','rollback']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "deploy script check",
+        "cmd": "python3 check_deploy.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_deploy_script_005",
+    "family": "deployment_automation",
+    "prompt": "Make `deploy.sh` safer for Docker Compose deployment. Add validation, logging, error trapping, and a simple rollback path. Keep it understandable and avoid requiring external services.",
+    "files": {
+      "deploy.sh": "#!/usr/bin/env bash\nset -e\ncd /srv/example\ndocker compose pull\ndocker compose up -d\n",
+      "check_deploy.py": "from pathlib import Path\ns=Path('deploy.sh').read_text()\nfor term in ['set -euo pipefail','docker compose config','trap','rollback']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "deploy script check",
+        "cmd": "python3 check_deploy.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_deploy_script_009",
+    "family": "deployment_automation",
+    "prompt": "Make `deploy.sh` safer for Docker Compose deployment. Add validation, logging, error trapping, and a simple rollback path. Keep it understandable and avoid requiring external services.",
+    "files": {
+      "deploy.sh": "#!/usr/bin/env bash\nset -e\ncd /srv/example\ndocker compose pull\ndocker compose up -d\n",
+      "check_deploy.py": "from pathlib import Path\ns=Path('deploy.sh').read_text()\nfor term in ['set -euo pipefail','docker compose config','trap','rollback']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "deploy script check",
+        "cmd": "python3 check_deploy.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_deploy_script_013",
+    "family": "deployment_automation",
+    "prompt": "Make `deploy.sh` safer for Docker Compose deployment. Add validation, logging, error trapping, and a simple rollback path. Keep it understandable and avoid requiring external services.",
+    "files": {
+      "deploy.sh": "#!/usr/bin/env bash\nset -e\ncd /srv/example\ndocker compose pull\ndocker compose up -d\n",
+      "check_deploy.py": "from pathlib import Path\ns=Path('deploy.sh').read_text()\nfor term in ['set -euo pipefail','docker compose config','trap','rollback']:\n    assert term in s, term\n"
+    },
+    "verifiers": [
+      {
+        "name": "deploy script check",
+        "cmd": "python3 check_deploy.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_port_analysis_002",
+    "family": "security_scan_parser",
+    "prompt": "Write `analyze_ports.py` to parse `ss -ltnp`-style output and emit JSON records with port, bind address, process, exposure (`public` or `loopback`), and risk. Treat public dev/admin ports as at least medium risk.",
+    "files": {
+      "sample_ss.txt": "LISTEN 0 4096 0.0.0.0:22 0.0.0.0:* users:((\"sshd\",pid=777,fd=3))\nLISTEN 0 4096 127.0.0.1:5432 0.0.0.0:* users:((\"postgres\",pid=888,fd=5))\nLISTEN 0 4096 0.0.0.0:8080 0.0.0.0:* users:((\"dev-server\",pid=999,fd=8))\n",
+      "check_ports.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'analyze_ports.py', 'sample_ss.txt', 'ports.json'])\nd=json.load(open('ports.json'))\nassert any(x['port']==22 and x['exposure']=='public' for x in d)\nassert any(x['port']==5432 and x['exposure']=='loopback' for x in d)\nassert any(x['port']==8080 and x['risk'] in ('medium','high') for x in d)\n"
+    },
+    "verifiers": [
+      {
+        "name": "port parser",
+        "cmd": "python3 check_ports.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_port_analysis_006",
+    "family": "security_scan_parser",
+    "prompt": "Write `analyze_ports.py` to parse `ss -ltnp`-style output and emit JSON records with port, bind address, process, exposure (`public` or `loopback`), and risk. Treat public dev/admin ports as at least medium risk.",
+    "files": {
+      "sample_ss.txt": "LISTEN 0 4096 0.0.0.0:22 0.0.0.0:* users:((\"sshd\",pid=777,fd=3))\nLISTEN 0 4096 127.0.0.1:5432 0.0.0.0:* users:((\"postgres\",pid=888,fd=5))\nLISTEN 0 4096 0.0.0.0:8080 0.0.0.0:* users:((\"dev-server\",pid=999,fd=8))\n",
+      "check_ports.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'analyze_ports.py', 'sample_ss.txt', 'ports.json'])\nd=json.load(open('ports.json'))\nassert any(x['port']==22 and x['exposure']=='public' for x in d)\nassert any(x['port']==5432 and x['exposure']=='loopback' for x in d)\nassert any(x['port']==8080 and x['risk'] in ('medium','high') for x in d)\n"
+    },
+    "verifiers": [
+      {
+        "name": "port parser",
+        "cmd": "python3 check_ports.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_port_analysis_010",
+    "family": "security_scan_parser",
+    "prompt": "Write `analyze_ports.py` to parse `ss -ltnp`-style output and emit JSON records with port, bind address, process, exposure (`public` or `loopback`), and risk. Treat public dev/admin ports as at least medium risk.",
+    "files": {
+      "sample_ss.txt": "LISTEN 0 4096 0.0.0.0:22 0.0.0.0:* users:((\"sshd\",pid=777,fd=3))\nLISTEN 0 4096 127.0.0.1:5432 0.0.0.0:* users:((\"postgres\",pid=888,fd=5))\nLISTEN 0 4096 0.0.0.0:8080 0.0.0.0:* users:((\"dev-server\",pid=999,fd=8))\n",
+      "check_ports.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'analyze_ports.py', 'sample_ss.txt', 'ports.json'])\nd=json.load(open('ports.json'))\nassert any(x['port']==22 and x['exposure']=='public' for x in d)\nassert any(x['port']==5432 and x['exposure']=='loopback' for x in d)\nassert any(x['port']==8080 and x['risk'] in ('medium','high') for x in d)\n"
+    },
+    "verifiers": [
+      {
+        "name": "port parser",
+        "cmd": "python3 check_ports.py"
+      }
+    ]
+  },
+  {
+    "id": "sys_port_analysis_014",
+    "family": "security_scan_parser",
+    "prompt": "Write `analyze_ports.py` to parse `ss -ltnp`-style output and emit JSON records with port, bind address, process, exposure (`public` or `loopback`), and risk. Treat public dev/admin ports as at least medium risk.",
+    "files": {
+      "sample_ss.txt": "LISTEN 0 4096 0.0.0.0:22 0.0.0.0:* users:((\"sshd\",pid=777,fd=3))\nLISTEN 0 4096 127.0.0.1:5432 0.0.0.0:* users:((\"postgres\",pid=888,fd=5))\nLISTEN 0 4096 0.0.0.0:8080 0.0.0.0:* users:((\"dev-server\",pid=999,fd=8))\n",
+      "check_ports.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'analyze_ports.py', 'sample_ss.txt', 'ports.json'])\nd=json.load(open('ports.json'))\nassert any(x['port']==22 and x['exposure']=='public' for x in d)\nassert any(x['port']==5432 and x['exposure']=='loopback' for x in d)\nassert any(x['port']==8080 and x['risk'] in ('medium','high') for x in d)\n"
+    },
+    "verifiers": [
+      {
+        "name": "port parser",
+        "cmd": "python3 check_ports.py"
+      }
+    ]
+  }
+]

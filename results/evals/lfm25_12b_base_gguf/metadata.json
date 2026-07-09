@@ -1,0 +1,13 @@
+{
+  "run_id": "lfm25_12b_base_gguf",
+  "model_gguf": "/home/billz/models/LFM2.5-1.2B-Instruct-GGUF_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf",
+  "eval_set": "/home/billz/work/autonomous-small-model-exploration/data/eval/small_model_eval_v1.jsonl",
+  "timestamp": "2026-07-09T13:15:49.498159+00:00",
+  "eval_count": 153,
+  "config": {
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_new_tokens": 512,
+    "repetition_penalty": 1.1
+  }
+}

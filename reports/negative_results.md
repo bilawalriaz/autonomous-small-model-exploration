@@ -146,3 +146,114 @@ Using training loss as a proxy for output quality without behavioral verificatio
 
 Next:
 Run real eval to confirm: if bad_format_control has worst behavioral scores despite 2nd-best loss, H-P9-4 is confirmed.
+
+---
+
+## NR016: Teacher-clean labels still fail deterministic schema validation
+
+Experiment:
+Mimo-v2.5 judged 1,728 rollout prompt groups after prompt tightening. Rows were filtered to teacher-clean labels using `format_valid=true`, `quality_score>=8`, and `correctness in {correct, na}`.
+
+Expected:
+Most teacher-clean labels would parse and satisfy the prompt metadata JSON schema.
+
+Observed:
+Teacher-clean q>=8 rows: 1,240. Deterministic parse + JSON-schema validation accepted only 827 and rejected 413. Major rejection modes included YAML parser failures, JSON parse failures, wrong wrapper/top-level shape, enum violations, range violations, count violations, and missing required fields.
+
+Interpretation:
+The teacher is useful for ranking and reasoning condensation, but it still over-accepts structured outputs. For structured-output SFT, teacher labels must be gated by deterministic validators before training.
+
+What this rules out:
+Using teacher `format_valid=true` and high `quality_score` as the sole criterion for training-data quality.
+
+Next:
+Use `/Users/bilawalriaz/scored/exports/sft_strict_q8_response.jsonl` or `/Users/bilawalriaz/scored/exports/sft_strict_q8_reasoning.jsonl` for the first SFT pass. Keep teacher-clean-but-strict-rejected rows quarantined for repair or negative/preference data.
+
+---
+
+## NR016: Current LFM2.5-8B-A1B GGUF does not drive Hermes tools in first smoke
+
+Experiment:
+Configured Hermes on lenovo to use aero's OpenAI-compatible llama.cpp endpoint for `LFM2.5-8B-A1B-Uncensored-Gaston-Q4_K_M.gguf`, then ran `agent_code_bugfix_001` through `tools/agent_trajectory_lab/run_hermes_tasks.py`.
+
+Expected:
+Hermes would use shell/file tools to inspect `stats.py`, edit the median and trimmed-mean bugs, and pass the verifier.
+
+Observed:
+Hermes reached the aero endpoint and returned successfully, but the model emitted a JSON plan/tool-call-like object instead of completing executable tool calls. No workspace diff was produced. The verifier failed on the original bugs. A control run with Nous `stepfun/step-3.7-flash:free` edited `stats.py` and passed the same verifier.
+
+Interpretation:
+The trajectory harness and Hermes tools work, but the current LFM server/model/chat-template combination is not yet tool-call compatible enough for unattended Hermes agent traces.
+
+What this rules out:
+Assuming that a raw OpenAI-compatible LFM2.5-8B-A1B endpoint can immediately collect high-quality Hermes tool-use trajectories without a tool-format bootstrap or adapter.
+
+Next:
+Test alternate llama.cpp chat/tool templates and non-streaming settings. If still failing, collect successful teacher traces with a tool-capable provider, then SFT/ DPO LFM on those traces before using it as the trajectory generator.
+
+---
+
+## NR017: LFM2.5-8B-A1B Unsloth QLoRA does not fit on aero 8GB GPU
+
+Experiment:
+Stopped the aero llama.cpp LFM server, then attempted to load `LiquidAI/LFM2.5-8B-A1B` through Unsloth for bnb 4-bit QLoRA SFT using the strict 827-row scored dataset. Config snapshot: `configs/sft/lfm25_8b_a1b_unsloth_qlora_8gb.json`.
+
+Expected:
+The 4-bit base model plus rank-8 LoRA setup would load on aero's RTX 2070-class 8GB GPU, allowing batch size 1 with gradient accumulation.
+
+Observed:
+Default Unsloth/bnb placement failed before training because modules were dispatched to CPU/disk. Raising `gpu_memory_utilization` to `0.9` failed the same way. Forcing all quantized modules onto CUDA got further, but failed during weight loading with CUDA OOM at about 7.59 GiB used on a 7.604 GiB usable GPU. Adding `--offload-embedding`, reducing context to 768, and setting `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` still failed during weight loading.
+
+Interpretation:
+With the current aero software stack (`unsloth` 2026.5.2, `transformers` 5.3.0, bnb 4-bit) and RTX 2070-class 8GB VRAM, the HF `LiquidAI/LFM2.5-8B-A1B` checkpoint cannot be loaded for QLoRA training before activations or optimizer state are added.
+
+What this rules out:
+The same Unsloth bnb 4-bit 8GB recipe as a viable path for first LFM2.5-8B-A1B SFT on aero.
+
+Next:
+Use a smaller checkpoint, a larger GPU, or a training stack with practical CPU/NVMe offload. Keep `scripts/train/train_lfm25_8b_unsloth_qlora.py` for larger hardware or future offload-capable stack tests.
+
+---
+
+## NR018: Eight parallel HY3 Hermes workers trigger rate-limit artifacts
+
+Experiment:
+Started four family-sorted HY3 workers and then four additional balanced HY3 workers on lenovo, all using `tencent/hy3:free` through Nous Portal with four rollouts per task.
+
+Expected:
+Eight workers would increase throughput while preserving clean verifier-backed trajectories.
+
+Observed:
+The run began cleanly, but at eight workers several Hermes invocations returned final stdout `API call failed after 3 retries: HTTP 429...` with return code 0. Because no task files were produced, downstream verifiers failed with missing-output errors. These are provider/rate-limit artifacts, not model-quality failures.
+
+Interpretation:
+HY3 collection needs lower concurrency and explicit transient retry/backoff. Rate-limit artifacts must be excluded from DPO rejected examples because they are infrastructure failures, not invalid model trajectories.
+
+What this rules out:
+Treating every failed verifier row as a useful rejected preference example. Running eight HY3 workers without backoff on the current Nous Portal free route.
+
+Next:
+Use balanced shards with four workers, `--transient-retries 4 --transient-sleep 90`, and `--rerun-failed`. Keep `export_preference_pairs.py` defaulting to exclude transient API failures.
+
+---
+
+## NR019: Format-heavy SFT causes math reasoning regression on LFM2.5-1.2B-Instruct
+
+Experiment:
+Ran GSM8K evaluation (100 prompts) on `lfm25_12b_instruct_sft_q8_strict` GGUF and compared against the base `LFM2.5-1.2B-Instruct` GGUF.
+
+Expected:
+The SFT model would either maintain or slightly improve general reasoning performance compared to the base model.
+
+Observed:
+The SFT model accuracy on GSM8K dropped to **54.00%** (54/100 correct), representing a **15.0% regression** compared to the base model's **69.00%** (69/100 correct). Qualitatively, the SFT model frequently hallucinated invalid math reasoning steps or skipped constraints (e.g., ignoring multiplier terms).
+
+Interpretation:
+Supervised fine-tuning of a small model (1.2B parameters) on a narrow, format-intensive dataset (827 examples focused on strict JSON formatting and conciseness) causes catastrophic forgetting or behavioral drift on general multi-step reasoning tasks. The format alignment constraint acts as a behavioral tax on general intelligence.
+
+What this rules out:
+Fine-tuning small models on specialized formatting targets without including general instruction-following and reasoning task families (like GSM8K or general SFT tasks) in the training blend.
+
+Next:
+Include mixed-task data-blend training (e.g., combining formatting, general instruction following, and mathematical reasoning in SFT/DPO) to preserve general model intelligence while aligning formatting style.
+

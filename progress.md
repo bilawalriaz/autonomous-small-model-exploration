@@ -438,3 +438,198 @@ Hub-only noise + loss-based selection should boost structured extraction from ~8
 - Total prompt groups: 1,730
 - Scored prompt groups: 28
 - Remaining prompt groups: 1,702
+
+## 2026-07-09 — Scored Label Export and Strict Validation
+
+### Completed
+- [x] Retried the 8 failed prompt groups; 6 recovered, 2 remain unresolved after repeated hidden-reasoning/no-JSON failures.
+- [x] Added `scripts/data/export_scored_sft.py` for high-confidence SFT exports.
+- [x] Added `scripts/data/validate_scored_sft.py` for deterministic parse + JSON-schema validation.
+- [x] Exported response-only and reasoning+answer candidate files under `/Users/bilawalriaz/scored/exports/`.
+
+### Label audit
+- Total prompt groups: 1,730
+- Scored rows: 1,728
+- Unresolved prompt groups: 2 (`9660c7868858b540`, `dcc80b3acabb14af`)
+- Error rows: 9 (8 unique error prompt hashes; one repeated failure)
+- Teacher-clean q>=8 rows: 1,240
+- Strict parse/schema-valid rows: 827
+- Strict rejected after teacher-clean: 413
+
+### Interpretation
+- The stricter teacher prompt improved score calibration, but teacher approval is still not sufficient for structured-output training.
+- Use the strict files for the first SFT pass; keep teacher-clean-but-strict-rejected rows quarantined for analysis or repair.
+
+## 2026-07-09 — Hermes/Atropos Agent Trajectory Lab on lenovo
+
+### Completed
+- [x] Confirmed aero already serves `LFM2.5-8B-A1B-Uncensored-Gaston-Q4_K_M.gguf` on `http://aero:8080/v1`.
+- [x] Configured lenovo Hermes default model to use the aero llama.cpp endpoint with provider `custom`, model `model`, and dummy local API key.
+- [x] Preserved the previous Nous Portal model settings in `~/.hermes/backups/config.before-aero-lfm.*.yaml`; prior default was `nous` + `stepfun/step-3.7-flash:free`.
+- [x] Started Atropos API on lenovo at `http://0.0.0.0:8000` via `nohup`; process PID observed as `5806`.
+- [x] Added reproducible trajectory harness and 12 seed agent tasks under `tools/agent_trajectory_lab/`, synced to `~/agent_trajectory_lab` on lenovo.
+- [x] Ran Hermes smoke with aero LFM: endpoint works, but the model emitted a JSON plan/tool-call-like object and did not edit files; verifier failed.
+- [x] Ran control smoke with Nous `stepfun/step-3.7-flash:free`: Hermes edited `stats.py` and passed the local verifier.
+
+### Current interpretation
+- Infrastructure is wired: lenovo can call aero through Hermes, Atropos API is running, and the trace harness captures stdout/stderr, usage, diffs, verifier output, and session export attempts.
+- LFM2.5-8B-A1B in the current GGUF/server setup is not yet a working Hermes tool-use agent. Treat the failed smoke as useful negative baseline data, not as a trajectory-quality dataset.
+
+### Next
+- Write a small custom Atropos environment around `tools/agent_trajectory_lab/run_hermes_tasks.py` instead of using heavyweight built-in dataset environments.
+- Investigate whether LFM needs a different chat template/tool-call format, non-streaming setting, or SFT bootstrap on successful Hermes/Stepfun traces before it can drive tools.
+
+## 2026-07-09 — Sysadmin Trajectory Collection Started
+
+### Completed
+- [x] Installed Docker Engine, Docker Compose v2, `python3-pytest`, and `python3-yaml` on lenovo for realistic operations/deployment tasks.
+- [x] Added `tools/agent_trajectory_lab/generate_sysadmin_tasks.py`, generating `sysadmin_tasks.json` with 125 tasks.
+- [x] Task families: host security audits (10), Docker Compose deployment hardening (20), backup/restore automation (15), incident triage (20), systemd hardening (15), reverse-proxy config (15), deployment scripts (15), and port-scan parsing (15).
+- [x] Switched Hermes collection back to Nous Portal `stepfun/step-3.7-flash:free`, because aero LFM did not execute Hermes tools in smoke testing.
+- [x] Ran a 3-task sysadmin pilot. The generated reports were useful; strict keyword verification was relaxed for host-audit tasks after two false-negative verifier failures.
+- [x] Started full 125-task background collection on lenovo:
+  `cd ~/agent_trajectory_lab && nohup python3 run_hermes_tasks.py --tasks sysadmin_tasks.json --out runs/sysadmin_stepfun_full --skip-existing --timeout 900 > runs/sysadmin_stepfun_full.log 2>&1 &`
+
+### Current run
+- Original serial PID `23260` was stopped after preserving the first passed host-audit trace because host-audit tasks were too slow for the >100 trace target.
+- Four faster shard workers were launched against tasks 10-124, excluding the slow host-audit block:
+  - `runs/sysadmin_stepfun_fast_shard_0`
+  - `runs/sysadmin_stepfun_fast_shard_1`
+  - `runs/sysadmin_stepfun_fast_shard_2`
+  - `runs/sysadmin_stepfun_fast_shard_3`
+- Current shard PIDs observed: `37369`, `37371`, `37373`, `37375`.
+- Logs: `/home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_fast_shard_{0..3}.log`.
+- Partial dataset export: `/home/billz/agent_trajectory_lab/datasets/sysadmin_stepfun_partial.jsonl`.
+- Latest checked status: 11 passed records / 11 completed, 10 with session trace files, 7 with clean task-specific trace exports. Families so far: 1 host security audit, 10 Docker Compose deployment hardening tasks.
+
+### Next
+- Monitor completion count and pass rate.
+- Convert passed traces into SFT/DPO-ready records after at least 100 useful results exist.
+- Keep failed traces as negative/control data rather than silently discarding them.
+- Continue using the task-specific `Task ID` prompt marker and filtered session export; early pre-marker Compose traces are useful artifact records but have ambiguous concurrent session exports.
+
+## 2026-07-09 — Sysadmin Trajectory Collection Completed
+
+### Completed
+- [x] Finished the lenovo Hermes/Stepfun sysadmin recovery run and stopped with no active `run_hermes_tasks.py` workers.
+- [x] Exported the full passed dataset to `/home/billz/agent_trajectory_lab/datasets/sysadmin_stepfun_20260709.jsonl`.
+- [x] Added `--require-matched-trace` to `tools/agent_trajectory_lab/export_trajectory_dataset.py`.
+- [x] Exported the strict clean dataset to `/home/billz/agent_trajectory_lab/datasets/sysadmin_stepfun_20260709_clean.jsonl`.
+
+### Final counts
+- Result rows: 115
+- Verifier-passed rows: 106
+- Full export: 106 passed records, 105 with trace files
+- Strict clean export: 102 passed records, 102 with prompt-matched trace files
+- Strict family mix: backup/restore 13, Docker Compose deployment 17, deployment automation 13, incident triage 16, security scan parsing 15, reverse-proxy config 13, systemd hardening 15
+
+### Interpretation
+- The >100 high-quality trajectory target is met for verifier-passed, prompt-matched Hermes traces using Nous Portal `stepfun/step-3.7-flash:free`.
+- aero LFM remains a negative tool-use baseline for this harness until tool-call formatting is fixed or bootstrapped from these traces.
+- The clean dataset is appropriate for the first agentic SFT pass; failed/ambiguous traces should be kept for negative/preference analysis, not mixed into SFT without filtering.
+
+## 2026-07-09 — HY3 Agentic Scale Collection Started
+
+### Completed
+- [x] Added `tools/agent_trajectory_lab/generate_agentic_scale_tasks.py`.
+- [x] Generated 700 task templates and 7,000 task instances across seven requested families: tool-format, file operations, shell/repo inspection, failure recovery, summarisation/state-compaction, tool routing, and multi-step mini-agent tasks.
+- [x] Generated 16 shard files at `tools/agent_trajectory_lab/agentic_scale_tasks_shard_*.json`.
+- [x] Added `--rollouts` support to `tools/agent_trajectory_lab/run_hermes_tasks.py` so same-task 4-8 rollout comparisons can be collected for SFT/DPO.
+- [x] Verified HY3 routing through Nous Portal on lenovo with `--provider nous --model tencent/hy3:free`.
+- [x] Ran a seven-family HY3 pilot: 7/7 passed, 7/7 with prompt-matched Hermes traces.
+- [x] Launched four production workers on lenovo for shards 00-03 with four rollouts per task.
+
+### Current HY3 run
+- Initial family-sorted workers `99937`, `99939`, `99941`, `99943` were stopped after eight-worker concurrency produced HY3 HTTP 429 artifacts.
+- Current balanced worker PIDs: `116868`, `116870`, `116872`, `116874`, `127243`, `127245`
+- Logs:
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_00_r4.log`
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_01_r4.log`
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_02_r4.log`
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_03_r4.log`
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_04_r4.log`
+  - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_05_r4.log`
+- Current strict SFT export: 125/125 clean records in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl`; workers still running.
+- Current DPO export: 29 same-task pairs in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl`, excluding 11 transient API/rate-limit artifacts.
+- Runner now supports `--transient-retries`, `--transient-sleep`, `--rerun-failed`, and `--rollout-offset`.
+- Generator now writes family-interleaved balanced shards at `agentic_scale_tasks_balanced_shard_*.json`.
+
+### Resume/export commands
+```bash
+cd ~/agent_trajectory_lab
+python3 run_hermes_tasks.py --tasks agentic_scale_tasks_balanced_shard_00.json --out runs/hy3_agentic_balanced_shard_00_r4 --skip-existing --rerun-failed --rollouts 4 --timeout 420 --transient-retries 4 --transient-sleep 90 --hermes-arg=--provider --hermes-arg=nous --hermes-arg=--model --hermes-arg=tencent/hy3:free
+python3 export_trajectory_dataset.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 --out datasets/hy3_agentic_scale_partial_clean.jsonl --require-matched-trace
+python3 export_preference_pairs.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 --out datasets/hy3_agentic_scale_partial_dpo.jsonl --include-all-passed-contrast
+```
+
+### Next
+- Monitor pass rate and rate-limit behavior for the six balanced HY3 workers.
+- Hold at six workers until the current state-compaction batch clears; then launch balanced shards 06-15 with the same transient retry/backoff settings.
+- Only increase to 8 rollouts after clean export quality is confirmed.
+- Improve DPO ranking with model-behavior-specific checks for invalid tool calls, wrong-tool choices, ignored observations, premature finals, hallucinated files, unsafe commands, and overlong loops.
+
+## 2026-07-09 — LFM2.5-8B-A1B Unsloth QLoRA Attempt on aero
+
+### Completed
+- [x] Stopped the aero llama.cpp LFM server (`llama-server` PID `286325`) to free VRAM.
+- [x] Confirmed aero GPU returned to idle: about 6 MiB / 8192 MiB used after shutdown.
+- [x] Added `scripts/train/train_lfm25_8b_unsloth_qlora.py`, a standalone Unsloth QLoRA SFT trainer for `LiquidAI/LFM2.5-8B-A1B`.
+- [x] Synced the trainer and strict scored dataset to aero:
+  - `/home/billz/work/autonomous-small-model-exploration/scripts/train/train_lfm25_8b_unsloth_qlora.py`
+  - `/home/billz/scored/exports/sft_strict_q8_response.jsonl`
+- [x] Added config snapshot `configs/sft/lfm25_8b_a1b_unsloth_qlora_8gb.json`.
+- [x] Verified aero has the required packages: `torch`, `transformers`, `datasets`, `trl`, `unsloth`, `bitsandbytes`, and `peft`.
+
+### Training attempts
+- Default Unsloth 4-bit load failed before training because bnb tried to dispatch modules to CPU/disk.
+- Raising `gpu_memory_utilization` to `0.9` failed with the same CPU/disk dispatch error.
+- Forcing `--device-map cuda` got further but failed during weight loading with CUDA OOM at about 7.59 GiB used.
+- Adding `--offload-embedding` plus `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` still failed during weight loading at about 7.59 GiB used.
+
+### Interpretation
+- On aero's RTX 2070-class 8GB GPU, the HF `LiquidAI/LFM2.5-8B-A1B` checkpoint cannot currently be loaded for Unsloth bnb 4-bit QLoRA before training activations or optimizer state are added.
+- The trainer is still useful for a larger GPU, a future stack with better offload support, or a smaller LFM checkpoint.
+
+### Next
+- Do not retry the same 8GB Unsloth 4-bit recipe without a changed memory strategy.
+- Practical paths: train `LiquidAI/LFM2.5-3B`/230M, use a larger GPU, or use a CPU/NVMe-offload training stack outside this Unsloth path.
+
+## 2026-07-09 — LFM2.5-1.2B-Instruct Unsloth QLoRA SFT Completed on aero
+
+### Completed
+- [x] Switched the Unsloth QLoRA trainer from `LiquidAI/LFM2.5-8B-A1B` to `LiquidAI/LFM2.5-1.2B-Instruct`.
+- [x] Added config snapshot `configs/sft/lfm25_12b_instruct_unsloth_qlora_8gb.json`.
+- [x] Ran 1-step smoke tests on aero:
+  - batch 1, seq 512: success, 15.77s, loss 3.082
+  - batch 4, seq 1024: success, 18.95s, loss 2.757
+  - batch 8, seq 1024: success, 17.44s, loss 3.113
+  - batch 16, seq 1024: success, 22.66s, loss 3.383
+- [x] Completed full SFT run:
+  - model: `LiquidAI/LFM2.5-1.2B-Instruct`
+  - dataset: `/home/billz/scored/exports/sft_strict_q8_response.jsonl`
+  - rows: 827
+  - max sequence length: 1024
+  - steps: 300
+  - batch size: 16
+  - gradient accumulation: 1
+  - LoRA: r=8, alpha=16, dropout=0
+  - optimizer: `adamw_8bit`
+  - runtime: 3276s (~54m36s)
+  - train loss: 1.372
+- [x] Saved adapter to `/home/billz/results/lfm25_12b_instruct_sft_q8_strict/adapter`.
+- [x] Saved checkpoints at steps 100, 200, and 300.
+
+### Compatibility notes
+- Initial dropout=0.05 run loaded but stalled at step 0.
+- Initial dropout=0 run with padding-free auto-enabled also stalled at step 0.
+- Successful recipe explicitly used `--lora-dropout 0`, `--no-padding-free`, `--dataset-num-proc 1`, and `--dataloader-num-workers 0`.
+- A quick adapter-load smoke loaded the saved LoRA but stalled during generation with GPU idle; treat this as a decode/runtime smoke issue to investigate before claiming behavioral improvement.
+
+- [x] Completed GGUF conversion (quantization format `Q4_K_M`) for both SFT adapter model (`lfm25_12b_instruct_sft_q8_strict`) and base model (`LiquidAI/LFM2.5-1.2B-Instruct`) on `aero`.
+- [x] Run a controlled evaluation harness against the base GGUF model and the SFT GGUF model using all 153 prompts from `small_model_eval_v1.jsonl` via `llama-completion`.
+- [x] Analyzed results and compiled a GGUF Model Comparison Report showing significant formatting improvement (GameFAQ JSON validity +76.5%, Factual QA accuracy +17.6%, overall length -30.3 words, slop phrases eliminated).
+- [x] Evaluated both models on 100 GSM8K prompts to measure math reasoning performance, observing a 15.0% regression on SFT (54.0%) vs base (69.0%) due to task drift/catastrophic forgetting.
+
+### Next
+- Investigate DPO training sweeps on this dataset to further optimize structured formatting.
+- Design Phase 13 PTRM-style noise injection runs on the GGUF models.

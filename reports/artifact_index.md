@@ -123,3 +123,89 @@
 | hy3_rollout_judge_1783552065.json | results/provider_tests/hy3_rollout_judge_1783552065.json | Two OpenRouter `tencent/hy3:free` rollout-judge calls, each including all 6 generations for the prompt group | Complete |
 | opencode_go_mimo_1783552085.json | results/provider_tests/opencode_go_mimo_1783552085.json | Two opencode-go `mimo-v2.5` direct generation calls with timing and local quality checks | Complete |
 | teacher_scoring.py mixed mode | teacher_scoring.py | Split `MAX_WORKERS` across OpenRouter HY3 and opencode-go prompt-group workers while recording per-row provider metadata | Updated |
+
+## Scored Label Exports (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| export_scored_sft.py | scripts/data/export_scored_sft.py | Export teacher-clean q>=8 labels into SFT JSONL and quarantine JSONL | New |
+| validate_scored_sft.py | scripts/data/validate_scored_sft.py | Deterministically parse and schema-validate teacher-clean labels before SFT | New |
+| scored.jsonl | /Users/bilawalriaz/scored/scored.jsonl | Mimo-v2.5 teacher labels for 1,728 rollout prompt groups | Complete except 2 unresolved prompts |
+| sft_clean_q8_response.jsonl | /Users/bilawalriaz/scored/exports/sft_clean_q8_response.jsonl | Teacher-clean response-only SFT candidates (`format_valid`, q>=8, correct/na) | 1,240 rows |
+| sft_clean_q8_reasoning.jsonl | /Users/bilawalriaz/scored/exports/sft_clean_q8_reasoning.jsonl | Teacher-clean reasoning+answer SFT candidates | 1,240 rows |
+| sft_strict_q8_response.jsonl | /Users/bilawalriaz/scored/exports/sft_strict_q8_response.jsonl | Deterministically parse/schema-valid response-only SFT candidates | 827 rows |
+| sft_strict_q8_reasoning.jsonl | /Users/bilawalriaz/scored/exports/sft_strict_q8_reasoning.jsonl | Deterministically parse/schema-valid reasoning+answer SFT candidates | 827 rows |
+| sft_strict_manifest_q8_response.json | /Users/bilawalriaz/scored/exports/sft_strict_manifest_q8_response.json | Strict validation manifest and rejection counts | Complete |
+| sft_strict_manifest_q8_reasoning.json | /Users/bilawalriaz/scored/exports/sft_strict_manifest_q8_reasoning.json | Strict validation manifest for reasoning+answer export | Complete |
+
+## Agent Trajectory Lab (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| Hermes task runner | tools/agent_trajectory_lab/run_hermes_tasks.py | Runs Hermes one-shot tasks in isolated git workspaces and captures stdout/stderr, usage, diffs, verifier results, and session export attempts | New |
+| Seed agent tasks | tools/agent_trajectory_lab/agent_tasks.json | Twelve varied code/data/config/documentation tasks for initial trajectory collection | New |
+| Lab README | tools/agent_trajectory_lab/README.md | Commands for lenovo/aero Hermes trajectory collection | New |
+| lenovo lab copy | /home/billz/agent_trajectory_lab | Remote synced copy used for smoke tests | Created on lenovo |
+| Atropos API on lenovo | http://lenovo:8000 | Running `run-api` service for future custom environment integration | Running via `nohup` |
+| Sysadmin task generator | tools/agent_trajectory_lab/generate_sysadmin_tasks.py | Generates 125 sysadmin/security/deployment trajectory tasks | New |
+| Sysadmin task queue | tools/agent_trajectory_lab/sysadmin_tasks.json | Generated queue with 125 tasks across eight operations families | New |
+| Sysadmin fast shards | tools/agent_trajectory_lab/sysadmin_tasks_fast_shard_*.json | Four shard files for faster parallel collection across 115 non-host-audit tasks | New |
+| Trajectory dataset exporter | tools/agent_trajectory_lab/export_trajectory_dataset.py | Converts passed task run directories into JSONL records with prompts, final answers, diffs, verifier results, changed files, and trace-file pointers/previews | New |
+| lenovo full collection run | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_full | Original serial run; stopped after preserving first passed host-audit trace due slow host-audit throughput | Stopped |
+| lenovo sharded collection runs | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_fast_shard_{0..3} | Four Hermes collection workers using Nous `stepfun/step-3.7-flash:free` over the non-host-audit sysadmin queue | Complete |
+| lenovo recovery run | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_recovery_0 | Recovery pass for remaining shard-3 port-analysis and deployment-automation tasks | Complete |
+| lenovo full sysadmin trajectory dataset | /home/billz/agent_trajectory_lab/datasets/sysadmin_stepfun_20260709.jsonl | Passed sysadmin/deployment Hermes trajectories, including a few records with ambiguous early trace exports | 106 records; 105 with trace files |
+| lenovo clean sysadmin trajectory dataset | /home/billz/agent_trajectory_lab/datasets/sysadmin_stepfun_20260709_clean.jsonl | Strict SFT candidate export requiring verifier pass plus prompt-matched Hermes session trace | 102 records; 102 with matched trace files |
+| Agentic scale task generator | tools/agent_trajectory_lab/generate_agentic_scale_tasks.py | Generates 700 templates and 7,000 parameterized verifier-backed task instances across seven agentic behavior families | New |
+| Agentic scale task queue | tools/agent_trajectory_lab/agentic_scale_tasks.json | Full 7,000-instance HY3 collection queue | New |
+| Agentic scale balanced queue | tools/agent_trajectory_lab/agentic_scale_tasks_balanced.json | Family-interleaved 7,000-instance queue for balanced collection throughput | New |
+| Agentic scale templates | tools/agent_trajectory_lab/agentic_scale_tasks_templates.json | 700 template records, 100 per requested family | New |
+| Agentic scale shards | tools/agent_trajectory_lab/agentic_scale_tasks_shard_*.json | Sixteen resumable shard files for parallel HY3 collection | New |
+| Agentic scale balanced shards | tools/agent_trajectory_lab/agentic_scale_tasks_balanced_shard_*.json | Sixteen family-interleaved shard files; preferred for active HY3 collection | New |
+| Agentic scale pilot | tools/agent_trajectory_lab/agentic_scale_tasks_pilot_7.json | One task per requested family for HY3 smoke/pilot | 7/7 passed on lenovo |
+| Preference pair exporter | tools/agent_trajectory_lab/export_preference_pairs.py | Groups same-task rollouts into DPO pairs, preferring passed clean efficient traces and excluding transient API failures by default | New |
+| lenovo HY3 pilot run | /home/billz/agent_trajectory_lab/runs/hy3_agentic_scale_pilot | Seven-family Hermes/HY3 pilot through Nous Portal | 7 passed, 7 matched traces |
+| lenovo HY3 family-sorted shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_scale_shard_{00..03}_r4 | Initial production workers; stopped after eight-worker rate-limit artifacts appeared | Partial |
+| lenovo HY3 balanced shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_{00..05}_r4 | Active balanced workers, four rollouts per task, transient retry/backoff enabled | Running |
+| lenovo HY3 partial clean dataset | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl | Strict partial export requiring verifier pass plus prompt-matched Hermes trace | 125 records; workers still running |
+| lenovo HY3 partial DPO pairs | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl | Same-task rollout preference pairs, excluding transient API failures by default | 29 pairs |
+
+## LFM2.5-8B-A1B SFT Attempt (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| Unsloth QLoRA trainer | scripts/train/train_lfm25_8b_unsloth_qlora.py | Standalone SFT trainer for `LiquidAI/LFM2.5-8B-A1B` using 4-bit loading, fp16, rank-8 LoRA, tiny micro-batches, and auto target-module detection | New; dry-run OK; 8GB load failed before training |
+| 8GB QLoRA config snapshot | configs/sft/lfm25_8b_a1b_unsloth_qlora_8gb.json | Reproducibility record for aero QLoRA attempts and failure modes | New |
+| aero trainer copy | /home/billz/work/autonomous-small-model-exploration/scripts/train/train_lfm25_8b_unsloth_qlora.py | Remote copy used for aero load attempts | Synced |
+| aero strict scored dataset copy | /home/billz/scored/exports/sft_strict_q8_response.jsonl | Strict 827-row response-only SFT candidate dataset copied to aero | Synced |
+| aero training log | /home/billz/results/lfm25_8b_sft_q8_strict/train.log | Forced-CUDA load attempt log; failed with CUDA OOM during weight loading | Failed before training |
+| aero embedding-offload log | /home/billz/results/lfm25_8b_sft_q8_strict/train_offload_embedding.log | Embedding-offload fallback log; failed with CUDA OOM during weight loading | Failed before training |
+
+## LFM2.5-1.2B-Instruct SFT Run (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| 1.2B QLoRA config snapshot | configs/sft/lfm25_12b_instruct_unsloth_qlora_8gb.json | Reproducibility record for the successful aero 1.2B QLoRA run and smoke tests | New |
+| aero 1.2B config copy | /home/billz/work/autonomous-small-model-exploration/configs/sft/lfm25_12b_instruct_unsloth_qlora_8gb.json | Remote copy used for run documentation | Synced |
+| aero 1.2B adapter | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/adapter | Final LoRA adapter trained from strict 827-row scored dataset | Complete; train loss 1.372 |
+| aero 1.2B metadata | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/metadata.json | Run metadata with model, dataset rows, training args, and metrics | Complete |
+| aero 1.2B train log | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/train.log | Full 300-step training log | Complete |
+| aero 1.2B checkpoints | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/checkpoints/checkpoint-{100,200,300} | Intermediate LoRA checkpoints | Complete |
+| stalled dropout log | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/train_stalled_dropout005.log | First 1.2B run with LoRA dropout 0.05; loaded but stalled at step 0 | Preserved diagnostic |
+
+## GGUF Evaluation (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| export_gguf.py | scripts/train/export_gguf.py | Export Unsloth models/adapters to GGUF format | New |
+| run_gguf_eval.py | scripts/eval/run_gguf_eval.py | Run evaluation on GGUF models on aero using llama-completion | New |
+| run_gsm8k_eval.py | scripts/eval/run_gsm8k_eval.py | Run GSM8K math reasoning evaluation on GGUF models | New |
+| compare_gguf_results.py | scripts/eval/compare_gguf_results.py | Compare base GGUF vs SFT GGUF outputs programmatically | New |
+| base model GGUF | /home/billz/models/LFM2.5-1.2B-Instruct-GGUF_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized base model GGUF file | Created on aero |
+| SFT model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized fine-tuned model GGUF file | Created on aero |
+| GGUF Comparison Report | results/evals/gguf_comparison_report.md | Comparative report detailing structured output, accuracy, length, and slop improvements | Complete |
+| SFT GGUF Outputs | results/evals/lfm25_12b_sft_gguf/outputs.jsonl | Inference outputs for SFT model | Complete |
+| Base GGUF Outputs | results/evals/lfm25_12b_base_gguf/outputs.jsonl | Inference outputs for base model | Complete |
+| SFT GSM8K Outputs | results/evals/gsm8k_sft_results.jsonl | GSM8K evaluation responses for SFT model | Complete |
+| Base GSM8K Outputs | results/evals/gsm8k_base_results.jsonl | GSM8K evaluation responses for base model | Complete |
+

@@ -1,0 +1,126 @@
+[
+  {
+    "id": "agent_code_bugfix_001",
+    "family": "code_edit_tests",
+    "prompt": "Fix the failing Python tests. Do not weaken the tests. Keep the implementation simple.",
+    "files": {
+      "stats.py": "def median(values):\n    ordered = sorted(values)\n    mid = len(ordered) // 2\n    return ordered[mid]\n\n\ndef trimmed_mean(values, trim):\n    ordered = sorted(values)\n    return sum(ordered[trim:-trim]) / len(ordered[trim:-trim])\n",
+      "test_stats.py": "from stats import median, trimmed_mean\n\n\ndef test_median_odd():\n    assert median([3, 1, 2]) == 2\n\n\ndef test_median_even():\n    assert median([10, 2, 4, 8]) == 6\n\n\ndef test_trimmed_mean():\n    assert trimmed_mean([100, 4, 6, 8, -50], 1) == 6\n\n\ndef test_trimmed_mean_zero_trim():\n    assert trimmed_mean([1, 2, 3], 0) == 2\n"
+    },
+    "verifiers": [{"name": "pytest", "cmd": "python3 -m pytest -q"}]
+  },
+  {
+    "id": "agent_json_transform_002",
+    "family": "data_transform",
+    "prompt": "Create a script named summarize_orders.py that reads orders.json and writes summary.json. The summary must include total_revenue, item_counts by sku, and unique_customers sorted alphabetically.",
+    "files": {
+      "orders.json": "[{\"customer\":\"Mina\",\"sku\":\"tea\",\"qty\":2,\"unit_price\":3.5},{\"customer\":\"Omar\",\"sku\":\"coffee\",\"qty\":1,\"unit_price\":8},{\"customer\":\"Mina\",\"sku\":\"coffee\",\"qty\":2,\"unit_price\":8},{\"customer\":\"Zed\",\"sku\":\"mug\",\"qty\":1,\"unit_price\":12}]",
+      "check_summary.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'summarize_orders.py'])\nd=json.load(open('summary.json'))\nassert d['total_revenue'] == 43.0, d\nassert d['item_counts'] == {'coffee': 3, 'mug': 1, 'tea': 2}, d\nassert d['unique_customers'] == ['Mina', 'Omar', 'Zed'], d\n"
+    },
+    "verifiers": [{"name": "summary check", "cmd": "python3 check_summary.py"}]
+  },
+  {
+    "id": "agent_cli_tool_003",
+    "family": "cli_design",
+    "prompt": "Implement todo.py as a small command-line todo manager. It should support add TEXT, done INDEX, and list. Store state in todo.json. Indexes are 1-based in list order.",
+    "files": {
+      "todo.py": "#!/usr/bin/env python3\nimport sys\n\nprint('todo placeholder')\n",
+      "check_todo.sh": "set -e\npython3 todo.py add 'write tests'\npython3 todo.py add 'ship traces'\npython3 todo.py done 1\npython3 todo.py list > out.txt\ngrep -q '1. \\[x\\] write tests' out.txt\ngrep -q '2. \\[ \\] ship traces' out.txt\npython3 - <<'PY'\nimport json\nitems=json.load(open('todo.json'))\nassert items[0]['done'] is True\nassert items[1]['text']=='ship traces'\nPY\n"
+    },
+    "verifiers": [{"name": "todo behavior", "cmd": "bash check_todo.sh"}]
+  },
+  {
+    "id": "agent_markdown_repair_004",
+    "family": "documentation_repair",
+    "prompt": "Repair README.md so it is accurate and concise. Then create validate_readme.py that checks the documented command examples are present and there are no TODO markers.",
+    "files": {
+      "README.md": "# Widget Tool\n\nTODO explain this.\n\nRun it somehow.\n",
+      "widget.py": "import argparse\np=argparse.ArgumentParser()\np.add_argument('--name', required=True)\nargs=p.parse_args()\nprint(f'hello {args.name}')\n"
+    },
+    "verifiers": [{"name": "readme validation", "cmd": "python3 validate_readme.py"}]
+  },
+  {
+    "id": "agent_refactor_preserve_005",
+    "family": "semantic_preservation",
+    "prompt": "Refactor invoice.py to remove duplication while preserving behavior. Add focused tests if useful.",
+    "files": {
+      "invoice.py": "def subtotal(items):\n    total = 0\n    for item in items:\n        total += item['qty'] * item['price']\n    return total\n\n\ndef tax(items, rate):\n    total = 0\n    for item in items:\n        total += item['qty'] * item['price']\n    return round(total * rate, 2)\n\n\ndef grand_total(items, rate):\n    total = 0\n    for item in items:\n        total += item['qty'] * item['price']\n    return round(total + total * rate, 2)\n",
+      "test_invoice.py": "from invoice import subtotal, tax, grand_total\nitems=[{'qty':2,'price':5},{'qty':1,'price':3.5}]\n\ndef test_invoice_math():\n    assert subtotal(items) == 13.5\n    assert tax(items, 0.1) == 1.35\n    assert grand_total(items, 0.1) == 14.85\n"
+    },
+    "verifiers": [{"name": "pytest", "cmd": "python3 -m pytest -q"}]
+  },
+  {
+    "id": "agent_log_parser_006",
+    "family": "parsing",
+    "prompt": "Write parse_logs.py to parse app.log and emit errors.json containing only ERROR records with timestamp, service, and message fields.",
+    "files": {
+      "app.log": "2026-07-09T01:00:00Z api INFO boot ok\n2026-07-09T01:00:03Z worker ERROR failed job id=17\n2026-07-09T01:00:05Z api WARN slow request\n2026-07-09T01:00:07Z api ERROR bad gateway upstream=checkout\n",
+      "check_logs.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'parse_logs.py'])\nd=json.load(open('errors.json'))\nassert d == [\n {'timestamp':'2026-07-09T01:00:03Z','service':'worker','message':'failed job id=17'},\n {'timestamp':'2026-07-09T01:00:07Z','service':'api','message':'bad gateway upstream=checkout'},\n], d\n"
+    },
+    "verifiers": [{"name": "log parse check", "cmd": "python3 check_logs.py"}]
+  },
+  {
+    "id": "agent_flaky_test_007",
+    "family": "debugging",
+    "prompt": "The test sometimes fails because the implementation is order-sensitive. Make the behavior deterministic and explain the cause briefly.",
+    "files": {
+      "ranker.py": "def top_labels(scores):\n    labels = set(scores)\n    return sorted(labels, key=lambda label: scores[label], reverse=True)[:3]\n",
+      "test_ranker.py": "from ranker import top_labels\n\n\ndef test_tie_break_alphabetical():\n    assert top_labels({'b': 10, 'a': 10, 'c': 9, 'd': 1}) == ['a', 'b', 'c']\n"
+    },
+    "verifiers": [{"name": "pytest", "cmd": "python3 -m pytest -q"}]
+  },
+  {
+    "id": "agent_schema_follow_008",
+    "family": "schema_following",
+    "prompt": "Create generate_manifest.py that scans files under assets/ and writes manifest.json with exactly: files sorted by path, each with path, bytes, and sha256.",
+    "files": {
+      "assets/a.txt": "alpha\n",
+      "assets/nested/b.txt": "beta\n",
+      "check_manifest.py": "import hashlib, json, subprocess, sys\nsubprocess.check_call([sys.executable, 'generate_manifest.py'])\nd=json.load(open('manifest.json'))\nassert list(d.keys()) == ['files']\npaths=[x['path'] for x in d['files']]\nassert paths == ['assets/a.txt', 'assets/nested/b.txt']\nfor item in d['files']:\n    data=open(item['path'],'rb').read()\n    assert item['bytes'] == len(data)\n    assert item['sha256'] == hashlib.sha256(data).hexdigest()\n"
+    },
+    "verifiers": [{"name": "manifest check", "cmd": "python3 check_manifest.py"}]
+  },
+  {
+    "id": "agent_patch_package_009",
+    "family": "package_navigation",
+    "prompt": "Find why importing package.calc fails, fix the package, and keep the public API package.calc.add(a, b).",
+    "files": {
+      "package/__init__.py": "from .calc import add\n",
+      "package/calc.py": "def add(a, b):\nreturn a + b\n",
+      "check_import.py": "import package.calc\nassert package.calc.add(2, 5) == 7\nfrom package import add\nassert add(-1, 1) == 0\n"
+    },
+    "verifiers": [{"name": "import check", "cmd": "python3 check_import.py"}]
+  },
+  {
+    "id": "agent_config_merge_010",
+    "family": "config_reasoning",
+    "prompt": "Write merge_config.py. It should read base.json and override.json and produce merged.json. Nested dictionaries merge recursively; lists and scalars are replaced.",
+    "files": {
+      "base.json": "{\"service\":{\"host\":\"localhost\",\"port\":8000,\"flags\":[\"a\"]},\"debug\":false}",
+      "override.json": "{\"service\":{\"port\":9000,\"flags\":[\"b\"],\"workers\":4}}",
+      "check_merge.py": "import json, subprocess, sys\nsubprocess.check_call([sys.executable, 'merge_config.py'])\nd=json.load(open('merged.json'))\nassert d == {'service': {'host':'localhost','port':9000,'flags':['b'],'workers':4}, 'debug': False}, d\n"
+    },
+    "verifiers": [{"name": "merge check", "cmd": "python3 check_merge.py"}]
+  },
+  {
+    "id": "agent_perf_micro_011",
+    "family": "performance_safe",
+    "prompt": "Optimize dedupe.py enough for the provided large-ish input while preserving first occurrence order. Avoid overengineering.",
+    "files": {
+      "dedupe.py": "def dedupe(values):\n    out=[]\n    for v in values:\n        if v not in out:\n            out.append(v)\n    return out\n",
+      "test_dedupe.py": "from dedupe import dedupe\nimport time\n\n\ndef test_order():\n    assert dedupe(['b','a','b','c','a']) == ['b','a','c']\n\n\ndef test_fast_enough():\n    values=[str(i%1000) for i in range(50000)]\n    t=time.time(); out=dedupe(values); elapsed=time.time()-t\n    assert len(out)==1000\n    assert elapsed < 0.5, elapsed\n"
+    },
+    "verifiers": [{"name": "pytest", "cmd": "python3 -m pytest -q"}]
+  },
+  {
+    "id": "agent_end_to_end_012",
+    "family": "mini_project",
+    "prompt": "Build a tiny static site generator. Implement build_site.py that converts pages/*.md to public/*.html, wraps each page with the title as h1, converts one level of Markdown headings and paragraphs, and creates public/index.html linking all pages.",
+    "files": {
+      "pages/about.md": "# About\n\nThis is the about page.\n",
+      "pages/contact.md": "# Contact\n\nEmail us later.\n",
+      "check_site.py": "import pathlib, subprocess, sys\nsubprocess.check_call([sys.executable, 'build_site.py'])\nabout=pathlib.Path('public/about.html').read_text()\ncontact=pathlib.Path('public/contact.html').read_text()\nindex=pathlib.Path('public/index.html').read_text()\nassert '<h1>About</h1>' in about and '<p>This is the about page.</p>' in about\nassert '<h1>Contact</h1>' in contact and '<p>Email us later.</p>' in contact\nassert 'about.html' in index and 'contact.html' in index\n"
+    },
+    "verifiers": [{"name": "site check", "cmd": "python3 check_site.py"}]
+  }
+]
