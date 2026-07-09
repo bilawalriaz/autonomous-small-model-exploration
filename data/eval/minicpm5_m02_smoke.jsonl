@@ -1,0 +1,3 @@
+{"eval_id":"m02_math","category":"arithmetic_micro_reasoning","messages":[{"role":"user","content":"Compute 17 + 25. Reply with only the number."}],"prompt":"Compute 17 + 25. Reply with only the number."}
+{"eval_id":"m02_json","category":"json_schema_following","messages":[{"role":"user","content":"Return only valid JSON: {\"ok\": true}."}],"prompt":"Return only valid JSON: {\"ok\": true}."}
+{"eval_id":"m02_tool","category":"tool_format","messages":[{"role":"user","content":"Reply with exactly <function name=\"ping\"></function> and nothing else."}],"prompt":"Reply with exactly <function name=\"ping\"></function> and nothing else."}

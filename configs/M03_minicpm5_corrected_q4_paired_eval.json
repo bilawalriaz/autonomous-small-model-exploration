@@ -1,0 +1,13 @@
+{
+  "experiment_id": "M03",
+  "model_name_or_path": "openbmb/MiniCPM5-1B",
+  "seeds": [42],
+  "pilot_justification": "Deterministic Q4 comparison of already-trained artifacts; three seeds apply to the conditional next training block.",
+  "ablation_type": "not_applicable_paired_model_comparison",
+  "task_family": ["arithmetic_micro_reasoning", "json_schema_following", "code_syntax_recognition", "tool_format"],
+  "lora_config": {"merge_weights": {"math": 1.0, "format": 0.7}},
+  "steering_config": null,
+  "hardware": {"host": "aero", "gpu": "NVIDIA GeForce RTX 2070 Max-Q", "vram_mib": 8192},
+  "decoding": {"temperature": 0.0, "top_p": 1.0, "top_k": 0, "repetition_penalty": 1.0, "seed": 42, "max_new_tokens": 128, "stop_markers": ["<|im_end|>", "</s>", "[end of text]"]},
+  "evaluation": {"dataset": "data/eval/minicpm5_m03_heldout.jsonl", "bootstrap_resamples": 20000, "confidence_level": 0.95, "target_families": ["math", "json"], "control_families": ["code", "tool"], "control_regression_budget_pp": -10.0}
+}

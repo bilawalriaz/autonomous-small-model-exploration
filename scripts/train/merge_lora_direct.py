@@ -48,10 +48,14 @@ def main() -> int:
 
     # Load and calculate scaling factors from config configs
     math_config = json.load(open(Path(args.math_adapter) / "adapter_config.json"))
-    math_scale = math_config["lora_alpha"] / math_config["r"]
+    math_scale = math_config["lora_alpha"] / (
+        math_config["r"] ** 0.5 if math_config.get("use_rslora") else math_config["r"]
+    )
 
     format_config = json.load(open(Path(args.format_adapter) / "adapter_config.json"))
-    format_scale = format_config["lora_alpha"] / format_config["r"]
+    format_scale = format_config["lora_alpha"] / (
+        format_config["r"] ** 0.5 if format_config.get("use_rslora") else format_config["r"]
+    )
 
     print(f"Loaded config parameters:")
     print(f"  Math adapter: r={math_config['r']}, alpha={math_config['lora_alpha']}, scale={math_scale}, weight={args.math_weight}")
@@ -60,37 +64,23 @@ def main() -> int:
     state_dict = model.state_dict()
     updated_keys = []
 
-    # Iterate over adapter keys
-    for key in math_weights.keys():
-        if "lora_A" in key:
-            # e.g., base_model.model.model.layers.10.self_attn.k_proj.lora_A.weight
-            # Map to model.layers.10.self_attn.k_proj.weight
-            base_key = key.replace("base_model.model.", "").replace(".lora_A.weight", ".weight")
-            
-            if base_key not in state_dict:
-                print(f"Warning: mapped key {base_key!r} not found in base model")
-                continue
+    math_a_keys = {key for key in math_weights if ".lora_A.weight" in key}
+    format_a_keys = {key for key in format_weights if ".lora_A.weight" in key}
+    for key in sorted(math_a_keys | format_a_keys):
+        # e.g. base_model.model.model.layers.10.self_attn.k_proj.lora_A.weight
+        base_key = key.replace("base_model.model.", "", 1).replace(".lora_A.weight", ".weight")
+        if base_key not in state_dict:
+            raise KeyError(f"Mapped key {base_key!r} not found in base model")
 
-            lora_A_math = math_weights[key]
-            lora_B_key = key.replace("lora_A", "lora_B")
-            lora_B_math = math_weights[lora_B_key]
+        b_key = key.replace("lora_A", "lora_B")
+        delta = torch.zeros_like(state_dict[base_key], dtype=torch.float32)
+        if key in math_weights:
+            delta += torch.matmul(math_weights[b_key].float(), math_weights[key].float()) * math_scale * args.math_weight
+        if key in format_weights:
+            delta += torch.matmul(format_weights[b_key].float(), format_weights[key].float()) * format_scale * args.format_weight
 
-            # Compute math delta = (B * A) * scale * weight
-            delta_math = torch.matmul(lora_B_math.float(), lora_A_math.float()) * math_scale * args.math_weight
-
-            # Compute format delta
-            delta_format = torch.zeros_like(delta_math)
-            if key in format_weights:
-                lora_A_format = format_weights[key]
-                lora_B_format = format_weights[lora_B_key]
-                delta_format = torch.matmul(lora_B_format.float(), lora_A_format.float()) * format_scale * args.format_weight
-
-            # Update base weight directly
-            orig_weight = state_dict[base_key].float()
-            new_weight = orig_weight + delta_math + delta_format
-
-            state_dict[base_key].copy_(new_weight.to(state_dict[base_key].dtype))
-            updated_keys.append(base_key)
+        state_dict[base_key].copy_((state_dict[base_key].float() + delta).to(state_dict[base_key].dtype))
+        updated_keys.append(base_key)
 
     print(f"Successfully merged {len(updated_keys)} projection layer weights.")
 

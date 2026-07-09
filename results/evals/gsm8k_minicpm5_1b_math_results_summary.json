@@ -1,0 +1,6 @@
+{
+  "model_gguf": "/home/billz/results/minicpm5_1b_math_adapter_gguf_gguf/MiniCPM5-1B.Q4_K_M.gguf",
+  "eval_count": 100,
+  "correct_count": 34,
+  "accuracy": 34.0
+}

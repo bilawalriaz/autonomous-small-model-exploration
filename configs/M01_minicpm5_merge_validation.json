@@ -1,0 +1,17 @@
+{
+  "experiment_id": "M01",
+  "model_name_or_path": "openbmb/MiniCPM5-1B",
+  "seeds": [42],
+  "pilot_justification": "Deterministic merge implementation validation; no training randomness is introduced.",
+  "ablation_type": "not_applicable_merge_equivalence",
+  "task_family": ["arithmetic_micro_reasoning", "json_schema_following"],
+  "lora_config": {
+    "math_adapter": "/home/billz/results/minicpm5_1b_math_adapter/adapter",
+    "format_adapter": "/home/billz/results/minicpm5_1b_format_adapter/adapter",
+    "weights": {"math": 1.0, "format": 0.7}
+  },
+  "steering_config": null,
+  "hardware": {"host": "aero", "gpu": "NVIDIA GeForce RTX 2070 Max-Q", "vram_mib": 8192},
+  "decoding": {"temperature": 0.0, "top_p": 1.0, "max_new_tokens": 128},
+  "quantization_checks": ["fp16", "Q4_K_M"]
+}

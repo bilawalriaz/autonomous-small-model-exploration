@@ -473,5 +473,16 @@ The 2026-07-09 `LiquidAI/LFM2.5-1.2B-Instruct` QLoRA run was successfully conver
 
 The 2026-07-09 base migration to `openbmb/MiniCPM5-1B` successfully validated the multi-adapter task-specific stacking approach on standard transformer architectures. Evaluating Q4_K_M GGUF models on formatting and GSM8K reasoning showed that the directly merged model (Math 1.0 + Format 0.7) achieves **49.0%** GSM8K accuracy (+5.0% absolute over base) and **76.5%** JSON structured validity (+29.4% absolute over base) with 53% length reduction. This confirms a synergistic cognitive boost when stacking formatting structure and mathematical calculation precision on standard transformer weights, and validates direct parameter surgery (`merge_lora_direct.py`) over PEFT merging wrappers.
 
+2026-07-09 M01 correction: the MiniCPM direct-merger implementation was initially mis-scaled for RS-LoRA, so the apparent behavioral gain cannot confirm the stacking/synergy hypothesis. The narrow implementation hypothesis is supported: corrected direct surgery equals sequential PEFT merge for these adapters in FP16. The scientific hypothesis remains open: after corrected Q4 export, does a separately trained math-plus-format blend improve both held-out task families relative to base and each individual adapter, across seeds 42/137/2026, without failing pre-registered code and tool-use controls?
 
+## H-MiniCPM-merge: corrected math + format blend clears target/control gates
+
+Status: rejected for this pilot. M03 showed a positive JSON effect but no
+positive math lower bound and an unacceptable code-control lower bound. A
+larger pre-registered held-out suite would be needed before any retest.
+## H-MiniCPM-single-shot: a compact verified blend can exceed its size-class baseline
+
+Status: active. Test via the staged, three-seed, held-out protocol in
+`reports/minicpm5_single_shot_master_plan.md`; no agent result may be used as
+substitute evidence.
 

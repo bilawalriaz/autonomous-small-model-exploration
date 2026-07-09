@@ -365,3 +365,60 @@ Standard PEFT wrapper combination routines (`add_weighted_adapter` and `merge_an
 
 What this rules out:
 Relying on standard PEFT merging wrappers for Unsloth-trained adapters when quantizing to GGUF.
+
+---
+
+## NR026: Initial MiniCPM direct merger used the wrong RS-LoRA scale
+
+Experiment:
+M01 analytically audited the math and formatting adapter tensors and compared
+the saved direct model with the expected weighted update.
+
+Observed:
+Both adapters have `use_rslora=true`, rank 8, and alpha 16. The initial
+`merge_lora_direct.py` used `alpha / r` instead of `alpha / sqrt(r)`, applying
+only 0.3536 of each stated delta. Its maximum discrepancy from the intended
+analytic merge was 0.00661. Correcting the scale and re-merging reduced the
+maximum FP16 save/load discrepancy to 0.000848 across all 168 adapted tensors.
+
+Interpretation:
+The previous MiniCPM "Math 1.0 + Format 0.7" artifact was not a merge at those
+weights. Its behavioral metrics cannot be used as evidence of multi-adapter
+synergy. The corrected direct merge agrees with sequential PEFT merging; PEFT
+`linear` and `cat` still diverge in the current 0.18.1 runtime and are not
+validated replacements.
+
+---
+
+## NR027: Current llama.cpp GGUF harness does not cleanly delimit MiniCPM outputs
+
+Experiment:
+Ran the corrected RS-LoRA merge through `run_gguf_eval.py` with deterministic
+decoding on the first three evaluation prompts.
+
+Observed:
+The Q4 model loaded and generated, but one response was empty and two retained
+`user` / `assistant` template residue and `[end of text]` in the captured text.
+
+Interpretation:
+This is an output-boundary/harness issue, not a model-quality result. The
+existing GGUF behavioral scores must not be used to validate the corrected
+merge until the evaluator captures only generated tokens and reproduces the
+same prompts/stop conditions for base and candidate models.
+## NR028: M03 control suite is underpowered for a strict MiniCPM preservation gate
+
+Experiment: M03 deterministic Q4 paired held-out evaluation of base versus the
+corrected RS-LoRA 1.0 math / 0.7 formatting direct merge.
+
+Observed: JSON rose 50.0pp (95% paired bootstrap CI +25.0 to +75.0), but math
+was unchanged at 75.0% (CI −33.3 to +33.3). Code was unchanged at 41.7% with
+the same wide CI, whose lower bound violates the −10pp control regression
+budget; tool format was 0/12 for both models. All 96 captures passed boundary
+integrity checks.
+
+Interpretation: the initial gate was miscalibrated for 12-example control
+suites: unchanged point estimates cannot certify a −10pp lower-bound budget.
+The JSON gain remains valid, while non-target preservation is inconclusive—not
+negative. Expand the frozen suites before training or making a synergy claim.
+
+---

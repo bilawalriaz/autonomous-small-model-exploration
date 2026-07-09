@@ -1,5 +1,16 @@
 # Progress
 
+## 2026-07-09 — MiniCPM corrected merge gate
+
+- [x] M02 repaired and validated MiniCPM GGUF output boundaries (5 fixtures;
+  six Q4 smokes with no prompt/template residue).
+- [x] M03 evaluated corrected Q4 base vs direct merge on frozen held-out math,
+  JSON, code, and tool controls with raw outputs and paired bootstrap CIs.
+- [x] M03 established a credible JSON-format improvement with neutral observed
+  controls; its 12-example controls are underpowered for a strict preservation
+  certificate. The durable next step is Stage 0 in
+  `reports/minicpm5_single_shot_master_plan.md`.
+
 ## Current phase: Phase 3 — Gap Closure and Gem Discovery
 
 **Started:** 2026-06-23
@@ -741,3 +752,12 @@ python3 refresh_hy3_exports.py --loop --sleep 600
 - The directly merged model achieves a synergistic cognitive boost, outperforming both the base model (+5%) and the math-only model (+15%) by combining formatting structure and numerical calculation precision.
 - Direct tensor weight surgery remains essential to avoid quantization repetition collapses introduced by PEFT wrappers.
 
+## 2026-07-09 — M01 MiniCPM LoRA Merge Validation
+
+- [x] Created an experiment card and reproducibility config before execution.
+- [x] Audited both adapter configurations: same base, RS-LoRA rank 8 / alpha 16, same 168 target projections, no missing keys.
+- [x] Found and fixed direct-merger RS-LoRA scaling (`alpha/sqrt(r)`, not `alpha/r`) and union-key coverage.
+- [x] Corrected direct merge matches analytic tensors within FP16 rounding (max `8.48e-4`) and sequential native PEFT merge on 3/3 greedy FP16 probes.
+- [x] Established that PEFT `linear` and `cat` combinations are not equivalent in the installed PEFT 0.18.1 environment.
+- [x] Exported corrected model to Q4 with llama.cpp after an Unsloth converter dependency failure; Q4 smoke loads but reveals evaluator output-boundary residue.
+- [ ] Re-run deterministic corrected Q4 behavioral evaluation and three-seed adapter training before making a MiniCPM capability claim.

@@ -1,0 +1,76 @@
+{
+  "integrity": {
+    "base": {
+      "count": 48,
+      "nonzero_returncodes": 0,
+      "prompt_echoes": 0,
+      "template_residue": 0,
+      "empty_outputs": 0
+    },
+    "merged": {
+      "count": 48,
+      "nonzero_returncodes": 0,
+      "prompt_echoes": 0,
+      "template_residue": 0,
+      "empty_outputs": 0
+    }
+  },
+  "families": {
+    "math": {
+      "n": 12,
+      "base_rate": 0.75,
+      "merged_rate": 0.75,
+      "delta": 0.0,
+      "delta_ci95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      "wins": 2,
+      "losses": 2,
+      "ties": 8
+    },
+    "json": {
+      "n": 12,
+      "base_rate": 0.5,
+      "merged_rate": 1.0,
+      "delta": 0.5,
+      "delta_ci95": [
+        0.25,
+        0.75
+      ],
+      "wins": 6,
+      "losses": 0,
+      "ties": 6
+    },
+    "code": {
+      "n": 12,
+      "base_rate": 0.4166666666666667,
+      "merged_rate": 0.4166666666666667,
+      "delta": 0.0,
+      "delta_ci95": [
+        -0.3333333333333333,
+        0.3333333333333333
+      ],
+      "wins": 2,
+      "losses": 2,
+      "ties": 8
+    },
+    "tool": {
+      "n": 12,
+      "base_rate": 0.0,
+      "merged_rate": 0.0,
+      "delta": 0.0,
+      "delta_ci95": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 0,
+      "ties": 12
+    }
+  },
+  "decision_rule": {
+    "target_ci_lower_bound_gt_0": false,
+    "control_budget_delta_gte_minus_0_10": false
+  }
+}

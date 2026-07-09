@@ -1,0 +1,48 @@
+{"eval_id": "m03_math_00", "category": "math", "prompt": "Compute (14 + 7) * 3. Reply with only the integer.", "expected": "63"}
+{"eval_id": "m03_math_01", "category": "math", "prompt": "Compute (23 + 5) * 4. Reply with only the integer.", "expected": "112"}
+{"eval_id": "m03_math_02", "category": "math", "prompt": "Compute (18 + 6) * 2. Reply with only the integer.", "expected": "48"}
+{"eval_id": "m03_math_03", "category": "math", "prompt": "Compute (31 + 8) * 7. Reply with only the integer.", "expected": "273"}
+{"eval_id": "m03_math_04", "category": "math", "prompt": "Compute (27 + 9) * 5. Reply with only the integer.", "expected": "180"}
+{"eval_id": "m03_math_05", "category": "math", "prompt": "Compute (45 + 6) * 3. Reply with only the integer.", "expected": "153"}
+{"eval_id": "m03_math_06", "category": "math", "prompt": "Compute (16 + 11) * 2. Reply with only the integer.", "expected": "54"}
+{"eval_id": "m03_math_07", "category": "math", "prompt": "Compute (39 + 4) * 6. Reply with only the integer.", "expected": "258"}
+{"eval_id": "m03_math_08", "category": "math", "prompt": "Compute (28 + 7) * 4. Reply with only the integer.", "expected": "140"}
+{"eval_id": "m03_math_09", "category": "math", "prompt": "Compute (52 + 3) * 8. Reply with only the integer.", "expected": "440"}
+{"eval_id": "m03_math_10", "category": "math", "prompt": "Compute (34 + 5) * 9. Reply with only the integer.", "expected": "351"}
+{"eval_id": "m03_math_11", "category": "math", "prompt": "Compute (61 + 2) * 7. Reply with only the integer.", "expected": "441"}
+{"eval_id": "m03_json_00", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Ada; age=31; active=true.", "expected": {"name": "Ada", "age": 31, "active": true}}
+{"eval_id": "m03_json_01", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Bo; age=22; active=false.", "expected": {"name": "Bo", "age": 22, "active": false}}
+{"eval_id": "m03_json_02", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Cy; age=44; active=true.", "expected": {"name": "Cy", "age": 44, "active": true}}
+{"eval_id": "m03_json_03", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Di; age=19; active=false.", "expected": {"name": "Di", "age": 19, "active": false}}
+{"eval_id": "m03_json_04", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Eve; age=28; active=true.", "expected": {"name": "Eve", "age": 28, "active": true}}
+{"eval_id": "m03_json_05", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Fox; age=35; active=false.", "expected": {"name": "Fox", "age": 35, "active": false}}
+{"eval_id": "m03_json_06", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Gia; age=41; active=true.", "expected": {"name": "Gia", "age": 41, "active": true}}
+{"eval_id": "m03_json_07", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Hal; age=26; active=false.", "expected": {"name": "Hal", "age": 26, "active": false}}
+{"eval_id": "m03_json_08", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Ivy; age=33; active=true.", "expected": {"name": "Ivy", "age": 33, "active": true}}
+{"eval_id": "m03_json_09", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Jay; age=24; active=false.", "expected": {"name": "Jay", "age": 24, "active": false}}
+{"eval_id": "m03_json_10", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Kai; age=38; active=true.", "expected": {"name": "Kai", "age": 38, "active": true}}
+{"eval_id": "m03_json_11", "category": "json", "prompt": "Return only valid JSON with exactly these keys: name, age, active. Values: name=Lux; age=21; active=false.", "expected": {"name": "Lux", "age": 21, "active": false}}
+{"eval_id": "m03_code_00", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nlen('atlas')", "expected": "5"}
+{"eval_id": "m03_code_01", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nsum([2, 4, 6])", "expected": "12"}
+{"eval_id": "m03_code_02", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\n'xy' * 3", "expected": "xyxyxy"}
+{"eval_id": "m03_code_03", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nmax([3, 9, 4])", "expected": "9"}
+{"eval_id": "m03_code_04", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nsorted([3, 1, 2])[-1]", "expected": "3"}
+{"eval_id": "m03_code_05", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nlen({'a': 1, 'b': 2})", "expected": "2"}
+{"eval_id": "m03_code_06", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\n7 // 2", "expected": "3"}
+{"eval_id": "m03_code_07", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\n'MiNi'.lower()", "expected": "mini"}
+{"eval_id": "m03_code_08", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nabs(-13)", "expected": "13"}
+{"eval_id": "m03_code_09", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\nmin([8, 5, 6])", "expected": "5"}
+{"eval_id": "m03_code_10", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\n'abc'.replace('b', 'Z')", "expected": "aZc"}
+{"eval_id": "m03_code_11", "category": "code", "prompt": "What does this Python expression evaluate to? Reply with only the exact result.\n2 ** 5", "expected": "32"}
+{"eval_id": "m03_tool_00", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"lookup\"><param name=\"id\">17</param></function>", "expected": {"name": "lookup", "arg": "id", "value": "17"}}
+{"eval_id": "m03_tool_01", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"ping\"><param name=\"host\">db</param></function>", "expected": {"name": "ping", "arg": "host", "value": "db"}}
+{"eval_id": "m03_tool_02", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"read\"><param name=\"path\">/tmp/a</param></function>", "expected": {"name": "read", "arg": "path", "value": "/tmp/a"}}
+{"eval_id": "m03_tool_03", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"search\"><param name=\"q\">atlas</param></function>", "expected": {"name": "search", "arg": "q", "value": "atlas"}}
+{"eval_id": "m03_tool_04", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"delete\"><param name=\"id\">9</param></function>", "expected": {"name": "delete", "arg": "id", "value": "9"}}
+{"eval_id": "m03_tool_05", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"deploy\"><param name=\"env\">staging</param></function>", "expected": {"name": "deploy", "arg": "env", "value": "staging"}}
+{"eval_id": "m03_tool_06", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"open\"><param name=\"file\">note.txt</param></function>", "expected": {"name": "open", "arg": "file", "value": "note.txt"}}
+{"eval_id": "m03_tool_07", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"count\"><param name=\"kind\">task</param></function>", "expected": {"name": "count", "arg": "kind", "value": "task"}}
+{"eval_id": "m03_tool_08", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"echo\"><param name=\"text\">hello</param></function>", "expected": {"name": "echo", "arg": "text", "value": "hello"}}
+{"eval_id": "m03_tool_09", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"fetch\"><param name=\"url\">https://x</param></function>", "expected": {"name": "fetch", "arg": "url", "value": "https://x"}}
+{"eval_id": "m03_tool_10", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"set\"><param name=\"key\">mode</param></function>", "expected": {"name": "set", "arg": "key", "value": "mode"}}
+{"eval_id": "m03_tool_11", "category": "tool", "prompt": "Return exactly one XML function call and nothing else: <function name=\"close\"><param name=\"id\">3</param></function>", "expected": {"name": "close", "arg": "id", "value": "3"}}

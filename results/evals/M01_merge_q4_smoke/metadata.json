@@ -1,0 +1,13 @@
+{
+  "run_id": "M01_merge_q4_smoke",
+  "model_gguf": "/home/billz/results/minicpm5_1b_direct_merge_rslora_m1.0_f0.7_gguf/MiniCPM5-1B.Q4_K_M.gguf",
+  "eval_set": "/home/billz/work/autonomous-small-model-exploration/data/eval/small_model_eval_v1.jsonl",
+  "timestamp": "2026-07-09T21:50:46.521694+00:00",
+  "eval_count": 3,
+  "config": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 128,
+    "repetition_penalty": 1.0
+  }
+}

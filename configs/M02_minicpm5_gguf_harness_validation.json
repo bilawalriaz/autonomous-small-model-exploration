@@ -1,0 +1,24 @@
+{
+  "experiment_id": "M02",
+  "model_name_or_path": "openbmb/MiniCPM5-1B",
+  "seeds": [42],
+  "pilot_justification": "Deterministic evaluator validation; no training or stochastic decoding is used.",
+  "ablation_type": "not_applicable_evaluator_validation",
+  "task_family": ["arithmetic_micro_reasoning", "json_schema_following", "code_syntax_recognition", "tool_format"],
+  "lora_config": {
+    "base_gguf": "/home/billz/models/minicpm5_1b_base_gguf_gguf/MiniCPM5-1B.Q4_K_M.gguf",
+    "merged_gguf": "/home/billz/results/minicpm5_1b_direct_merge_rslora_m1.0_f0.7_gguf/MiniCPM5-1B.Q4_K_M.gguf"
+  },
+  "steering_config": null,
+  "hardware": {"host": "aero", "gpu": "NVIDIA GeForce RTX 2070 Max-Q", "vram_mib": 8192},
+  "decoding": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "max_new_tokens": 128,
+    "stop_markers": ["<|im_end|>", "</s>", "[end of text]"]
+  },
+  "fixtures": "tests/fixtures/minicpm5_gguf_output_extraction.json"
+}

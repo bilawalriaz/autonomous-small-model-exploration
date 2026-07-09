@@ -1,0 +1,27 @@
+{
+  "run_id": "M02_base_smoke",
+  "model_gguf": "/home/billz/models/minicpm5_1b_base_gguf_gguf/MiniCPM5-1B.Q4_K_M.gguf",
+  "eval_set": "/home/billz/work/autonomous-small-model-exploration/data/eval/minicpm5_m02_smoke.jsonl",
+  "timestamp": "2026-07-09T22:01:01.610787+00:00",
+  "eval_count": 3,
+  "tokenizer_name": "openbmb/MiniCPM5-1B",
+  "chat_template_sha256": "7451a05cf1e28a79d97d7c0bc951028c0b1915119bf9046acd06a0e3d931f47c",
+  "stop_markers": [
+    "<|im_end|>",
+    "</s>",
+    "[end of text]"
+  ],
+  "config": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "max_new_tokens": 64,
+    "repetition_penalty": 1.0,
+    "seed": 42,
+    "no_display_prompt": true
+  },
+  "fixture_validation": {
+    "path": "tests/fixtures/minicpm5_gguf_output_extraction.json",
+    "passed": true
+  }
+}

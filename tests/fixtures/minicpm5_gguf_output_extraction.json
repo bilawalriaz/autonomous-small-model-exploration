@@ -1,0 +1,37 @@
+[
+  {
+    "name": "generated_only_with_im_end",
+    "prompt": "<s><|im_start|>user\\nReturn exactly OK.<|im_end|>\\n<|im_start|>assistant\\n",
+    "stdout": "OK<|im_end|>\\n",
+    "expected": "OK",
+    "expected_stop": "<|im_end|>"
+  },
+  {
+    "name": "historical_prompt_echo",
+    "prompt": "<s><|im_start|>user\\nReturn exactly OK.<|im_end|>\\n<|im_start|>assistant\\n",
+    "stdout": "<s><|im_start|>user\\nReturn exactly OK.<|im_end|>\\n<|im_start|>assistant\\nOK<|im_end|>\\n",
+    "expected": "OK",
+    "expected_stop": "<|im_end|>"
+  },
+  {
+    "name": "eos_stop",
+    "prompt": "<s><|im_start|>user\\nReply with 7.<|im_end|>\\n<|im_start|>assistant\\n",
+    "stdout": "7</s>trailing transport noise",
+    "expected": "7",
+    "expected_stop": "</s>"
+  },
+  {
+    "name": "gguf_eos_rendering_stop",
+    "prompt": "<s><|im_start|>user\\nReply with 7.<|im_end|>\\n<|im_start|>assistant\\n",
+    "stdout": "7 [end of text]\\n",
+    "expected": "7",
+    "expected_stop": "[end of text]"
+  },
+  {
+    "name": "prompt_text_inside_answer_is_preserved",
+    "prompt": "<s><|im_start|>user\\nSay hello.<|im_end|>\\n<|im_start|>assistant\\n",
+    "stdout": "The phrase Say hello. is quoted here.<|im_end|>",
+    "expected": "The phrase Say hello. is quoted here.",
+    "expected_stop": "<|im_end|>"
+  }
+]

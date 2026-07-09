@@ -1,0 +1,162 @@
+{
+  "model": "openbmb/MiniCPM5-1B",
+  "weights": {
+    "math": 1.0,
+    "format": 0.7
+  },
+  "math": {
+    "config": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": {
+        "base_model_class": "LlamaForCausalLM",
+        "parent_library": "transformers.models.llama.modeling_llama",
+        "unsloth_fixed": true
+      },
+      "base_model_name_or_path": "openbmb/MiniCPM5-1B",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 16,
+      "lora_bias": false,
+      "lora_dropout": 0.05,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": null,
+      "peft_type": "LORA",
+      "peft_version": "0.19.1",
+      "qalora_group_size": 16,
+      "r": 8,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": [
+        "down_proj",
+        "q_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "v_proj",
+        "up_proj"
+      ],
+      "target_parameters": null,
+      "task_type": "CAUSAL_LM",
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": true
+    },
+    "tensor_count": 336,
+    "errors": []
+  },
+  "format": {
+    "config": {
+      "alora_invocation_tokens": null,
+      "alpha_pattern": {},
+      "arrow_config": null,
+      "auto_mapping": {
+        "base_model_class": "LlamaForCausalLM",
+        "parent_library": "transformers.models.llama.modeling_llama",
+        "unsloth_fixed": true
+      },
+      "base_model_name_or_path": "openbmb/MiniCPM5-1B",
+      "bias": "none",
+      "corda_config": null,
+      "ensure_weight_tying": false,
+      "eva_config": null,
+      "exclude_modules": null,
+      "fan_in_fan_out": false,
+      "inference_mode": true,
+      "init_lora_weights": true,
+      "layer_replication": null,
+      "layers_pattern": null,
+      "layers_to_transform": null,
+      "loftq_config": {},
+      "lora_alpha": 16,
+      "lora_bias": false,
+      "lora_dropout": 0.05,
+      "lora_ga_config": null,
+      "megatron_config": null,
+      "megatron_core": "megatron.core",
+      "modules_to_save": null,
+      "peft_type": "LORA",
+      "peft_version": "0.19.1",
+      "qalora_group_size": 16,
+      "r": 8,
+      "rank_pattern": {},
+      "revision": null,
+      "target_modules": [
+        "o_proj",
+        "gate_proj",
+        "k_proj",
+        "up_proj",
+        "v_proj",
+        "q_proj",
+        "down_proj"
+      ],
+      "target_parameters": null,
+      "task_type": "CAUSAL_LM",
+      "trainable_token_indices": null,
+      "use_bdlora": null,
+      "use_dora": false,
+      "use_qalora": false,
+      "use_rslora": true
+    },
+    "tensor_count": 336,
+    "errors": []
+  },
+  "math_only_keys": [],
+  "format_only_keys": [],
+  "shared_keys": 168,
+  "all_delta_keys": 168,
+  "comparisons": {
+    "active_adapters_vs_direct": {
+      "error": "TypeError(\"unhashable type: 'list'\")"
+    },
+    "peft_sequential_merge_vs_direct": {
+      "tensor_equivalence": {
+        "max_abs_error": 0.0008482933044433594,
+        "mean_abs_error": 6.526399374706671e-06
+      },
+      "max_logit_abs_error": 0.045654296875,
+      "greedy_ids_equal": [
+        true,
+        true,
+        true
+      ]
+    },
+    "peft_cat_vs_direct": {
+      "max_logit_abs_error": 15.671875,
+      "greedy_ids_equal": [
+        false,
+        false,
+        false
+      ]
+    },
+    "peft_linear_vs_direct": {
+      "max_logit_abs_error": 20.2421875,
+      "greedy_ids_equal": [
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "missing_base_keys": [],
+  "direct_tensor_equivalence": {
+    "keys_checked": 168,
+    "max_abs_error": 0.0008482933044433594,
+    "mean_abs_error": 4.887852810497861e-06
+  }
+}

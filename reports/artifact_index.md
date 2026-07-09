@@ -42,6 +42,11 @@
 ## Results
 
 | File | Path | Experiment | Content |
+|---|---|---|---|
+| M02 GGUF smoke | results/evals/M02_base_smoke/, results/evals/M02_merged_smoke/ | M02 | Raw deterministic boundary-validation outputs and template provenance |
+| M03 paired metrics | results/evals/M03_corrected_q4_paired_metrics.json | M03 | Frozen held-out programmatic paired metrics and bootstrap CIs |
+
+| File | Path | Experiment | Content |
 |------|------|------------|---------|
 | tokenizer_diagnostics.json | experiments/results/ | exp_000002 | Token-level analysis |
 | baseline_eval.json | experiments/results/ | exp_000004 | Per-task baseline scores |
@@ -63,6 +68,10 @@
 | position_specific_ablation.json | experiments/results/ | exp_000018 | Per-token position effects |
 
 ## Reports
+
+| Report | Path | Status |
+|---|---|---|
+| MiniCPM single-shot master plan | reports/minicpm5_single_shot_master_plan.md | Active roadmap; Stage 0 next |
 
 | Report | Path | Status |
 |--------|------|--------|
@@ -264,3 +273,9 @@
 | GSM8K accuracy summary (Base) | results/evals/gsm8k_minicpm5_1b_base_results_summary.json | GSM8K accuracy summary for base model | Complete |
 | GSM8K accuracy summary (Math) | results/evals/gsm8k_minicpm5_1b_math_results_summary.json | GSM8K accuracy summary for math model | Complete |
 | GSM8K accuracy summary (Merge) | results/evals/gsm8k_minicpm5_1b_direct_merge_m1.0_f0.7_results_summary.json | GSM8K accuracy summary for directly merged model | Complete |
+| M01 experiment card | experiments/cards/M01.md | Pre-registered RS-LoRA merge-equivalence validation | Complete |
+| M01 config | configs/M01_minicpm5_merge_validation.json | Reproducible merger validation configuration | Complete |
+| Corrected direct merger | scripts/train/merge_lora_direct.py | RS-LoRA-aware, union-key direct delta sum | Complete |
+| M01 equivalence result | results/evals/M01_minicpm5_merge_equivalence_rslora.json | FP16 tensor/logit comparison to sequential PEFT merge | Complete |
+| Corrected MiniCPM Q4 smoke | results/evals/M01_merge_q4_smoke/outputs.jsonl | Export/load smoke; not valid behavioral scoring due template residue | Complete, negative harness finding |
+| MiniCPM capability plan | reports/minicpm5_capability_plan.md | Staged expert, merge, consolidation, and release gates | Complete |
