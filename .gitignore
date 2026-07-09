@@ -14,3 +14,4 @@ __pycache__/
 # Temp
 *.log
 /tmp/
+.DS_Store

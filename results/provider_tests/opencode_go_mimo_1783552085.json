@@ -1,0 +1,53 @@
+[
+  {
+    "provider": "opencode-go",
+    "model": "mimo-v2.5",
+    "endpoint": "https://opencode.ai/zen/go/v1/chat/completions",
+    "prompt_id": "json_extract",
+    "prompt": "Extract JSON only, no markdown. Text: Alice Chen joined Orbital Labs in 2024 as VP of robotics. Return schema {\"name\": string, \"company\": string, \"year\": number, \"role\": string}.",
+    "metrics": {
+      "elapsed_seconds": 4.557,
+      "prompt_tokens": 295,
+      "completion_tokens": 338,
+      "total_tokens": 633,
+      "completion_tokens_per_second": 74.175,
+      "response_chars": 89,
+      "finish_reason": "stop"
+    },
+    "quality_checks": {
+      "valid_json": true,
+      "contains_alice": true,
+      "contains_orbital": true,
+      "contains_2024": true,
+      "passed": 4,
+      "total": 4
+    },
+    "raw_text": "{\"name\": \"Alice Chen\", \"company\": \"Orbital Labs\", \"year\": 2024, \"role\": \"VP of robotics\"}",
+    "timestamp": "2026-07-08T23:08:01.373487+00:00"
+  },
+  {
+    "provider": "opencode-go",
+    "model": "mimo-v2.5",
+    "endpoint": "https://opencode.ai/zen/go/v1/chat/completions",
+    "prompt_id": "python_bugfix",
+    "prompt": "Fix this Python function and briefly explain the bug:\ndef average(xs):\n    total = 0\n    for i in range(len(xs) - 1):\n        total += xs[i]\n    return total / len(xs)\nReturn corrected code plus one sentence.",
+    "metrics": {
+      "elapsed_seconds": 4.294,
+      "prompt_tokens": 299,
+      "completion_tokens": 236,
+      "total_tokens": 535,
+      "completion_tokens_per_second": 54.964,
+      "response_chars": 287,
+      "finish_reason": "stop"
+    },
+    "quality_checks": {
+      "has_code": true,
+      "mentions_all_items": false,
+      "mentions_empty_or_zero": false,
+      "passed": 1,
+      "total": 3
+    },
+    "raw_text": "```python\ndef average(xs):\n    total = 0\n    for i in range(len(xs)):  # Fixed range to include last element\n        total += xs[i]\n    return total / len(xs)\n```\n\n**Bug explanation:** The original loop excluded the last element by using `range(len(xs) - 1)` instead of `range(len(xs))`.",
+    "timestamp": "2026-07-08T23:08:05.668504+00:00"
+  }
+]

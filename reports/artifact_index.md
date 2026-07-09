@@ -106,3 +106,20 @@
 | export_manual_review.py | scripts/eval/export_manual_review.py | Export examples for human review | Unchanged |
 | run_format_ablation.py | scripts/train/run_format_ablation.py | Orchestrate format ablation training | Unchanged |
 | render_dataset_formats.py | scripts/data/render_dataset_formats.py | Render 6 format variants from canonical | Unchanged |
+
+## Distillation Scripts (2026-07-08)
+
+| Script | Path | Purpose | Status |
+|--------|------|---------|--------|
+| teacher_scoring.py | teacher_scoring.py | Rank generated rollouts, select best generation, condense reasoning, append durable labels to `scored.jsonl` | Updated for OpenRouter `tencent/hy3:free`, generic OpenAI-compatible providers, provider metadata, and stop/resume on quota/auth/rate-limit exhaustion |
+| TEACHER_SETUP.md | experiments/lfm25_8b/TEACHER_SETUP.md | Teacher setup and scoring commands | Updated with Tencent HY3/OpenRouter command and provider-swap resume instructions |
+| DISTILL_PROGRESS.md | DISTILL_PROGRESS.md | Distillation pipeline status and next steps | Updated to make Tencent HY3/OpenRouter the recommended no-local-heat scoring path |
+
+## Provider Smoke Tests (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| test_teacher_providers.py | scripts/eval/test_teacher_providers.py | Sanitized two-provider smoke test harness for HY3 rollout judging and opencode-go direct generation | New |
+| hy3_rollout_judge_1783552065.json | results/provider_tests/hy3_rollout_judge_1783552065.json | Two OpenRouter `tencent/hy3:free` rollout-judge calls, each including all 6 generations for the prompt group | Complete |
+| opencode_go_mimo_1783552085.json | results/provider_tests/opencode_go_mimo_1783552085.json | Two opencode-go `mimo-v2.5` direct generation calls with timing and local quality checks | Complete |
+| teacher_scoring.py mixed mode | teacher_scoring.py | Split `MAX_WORKERS` across OpenRouter HY3 and opencode-go prompt-group workers while recording per-row provider metadata | Updated |

@@ -139,3 +139,27 @@ Manual push workflow. Not automated.
 
 Revisit when:
 Setting up gh auth on aero with a deploy key.
+
+---
+
+## Decision D008: Use provider-configurable teacher scoring for rollout labels
+
+Choice:
+Use `teacher_scoring.py` with an OpenAI-compatible provider abstraction. Prefer OpenRouter's pinned `tencent/hy3:free` model when local Gemma4/Qwen teacher inference makes the laptop too hot, while retaining local LM Studio/llama.cpp compatibility.
+
+Reason:
+Rollout labelling is a long-running process and should not depend on one hot local model. OpenRouter gives a no-local-compute option, and the same scorer can resume later with a different provider if free quota or rate limits are exhausted.
+
+Alternatives considered:
+- Continue local Gemma4-26B-A4B scoring on the Mac.
+- Rewrite the labelling pipeline around a provider-specific SDK.
+- Use mock or heuristic labels.
+
+Cost:
+Free-tier limits may interrupt a run. HY3 labels may still differ from the earlier local Gemma4 test labels, so mixed-provider rows should be tracked when analysing label quality.
+
+Mitigation:
+Each scored row records `teacher_provider`, `teacher_model`, and `teacher_api_base`. Provider exhaustion stops without marking the current prompt as scored, so rerunning with another provider resumes from the next unscored rollout.
+
+Revisit when:
+A stable paid/free teacher model is selected for the full labelling pass, or label homogeneity becomes more important than avoiding local heat.

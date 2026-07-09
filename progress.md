@@ -370,3 +370,71 @@ Our atlas tells us where noise matters (L0 hub, skip KL=82.9) and where it is wa
 
 ### Expected outcome
 Hub-only noise + loss-based selection should boost structured extraction from ~83% to ~93%+ with no retraining.
+
+## 2026-07-08 — Rollout Labelling Provider Switch
+
+### Completed
+- [x] Pulled latest `main` with fast-forward to `285ceb2`.
+- [x] Updated `teacher_scoring.py` to support OpenRouter through the OpenAI-compatible API.
+- [x] Defaulted OpenRouter runs to pinned model `tencent/hy3:free` when `OPENROUTER_API_KEY` is present.
+- [x] Preserved existing local teacher support for llama.cpp/LM Studio style `/v1/chat/completions` servers.
+- [x] Made provider exhaustion resumable: auth, credit, quota, and rate-limit errors stop the run without appending a scored row for the current prompt.
+- [x] Added provider/model/API-base metadata to every new scored row.
+- [x] Documented OpenRouter and fallback-provider commands in `DISTILL_PROGRESS.md` and `experiments/lfm25_8b/TEACHER_SETUP.md`.
+
+### Verification
+- `python3 -m py_compile teacher_scoring.py`
+- `python3 teacher_scoring.py stats` read the existing default output and reported 188 scored prompts.
+
+### Next
+- Run `teacher_scoring.py full` with `OPENROUTER_API_KEY` set. If OpenRouter free quota is exhausted, switch `TEACHER_PROVIDER`, `TEACHER_URL`, `TEACHER_MODEL`, and optional `TEACHER_API_KEY`, then rerun to resume from the next unscored `prompt_hash`.
+
+## 2026-07-09 — Provider Smoke Test: HY3 vs opencode-go
+
+### Completed
+- [x] Added `scripts/eval/test_teacher_providers.py` for sanitized provider smoke tests without persisting API keys.
+- [x] Tested OpenRouter `tencent/hy3:free` on 2 rollout prompt groups with all 6 generations included for each group.
+- [x] Tested opencode-go endpoint `https://opencode.ai/zen/go/v1/chat/completions` with model `mimo-v2.5` on 2 direct generation prompts.
+
+### Results
+- HY3 full-rollout judging: 2/2 parseable JSON results, all generations included (`6/6` and `6/6`), 44.2s and 51.4s elapsed, quality scores 8/10 and 7/10.
+- opencode-go direct generation: 4.56s and 4.29s elapsed. JSON extraction passed 4/4 local checks; Python bugfix passed the core off-by-one fix but omitted empty-input handling.
+
+### Operational note
+- The July 8 `teacher_scoring.py full` run processed only a small visible group because `MAX_WORKERS` controls prompt-level concurrency and `STOP_ON_RESPONSE_ERROR=1` stops after the current in-flight batch when HY3 returns empty/unparseable JSON. Each worker still sends all generations for its assigned `prompt_hash`.
+
+## 2026-07-09 — Mixed Teacher Worker Split
+
+### Completed
+- [x] Added `TEACHER_PROVIDER=mixed` support to `teacher_scoring.py`.
+- [x] Mixed mode builds two provider configs: OpenRouter `tencent/hy3:free` and opencode-go `mimo-v2.5`.
+- [x] `MAX_WORKERS` is split across provider slots; `MAX_WORKERS=18` produces 9 OpenRouter workers and 9 opencode-go workers.
+- [x] Scored rows and error rows now record the actual provider/model/API base/name used for each prompt group.
+- [x] Updated `DISTILL_PROGRESS.md` and `experiments/lfm25_8b/TEACHER_SETUP.md` with the mixed-mode command.
+
+### Verification
+- `python3 -m py_compile teacher_scoring.py`
+- Dummy config check: `TEACHER_PROVIDER=mixed OPENROUTER_API_KEY=dummy OPENCODE_API_KEY=dummy MAX_WORKERS=18` reports `openrouter-hy3 × 9` and `opencode-go × 9`.
+
+## 2026-07-09 — Teacher Prompt Tightening
+
+### Completed
+- [x] Rewrote `teacher_scoring.py`'s ranking prompt as a validation-first rubric.
+- [x] Added hard-failure rules for wrong JSON/YAML mode, missing/extra fields, top-level shape, code fences, enum/range/count violations, arithmetic consistency, and gold-answer mismatch.
+- [x] Added score caps: hard failures cap at 6; wrong top-level format, unparseable output, or wrong gold-answer final response cap at 4.
+
+### Note
+- Running `teacher_scoring.py` processes must be restarted to pick up the stricter prompt.
+
+## 2026-07-09 — Teacher Scheduler Head-of-Line Fix
+
+### Completed
+- [x] Diagnosed `teacher_scoring.py full` appearing stuck after the first 18-worker batch: 13 calls completed, 5 provider stragglers held the whole batch open.
+- [x] Replaced fixed-size batch waiting with a sliding-window scheduler so completed worker slots immediately receive new prompt groups.
+- [x] Preserved mixed-provider slot assignment; `MAX_WORKERS=18` still maps to 9 OpenRouter HY3 and 9 opencode-go slots in mixed mode.
+- [x] Stopped the old stuck process. Current scored rows remain durable in `/Users/bilawalriaz/scored/scored.jsonl`.
+
+### Current queue
+- Total prompt groups: 1,730
+- Scored prompt groups: 28
+- Remaining prompt groups: 1,702

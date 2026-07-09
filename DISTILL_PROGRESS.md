@@ -6,7 +6,7 @@
 
 ### On-Policy Distillation Pipeline
 Student: LFM2.5-8B-A1B (aero: RTX 2070, Mac: M3 Max, deck: Steam Deck)
-Teacher: Gemma4-26B-A4B (Mac, port 8082)
+Teacher: OpenAI-compatible scorer. Originally Gemma4-26B-A4B locally; now supports OpenRouter `tencent/hy3:free` or any compatible provider.
 
 ### Rollouts Accumulated (23,220 total)
 | Location | Count | Dataset Mix |
@@ -34,7 +34,7 @@ Each rollout contains:
 ### Key Scripts
 - `rollout_multigen.py` — multi-gen rollout generator (resumable)
 - `compress_aggressive.py` — strips duplicated reasoning (63% savings) [DEPRECATED — use teacher condensation]
-- `teacher_scoring.py` — Gemma4 ranking + reasoning condensation (replaces brute-force compression)
+- `teacher_scoring.py` — provider-configurable ranking + reasoning condensation (replaces brute-force compression)
 - `classifier/` — quality classifier (84% F1, 76k pred/sec) → separate repo
 
 ### Hardware Map
@@ -51,11 +51,50 @@ Each rollout contains:
 ## Next Steps
 
 ### 1. Teacher Scoring (READY — script built, test passed)
-- `teacher_scoring.py` on Mac: ranks 6 generations per prompt, picks winner, condenses reasoning
-- Test results: 3 prompts scored, avg quality 9.3/10, 83% reasoning compression, 100% correctness
-- Teacher: Gemma4-26B-A4B Q4_K_M on Mac LM Studio (100.100.61.28:1234)
-- Need to: consolidate rollouts to Mac, run full scoring (~3,900 prompts, ~17hrs)
+- `teacher_scoring.py` ranks 6 generations per prompt, picks winner, condenses reasoning, and appends one durable row per prompt to `scored.jsonl`
+- Test results from local teacher: 3 prompts scored, avg quality 9.3/10, 83% reasoning compression, 100% correctness
+- Current recommended teacher: OpenRouter Tencent HY3 (`tencent/hy3:free`) to avoid running Gemma4-26B-A4B locally on the laptop
+- Need to: consolidate rollouts to Mac, run full scoring (~3,900 prompts, provider quota permitting)
 - Report: `docs/scoring_report.html` — full examples with reasoning comparison
+
+#### OpenRouter scoring command
+
+```bash
+export OPENROUTER_API_KEY="..."
+export TEACHER_PROVIDER=openrouter
+export TEACHER_MODEL=tencent/hy3:free
+export TEACHER_CONTEXT_TOKENS=262000
+export MAX_WORKERS=6
+export INPUT_DIR=/Users/bilawalriaz/rollouts
+export OUTPUT_DIR=/Users/bilawalriaz/scored
+python3 teacher_scoring.py score-one
+python3 teacher_scoring.py full
+```
+
+`teacher_scoring.py` sends one API call per `prompt_hash`, with all 6 rollout generations in the same prompt so the teacher can compare them jointly. Run `score-one` first to validate HY3 returns parseable JSON before spending the full queue. HY3 uses `RESPONSE_FORMAT=json_schema` by default because its OpenRouter provider rejects `json_object`. `MAX_WORKERS=6` runs six prompt-hash groups concurrently during `full`; each worker still sends all 6 generations in one request. The HY3/OpenRouter defaults use the 262k context setting and no prompt/reasoning/response truncation; if a prompt is estimated to exceed the configured context, the scorer stops before sending it. Empty/unparseable responses stop the run and save diagnostics under `$OUTPUT_DIR/bad_teacher_responses/`. If the free quota/rate limit is hit, `teacher_scoring.py` stops, leaving the current prompt unscored. After setting a different provider/model/key, rerun the same command; existing `prompt_hash` rows in `scored.jsonl` are skipped and the next unscored rollout is processed.
+
+To finish using another OpenAI-compatible provider:
+
+```bash
+export TEACHER_PROVIDER=local
+export TEACHER_URL=http://100.100.61.28:1234
+export TEACHER_MODEL=gemma4-26b-a4b-qat-uncensored-hauhaucs-balanced-mtp
+python3 teacher_scoring.py full
+```
+
+To split a full run across OpenRouter HY3 and opencode-go, use mixed mode:
+
+```bash
+export TEACHER_PROVIDER=mixed
+export OPENROUTER_API_KEY="..."
+export OPENCODE_API_KEY="..."
+export MAX_WORKERS=18
+export INPUT_DIR=/Users/bilawalriaz/rollouts
+export OUTPUT_DIR=/Users/bilawalriaz/scored
+python3 teacher_scoring.py full
+```
+
+In mixed mode, `MAX_WORKERS` is split across the two providers. With `MAX_WORKERS=18`, the scorer schedules 9 OpenRouter `tencent/hy3:free` prompt groups and 9 opencode-go `mimo-v2.5` prompt groups per batch. Each prompt group still sends all rollout generations in one API call. opencode-go defaults to prompt-only JSON (`OPENCODE_RESPONSE_FORMAT=none`) because response-format support is provider-specific; set `OPENCODE_RESPONSE_FORMAT=json_object` only after validating the endpoint accepts it.
 
 ### 2. Training (Unsloth on aero)
 - Scored pairs with condensed reasoning as training targets

@@ -1,4 +1,55 @@
-# Qwen3.6-35B-A3B Teacher Setup on Mac
+# Teacher Setup
+
+## OpenRouter Tencent HY3 Free (No Local Heat)
+
+Use OpenRouter when local Gemma/Qwen teacher inference makes the laptop too hot. The scorer uses an OpenAI-compatible API, so only the base URL, model, and key change.
+
+```bash
+export OPENROUTER_API_KEY="..."
+export TEACHER_PROVIDER=openrouter
+export TEACHER_MODEL=tencent/hy3:free
+export TEACHER_CONTEXT_TOKENS=262000
+export MAX_WORKERS=6
+export INPUT_DIR=/Users/bilawalriaz/rollouts
+export OUTPUT_DIR=/Users/bilawalriaz/scored
+python3 teacher_scoring.py score-one
+python3 teacher_scoring.py full
+```
+
+Resume behavior:
+- Successful labels are appended to `$OUTPUT_DIR/scored.jsonl`.
+- On quota, auth, credit, or rate-limit errors, scoring stops without writing a scored row for the current prompt.
+- Rerun with another provider/model/key and completed `prompt_hash` values are skipped automatically.
+- Each prompt hash is scored in one API call containing all 6 generations, so OpenRouter's free-model per-call billing is used efficiently and the teacher compares all candidates jointly.
+- `score-one` should return a valid scored JSON object before `full` is started. Empty or unparseable provider responses stop the run by default and save diagnostics under `$OUTPUT_DIR/bad_teacher_responses/`.
+- `MAX_WORKERS=6` sends six prompt-hash groups concurrently during `full`; each worker still sends all six generations for its prompt in a single request.
+- HY3 uses `RESPONSE_FORMAT=json_schema` by default because its OpenRouter provider rejects `json_object`.
+
+HY3 defaults in `teacher_scoring.py` use `TEACHER_CONTEXT_TOKENS=262000` and no prompt/reasoning/response truncation (`MAX_*_CHARS=0`). If a specific rollout exceeds the provider's true context limit, the scorer stops before sending it; then set explicit character limits only for that retry.
+
+## Mixed OpenRouter HY3 + opencode-go
+
+Use mixed mode when you want one `teacher_scoring.py full` run to split workers across both hosted providers.
+
+```bash
+export TEACHER_PROVIDER=mixed
+export OPENROUTER_API_KEY="..."
+export OPENCODE_API_KEY="..."
+export MAX_WORKERS=18
+export INPUT_DIR=/Users/bilawalriaz/rollouts
+export OUTPUT_DIR=/Users/bilawalriaz/scored
+python3 teacher_scoring.py full
+```
+
+With `MAX_WORKERS=18`, the scheduler assigns 9 prompt-group workers to OpenRouter `tencent/hy3:free` and 9 prompt-group workers to opencode-go `mimo-v2.5`. Each prompt group still contains all six rollout generations in one teacher call. Scored rows record the actual `teacher_provider`, `teacher_model`, `teacher_api_base`, and `teacher_name`, so mixed-provider labels remain auditable.
+
+Defaults:
+- OpenRouter: `OPENROUTER_TEACHER_MODEL=tencent/hy3:free`, `OPENROUTER_RESPONSE_FORMAT=json_schema`, `OPENROUTER_CONTEXT_TOKENS=262000`.
+- opencode-go: `OPENCODE_MODEL=mimo-v2.5`, `OPENCODE_URL=https://opencode.ai/zen/go/v1/chat/completions`, `OPENCODE_RESPONSE_FORMAT=none`, `OPENCODE_CONTEXT_TOKENS=100000`.
+
+If the opencode-go endpoint is confirmed to accept OpenAI `response_format`, set `OPENCODE_RESPONSE_FORMAT=json_object` for stricter JSON. Otherwise the prompt still asks for strict JSON and parse failures remain unscored by default.
+
+## Local Qwen3.6-35B-A3B Teacher on Mac
 
 ## Quick Start (MLX)
 

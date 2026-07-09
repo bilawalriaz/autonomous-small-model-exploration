@@ -444,3 +444,9 @@ The one-page MI-Atlas share page and deploy/sync repair did not add, confirm, re
 The later LFM2 SFT expansion on the same page also leaves hypothesis status unchanged. It restates existing Phase 8/9 loss evidence and keeps H-P9 behavioral questions unresolved.
 
 The 2026-06-30 design unification and claim-detail-link pass leaves hypothesis status unchanged. It improves traceability from summary claims to full-detail pages and standardizes presentation across GitHub Pages, but does not add evidence or move any confidence level.
+
+The 2026-07-08 rollout-labelling provider update leaves hypothesis status unchanged. It enables labelling with OpenRouter `tencent/hy3:free` or another OpenAI-compatible provider and improves resumability when provider quota is exhausted, but it does not add new labels or evaluation evidence by itself.
+
+The 2026-07-09 HY3/opencode-go smoke test leaves hypothesis status unchanged. It measured provider speed, parseability, and simple local quality checks on four total prompts, but does not supply replicated behavioral evidence for any atlas or Phase 9 hypothesis.
+
+The 2026-07-09 mixed-provider worker-split change leaves hypothesis status unchanged. It changes rollout-labelling execution by assigning prompt groups across OpenRouter HY3 and opencode-go workers, but adds no new behavioral labels by itself.
