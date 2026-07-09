@@ -257,3 +257,49 @@ Fine-tuning small models on specialized formatting targets without including gen
 Next:
 Include mixed-task data-blend training (e.g., combining formatting, general instruction following, and mathematical reasoning in SFT/DPO) to preserve general model intelligence while aligning formatting style.
 
+---
+
+## NR020: Hermes trajectory workers can wedge without result files unless subprocess groups are killed on timeout
+
+Experiment:
+Ran seven-family HY3/Hermes trajectory collection on lenovo using `run_hermes_tasks.py` with per-task timeout 420s and transient retry/backoff.
+
+Expected:
+When a task exceeded timeout or a Hermes/session subprocess hung, the runner would write stdout/stderr/result artifacts and continue to the next rollout.
+
+Observed:
+Six balanced shard workers held current run directories beyond the timeout without writing `stdout.txt`, `stderr.txt`, or `result.json`. No live Hermes child process was visible under `pstree`, but the Python runners remained alive and stopped advancing. The supervisor considered the workers active, so shards 06-15 could not start under the worker cap.
+
+Interpretation:
+`subprocess.run(..., timeout=...)` was not sufficient for this long-running Hermes/session-export workflow. The collector needs explicit process-group isolation, process-group termination on timeout, and cleanup of incomplete no-result run directories during restart.
+
+What this rules out:
+Relying on a parent Python worker being alive as evidence that collection is progressing. Restarting workers without cleaning incomplete run dirs.
+
+Next:
+Use the patched `run_hermes_tasks.py`, which launches subprocesses in their own process group and kills the group on timeout. Run shard workers with `--clean-incomplete`; the supervisor now passes this flag by default. Monitor latest result ages as well as process liveness.
+
+---
+
+## NR020: Mixed-blend SFT fails on small model under low-epoch constraints
+
+Experiment:
+Trained `LiquidAI/LFM2.5-1.2B-Instruct` on a mixed-task dataset (413 formatting examples, 2,000 Magicoder, 1,600 GSM8K examples) for 300 steps. Converted it to GGUF format and ran formatting and GSM8K evaluations.
+
+Expected:
+The mixed SFT model would preserve math reasoning performance (staying close to the base model's 69.0% accuracy) while aligning structured formatting.
+
+Observed:
+1. Math reasoning performance declined further to **48.00%** (worse than the formatting-only SFT model's 54.00%).
+2. Structured output formatting alignment failed completely: GameFAQ JSON validity rate dropped to **11.8%** (compared to formatting-only SFT's 82.4%), and JSON Structured validity rate dropped to **52.9%** (worse than the base model's 76.5%).
+3. The model showed extreme bias towards outputting code blocks (e.g., generating Python scripts to answer simple mathematical formatting prompts).
+
+Interpretation:
+Under low-epoch constraints (1.2 epochs over a 4,000-example mixed dataset in 300 steps), the model does not receive enough gradient updates per task family. Because 50% of the dataset consists of code generation, the model's output distribution becomes heavily skewed towards code syntax. Without significantly more training steps (e.g., 1,500 - 2,000 steps), a simple data mixture on small models is insufficient to align formatting and preserve general reasoning capabilities.
+
+What this rules out:
+Using a short, single-pass mixed training run with a dominant task (e.g., 50% code) to align formatting and preserve general reasoning.
+
+Next:
+Run sequential SFT passes (general reasoning and code first, followed by a light formatting alignment pass) or train on the mixed blend for a much higher step count (e.g., 5 epochs).
+

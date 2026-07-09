@@ -142,7 +142,7 @@
 
 | Artifact | Path | Purpose | Status |
 |----------|------|---------|--------|
-| Hermes task runner | tools/agent_trajectory_lab/run_hermes_tasks.py | Runs Hermes one-shot tasks in isolated git workspaces and captures stdout/stderr, usage, diffs, verifier results, and session export attempts | New |
+| Hermes task runner | tools/agent_trajectory_lab/run_hermes_tasks.py | Runs Hermes one-shot tasks in isolated git workspaces and captures stdout/stderr, usage, diffs, verifier results, and session export attempts; subprocesses use process-group timeout termination and restarted workers can clean incomplete no-result run dirs | Updated |
 | Seed agent tasks | tools/agent_trajectory_lab/agent_tasks.json | Twelve varied code/data/config/documentation tasks for initial trajectory collection | New |
 | Lab README | tools/agent_trajectory_lab/README.md | Commands for lenovo/aero Hermes trajectory collection | New |
 | lenovo lab copy | /home/billz/agent_trajectory_lab | Remote synced copy used for smoke tests | Created on lenovo |
@@ -150,7 +150,7 @@
 | Sysadmin task generator | tools/agent_trajectory_lab/generate_sysadmin_tasks.py | Generates 125 sysadmin/security/deployment trajectory tasks | New |
 | Sysadmin task queue | tools/agent_trajectory_lab/sysadmin_tasks.json | Generated queue with 125 tasks across eight operations families | New |
 | Sysadmin fast shards | tools/agent_trajectory_lab/sysadmin_tasks_fast_shard_*.json | Four shard files for faster parallel collection across 115 non-host-audit tasks | New |
-| Trajectory dataset exporter | tools/agent_trajectory_lab/export_trajectory_dataset.py | Converts passed task run directories into JSONL records with prompts, final answers, diffs, verifier results, changed files, and trace-file pointers/previews | New |
+| Trajectory dataset exporter | tools/agent_trajectory_lab/export_trajectory_dataset.py | Converts passed task run directories into JSONL records with prompts, final answers, diffs, verifier results, changed files, and trace-file pointers/previews; filters generated cache/binary artifacts from `changed_files` | Updated |
 | lenovo full collection run | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_full | Original serial run; stopped after preserving first passed host-audit trace due slow host-audit throughput | Stopped |
 | lenovo sharded collection runs | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_fast_shard_{0..3} | Four Hermes collection workers using Nous `stepfun/step-3.7-flash:free` over the non-host-audit sysadmin queue | Complete |
 | lenovo recovery run | /home/billz/agent_trajectory_lab/runs/sysadmin_stepfun_recovery_0 | Recovery pass for remaining shard-3 port-analysis and deployment-automation tasks | Complete |
@@ -163,12 +163,18 @@
 | Agentic scale shards | tools/agent_trajectory_lab/agentic_scale_tasks_shard_*.json | Sixteen resumable shard files for parallel HY3 collection | New |
 | Agentic scale balanced shards | tools/agent_trajectory_lab/agentic_scale_tasks_balanced_shard_*.json | Sixteen family-interleaved shard files; preferred for active HY3 collection | New |
 | Agentic scale pilot | tools/agent_trajectory_lab/agentic_scale_tasks_pilot_7.json | One task per requested family for HY3 smoke/pilot | 7/7 passed on lenovo |
-| Preference pair exporter | tools/agent_trajectory_lab/export_preference_pairs.py | Groups same-task rollouts into DPO pairs, preferring passed clean efficient traces and excluding transient API failures by default | New |
+| Preference pair exporter | tools/agent_trajectory_lab/export_preference_pairs.py | Groups same-task rollouts into DPO pairs, preferring passed clean efficient traces and excluding transient API failures by default; sanitizes repository-internal/cache path noise from trainable transcript text | Updated |
+| HY3 balanced worker supervisor | tools/agent_trajectory_lab/manage_hy3_balanced_workers.py | Keeps HY3 balanced shard collection moving while capping active shard workers and passing `--clean-incomplete` to recover no-result run dirs | Running on lenovo as PID 553902 with max-workers 7 |
+| Training-ready split exporter | tools/agent_trajectory_lab/export_training_ready_splits.py | Creates deterministic stratified SFT/DPO train-validation splits and manifest from current trajectory exports; SFT rows include compact matched-trace `trajectory` and `trajectory_messages` fields; trainable transcripts sanitize repository-internal/cache path noise while preserving raw trace paths for audit | Updated |
+| HY3 export refresher | tools/agent_trajectory_lab/refresh_hy3_exports.py | Periodically refreshes clean SFT export, DPO pairs, and stratified training-ready splits while collection workers run | Running on lenovo as PID 511189 |
 | lenovo HY3 pilot run | /home/billz/agent_trajectory_lab/runs/hy3_agentic_scale_pilot | Seven-family Hermes/HY3 pilot through Nous Portal | 7 passed, 7 matched traces |
 | lenovo HY3 family-sorted shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_scale_shard_{00..03}_r4 | Initial production workers; stopped after eight-worker rate-limit artifacts appeared | Partial |
-| lenovo HY3 balanced shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_{00..05}_r4 | Active balanced workers, four rollouts per task, transient retry/backoff enabled | Running |
-| lenovo HY3 partial clean dataset | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl | Strict partial export requiring verifier pass plus prompt-matched Hermes trace | 125 records; workers still running |
-| lenovo HY3 partial DPO pairs | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl | Same-task rollout preference pairs, excluding transient API failures by default | 29 pairs |
+| lenovo HY3 balanced shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_{00..06}_r4 | Active balanced workers, four rollouts per task, transient retry/backoff and incomplete-run cleanup enabled | Running; seven-worker profile |
+| lenovo HY3 partial balanced shards | /home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_{06..07}_r4 | Briefly started and then stopped to avoid exceeding safe HY3 concurrency; completed outputs preserved for export/resume | Partial |
+| lenovo HY3 state-compaction recovery | /home/billz/agent_trajectory_lab/runs/hy3_state_compaction_recovery_{0..1}_r4 | Targeted recovery workers used after verifier fix; stopped after the family crossed 100 clean records | Partial; preserved |
+| lenovo HY3 partial clean dataset | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl | Strict partial export requiring verifier pass plus prompt-matched Hermes trace; cache/binary changed files filtered | 1,160 records; all seven families >100 |
+| lenovo HY3 partial DPO pairs | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl | Same-task rollout preference pairs, excluding transient API failures by default and tagging explicit rejected failure modes | 284 pairs |
+| lenovo HY3 training-ready splits | /home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_training_ready | Stratified train/validation SFT and DPO JSONL files with manifest; SFT rows include compact sanitized tool-use trajectories, DPO rows include chosen/rejected chat messages and hard/efficiency tier files | SFT 1102/58, DPO 270/14, hard DPO 33/1, efficiency DPO 237/13 |
 
 ## LFM2.5-8B-A1B SFT Attempt (2026-07-09)
 
@@ -197,15 +203,21 @@
 
 | Artifact | Path | Purpose | Status |
 |----------|------|---------|--------|
+| prepare_mixed_blend.py | scripts/data/prepare_mixed_blend.py | Prepare SFT mixed dataset blend (formatting + coding + math) | New |
+| mixed dataset blend | data/sft/mixed_blend_4k.jsonl | Shuffled 4,000-example SFT training dataset | New |
+| mixed SFT config | configs/sft/lfm25_12b_instruct_unsloth_qlora_mixed.json | Training configuration snapshot for mixed run | New |
 | export_gguf.py | scripts/train/export_gguf.py | Export Unsloth models/adapters to GGUF format | New |
 | run_gguf_eval.py | scripts/eval/run_gguf_eval.py | Run evaluation on GGUF models on aero using llama-completion | New |
 | run_gsm8k_eval.py | scripts/eval/run_gsm8k_eval.py | Run GSM8K math reasoning evaluation on GGUF models | New |
 | compare_gguf_results.py | scripts/eval/compare_gguf_results.py | Compare base GGUF vs SFT GGUF outputs programmatically | New |
 | base model GGUF | /home/billz/models/LFM2.5-1.2B-Instruct-GGUF_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized base model GGUF file | Created on aero |
 | SFT model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized fine-tuned model GGUF file | Created on aero |
+| mixed model GGUF | /home/billz/results/lfm25_12b_instruct_sft_mixed/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized mixed-blend fine-tuned model GGUF file | Created on aero |
 | GGUF Comparison Report | results/evals/gguf_comparison_report.md | Comparative report detailing structured output, accuracy, length, and slop improvements | Complete |
+| mixed GGUF Comparison Report | results/evals/gguf_mixed_comparison_report.md | Comparative report for mixed-blend model vs base model | Complete |
 | SFT GGUF Outputs | results/evals/lfm25_12b_sft_gguf/outputs.jsonl | Inference outputs for SFT model | Complete |
+| mixed GGUF Outputs | results/evals/lfm25_12b_sft_mixed_gguf/outputs.jsonl | Inference outputs for mixed-blend SFT model | Complete |
 | Base GGUF Outputs | results/evals/lfm25_12b_base_gguf/outputs.jsonl | Inference outputs for base model | Complete |
 | SFT GSM8K Outputs | results/evals/gsm8k_sft_results.jsonl | GSM8K evaluation responses for SFT model | Complete |
+| mixed GSM8K Outputs | results/evals/gsm8k_sft_mixed_results.jsonl | GSM8K evaluation responses for mixed-blend SFT model | Complete |
 | Base GSM8K Outputs | results/evals/gsm8k_base_results.jsonl | GSM8K evaluation responses for base model | Complete |
-

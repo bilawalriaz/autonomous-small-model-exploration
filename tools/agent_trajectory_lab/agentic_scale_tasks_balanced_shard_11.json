@@ -7,7 +7,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-001-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-001-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-001-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -141,7 +141,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-002-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-002-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-002-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -275,7 +275,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-004-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-004-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-004-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -409,7 +409,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-005-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-005-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-005-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -543,7 +543,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-007-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-007-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-007-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -677,7 +677,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-009-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-009-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-009-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -811,7 +811,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-010-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-010-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-010-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -945,7 +945,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-012-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-012-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-012-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1079,7 +1079,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-013-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-013-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-013-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1213,7 +1213,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-015-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-015-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-015-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1347,7 +1347,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-017-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-017-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-017-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1481,7 +1481,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-018-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-018-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-018-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1615,7 +1615,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-020-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-020-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-020-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1749,7 +1749,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-021-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-021-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-021-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -1883,7 +1883,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-023-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-023-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-023-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2017,7 +2017,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-025-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-025-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-025-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2151,7 +2151,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-026-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-026-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-026-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2285,7 +2285,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-028-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-028-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-028-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2419,7 +2419,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-029-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-029-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-029-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2553,7 +2553,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-031-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-031-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-031-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2687,7 +2687,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-033-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-033-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-033-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2821,7 +2821,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-034-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-034-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-034-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -2955,7 +2955,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-036-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-036-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-036-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3089,7 +3089,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-037-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-037-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-037-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3223,7 +3223,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-039-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-039-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-039-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3357,7 +3357,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-041-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-041-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-041-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3491,7 +3491,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-042-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-042-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-042-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3625,7 +3625,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-044-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-044-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-044-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3759,7 +3759,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-045-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-045-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-045-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -3893,7 +3893,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-047-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-047-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-047-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4027,7 +4027,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-049-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-049-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-049-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4161,7 +4161,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-050-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-050-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-050-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4295,7 +4295,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-052-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-052-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-052-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4429,7 +4429,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-053-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-053-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-053-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4563,7 +4563,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-055-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-055-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-055-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4697,7 +4697,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-057-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-057-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-057-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4831,7 +4831,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-058-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-058-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-058-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -4965,7 +4965,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-060-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-060-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-060-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5099,7 +5099,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-061-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-061-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-061-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5233,7 +5233,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-063-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-063-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-063-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5367,7 +5367,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-065-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-065-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-065-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5501,7 +5501,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-066-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-066-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-066-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5635,7 +5635,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-068-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-068-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-068-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5769,7 +5769,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-069-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-069-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-069-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -5903,7 +5903,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-071-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-071-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-071-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6037,7 +6037,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-073-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-073-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-073-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6171,7 +6171,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-074-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-074-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-074-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6305,7 +6305,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-076-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-076-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-076-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6439,7 +6439,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-077-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-077-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-077-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6573,7 +6573,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-079-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-079-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-079-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6707,7 +6707,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-081-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-081-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-081-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6841,7 +6841,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-082-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-082-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-082-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -6975,7 +6975,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-084-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-084-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-084-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7109,7 +7109,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-085-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-085-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-085-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7243,7 +7243,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-087-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-087-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-087-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7377,7 +7377,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-089-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-089-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-089-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7511,7 +7511,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-090-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-090-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-090-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7645,7 +7645,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-092-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-092-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-092-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7779,7 +7779,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-093-10 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-093-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-093-10', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -7913,7 +7913,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-095-06 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-095-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-095-06', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -8047,7 +8047,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-097-02 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-097-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-097-02', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -8181,7 +8181,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-098-08 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-098-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-098-08', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {
@@ -8315,7 +8315,7 @@
     "prompt": "Compress `session_notes.md` into `state_summary.md` for a future agent handoff. Preserve facts, decisions, next actions, and open questions. Include a `Current State` or `Status` section. Do not claim resolution.",
     "files": {
       "session_notes.md": "INC-100-04 status: investigating latency spike\nFact: database CPU reached 91 percent for 7 minutes\nFact: no data loss observed\nDecision: defer index migration until off-peak\nNext: add dashboard annotation and notify support\n",
-      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-100-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nassert 'resolved' not in text\nassert len(text.split()) <= 180\n"
+      "verify_task.py": "from pathlib import Path\ntext = Path('state_summary.md').read_text().lower()\nfor term in ['inc-100-04', 'decisions', 'next actions', 'open questions']:\n    assert term in text, term\nassert 'current state' in text or 'status' in text\nassert 'data loss observed' in text\nfor bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:\n    assert bad not in text, bad\nassert len(text.split()) <= 180\n"
     },
     "verifiers": [
       {

@@ -220,7 +220,8 @@ def build_summarisation(template_n: int, variant_n: int) -> dict:
                 assert term in text, term
             assert 'current state' in text or 'status' in text
             assert 'data loss observed' in text
-            assert 'resolved' not in text
+            for bad in ['status: resolved', 'incident resolved', 'closed as resolved', 'root cause fixed']:
+                assert bad not in text, bad
             assert len(text.split()) <= 180
             """
         ),

@@ -541,7 +541,8 @@ Hub-only noise + loss-based selection should boost structured extraction from ~8
 
 ### Current HY3 run
 - Initial family-sorted workers `99937`, `99939`, `99941`, `99943` were stopped after eight-worker concurrency produced HY3 HTTP 429 artifacts.
-- Current balanced worker PIDs: `116868`, `116870`, `116872`, `116874`, `127243`, `127245`
+- Current balanced worker PIDs: `456260`, `456263`, `456266`, `456269`, `456272`, `456275`.
+- Temporary extra workers for balanced shards 06-07 and state-compaction recovery were stopped after preserving completed outputs, restoring the run to the safer six-worker profile.
 - Logs:
   - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_00_r4.log`
   - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_01_r4.log`
@@ -549,8 +550,18 @@ Hub-only noise + loss-based selection should boost structured extraction from ~8
   - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_03_r4.log`
   - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_04_r4.log`
   - `/home/billz/agent_trajectory_lab/runs/hy3_agentic_balanced_shard_05_r4.log`
-- Current strict SFT export: 125/125 clean records in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl`; workers still running.
-- Current DPO export: 29 same-task pairs in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl`, excluding 11 transient API/rate-limit artifacts.
+- Current strict SFT export: 1,080/1,080 clean records in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_clean.jsonl`, all with prompt-matched Hermes traces.
+- Current DPO export: 265 same-task pairs in `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_partial_dpo.jsonl`, excluding 11 transient API/rate-limit artifacts.
+- Clean family counts: tool-format 193, file operations 145, shell/repo inspection 151, failure recovery 145, summarisation/state-compaction 152, tool routing 145, multi-step mini-agent 149.
+- All seven requested families now exceed the first 100-clean-record milestone; the full target remains 7,000 instances with 4-8 rollouts each.
+- Re-export hygiene check: `changed_files` now excludes generated cache/binary artifacts such as `__pycache__/*.pyc`; latest manual check had 1,682 changed-file entries and 0 cache/bytecode entries before the refresher advanced to 1,026 records.
+- DPO scorer now emits explicit `chosen_failure_reasons` and `rejected_failure_reasons` fields. Latest rejected-failure histogram: overlong elapsed 24, verifier failed 7, ignored observation / failed recovery 7.
+- Added and started `manage_hy3_balanced_workers.py` on lenovo as PID `496331`; it checks every 300s and starts the next incomplete balanced shard only when active HY3 shard workers are below six.
+- Added `export_training_ready_splits.py` and generated stratified train/validation outputs under `/home/billz/agent_trajectory_lab/datasets/hy3_agentic_scale_training_ready/`: SFT train/val 1026/54 and DPO train/val 251/14, with every family represented in validation.
+- SFT split rows now include compact matched-trace tool-use fields: `trajectory` and `trajectory_messages`. Latest manifest has `with_trajectory=1066`, so every SFT row has full agent observations/tool calls, not just final-answer summaries.
+- DPO split rows now include chat-style `chosen_messages` and `rejected_messages`, with duplicated leading `user:` transcript text stripped from assistant fields.
+- DPO split exporter now also writes tiered preference files: `dpo_hard_train/val.jsonl` (30/1 rows with explicit rejected failure reasons) and `dpo_efficiency_train/val.jsonl` (221/13 successful-but-weaker contrasts).
+- Added and started `refresh_hy3_exports.py` on lenovo as PID `511189`; it refreshes clean/DPO exports and stratified train-ready splits every 600s while collection runs.
 - Runner now supports `--transient-retries`, `--transient-sleep`, `--rerun-failed`, and `--rollout-offset`.
 - Generator now writes family-interleaved balanced shards at `agentic_scale_tasks_balanced_shard_*.json`.
 
@@ -558,13 +569,15 @@ Hub-only noise + loss-based selection should boost structured extraction from ~8
 ```bash
 cd ~/agent_trajectory_lab
 python3 run_hermes_tasks.py --tasks agentic_scale_tasks_balanced_shard_00.json --out runs/hy3_agentic_balanced_shard_00_r4 --skip-existing --rerun-failed --rollouts 4 --timeout 420 --transient-retries 4 --transient-sleep 90 --hermes-arg=--provider --hermes-arg=nous --hermes-arg=--model --hermes-arg=tencent/hy3:free
-python3 export_trajectory_dataset.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 --out datasets/hy3_agentic_scale_partial_clean.jsonl --require-matched-trace
-python3 export_preference_pairs.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 --out datasets/hy3_agentic_scale_partial_dpo.jsonl --include-all-passed-contrast
+python3 export_trajectory_dataset.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 runs/hy3_agentic_balanced_shard_06_r4 runs/hy3_agentic_balanced_shard_07_r4 runs/hy3_state_compaction_recovery_0_r4 runs/hy3_state_compaction_recovery_1_r4 --out datasets/hy3_agentic_scale_partial_clean.jsonl --require-matched-trace
+python3 export_preference_pairs.py --roots runs/hy3_agentic_scale_pilot runs/hy3_agentic_scale_shard_00_r4 runs/hy3_agentic_scale_shard_01_r4 runs/hy3_agentic_scale_shard_02_r4 runs/hy3_agentic_scale_shard_03_r4 runs/hy3_agentic_balanced_shard_00_r4 runs/hy3_agentic_balanced_shard_01_r4 runs/hy3_agentic_balanced_shard_02_r4 runs/hy3_agentic_balanced_shard_03_r4 runs/hy3_agentic_balanced_shard_04_r4 runs/hy3_agentic_balanced_shard_05_r4 runs/hy3_agentic_balanced_shard_06_r4 runs/hy3_agentic_balanced_shard_07_r4 runs/hy3_state_compaction_recovery_0_r4 runs/hy3_state_compaction_recovery_1_r4 --out datasets/hy3_agentic_scale_partial_dpo.jsonl --include-all-passed-contrast
+python3 export_training_ready_splits.py --sft datasets/hy3_agentic_scale_partial_clean.jsonl --dpo datasets/hy3_agentic_scale_partial_dpo.jsonl --out-dir datasets/hy3_agentic_scale_training_ready --val-pct 5 --trajectory-limit 32000
+python3 refresh_hy3_exports.py --loop --sleep 600
 ```
 
 ### Next
 - Monitor pass rate and rate-limit behavior for the six balanced HY3 workers.
-- Hold at six workers until the current state-compaction batch clears; then launch balanced shards 06-15 with the same transient retry/backoff settings.
+- Keep the six-worker supervisor running while shards 00-05 finish; it will resume balanced shards 06-15 without exceeding the cap.
 - Only increase to 8 rollouts after clean export quality is confirmed.
 - Improve DPO ranking with model-behavior-specific checks for invalid tool calls, wrong-tool choices, ignored observations, premature finals, hallucinated files, unsafe commands, and overlong loops.
 
@@ -629,7 +642,51 @@ python3 export_preference_pairs.py --roots runs/hy3_agentic_scale_pilot runs/hy3
 - [x] Run a controlled evaluation harness against the base GGUF model and the SFT GGUF model using all 153 prompts from `small_model_eval_v1.jsonl` via `llama-completion`.
 - [x] Analyzed results and compiled a GGUF Model Comparison Report showing significant formatting improvement (GameFAQ JSON validity +76.5%, Factual QA accuracy +17.6%, overall length -30.3 words, slop phrases eliminated).
 - [x] Evaluated both models on 100 GSM8K prompts to measure math reasoning performance, observing a 15.0% regression on SFT (54.0%) vs base (69.0%) due to task drift/catastrophic forgetting.
+- [x] Created, trained, and evaluated a mixed-blend SFT model (400 formatting, 2,000 Magicoder, 1,600 GSM8K examples) to validate the capability-preservation hypothesis. Under low-epoch constraints (300 steps, ~1.2 epochs), the mixed model's math performance regressed to 48.0% and formatting alignment failed (JSON validity dropped to 11.8%), confirming that short mixed SFT runs on small models are highly susceptible to dominant task bias (e.g., code generation) and insufficient training steps per family.
 
 ### Next
 - Investigate DPO training sweeps on this dataset to further optimize structured formatting.
 - Design Phase 13 PTRM-style noise injection runs on the GGUF models.
+
+## 2026-07-09 — HY3 Agentic Trajectory Export Hygiene Checkpoint
+
+### Completed
+- [x] Updated `tools/agent_trajectory_lab/export_preference_pairs.py` and `tools/agent_trajectory_lab/export_training_ready_splits.py` to sanitize trainable transcript text while preserving raw Hermes trace files for audit.
+- [x] Synced the updated exporters to `lenovo:/home/billz/agent_trajectory_lab/`.
+- [x] Refreshed HY3 clean SFT, DPO, hard-negative DPO, efficiency DPO, and training-ready split exports.
+- [x] Validated that trainable SFT/DPO fields have zero `.git` path rows after sanitization.
+
+### Current checkpoint
+- Strict clean HY3 traces: 1,130 total, all verifier-passed and prompt-matched.
+- SFT splits: train 1,072 / val 58.
+- DPO pairs: 278 total, train 264 / val 14.
+- Hard DPO: train 30 / val 1, all with explicit rejected failure reasons.
+- Efficiency DPO: train 234 / val 13, all without explicit failure reasons.
+- Families remain covered above 100 clean traces each: failure recovery 156, file operations 155, multi-step mini-agent 155, shell/repo inspection 156, summarisation/state-compaction 158, tool-format 197, tool-routing 153.
+- Active collection still uses six HY3 balanced shard workers plus supervisor PID 496331 and refresher PID 511189.
+
+### Interpretation
+- This improves the quality of the trainable trajectory text by stripping repository-internal/cache path noise from tool calls, tool results, terminal commands, and assistant prose.
+- This is still collection/data-hygiene progress only. The full objective remains 7,000 instances with 4-8 rollouts each, and no LFM agentic-performance improvement is claimed until training and held-out evaluation run.
+
+## 2026-07-09 — HY3 Worker Stall Recovery and Seven-Worker Probe
+
+### Completed
+- [x] Diagnosed a runner stall where shard workers held current run directories past the 420s timeout without writing `stdout.txt`, `stderr.txt`, or `result.json`.
+- [x] Patched `tools/agent_trajectory_lab/run_hermes_tasks.py` to run subprocesses in their own process group and terminate the process group on timeout.
+- [x] Added `--clean-incomplete` support so restarted shard workers remove incomplete run directories before retrying.
+- [x] Updated `tools/agent_trajectory_lab/manage_hy3_balanced_workers.py` to pass `--clean-incomplete`.
+- [x] Restarted the HY3 pool with seven active balanced shard workers under supervisor PID 553902.
+- [x] Verified the restarted workers recovered: previously stuck/incomplete runs were cleaned and retried, shard 06 produced clean rollouts, and no fresh HY3 rate-limit matches appeared.
+
+### Current checkpoint
+- Strict clean HY3 traces: 1,160 total, all verifier-passed and prompt-matched.
+- SFT splits: train 1,102 / val 58.
+- DPO pairs: 284 total, train 270 / val 14.
+- Hard DPO: train 33 / val 1, all with explicit rejected failure reasons.
+- Efficiency DPO: train 237 / val 13, all without explicit failure reasons.
+- Families remain covered above 100 clean traces each: failure recovery 157, file operations 157, multi-step mini-agent 162, shell/repo inspection 157, summarisation/state-compaction 165, tool-format 202, tool-routing 160.
+
+### Interpretation
+- The collection is moving again and now has a conservative seven-worker throughput profile. The earlier eight-worker profile remains disallowed because it produced HTTP 429 artifacts.
+- This remains trajectory-collection progress only. The full 28k-56k rollout objective is still active and incomplete.

@@ -8,6 +8,46 @@ import json
 from pathlib import Path
 
 
+EXCLUDED_CHANGED_PARTS = {
+    "__pycache__",
+    ".git",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    "node_modules",
+}
+EXCLUDED_CHANGED_SUFFIXES = {
+    ".pyc",
+    ".pyo",
+    ".so",
+    ".dll",
+    ".dylib",
+    ".o",
+    ".a",
+    ".class",
+    ".jar",
+    ".zip",
+    ".tar",
+    ".gz",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".webp",
+    ".sqlite",
+    ".db",
+}
+
+
+def include_changed_file(rel: str) -> bool:
+    path = Path(rel)
+    if any(part in EXCLUDED_CHANGED_PARTS for part in path.parts):
+        return False
+    if path.name.startswith(".coverage"):
+        return False
+    return path.suffix.lower() not in EXCLUDED_CHANGED_SUFFIXES
+
+
 def read_text(path: Path, limit: int | None = None) -> str:
     if not path.exists():
         return ""
@@ -75,11 +115,15 @@ def build_record(result_path: Path, include_failed: bool, require_matched_trace:
     before = set(result.get("before_tree", []))
     after = set(result.get("after_tree", []))
     for rel in sorted(after - before):
+        if not include_changed_file(rel):
+            continue
         path = workspace / rel
         changed_files.append({"path": rel, "content": read_text(path, limit=12000)})
     for line in diff.splitlines():
         if line.startswith("+++ b/"):
             rel = line.removeprefix("+++ b/")
+            if not include_changed_file(rel):
+                continue
             if rel not in {x["path"] for x in changed_files}:
                 path = workspace / rel
                 changed_files.append({"path": rel, "content": read_text(path, limit=12000)})

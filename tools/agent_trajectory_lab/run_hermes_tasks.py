@@ -9,6 +9,7 @@ import os
 import re
 import shutil
 import shlex
+import signal
 import subprocess
 import time
 from datetime import datetime, timezone
@@ -24,20 +25,74 @@ TRANSIENT_PATTERNS = (
     "API call failed after",
     "temporarily unavailable",
 )
+IGNORED_TREE_PARTS = {
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    "node_modules",
+}
+IGNORED_TREE_SUFFIXES = {
+    ".pyc",
+    ".pyo",
+    ".so",
+    ".dll",
+    ".dylib",
+    ".o",
+    ".a",
+    ".class",
+    ".jar",
+    ".zip",
+    ".tar",
+    ".gz",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".webp",
+    ".sqlite",
+    ".db",
+}
 
 
 def run(cmd: list[str] | str, cwd: Path, timeout: int = 300, env: dict[str, str] | None = None):
     shell = isinstance(cmd, str)
-    return subprocess.run(
-        cmd,
-        cwd=cwd,
-        env=env,
-        shell=shell,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        timeout=timeout,
-    )
+    popen_cmd = cmd
+    try:
+        proc = subprocess.Popen(
+            popen_cmd,
+            cwd=cwd,
+            env=env,
+            shell=shell,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            start_new_session=True,
+        )
+        stdout, stderr = proc.communicate(timeout=timeout)
+        return subprocess.CompletedProcess(cmd, proc.returncode, stdout, stderr)
+    except subprocess.TimeoutExpired as exc:
+        try:
+            os.killpg(proc.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        try:
+            stdout, stderr = proc.communicate(timeout=5)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            stdout, stderr = proc.communicate()
+        stdout = stdout or exc.stdout or ""
+        stderr = stderr or exc.stderr or ""
+        if isinstance(stdout, bytes):
+            stdout = stdout.decode("utf-8", errors="replace")
+        if isinstance(stderr, bytes):
+            stderr = stderr.decode("utf-8", errors="replace")
+        stderr = stderr + f"\nTIMEOUT after {timeout}s"
+        return subprocess.CompletedProcess(cmd, 124, stdout, stderr)
 
 
 def is_transient_api_failure(proc: subprocess.CompletedProcess[str]) -> bool:
@@ -89,13 +144,45 @@ sys.exit(1 if failures else 0)
     )
 
 
+def write_default_gitignore(workspace: Path) -> None:
+    gitignore = workspace / ".gitignore"
+    if gitignore.exists():
+        return
+    gitignore.write_text(
+        "\n".join(
+            [
+                "__pycache__/",
+                "*.py[cod]",
+                ".pytest_cache/",
+                ".mypy_cache/",
+                ".ruff_cache/",
+                ".coverage*",
+                "node_modules/",
+                "*.sqlite",
+                "*.db",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
+def include_tree_file(path: Path) -> bool:
+    if any(part in IGNORED_TREE_PARTS for part in path.parts):
+        return False
+    if path.name.startswith(".coverage"):
+        return False
+    return path.suffix.lower() not in IGNORED_TREE_SUFFIXES
+
+
 def tree_snapshot(workspace: Path) -> list[str]:
     paths = []
     for path in sorted(workspace.rglob("*")):
-        if ".git" in path.parts:
+        rel = path.relative_to(workspace)
+        if not include_tree_file(rel):
             continue
         if path.is_file():
-            paths.append(str(path.relative_to(workspace)))
+            paths.append(str(rel))
     return paths
 
 
@@ -212,6 +299,7 @@ def run_task(
 
     write_seed_files(workspace, task.get("files", {}))
     write_pytest_shim(workspace)
+    write_default_gitignore(workspace)
     run(["git", "init", "-q"], cwd=workspace, timeout=30)
     run(["git", "add", "."], cwd=workspace, timeout=30)
     run(["git", "commit", "-qm", "seed"], cwd=workspace, timeout=30)
@@ -341,6 +429,7 @@ def main() -> int:
     parser.add_argument("--rollout-offset", type=int, default=0)
     parser.add_argument("--transient-retries", type=int, default=0)
     parser.add_argument("--transient-sleep", type=int, default=60)
+    parser.add_argument("--clean-incomplete", action="store_true")
     parser.add_argument("--hermes-arg", action="append", default=[])
     args = parser.parse_args()
 
@@ -357,7 +446,8 @@ def main() -> int:
         for rollout in range(args.rollout_offset, args.rollout_offset + args.rollouts):
             rollout_index = None if args.rollouts == 1 and args.rollout_offset == 0 else rollout
             run_id = task["id"] if rollout_index is None else f"{task['id']}__r{rollout_index:02d}"
-            existing = out_root / run_id / "result.json"
+            run_dir = out_root / run_id
+            existing = run_dir / "result.json"
             if args.skip_existing and existing.exists():
                 try:
                     prior = json.loads(existing.read_text(encoding="utf-8"))
@@ -368,6 +458,9 @@ def main() -> int:
                     shutil.rmtree(existing.parent)
                 except json.JSONDecodeError:
                     pass
+            elif args.clean_incomplete and run_dir.exists() and not existing.exists():
+                print(f"==> {run_id}: clean incomplete existing run dir", flush=True)
+                shutil.rmtree(run_dir)
             print(f"==> {run_id}: {task.get('family', '')}", flush=True)
             result = run_task(
                 task,
