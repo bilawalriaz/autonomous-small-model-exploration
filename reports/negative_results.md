@@ -281,6 +281,51 @@ Use the patched `run_hermes_tasks.py`, which launches subprocesses in their own 
 
 ---
 
+## NR021: Standard PEFT weight merging corrupts LFM2.5 SSM/linear-RNN models
+
+Experiment:
+Loaded two LoRA adapters (Math and Formatting) on `LFM2.5-1.2B-Instruct` using `PeftModel`, combined them using `model.add_weighted_adapter` (linear type), called `model.merge_and_unload()`, and exported to GGUF.
+
+Expected:
+The merged model would load and combine both adapters cleanly.
+
+Observed:
+The PEFT-merged model collapsed completely on all benchmarks (0.0% GSM8K, 0.0% JSON validity), getting stuck in infinite token repetition loops (repeating `1.1.1.1` or `###`). The math-only control model merged using PEFT collapsed similarly, scoring only 5.0% on GSM8K.
+
+Interpretation:
+Standard PEFT utilities like `merge_and_unload` are designed for standard Transformer linear projection modules and do not respect the specific parameter mappings and state variables of Liquid Foundation Models (LFMs). Merging LoRA layers using standard PEFT methods corrupts the model parameters.
+
+What this rules out:
+Using PEFT's native `add_weighted_adapter` and `merge_and_unload` on LFM2.5 models.
+
+Next:
+Manually compute the low-rank delta products and sum them directly to the base weights in PyTorch ($W_{base} + \sum w_i s_i B_i A_i$), completely bypassing PEFT's API.
+
+---
+
+## NR022: SFT on raw GSM8K answers with calculator tags causes digit/equation repetition collapse
+
+Experiment:
+SFT-trained a completions-only math adapter on the raw `openai/gsm8k` train split containing calculator-guided tags (e.g. `<<16-3-4=9>>9`).
+
+Expected:
+The model would learn to output step-by-step mathematical reasoning.
+
+Observed:
+The model was heavily distorted, falling into severe repetition loops of formulas and calculator tags (e.g., repeating `1.5 hours * 30mph = <<1.5*30=45>>45` over and over).
+
+Interpretation:
+The base instruct model has never seen these calculator-guided tags (`<<...>>`) during pre-training. Forcing the model to output them in SFT represents an out-of-distribution vocabulary mismatch, causing logit distortion and generation collapse.
+
+What this rules out:
+Finetuning instruct models on raw calculator-guided datasets without formatting cleanup.
+
+Next:
+Strip all `<<.*?>>` calculator annotations from the SFT dataset using regular expressions before training.
+
+
+---
+
 ## NR020: Mixed-blend SFT fails on small model under low-epoch constraints
 
 Experiment:

@@ -1,0 +1,6 @@
+{
+  "model_gguf": "/home/billz/results/lfm25_12b_math_adapter/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf",
+  "eval_count": 100,
+  "correct_count": 40,
+  "accuracy": 40.0
+}

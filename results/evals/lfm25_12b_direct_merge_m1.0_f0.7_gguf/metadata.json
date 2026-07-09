@@ -1,0 +1,13 @@
+{
+  "run_id": "lfm25_12b_direct_merge_m1.0_f0.7_gguf",
+  "model_gguf": "/home/billz/results/lfm25_12b_direct_merge_m1.0_f0.7_gguf/lfm25_12b_direct_merge_m1.0_f0.7.Q4_K_M.gguf",
+  "eval_set": "/home/billz/work/autonomous-small-model-exploration/data/eval/small_model_eval_v1.jsonl",
+  "timestamp": "2026-07-09T19:18:39.951590+00:00",
+  "eval_count": 153,
+  "config": {
+    "temperature": 0.2,
+    "top_p": 0.9,
+    "max_new_tokens": 512,
+    "repetition_penalty": 1.1
+  }
+}

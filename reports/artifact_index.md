@@ -210,14 +210,39 @@
 | run_gguf_eval.py | scripts/eval/run_gguf_eval.py | Run evaluation on GGUF models on aero using llama-completion | New |
 | run_gsm8k_eval.py | scripts/eval/run_gsm8k_eval.py | Run GSM8K math reasoning evaluation on GGUF models | New |
 | compare_gguf_results.py | scripts/eval/compare_gguf_results.py | Compare base GGUF vs SFT GGUF outputs programmatically | New |
+| | export_scaled_gguf.py | scripts/train/export_scaled_gguf.py | Export PEFT adapters with custom weight scaling | New |
 | base model GGUF | /home/billz/models/LFM2.5-1.2B-Instruct-GGUF_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized base model GGUF file | Created on aero |
 | SFT model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized fine-tuned model GGUF file | Created on aero |
 | mixed model GGUF | /home/billz/results/lfm25_12b_instruct_sft_mixed/gguf_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized mixed-blend fine-tuned model GGUF file | Created on aero |
+| step-200 model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_step200_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized step-200 fine-tuned model GGUF file | Created on aero |
+| scale-0.3 model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_scaled_0.3_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized scale-0.3 merged GGUF file | Created on aero |
+| scale-0.7 model GGUF | /home/billz/results/lfm25_12b_instruct_sft_q8_strict/gguf_scaled_0.7_gguf/LFM2.5-1.2B-Instruct.Q4_K_M.gguf | Quantized scale-0.7 merged GGUF file | Created on aero |
 | GGUF Comparison Report | results/evals/gguf_comparison_report.md | Comparative report detailing structured output, accuracy, length, and slop improvements | Complete |
 | mixed GGUF Comparison Report | results/evals/gguf_mixed_comparison_report.md | Comparative report for mixed-blend model vs base model | Complete |
+| step-200 GGUF Comparison Report | results/evals/gguf_step200_comparison_report.md | Comparative report for step-200 SFT model vs base model | Complete |
+| scale-0.3 GGUF Comparison Report | results/evals/gguf_scaled_0.3_comparison_report.md | Comparative report for scale-0.3 SFT model vs base model | Complete |
+| scale-0.7 GGUF Comparison Report | results/evals/gguf_scaled_0.7_comparison_report.md | Comparative report for scale-0.7 SFT model vs base model | Complete |
 | SFT GGUF Outputs | results/evals/lfm25_12b_sft_gguf/outputs.jsonl | Inference outputs for SFT model | Complete |
 | mixed GGUF Outputs | results/evals/lfm25_12b_sft_mixed_gguf/outputs.jsonl | Inference outputs for mixed-blend SFT model | Complete |
+| step-200 GGUF Outputs | results/evals/lfm25_12b_sft_step200_gguf/outputs.jsonl | Inference outputs for step-200 SFT model | Complete |
+| scale-0.3 GGUF Outputs | results/evals/lfm25_12b_sft_scaled_0.3_gguf/outputs.jsonl | Inference outputs for scale-0.3 merged model | Complete |
+| scale-0.7 GGUF Outputs | results/evals/lfm25_12b_sft_scaled_0.7_gguf/outputs.jsonl | Inference outputs for scale-0.7 merged model | Complete |
 | Base GGUF Outputs | results/evals/lfm25_12b_base_gguf/outputs.jsonl | Inference outputs for base model | Complete |
 | SFT GSM8K Outputs | results/evals/gsm8k_sft_results.jsonl | GSM8K evaluation responses for SFT model | Complete |
 | mixed GSM8K Outputs | results/evals/gsm8k_sft_mixed_results.jsonl | GSM8K evaluation responses for mixed-blend SFT model | Complete |
+| step-200 GSM8K Outputs | results/evals/gsm8k_sft_step200_results.jsonl | GSM8K evaluation responses for step-200 SFT model | Complete |
+| scale-0.3 GSM8K Outputs | results/evals/gsm8k_sft_scaled_0.3_results.jsonl | GSM8K evaluation responses for scale-0.3 SFT model | Complete |
+| scale-0.7 GSM8K Outputs | results/evals/gsm8k_sft_scaled_0.7_results.jsonl | GSM8K evaluation responses for scale-0.7 SFT model | Complete |
 | Base GSM8K Outputs | results/evals/gsm8k_base_results.jsonl | GSM8K evaluation responses for base model | Complete |
+## Math and Formatting Multi-Adapter Merger (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| prepare_gsm8k_train.py | scripts/data/prepare_gsm8k_train.py | Downloads HF openai/gsm8k dataset and formats to ChatML, stripping calculator tags | New |
+| merge_multi_adapters.py | scripts/train/merge_multi_adapters.py | Merges multiple adapters using PEFT add_weighted_adapter (LFM incompatible) | New |
+| merge_lora_direct.py | scripts/train/merge_lora_direct.py | Merges multiple adapters directly into the base weights in PyTorch | New |
+| math-only adapter | /home/billz/results/lfm25_12b_math_adapter/adapter | Final math reasoning LoRA adapter trained from cleaned GSM8K split | Complete; train loss 0.6861 |
+| direct-merge GGUF | /home/billz/results/lfm25_12b_direct_merge_m1.0_f0.7_gguf/lfm25_12b_direct_merge_m1.0_f0.7.Q4_K_M.gguf | Quantized directly-merged multi-adapter GGUF file | Created on aero |
+| direct-merge comparison report | results/evals/gguf_direct_merge_comparison_report.md | Comparative evaluation report for directly merged model vs base model | Complete |
+| direct-merge JSON outputs | results/evals/lfm25_12b_direct_merge_m1.0_f0.7_gguf/outputs.jsonl | Inference outputs on 153 formatting prompts | Complete |
+| direct-merge GSM8K outputs | results/evals/gsm8k_direct_merge_m1.0_f0.7_results.jsonl | GSM8K evaluation responses for directly merged model | Complete |

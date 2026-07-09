@@ -78,6 +78,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--eval-steps", type=int, default=50)
     parser.add_argument("--save-steps", type=int, default=100)
     parser.add_argument("--save-total-limit", type=int, default=2)
+    parser.add_argument(
+        "--resume-from-checkpoint",
+        default=None,
+        help="Path to checkpoint or 'true' to resume from latest",
+    )
     parser.add_argument("--packing", action="store_true", help="Pack short samples together. Off by default for strict output tasks.")
     parser.add_argument(
         "--padding-free",
@@ -109,6 +114,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--use-rslora", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--dry-run", action="store_true", help="Load and format data, then exit before loading the model.")
     parser.add_argument("--force", action="store_true", help="Allow writing into a non-empty output directory.")
+    parser.add_argument(
+        "--completions-only",
+        action="store_true",
+        help="Train only on assistant completions, masking prompt tokens.",
+    )
     return parser.parse_args()
 
 
@@ -167,19 +177,75 @@ def fallback_chat_text(messages: list[dict[str, str]]) -> str:
     return "\n".join(chunks).strip()
 
 
-def records_to_dataset(records: list[dict[str, Any]], tokenizer: Any) -> Dataset:
-    rows: list[dict[str, str]] = []
+def tokenize_and_mask(messages: list[dict[str, str]], tokenizer: Any, max_length: int) -> dict[str, list[int]]:
+    user_msgs = [m for m in messages if m["role"] == "user"]
+    if not user_msgs:
+        raise ValueError("No user message found in record messages")
+    
+    prompt_text = tokenizer.apply_chat_template(
+        [{"role": "user", "content": user_msgs[0]["content"]}],
+        tokenize=False,
+        add_generation_prompt=True,
+    )
+    prompt_ids = tokenizer.encode(prompt_text, add_special_tokens=False)
+    
+    full_text = tokenizer.apply_chat_template(
+        messages,
+        tokenize=False,
+        add_generation_prompt=False,
+    )
+    full_ids = tokenizer.encode(full_text, add_special_tokens=False)
+    
+    idx = len(prompt_ids)
+    if full_ids[:idx] != prompt_ids:
+        boundary = prompt_ids[-5:]
+        for j in range(len(full_ids) - len(boundary) + 1):
+            if full_ids[j : j + len(boundary)] == boundary:
+                idx = j + len(boundary)
+                break
+                
+    labels = list(full_ids)
+    for j in range(min(idx, len(labels))):
+        labels[j] = -100
+        
+    input_ids = full_ids[:max_length]
+    attention_mask = [1] * len(input_ids)
+    labels = labels[:max_length]
+    
+    return {
+        "input_ids": input_ids,
+        "attention_mask": attention_mask,
+        "labels": labels,
+    }
+
+
+def records_to_dataset(
+    records: list[dict[str, Any]],
+    tokenizer: Any,
+    completions_only: bool = False,
+    max_length: int = 1024
+) -> Dataset:
+    rows: list[dict[str, Any]] = []
     for record in records:
-        if isinstance(record.get("text"), str):
-            text = record["text"].strip()
-        else:
-            messages = normalize_messages(record)
-            if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
-                text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False).strip()
+        if completions_only:
+            if isinstance(record.get("text"), str):
+                log.warning("Raw text provided with completions_only; prompt masking skipped")
+                rows.append({"text": record["text"].strip()})
             else:
-                text = fallback_chat_text(messages)
-        if text:
-            rows.append({"text": text})
+                messages = normalize_messages(record)
+                tokenized = tokenize_and_mask(messages, tokenizer, max_length)
+                rows.append(tokenized)
+        else:
+            if isinstance(record.get("text"), str):
+                text = record["text"].strip()
+            else:
+                messages = normalize_messages(record)
+                if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
+                    text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False).strip()
+                else:
+                    text = fallback_chat_text(messages)
+            if text:
+                rows.append({"text": text})
 
     if not rows:
         raise ValueError("No usable training rows after conversion")
@@ -198,6 +264,35 @@ def resolve_target_modules(model: Any, requested: str) -> list[str]:
             "Re-run with --target-modules q_proj,k_proj,v_proj,o_proj,gate_up_proj,down_proj"
         )
     return targets
+
+
+class CustomDataCollatorForCompletionOnly:
+    def __init__(self, response_template: str, tokenizer: Any):
+        self.response_template = response_template
+        self.tokenizer = tokenizer
+        self.response_token_ids = tokenizer.encode(response_template, add_special_tokens=False)
+
+    def __call__(self, examples: list[dict[str, Any]]) -> dict[str, Any]:
+        batch = self.tokenizer.pad(
+            examples,
+            return_tensors="pt",
+            pad_to_multiple_of=8,
+        )
+        labels = batch["input_ids"].clone()
+        for i in range(len(examples)):
+            input_ids_list = batch["input_ids"][i].tolist()
+            idx = -1
+            n_template = len(self.response_token_ids)
+            for j in range(len(input_ids_list) - n_template + 1):
+                if input_ids_list[j : j + n_template] == self.response_token_ids:
+                    idx = j + n_template
+                    break
+            if idx != -1:
+                labels[i, :idx] = -100
+        if self.tokenizer.pad_token_id is not None:
+            labels[batch["input_ids"] == self.tokenizer.pad_token_id] = -100
+        batch["labels"] = labels
+        return batch
 
 
 def main() -> int:
@@ -242,7 +337,7 @@ def main() -> int:
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    dataset = records_to_dataset(records, tokenizer)
+    dataset = records_to_dataset(records, tokenizer, completions_only=args.completions_only, max_length=args.max_seq_length)
     split = dataset.train_test_split(test_size=args.eval_split, seed=args.seed) if args.eval_split else None
     train_dataset = split["train"] if split else dataset
     eval_dataset = split["test"] if split else None
@@ -269,6 +364,10 @@ def main() -> int:
     fp16 = not bf16
     log.info("Precision: bf16=%s fp16=%s", bf16, fp16)
 
+    dataset_text_field = "text"
+    if args.completions_only:
+        dataset_text_field = None
+
     training_kwargs: dict[str, Any] = {
         "output_dir": str(output_dir / "checkpoints"),
         "per_device_train_batch_size": args.per_device_train_batch_size,
@@ -289,7 +388,7 @@ def main() -> int:
         "padding_free": args.padding_free,
         "dataset_num_proc": args.dataset_num_proc,
         "dataloader_num_workers": args.dataloader_num_workers,
-        "dataset_text_field": "text",
+        "dataset_text_field": dataset_text_field,
         "max_length": args.max_seq_length,
     }
     if args.num_train_epochs is not None:
@@ -308,7 +407,12 @@ def main() -> int:
         args=SFTConfig(**training_kwargs),
     )
 
-    result = trainer.train()
+    resume_from = args.resume_from_checkpoint
+    if resume_from == "true":
+        resume_from = True
+    elif resume_from == "false":
+        resume_from = False
+    result = trainer.train(resume_from_checkpoint=resume_from)
     adapter_dir = output_dir / "adapter"
     model.save_pretrained(str(adapter_dir))
     tokenizer.save_pretrained(str(adapter_dir))

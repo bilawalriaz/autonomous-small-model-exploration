@@ -1,0 +1,6 @@
+{
+  "model_gguf": "/home/billz/results/lfm25_12b_direct_merge_m1.0_f0.7_gguf/lfm25_12b_direct_merge_m1.0_f0.7.Q4_K_M.gguf",
+  "eval_count": 100,
+  "correct_count": 69,
+  "accuracy": 69.0
+}

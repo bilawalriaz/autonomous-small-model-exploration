@@ -1,0 +1,44 @@
+{
+  "run_id": "minicpm5_1b_formatting_qlora_20260709",
+  "model_name_or_path": "openbmb/MiniCPM5-1B",
+  "dataset": "/home/billz/scored/exports/sft_strict_q8_response.jsonl",
+  "output_dir": "/home/billz/results/minicpm5_1b_format_adapter",
+  "trainer": "unsloth",
+  "quantization": {
+    "load_in_4bit": true,
+    "device_map": "cuda",
+    "gpu_memory_utilization": 0.9
+  },
+  "training": {
+    "max_seq_length": 1024,
+    "max_steps": 300,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "effective_batch_size": 16,
+    "learning_rate": 0.0002,
+    "optimizer": "adamw_8bit",
+    "lr_scheduler_type": "cosine",
+    "warmup_steps": 10,
+    "precision": "fp16",
+    "bf16_supported": false,
+    "packing": false,
+    "padding_free": false,
+    "dataset_num_proc": 1,
+    "dataloader_num_workers": 0,
+    "eval_split": 0,
+    "completions_only": true
+  },
+  "lora_config": {
+    "r": 8,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": "auto",
+    "use_rslora": true
+  },
+  "hardware": {
+    "host": "aero",
+    "gpu": "NVIDIA GeForce RTX 2070 Super / Max-Q class",
+    "usable_vram_gib": 7.604,
+    "system_ram_gib": 38
+  }
+}
