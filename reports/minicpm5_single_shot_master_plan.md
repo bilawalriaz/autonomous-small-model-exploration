@@ -128,9 +128,18 @@ separately; an agent score may never replace a single-shot score.
 
 ## First next session
 
-Create the Stage 0 experiment card/config, build the 200-per-family frozen
-suite and data manifests, validate source licenses/revisions, and run only the
-baseline/merge measurement. Do not train until the audit passes.
+S01 completed a fixture-validated corrected-Q4 baseline, including an
+explicit-schema repair after discovering the original prompt was ambiguous.
+Before Stage 1, replace repeated generated task shapes with structurally
+diverse source-held-out examples and record a near-duplicate audit. Do not
+train before that revised measurement gate passes.
+
+S02 passed that revised audit and completed measurement. It falsified broad
+schema transfer for the existing merge, so the next smallest Stage 1 decision
+must not be a schema adapter chosen from S01 alone. Pre-register either a
+three-seed concise-only adapter with genuinely diverse concise data or a
+balanced adapter with a new source-diverse schema corpus; select one only with
+a quantitative preservation prediction and evaluate it once on held-out data.
 
 ## Continuation protocol
 

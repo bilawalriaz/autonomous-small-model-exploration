@@ -1,0 +1,10 @@
+{
+  "run_id": "S01v2_composite_merged_q4",
+  "composition": "v1 outputs with eval_0200..0399 replaced by v2 explicit-schema outputs",
+  "source_runs": [
+    "results/evals/S01_merged_q4/outputs.jsonl",
+    "results/evals/S01v2_merged_schema_q4/outputs.jsonl"
+  ],
+  "eval_set": "data/eval/minicpm5_s01_v2_heldout.jsonl",
+  "count": 800
+}

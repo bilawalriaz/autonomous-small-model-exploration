@@ -5,6 +5,11 @@
 **Stage 0 — measurement and data admission.** The next work is to build and
 freeze larger train/validation/held-out manifests before further training.
 
+S01 has admitted the data and frozen the 800-example suite; the deterministic
+corrected-Q4 base-versus-merge baseline is currently running on aero.  Treat
+all behavioral conclusions as pending until fixture-validated outputs and the
+paired report are present.
+
 ## Facts to preserve
 
 - Both existing math and formatting adapters are rank-8 RS-LoRA (`alpha=16`),
@@ -20,8 +25,17 @@ freeze larger train/validation/held-out manifests before further training.
 
 ## Immediate next action
 
-Create an S01 card and config, then build versioned source manifests and
-200-example frozen evaluation suites before starting any training.
+Build a source-held-out, structurally diverse Stage 0 suite and run a
+near-duplicate audit before deciding whether any Stage 1 training experiment
+is justified.
+
+## S02 decision
+
+S02 passed the repaired source/split audit and completed baseline measurement.
+It rejects broad schema transfer for the existing direct merge: both Q4 models
+scored 0/200 on the distinct schema family. Do not train a schema adapter from
+this evidence alone. The only positive S02 result is a narrow concise-template
+gain (+25.5pp, CI +19.5 to +31.5); math is unresolved and code unchanged.
 
 ## Do not do
 

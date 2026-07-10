@@ -1,0 +1,75 @@
+{
+  "experiment_id": "S02",
+  "verifier_version": "s01-deterministic-verifier-v1",
+  "fixture_validation": "passed",
+  "integrity": {
+    "base": {
+      "count": 800,
+      "nonzero_returncodes": 0,
+      "prompt_echoes": 0,
+      "template_residue": 0,
+      "empty_outputs": 0
+    },
+    "merged": {
+      "count": 800,
+      "nonzero_returncodes": 0,
+      "prompt_echoes": 0,
+      "template_residue": 0,
+      "empty_outputs": 0
+    }
+  },
+  "families": {
+    "math": {
+      "n": 200,
+      "base_rate": 0.25,
+      "merged_rate": 0.3,
+      "delta": 0.05,
+      "delta_ci95": [
+        -0.025,
+        0.125
+      ],
+      "wins": 36,
+      "losses": 26,
+      "ties": 138
+    },
+    "json_yaml_schema": {
+      "n": 200,
+      "base_rate": 0.0,
+      "merged_rate": 0.0,
+      "delta": 0.0,
+      "delta_ci95": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "losses": 0,
+      "ties": 200
+    },
+    "concise_instruction": {
+      "n": 200,
+      "base_rate": 0.0,
+      "merged_rate": 0.255,
+      "delta": 0.255,
+      "delta_ci95": [
+        0.195,
+        0.315
+      ],
+      "wins": 51,
+      "losses": 0,
+      "ties": 149
+    },
+    "executable_code": {
+      "n": 200,
+      "base_rate": 0.015,
+      "merged_rate": 0.015,
+      "delta": 0.0,
+      "delta_ci95": [
+        -0.02,
+        0.02
+      ],
+      "wins": 2,
+      "losses": 2,
+      "ties": 196
+    }
+  }
+}

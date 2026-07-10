@@ -280,3 +280,21 @@
 | M01 equivalence result | results/evals/M01_minicpm5_merge_equivalence_rslora.json | FP16 tensor/logit comparison to sequential PEFT merge | Complete |
 | Corrected MiniCPM Q4 smoke | results/evals/M01_merge_q4_smoke/outputs.jsonl | Export/load smoke; not valid behavioral scoring due template residue | Complete, negative harness finding |
 | MiniCPM capability plan | reports/minicpm5_capability_plan.md | Staged expert, merge, consolidation, and release gates | Complete |
+
+## MiniCPM5-1B S01 Stage 0 (2026-07-09)
+
+| Artifact | Path | Purpose | Status |
+|----------|------|---------|--------|
+| S01 experiment card | experiments/cards/S01.md | Pre-registered data admission and paired baseline | Complete |
+| S01 config | configs/S01_minicpm5_stage0_baseline.json | Frozen decoding, paths, hardware, and audit configuration | Complete |
+| S01 builder | scripts/data/build_minicpm5_s01_assets.py | Versioned source manifests, split audit, and suite construction | Complete |
+| S01 source/split manifest | data/manifests/minicpm5_s01_manifest.json | Licenses, dataset fingerprints, counts, and duplicate audit | Complete |
+| S01 held-out suite | data/eval/minicpm5_s01_heldout.jsonl | 800 deterministic single-shot prompts | Complete |
+| S01 deterministic scorer | scripts/eval/score_minicpm5_s01.py | Exact/schema/executable verifiers and paired CIs | Complete; fixtures pass |
+| S01 Q4 raw outputs and paired report | results/evals/S01_* | Corrected base/merge baseline | Running on aero |
+| S01 repaired Q4 composites and report | results/evals/S01v2_composite_*; results/evals/S01v2_paired_metrics.json | Explicit-schema paired baseline, replacing v1 schema outputs only | Complete; narrow baseline |
+| S01 claim card | experiments/claims/S01_claim.md | Evidence limits and paired metrics | Complete |
+| S02 card/config | experiments/cards/S02.md; configs/S02_minicpm5_diverse_stage0_baseline.json | Pre-registered structural-transfer repair | Complete |
+| S02 manifest/suite | data/manifests/minicpm5_s02_manifest.json; data/eval/minicpm5_s02_heldout.jsonl | Versioned 800-row source/split-audited baseline | Complete |
+| S02 Q4 outputs and report | results/evals/S02_base_q4; results/evals/S02_merged_q4; results/evals/S02_paired_metrics.json | Structural-transfer baseline | Complete; negative schema transfer |
+| S02 claim card | experiments/claims/S02_claim.md | Documented narrow/negative baseline conclusion | Complete |

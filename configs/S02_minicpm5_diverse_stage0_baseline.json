@@ -1,0 +1,19 @@
+{
+  "experiment_id": "S02",
+  "model_name_or_path": "openbmb/MiniCPM5-1B",
+  "models": {
+    "q4_base": "/home/billz/models/minicpm5_1b_base_gguf_gguf/MiniCPM5-1B.Q4_K_M.gguf",
+    "q4_corrected_direct_merge": "/home/billz/results/minicpm5_1b_direct_merge_rslora_m1.0_f0.7_gguf/MiniCPM5-1B.Q4_K_M.gguf"
+  },
+  "seeds": [42],
+  "pilot": true,
+  "pilot_justification": "Deterministic no-training baseline measurement.",
+  "ablation_type": "not_applicable_baseline_measurement",
+  "task_family": ["math", "json_yaml_schema", "concise_instruction", "executable_code"],
+  "lora_config": null,
+  "steering_config": null,
+  "decoding": {"temperature": 0.0, "top_p": 1.0, "top_k": 0, "repetition_penalty": 1.0, "seed": 42, "max_new_tokens": 384},
+  "evaluation": {"suite": "data/eval/minicpm5_s02_heldout.jsonl", "minimum_examples_per_family": 200, "bootstrap_resamples": 20000, "require_fixture_validation": true, "require_deterministic_verifiers": true},
+  "data": {"manifest": "data/manifests/minicpm5_s02_manifest.json", "near_duplicate_method": "5-token-shingle Jaccard, threshold 0.80, cross-split"},
+  "hardware": {"host": "aero", "gpu": "NVIDIA GeForce RTX 2070 Max-Q", "vram_mib": 8192, "captured_at": "2026-07-10"}
+}

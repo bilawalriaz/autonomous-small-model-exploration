@@ -167,3 +167,27 @@ observed delta, and tool format is 0% for both. The 12-example control suites
 are too small to certify a −10pp preservation budget, but do not demonstrate
 a regression. This is a narrow format gain, not a synergy/general-capability
 claim; Stage 0 of the single-shot master plan expands the evaluation first.
+
+2026-07-09 S01 update: Stage 0 data admission froze an 800-example held-out
+MiniCPM suite (200 math, 200 JSON/YAML/schema, 200 concise instruction, 200
+executable MBPP code) with zero exact cross-split content-hash intersections.
+All eight deterministic verifier fixtures and all five GGUF boundary fixtures
+pass. Corrected-Q4 base and merge inference is running; this is measurement
+infrastructure, not a behavioral result or a change in claim confidence.
+
+2026-07-10 S01 baseline: After replacing an ambiguous schema prompt with an
+explicit-array version, corrected Q4 base versus direct merge produced schema
+0.0%→67.0% (+67.0pp, paired CI +60.5 to +73.5), concise transformations
+0.0%→24.5% (+24.5pp, CI +18.5 to +30.5), math 25.0%→30.0% (+5.0pp, CI −2.5
+to +12.5), and executable MBPP 1.5%→1.5% (0.0pp, CI −2.0 to +2.0). All 1,600
+captures passed output-boundary integrity checks. The schema/instruction rows
+are generated from repeated task shapes, so this is narrow baseline evidence,
+not a training result, preservation certificate, or synergy claim.
+
+2026-07-10 S02 structural-transfer baseline: the repaired 800-example suite
+passed zero exact and MinHash-candidate 5-token-shingle cross-split matches,
+and all 1,600 Q4 captures passed integrity checks. The S01 schema effect did
+not transfer: base and corrected merge were both 0/200. Concise transformations
+were 0.0%→25.5% (+25.5pp, CI +19.5 to +31.5); math was +5.0pp with CI −2.5 to
++12.5 and MBPP code was unchanged. This is strong negative evidence against a
+broad schema/synergy interpretation, not a reason to train yet.

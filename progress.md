@@ -12,6 +12,20 @@
   `reports/minicpm5_single_shot_master_plan.md`.
 - [x] Added `projects/minicpm5/` as the durable control center, including a
   status handoff and copy-ready overnight autonomy prompt.
+- [x] S01 completed corrected-Q4 base/merge measurement on 800 paired prompts
+  with zero capture-integrity failures. The explicit-schema repair measured
+  +67.0pp (CI +60.5 to +73.5); math was +5.0pp (CI −2.5 to +12.5) and code
+  unchanged. These are baseline measurements, not training effects.
+- [ ] S01 Stage 0 release-to-training gate remains closed: the generated
+  schema/instruction families repeat task shapes across splits, so a
+  structurally diverse source-held-out leakage audit is the next priority.
+- [x] S02 completed that structural repair: exact and MinHash-candidate
+  5-token-shingle audits found no cross-split matches; all 1,600 Q4 captures
+  had clean boundaries. The S01 schema gain failed to transfer (0.0pp,
+  CI [0.0, 0.0]); concise transformations remain a narrow +25.5pp result.
+- [ ] Stage 1 is not yet authorized by evidence: create a three-seed targeted
+  adapter card/config only after deciding whether the narrow concise behavior,
+  rather than the failed schema transfer, is worth training for.
 
 ## Current phase: Phase 3 — Gap Closure and Gem Discovery
 

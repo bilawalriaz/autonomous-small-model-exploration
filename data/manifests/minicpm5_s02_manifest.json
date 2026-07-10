@@ -1,0 +1,161 @@
+{
+  "experiment_id": "S01",
+  "created_at": "2026-07-10T08:26:42.630811+00:00",
+  "seed": 20260709,
+  "builder": "scripts/data/build_minicpm5_s01_assets.py",
+  "sources": [
+    {
+      "name": "openai/gsm8k",
+      "config": "main",
+      "license": "MIT",
+      "splits": {
+        "train": 7473,
+        "test": 1319
+      },
+      "fingerprint": "c6f812ae33c9159d"
+    },
+    {
+      "name": "google-research-datasets/mbpp",
+      "license": "Apache-2.0",
+      "splits": {
+        "train": 374,
+        "test": 500,
+        "validation": 90,
+        "prompt": 10
+      },
+      "fingerprint": "5cdc16311fd8e220"
+    },
+    {
+      "name": "S01/S02 deterministic schema/instruction generators",
+      "license": "CC0-1.0",
+      "revision": "s02-v1"
+    }
+  ],
+  "files": {
+    "train": {
+      "path": "/Users/bilawalriaz/autonomous-small-model-exploration/data/sft/minicpm5_s02_train.jsonl",
+      "count": 8545,
+      "sha256": "bd2cfbca2c8f9a7b1e333e9d10f89e2b647eceb7ffba21e7ffa8d9f258bc8562"
+    },
+    "validation": {
+      "path": "/Users/bilawalriaz/autonomous-small-model-exploration/data/sft/minicpm5_s02_validation.jsonl",
+      "count": 788,
+      "sha256": "9821cbed5ae12db2b07023906c2a2cac7077669379fefb0e451db76320711022"
+    },
+    "heldout": {
+      "path": "/Users/bilawalriaz/autonomous-small-model-exploration/data/eval/minicpm5_s02_heldout.jsonl",
+      "count": 800,
+      "sha256": "d5a2e60f2f3e5d680395f408191df376218eb031c2c87e4a6629f98168e6042d"
+    }
+  },
+  "heldout_family_counts": {
+    "math": 200,
+    "json_yaml_schema": 200,
+    "concise_instruction": 200,
+    "executable_code": 200
+  },
+  "exact_hash_intersections": {
+    "train__validation": 0,
+    "train__heldout": 0,
+    "validation__heldout": 0
+  },
+  "near_duplicate_audit": {
+    "method": "5-token-shingle Jaccard with four-permutation MinHash full-signature candidates",
+    "threshold": 0.8,
+    "comparisons": {
+      "train__validation": {
+        "candidate_pairs": 278,
+        "near_duplicate_count": 0,
+        "examples": []
+      },
+      "train__heldout": {
+        "candidate_pairs": 46,
+        "near_duplicate_count": 0,
+        "examples": []
+      },
+      "validation__heldout": {
+        "candidate_pairs": 9,
+        "near_duplicate_count": 0,
+        "examples": []
+      }
+    }
+  },
+  "data_audit_passed": true,
+  "admission": {
+    "schema_rows_validated": 900,
+    "code_rows_executed": 660,
+    "code_rows_rejected": {
+      "train": [
+        {
+          "task_id": 724,
+          "reason": "Traceback (most recent call last):\n  File \"<string>\", line 9, in <module>\n    assert power_base_sum(2,100)==115\n           ~~~~~~~~~~~~~~^^^^^^^\n  File \"<string>\", line 8, in power_base_sum\n    return sum([int(i) for i in str(pow(base, power))])\n                ~~~^^^\nValueError: invalid literal for int() with base 10: '.'\n"
+        },
+        {
+          "task_id": 927,
+          "reason": "Traceback (most recent call last):\n  File \"<string>\", line 6, in <module>\n    root = Node(1)\n           ^^^^\nNameError: name 'Node' is not defined. Did you mean: 'None'?\n"
+        }
+      ],
+      "validation": [
+        {
+          "task_id": 539,
+          "reason": "5891132094649, 1208925819614629174706176, 88817841970012523233890533447265625, 48873677980689257489322752273774603865660850176, 143503601609868434285603076356671071740077383739246066639249]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        },
+        {
+          "task_id": 534,
+          "reason": "near_duplicate_of_task_607"
+        }
+      ],
+      "heldout": [
+        {
+          "task_id": 180,
+          "reason": "Traceback (most recent call last):\n  File \"<string>\", line 11, in <module>\n    assert distance_lat_long(23.5,67.5,25.5,69.5)==12179.372041317429\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+        },
+        {
+          "task_id": 17,
+          "reason": "near_duplicate_of_task_654"
+        },
+        {
+          "task_id": 85,
+          "reason": "near_duplicate_of_task_574"
+        },
+        {
+          "task_id": 104,
+          "reason": "near_duplicate_of_task_569"
+        },
+        {
+          "task_id": 171,
+          "reason": "near_duplicate_of_task_654"
+        },
+        {
+          "task_id": 174,
+          "reason": "near_duplicate_of_task_653"
+        },
+        {
+          "task_id": 176,
+          "reason": "near_duplicate_of_task_654"
+        },
+        {
+          "task_id": 216,
+          "reason": "near_duplicate_of_task_872"
+        },
+        {
+          "task_id": 217,
+          "reason": "near_duplicate_of_task_602"
+        },
+        {
+          "task_id": 233,
+          "reason": "near_duplicate_of_task_731"
+        },
+        {
+          "task_id": 248,
+          "reason": "near_duplicate_of_task_704"
+        },
+        {
+          "task_id": 266,
+          "reason": "near_duplicate_of_task_731"
+        }
+      ]
+    },
+    "benchmark_test_in_train": false
+  }
+}

@@ -46,6 +46,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--stop", action="append", default=None,
                         help="Stop marker; repeat to add markers (default: MiniCPM im_end and EOS).")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--category", help="Evaluate only this exact category (for a pre-registered suite repair).")
     parser.add_argument("--validate-fixtures", action="store_true",
                         help="Validate output extraction fixtures and exit without model inference.")
     parser.add_argument("--fixtures", default="tests/fixtures/minicpm5_gguf_output_extraction.json")
@@ -158,6 +159,10 @@ def main() -> int:
 
     eval_set_path = Path(args.eval_set).resolve()
     records = load_jsonl(eval_set_path)
+    if args.category:
+        records = [record for record in records if record.get("category") == args.category]
+        if not records:
+            raise ValueError(f"No records with category {args.category!r} in {eval_set_path}")
     if args.limit:
         records = records[:args.limit]
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer_name, trust_remote_code=True)
@@ -190,7 +195,7 @@ def main() -> int:
     metadata = {
         "run_id": args.run_id, "model_gguf": args.model_gguf,
         "eval_set": str(eval_set_path), "timestamp": datetime.now(timezone.utc).isoformat(),
-        "eval_count": len(results), "tokenizer_name": args.tokenizer_name,
+        "eval_count": len(results), "category_filter": args.category, "tokenizer_name": args.tokenizer_name,
         "chat_template_sha256": template_sha256, "stop_markers": stop_markers,
         "config": {"temperature": 0.0, "top_p": 1.0, "top_k": 0,
                    "max_new_tokens": args.max_new_tokens, "repetition_penalty": 1.0,

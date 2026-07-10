@@ -1,0 +1,10 @@
+[
+  {"name":"math_final_number","row":{"category":"math","expected":"42"},"response":"Work... #### 42","expected_pass":true},
+  {"name":"math_wrong_number","row":{"category":"math","expected":"42"},"response":"41","expected_pass":false},
+  {"name":"strict_instruction","row":{"category":"concise_instruction","expected":"ATLAS"},"response":"ATLAS","expected_pass":true},
+  {"name":"instruction_extra_text","row":{"category":"concise_instruction","expected":"ATLAS"},"response":"The answer is ATLAS","expected_pass":false},
+  {"name":"json_schema_valid","row":{"category":"json_yaml_schema","expected":{"x":1},"json_schema":{"type":"object","additionalProperties":false,"required":["x"],"properties":{"x":{"const":1}}}},"response":"{\"x\":1}","expected_pass":true},
+  {"name":"json_schema_invalid_extra","row":{"category":"json_yaml_schema","expected":{"x":1},"json_schema":{"type":"object","additionalProperties":false,"required":["x"],"properties":{"x":{"const":1}}}},"response":"{\"x\":1,\"y\":2}","expected_pass":false},
+  {"name":"code_executes","row":{"category":"executable_code","test_setup_code":"","tests":["assert add(2, 3) == 5"]},"response":"def add(a, b):\n    return a + b","expected_pass":true},
+  {"name":"code_fails_test","row":{"category":"executable_code","test_setup_code":"","tests":["assert add(2, 3) == 5"]},"response":"def add(a, b):\n    return a - b","expected_pass":false}
+]

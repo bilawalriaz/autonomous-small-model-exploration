@@ -9,6 +9,53 @@ Next: Use LoRA (r=8) which reduces optimizer states to ~50MB.
 
 ---
 
+## NR030: S01 v1 schema prompt was ambiguous
+
+Experiment: The initial S01 corrected-Q4 baseline scored 200 generated
+JSON/YAML/schema prompts with a required two-element `tags` array.
+
+Observed: Both models scored 0/200. Manual review showed the prompt expressed
+the values as `tags=t1,g10`, which permits a reasonable scalar-string reading;
+the merged model returned a string rather than the required array.
+
+Interpretation: This is an evaluator/task-specification failure, not evidence
+of no schema capability. S01 v2 made the required array literal explicit and
+reran both models. Only v2 schema metrics may be reported.
+
+---
+
+## NR031: S01 schema gain does not transfer to structurally distinct schemas
+
+Experiment: S02 evaluated corrected Q4 base versus direct merge on 200
+explicitly specified nested-record schemas, structurally disjoint from S01's
+flat-person schema generator. The split audit found zero exact and
+MinHash-candidate 5-token-shingle near duplicates across source splits.
+
+Observed: Base and merge both scored 0/200; paired delta 0.0pp, CI [0.0, 0.0].
+All 1,600 S02 captures passed evaluator integrity checks.
+
+Interpretation: S01's +67pp schema result is template-specific under this
+test. It cannot justify a broad schema-reliability, synergy, or schema-SFT
+direction claim without a new, source-diverse training/evaluation design.
+
+---
+
+## NR029: Some published MBPP reference/test pairs fail the frozen S01 runner
+
+Experiment: S01 data admission executed each MBPP reference implementation
+with its supplied test list in an isolated Python process before allowing the
+row into a MiniCPM train, validation, or held-out split.
+
+Observed: 2/374 train, 1/90 validation, and 3/500 test source rows failed the
+frozen runner (for example, unresolved helper names). They were quarantined;
+the held-out code suite retains 200 independently executing rows.
+
+Interpretation: source membership alone is not sufficient code-data admission.
+Reference implementations and their stored tests must execute in the exact
+evaluator environment. This is a data-integrity finding, not model evidence.
+
+---
+
 ## NR002: Full-residual activation patching gives KL=0 everywhere
 Experiment: Patch full residual stream at each layer from clean run into corrupt run.
 Expected: Some layers show high recovery, others low.

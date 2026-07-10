@@ -486,3 +486,20 @@ Status: active. Test via the staged, three-seed, held-out protocol in
 `reports/minicpm5_single_shot_master_plan.md`; no agent result may be used as
 substitute evidence.
 
+2026-07-09 S01 measurement update: the hypothesis remains active and
+unresolved. Its first powered baseline uses 800 leakage-audited held-out rows
+and deterministic validators; Q4 base/merge inference is in progress, so no
+effect size or confidence update is warranted.
+
+2026-07-10 S01 baseline update: narrow corrected-Q4 gains appear on explicit
+schema and concise generated templates, while math remains unresolved and code
+is unchanged. H-MiniCPM-single-shot remains active, not confirmed: the next
+falsifiable test must use structurally diverse, source-held-out prompts with a
+near-duplicate audit, then three-seed training only if that measurement gate
+passes.
+
+2026-07-10 S02 update: the broad-schema part of H-MiniCPM-single-shot is
+rejected for the existing direct merge on this structurally held-out family
+(0/200 for base and merge). The concise-output sub-hypothesis remains narrow
+and active; it needs a pre-registered, three-seed training comparison before
+it can motivate a capability claim.
